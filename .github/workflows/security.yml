@@ -1,0 +1,124 @@
+name: Security
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  codeql-analysis:
+    # CodeQL is GitHub's static analysis security scanning
+    runs-on: ubuntu-latest
+    name: CodeQL Analysis
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Checkout CodeQL tools
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/perform-analysis@v3
+        with:
+          category: security
+
+  npm-audit:
+    runs-on: ubuntu-latest
+    name: NPM Audit
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run npm audit
+        continue-on-error: true
+        run: npm audit --audit-level moderate || exit 0
+
+  secret-scanning:
+    runs-on: ubuntu-latest
+    name: Secret Scanning
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run TruffleHog
+        uses: gitleaks/gitleaks-action@v1
+        with:
+          args: --verbose --path --
+
+  dependency-review:
+    runs-on: ubuntu-latest
+    name: Dependency Review
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/github-code-scanning-action@v3
+        with:
+          checkout-path: ${{ github.workspace }}
+          sarif-file: 'dependency-review.sarif'
+
+  codeql-analysis-python:
+    # Python dependencies in future
+    runs-on: ubuntu-latest
+    name: CodeQL Analysis Python
+    if: contains(github.ref, 'python-dependencies')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout CodeQL tools
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/perform-analysis@v3
+        with:
+          category: security

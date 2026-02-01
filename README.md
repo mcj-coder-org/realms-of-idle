@@ -45,6 +45,9 @@ Realms of Idle is an offline-first solo play game with scalable multiplayer supp
 - .NET SDK (see `global.json` for version)
 - Node.js 22+ (for tooling)
 - Git
+- GitHub account with repository admin access (for branch protection)
+
+### Getting Started
 
 ### Getting Started
 
@@ -74,6 +77,29 @@ This project follows strict development standards:
 - **Linear History** - Use rebase, then --ff-only for merges
 - **Conventional Commits** - Follow commitlint configuration
 - **Feature Branches** - Always use git worktrees for isolation
+- **Branch Protection** - Automated CI/CD and PR review requirements
+
+### Branch Protection Setup
+
+To set up branch protection for the repository:
+
+```bash
+# Copy the environment configuration
+cp .github.env.example .github.env
+
+# Edit .github.env with your GitHub token
+nano .github.env
+
+# Install dependencies and setup branch protection
+npm install
+npm run branch:setup
+
+# Verify the setup
+npm run branch:verify
+```
+
+See [docs/BRANCH-PROTECTION.md](docs/BRANCH-PROTECTION.md) for detailed documentation.
+
 - **TDD** - Tests first, then implementation
 - **Quality Gates** - Zero warnings, zero errors, zero test failures
 
