@@ -1,0 +1,12 @@
+# Subject (max 72 chars)
+type(scope): brief description
+
+# Body (wrapped at 72 chars)
+# Explain what changed and why
+
+# Closes: #issue-number
+
+# Examples:
+# feat(inventory): add item storage system #42
+# fix(npc): resolve memory leak in simulation tick #117
+# docs(readme): update installation instructions
