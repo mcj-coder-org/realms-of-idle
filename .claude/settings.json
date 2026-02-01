@@ -1,0 +1,22 @@
+{
+  "enabledPlugins": {
+    "ralph-loop@claude-plugins-official": false,
+    "csharp-lsp@claude-plugins-official": true,
+    "github@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": false,
+    "oh-my-claudecode@omc": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/postToolUse.cjs"
+          }
+        ]
+      }
+    ]
+  }
+}
