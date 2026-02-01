@@ -1,0 +1,57 @@
+# Build outputs
+bin/
+obj/
+build/
+Builds/
+
+# Unity generated
+Library/
+Temp/
+Logs/
+UserSettings/
+MemoryCaptures/
+
+# Dependencies
+packages/
+node_modules/
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# Test results
+TestResults/
+coverage/
+
+# Generated files
+*.generated.cs
+*.Designer.cs
+
+# Unity meta files
+*.meta
+
+# Binary files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.mp3
+*.ogg
+*.wav
+*.mp4
+*.mov
+*.fbx
+*.blend
+
+# Lock files
+*.lock
+package-lock.json
+
+# Worktrees
+.worktrees/

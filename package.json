@@ -1,0 +1,42 @@
+{
+  "name": "cozy-fantasy-rpg",
+  "version": "0.1.0",
+  "description": "Cozy Slice-of-Life Fantasy RPG - Mobile/Web Unity Game",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "test": "dotnet test CozyFantasyRpg.slnx",
+    "lint": "npm run lint:format && npm run lint:md && npm run lint:links",
+    "lint:format": "prettier --check .",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#.worktrees\"",
+    "lint:links": "node scripts/lint-links.mjs --roots docs/design",
+    "format": "npm run format:format && npm run format:cs && npm run format:md",
+    "format:format": "prettier --write .",
+    "format:md": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#.worktrees\"",
+    "format:cs": "dotnet format .--no-restore"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "markdown-link-check": "^3.14.2",
+    "markdownlint-cli2": "^0.20.0",
+    "prettier": "^3.4.2"
+  },
+  "lint-staged": {
+    "*.cs": "dotnet format . --no-restore --include",
+    "*.md": [
+      "prettier --write",
+      "markdownlint-cli2 --fix",
+      "node scripts/check-doc-structure.mjs"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

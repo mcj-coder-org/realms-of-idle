@@ -1,0 +1,18 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https?://"
+    },
+    {
+      "pattern": "^mailto:"
+    },
+    {
+      "pattern": "^node_modules"
+    },
+    {
+      "pattern": "^\\.worktrees"
+    }
+  ],
+  "retryCount": 0,
+  "timeout": "1ms"
+}
