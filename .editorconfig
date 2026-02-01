@@ -1,0 +1,147 @@
+# EditorConfig helps maintain consistent coding styles
+# https://editorconfig.org
+
+root = true
+
+# Default settings for all files
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# C# files
+[*.cs]
+indent_size = 4
+
+# C# code style settings
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# Use 'var' when the type is apparent
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# Prefer expression-bodied members
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_constructors = false:none
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_accessors = true:suggestion
+
+# Pattern matching
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+
+# Null-checking preferences
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = true:suggestion
+
+# File-scoped namespaces
+csharp_style_namespace_declarations = file_scoped:warning
+
+# Primary constructors
+csharp_style_prefer_primary_constructors = true:suggestion
+
+# New line preferences
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+
+# Indentation preferences
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+# Space preferences
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+
+# Naming conventions
+dotnet_naming_rule.private_fields_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.private_fields_should_be_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_should_be_camel_case.style = camel_case_underscore_prefix
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_fields.required_modifiers =
+
+dotnet_naming_style.camel_case_underscore_prefix.required_prefix = _
+dotnet_naming_style.camel_case_underscore_prefix.capitalization = camel_case
+
+# .NET Analyzer severity overrides
+# These are enforced at build time via EnforceCodeStyleInBuild=true
+
+# IDE rules as warnings (enforced in build)
+dotnet_diagnostic.IDE0005.severity = warning   # Remove unnecessary using
+dotnet_diagnostic.IDE0011.severity = warning   # Add braces
+dotnet_diagnostic.IDE0040.severity = warning   # Add accessibility modifiers
+dotnet_diagnostic.IDE0055.severity = warning   # Formatting rule
+dotnet_diagnostic.IDE0060.severity = warning   # Remove unused parameter
+dotnet_diagnostic.IDE0161.severity = warning   # Use file-scoped namespace
+
+# CA rules - maintain as warnings (errors via TreatWarningsAsErrors)
+dotnet_diagnostic.CA1024.severity = warning    # Use properties where appropriate
+dotnet_diagnostic.CA1051.severity = warning    # Do not declare visible instance fields
+dotnet_diagnostic.CA1062.severity = none       # Validate arguments - nullable handles this
+dotnet_diagnostic.CA1303.severity = none       # Do not pass literals as localized - game project
+dotnet_diagnostic.CA1304.severity = none       # Specify CultureInfo - game, not business app
+dotnet_diagnostic.CA1305.severity = none       # Specify IFormatProvider - game, not business app
+dotnet_diagnostic.CA1307.severity = none       # Specify StringComparison - handled case by case
+dotnet_diagnostic.CA1310.severity = none       # Specify StringComparison for correctness
+dotnet_diagnostic.CA1707.severity = none       # Remove underscores from member names - test naming uses them
+dotnet_diagnostic.CA1711.severity = none       # Identifiers should not have incorrect suffix
+dotnet_diagnostic.CA1716.severity = none       # Identifiers should not match keywords - game domain names
+dotnet_diagnostic.CA1724.severity = none       # Type names should not match namespaces - Character, World etc are game domains
+dotnet_diagnostic.CA1812.severity = none       # Avoid uninstantiated internal classes - DI/test fixtures
+dotnet_diagnostic.CA1848.severity = none       # Use LoggerMessage delegates - not needed for simulation
+dotnet_diagnostic.CA1822.severity = none       # Member can be static - instance methods allow dependency injection and future extensibility
+dotnet_diagnostic.CA2007.severity = none       # Do not directly await a Task - no ConfigureAwait needed in game code
+dotnet_diagnostic.CA5394.severity = none       # Random is insecure - game simulation doesn't need cryptographic randomness
+dotnet_diagnostic.CA1008.severity = none       # Enums should have zero value - game enums often represent 1-based scales (Poor=1, Standard=2, etc)
+
+# Test files - xUnit requires public non-sealed classes
+[*Tests.cs]
+dotnet_diagnostic.CA1852.severity = none       # Type can be sealed - xUnit test classes must be public and non-sealed
+dotnet_diagnostic.IDE0040.severity = none      # Add accessibility modifiers - not needed for test classes
+dotnet_diagnostic.CA1515.severity = none       # Consider making types internal - xUnit test classes must be public
+# Explicitly preserve public visibility on test classes
+csharp_prefer_braces = true
+
+# JSON files
+[*.json]
+indent_size = 2
+
+# YAML files
+[*.{yml,yaml}]
+indent_size = 2
+
+# XML files
+[*.{xml,csproj,props,targets}]
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# Shell scripts
+[*.sh]
+end_of_line = lf
+
+# Windows scripts
+[*.{cmd,bat,ps1}]
+end_of_line = crlf
+
+# Unity meta files
+[*.meta]
+indent_size = 2
+
+# Unity shader files
+[*.{shader,cginc,hlsl}]
+indent_size = 4

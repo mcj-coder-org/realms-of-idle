@@ -1,0 +1,21 @@
+<!-- Directory.Build.props -->
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>14.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Suppress specific rules globally with justification -->
+    <!-- CA1014: Mark assemblies with CLSCompliant - Not needed for game/sim project -->
+    <!-- CS1591: Missing XML comment - GenerateDocumentationFile required for IDE0005, but XML docs not needed for internal game code -->
+    <NoWarn>CA1014;CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

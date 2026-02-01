@@ -1,0 +1,85 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+.gitattributes text eol=lf
+
+# Unity files
+*.cs diff=csharp text
+*.shader text
+*.cginc text
+*.hlsl text
+*.compute text
+
+# Unity YAML
+*.anim -text merge=unityyamlmerge diff
+*.asset -text merge=unityyamlmerge diff
+*.controller -text merge=unityyamlmerge diff
+*.mat -text merge=unityyamlmerge diff
+*.meta -text merge=unityyamlmerge diff
+*.physicMaterial -text merge=unityyamlmerge diff
+*.physicsMaterial2D -text merge=unityyamlmerge diff
+*.prefab -text merge=unityyamlmerge diff
+*.unity -text merge=unityyamlmerge diff
+
+# Unity binary
+*.cubemap binary
+*.unitypackage binary
+
+# Image files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.psd binary
+*.tif binary
+*.tiff binary
+*.ico binary
+*.svg text
+
+# Audio
+*.mp3 binary
+*.ogg binary
+*.wav binary
+
+# Video
+*.mp4 binary
+*.mov binary
+*.webm binary
+
+# 3D models
+*.fbx binary
+*.obj text
+*.blend binary
+*.dae text
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Documentation - enforce LF
+*.md text eol=lf diff=markdown
+*.txt text eol=lf
+*.json text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Config files - enforce LF
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.config text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+*.props text eol=lf
+*.targets text eol=lf
+
+# JavaScript/Node - enforce LF
+*.js text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
