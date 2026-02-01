@@ -1,169 +1,90 @@
 # CLAUDE.md
 
 <EXTREMELY_IMPORTANT>
+Apply during development (implementation/fixes/refactoring), not exploration.
 
-These apply during active development (implementation, fixes, refactoring), not exploration/research.
+## Git & Quality Standards
 
-## Git Workflow
+- **Issue Required**: No issue = no work
+- **Worktree Branches**: `git worktree add ../feature-42 -b feat/42-description`
+- **No Direct Commits to main**: Protected
+- **Rebase Workflow**: `git rebase main` → `git merge --ff-only` → delete worktree
+- **Conventional Commits**: Reference issue (e.g., `feat(module): description #42`)
+- **Zero Tolerance**: 0 lint issues, 0 build warnings, 0 test failures
+- **TDD First**: Tests before implementation
+- **Automate**: Never repeat manually
 
-- **ALL work MUST have a GitHub issue** - No exceptions. No issue = no work.
-- **ALWAYS use feature branches with git worktrees** - Isolates work, prevents commits to main
-  - Create worktree: `git worktree add ../feature-123 -b feature/123-description`
-  - Use branch name pattern: `type/issue-number-description` (e.g., `feat/42-add-player-inventory`)
-- **NEVER commit directly to main** - Protected by pre-commit hook
-- **ALL merges MUST use rebase** - No merge commits, linear history only
-  - Update feature branch: `git rebase main`
-  - Merge to main: `git merge --ff-only feature/123-description` (after rebase)
-  - Delete branch after merge: `git worktree remove ../feature-123`
+## Dual-Account Workflow
 
-## Code Quality
+This project uses two GitHub accounts for separation of concerns:
 
-- NEVER skip or weaken GitHooks (--no-verify requires explicit user permission); always fix root causes
-- NEVER create merge commits; use rebase for linear history, then --ff-only for merges
-- ALWAYS use Conventional Commit messages
-- ALWAYS commit after self-verification but before declaring complete (run tests/build/lint first)
-- ALWAYS treat Warnings as Errors (configure in tooling)
-  - 0 Linting Issues
-  - 0 Build Warnings
-  - 0 Commit Warnings
-  - 0 Build Errors
-  - 0 Test Failures (tests must be run)
-- ALWAYS TDD + Automated Tests First during implementation (not during planning/exploration)
-- ALWAYS automate repetitive tasks (git hooks, scripts, tools); never manual repeat
-- ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
+- **Contributor Account**: Opens PRs, implements features, fixes bugs, rebases branches
+- **Maintainer Account**: Reviews PRs, approves changes, merges via auto-merge (rebase)
+
+PRs must be opened by Contributor and approved/merged by Maintainer. Account details are stored in `CLAUDE.local.md` (never committed).
+
+**Switching Accounts**:
+
+```bash
+# Switch to contributor (for opening PRs)
+git config user.email "CONTRIBUTOR_EMAIL"
+git config user.name "CONTRIBUTOR_USERNAME"
+gh auth switch
+
+# Switch to maintainer (for reviewing/merging)
+git config user.email "MAINTAINER_EMAIL"
+git config user.name "MAINTAINER_USERNAME"
+gh auth switch --maintainer
+```
+
+See `CLAUDE.local.md` for actual account values and GitHub CLI setup.
 
 </EXTREMELY_IMPORTANT>
 
-**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+**Tradeoff:** Caution over speed. Use judgment for trivial tasks.
 
 ## 1. Think Before Coding
 
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
-
-Before implementing:
-
-- State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+State assumptions. Present alternatives for unclear requirements. Ask when uncertain.
 
 ## 2. Simplicity First
 
-**Minimum code that solves the problem. Nothing speculative.**
-
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
-
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+Minimum code. No speculative features. Single-use code needs no abstraction.
+Test: "Would a senior engineer call this overcomplicated?"
 
 ## 3. Surgical Changes
 
-**Touch only what you must. Clean up only your own mess.**
-
-When editing existing code:
-
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
-
-When your changes create orphans:
-
-- Remove imports/variables/functions that YOUR changes made unused.
-- Don't remove pre-existing dead code unless asked.
-
-The test: Every changed line should trace directly to the user's request.
+Edit only what's required. Match existing style. Clean only your own orphans.
+Test: Every changed line traces to user request.
 
 ## 4. Goal-Driven Execution
 
-**Define success criteria. Loop until verified.**
+Transform to verifiable goals:
 
-Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then pass"
+- "Fix bug" → "Write reproducing test, then pass"
 
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
-- "Refactor X" → "Ensure tests pass before and after"
+Multi-step: `1. Step → verify: check`
 
-For multi-step tasks, state a brief plan:
+## 5. GitHub Workflow (Dual-Account)
 
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-```
+1. **Maintainer** creates issue (#N)
+2. **Contributor**: `git worktree add ../feature-N -b type/N-description`
+3. **Contributor** TDD: test → implement → commit
+4. **Contributor** verify: 0 issues, 0 warnings, 0 failures
+5. **Contributor** `git rebase origin/main` → fix conflicts → re-test
+6. **Contributor** `git push` + `gh pr create`
+7. **Maintainer** reviews, approves, enables auto-merge (rebase)
+8. **Maintainer** (when checks pass): `git rebase origin/main` → `git merge --ff-only` → push
+9. **Maintainer** delete worktree + branch, close issue
 
-Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+**Branch pattern**: `type/N-description` (feat/42-inventory, fix/117-leak, docs/23-readme, refactor/88-engine)
 
-## 5. GitHub Issue Workflow
-
-**Every piece of work starts with an issue.**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    COMPLETE WORKFLOW                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│ 1. CREATE ISSUE                                            │
-│    • Use GitHub issue template if available                │
-│    • Include: Description, acceptance criteria, priority   │
-│    • Note the issue number (e.g., #42)                     │
-│                                                             │
-│ 2. CREATE FEATURE WORKTREE                                 │
-│    git worktree add ../feature-42 -b feat/42-add-login     │
-│    cd ../feature-42                                         │
-│                                                             │
-│ 3. IMPLEMENT (TDD)                                         │
-│    • Write tests first                                     │
-│    • Implement minimal code to pass                        │
-│    • Commit frequently with conventional commits           │
-│                                                             │
-│ 4. SELF-VERIFY                                             │
-│    npm run lint && npm test && dotnet build               │
-│    • 0 linting issues                                     │
-│    • 0 build warnings                                     │
-│    • 0 test failures                                      │
-│                                                             │
-│ 5. REBASE ON MAIN                                          │
-│    git fetch origin                                        │
-│    git rebase origin/main                                  │
-│    • Fix any conflicts                                     │
-│    • Re-run tests                                          │
-│                                                             │
-│ 6. PUSH & CREATE PR                                        │
-│    git push -u origin feat/42-add-login                    │
-│    gh pr create --title "feat: add login system #42"       │
-│    • Reference issue in title/description                  │
-│                                                             │
-│ 7. MERGE (after review)                                   │
-│    • In main worktree:                                     │
-│    git fetch origin                                        │
-│    git rebase origin/main                                  │
-│    git merge --ff-only feat/42-add-login                   │
-│    git push origin main                                    │
-│                                                             │
-│ 8. CLEANUP                                                 │
-│    git worktree remove ../feature-42                       │
-│    git branch -d feat/42-add-login                         │
-│    Close issue #42                                          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Branch Naming:** `type/issue-number-description`
-
-- `feat/42-add-player-inventory`
-- `fix/117-memory-leak-in-npc-simulation`
-- `docs/23-update-readme`
-- `refactor/88-extract-game-engine-interface`
-
-**Conventional Commits:** Reference the issue
+**Conventional Commits**: Reference the issue
 
 - `feat(inventory): add item storage system #42`
 - `fix(npc): resolve memory leak in simulation tick #117`
 
 ---
 
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+**Success indicators**: Minimal diffs, clarifying questions before mistakes, no rewrites from overcomplication.
