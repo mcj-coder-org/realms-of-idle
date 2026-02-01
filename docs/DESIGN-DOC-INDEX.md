@@ -1,3 +1,17 @@
+---
+type: reference
+scope: high-level
+status: approved
+version: 1.0.0
+created: 2026-02-01
+updated: 2026-02-01
+subjects:
+  - documentation
+  - index
+  - design-docs
+dependencies: []
+---
+
 # Game Design Documentation Index
 
 **Status**: WIP - Document structure audit in progress
@@ -12,9 +26,9 @@ This index tracks all game design documentation for Realms of Idle, including co
 
 ### Document Statistics
 
-- **Total Documents**: 24
-- **With Frontmatter**: 0 (24 need frontmatter added)
-- **Compliant with Standards**: 1 (1 compliant, 23 need review)
+- **Total Documents**: 27
+- **With Frontmatter**: 0 (27 need frontmatter added)
+- **Compliant with Standards**: 4 (4 compliant, 23 need review)
 - **Need Splitting**: 3 (npc-design, twi-classes, idle-game-overview)
 - **Need Consolidation**: 0
 
@@ -90,6 +104,20 @@ This index tracks all game design documentation for Realms of Idle, including co
 - ❌ No frontmatter
 - ✅ Appropriate scope and length
 
+### Playbooks (3 documents)
+
+| Document                                                                     | Type     | Scope    | Status   | Frontmatter | Compliance   | Notes   |
+| ---------------------------------------------------------------------------- | -------- | -------- | -------- | ----------- | ------------ | ------- |
+| [playbooks/branch-protection-setup.md](playbooks/branch-protection-setup.md) | playbook | detailed | approved | ❌ Missing  | ✅ Compliant | **New** |
+| [playbooks/dual-account-workflow.md](playbooks/dual-account-workflow.md)     | playbook | detailed | approved | ❌ Missing  | ✅ Compliant | **New** |
+| [playbooks/dor-dod-guide.md](playbooks/dor-dod-guide.md)                     | playbook | detailed | approved | ❌ Missing  | ✅ Compliant | **New** |
+
+**Issues**:
+
+- ❌ No frontmatter
+- ✅ Complete and actionable
+- ✅ Includes troubleshooting sections
+
 ### Analysis & Planning (2 documents)
 
 | Document                                 | Type      | Scope    | Status | Frontmatter | Compliance       | Notes |
@@ -118,7 +146,7 @@ This index tracks all game design documentation for Realms of Idle, including co
 
 ## Action Items
 
-### Priority 1: Add Frontmatter (23 documents)
+### Priority 1: Add Frontmatter (27 documents)
 
 All documents need complete frontmatter added. Template:
 
