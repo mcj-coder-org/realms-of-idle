@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  NODE_VERSION: '20'
+
 jobs:
   codeql-analysis:
     # CodeQL is GitHub's static analysis security scanning
@@ -30,16 +33,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Checkout CodeQL tools
-        uses: github/codeql-action/init@v3
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
         with:
-          languages: javascript
+          languages: javascript, typescript
 
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+        uses: github/codeql-action/autobuild@v4
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/perform-analysis@v3
+        uses: github/codeql-action/analyze@v4
         with:
           category: security
 
@@ -54,20 +57,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: true
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Run npm audit
         continue-on-error: true
-        run: npm audit --audit-level moderate || exit 0
+        run: npm audit --audit-level=high
 
   secret-scanning:
     runs-on: ubuntu-latest
@@ -85,15 +82,16 @@ jobs:
     runs-on: ubuntu-latest
     name: Dependency Review
     if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Dependency Review
-        uses: actions/github-code-scanning-action@v3
+        uses: actions/dependency-review-action@v4
         with:
-          checkout-path: ${{ github.workspace }}
-          sarif-file: 'dependency-review.sarif'
+          fail-on-severity: high
 
   codeql-analysis-python:
     # Python dependencies in future
