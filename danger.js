@@ -266,11 +266,33 @@ schedule(async () => {
     }
 
     const octokit = danger.github.api
-    const owner = danger.github.repo?.owner
-    const repo = danger.github.repo?.repo
+
+    // Try multiple ways to get repo info
+    const repoName = danger.github.thisPR ?
+      (danger.github.thisPr.repo ? danger.github.thisPr.repo[0] : null) :
+      (danger.github.repo ? danger.github.repo : null)
+
+    // Parse repository owner/name from different possible locations
+    let owner, repo
+    if (danger.github.pr && danger.github.pr.base && danger.github.pr.base.repo) {
+      const baseRepo = danger.github.pr.base.repo
+      owner = baseRepo.owner ? baseRepo.owner.login : null
+      repo = baseRepo.name
+    }
+
+    // Fallback: try parsing from HTML URL or repo name
+    if (!owner && danger.github.pr) {
+      const prUrl = danger.github.pr.html_url || ''
+      const match = prUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+      if (match) {
+        owner = match[1]
+        repo = match[2]
+      }
+    }
 
     if (!owner || !repo) {
-      warn('⚠️ Unable to determine repository owner/name. Skipping issue AC check.')
+      warn(`⚠️ Unable to determine repository owner/name. Skipping issue AC check.`)
+      message(`🔍 DEBUG: pr.base.repo=${JSON.stringify(danger.github.pr?.base?.repo)}`)
       return
     }
 
@@ -356,8 +378,24 @@ schedule(async () => {
     }
 
     const octokit = danger.github.api
-    const owner = danger.github.repo?.owner
-    const repo = danger.github.repo?.repo
+
+    // Parse repository owner/name from PR base repo
+    let owner, repo
+    if (danger.github.pr && danger.github.pr.base && danger.github.pr.base.repo) {
+      const baseRepo = danger.github.pr.base.repo
+      owner = baseRepo.owner ? baseRepo.owner.login : null
+      repo = baseRepo.name
+    }
+
+    // Fallback: try parsing from HTML URL
+    if (!owner && danger.github.pr) {
+      const prUrl = danger.github.pr.html_url || ''
+      const match = prUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+      if (match) {
+        owner = match[1]
+        repo = match[2]
+      }
+    }
 
     if (!owner || !repo) {
       warn('⚠️ Unable to determine repository owner/name. Skipping review thread check.')
