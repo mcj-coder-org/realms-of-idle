@@ -134,3 +134,4 @@ nul
 test-results/
 .claude/grepai.exe
 # Test
+.tmp/
