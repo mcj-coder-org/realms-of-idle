@@ -171,19 +171,12 @@ const dodSection = nextHeadingMatch
   ? prBody.substring(dodHeadingIndex, dodHeadingIndex + dodHeadingMatch[0].length + nextHeadingMatch.index)
   : prBody.substring(dodHeadingIndex)
 
-// Debug: Log DoD section
-message(`🔍 DEBUG: DoD found=true, length=${dodSection.length}`)
-message(`🔍 DEBUG: First 300 chars=${dodSection.substring(0, 300)}`)
-
 // Parse DoD subsections
 const acceptCriteriaSection = dodSection.match(/### Acceptance Criteria[\s\S]*?(?=###[^#]|##|$)/)
 const codeQualitySection = dodSection.match(/### Code Quality[\s\S]*?(?=###[^#]|##|$)/)
 const documentationSection = dodSection.match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
 const testingSection = dodSection.match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
 const securitySection = dodSection.match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
-
-// Debug subsections
-message(`🔍 DEBUG: AC=${!!acceptCriteriaSection}, CQ=${!!codeQualitySection}, DOC=${!!documentationSection}`)
 
 // Validate Acceptance Criteria section exists
 if (!acceptCriteriaSection) {
@@ -322,9 +315,9 @@ schedule(async () => {
 // Check 3: Brutal Critical Review shows APPROVED
 const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/)
 if (reviewSection) {
-  const isApproved = reviewSection[0].includes('**Overall Assessment**: APPROVED')
-  const needsWork = reviewSection[0].includes('**Overall Assessment**: NEEDS WORK')
-  const rejected = reviewSection[0].includes('**Overall Assessment**: REJECTED')
+  const isApproved = reviewSection[0].includes('Overall Assessment: APPROVED') || reviewSection[0].includes('**Overall Assessment**: APPROVED')
+  const needsWork = reviewSection[0].includes('Overall Assessment: NEEDS WORK') || reviewSection[0].includes('**Overall Assessment**: NEEDS WORK')
+  const rejected = reviewSection[0].includes('Overall Assessment: REJECTED') || reviewSection[0].includes('**Overall Assessment**: REJECTED')
 
   if (needsWork || rejected) {
     fail(`❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`)
