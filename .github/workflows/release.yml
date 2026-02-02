@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
 
 jobs:
   release:
@@ -36,10 +36,11 @@ jobs:
           script: |
             const { execSync } = require('child_process');
             const tagName = process.env.GITHUB_REF_NAME;
-            const [major, minor, patch] = tagName.replace('v', '').split('.');
+            const [major, minor, patch] = tagName.replace('v', '').split('.').map(Number);
 
             // Get commits since last tag
-            const commits = execSync(`git log --no-merges --oneline --reverse tags/v${major}.${minor}.${patch - 1 || 0}...${tagName}`).toString().trim();
+            const previousPatch = Math.max(0, patch - 1);
+            const commits = execSync(`git log --no-merges --oneline --reverse tags/v${major}.${minor}.${previousPatch}...${tagName}`).toString().trim();
 
             // Generate markdown
             let changelog = `## ${tagName}\n\n`;
@@ -122,12 +123,10 @@ jobs:
           script: |
             const { execSync } = require('child_process');
             const tagName = process.env.GITHUB_REF_NAME;
-            const parts = tagName.replace('v', '').split('.');
-            const major = parts[0];
-            const minor = parts[1];
+            const [major, minor] = tagName.replace('v', '').split('.').map(Number);
 
             // Create new issue template for next version
-            const nextVersion = `v${major}.${Number(minor) + 1}.0`;
+            const nextVersion = `v${major}.${minor + 1}.0`;
             const template = `## Release ${nextVersion}
 
 ### Planned Features
