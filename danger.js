@@ -109,10 +109,15 @@ if (!validBranchPattern.test(branchName)) {
 }
 
 // Check for merge conflicts
-const hasMergeConflict = danger.github.diffForFile('package.json')?.includes('<<<<<<<')
-if (hasMergeConflict) {
-  fail(`PR #${prNumber}: Merge conflicts detected in package.json. Please resolve before merging.`)
-}
+schedule(async () => {
+  const diff = await danger.git.diffForFile('package.json')
+  if (diff) {
+    const conflictMarkerPattern = /<<<<<<<|=======|>>>>>>>/
+    if (conflictMarkerPattern.test(diff.added) || conflictMarkerPattern.test(diff.diff)) {
+      fail(`PR #${prNumber}: Merge conflict markers detected in package.json. Please resolve before merging.`)
+    }
+  }
+})
 
 // Specific checks for Unity/C# project
 if (hasChangesIn(['Assets/'])) {

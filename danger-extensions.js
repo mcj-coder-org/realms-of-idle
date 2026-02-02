@@ -37,22 +37,6 @@ const countLines = (content) => {
   return content.split('\n').length
 }
 
-const countAddedLines = (filePath) => {
-  const diff = danger.github.diffForFile(filePath)
-  if (diff && diff.added) {
-    return diff.added
-  }
-  return 0
-}
-
-const countDeletedLines = (filePath) => {
-  const diff = danger.github.diffForFile(filePath)
-  if (diff && diff.removed) {
-    return diff.removed
-  }
-  return 0
-}
-
 // Code Quality Analysis
 const analyzeCodeQuality = () => {
   const issues = []
@@ -154,11 +138,10 @@ const analyzeCSharpCode = () => {
       if (asyncMatches && asyncMatches.length > 0 && !awaitMatches) {
         issues.push({
           file,
-            line: 1,
-            message: 'Async method found without await usage. Ensure proper async/await pattern.',
-            type: 'warning'
-          })
-        }
+          line: 1,
+          message: 'Async method found without await usage. Ensure proper async/await pattern.',
+          type: 'warning'
+        })
       }
 
       // Check for null checks
