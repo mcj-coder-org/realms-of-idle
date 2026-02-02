@@ -44,9 +44,9 @@ if (!hasIssueReference) {
 
 // File Change Validation
 // Check for large changes that might need review
-const totalAddedLines = danger.github.utils.fileDiffStats(modifiedFiles).added
-if (totalAddedLines > 500) {
-  warn(`PR #${prNumber}: Large change detected (${totalAddedLines} lines added). Consider breaking into smaller PRs if possible.`)
+const totalFilesChanged = modifiedFiles.length + createdFiles.length + deletedFiles.length
+if (totalFilesChanged > 20) {
+  warn(`PR #${prNumber}: Large change detected (${totalFilesChanged} files changed). Consider breaking into smaller PRs if possible.`)
 }
 
 // Check for test files when modifying source code
