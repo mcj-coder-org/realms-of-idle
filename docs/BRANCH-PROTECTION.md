@@ -80,7 +80,7 @@ Edit `.github.env` with your actual values:
 
 ```env
 REPO_OWNER=your-username
-REPO_NAME=idle-world
+REPO_NAME=realms-of-idle
 GITHUB_TOKEN=your_actual_token_here
 ```
 
