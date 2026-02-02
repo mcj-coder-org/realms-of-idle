@@ -3,9 +3,6 @@
 
 const { danger, fail, warn, message } = require('danger')
 
-// TEST: Verify file is being executed
-message('🧪 TEST: danger.js is being executed!')
-
 // Get information about the PR
 const pr = danger.github.pr
 const modifiedFiles = danger.git.modifiedFiles || []
@@ -163,12 +160,10 @@ if (!hasBrutalReview) {
 // Check 2: DoD checklist is 100% passing WITH inline evidence links
 const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/)
 
-// Debug: Use message() instead of console.log
-message(`🔍 DEBUG: PR body length=${prBody.length}, DoD section found=${!!dodSection}`)
-message(`🔍 DEBUG: First 200 chars of PR body: ${prBody.substring(0, 200)}`)
-
 if (!dodSection) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
+  // Return early to prevent null reference errors
+  return
 }
 
 // Parse DoD subsections
