@@ -428,7 +428,14 @@ A fix for issue A might:
    - [ ] Commits reference linked issue
    - [ ] Signed with correct GPG key
 
-6. **Evidence Verification**
+6. **Review Comments**
+   - [ ] All review comment threads resolved
+   - [ ] Each resolution has evidence link (commit/diff)
+   - [ ] No unresolved blocking threads
+   - [ ] Outdated threads dismissed or resolved
+   - [ ] DangerJS passes review thread check
+
+7. **Evidence Verification**
    - [ ] All claims in PR description have evidence links
    - [ ] CI logs actually show passing (not assumed)
    - [ ] Review comment replies include commit SHAs or diff links
@@ -617,7 +624,7 @@ Confirm all conditions met for auto-merge:
 - [ ] Conflicts: None (or resolved with rebase)
 - [ ] Conventional commits: All commits follow pattern
 - [ ] Issue reference: Commits reference issue #{N}
-- [ ] DangerJS: Passes (verifies Brutal Critical Review present)
+- [ ] DangerJS: Passes (verifies Brutal Critical Review present AND all review threads resolved)
 
 **When All Checks Pass**:
 
@@ -784,7 +791,52 @@ if (reviewSection) {
   }
 }
 
-// Check 4: Overall evidence link validation
+// Check 4: All review threads must be resolved
+// This requires async check via GitHub API
+schedule(async () => {
+  const prNumber = danger.github.pr.number;
+  const owner = danger.github.repo.owner;
+  const repo = danger.github.repo.repo;
+
+  try {
+    // Query for unresolved review threads
+    const query = `
+      query {
+        repository(owner: "${owner}", name: "${repo}") {
+          pullRequest(number: ${prNumber}) {
+            reviewThreads(first: 100) {
+              totalCount
+              nodes {
+                isResolved
+                isOutdated
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const result = await danger.github.api.graphql(query);
+    const threads = result.repository.pullRequest.reviewThreads;
+
+    const unresolvedCount = threads.nodes.filter(
+      thread => !thread.isResolved && !thread.isOutdated
+    ).length;
+
+    if (unresolvedCount > 0) {
+      fail(
+        `❌ ${unresolvedCount} unresolved review thread(s) found. All review comments must be resolved before merge. Use GitHub UI to review and resolve threads.`
+      );
+    }
+  } catch (error) {
+    // If API call fails, warn but don't fail
+    warn(
+      '⚠️ Unable to verify review thread status. Please manually confirm all review comments are resolved.'
+    );
+  }
+});
+
+// Check 5: Overall evidence link validation
 const evidenceLinks =
   prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [];
 if (evidenceLinks.length === 0) {
