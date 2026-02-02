@@ -330,7 +330,7 @@ const runEnhancedReview = () => {
 
   const allIssues = [...qualityIssues, ...csharpIssues, ...jsIssues, ...docIssues, ...perfIssues, ...securityIssues]
 
-  // Group issues by type
+  // Group issues by file, then by type within each file
   const issuesByFile = allIssues.reduce((acc, issue) => {
     if (!acc[issue.file]) acc[issue.file] = []
     acc[issue.file].push(issue)
