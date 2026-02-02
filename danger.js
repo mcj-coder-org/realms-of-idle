@@ -405,3 +405,6 @@ const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-or
 if (evidenceLinks.length === 0) {
   fail('❌ No evidence links found in PR description. All claims must have supporting evidence.')
 }
+
+// Load danger-extensions.js for additional code quality checks
+require('./danger-extensions.js')
