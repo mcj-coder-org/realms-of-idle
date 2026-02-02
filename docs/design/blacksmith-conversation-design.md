@@ -1,3 +1,14 @@
+---
+type: system
+scope: detailed
+status: draft
+version: 1.0.0
+created: 2026-02-02
+updated: 2026-02-02
+subjects: [conversation, npc, social]
+dependencies: []
+---
+
 # Blacksmith Conversation System Design
 
 ## Overview
@@ -10,14 +21,14 @@ This document defines the conversation structure for player interactions with a 
 
 The system tracks the following state per conversation:
 
-| State Variable | Type | Purpose |
-|----------------|------|---------|
-| `relationship` | enum | stranger / acquaintance / trusted |
-| `current_topic` | enum | none / browsing / sword_purchase / contract |
-| `contract_offered` | bool | Has the blacksmith mentioned the contract? |
-| `contract_accepted` | bool | Has the player accepted? |
-| `haggling_attempts` | int | Limits repeated price negotiation |
-| `player_gold` | int | Reference for purchase validation |
+| State Variable      | Type | Purpose                                     |
+| ------------------- | ---- | ------------------------------------------- |
+| `relationship`      | enum | stranger / acquaintance / trusted           |
+| `current_topic`     | enum | none / browsing / sword_purchase / contract |
+| `contract_offered`  | bool | Has the blacksmith mentioned the contract?  |
+| `contract_accepted` | bool | Has the player accepted?                    |
+| `haggling_attempts` | int  | Limits repeated price negotiation           |
+| `player_gold`       | int  | Reference for purchase validation           |
 
 ---
 
@@ -36,61 +47,65 @@ Not all slots required for every exchange—context determines available slots.
 ## Word Lists by Category
 
 ### Greetings / Openers
+
 Used to initiate or shift conversation tone.
 
-| Word/Phrase | Tone | Notes |
-|-------------|------|-------|
-| Hello | Neutral | |
-| Greetings | Formal | |
-| Hey | Casual | May affect disposition with formal NPCs |
-| Well met | Respectful | Cultural variation candidate |
-| I need help | Direct/Urgent | Skips pleasantries |
-| Listen | Demanding | Risk of negative response |
+| Word/Phrase | Tone          | Notes                                   |
+| ----------- | ------------- | --------------------------------------- |
+| Hello       | Neutral       |                                         |
+| Greetings   | Formal        |                                         |
+| Hey         | Casual        | May affect disposition with formal NPCs |
+| Well met    | Respectful    | Cultural variation candidate            |
+| I need help | Direct/Urgent | Skips pleasantries                      |
+| Listen      | Demanding     | Risk of negative response               |
 
 ### Intent
+
 The core action the player wants to take.
 
-| Word/Phrase | Mapped Intent |
-|-------------|---------------|
-| I want to buy | purchase |
-| Show me | browse |
-| How much for | price_check |
-| Tell me about | inquire |
-| I accept | agreement |
-| I refuse | rejection |
-| I can help with | offer_service |
+| Word/Phrase      | Mapped Intent |
+| ---------------- | ------------- |
+| I want to buy    | purchase      |
+| Show me          | browse        |
+| How much for     | price_check   |
+| Tell me about    | inquire       |
+| I accept         | agreement     |
+| I refuse         | rejection     |
+| I can help with  | offer_service |
 | What do you need | solicit_quest |
-| Farewell | exit |
-| Let me think | defer |
+| Farewell         | exit          |
+| Let me think     | defer         |
 
 ### Subjects
+
 What the intent applies to.
 
-| Word/Phrase | Category | Context-Gated? |
-|-------------|----------|----------------|
-| swords | merchandise | No |
-| your finest blade | merchandise (premium) | No |
-| something cheap | merchandise (budget) | No |
-| that one | merchandise (specific) | Requires prior browse |
-| the work | contract | Requires `contract_offered = true` |
-| the terms | contract | Requires `contract_offered = true` |
-| ore | contract_subject | Requires contract context |
-| iron | contract_subject | |
-| silver | contract_subject | |
-| supplies | contract_subject | |
-| your trade | small_talk | |
-| this town | small_talk | |
+| Word/Phrase       | Category               | Context-Gated?                     |
+| ----------------- | ---------------------- | ---------------------------------- |
+| swords            | merchandise            | No                                 |
+| your finest blade | merchandise (premium)  | No                                 |
+| something cheap   | merchandise (budget)   | No                                 |
+| that one          | merchandise (specific) | Requires prior browse              |
+| the work          | contract               | Requires `contract_offered = true` |
+| the terms         | contract               | Requires `contract_offered = true` |
+| ore               | contract_subject       | Requires contract context          |
+| iron              | contract_subject       |                                    |
+| silver            | contract_subject       |                                    |
+| supplies          | contract_subject       |                                    |
+| your trade        | small_talk             |                                    |
+| this town         | small_talk             |                                    |
 
 ### Modifiers (Optional)
+
 Adjust tone, urgency, or add conditions.
 
-| Word/Phrase | Effect |
-|-------------|--------|
-| ...please | +politeness |
-| ...now | +urgency, -politeness |
-| ...if the price is fair | Opens haggling |
-| ...for a friend | Flavour / possible discount trigger |
-| ...quietly | Implies discretion, may unlock hidden stock |
+| Word/Phrase             | Effect                                      |
+| ----------------------- | ------------------------------------------- |
+| ...please               | +politeness                                 |
+| ...now                  | +urgency, -politeness                       |
+| ...if the price is fair | Opens haggling                              |
+| ...for a friend         | Flavour / possible discount trigger         |
+| ...quietly              | Implies discretion, may unlock hidden stock |
 
 ---
 
@@ -211,37 +226,37 @@ Each response consists of:
 
 When authoring voice variants, consider:
 
-| Dimension | Dwarf | Elf | Human (varied) |
-|-----------|-------|-----|----------------|
-| Formality | Low, direct | High, measured | Varies by class |
-| Vocabulary | Trade-focused, blunt | Poetic, precise | Practical |
-| Attitude to haggling | Respects it | Finds it distasteful | Expects it |
-| Contract framing | Oath-bound, honour | Long-term arrangement | Business deal |
-| Response to rudeness | Matches energy | Cold withdrawal | Varies |
+| Dimension            | Dwarf                | Elf                   | Human (varied)  |
+| -------------------- | -------------------- | --------------------- | --------------- |
+| Formality            | Low, direct          | High, measured        | Varies by class |
+| Vocabulary           | Trade-focused, blunt | Poetic, precise       | Practical       |
+| Attitude to haggling | Respects it          | Finds it distasteful  | Expects it      |
+| Contract framing     | Oath-bound, honour   | Long-term arrangement | Business deal   |
+| Response to rudeness | Matches energy       | Cold withdrawal       | Varies          |
 
 ---
 
 ## Edge Cases to Handle
 
-| Scenario | System Response |
-|----------|-----------------|
-| Player tries to buy sword they can't afford | Blacksmith refuses; optionally hints at contract as way to earn gold |
-| Player accepts contract then asks about it again | Blacksmith reminds them of terms, delivery location |
-| Player is rude repeatedly | Disposition drops; may refuse service |
-| Player asks about contract before it's offered | Blacksmith doesn't understand / deflects; no spoilers |
-| Player leaves mid-conversation | State preserved for return |
+| Scenario                                         | System Response                                                      |
+| ------------------------------------------------ | -------------------------------------------------------------------- |
+| Player tries to buy sword they can't afford      | Blacksmith refuses; optionally hints at contract as way to earn gold |
+| Player accepts contract then asks about it again | Blacksmith reminds them of terms, delivery location                  |
+| Player is rude repeatedly                        | Disposition drops; may refuse service                                |
+| Player asks about contract before it's offered   | Blacksmith doesn't understand / deflects; no spoilers                |
+| Player leaves mid-conversation                   | State preserved for return                                           |
 
 ---
 
 ## Estimated Scale
 
-| Element | Count | Notes |
-|---------|-------|-------|
-| Player word/phrases | ~40 | Across all categories |
-| Meaningful combinations | ~150-200 | Many combinations map to same intent |
-| Unique NPC response templates | ~30-40 | Before voice variants |
-| Voice variants per template | 3-5 | Per race/culture |
-| Total authored responses | ~120-200 | Manageable for single NPC type |
+| Element                       | Count    | Notes                                |
+| ----------------------------- | -------- | ------------------------------------ |
+| Player word/phrases           | ~40      | Across all categories                |
+| Meaningful combinations       | ~150-200 | Many combinations map to same intent |
+| Unique NPC response templates | ~30-40   | Before voice variants                |
+| Voice variants per template   | 3-5      | Per race/culture                     |
+| Total authored responses      | ~120-200 | Manageable for single NPC type       |
 
 ---
 

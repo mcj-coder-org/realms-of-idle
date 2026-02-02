@@ -1,4 +1,16 @@
+---
+type: system
+scope: detailed
+status: draft
+version: 1.0.0
+created: 2026-02-02
+updated: 2026-02-02
+subjects: [taxonomy, progression, classes]
+dependencies: []
+---
+
 # Tag Taxonomy Gap Analysis
+
 ## Identified Gaps & D&D-Inspired Additions
 
 ---
@@ -7,45 +19,46 @@
 
 ### Coverage Assessment by Domain
 
-| Domain | TWI Coverage | Gaps Identified | Priority |
-|--------|--------------|-----------------|----------|
-| `combat.melee` | Strong | Grappling, reach weapons | Medium |
-| `combat.ranged` | Moderate | Firearms, siege, thrown mastery | High |
-| `combat.defense` | Strong | Reaction-based, magical defense | Low |
-| `combat.tactical` | Moderate | Stealth tactics, naval | High |
-| `craft.alchemy` | Strong | Artifice, rune-crafting | Medium |
-| `craft.smithing` | Strong | Tinkering, clockwork | Medium |
-| `craft.cooking` | Strong | Brewing distinction | Low |
-| `craft.textile` | Weak | Full tree underdeveloped | High |
-| `craft.construction` | Moderate | Traps, mechanisms | Medium |
-| `gather.mining` | Strong | - | Low |
-| `gather.herbalism` | Strong | Fungi specialization | Low |
-| `gather.hunting` | Strong | Monster specialization | Medium |
-| `gather.logging` | Weak | Full tree underdeveloped | High |
-| `gather.fishing` | Weak | Full tree underdeveloped | High |
-| `gather.farming` | Missing | Entire subtree needed | Critical |
-| `magic.elemental` | Strong | Sound, gravity, void | Medium |
-| `magic.restoration` | Moderate | Resurrection, limb regrowth | Medium |
-| `magic.arcane` | Strong | Illusion specialization | Medium |
-| `magic.summoning` | Moderate | Planar, construct types | High |
-| `magic.death` | Moderate | Soul magic, curses | Medium |
-| `magic.nature` | Weak | Full tree needed | Critical |
-| `magic.divine` | Missing | Entire domain needed | Critical |
-| `social.trade` | Strong | Auction, contracts | Low |
-| `social.diplomacy` | Strong | Deception specialization | Medium |
-| `social.leadership` | Strong | Inspiration mechanics | Low |
-| `social.performance` | Weak | Full tree needed | High |
-| `social.reputation` | Moderate | Infamy mechanics | Medium |
-| `utility.exploration` | Moderate | Climbing, swimming, survival | High |
-| `utility.stealth` | Moderate | Disguise, forgery | Medium |
-| `utility.knowledge` | Weak | Research, crafting lore | High |
-| `utility.service` | Moderate | More service types | Medium |
+| Domain                | TWI Coverage | Gaps Identified                 | Priority |
+| --------------------- | ------------ | ------------------------------- | -------- |
+| `combat.melee`        | Strong       | Grappling, reach weapons        | Medium   |
+| `combat.ranged`       | Moderate     | Firearms, siege, thrown mastery | High     |
+| `combat.defense`      | Strong       | Reaction-based, magical defense | Low      |
+| `combat.tactical`     | Moderate     | Stealth tactics, naval          | High     |
+| `craft.alchemy`       | Strong       | Artifice, rune-crafting         | Medium   |
+| `craft.smithing`      | Strong       | Tinkering, clockwork            | Medium   |
+| `craft.cooking`       | Strong       | Brewing distinction             | Low      |
+| `craft.textile`       | Weak         | Full tree underdeveloped        | High     |
+| `craft.construction`  | Moderate     | Traps, mechanisms               | Medium   |
+| `gather.mining`       | Strong       | -                               | Low      |
+| `gather.herbalism`    | Strong       | Fungi specialization            | Low      |
+| `gather.hunting`      | Strong       | Monster specialization          | Medium   |
+| `gather.logging`      | Weak         | Full tree underdeveloped        | High     |
+| `gather.fishing`      | Weak         | Full tree underdeveloped        | High     |
+| `gather.farming`      | Missing      | Entire subtree needed           | Critical |
+| `magic.elemental`     | Strong       | Sound, gravity, void            | Medium   |
+| `magic.restoration`   | Moderate     | Resurrection, limb regrowth     | Medium   |
+| `magic.arcane`        | Strong       | Illusion specialization         | Medium   |
+| `magic.summoning`     | Moderate     | Planar, construct types         | High     |
+| `magic.death`         | Moderate     | Soul magic, curses              | Medium   |
+| `magic.nature`        | Weak         | Full tree needed                | Critical |
+| `magic.divine`        | Missing      | Entire domain needed            | Critical |
+| `social.trade`        | Strong       | Auction, contracts              | Low      |
+| `social.diplomacy`    | Strong       | Deception specialization        | Medium   |
+| `social.leadership`   | Strong       | Inspiration mechanics           | Low      |
+| `social.performance`  | Weak         | Full tree needed                | High     |
+| `social.reputation`   | Moderate     | Infamy mechanics                | Medium   |
+| `utility.exploration` | Moderate     | Climbing, swimming, survival    | High     |
+| `utility.stealth`     | Moderate     | Disguise, forgery               | Medium   |
+| `utility.knowledge`   | Weak         | Research, crafting lore         | High     |
+| `utility.service`     | Moderate     | More service types              | Medium   |
 
 ---
 
 ## 2. Critical Missing Subtrees
 
 ### 2.1 `gather.farming` — NEW DOMAIN
+
 ```
 gather.farming
   ├─ crops
@@ -63,6 +76,7 @@ gather.farming
 ```
 
 ### 2.2 `magic.nature` — EXPANDED
+
 ```
 magic.nature
   ├─ growth
@@ -83,6 +97,7 @@ magic.nature
 ```
 
 ### 2.3 `magic.divine` — NEW DOMAIN
+
 ```
 magic.divine
   ├─ blessing
@@ -100,6 +115,7 @@ magic.divine
 ```
 
 ### 2.4 `social.performance` — EXPANDED
+
 ```
 social.performance
   ├─ music
@@ -120,6 +136,7 @@ social.performance
 ```
 
 ### 2.5 `utility.knowledge` — EXPANDED
+
 ```
 utility.knowledge → knowledge (promoted to domain)
   ├─ lore
@@ -358,24 +375,24 @@ utility.knowledge → knowledge (promoted to domain)
     magic.divine: 100
     combat.melee: 75
   type: Active
-  effect: "Add divine damage to weapon attack vs evil creatures"
-  source: "D&D Paladin"
+  effect: 'Add divine damage to weapon attack vs evil creatures'
+  source: 'D&D Paladin'
 
 [Turn Undead]:
   tags: [magic.divine.smite.undead]
   tag_requirements:
     magic.divine: 75
   type: Active
-  effect: "Force undead to flee or be destroyed"
-  source: "D&D Cleric"
+  effect: 'Force undead to flee or be destroyed'
+  source: 'D&D Cleric'
 
 [Divine Favor]:
   tags: [magic.divine.blessing]
   tag_requirements:
     magic.divine: 50
   type: Active (Buff)
-  effect: "Bless self or ally with combat bonuses"
-  source: "D&D Cleric"
+  effect: 'Bless self or ally with combat bonuses'
+  source: 'D&D Cleric'
 
 [Lay on Hands]:
   tags: [magic.divine.healing.touch]
@@ -383,16 +400,16 @@ utility.knowledge → knowledge (promoted to domain)
     magic.divine: 75
     magic.restoration.healing: 50
   type: Active
-  effect: "Heal through touch using divine power pool"
-  source: "D&D Paladin"
+  effect: 'Heal through touch using divine power pool'
+  source: 'D&D Paladin'
 
 [Aura of Protection]:
   tags: [magic.divine.blessing.aura]
   tag_requirements:
     magic.divine: 200
   type: Passive (Aura)
-  effect: "Allies near you gain saving throw bonuses"
-  source: "D&D Paladin"
+  effect: 'Allies near you gain saving throw bonuses'
+  source: 'D&D Paladin'
 ```
 
 ### 4.2 Nature/Druid Skills
@@ -403,32 +420,32 @@ utility.knowledge → knowledge (promoted to domain)
   tag_requirements:
     magic.nature: 150
   type: Active
-  effect: "Transform into beast form"
-  source: "D&D Druid"
+  effect: 'Transform into beast form'
+  source: 'D&D Druid'
 
 [Speak with Animals]:
   tags: [magic.nature.beast.speak]
   tag_requirements:
     magic.nature: 50
   type: Active
-  effect: "Communicate with beasts"
-  source: "D&D Druid/Ranger"
+  effect: 'Communicate with beasts'
+  source: 'D&D Druid/Ranger'
 
 [Entangle]:
   tags: [magic.nature.growth.entangle]
   tag_requirements:
     magic.nature.growth: 75
   type: Active
-  effect: "Cause plants to restrain creatures in area"
-  source: "D&D Druid"
+  effect: 'Cause plants to restrain creatures in area'
+  source: 'D&D Druid'
 
 [Call Lightning]:
   tags: [magic.nature.weather.storm]
   tag_requirements:
     magic.nature.weather: 150
   type: Active
-  effect: "Summon storm and call down lightning bolts"
-  source: "D&D Druid"
+  effect: 'Summon storm and call down lightning bolts'
+  source: 'D&D Druid'
 
 [Animal Companion]:
   tags: [magic.nature.beast.bond]
@@ -436,8 +453,8 @@ utility.knowledge → knowledge (promoted to domain)
     magic.nature.beast: 100
     gather.hunting: 75
   type: Passive
-  effect: "Bond with beast that fights alongside you"
-  source: "D&D Ranger"
+  effect: 'Bond with beast that fights alongside you'
+  source: 'D&D Ranger'
 ```
 
 ### 4.3 Rogue/Stealth Skills
@@ -449,40 +466,40 @@ utility.knowledge → knowledge (promoted to domain)
     utility.stealth: 100
     combat.melee: 75
   type: Conditional
-  effect: "Massive bonus damage when striking unaware foes"
-  source: "D&D Rogue"
+  effect: 'Massive bonus damage when striking unaware foes'
+  source: 'D&D Rogue'
 
 [Cunning Action]:
   tags: [utility.stealth.technique, combat.defense.evasion]
   tag_requirements:
     utility.stealth: 75
   type: Passive
-  effect: "Hide, dash, or disengage as bonus action"
-  source: "D&D Rogue"
+  effect: 'Hide, dash, or disengage as bonus action'
+  source: 'D&D Rogue'
 
 [Evasion]:
   tags: [combat.defense.evasion.reflex]
   tag_requirements:
     combat.defense.evasion: 150
   type: Passive
-  effect: "Take no damage on successful dodge of AoE"
-  source: "D&D Rogue/Monk"
+  effect: 'Take no damage on successful dodge of AoE'
+  source: 'D&D Rogue/Monk'
 
 [Uncanny Dodge]:
   tags: [combat.defense.evasion.reaction]
   tag_requirements:
     combat.defense.evasion: 125
   type: Conditional
-  effect: "Halve damage from attack you can see"
-  source: "D&D Rogue"
+  effect: 'Halve damage from attack you can see'
+  source: 'D&D Rogue'
 
 [Reliable Talent]:
   tags: [utility.*.mastery]
   tag_requirements:
     utility.*: 250
   type: Passive
-  effect: "Cannot roll below 10 on proficient skills"
-  source: "D&D Rogue"
+  effect: 'Cannot roll below 10 on proficient skills'
+  source: 'D&D Rogue'
 ```
 
 ### 4.4 Artificer/Crafting Skills
@@ -494,8 +511,8 @@ utility.knowledge → knowledge (promoted to domain)
     magic.arcane.enchant: 100
     craft.*: 100
   type: Active
-  effect: "Temporarily enchant mundane items"
-  source: "D&D Artificer"
+  effect: 'Temporarily enchant mundane items'
+  source: 'D&D Artificer'
 
 [Construct Homunculus]:
   tags: [magic.summoning.construct, craft.construction.mechanism]
@@ -503,24 +520,24 @@ utility.knowledge → knowledge (promoted to domain)
     magic.summoning.construct: 100
     craft.construction.mechanism: 100
   type: Active
-  effect: "Create small construct servant"
-  source: "D&D Artificer"
+  effect: 'Create small construct servant'
+  source: 'D&D Artificer'
 
 [Trap Mastery]:
   tags: [craft.construction.trap]
   tag_requirements:
     craft.construction.trap: 100
   type: Passive
-  effect: "Create and detect traps with expertise"
-  source: "D&D Rogue/Artificer"
+  effect: 'Create and detect traps with expertise'
+  source: 'D&D Rogue/Artificer'
 
 [Clockwork Precision]:
   tags: [craft.construction.mechanism.clockwork]
   tag_requirements:
     craft.construction.mechanism: 150
   type: Passive
-  effect: "Crafted mechanisms are more reliable and precise"
-  source: "Tinkerer archetype"
+  effect: 'Crafted mechanisms are more reliable and precise'
+  source: 'Tinkerer archetype'
 ```
 
 ### 4.5 Warlock/Pact Skills
@@ -531,16 +548,16 @@ utility.knowledge → knowledge (promoted to domain)
   tag_requirements:
     magic.pact: 50
   type: Active
-  effect: "Force damage cantrip that scales with level"
-  source: "D&D Warlock"
+  effect: 'Force damage cantrip that scales with level'
+  source: 'D&D Warlock'
 
 [Pact Boon]:
   tags: [magic.pact.boon]
   tag_requirements:
     magic.pact: 100
   type: Passive
-  effect: "Gain pact weapon, familiar, or tome from patron"
-  source: "D&D Warlock"
+  effect: 'Gain pact weapon, familiar, or tome from patron'
+  source: 'D&D Warlock'
 
 [Dark One's Blessing]:
   tags: [magic.pact.fiend]
@@ -548,16 +565,16 @@ utility.knowledge → knowledge (promoted to domain)
     magic.pact: 100
     magic.pact.fiend: 75
   type: Conditional
-  effect: "Gain temporary HP when reducing enemy to 0 HP"
-  source: "D&D Warlock Fiend Patron"
+  effect: 'Gain temporary HP when reducing enemy to 0 HP'
+  source: 'D&D Warlock Fiend Patron'
 
 [Hexblade's Curse]:
   tags: [magic.pact.curse]
   tag_requirements:
     magic.pact: 100
   type: Active
-  effect: "Curse target for bonus damage and crit chance"
-  source: "D&D Warlock Hexblade"
+  effect: 'Curse target for bonus damage and crit chance'
+  source: 'D&D Warlock Hexblade'
 ```
 
 ---
@@ -565,6 +582,7 @@ utility.knowledge → knowledge (promoted to domain)
 ## 5. New Tag Subtrees Required
 
 ### 5.1 `magic.pact` — NEW
+
 ```
 magic.pact
   ├─ fiend
@@ -581,6 +599,7 @@ magic.pact
 ```
 
 ### 5.2 `magic.arcane.illusion` — EXPANDED
+
 ```
 magic.arcane.illusion
   ├─ visual
@@ -598,6 +617,7 @@ magic.arcane.illusion
 ```
 
 ### 5.3 `craft.construction` — EXPANDED
+
 ```
 craft.construction
   ├─ building
@@ -618,6 +638,7 @@ craft.construction
 ```
 
 ### 5.4 `utility.exploration` — EXPANDED
+
 ```
 utility.exploration
   ├─ travel
@@ -645,24 +666,28 @@ utility.exploration
 ## 6. Implementation Priority
 
 ### Phase 1 (Critical)
+
 1. Add `gather.farming` domain with full subtree
 2. Add `magic.divine` domain with full subtree
 3. Expand `magic.nature` fully
 4. Add [Cleric], [Paladin], [Ranger], [Barbarian] classes
 
 ### Phase 2 (High)
+
 1. Expand `social.performance` fully
 2. Expand `utility.exploration` fully
 3. Add `magic.pact` domain
 4. Add [Warlock], [Monk], [Artificer], [Rogue] classes
 
 ### Phase 3 (Medium)
+
 1. Expand `craft.construction` with mechanisms
 2. Expand `magic.arcane.illusion`
 3. Add [Sorcerer], [Illusionist], [Warlord] classes
 4. Add all divine and nature skills
 
 ### Phase 4 (Polish)
+
 1. Fill remaining gathering subtrees
 2. Add specialized evolution paths
 3. Balance pass on all tag requirements
@@ -670,4 +695,4 @@ utility.exploration
 
 ---
 
-*Document Version 1.0 — Gap Analysis Complete*
+_Document Version 1.0 — Gap Analysis Complete_

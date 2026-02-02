@@ -1,4 +1,16 @@
+---
+type: reference
+scope: high-level
+status: draft
+version: 1.0.0
+created: 2026-02-02
+updated: 2026-02-02
+subjects: [gdd, game-design-document, classes, levels]
+dependencies: []
+---
+
 # Idle Worlds: A Class-Based Idle MMORPG
+
 ## Game Design Document v1.0
 
 ### 5.5 Recipes & Spells
@@ -6,9 +18,10 @@
 Recipes and Spells follow the same tag-based system for discovery and eligibility.
 
 **Recipe Structure:**
+
 ```yaml
 [Minor Healing Potion]:
-  tags: 
+  tags:
     - craft.alchemy.potion.healing
     - magic.restoration.healing
   unlock_requirements:
@@ -17,7 +30,7 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
   ingredients:
     - Moonpetal (gather.herbalism.flower.moonpetal)
     - Spring Water (gather.fishing.freshwater)
-  crafting_tags_gained:           # Building XP while crafting
+  crafting_tags_gained: # Building XP while crafting
     - craft.alchemy.potion: +3
     - craft.alchemy.potion.healing: +2
 
@@ -37,13 +50,14 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
 ```
 
 **Spell Structure:**
+
 ```yaml
 [Fireball]:
   tags:
     - magic.elemental.fire.aoe
   unlock_requirements:
     - magic.elemental.fire: 150
-    - magic.elemental.fire.bolt: 75   # Must master basic first
+    - magic.elemental.fire.bolt: 75 # Must master basic first
   cast_tags_gained:
     - magic.elemental.fire: +2
     - magic.elemental.fire.aoe: +3
@@ -61,6 +75,7 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
 ```
 
 **Discovery Mechanics:**
+
 - Recipes/Spells enter the "discoverable pool" when tag requirements approach threshold
 - Discovery happens through: experimentation, NPC teachers, loot drops, player trading
 - Higher tag affinity = higher discovery chance from random sources
@@ -69,7 +84,7 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
 
 ## 1. Executive Summary
 
-**Idle Worlds** is a persistent multiplayer idle RPG inspired by organic class/skill progression systems like those in *The Wandering Inn*. Players don't choose classes—they *earn* them through their actions. The idle mechanics simulate a character living their life, gaining experience through meaningful activity, and growing in unexpected directions based on player choices and emergent gameplay.
+**Idle Worlds** is a persistent multiplayer idle RPG inspired by organic class/skill progression systems like those in _The Wandering Inn_. Players don't choose classes—they _earn_ them through their actions. The idle mechanics simulate a character living their life, gaining experience through meaningful activity, and growing in unexpected directions based on player choices and emergent gameplay.
 
 **Core Fantasy:** You are not the hero yet. You are a person in a living world, and what you become depends entirely on what you do.
 
@@ -77,13 +92,13 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
 
 ## 2. Core Design Pillars
 
-| Pillar | Description |
-|--------|-------------|
-| **Emergent Identity** | Classes are discovered, not selected. Players shape who they become. |
-| **Meaningful Idling** | Time spent offline matters, but *how* you set up your idle loops determines growth. |
-| **Social Ecosystem** | Players form an interconnected economy where [Blacksmiths] need [Miners] need [Merchants]. |
-| **Horizontal Depth** | Multi-classing is viable but comes with trade-offs. Specialists and generalists both have value. |
-| **Milestone Moments** | Level-ups feel significant. Skill acquisitions are memorable events, not stat noise. |
+| Pillar                | Description                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| **Emergent Identity** | Classes are discovered, not selected. Players shape who they become.                             |
+| **Meaningful Idling** | Time spent offline matters, but _how_ you set up your idle loops determines growth.              |
+| **Social Ecosystem**  | Players form an interconnected economy where [Blacksmiths] need [Miners] need [Merchants].       |
+| **Horizontal Depth**  | Multi-classing is viable but comes with trade-offs. Specialists and generalists both have value. |
+| **Milestone Moments** | Level-ups feel significant. Skill acquisitions are memorable events, not stat noise.             |
 
 ---
 
@@ -202,13 +217,13 @@ utility
 
 ### 3.3 Tag Applications
 
-| Entity | Tag Usage |
-|--------|-----------|
-| **Actions** | Each action has 1-4 tags describing what it is |
+| Entity      | Tag Usage                                                    |
+| ----------- | ------------------------------------------------------------ |
+| **Actions** | Each action has 1-4 tags describing what it is               |
 | **Classes** | Define required tag affinities for acquisition and evolution |
-| **Skills** | Specify tag prerequisites and the tags they enhance |
-| **Recipes** | Categorize by craft type and unlock requirements |
-| **Spells** | Categorize by magic school and technique |
+| **Skills**  | Specify tag prerequisites and the tags they enhance          |
+| **Recipes** | Categorize by craft type and unlock requirements             |
+| **Spells**  | Categorize by magic school and technique                     |
 
 ### 3.4 Tag Affinity Tracking
 
@@ -242,12 +257,12 @@ Each class defines minimum tag affinity thresholds:
 ```yaml
 [Herbalist]:
   required_tags:
-    - gather.herbalism: 100        # Primary requirement
-  supporting_tags:                  # Boost acquisition speed
+    - gather.herbalism: 100 # Primary requirement
+  supporting_tags: # Boost acquisition speed
     - craft.alchemy: 50
     - knowledge.identify: 25
-  excluding_tags:                   # Delay/prevent if too high
-    - combat.*: < 200              # Not primarily a fighter
+  excluding_tags: # Delay/prevent if too high
+    - combat.*: < 200 # Not primarily a fighter
 
 [Warrior]:
   required_tags:
@@ -258,6 +273,7 @@ Each class defines minimum tag affinity thresholds:
 ```
 
 **Acquisition Flow:**
+
 ```
 Player spends first 2 hours:
   → Gathers herbs (67 actions)
@@ -276,21 +292,21 @@ Player spends first 2 hours:
 [REST CYCLE - Tag Affinity Check]
   gather.herbalism: 134 ✓ (threshold: 100)
   craft.alchemy: 21 (supporting)
-  
+
 "You have gained the class: [Herbalist] - Level 1"
 "You have gained the skill: [Green Thumb]"
 ```
 
 ### 4.2 Class Categories & Primary Tags
 
-| Category | Example Classes | Primary Tag Domain |
-|----------|-----------------|-------------------|
-| **Combat** | [Warrior], [Archer], [Duelist], [Guardian] | `combat.*` |
-| **Craft** | [Blacksmith], [Alchemist], [Weaver], [Chef] | `craft.*` |
-| **Gather** | [Miner], [Herbalist], [Hunter], [Fisher] | `gather.*` |
-| **Social** | [Merchant], [Diplomat], [Bard], [Leader] | `social.*` |
-| **Magic** | [Mage], [Healer], [Enchanter], [Summoner] | `magic.*` |
-| **Utility** | [Scout], [Innkeeper], [Courier], [Scribe] | `utility.*` |
+| Category    | Example Classes                             | Primary Tag Domain |
+| ----------- | ------------------------------------------- | ------------------ |
+| **Combat**  | [Warrior], [Archer], [Duelist], [Guardian]  | `combat.*`         |
+| **Craft**   | [Blacksmith], [Alchemist], [Weaver], [Chef] | `craft.*`          |
+| **Gather**  | [Miner], [Herbalist], [Hunter], [Fisher]    | `gather.*`         |
+| **Social**  | [Merchant], [Diplomat], [Bard], [Leader]    | `social.*`         |
+| **Magic**   | [Mage], [Healer], [Enchanter], [Summoner]   | `magic.*`          |
+| **Utility** | [Scout], [Innkeeper], [Courier], [Scribe]   | `utility.*`        |
 
 ### 4.3 Class Evolution
 
@@ -304,16 +320,16 @@ Classes evolve at milestone levels (10, 20, 30, 40, 50, 60) based on **tag affin
 [Blade Dancer]:
   condition: combat.melee.sword > 60% of combat.melee.*
              combat.defense.evasion > combat.defense.shield
-  
+
 [Shield Bearer]:
   condition: combat.defense.shield > 40% of combat.*
              combat.tactical.group > combat.tactical.solo
-  
+
 [Berserker]:
   condition: combat.melee.*.cleave high
              combat.defense.* < 20% of combat.*
              combat.tactical.solo > combat.tactical.group
-  
+
 [Mercenary]:
   condition: social.trade.* > 50
              combat.melee.* diverse (3+ weapon types)
@@ -321,6 +337,7 @@ Classes evolve at milestone levels (10, 20, 30, 40, 50, 60) based on **tag affin
 ```
 
 **Example Evolution Paths for [Warrior]:**
+
 ```
 [Warrior] Lv.10 →
   ├─ [Blade Dancer]    (sword-focused + evasion)
@@ -333,15 +350,16 @@ Classes evolve at milestone levels (10, 20, 30, 40, 50, 60) based on **tag affin
 
 Players may hold up to **3 active classes**. Additional classes beyond the first split incoming experience.
 
-| Active Classes | XP Distribution |
-|----------------|-----------------|
-| 1 Class | 100% to primary |
-| 2 Classes | 60% / 40% (player assigns) |
-| 3 Classes | 50% / 30% / 20% (player assigns) |
+| Active Classes | XP Distribution                  |
+| -------------- | -------------------------------- |
+| 1 Class        | 100% to primary                  |
+| 2 Classes      | 60% / 40% (player assigns)       |
+| 3 Classes      | 50% / 30% / 20% (player assigns) |
 
 **Tag-Based XP Routing:** Actions automatically contribute XP to classes whose tag requirements they match. A `craft.smithing.weapon.forge` action contributes to both [Blacksmith] and [Warrior] if both are held.
 
 **Class Synergy Bonuses:** Certain tag overlaps between classes unlock unique hybrid skills.
+
 - [Chef] + [Alchemist] → Shared `craft.*.infuse` tags → Unlocks [Culinary Potions]
 - [Warrior] + [Merchant] → Shared `social.trade` + `combat` → Unlocks [Caravan Guard]
 - [Miner] + [Blacksmith] → Shared `gather.mining.ore` + `craft.smithing` → Unlocks [Material Intuition]
@@ -376,7 +394,7 @@ Each skill defines tag prerequisites that must be met for eligibility:
     - gather.mining.ore.rare: 3x  # More likely if mining rare ores
   tags_granted:
     - gather.mining.detect
-    
+
 [Bulk Discount]:
   class_requirement: [Merchant] or social.trade >= 250
   tag_requirements:
@@ -389,17 +407,18 @@ Each skill defines tag prerequisites that must be met for eligibility:
 ```
 
 **Skill Selection Algorithm:**
+
 ```
 On Level Up:
   1. Build eligible skill pool:
      - Filter by class requirements (if any)
      - Filter by minimum tag requirements
-     
+
   2. Weight eligible skills:
      - Apply tag_weights based on player affinity
      - Apply recency bonus (last 50 actions)
      - Apply rarity roll modified by level
-     
+
   3. Select skill(s):
      - Standard level: 1 skill (weighted random)
      - Milestone level: 2-3 choices offered to player
@@ -408,39 +427,43 @@ On Level Up:
 ### 5.2 Skill Categories
 
 **Passive Skills** — Always active, provide constant benefits
+
 - [Green Thumb] — `gather.herbalism.*` +10% quality
 - [Iron Skin] — `combat.defense.*` damage reduced by 3%
 - [Merchant's Eye] — `social.trade.appraise` reveals hidden values
 
 **Active Skills** — Triggered manually or via automation rules, have cooldowns
+
 - [Power Strike] — `combat.melee.technique.power` 200% damage, 30s CD
 - [Quick Brew] — `craft.alchemy.technique.instant` complete one potion, 10m CD
 - [Recall] — `utility.exploration.travel.teleport` return to bind, 1h CD
 
 **Conditional Skills** — Trigger automatically when conditions are met
+
 - [Second Wind] — `combat.defense.recovery` restore 30% HP below 10%
 - [Lucky Find] — `gather.*.technique.fortune` 5% double resources
 - [Barter] — `social.trade.negotiate.auto` counter-offer on bad prices
 
 ### 4.3 Skill Rarity Tiers
 
-| Tier | Bracket Color | Acquisition Rate | Power Level |
-|------|---------------|------------------|-------------|
-| Common | White | 70% | Minor utility |
-| Uncommon | Green | 20% | Notable advantage |
-| Rare | Blue | 7% | Build-defining |
-| Epic | Purple | 2.5% | Class-defining |
-| Legendary | Gold | 0.5% | World-notable |
+| Tier      | Bracket Color | Acquisition Rate | Power Level       |
+| --------- | ------------- | ---------------- | ----------------- |
+| Common    | White         | 70%              | Minor utility     |
+| Uncommon  | Green         | 20%              | Notable advantage |
+| Rare      | Blue          | 7%               | Build-defining    |
+| Epic      | Purple        | 2.5%             | Class-defining    |
+| Legendary | Gold          | 0.5%             | World-notable     |
 
 ### 4.4 Signature Skills
 
 At milestone levels (10, 20, 30, etc.), players may receive a **Signature Skill** unique to their specific journey. These are procedurally named based on the player's history.
 
 **Example:**
+
 > Player "Thornwood" has primarily gathered nightshade, operated at night, and avoided combat.
-> 
+>
 > **Signature Skill Granted:** [Thornwood's Midnight Harvest]
-> *"Gathering at night yields +50% rare herbs. You are invisible to hostile creatures while gathering."*
+> _"Gathering at night yields +50% rare herbs. You are invisible to hostile creatures while gathering."_
 
 ---
 
@@ -451,6 +474,7 @@ At milestone levels (10, 20, 30, etc.), players may receive a **Signature Skill*
 Players configure **Activity Loops** that execute while offline or idle. Loops consist of prioritized action queues.
 
 **Loop Builder Interface:**
+
 ```
 ACTIVITY LOOP: "Herb Farm Route"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -472,13 +496,15 @@ LOOP SETTINGS:
 Pure repetitive idling has **diminishing returns** to prevent pure AFK grinding from outpacing engaged play.
 
 **Diminishing Returns Curve:**
+
 - Hours 1-4: 100% efficiency
-- Hours 4-8: 75% efficiency  
+- Hours 4-8: 75% efficiency
 - Hours 8-16: 50% efficiency
 - Hours 16-24: 25% efficiency
 - 24+ hours: 10% efficiency (maintenance mode)
 
 **Resetting Efficiency:**
+
 - Logging in and taking manual actions
 - Changing activity loop
 - Completing a significant milestone
@@ -489,6 +515,7 @@ Pure repetitive idling has **diminishing returns** to prevent pure AFK grinding 
 Rest is mandatory for class/skill acquisition and provides bonuses.
 
 **Rest Mechanics:**
+
 - Characters must rest 10 minutes per 4 hours of activity
 - Rest can be queued in activity loops
 - Level-ups and class grants occur during rest
@@ -500,20 +527,21 @@ Rest is mandatory for class/skill acquisition and provides bonuses.
 
 ### 7.1 Level Ranges
 
-| Level Range | Population % | Description |
-|-------------|--------------|-------------|
-| 1-10 | 60% | Beginners and casual players |
-| 11-25 | 25% | Dedicated players, competent professionals |
-| 26-40 | 10% | Veterans, server-notable figures |
-| 41-50 | 4% | Elite, regional influence |
-| 51-60 | 0.9% | Legendary, world events |
-| 61+ | 0.1% | Mythic, permanent server impact |
+| Level Range | Population % | Description                                |
+| ----------- | ------------ | ------------------------------------------ |
+| 1-10        | 60%          | Beginners and casual players               |
+| 11-25       | 25%          | Dedicated players, competent professionals |
+| 26-40       | 10%          | Veterans, server-notable figures           |
+| 41-50       | 4%           | Elite, regional influence                  |
+| 51-60       | 0.9%         | Legendary, world events                    |
+| 61+         | 0.1%         | Mythic, permanent server impact            |
 
 ### 7.2 XP Curve Philosophy
 
 Early levels come quickly to hook players. Mid-levels require genuine engagement. High levels demand exceptional dedication or achievement.
 
 **XP Required Formula:**
+
 ```
 Base XP = 100 × (Level ^ 1.5)
 Milestone Modifier = ×2 at levels 10, 20, 30, 40, 50, 60
@@ -523,6 +551,7 @@ Achievement Shortcuts = Major accomplishments grant level progress directly
 ### 7.3 Catch-Up Mechanics
 
 To prevent insurmountable gaps in a living MMO:
+
 - **Mentorship XP:** Lower-level players in parties with veterans gain bonus XP
 - **Era Skills:** New players gain access to skills that help them engage with current content
 - **Economic Mobility:** Crafting/gathering remains valuable regardless of combat level
@@ -536,6 +565,7 @@ To prevent insurmountable gaps in a living MMO:
 Player actions generate **Reputation** with factions, settlements, and the general populace. High reputation unlocks titles that function as pseudo-classes.
 
 **Example Titles:**
+
 - [Friend of Millbrook] — Discounts in Millbrook, access to village quests
 - [The Generous] — Earned by significant charitable actions, +social skill efficacy
 - [Oathbreaker] — Earned by betraying contracts, restricted from certain classes
@@ -544,11 +574,11 @@ Player actions generate **Reputation** with factions, settlements, and the gener
 
 Certain actions grant **Red Classes** that carry social consequences.
 
-| Red Class | Acquisition | Consequence |
-|-----------|-------------|-------------|
-| [Thief] | Stealing from players/NPCs | Visible to [Merchant] class, banned from guilds |
-| [Murderer] | PKing non-hostile players | Bounty system activation, NPC hostility |
-| [Swindler] | Fraudulent trades | Trade restrictions, reputation damage |
+| Red Class  | Acquisition                | Consequence                                     |
+| ---------- | -------------------------- | ----------------------------------------------- |
+| [Thief]    | Stealing from players/NPCs | Visible to [Merchant] class, banned from guilds |
+| [Murderer] | PKing non-hostile players  | Bounty system activation, NPC hostility         |
+| [Swindler] | Fraudulent trades          | Trade restrictions, reputation damage           |
 
 Red classes can be shed through redemption quests, but the path is long.
 
@@ -557,6 +587,7 @@ Red classes can be shed through redemption quests, but the path is long.
 Players can form **Guilds** that function as progression multipliers and unlock settlement-building content at high collective levels.
 
 **Guild Perks:**
+
 - Shared activity loops (guild mining operations, etc.)
 - Guild-exclusive class evolutions (e.g., [Guild Artisan])
 - Territory control and passive resource generation
@@ -568,14 +599,14 @@ Players can form **Guilds** that function as progression multipliers and unlock 
 
 **Core Principle:** Time can be bought, but power and identity cannot.
 
-| Allowed | Prohibited |
-|---------|------------|
-| Cosmetic class brackets (colored names) | Exclusive classes |
-| Activity loop slots | XP multipliers beyond cosmetic thresholds |
-| Inventory/vault expansion | Skills or skill rerolls |
-| Cosmetic equipment skins | Stat advantages |
-| Rest cycle skips (limited) | Bypassing red class consequences |
-| Name changes | Reputation purchases |
+| Allowed                                 | Prohibited                                |
+| --------------------------------------- | ----------------------------------------- |
+| Cosmetic class brackets (colored names) | Exclusive classes                         |
+| Activity loop slots                     | XP multipliers beyond cosmetic thresholds |
+| Inventory/vault expansion               | Skills or skill rerolls                   |
+| Cosmetic equipment skins                | Stat advantages                           |
+| Rest cycle skips (limited)              | Bypassing red class consequences          |
+| Name changes                            | Reputation purchases                      |
 
 ---
 
@@ -654,7 +685,7 @@ Tag Registry (Server-side):
           └─ Lv.30 → [UNIQUE based on journey]
               └─ Lv.40+ → Further specialization / Prestige paths
 
-[Herbalist]  
+[Herbalist]
   └─ Lv.10 → [Apothecary] / [Poison Expert] / [Garden Tender] / [Forager]
       └─ Lv.20 → [Master Alchemist] / [Toxicologist] / [Greenhouse Keeper] / [Wilderness Sage]
           └─ Lv.30 → [UNIQUE based on journey]
@@ -671,24 +702,25 @@ Tag Registry (Server-side):
 
 ## Appendix B: Skill Example Library
 
-| Skill | Class | Type | Tags | Effect |
-|-------|-------|------|------|--------|
-| [Power Strike] | [Warrior] | Active | `combat.melee.technique.power` | 200% damage, 30s CD |
-| [Parry] | [Duelist] | Conditional | `combat.melee.sword.parry` | Negate next attack if timed |
-| [Bulk Discount] | [Merchant] | Passive | `social.trade.negotiate.bulk` | -15% purchase prices |
-| [Green Thumb] | [Herbalist] | Passive | `gather.herbalism.quality` | +10% herb quality |
-| [Flash Forge] | [Blacksmith] | Active | `craft.smithing.technique.instant` | Instant craft, 1h CD |
-| [Soothing Words] | [Diplomat] | Active | `social.diplomacy.persuade` | De-escalate hostile NPCs |
-| [Lucky Strike] | Any | Conditional | `gather.*.technique.fortune` | 5% chance critical gather |
-| [Traveler's Endurance] | [Courier] | Passive | `utility.exploration.travel.speed` | +30% movement speed |
-| [Mana Efficiency] | [Mage] | Passive | `magic.arcane.efficiency` | -20% mana costs |
-| [Chef's Special] | [Chef] | Active | `craft.cooking.technique.enhance` | Next meal grants 2x buff |
+| Skill                  | Class        | Type        | Tags                               | Effect                      |
+| ---------------------- | ------------ | ----------- | ---------------------------------- | --------------------------- |
+| [Power Strike]         | [Warrior]    | Active      | `combat.melee.technique.power`     | 200% damage, 30s CD         |
+| [Parry]                | [Duelist]    | Conditional | `combat.melee.sword.parry`         | Negate next attack if timed |
+| [Bulk Discount]        | [Merchant]   | Passive     | `social.trade.negotiate.bulk`      | -15% purchase prices        |
+| [Green Thumb]          | [Herbalist]  | Passive     | `gather.herbalism.quality`         | +10% herb quality           |
+| [Flash Forge]          | [Blacksmith] | Active      | `craft.smithing.technique.instant` | Instant craft, 1h CD        |
+| [Soothing Words]       | [Diplomat]   | Active      | `social.diplomacy.persuade`        | De-escalate hostile NPCs    |
+| [Lucky Strike]         | Any          | Conditional | `gather.*.technique.fortune`       | 5% chance critical gather   |
+| [Traveler's Endurance] | [Courier]    | Passive     | `utility.exploration.travel.speed` | +30% movement speed         |
+| [Mana Efficiency]      | [Mage]       | Passive     | `magic.arcane.efficiency`          | -20% mana costs             |
+| [Chef's Special]       | [Chef]       | Active      | `craft.cooking.technique.enhance`  | Next meal grants 2x buff    |
 
 ---
 
 ## Appendix C: Tag-Based Progression Examples
 
 **Example: Pure Combat Player**
+
 ```
 After 20 hours of sword-focused gameplay:
 
@@ -705,6 +737,7 @@ Skill Pool: Heavily weighted toward sword techniques, evasion skills
 ```
 
 **Example: Hybrid Crafter-Gatherer**
+
 ```
 After 20 hours of mixed mining and smithing:
 
@@ -723,4 +756,4 @@ Skill Pool: Mix of gathering efficiency and crafting quality skills
 
 ---
 
-*Document Version 1.1 — Tag Taxonomy System Added*
+_Document Version 1.1 — Tag Taxonomy System Added_
