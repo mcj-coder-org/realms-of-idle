@@ -137,3 +137,122 @@ if (hasSourceChanges) {
 if (hasChangesIn(['docs/'])) {
   message(`PR #${prNumber}: Documentation changes detected`)
 }
+
+// ============================================================================
+// BRUTAL CRITICAL REVIEW & DoD VALIDATION
+// ============================================================================
+
+const prBody = pr.body || ''
+
+// Check 1: Brutal Critical Review section exists
+const hasBrutalReview = prBody.includes('## 🔬 Brutal Critical Review')
+if (!hasBrutalReview) {
+  fail(
+    '❌ Brutal Critical Review missing from PR description. Maintainer must perform and document review before approval. See .claude/skills/pr-monitor.md for template.'
+  )
+}
+
+// Check 2: DoD checklist is 100% passing WITH evidence
+const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/)
+if (dodSection) {
+  const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length
+  const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length
+  const checkedItems = (dodSection[0].match(/\[✅\]/g) || []).length
+
+  if (uncheckedItems > 0 || failingItems > 0) {
+    fail(
+      `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
+    )
+  }
+
+  // CRITICAL: Verify that checked items have evidence links
+  if (checkedItems > 0) {
+    const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+
+    // Count evidence links in key sections
+    const ciEvidenceSection = prBody.match(/## CI Status[\s\S]*?(?=##|$)/)
+    const ciLinks = ciEvidenceSection
+      ? (ciEvidenceSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [])
+          .length
+      : 0
+
+    // Rough heuristic: Should have at least as many evidence links as checked items
+    if (evidenceLinks.length < checkedItems) {
+      fail(
+        `❌ ${checkedItems} DoD items checked ✅ but only ${evidenceLinks.length} evidence links found. Every checked item must have supporting evidence.`
+      )
+    }
+
+    if (ciLinks === 0 && checkedItems > 0) {
+      fail(
+        '❌ DoD checklist shows passing items but no CI evidence links found. Add CI status table with evidence links.'
+      )
+    }
+  }
+}
+
+// Check 3: Brutal Critical Review shows APPROVED
+const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/)
+if (reviewSection) {
+  const isApproved = reviewSection[0].includes('**Overall Assessment**: APPROVED')
+  const needsWork = reviewSection[0].includes('**Overall Assessment**: NEEDS WORK')
+  const rejected = reviewSection[0].includes('**Overall Assessment**: REJECTED')
+
+  if (needsWork || rejected) {
+    fail(`❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`)
+  }
+
+  if (!isApproved) {
+    warn('⚠️ Brutal Critical Review assessment unclear. Should explicitly state "APPROVED", "NEEDS WORK", or "REJECTED".')
+  }
+
+  // Verify Brutal Critical Review has evidence
+  const reviewLinks = reviewSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+  if (isApproved && reviewLinks.length === 0) {
+    fail('❌ Brutal Critical Review marked APPROVED but contains no evidence links. All assessments must reference evidence.')
+  }
+}
+
+// Check 4: All review threads must be resolved
+schedule(async () => {
+  try {
+    const query = `
+      query {
+        repository(owner: "${danger.github.repo.owner}", name: "${danger.github.repo.repo}") {
+          pullRequest(number: ${prNumber}) {
+            reviewThreads(first: 100) {
+              totalCount
+              nodes {
+                isResolved
+                isOutdated
+              }
+            }
+          }
+        }
+      }
+    `
+
+    const result = await danger.github.api.graphql(query)
+    const threads = result.repository.pullRequest.reviewThreads
+
+    const unresolvedCount = threads.nodes.filter(thread => !thread.isResolved && !thread.isOutdated).length
+
+    if (unresolvedCount > 0) {
+      fail(
+        `❌ ${unresolvedCount} unresolved review thread(s) found. All review comments must be resolved before merge.`
+      )
+    } else {
+      message(`✅ All review threads resolved (${threads.totalCount} total threads)`)
+    }
+  } catch (error) {
+    warn('⚠️ Unable to verify review thread status via GraphQL. Please manually confirm all review comments are resolved.')
+  }
+})
+
+// Check 5: Overall evidence link validation
+const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+if (evidenceLinks.length === 0) {
+  fail('❌ No evidence links found in PR description. All claims must have supporting evidence.')
+} else {
+  message(`✅ Found ${evidenceLinks.length} evidence link(s) in PR description`)
+}
