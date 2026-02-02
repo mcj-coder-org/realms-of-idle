@@ -18,6 +18,27 @@ This document describes specialized agents available for working on the Realms o
 
 ---
 
+<EXTREMELY_IMPORTANT>
+
+These apply during active development (implementation, fixes, refactoring), not exploration/research.
+
+- NEVER skip or weaken GitHooks (--no-verify requires explicit user permission); always fix root causes
+- NEVER create merge commits; use rebase for linear history, then --ff-only for merges
+- ALWAYS use Conventional Commit messages
+- ALWAYS use git worktrees and feature branches (isolates work, prevents commits to main)
+- ALWAYS commit after self-verification but before declaring complete (run tests/build/lint first)
+- ALWAYS treat Warnings as Errors (configure in tooling)
+  - 0 Linting Issues
+  - 0 Build Warnings
+  - 0 Commit Warnings
+  - 0 Build Errors
+  - 0 Test Failures (tests must be run)
+- ALWAYS TDD + Automated Tests First during implementation (not during planning/exploration)
+- ALWAYS automate repetitive tasks (git hooks, scripts, tools); never manual repeat
+- ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
+
+</EXTREMELY_IMPORTANT>
+
 ## GDD Designer - Game Design Documentation Specialist
 
 **Agent File**: `.claude/skills/gdd-designer.md`
@@ -597,24 +618,26 @@ Invoke when:
 
 The PR Monitor enforces the dual-account pattern:
 
-| Role        | Account       | Email                           | Purpose                          |
-| ----------- | ------------- | ------------------------------- | -------------------------------- |
-| Contributor | martincjarvis | <m.c.j@live.co.uk>              | Opens PRs, implements features   |
-| Maintainer  | mcj-coder     | <martin.cjarvis@googlemail.com> | Reviews, approves, enables merge |
+| Role        | Purpose                          |
+| ----------- | -------------------------------- |
+| Contributor | Opens PRs, implements features   |
+| Maintainer  | Reviews, approves, enables merge |
 
 **Critical Rules**:
 
 - ✅ Contributor opens PR → Maintainer approves → Auto-merge (rebase)
 - ❌ Maintainer opens PR → Cannot self-approve → Must close and reopen
 
+> **Note**: See CLAUDE.local.md for specific account names, emails, and GPG keys configured for this project.
+
 ### Monitoring Checklist
 
 For each PR, the PR Monitor verifies:
 
-- [ ] **Account**: Opened by Contributor (martincjarvis)
+- [ ] **Account**: Opened by Contributor (not Maintainer)
 - [ ] **Status Checks**: CI build, tests, security scan, code quality all passing
 - [ ] **Review Comments**: All comment threads resolved
-- [ ] **Maintainer Approval**: Approved by Maintainer (mcj-coder)
+- [ ] **Maintainer Approval**: Approved by Maintainer
 - [ ] **Auto-Merge**: Enabled with rebase method
 - [ ] **No Conflicts**: Branch can be cleanly rebased
 - [ ] **Conventional Commits**: All commits follow pattern
@@ -755,7 +778,7 @@ Each checklist item must have a fresh evidence link:
 1. Contributor: verify → brutal review → rebase → push → create PR
 2. PR Monitor activates: Monitors from open to merge
 3. PR Monitor verifies:
-   - Account: Opened by Contributor (martincjarvis)
+   - Account: Opened by Contributor (mcj-codificer)
    - Status checks: All CI/CD, security, quality passing
    - Review comments: All threads resolved
    - Auto-merge: Enabled by Maintainer after approval
