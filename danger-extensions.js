@@ -162,7 +162,7 @@ const analyzeCSharpCode = () => {
       }
 
       // Check for null checks
-      const nullCheckPattern = if\s*\([^)]+==\s*null|\bif\s*\([^)]+!=\s*null/
+      const nullCheckPattern = /if\s*\([^)]+==\s*null|\bif\s*\([^)]+!=\s*null/;
       if (nullCheckPattern.test(content)) {
         issues.push({
           file,
