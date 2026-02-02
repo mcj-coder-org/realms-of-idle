@@ -313,12 +313,16 @@ schedule(async () => {
 })
 
 // Check 3: Brutal Critical Review shows APPROVED
-const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/)
+const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##[^#]|$)/)
 if (reviewSection) {
   const sectionText = reviewSection[0]
   const isApproved = sectionText.includes('Overall Assessment: APPROVED') || sectionText.includes('**Overall Assessment**: APPROVED')
   const needsWork = sectionText.includes('Overall Assessment: NEEDS WORK') || sectionText.includes('**Overall Assessment**: NEEDS WORK')
   const rejected = sectionText.includes('Overall Assessment: REJECTED') || sectionText.includes('**Overall Assessment**: REJECTED')
+
+  // Debug logging
+  message(`🔍 DEBUG: Review section length=${sectionText.length}`)
+  message(`🔍 DEBUG: Contains 'Overall Assessment: APPROVED'=${sectionText.includes('Overall Assessment: APPROVED')}`)
 
   if (needsWork || rejected) {
     fail(`❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`)
