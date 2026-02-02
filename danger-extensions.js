@@ -364,17 +364,17 @@ const runEnhancedReview = () => {
 
     let comment = `### 🔍 Code Quality Review for \`${file}\`\n\n`
 
-    if (issuesByFile.error) {
+    if (issuesByType.error) {
       comment += `❌ **Errors**\n`
-      issuesByFile.error.forEach(issue => {
+      issuesByType.error.forEach(issue => {
         comment += `- Line ${issue.line}: ${issue.message}\n`
       })
       comment += '\n'
     }
 
-    if (issuesByFile.warning) {
+    if (issuesByType.warning) {
       comment += `⚠️ **Warnings**\n`
-      issuesByFile.warning.forEach(issue => {
+      issuesByType.warning.forEach(issue => {
         comment += `- Line ${issue.line}: ${issue.message}\n`
       })
       comment += '\n'

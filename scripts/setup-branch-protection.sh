@@ -70,9 +70,12 @@ setup_branch_protection() {
     local branch=$1
     log_info "Setting up protection for branch: $branch"
 
+    # Convert Bash array to JSON array
+    local contexts_json=$(printf '%s\n' "${REQUIRED_STATUS_CHECKS[@]}" | jq -R . | jq -s .)
+
     local payload=$(jq -n \
         --arg strict "true" \
-        --argjson contexts "$REQUIRED_STATUS_CHECKS" \
+        --argjson contexts "$contexts_json" \
         --argjson dismiss_stale_reviews false \
         --argjson require_code_owner_reviews false \
         --argjson require_last_push_approval false \

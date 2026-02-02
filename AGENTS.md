@@ -1,3 +1,17 @@
+---
+type: reference
+scope: high-level
+status: approved
+version: 1.0.0
+created: 2026-02-01
+updated: 2026-02-02
+subjects:
+  - agents
+  - documentation
+  - claude-code
+dependencies: []
+---
+
 # AGENTS.md - Agent Documentation for Realms of Idle
 
 This document describes specialized agents available for working on the Realms of Idle project.
@@ -79,6 +93,120 @@ dependencies:
     type: [requires|extends|refines|implements]
 ---
 ```
+
+---
+
+## PR Monitor - Pull Request Monitoring Specialist
+
+**Agent File**: `.claude/skills/pr-monitor.md`
+
+### Purpose
+
+Expert Pull Request Monitoring Specialist responsible for tracking PRs from opening to successful auto-merge, ensuring all status checks pass, review comments are resolved, and dual-account workflow is maintained.
+
+### Core Responsibilities
+
+1. **Monitor PRs**: Track every PR from creation to successful merge
+2. **Verify Account Credentials**: Ensure PRs opened by Contributor (mcj-codificer) and approved by Maintainer (mcj-coder)
+3. **Check Status**: Verify all CI/CD, security, and quality checks passing
+4. **Resolve Review Comments**: Track all comment chains to resolution (fix or follow-on issue)
+5. **Confirm Merge Readiness**: Verify auto-merge enabled and all conditions met
+
+### Key Principles
+
+- **Monitor to completion**: Every PR tracked until auto-merge succeeds
+- **Account integrity**: Contributor opens, Maintainer approves (no self-approval)
+- **Automated first**: CI/CD and quality gates must pass before manual review
+- **Comment resolution**: All review threads addressed before merge
+- **Clean history**: Rebase workflow, no merge commits
+- **Follow-on issues**: Out-of-scope discussions tracked as new GitHub issues
+
+### When to Use
+
+Invoke the PR Monitor agent when:
+
+- ✅ A new PR is opened and needs monitoring
+- ✅ Status checks fail and need diagnosis
+- ✅ Review comments need tracking to resolution
+- ✅ Account workflow violations need detection
+- ✅ Merge readiness needs verification
+- ✅ Follow-on issues need creation for out-of-scope discussions
+
+### How to Invoke
+
+```bash
+# Via skill invocation
+/skill pr-monitor
+
+# Or reference the persona in conversation
+"PR Monitor: Check the status of PR #42"
+```
+
+### Dual-Account Workflow
+
+The PR Monitor enforces the dual-account pattern:
+
+| Role        | Account       | Email                           | Purpose                          |
+| ----------- | ------------- | ------------------------------- | -------------------------------- |
+| Contributor | mcj-codificer | <m.c.j@live.co.uk>              | Opens PRs, implements features   |
+| Maintainer  | mcj-coder     | <martin.cjarvis@googlemail.com> | Reviews, approves, enables merge |
+
+**Critical Rules**:
+
+- ✅ Contributor opens PR → Maintainer approves → Auto-merge (rebase)
+- ❌ Maintainer opens PR → Cannot self-approve → Must close and reopen
+
+### Monitoring Checklist
+
+For each PR, the PR Monitor verifies:
+
+- [ ] **Account**: Opened by Contributor (mcj-codificer)
+- [ ] **Status Checks**: CI build, tests, security scan, code quality all passing
+- [ ] **Review Comments**: All comment threads resolved
+- [ ] **Maintainer Approval**: Approved by Maintainer (mcj-coder)
+- [ ] **Auto-Merge**: Enabled with rebase method
+- [ ] **No Conflicts**: Branch can be cleanly rebased
+- [ ] **Conventional Commits**: All commits follow pattern
+- [ ] **Issue Reference**: Commits reference issue #{N}
+
+### Status Report Format
+
+```markdown
+## PR Monitor: #{PR Number} - {PR Title}
+
+### Status Summary
+
+| Category   | Status | Notes                |
+| ---------- | ------ | -------------------- |
+| Account    | ✅/❌  | Opened by {username} |
+| CI/CD      | ✅/❌  | {details}            |
+| Review     | ✅/❌  | {details}            |
+| Auto-Merge | ✅/❌  | {details}            |
+
+### Issues Requiring Action
+
+1. **[Priority]**: {Issue description}
+   - Location: {where}
+   - Action: {what to do}
+   - Owner: {who should do it}
+```
+
+### Issue Categories
+
+**Blocking Issues** (must fix before merge):
+
+- Account workflow violations
+- CI build failures
+- Test failures
+- Security vulnerabilities
+- Unresolved review comments
+- Merge conflicts
+
+**Non-Blocking Issues** (can defer):
+
+- Style preferences
+- Nice-to-have improvements
+- Out-of-scope enhancements → Create follow-on issue
 
 ---
 

@@ -4,6 +4,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { execSync } from 'child_process'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -65,7 +66,6 @@ async function analyzeComplexity() {
   const issues = []
 
   try {
-    const { execSync } = require('child_process')
     const modifiedFiles = execSync('git diff --name-only HEAD~1', { encoding: 'utf8' })
       .split('\n')
       .filter(file => file.trim())
