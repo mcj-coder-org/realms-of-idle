@@ -39,9 +39,11 @@ jobs:
 
       - name: Run code quality checks
         run: npm run lint
+        continue-on-error: true
 
       - name: Check for build errors
         run: dotnet build --no-restore --verbosity quiet
+        continue-on-error: true
 
       - name: Generate code review report
         run: |

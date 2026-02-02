@@ -8,9 +8,9 @@ const config = require('./danger.config.js').project
 
 // Get PR information
 const pr = danger.github.pr
-const modifiedFiles = danger.git.modifiedFiles
-const createdFiles = danger.git.createdFiles
-const deletedFiles = danger.git.deletedFiles
+const modifiedFiles = danger.git.modifiedFiles || []
+const createdFiles = danger.git.createdFiles || []
+const deletedFiles = danger.git.deletedFiles || []
 const baseBranch = danger.github.pr.base.ref
 const headBranch = danger.github.pr.head.ref
 
