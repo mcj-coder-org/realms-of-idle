@@ -105,12 +105,17 @@ if (!validBranchPattern.test(branchName)) {
 
 // Check for merge conflicts
 schedule(async () => {
-  const diff = await danger.git.diffForFile('package.json')
-  if (diff) {
-    const conflictMarkerPattern = /<<<<<<<|=======|>>>>>>>/
-    if (conflictMarkerPattern.test(diff.added) || conflictMarkerPattern.test(diff.diff)) {
-      fail(`PR #${prNumber}: Merge conflict markers detected in package.json. Please resolve before merging.`)
+  try {
+    const diff = await danger.git.diffForFile('package.json')
+    if (diff && diff.added) {
+      const conflictMarkerPattern = /<<<<<<<|=======|>>>>>>>/
+      if (conflictMarkerPattern.test(diff.added) || (diff.diff && conflictMarkerPattern.test(diff.diff))) {
+        fail(`PR #${prNumber}: Merge conflict markers detected in package.json. Please resolve before merging.`)
+      }
     }
+  } catch (error) {
+    // File not found in diff or other error - skip check
+    warn(`PR #${prNumber}: Unable to check package.json for merge conflicts: ${error.message}`)
   }
 })
 
@@ -216,10 +221,20 @@ if (reviewSection) {
 // Check 4: All review threads must be resolved
 schedule(async () => {
   try {
-    // Use octokit graphql directly
+    // Verify we have the required GitHub API access
+    if (!danger.github || !danger.github.api) {
+      warn('⚠️ GitHub API not available. Unable to verify review thread status.')
+      return
+    }
+
     const octokit = danger.github.api
-    const owner = danger.github.repo.owner
-    const repo = danger.github.repo.repo
+    const owner = danger.github.repo?.owner
+    const repo = danger.github.repo?.repo
+
+    if (!owner || !repo) {
+      warn('⚠️ Unable to determine repository owner/name. Skipping review thread check.')
+      return
+    }
 
     const query = `query {
       repository(owner: "${owner}", name: "${repo}") {
@@ -236,7 +251,19 @@ schedule(async () => {
     }`
 
     const result = await octokit.graphql(query)
+
+    // Validate response structure
+    if (!result || !result.repository || !result.repository.pullRequest) {
+      warn('⚠️ Unexpected GraphQL response structure. Skipping review thread check.')
+      return
+    }
+
     const threads = result.repository.pullRequest.reviewThreads
+    if (!threads || !threads.nodes) {
+      warn('⚠️ No review threads data in response. Skipping review thread check.')
+      return
+    }
+
     const unresolvedCount = threads.nodes.filter(thread => !thread.isResolved && !thread.isOutdated).length
 
     if (unresolvedCount > 0) {
@@ -247,7 +274,13 @@ schedule(async () => {
       message(`✅ All review threads resolved (${threads.totalCount} total threads)`)
     }
   } catch (error) {
-    warn(`⚠️ Unable to verify review thread status via GraphQL: ${error.message}. Please manually verify all review comments are resolved in GitHub UI.`)
+    if (error.message && error.message.includes('Resource not accessible')) {
+      fail(
+        '❌ GitHub API token lacks permissions to read review threads. Please ensure the token has "pull-requests:read" scope.'
+      )
+    } else {
+      warn(`⚠️ Unable to verify review thread status via GraphQL: ${error.message}. Please manually verify all review comments are resolved in GitHub UI.`)
+    }
   }
 })
 
