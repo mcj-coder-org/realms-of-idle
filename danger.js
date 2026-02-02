@@ -158,7 +158,8 @@ if (!hasBrutalReview) {
 }
 
 // Check 2: DoD checklist is 100% passing WITH inline evidence links
-const dodSection = prBody.match(/#{2,3} Definition of Done[\s\S]*?(?=\n##|$)/)
+// Match until we hit another ## heading at the start of a line
+const dodSection = prBody.match(/#{2,3} Definition of Done[\s\S]+?(?=^##\s|\n##\s|$)/m)
 
 if (!dodSection) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
