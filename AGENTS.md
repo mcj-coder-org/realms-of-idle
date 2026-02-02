@@ -278,6 +278,42 @@ The GDD Designer works with other agents:
 - **Technical Architect**: GDD defines requirements, Tech specifies implementation
 - **Balance Designer**: GDD describes mechanics, Balance provides math
 
+### PR Monitor + GitHub Workflow
+
+The PR Monitor integrates into the dual-account GitHub workflow:
+
+**After PR Creation (Step 6)**:
+
+1. **Contributor** completes: verify → rebase → push → create PR
+2. **PR Monitor activates automatically**: Monitors from PR open to merge
+3. **PR Monitor verifies**:
+   - Account: Opened by Contributor (mcj-codificer)
+   - Status checks: All CI/CD, security, quality passing
+   - Review comments: All threads resolved
+   - Auto-merge: Enabled by Maintainer after approval
+4. **Maintainer** reviews and approves
+5. **PR Monitor confirms**: Successful merge via auto-merge (rebase)
+6. **Maintainer**: Delete worktree + branch, close issue
+
+**Automatic Invocation**:
+
+PR Monitor is invoked after each task completion cycle:
+
+```
+Task Complete → Self Verified → Committed → Pushed → PR Opened
+                                                         ↓
+                                            PR Monitor activates
+                                            ↓
+                                            Monitors until merge
+```
+
+**When PR Monitor Detects Issues**:
+
+- **Account violation**: Reports workflow error, instructs to reopen with correct account
+- **Status check failures**: Identifies failing checks, reports specific errors
+- **Unresolved comments**: Lists outstanding review threads, tracks resolution
+- **Auto-merge not enabled**: Reminds Maintainer to enable after approval
+
 ### Escalation Path
 
 When agents disagree or need human input:
@@ -290,6 +326,6 @@ When agents disagree or need human input:
 
 ---
 
-**Version**: 1.0
-**Last Updated**: 2026-02-01
-**Maintained By**: GDD Designer persona
+**Version**: 1.1
+**Last Updated**: 2026-02-02
+**Maintained By**: GDD Designer persona, PR Monitor persona
