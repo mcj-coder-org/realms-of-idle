@@ -329,3 +329,15 @@ Specific orders with bonuses:
 - Gardens grow
 - Shop continues sales
 - Legendary potion brewing completes by morning
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — High-level overview of all seven scenarios including Alchemy
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — Describes how alchemy ingredients and products flow between scenarios
+- **[Monster Farm/Ranch](idle-monster-farm.md)** — Source of monster parts and materials as alchemy ingredients
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Quest rewards provide rare ingredients; potions supply adventurers
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Inn can sell potions; alchemy counter can be installed in inn
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Class system including [Alchemist] class progression
+- **[Open Questions Register](open-questions.md)** — Unresolved questions about recipe discovery and crafting balance

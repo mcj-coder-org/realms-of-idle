@@ -362,6 +362,18 @@ For recent activity review:
 - Best single transaction
 - Rare events encountered
 
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — Overview of the game and its progression philosophy
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — How scenarios share resources and contribute to universal progression
+- **[Prestige Framework](idle-prestige-framework.md)** — How prestige interacts with shared progression
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Core GDD with tag-based class and skill systems
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Tag taxonomy that defines progression paths
+- **[The Wandering Inn: Skill Tag Mapping](twi-skills.md)** — Skill system integrated with universal progression
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Example of scenario-specific progression feeding into universal systems
+
 ### Comparative Statistics
 
 Optional comparisons:

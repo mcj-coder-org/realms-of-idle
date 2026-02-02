@@ -696,3 +696,13 @@ utility.exploration
 ---
 
 _Document Version 1.0 — Gap Analysis Complete_
+
+---
+
+## Related Documents
+
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Original tag taxonomy that this analysis expands upon
+- **[The Wandering Inn: Skill Tag Mapping](twi-skills.md)** — Original skill tags referenced for gap identification
+- **[Idle Game Overview](idle-game-overview.md)** — Overall game design context for class and skill systems
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal progression framework that classes integrate with
+- **[Open Questions Register](open-questions.md)** — Tracks unresolved questions about tag system implementation and balance

@@ -311,3 +311,17 @@ A multi-scenario idle RPG where players build interconnected fantasy enterprises
 5. **Technical Architecture**: Save system, offline calculation, platform planning
 6. **Art Direction**: Visual style consistent with LitRPG aesthetic
 7. **Playtest Cycles**: Iterate on engagement and progression pacing
+
+---
+
+## Related Documents
+
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — Detailed explanation of how scenarios interconnect and share resources
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal player level, skill trees, and achievement systems
+- **[Prestige Framework](idle-prestige-framework.md)** — Three-tier prestige (Scenario/Ascension/Transcendence) system
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Complete design document for Inn scenario
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Complete design document for Guild scenario
+- **[Monster Farm/Ranch](idle-monster-farm.md)** — Complete design document for Farm scenario
+- **[Alchemy/Potion Brewing](idle-alchemy.md)** — Complete design document for Alchemy scenario
+- **[Idle Worlds: A Class-Based Idle MMORPG](idle-inn-gdd.md)** — Core GDD with tag-based class and skill systems
+- **[Open Questions Register](open-questions.md)** — Comprehensive list of unresolved design questions

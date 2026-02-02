@@ -301,3 +301,15 @@ Some quests require specific roles:
 - Training continues
 - Recovery completes
 - New applicants generated
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — High-level overview of all seven scenarios including Adventurer Guild
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — Describes synergies with other scenarios and shared world systems
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal player level and skill trees affecting guild advancement
+- **[Prestige Framework](idle-prestige-framework.md)** — "Guild Charter Renewal" prestige mechanics for guild scenario
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Class system that guild adventurers progress through
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Detailed inn scenario that synergizes with guild (adventurers rest at inns)
+- **[Monster Farm/Ranch](idle-monster-farm.md)** — Monster breeding scenario that supplies materials for guild equipment

@@ -397,3 +397,15 @@ Player profile shows:
 | Beyond Mortal | Complete first Transcendence |
 | Eternal Cycle | Complete 3 Transcendences    |
 | True Immortal | Complete 10 Transcendences   |
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — Game context for why prestige systems exist
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal progression that prestige resets and enhances
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — How prestige works across all scenarios
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Example "Guild Charter Renewal" prestige
+- **[Alchemy/Potion Brewing](idle-alchemy.md)** — Example "Magnum Opus" prestige
+- **[Monster Farm/Ranch](idle-monster-farm.md)** — Example "Legendary Lineage" prestige
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Core GDD showing how classes and progression lead to prestige triggers

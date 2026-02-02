@@ -757,3 +757,16 @@ Skill Pool: Mix of gathering efficiency and crafting quality skills
 ---
 
 _Document Version 1.1 — Tag Taxonomy System Added_
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — High-level overview of the complete game concept
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — How this scenario integrates with other game scenarios
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal progression mechanics that apply to all scenarios
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Tag taxonomy that defines how classes are acquired and evolve
+- **[The Wandering Inn: Skill Tag Mapping](twi-skills.md)** — Detailed tag system for skills and abilities
+- **[Prestige Framework](idle-prestige-framework.md)** — Reset and reward systems applicable to all scenarios
+- **[Gap Analysis](gap-analysis.md)** — Analysis of missing tags and classes from the TWI system
+- **[Open Questions Register](open-questions.md)** — Unresolved questions about game systems and implementation

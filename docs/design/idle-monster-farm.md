@@ -332,3 +332,15 @@ Higher grades from: better monsters, higher affection, optimal conditions, skill
 - Breeding gestation progresses
 - Orders auto-fill from stockpile
 - Trappers return with captures
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — High-level overview of all seven scenarios including Monster Farm
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — Describes synergies with other scenarios
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Guild adventurers capture monsters; farm supplies combat beasts
+- **[Alchemy/Potion Brewing](idle-alchemy.md)** — Monster materials as alchemy ingredients; potions help ranching
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Exotic monster cuisine at inns; inn leftovers as feed
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Class system including [Beast Tamer] and related classes
+- **[Prestige Framework](idle-prestige-framework.md)** — "Legendary Lineage" prestige mechanics for farm scenario

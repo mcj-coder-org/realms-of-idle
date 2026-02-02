@@ -275,3 +275,16 @@ Each scenario has primary gold drains:
 - Scenarios producing goods must have demand elsewhere
 - No scenario should be "gold printing" without gameplay
 - Synergy bonuses favor efficiency, not raw generation
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — Overview of all seven scenarios that this layer connects
+- **[Shared Progression Systems](idle-shared-progression.md)** — Universal player level and skills that scenarios contribute to
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Core GDD with detailed tag-based progression
+- **[Adventurer Guild](idle-adventurer-guild.md)** — Guild scenario with specific synergy examples
+- **[Monster Farm/Ranch](idle-monster-farm.md)** — Farm scenario with material production synergies
+- **[Alchemy/Potion Brewing](idle-alchemy.md)** — Alchemy scenario with potion trading synergies
+- **[NPC Systems Design Document](npc-design.md)** — Shared NPC system that appears across scenarios
+- **[Prestige Framework](idle-prestige-framework.md)** — Prestige systems that operate across all scenarios

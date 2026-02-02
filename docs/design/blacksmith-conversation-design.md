@@ -276,3 +276,13 @@ When authoring voice variants, consider:
 2. Identify which responses feel most repetitive
 3. Determine minimum viable voice variants for distinctiveness
 4. Decide whether contract is unique quest or repeatable
+
+---
+
+## Related Documents
+
+- **[The Wandering Inn: Races & Cultures Reference Guide](twi-races-cultures.md)** — Provides cultural context for Dwarf, Elf, and Human voice variants
+- **[NPC Systems Design Document](npc-design.md)** — Defines NPC goal systems, relationship tracking, and memory mechanics
+- **[Idle Game Overview](idle-game-overview.md)** — Overview of the seven game scenarios and their interconnected nature
+- **[Meta-Game Integration Layer](idle-meta-integration.md)** — Describes shared NPC system across scenarios and recurring characters
+- **[Conversation System - Open Questions Log](open-questions-log.md)** — Tracks unresolved questions about conversation systems and NPC dialogue

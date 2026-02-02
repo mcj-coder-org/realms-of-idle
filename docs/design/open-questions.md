@@ -429,3 +429,17 @@ Areas mentioned but not developed:
 ---
 
 _Document Version 1.0 — 52 Open Questions Identified_
+
+---
+
+## Related Documents
+
+- **[Idle Game Overview](idle-game-overview.md)** — Overall game concept providing context for many questions
+- **[Idle Inn/Tavern Management](idle-inn-gdd.md)** — Core GDD referenced in most system questions
+- **[The Wandering Inn: Class Tag Mapping](twi-classes.md)** — Tag system with many open implementation questions
+- **[The Wandering Inn: Skill Tag Mapping](twi-skills.md)** — Skill system with balance and progression questions
+- **[Minimal Action Set for Idle Mobile Implementation](minimal-actions.md)** — Mobile implementation referenced in UI questions
+- **[NPC Systems Design Document](npc-design.md)** — NPC simulation and behavior questions
+- **[.NET Technology Stack Recommendation](tech-stack.md)** — Technical architecture questions
+- **[Automated Testing Strategy](testing-strategy.md)** — Testing infrastructure questions
+- **[Gap Analysis](gap-analysis.md)** — Content gaps identified in tag taxonomy
