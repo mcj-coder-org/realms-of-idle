@@ -12,8 +12,6 @@ subjects:
 dependencies: []
 ---
 
-## status: active
-
 # CLAUDE.md
 
 <EXTREMELY_IMPORTANT>
