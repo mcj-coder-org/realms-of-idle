@@ -911,6 +911,51 @@ PR and Issue descriptions MUST reflect the current state. Outdated descriptions 
    - Files changed → Update scope
    - Approach changed → Update overview
 
+**⚠️ CRITICAL: Minimize Comment Bloat**
+
+**Prefer PR/Issue description updates over comment chains.**
+
+Long comment chains make it difficult to find the signal and understand the current state. Comments are for discussion, descriptions are for status.
+
+**When to Add Comments**:
+
+- ❌ **DON'T**: Comment "Fixed" or "Done" (update description instead)
+- ❌ **DON'T**: Comment "Status: X checks passing" (update description instead)
+- ❌ **DON'T**: Comment "Now working on Y" (update description instead)
+- ✅ **DO**: Ask clarifying questions about requirements
+- ✅ **DO**: Discuss technical trade-offs and alternatives
+- ✅ **DO**: Request review or approval
+- ✅ **DO**: Reply to review comments with evidence
+
+**When to Update Description Instead**:
+
+- ✅ **DO**: Update CI status → Edit DoD checklist in description
+- ✅ **DO**: Fix review comment → Update resolved count in description
+- ✅ **DO**: Complete task → Check checkbox in description
+- ✅ **DO**: Change approach → Update overview in description
+- ✅ **DO**: Add evidence → Add link to evidence section
+
+**Signal vs Noise**:
+
+✅ **Signal** (in description):
+
+- Current status
+- What's blocking
+- Evidence links
+- Next steps
+
+❌ **Noise** (in comments):
+
+- "Fixed it"
+- "Now doing X"
+- "Status update"
+- "Progress report"
+
+**Rule of Thumb**:
+
+If the comment is just reporting status or progress, **put it in the description**.
+If the comment is a question, discussion, or reply to feedback, **comment is appropriate**.
+
 **How to Update PR Description**:
 
 ```bash
@@ -1001,12 +1046,14 @@ EOF
 ❌ **Wrong DoD checkboxes** - Marked failing when actually passing
 ❌ **Missing update timestamps** - No indication when status changed
 ❌ **Checked without evidence** - DoD item ✅ but no supporting link (FAILS DangerJS)
+❌ **Comment bloat** - Status updates in comments instead of description (noise)
 
 ✅ **Update on every status change** - CI pass/fail, review resolved
 ✅ **Link to latest evidence** - Most recent CI run, commits
 ✅ **Timestamp updates** - When was the status last checked?
 ✅ **Sync linked issues** - Issue status should match PR progress
 ✅ **Evidence for every check** - Every ✅ must have link to proof
+✅ **Prefer descriptions over comments** - Status in description, discussion in comments
 
 ---
 
@@ -1117,6 +1164,7 @@ This PR was NOT opened by the Contributor account (mcj-codificer).
 - ✅ Guide proper credential usage (Contributor implements, Maintainer verifies)
 - ✅ **Maintain PR description accuracy** - Update DoD checklist as status changes
 - ✅ **Maintain linked Issue description** - Sync status with linked issues
+- ✅ **Prefer description updates over comment chains** - Minimize comment bloat
 - ✅ Create follow-on GitHub issues for out-of-scope discussions
 - ✅ Report merge readiness with verified checklist
 - ✅ Detect and report workflow violations
@@ -1377,6 +1425,7 @@ The dual-account workflow ensures:
 10. **Quality enforcement**: 0 issues, 0 warnings, 0 failures before merge
 11. **Description accuracy**: PR/Issue descriptions MUST reflect current state
 12. **Evidence required**: All claims must have verifiable evidence links
+13. **Comment minimalism**: Prefer updates to PR/Issue descriptions over comment chains
 
 **Merge Requirements (ALL must be true)**:
 
@@ -1386,6 +1435,7 @@ The dual-account workflow ensures:
 - ✅ All CI/CD checks passing with evidence links
 - ✅ All review comments resolved with evidence links
 - ✅ Maintainer approval AFTER Brutal Critical Review
+- ✅ Minimal comment bloat (updates in description, not comment chains)
 
 ---
 
