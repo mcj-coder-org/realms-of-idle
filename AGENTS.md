@@ -96,6 +96,234 @@ dependencies:
 
 ---
 
+## Brutal Self Code-Review - Quality Assurance Before PR
+
+**Agent Files**: Multiple expert personas (oh-my-claudecode agents)
+
+### Purpose
+
+Comprehensive multi-perspective code review performed BEFORE deeming a task complete, using specialized expert personas to identify and fix issues in-scope or track follow-on work.
+
+### Core Responsibilities
+
+1. **Code Quality Review**: Comprehensive code review for maintainability, readability, and best practices
+2. **Security Audit**: Security vulnerability detection and mitigation
+3. **Architecture Review**: Architectural validation and design pattern verification
+4. **Issue Triage**: Categorize findings by severity (HIGH/MEDIUM/LOW) and scope
+5. **Fix or Track**: Fix HIGH+ severity issues in-scope, create follow-on issues for others
+6. **Plan Update**: Update plan progress and include in PR documentation
+
+### Expert Personas Invoked
+
+The Brutal Self Code-Review invokes these specialist agents sequentially:
+
+| Persona               | Purpose                                                     | Model | Agent Type                         |
+| --------------------- | ----------------------------------------------------------- | ----- | ---------------------------------- |
+| **Code Reviewer**     | Comprehensive code quality, maintainability, best practices | opus  | `oh-my-claudecode:code-review`     |
+| **Security Reviewer** | Security vulnerabilities, OWASP Top 10, secrets detection   | opus  | `oh-my-claudecode:security-review` |
+| **Architect**         | Architectural validation, design patterns, system design    | opus  | `oh-my-claudecode:architect`       |
+
+### When to Use
+
+Invoke Brutal Self Code-Review AFTER implementation and verification, BEFORE pushing and creating PR:
+
+- ✅ After all tests pass and verification complete
+- ✅ Before git rebase and git push
+- ✅ Before updating Issue and PR checklists
+- ✅ For all non-trivial code changes (>50 lines or >3 files)
+- ✅ For any security-sensitive changes
+- ✅ For architectural changes or new features
+
+### Workflow Integration
+
+**Step 5 in GitHub Workflow** (between verify and rebase):
+
+```bash
+# After Step 4: Verify complete (0 issues, 0 warnings, 0 failures)
+
+# Step 5: Brutal Self Code-Review
+1. Invoke Code Reviewer: "Review this PR for code quality issues"
+2. Invoke Security Reviewer: "Audit for security vulnerabilities"
+3. Invoke Architect: "Validate architectural approach"
+4. Triage findings: HIGH/MEDIUM/LOW × in-scope/out-of-scope
+5. Fix all HIGH+ in-scope issues
+6. Create follow-on issues for MEDIUM/LOW or out-of-scope
+7. Update plan progress (docs/plans/{issue-number}.md)
+8. Commit fixes and plan updates
+
+# Then continue to Step 6: git rebase origin/main
+```
+
+### Issue Severity Classification
+
+**HIGH+ (Must Fix Before PR)**:
+
+- Security vulnerabilities (OWASP Top 10)
+- Breaking changes or regressions
+- Data loss or corruption risks
+- Performance critical issues
+- Test coverage gaps on critical paths
+
+**MEDIUM (Fix or Track)**:
+
+- Code smells or anti-patterns
+- Minor performance optimizations
+- Missing error handling on edge cases
+- Documentation gaps
+- Inconsistent naming or style
+
+**LOW (Track as Follow-On)**:
+
+- Nice-to-have improvements
+- Refactoring opportunities
+- Enhanced error messages
+- Additional test cases
+- Code cleanup or optimization
+
+### Follow-On Issue Template
+
+```markdown
+# Follow-Up from Brutal Self Code-Review
+
+**Source**: PR/Issue #{N} - {Title}
+**Reviewer**: {Persona Name}
+**Severity**: Medium | Low
+**Category**: Code Quality | Security | Architecture
+
+## Issue Found
+
+{Detailed description of the issue found during review}
+
+## Location
+
+- **File**: {path/to/file.ext}
+- **Lines**: {start-end}
+- **Function**: {function_name}
+
+## Why Not Fixed in PR
+
+{Explain why this wasn't fixed in the current PR:
+
+- Out of scope for current issue
+- Requires broader discussion
+- Lower priority than main task
+- Risk of introducing regressions}
+
+## Proposed Approach
+
+{Suggested solution or investigation approach}
+
+## Priority Assessment
+
+**{Medium/Low}** - {Rationale for priority}
+
+**Labels**: `follow-up`, `from-review`, `{category}`
+```
+
+### Plan Update Format
+
+After Brutal Self Code-Review, update the plan document:
+
+```markdown
+# Plan Progress Update: Issue #{N}
+
+## Completed Tasks
+
+- [x] Task 1: {description} (completed 2026-02-02)
+- [x] Task 2: {description} (completed 2026-02-02)
+
+## In-Progress Tasks
+
+- [ ] Task 3: {description}
+  - Status: {blocked by/in progress}
+  - Notes: {progress notes}
+
+## Review Findings
+
+### Fixed In-Scope (HIGH+)
+
+- ✅ {Issue 1} - Fixed via commit {abc123}
+- ✅ {Issue 2} - Fixed via commit {def456}
+
+### Tracked as Follow-On (MEDIUM/LOW)
+
+- 📝 Issue #{N+1} - {Title}
+- 📝 Issue #{N+2} - {Title}
+
+### Deferred (Out of Scope)
+
+- 📋 {Item 1} - Rationale
+- 📋 {Item 2} - Rationale
+
+## Next Steps
+
+1. {Next action item}
+2. {Next action item}
+
+**Updated**: 2026-02-02
+**Reviewed By**: Code Reviewer, Security Reviewer, Architect
+```
+
+### Output Format
+
+After completing Brutal Self Code-Review, provide:
+
+```markdown
+## Brutal Self Code-Review Complete
+
+**Issue**: #{N} - {Title}
+**Reviewer**: Code Reviewer, Security Reviewer, Architect
+**Duration**: {time taken}
+
+### Summary
+
+- **Total Issues Found**: {count}
+- **HIGH (Fixed)**: {count}
+- **MEDIUM (Tracked)**: {count}
+- **LOW (Tracked)**: {count}
+
+### Fixes Applied
+
+1. **{Issue Title}** (HIGH)
+   - Location: {file}:{lines}
+   - Fix: {description}
+   - Commit: {hash}
+
+### Follow-On Issues Created
+
+1. **Issue #{N+1}**: {Title}
+   - Severity: Medium
+   - Category: {type}
+   - Link: {URL}
+
+2. **Issue #{N+2}**: {Title}
+   - Severity: Low
+   - Category: {type}
+   - Link: {URL}
+
+### Plan Updated
+
+- Plan document: `docs/plans/{N}.md`
+- Progress: {X/Y tasks completed}
+- Status: {Ready for PR | Needs additional work}
+
+### Ready to Proceed
+
+✅ All HIGH+ severity issues fixed
+✅ Plan progress updated and committed
+✅ Ready for git rebase and push
+```
+
+### Constraints
+
+- **Time Budget**: Limit review to 15-30 minutes for typical PRs
+- **Scope**: Review only changed files, not entire codebase
+- **Fix Threshold**: Fix only HIGH+ severity in-scope; track others
+- **Brutal but Constructive**: Critical feedback with actionable recommendations
+- **No Blockers**: If unable to fix, document clearly and proceed
+
+---
+
 ## PR Monitor - Pull Request Monitoring Specialist
 
 **Agent File**: `.claude/skills/pr-monitor.md`
@@ -278,19 +506,78 @@ The GDD Designer works with other agents:
 - **Technical Architect**: GDD defines requirements, Tech specifies implementation
 - **Balance Designer**: GDD describes mechanics, Balance provides math
 
+### Brutal Self Code-Review + PR Workflow
+
+The Brutal Self Code-Review is a critical quality gate BEFORE PR creation:
+
+**Step 5 in GitHub Workflow** (After verify, Before rebase):
+
+```
+1. Maintainer creates issue with DoR/DoD checklists
+2. Contributor: git worktree add
+3. Contributor TDD: test → implement → commit
+4. Contributor verify: 0 issues, 0 warnings, 0 failures
+5. Brutal Self Code-Review:
+   ├─ Invoke Code Reviewer → Find issues
+   ├─ Invoke Security Reviewer → Find vulnerabilities
+   ├─ Invoke Architect → Validate design
+   ├─ Fix all HIGH+ issues in-scope
+   ├─ Create follow-on issues for MEDIUM/LOW
+   ├─ Update plan progress
+   └─ Commit fixes and plan updates
+6. Contributor: git rebase origin/main
+7. Contributor: git push + gh pr create
+8. Update Issue checklist with PR link
+9. PR Monitor activates
+10. Maintainer reviews/approves
+11. Maintainer merges
+12. Maintainer cleanup
+```
+
+**Definition of Ready (DoR)** - Must be checked BEFORE starting:
+
+- [ ] Issue has clear acceptance criteria
+- [ ] Requirements are well-defined and understood
+- [ ] Design/architecture approach documented
+- [ ] Dependencies identified and available
+- [ ] Test strategy defined
+- [ ] DoD checklist agreed upon
+
+**Definition of Done (DoD)** - Must be checked with FRESH EVIDENCE before complete:
+
+- [ ] **Code Quality**: 0 lint issues, 0 build warnings (evidence: CI build link)
+- [ ] **Tests**: All tests passing, coverage threshold met (evidence: test run link)
+- [ ] **Security**: No vulnerabilities detected (evidence: security scan link)
+- [ ] **Review**: Brutal Self Code-Review completed (evidence: review summary)
+- [ ] **Documentation**: Code documented, plan updated (evidence: doc links)
+- [ ] **DoR Met**: All DoR items verified (evidence: checklist link)
+- [ ] **DoD Met**: All DoD items verified (evidence: checklist link)
+- [ ] **Plan Updated**: Progress documented in plan file (evidence: plan link)
+
+**Evidence Link Format**:
+
+Each checklist item must have a fresh evidence link:
+
+```markdown
+- [x] **Code Quality**: 0 lint issues, 0 build warnings
+  - Evidence: [CI Build #42](https://github.com/owner/repo/actions/runs/123456)
+  - Verified: 2026-02-02T14:30:00Z
+```
+
 ### PR Monitor + GitHub Workflow
 
 The PR Monitor integrates into the dual-account GitHub workflow:
 
-**After PR Creation (Step 6)**:
+**After PR Creation (Step 7)**:
 
-1. **Contributor** completes: verify → rebase → push → create PR
+1. **Contributor** completes: verify → brutal review → rebase → push → create PR
 2. **PR Monitor activates automatically**: Monitors from PR open to merge
 3. **PR Monitor verifies**:
    - Account: Opened by Contributor (mcj-codificer)
    - Status checks: All CI/CD, security, quality passing
    - Review comments: All threads resolved
    - Auto-merge: Enabled by Maintainer after approval
+   - DoR/DoD: All items checked with fresh evidence links
 4. **Maintainer** reviews and approves
 5. **PR Monitor confirms**: Successful merge via auto-merge (rebase)
 6. **Maintainer**: Delete worktree + branch, close issue
@@ -300,11 +587,11 @@ The PR Monitor integrates into the dual-account GitHub workflow:
 PR Monitor is invoked after each task completion cycle:
 
 ```
-Task Complete → Self Verified → Committed → Pushed → PR Opened
+Task Complete → Self Verified → Brutal Review → Committed → Pushed → PR Opened
+                                                                      ↓
+                                                         PR Monitor activates
                                                          ↓
-                                            PR Monitor activates
-                                            ↓
-                                            Monitors until merge
+                                                         Monitors until merge
 ```
 
 **When PR Monitor Detects Issues**:
@@ -313,6 +600,7 @@ Task Complete → Self Verified → Committed → Pushed → PR Opened
 - **Status check failures**: Identifies failing checks, reports specific errors
 - **Unresolved comments**: Lists outstanding review threads, tracks resolution
 - **Auto-merge not enabled**: Reminds Maintainer to enable after approval
+- **DoD incomplete**: Verifies all DoD items have fresh evidence links
 
 ### Escalation Path
 
@@ -326,6 +614,6 @@ When agents disagree or need human input:
 
 ---
 
-**Version**: 1.1
+**Version**: 1.2
 **Last Updated**: 2026-02-02
-**Maintained By**: GDD Designer persona, PR Monitor persona
+**Maintained By**: GDD Designer persona, PR Monitor persona, Brutal Self Code-Review personas
