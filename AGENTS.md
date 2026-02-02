@@ -24,14 +24,16 @@ This document describes specialized agents available for working on the Realms o
 
 ### Purpose
 
-Expert RPG Game Designer and Architect responsible for authoring, reviewing, and curating all Game Design Documents (GDDs) for the project.
+Author, review, and curate all Game Design Documents (GDDs).
 
 ### Core Responsibilities
 
-1. **Author GDDs**: Create clear, structured design documents following best practices
-2. **Review Documentation**: Audit existing docs for compliance with standards
-3. **Curate Architecture**: Maintain overall documentation structure for optimal navigation
-4. **Enforce Standards**: Ensure all docs follow "Document >> Documentation" principles
+| Responsibility          | Action                             |
+| ----------------------- | ---------------------------------- |
+| **Author GDDs**         | Create structured design documents |
+| **Review Docs**         | Audit compliance with standards    |
+| **Curate Architecture** | Maintain doc structure             |
+| **Enforce Standards**   | Apply "Document >> Documentation"  |
 
 ### Key Principles
 
@@ -43,14 +45,14 @@ Expert RPG Game Designer and Architect responsible for authoring, reviewing, and
 
 ### When to Use
 
-Invoke the GDD Designer agent when:
+Invoke when:
 
 - ✅ Creating new game design documents
-- ✅ Reviewing existing documentation for quality
-- ✅ Restructuring or reorganizing docs
-- ✅ Adding frontmatter to legacy documents
-- ✅ Resolving documentation conflicts or duplication
-- ✅ Planning documentation architecture for new features
+- ✅ Reviewing documentation quality
+- ✅ Restructuring/reorganizing docs
+- ✅ Adding frontmatter to legacy docs
+- ✅ Resolving doc conflicts/duplication
+- ✅ Planning doc architecture
 
 ### How to Invoke
 
@@ -62,16 +64,16 @@ Invoke the GDD Designer agent when:
 "GDD Designer: Please review the alchemy scenario document"
 ```
 
-### Document Type Schema
+### Document Types
 
-The GDD Designer enforces these document types:
-
-- **scenario**: One of 7 idle game scenarios (Inn, Guild, Farm, Alchemy, Territory, Summoner, Caravan)
-- **system**: Cross-cutting game system (progression, economy, combat, NPC, etc.)
-- **mechanic**: Specific gameplay mechanic (crafting, trading, prestige, etc.)
-- **technical**: Technical implementation details
-- **narrative**: Story, world-building, character design
-- **reference**: Data tables, reference info, glossaries
+| Type      | Purpose                                 | Examples                        |
+| --------- | --------------------------------------- | ------------------------------- |
+| scenario  | One of 7 idle game scenarios            | Inn, Guild, Farm, Alchemy, etc. |
+| system    | Cross-cutting game system               | Progression, economy, combat    |
+| mechanic  | Specific gameplay mechanic              | Crafting, trading, prestige     |
+| technical | Implementation details                  | Architecture, patterns          |
+| narrative | Story, world-building, character design | Lore, dialog, NPC backstories   |
+| reference | Data tables, reference info, glossaries | Item stats, formulas            |
 
 ### Frontmatter Requirements
 
@@ -102,15 +104,17 @@ dependencies:
 
 ### Purpose
 
-Expert Agent Skill Author and Persona Architect responsible for reviewing, optimizing, and designing agent skill files to ensure progress disclosure, effective directives, and token efficiency.
+Review, optimize, and design agent skill files for token efficiency and progress disclosure.
 
 ### Core Responsibilities
 
-1. **Review Skills**: Audit agent skills for quality, efficiency, and effectiveness
-2. **Optimize Tokens**: Reduce token waste while maintaining clarity and functionality
-3. **Enforce Progress Disclosure**: Ensure all skills report progress clearly
-4. **Design Templates**: Create and maintain agent skill templates
-5. **Directive Quality**: Verify imperative, concrete, unambiguous instructions
+| Responsibility        | Action                                   |
+| --------------------- | ---------------------------------------- |
+| **Review Skills**     | Audit quality, efficiency, effectiveness |
+| **Optimize Tokens**   | Reduce waste while maintaining clarity   |
+| **Enforce Progress**  | Ensure clear progress reporting          |
+| **Design Templates**  | Create/maintain agent skill templates    |
+| **Verify Directives** | Ensure imperative, concrete instructions |
 
 ### Key Principles
 
@@ -122,14 +126,14 @@ Expert Agent Skill Author and Persona Architect responsible for reviewing, optim
 
 ### When to Use
 
-Invoke the Agent Skill Author when:
+Invoke when:
 
 - ✅ Creating new agent skill files
-- ✅ Reviewing existing skills for optimization
-- ✅ Auditing skills for progress disclosure compliance
-- ✅ Refactoring verbose skills into efficient versions
+- ✅ Reviewing skills for optimization
+- ✅ Auditing progress disclosure compliance
+- ✅ Refactoring verbose → efficient
 - ✅ Designing agent skill templates
-- ✅ Token budget analysis required
+- ✅ Token budget analysis needed
 
 ### How to Invoke
 
@@ -159,15 +163,15 @@ The Agent Skill Author enforces these token budgets:
 
 ### Optimization Techniques
 
-The Agent Skill Author applies these optimization strategies:
-
-1. **Remove filler words**: "In order to" → "To"
-2. **Use tables**: Replace 5-line prose with 3-row table
-3. **List with inline descriptions**: Don't separate into paragraphs
-4. **Truncate examples**: Show 1 good example, not 3
-5. **Delete politeness**: Agents are tools, not guests
-6. **Use symbols**: ✅/❌ beats "Yes/No"
-7. **Consolidate**: One heading, not three
+| Technique         | Example                         |
+| ----------------- | ------------------------------- |
+| **Remove filler** | "In order to" → "To"            |
+| **Use tables**    | 5-line prose → 3-row table      |
+| **Inline lists**  | Combine descriptions with items |
+| **Truncate**      | 1 example, not 3                |
+| **Delete fluff**  | Agents are tools, not guests    |
+| **Use symbols**   | ✅/❌ beats "Yes/No"            |
+| **Consolidate**   | One heading, not three          |
 
 ### Progress Disclosure Standards
 
@@ -214,16 +218,18 @@ When reviewing agent skills, verifies:
 
 ### Purpose
 
-Comprehensive multi-perspective code review performed BEFORE deeming a task complete, using specialized expert personas to identify and fix issues in-scope or track follow-on work.
+Multi-perspective code review BEFORE task completion using expert personas to fix in-scope issues or track follow-ons.
 
 ### Core Responsibilities
 
-1. **Code Quality Review**: Comprehensive code review for maintainability, readability, and best practices
-2. **Security Audit**: Security vulnerability detection and mitigation
-3. **Architecture Review**: Architectural validation and design pattern verification
-4. **Issue Triage**: Categorize findings by severity (HIGH/MEDIUM/LOW) and scope
-5. **Fix or Track**: Fix HIGH+ severity issues in-scope, create follow-on issues for others
-6. **Plan Update**: Update plan progress and include in PR documentation
+| Responsibility          | Action                                              |
+| ----------------------- | --------------------------------------------------- |
+| **Code Quality**        | Review maintainability, readability, best practices |
+| **Security Audit**      | Detect/mitigate vulnerabilities                     |
+| **Architecture Review** | Validate design patterns, system design             |
+| **Issue Triage**        | Categorize by severity (HIGH/MEDIUM/LOW) and scope  |
+| **Fix or Track**        | Fix HIGH+ in-scope, create follow-ons for others    |
+| **Plan Update**         | Update plan progress, include in PR documentation   |
 
 ### Expert Personas Invoked
 
@@ -237,33 +243,33 @@ The Brutal Self Code-Review invokes these specialist agents sequentially:
 
 ### When to Use
 
-Invoke Brutal Self Code-Review AFTER implementation and verification, BEFORE pushing and creating PR:
+Invoke AFTER verification, BEFORE git push:
 
-- ✅ After all tests pass and verification complete
-- ✅ Before git rebase and git push
-- ✅ Before updating Issue and PR checklists
-- ✅ For all non-trivial code changes (>50 lines or >3 files)
-- ✅ For any security-sensitive changes
-- ✅ For architectural changes or new features
+- ✅ Tests pass, verification complete
+- ✅ Before `git rebase` and `git push`
+- ✅ Before updating Issue/PR checklists
+- ✅ Non-trivial changes (>50 lines or >3 files)
+- ✅ Security-sensitive changes
+- ✅ Architectural changes/new features
 
 ### Workflow Integration
 
-**Step 5 in GitHub Workflow** (between verify and rebase):
+**Step 5 in GitHub Workflow** (verify → rebase):
 
 ```bash
 # After Step 4: Verify complete (0 issues, 0 warnings, 0 failures)
 
 # Step 5: Brutal Self Code-Review
-1. Invoke Code Reviewer: "Review this PR for code quality issues"
+1. Invoke Code Reviewer: "Review for code quality issues"
 2. Invoke Security Reviewer: "Audit for security vulnerabilities"
 3. Invoke Architect: "Validate architectural approach"
-4. Triage findings: HIGH/MEDIUM/LOW × in-scope/out-of-scope
-5. Fix all HIGH+ in-scope issues
-6. Create follow-on issues for MEDIUM/LOW or out-of-scope
+4. Triage: HIGH/MEDIUM/LOW × in-scope/out-of-scope
+5. Fix all HIGH+ in-scope
+6. Create follow-on issues for MEDIUM/LOW/out-of-scope
 7. Update plan progress (docs/plans/{issue-number}.md)
-8. Commit fixes and plan updates
+8. Commit fixes + plan updates
 
-# Then continue to Step 6: git rebase origin/main
+# Continue to Step 6: git rebase origin/main
 ```
 
 ### File Pattern-Based Persona Invocation
@@ -387,29 +393,11 @@ echo "$CHANGED_FILES" | grep -E "Tests/.*\.cs$|.*\.Tests\.csproj$" && invoke_qa_
 
 ### Issue Severity Classification
 
-**HIGH+ (Must Fix Before PR)**:
-
-- Security vulnerabilities (OWASP Top 10)
-- Breaking changes or regressions
-- Data loss or corruption risks
-- Performance critical issues
-- Test coverage gaps on critical paths
-
-**MEDIUM (Fix or Track)**:
-
-- Code smells or anti-patterns
-- Minor performance optimizations
-- Missing error handling on edge cases
-- Documentation gaps
-- Inconsistent naming or style
-
-**LOW (Track as Follow-On)**:
-
-- Nice-to-have improvements
-- Refactoring opportunities
-- Enhanced error messages
-- Additional test cases
-- Code cleanup or optimization
+| Severity   | Action          | Criteria                                                              |
+| ---------- | --------------- | --------------------------------------------------------------------- |
+| **HIGH+**  | Fix before PR   | Security vulns, breaking changes, data loss, critical perf, test gaps |
+| **MEDIUM** | Fix or track    | Code smells, minor perf, edge case handling, docs, style              |
+| **LOW**    | Track follow-on | Nice-to-haves, refactoring, error messages, test cases, cleanup       |
 
 ### Follow-On Issue Template
 
@@ -547,11 +535,13 @@ After completing Brutal Self Code-Review, provide:
 
 ### Constraints
 
-- **Time Budget**: Limit review to 15-30 minutes for typical PRs
-- **Scope**: Review only changed files, not entire codebase
-- **Fix Threshold**: Fix only HIGH+ severity in-scope; track others
-- **Brutal but Constructive**: Critical feedback with actionable recommendations
-- **No Blockers**: If unable to fix, document clearly and proceed
+| Constraint        | Rule                                       |
+| ----------------- | ------------------------------------------ |
+| **Time Budget**   | 15-30 minutes per typical PR               |
+| **Scope**         | Review only changed files                  |
+| **Fix Threshold** | Fix HIGH+ in-scope only; track others      |
+| **Feedback**      | Brutal but constructive with actions       |
+| **No Blockers**   | Document clearly if unable to fix, proceed |
 
 ---
 
@@ -561,15 +551,17 @@ After completing Brutal Self Code-Review, provide:
 
 ### Purpose
 
-Expert Pull Request Monitoring Specialist responsible for tracking PRs from opening to successful auto-merge, ensuring all status checks pass, review comments are resolved, and dual-account workflow is maintained.
+Track PRs from opening to successful auto-merge, ensuring checks pass, comments resolve, and dual-account workflow maintained.
 
 ### Core Responsibilities
 
-1. **Monitor PRs**: Track every PR from creation to successful merge
-2. **Verify Account Credentials**: Ensure PRs opened by Contributor (mcj-codificer) and approved by Maintainer (mcj-coder)
-3. **Check Status**: Verify all CI/CD, security, and quality checks passing
-4. **Resolve Review Comments**: Track all comment chains to resolution (fix or follow-on issue)
-5. **Confirm Merge Readiness**: Verify auto-merge enabled and all conditions met
+| Responsibility          | Action                                         |
+| ----------------------- | ---------------------------------------------- |
+| **Monitor PRs**         | Track from creation to successful merge        |
+| **Verify Accounts**     | Ensure Contributor opens, Maintainer approves  |
+| **Check Status**        | Verify CI/CD, security, quality checks passing |
+| **Resolve Comments**    | Track comment chains to resolution             |
+| **Confirm Merge Ready** | Verify auto-merge enabled, conditions met      |
 
 ### Key Principles
 
@@ -582,14 +574,14 @@ Expert Pull Request Monitoring Specialist responsible for tracking PRs from open
 
 ### When to Use
 
-Invoke the PR Monitor agent when:
+Invoke when:
 
-- ✅ A new PR is opened and needs monitoring
-- ✅ Status checks fail and need diagnosis
+- ✅ New PR opened, needs monitoring
+- ✅ Status checks failing, need diagnosis
 - ✅ Review comments need tracking to resolution
-- ✅ Account workflow violations need detection
-- ✅ Merge readiness needs verification
-- ✅ Follow-on issues need creation for out-of-scope discussions
+- ✅ Account workflow violations detected
+- ✅ Merge readiness verification needed
+- ✅ Follow-on issues needed for out-of-scope discussions
 
 ### How to Invoke
 
@@ -652,20 +644,10 @@ For each PR, the PR Monitor verifies:
 
 ### Issue Categories
 
-**Blocking Issues** (must fix before merge):
-
-- Account workflow violations
-- CI build failures
-- Test failures
-- Security vulnerabilities
-- Unresolved review comments
-- Merge conflicts
-
-**Non-Blocking Issues** (can defer):
-
-- Style preferences
-- Nice-to-have improvements
-- Out-of-scope enhancements → Create follow-on issue
+| Category         | Issues                                                                                         | Action                   |
+| ---------------- | ---------------------------------------------------------------------------------------------- | ------------------------ |
+| **Blocking**     | Account violations, CI failures, test failures, security vulns, unresolved comments, conflicts | Must fix before merge    |
+| **Non-Blocking** | Style preferences, nice-to-haves, out-of-scope enhancements                                    | Defer or follow-on issue |
 
 ---
 
@@ -685,57 +667,29 @@ As the project grows, additional specialized agents will be documented here:
 
 ## Agent Usage Guidelines
 
-### 1. Always Invoke via Skill
+### Usage Guidelines
 
-When you need specialized agent work, use the skill system:
-
-```bash
-# Direct invocation
-/skill gdd-designer
-
-# With context
-"GDD Designer: I need to create a document for the new trading mechanic"
-```
-
-### 2. Provide Clear Context
-
-When invoking an agent, specify:
-
-- **What**: The task or question
-- **Scope**: High-level or detailed work needed
-- **Context**: Relevant background information
-- **Output**: What deliverable you expect
-
-### 3. Trust Agent Expertise
-
-The agent has specialized knowledge. Trust their:
-
-- Domain expertise (game design, documentation standards)
-- Understanding of project-specific patterns
-- Recommendations for structure and organization
-- Judgement on when to escalate for human input
-
-### 4. Review Before Committing
-
-Always review agent output before:
-
-- Adding to version control
-- Sharing with team
-- Marking as approved/complete
-- Using as basis for implementation
+| Guideline             | Action                                                  |
+| --------------------- | ------------------------------------------------------- |
+| **Invoke via Skill**  | `/skill gdd-designer` or "GDD Designer: [task]"         |
+| **Provide Context**   | What, scope, background, expected output                |
+| **Trust Expertise**   | Domain knowledge, patterns, recommendations, escalation |
+| **Review Before Use** | Check before VCS, sharing, approval, implementation     |
 
 ---
 
 ## Agent Coordination
 
-### GDD Designer + Other Agents
+### Agent Coordination
 
-The GDD Designer works with other agents:
+**GDD Designer + Others**:
 
-- **Systems Designer**: GDD creates docs, Systems provides technical details
-- **Narrative Designer**: GDD structures docs, Narrative provides content
-- **Technical Architect**: GDD defines requirements, Tech specifies implementation
-- **Balance Designer**: GDD describes mechanics, Balance provides math
+| Agent               | Collaboration                                           |
+| ------------------- | ------------------------------------------------------- |
+| Systems Designer    | GDD creates docs, Systems provides tech                 |
+| Narrative Designer  | GDD structures, Narrative provides content              |
+| Technical Architect | GDD defines requirements, Tech specifies implementation |
+| Balance Designer    | GDD describes mechanics, Balance provides math          |
 
 ### Brutal Self Code-Review + PR Workflow
 
@@ -765,25 +719,24 @@ The Brutal Self Code-Review is a critical quality gate BEFORE PR creation:
 12. Maintainer cleanup
 ```
 
-**Definition of Ready (DoR)** - Must be checked BEFORE starting:
+**Definition of Ready (DoR)** - Check BEFORE starting:
 
-- [ ] Issue has clear acceptance criteria
-- [ ] Requirements are well-defined and understood
-- [ ] Design/architecture approach documented
+- [ ] Clear acceptance criteria
+- [ ] Requirements well-defined and understood
+- [ ] Design/architecture documented
 - [ ] Dependencies identified and available
 - [ ] Test strategy defined
-- [ ] DoD checklist agreed upon
+- [ ] DoD checklist agreed
 
-**Definition of Done (DoD)** - Must be checked with FRESH EVIDENCE before complete:
+**Definition of Done (DoD)** - Check with FRESH EVIDENCE:
 
-- [ ] **Code Quality**: 0 lint issues, 0 build warnings (evidence: CI build link)
-- [ ] **Tests**: All tests passing, coverage threshold met (evidence: test run link)
-- [ ] **Security**: No vulnerabilities detected (evidence: security scan link)
+- [ ] **Code Quality**: 0 lint, 0 build warnings (evidence: CI build link)
+- [ ] **Tests**: All passing, coverage met (evidence: test run link)
+- [ ] **Security**: No vulnerabilities (evidence: security scan link)
 - [ ] **Review**: Brutal Self Code-Review completed (evidence: review summary)
 - [ ] **Documentation**: Code documented, plan updated (evidence: doc links)
-- [ ] **DoR Met**: All DoR items verified (evidence: checklist link)
-- [ ] **DoD Met**: All DoD items verified (evidence: checklist link)
-- [ ] **Plan Updated**: Progress documented in plan file (evidence: plan link)
+- [ ] **DoR/DoD Met**: All items verified (evidence: checklist links)
+- [ ] **Plan Updated**: Progress documented (evidence: plan link)
 
 **Evidence Link Format**:
 
@@ -797,68 +750,64 @@ Each checklist item must have a fresh evidence link:
 
 ### PR Monitor + GitHub Workflow
 
-The PR Monitor integrates into the dual-account GitHub workflow:
-
 **After PR Creation (Step 7)**:
 
-1. **Contributor** completes: verify → brutal review → rebase → push → create PR
-2. **PR Monitor activates automatically**: Monitors from PR open to merge
-3. **PR Monitor verifies**:
+1. Contributor: verify → brutal review → rebase → push → create PR
+2. PR Monitor activates: Monitors from open to merge
+3. PR Monitor verifies:
    - Account: Opened by Contributor (mcj-codificer)
    - Status checks: All CI/CD, security, quality passing
    - Review comments: All threads resolved
    - Auto-merge: Enabled by Maintainer after approval
    - DoR/DoD: All items checked with fresh evidence links
-4. **Maintainer** reviews and approves
-5. **PR Monitor confirms**: Successful merge via auto-merge (rebase)
-6. **Maintainer**: Delete worktree + branch, close issue
+4. Maintainer reviews and approves
+5. PR Monitor confirms: Successful merge via auto-merge (rebase)
+6. Maintainer: Delete worktree + branch, close issue
 
 **Automatic Invocation**:
-
-PR Monitor is invoked after each task completion cycle:
 
 ```
 Task Complete → Self Verified → Brutal Review → Committed → Pushed → PR Opened
                                                                       ↓
                                                          PR Monitor activates
-                                                         ↓
-                                                         Monitors until merge
 ```
 
-**When PR Monitor Detects Issues**:
+**Issue Detection**:
 
-- **Account violation**: Reports workflow error, instructs to reopen with correct account
-- **Status check failures**: Identifies failing checks, reports specific errors
-- **Unresolved comments**: Lists outstanding review threads, tracks resolution
-- **Auto-merge not enabled**: Reminds Maintainer to enable after approval
-- **DoD incomplete**: Verifies all DoD items have fresh evidence links
+| Issue               | Action                                             |
+| ------------------- | -------------------------------------------------- |
+| Account violation   | Report error, instruct reopen with correct account |
+| Status check fails  | Identify failing checks, report specific errors    |
+| Unresolved comments | List outstanding threads, track resolution         |
+| Auto-merge disabled | Remind Maintainer to enable after approval         |
+| DoD incomplete      | Verify all DoD items have fresh evidence links     |
 
 ### Agent Skill Author + All Agent Skills
 
-The Agent Skill Author ensures quality and efficiency across all agent personas:
+**Creation Workflow**:
 
-**When Agent Skills Are Created**:
+1. Designer drafts skill
+2. Agent Skill Author reviews: token audit, progress disclosure, directive quality
+3. Optimize: Verbose prose → structured format
+4. Verify template compliance
+5. Approve and add to personas
 
-1. **Designer creates skill**: Drafts new agent persona
-2. **Agent Skill Author reviews**: Token audit, progress disclosure check, directive quality
-3. **Optimization applied**: Verbose prose → structured format
-4. **Template compliance**: Verified against skill template
-5. **Approved for use**: Skill added to available personas
+**Modification Workflow**:
 
-**When Agent Skills Are Modified**:
-
-1. **Changes proposed**: Updates to existing skill file
-2. **Agent Skill Author audits**: Token impact, effectiveness check
-3. **Regression test**: Verify skill still functions correctly
-4. **Version bump**: Update skill version number and date
-5. **AGENTS.md updated**: Document changes if significant
+1. Propose changes to existing skill
+2. Agent Skill Author audits: token impact, effectiveness
+3. Regression test: Verify still functions
+4. Bump version and date
+5. Update AGENTS.md if significant
 
 **Continuous Improvement**:
 
-- **Token budget monitoring**: Track skill file sizes over time
-- **Progress disclosure audit**: Ensure all skills report clearly
-- **Pattern extraction**: Identify reusable templates across skills
-- **Optimization opportunities**: Flag verbose skills for refactoring
+| Activity            | Action                           |
+| ------------------- | -------------------------------- |
+| Token monitoring    | Track skill file sizes over time |
+| Progress disclosure | Audit all skills report clearly  |
+| Pattern extraction  | Identify reusable templates      |
+| Optimization flags  | Refactor verbose skills          |
 
 **Skill Quality Metrics**:
 
@@ -872,13 +821,13 @@ The Agent Skill Author ensures quality and efficiency across all agent personas:
 
 ### Escalation Path
 
-When agents disagree or need human input:
-
-1. **Agent identifies issue**: States clearly what needs decision
-2. **Provides options**: Shows 2-3 approaches with trade-offs
-3. **Recommends**: States agent's preference with rationale
-4. **Human decides**: You make the call
-5. **Agent implements**: Agent executes based on your decision
+| Step             | Action                              |
+| ---------------- | ----------------------------------- |
+| Identify issue   | Agent states what needs decision    |
+| Provide options  | Show 2-3 approaches with trade-offs |
+| Recommend        | State preference with rationale     |
+| Human decides    | You make the call                   |
+| Agent implements | Execute based on your decision      |
 
 ---
 
