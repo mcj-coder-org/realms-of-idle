@@ -43,4 +43,3 @@ jobs:
           path: |
             .github/danger-report.md
           retention-days: 30
-# Workflow test
