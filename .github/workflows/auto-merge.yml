@@ -19,4 +19,4 @@ jobs:
           delete-branch: true
           exempt-required-status-checks: true
           # Only allow maintainer account to trigger auto-merge
-          allowed-teams: ['mcj-coder']
+          allowed-apps: ['github-actions']

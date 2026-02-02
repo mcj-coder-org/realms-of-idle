@@ -8,6 +8,9 @@ permissions:
   contents: read
   issues: write
 
+env:
+  NODE_VERSION: '22'
+
 jobs:
   pr-quality-check:
     runs-on: ubuntu-latest
