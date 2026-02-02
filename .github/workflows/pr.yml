@@ -73,6 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Auto-label PRs
     if: github.event_name == 'pull_request'
+    continue-on-error: true
     steps:
       - name: Apply labels based on files changed
         uses: actions/github-script@v7
