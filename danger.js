@@ -216,25 +216,27 @@ if (reviewSection) {
 // Check 4: All review threads must be resolved
 schedule(async () => {
   try {
-    const query = `
-      query {
-        repository(owner: "${danger.github.repo.owner}", name: "${danger.github.repo.repo}") {
-          pullRequest(number: ${prNumber}) {
-            reviewThreads(first: 100) {
-              totalCount
-              nodes {
-                isResolved
-                isOutdated
-              }
+    // Use octokit graphql directly
+    const octokit = danger.github.api
+    const owner = danger.github.repo.owner
+    const repo = danger.github.repo.repo
+
+    const query = `query {
+      repository(owner: "${owner}", name: "${repo}") {
+        pullRequest(number: ${prNumber}) {
+          reviewThreads(first: 100) {
+            totalCount
+            nodes {
+              isResolved
+              isOutdated
             }
           }
         }
       }
-    `
+    }`
 
-    const result = await danger.github.api.graphql(query)
+    const result = await octokit.graphql(query)
     const threads = result.repository.pullRequest.reviewThreads
-
     const unresolvedCount = threads.nodes.filter(thread => !thread.isResolved && !thread.isOutdated).length
 
     if (unresolvedCount > 0) {
@@ -245,7 +247,7 @@ schedule(async () => {
       message(`✅ All review threads resolved (${threads.totalCount} total threads)`)
     }
   } catch (error) {
-    warn('⚠️ Unable to verify review thread status via GraphQL. Please manually confirm all review comments are resolved.')
+    warn(`⚠️ Unable to verify review thread status via GraphQL: ${error.message}. Please manually verify all review comments are resolved in GitHub UI.`)
   }
 })
 
