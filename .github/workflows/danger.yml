@@ -5,15 +5,15 @@ on:
     branches: [main, develop]
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+  pull-requests: write
+  metadata: read
+
 jobs:
   danger:
     name: Run DangerJS
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pull-requests: write
-      metadata: read
 
     steps:
       - name: Checkout code
