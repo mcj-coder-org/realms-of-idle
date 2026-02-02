@@ -160,6 +160,10 @@ if (!hasBrutalReview) {
 // Check 2: DoD checklist is 100% passing WITH inline evidence links
 const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/)
 
+// Debug logging
+console.log('DANGER DEBUG: PR body length:', prBody.length)
+console.log('DANGER DEBUG: DoD section found:', !!dodSection)
+
 if (!dodSection) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
 }
