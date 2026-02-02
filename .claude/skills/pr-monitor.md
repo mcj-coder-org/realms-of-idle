@@ -669,15 +669,46 @@ if (!hasBrutalReview) {
   );
 }
 
-// Check 2: DoD checklist is 100% passing
+// Check 2: DoD checklist is 100% passing WITH evidence
 const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/);
 if (dodSection) {
   const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length;
   const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length;
+  const checkedItems = (dodSection[0].match(/\[✅\]/g) || []).length;
+
   if (uncheckedItems > 0 || failingItems > 0) {
     fail(
       `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
     );
+  }
+
+  // CRITICAL: Verify that checked items have evidence links
+  if (checkedItems > 0) {
+    const evidenceLinks =
+      prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [];
+
+    // Count evidence links in key sections
+    const ciEvidenceSection = prBody.match(/## CI Status[\s\S]*?(?=##|$)/);
+    const ciLinks = ciEvidenceSection
+      ? (
+          ciEvidenceSection[0].match(
+            /\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g
+          ) || []
+        ).length
+      : 0;
+
+    // Rough heuristic: Should have at least as many evidence links as checked items
+    if (evidenceLinks.length < checkedItems) {
+      fail(
+        `❌ ${checkedItems} DoD items checked ✅ but only ${evidenceLinks.length} evidence links found. Every checked item must have supporting evidence.`
+      );
+    }
+
+    if (ciLinks === 0 && checkedItems > 0) {
+      fail(
+        '❌ DoD checklist shows passing items but no CI evidence links found. Add CI status table with evidence links.'
+      );
+    }
   }
 }
 
@@ -699,13 +730,24 @@ if (reviewSection) {
       '⚠️ Brutal Critical Review assessment unclear. Should explicitly state "APPROVED", "NEEDS WORK", or "REJECTED".'
     );
   }
+
+  // Verify Brutal Critical Review has evidence
+  const reviewLinks =
+    reviewSection[0].match(
+      /\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g
+    ) || [];
+  if (isApproved && reviewLinks.length === 0) {
+    fail(
+      '❌ Brutal Critical Review marked APPROVED but contains no evidence links. All assessments must reference evidence.'
+    );
+  }
 }
 
-// Check 4: Evidence links present and valid
+// Check 4: Overall evidence link validation
 const evidenceLinks =
   prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [];
 if (evidenceLinks.length === 0) {
-  warn('⚠️ No evidence links found in PR description. All claims should have supporting evidence.');
+  fail('❌ No evidence links found in PR description. All claims must have supporting evidence.');
 }
 ```
 
@@ -865,11 +907,13 @@ EOF
 ❌ **Outdated evidence links** - Pointing to old CI runs
 ❌ **Wrong DoD checkboxes** - Marked failing when actually passing
 ❌ **Missing update timestamps** - No indication when status changed
+❌ **Checked without evidence** - DoD item ✅ but no supporting link (FAILS DangerJS)
 
 ✅ **Update on every status change** - CI pass/fail, review resolved
 ✅ **Link to latest evidence** - Most recent CI run, commits
 ✅ **Timestamp updates** - When was the status last checked?
 ✅ **Sync linked issues** - Issue status should match PR progress
+✅ **Evidence for every check** - Every ✅ must have link to proof
 
 ---
 
