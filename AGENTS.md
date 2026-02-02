@@ -96,6 +96,118 @@ dependencies:
 
 ---
 
+## Agent Skill Author - Persona Quality Assurance Specialist
+
+**Agent File**: `.claude/skills/agent-skill-author.md`
+
+### Purpose
+
+Expert Agent Skill Author and Persona Architect responsible for reviewing, optimizing, and designing agent skill files to ensure progress disclosure, effective directives, and token efficiency.
+
+### Core Responsibilities
+
+1. **Review Skills**: Audit agent skills for quality, efficiency, and effectiveness
+2. **Optimize Tokens**: Reduce token waste while maintaining clarity and functionality
+3. **Enforce Progress Disclosure**: Ensure all skills report progress clearly
+4. **Design Templates**: Create and maintain agent skill templates
+5. **Directive Quality**: Verify imperative, concrete, unambiguous instructions
+
+### Key Principles
+
+- **Token Efficiency**: Every token must earn its place
+- **Progress Disclosure**: Make agent state visible to user
+- **Directive Quality**: Imperative, concrete, unambiguous
+- **Structured Over Prose**: Tables, lists, templates beat paragraphs
+- **Metrics-Driven**: Measure tokens, count savings, verify effectiveness
+
+### When to Use
+
+Invoke the Agent Skill Author when:
+
+- ✅ Creating new agent skill files
+- ✅ Reviewing existing skills for optimization
+- ✅ Auditing skills for progress disclosure compliance
+- ✅ Refactoring verbose skills into efficient versions
+- ✅ Designing agent skill templates
+- ✅ Token budget analysis required
+
+### How to Invoke
+
+```bash
+# Via skill invocation
+/skill agent-skill-author
+
+# Or reference the persona in conversation
+"Agent Skill Author: Review the PR Monitor skill for token efficiency"
+```
+
+### Token Budget Guidelines
+
+The Agent Skill Author enforces these token budgets:
+
+| Section              | Max Tokens | Target       |
+| -------------------- | ---------- | ------------ |
+| Agent Persona        | 100        | 50-80        |
+| Core Philosophy      | 200        | 100-150      |
+| Agent Capabilities   | 50 per     | 30-40 per    |
+| Domain Expertise     | 150        | 80-120       |
+| Interaction Patterns | 150        | 100-120      |
+| Constraints          | 100        | 60-80        |
+| Tone and Voice       | 80         | 40-60        |
+| Example Interactions | 300        | 150-200      |
+| **Total Skill File** | **1500**   | **800-1200** |
+
+### Optimization Techniques
+
+The Agent Skill Author applies these optimization strategies:
+
+1. **Remove filler words**: "In order to" → "To"
+2. **Use tables**: Replace 5-line prose with 3-row table
+3. **List with inline descriptions**: Don't separate into paragraphs
+4. **Truncate examples**: Show 1 good example, not 3
+5. **Delete politeness**: Agents are tools, not guests
+6. **Use symbols**: ✅/❌ beats "Yes/No"
+7. **Consolidate**: One heading, not three
+
+### Progress Disclosure Standards
+
+Enforces progress reporting in all agent skills:
+
+**Required Elements**:
+
+- **Initial Acknowledgment**: Confirm understanding (20 tokens)
+- **Step Updates**: Report after each step (10 tokens/step)
+- **Blocker Reporting**: State what blocks and why (25 tokens)
+- **Completion Signal**: Clear indication work is done (15 tokens)
+
+**Progress Template**:
+
+```markdown
+I'll [task]. Approach:
+
+1. [Step 1]
+2. [Step 2]
+
+✅ [Step N]: [Result]
+⚠️ BLOCKED: [What] - Reason: [Why]
+✅ COMPLETE: [Summary]
+```
+
+### Review Checklist
+
+When reviewing agent skills, verifies:
+
+- [ ] **Token Efficiency**: No redundant words, dense packing
+- [ ] **Progress Disclosure**: Clear reporting mechanisms
+- [ ] **Directive Quality**: Imperative, concrete instructions
+- [ ] **Output Specification**: Clear expected format
+- [ ] **Constraints Stated**: Explicit boundaries
+- [ ] **Examples Provided**: Good/bad examples
+- [ ] **Tone Consistency**: Professional throughout
+- [ ] **Version Tracked**: Version and date
+
+---
+
 ## Brutal Self Code-Review - Quality Assurance Before PR
 
 **Agent Files**: Multiple expert personas (oh-my-claudecode agents)
@@ -721,6 +833,43 @@ Task Complete → Self Verified → Brutal Review → Committed → Pushed → P
 - **Auto-merge not enabled**: Reminds Maintainer to enable after approval
 - **DoD incomplete**: Verifies all DoD items have fresh evidence links
 
+### Agent Skill Author + All Agent Skills
+
+The Agent Skill Author ensures quality and efficiency across all agent personas:
+
+**When Agent Skills Are Created**:
+
+1. **Designer creates skill**: Drafts new agent persona
+2. **Agent Skill Author reviews**: Token audit, progress disclosure check, directive quality
+3. **Optimization applied**: Verbose prose → structured format
+4. **Template compliance**: Verified against skill template
+5. **Approved for use**: Skill added to available personas
+
+**When Agent Skills Are Modified**:
+
+1. **Changes proposed**: Updates to existing skill file
+2. **Agent Skill Author audits**: Token impact, effectiveness check
+3. **Regression test**: Verify skill still functions correctly
+4. **Version bump**: Update skill version number and date
+5. **AGENTS.md updated**: Document changes if significant
+
+**Continuous Improvement**:
+
+- **Token budget monitoring**: Track skill file sizes over time
+- **Progress disclosure audit**: Ensure all skills report clearly
+- **Pattern extraction**: Identify reusable templates across skills
+- **Optimization opportunities**: Flag verbose skills for refactoring
+
+**Skill Quality Metrics**:
+
+| Metric              | Target               | How Measured    |
+| ------------------- | -------------------- | --------------- |
+| Token efficiency    | 800-1200 per skill   | Token count     |
+| Progress disclosure | 100% of skills       | Checklist       |
+| Directive clarity   | Imperative, concrete | Manual review   |
+| Template compliance | Follows structure    | Automated check |
+| Version tracking    | All skills versioned | Manual review   |
+
 ### Escalation Path
 
 When agents disagree or need human input:
@@ -733,6 +882,6 @@ When agents disagree or need human input:
 
 ---
 
-**Version**: 1.3
+**Version**: 1.4
 **Last Updated**: 2026-02-02
-**Maintained By**: GDD Designer persona, PR Monitor persona, Brutal Self Code-Review personas, Expert Specialist personas
+**Maintained By**: GDD Designer persona, PR Monitor persona, Brutal Self Code-Review personas, Expert Specialist personas, Agent Skill Author persona
