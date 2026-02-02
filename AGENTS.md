@@ -154,6 +154,125 @@ Invoke Brutal Self Code-Review AFTER implementation and verification, BEFORE pus
 # Then continue to Step 6: git rebase origin/main
 ```
 
+### File Pattern-Based Persona Invocation
+
+Expert personas are invoked based on detected file changes:
+
+**Detection Command**:
+
+```bash
+# Get list of changed files in current branch
+CHANGED_FILES=$(git diff --name-only origin/main)
+
+# Check for file patterns
+echo "$CHANGED_FILES" | grep -q "docs/design/.*\.md$" && invoke_gdd_designer=true
+echo "$CHANGED_FILES" | grep -q "\.cs$" && invoke_dotnet_expert=true
+echo "$CHANGED_FILES" | grep -E "(\.csproj|solution\.sln)" && invoke_architect=true
+echo "$CHANGED_FILES" | grep -E "Tests/.*\.cs$|.*\.Tests\.csproj$" && invoke_qa_expert=true
+```
+
+**Persona Invocation Matrix**:
+
+| File Pattern Change                    | Expert Persona                              | Agent Type                          | Purpose                               |
+| -------------------------------------- | ------------------------------------------- | ----------------------------------- | ------------------------------------- |
+| **Always Invoke**                      |                                             |                                     |                                       |
+| Any file change                        | **Code Reviewer**                           | `oh-my-claudecode:code-review`      | Comprehensive code quality            |
+| Any file change                        | **Security Reviewer**                       | `oh-my-claudecode:security-review`  | Security vulnerability audit          |
+| Any file change                        | **Architect**                               | `oh-my-claudecode:architect`        | Architectural validation              |
+| **Conditional Invoke**                 |                                             |                                     |                                       |
+| `docs/design/**/*.md`                  | **GDD Designer**                            | `.claude/skills/gdd-designer.md`    | Design doc compliance                 |
+| `**/*.cs`                              | **.NET 10 Best Practices Senior Developer** | `oh-my-claudecode:architect-medium` | C# modern practices, .NET 10 features |
+| New `*.csproj` or `.sln`               | **Software Architect**                      | `oh-my-claudecode:architect`        | Component/project architecture        |
+| `tests/**/*.cs` or `**/*.Tests.csproj` | **Automation QA Expert**                    | `oh-my-claudecode:qa-tester`        | Test quality and coverage             |
+| `Tests/Architecture/**/*.cs`           | **Software Architect**                      | `oh-my-claudecode:architect`        | Architecture test validation          |
+| `.github/workflows/*.yml`              | **DevOps/Infrastructure**                   | `oh-my-claudecode:architect-medium` | CI/CD pipeline validation             |
+| `Dockerfile`, `*.dockerfile`           | **DevOps/Infrastructure**                   | `oh-my-claudecode:architect-medium` | Container configuration               |
+| `docker-compose*.yml`                  | **DevOps/Infrastructure**                   | `oh-my-claudecode:architect-medium` | Multi-container orchestration         |
+| `**/Controllers/**/*.cs`               | **API Documentation Specialist**            | `oh-my-claudecode:code-reviewer`    | API design and documentation          |
+| `**/Routes/**`, `OpenAPI*.yml`         | **API Documentation Specialist**            | `oh-my-claudecode:code-reviewer`    | API specification quality             |
+| Performance-critical paths\*           | **Performance Engineer**                    | `oh-my-claudecode:architect`        | Performance optimization              |
+
+\*Identified by Architect during initial review
+
+**Invocation Rules**:
+
+1. **Always Invoke Base Trio**: Code Reviewer, Security Reviewer, Architect (for every PR)
+2. **Detect Changes**: Use `git diff --name-only origin/main` to get changed files
+3. **Match Patterns**: Apply file pattern globs to determine which additional experts to invoke
+4. **Sequential Review**: Invoke experts in logical order (Architecture → Security → Code Quality → Specialized)
+5. **Consolidate Findings**: Merge all expert feedback into single issue triage
+
+**Specialized Persona Focus Areas**:
+
+**GDD Designer** (when `docs/design/**/*.md` changed):
+
+- Frontmatter compliance
+- Single subject focus
+- Cross-linking
+- Progressive disclosure
+- Hierarchical organization
+- Co-located supplements
+
+**.NET 10 Best Practices Senior Developer** (when `**/*.cs` changed):
+
+- Modern C# 12+ features (records, pattern matching, Span<T>/Memory<T>)
+- Async/await best practices
+- LINQ performance
+- Memory management
+- Exception handling patterns
+- Nullable reference types
+- Primary constructors
+- Collection expressions
+
+**Software Architect** (when new projects/components or architecture tests):
+
+- Component boundaries and responsibilities
+- Dependency direction
+- Architecture test validity
+- Integration patterns
+- Coupling and cohesion
+- SOLID principles
+- Design patterns appropriate use
+
+**Automation QA Expert** (when test projects modified):
+
+- Test coverage completeness
+- Test quality and maintainability
+- Appropriate test use (unit, integration, e2e)
+- Test isolation
+- Mock/stub usage
+- Assertion quality
+- Test naming conventions
+
+**DevOps/Infrastructure** (when CI/CD or container configs changed):
+
+- Workflow logic correctness
+- Security best practices (secrets management)
+- Resource optimization
+- Failure handling
+- Container layer optimization
+- Multi-stage builds
+- Dependency caching
+
+**API Documentation Specialist** (when API surfaces changed):
+
+- RESTful conventions
+- OpenAPI spec completeness
+- Endpoint documentation
+- Request/response schema clarity
+- Error handling documentation
+- Versioning strategy
+
+**Performance Engineer** (when performance-critical code changed):
+
+- Algorithm complexity
+- Memory allocations
+- Hot path optimization
+- Caching strategies
+- Async/await efficiency
+- Database query optimization
+- Profiling recommendations
+
 ### Issue Severity Classification
 
 **HIGH+ (Must Fix Before PR)**:
@@ -614,6 +733,6 @@ When agents disagree or need human input:
 
 ---
 
-**Version**: 1.2
+**Version**: 1.3
 **Last Updated**: 2026-02-02
-**Maintained By**: GDD Designer persona, PR Monitor persona, Brutal Self Code-Review personas
+**Maintained By**: GDD Designer persona, PR Monitor persona, Brutal Self Code-Review personas, Expert Specialist personas

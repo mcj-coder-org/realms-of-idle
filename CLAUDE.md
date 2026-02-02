@@ -2,7 +2,7 @@
 type: reference
 scope: high-level
 status: approved
-version: 1.2.0
+version: 1.3.0
 created: 2026-01-01
 updated: 2026-02-02
 subjects:
@@ -87,14 +87,30 @@ Multi-step: `1. Step → verify: check`
 3. **Contributor** TDD: test → implement → commit
 4. **Contributor** verify: 0 issues, 0 warnings, 0 failures
 5. **Brutal Self Code-Review** (BEFORE deeming complete):
-   - Invoke **Code Reviewer** persona for comprehensive review
-   - Invoke **Security Reviewer** persona for security audit
-   - Invoke **Architect** persona for architectural validation
+
+   **Always Invoke** (for every PR):
+   - **Code Reviewer** persona: Comprehensive code quality review
+   - **Security Reviewer** persona: Security vulnerability audit
+   - **Architect** persona: Architectural validation
+
+   **Conditionally Invoke** (based on file changes):
+   - **GDD Designer** persona: If any `docs/design/**/*.md` files edited
+   - **.NET 10 Best Practices Senior Developer**: If any `**/*.cs` files modified
+   - **Software Architect** persona: If new components/projects added OR architecture tests modified
+   - **Automation QA Expert** persona: If any `**/Tests/**/*.cs` or `**/*.Tests.csproj` files modified
+   - **DevOps/Infrastructure** persona: If any `.github/**/*.yml`, `Dockerfile`, `*.dockerfile`, or `docker-compose*.yml` modified
+   - **API Documentation Specialist**: If any API controllers, routes, or OpenAPI specs modified
+   - **Performance Engineer**: If any performance-critical paths modified (identified by Architect)
+
+   **Review Process**:
+   - Detect which file patterns changed using `git diff --name-only`
+   - Invoke applicable expert personas based on patterns
    - **Fix all HIGH+ severity issues** found in-scope
    - **Create follow-on issues** for MEDIUM/LOW or out-of-scope concerns
    - **Update plan progress** with completed/in-progress tasks
    - **Include updated plan** in commit (documentation or plan file)
    - Commit fixes and plan updates
+
 6. **Contributor** `git rebase origin/main` → fix conflicts → re-test
 7. **Contributor** `git push` + `gh pr create`
 8. **After push**: Update Issue checklist with PR link and completed tasks
