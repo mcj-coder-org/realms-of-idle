@@ -159,40 +159,43 @@ if (!hasBrutalReview) {
 
 // Check 2: DoD checklist is 100% passing WITH evidence
 const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/)
-if (dodSection) {
-  const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length
-  const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length
-  const checkedItems = (dodSection[0].match(/\[✅\]/g) || []).length
 
-  if (uncheckedItems > 0 || failingItems > 0) {
+if (!dodSection) {
+  fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
+}
+
+const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length
+const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length
+const checkedItems = (dodSection[0].match(/\[✅\]/g) || []).length
+
+if (uncheckedItems > 0 || failingItems > 0) {
+  fail(
+    `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
+  )
+}
+
+// CRITICAL: Verify that checked items have evidence links
+if (checkedItems > 0) {
+  const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+
+  // Count evidence links in key sections
+  const ciEvidenceSection = prBody.match(/##? CI Status[\s\S]*?(?=##|$)/)
+  const ciLinks = ciEvidenceSection
+    ? (ciEvidenceSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [])
+        .length
+    : 0
+
+  // Rough heuristic: Should have at least as many evidence links as checked items
+  if (evidenceLinks.length < checkedItems) {
     fail(
-      `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
+      `❌ ${checkedItems} DoD items checked ✅ but only ${evidenceLinks.length} evidence links found. Every checked item must have supporting evidence.`
     )
   }
 
-  // CRITICAL: Verify that checked items have evidence links
-  if (checkedItems > 0) {
-    const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
-
-    // Count evidence links in key sections
-    const ciEvidenceSection = prBody.match(/## CI Status[\s\S]*?(?=##|$)/)
-    const ciLinks = ciEvidenceSection
-      ? (ciEvidenceSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [])
-          .length
-      : 0
-
-    // Rough heuristic: Should have at least as many evidence links as checked items
-    if (evidenceLinks.length < checkedItems) {
-      fail(
-        `❌ ${checkedItems} DoD items checked ✅ but only ${evidenceLinks.length} evidence links found. Every checked item must have supporting evidence.`
-      )
-    }
-
-    if (ciLinks === 0 && checkedItems > 0) {
-      fail(
-        '❌ DoD checklist shows passing items but no CI evidence links found. Add CI status table with evidence links.'
-      )
-    }
+  if (ciLinks === 0 && checkedItems > 0) {
+    fail(
+      '❌ DoD checklist shows passing items but no CI evidence links found. Add CI status table with evidence links.'
+    )
   }
 }
 
@@ -288,6 +291,4 @@ schedule(async () => {
 const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
 if (evidenceLinks.length === 0) {
   fail('❌ No evidence links found in PR description. All claims must have supporting evidence.')
-} else {
-  message(`✅ Found ${evidenceLinks.length} evidence link(s) in PR description`)
 }
