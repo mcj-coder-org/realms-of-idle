@@ -599,7 +599,7 @@ The PR Monitor enforces the dual-account pattern:
 
 | Role        | Account       | Email                           | Purpose                          |
 | ----------- | ------------- | ------------------------------- | -------------------------------- |
-| Contributor | mcj-codificer | <m.c.j@live.co.uk>              | Opens PRs, implements features   |
+| Contributor | martincjarvis | <m.c.j@live.co.uk>              | Opens PRs, implements features   |
 | Maintainer  | mcj-coder     | <martin.cjarvis@googlemail.com> | Reviews, approves, enables merge |
 
 **Critical Rules**:
@@ -611,7 +611,7 @@ The PR Monitor enforces the dual-account pattern:
 
 For each PR, the PR Monitor verifies:
 
-- [ ] **Account**: Opened by Contributor (mcj-codificer)
+- [ ] **Account**: Opened by Contributor (martincjarvis)
 - [ ] **Status Checks**: CI build, tests, security scan, code quality all passing
 - [ ] **Review Comments**: All comment threads resolved
 - [ ] **Maintainer Approval**: Approved by Maintainer (mcj-coder)
@@ -755,7 +755,7 @@ Each checklist item must have a fresh evidence link:
 1. Contributor: verify → brutal review → rebase → push → create PR
 2. PR Monitor activates: Monitors from open to merge
 3. PR Monitor verifies:
-   - Account: Opened by Contributor (mcj-codificer)
+   - Account: Opened by Contributor (martincjarvis)
    - Status checks: All CI/CD, security, quality passing
    - Review comments: All threads resolved
    - Auto-merge: Enabled by Maintainer after approval
