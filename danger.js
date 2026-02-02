@@ -157,47 +157,153 @@ if (!hasBrutalReview) {
   )
 }
 
-// Check 2: DoD checklist is 100% passing WITH evidence
+// Check 2: DoD checklist is 100% passing WITH inline evidence links
 const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/)
 
 if (!dodSection) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
 }
 
-const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length
-const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length
-const checkedItems = (dodSection[0].match(/\[✅\]/g) || []).length
+// Parse DoD subsections
+const acceptCriteriaSection = dodSection[0].match(/### Acceptance Criteria[\s\S]*?(?=###|##|$)/)
+const codeQualitySection = dodSection[0].match(/### Code Quality[\s\S]*?(?=###|##|$)/)
+const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=###|##|$)/)
+const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###|##|$)/)
+const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###|##|$)/)
 
-if (uncheckedItems > 0 || failingItems > 0) {
-  fail(
-    `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
-  )
+// Validate Acceptance Criteria section exists
+if (!acceptCriteriaSection) {
+  fail('❌ DoD is missing "### Acceptance Criteria" subsection. Copy Acceptance Criteria from the linked Issue.')
 }
 
-// CRITICAL: Verify that checked items have evidence links
-if (checkedItems > 0) {
-  const evidenceLinks = prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+// Helper: Validate that checked items have inline evidence links
+// Format: - [x] Text - [Label](URL) - notes
+function validateCheckedItemsWithEvidence(sectionText, sectionName) {
+  if (!sectionText) return { checked: 0, withoutEvidence: 0 }
 
-  // Count evidence links in key sections
-  const ciEvidenceSection = prBody.match(/##? CI Status[\s\S]*?(?=##|$)/)
-  const ciLinks = ciEvidenceSection
-    ? (ciEvidenceSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [])
-        .length
-    : 0
+  const lines = sectionText.split('\n')
+  const checkedItems = []
+  const itemsWithoutEvidence = []
 
-  // Rough heuristic: Should have at least as many evidence links as checked items
-  if (evidenceLinks.length < checkedItems) {
+  lines.forEach((line, index) => {
+    // Match checked checkboxes: - [x] or - [X]
+    const checkedMatch = line.match(/^\s*-\s*\[([xX])\]\s+(.+)/)
+    if (checkedMatch) {
+      const itemText = checkedMatch[2]
+      checkedItems.push(itemText)
+
+      // Check if line contains an inline markdown link: [Text](URL)
+      const hasEvidenceLink = /\[.*?\]\(https?:\/\/[^\s]+\)/.test(itemText)
+
+      if (!hasEvidenceLink) {
+        itemsWithoutEvidence.push({ line: index + 1, text: itemText })
+      }
+    }
+  })
+
+  return { checked: checkedItems.length, withoutEvidence: itemsWithoutEvidence }
+}
+
+// Validate each subsection
+if (acceptCriteriaSection) {
+  const result = validateCheckedItemsWithEvidence(acceptCriteriaSection[0], 'Acceptance Criteria')
+  if (result.withoutEvidence.length > 0) {
     fail(
-      `❌ ${checkedItems} DoD items checked ✅ but only ${evidenceLinks.length} evidence links found. Every checked item must have supporting evidence.`
-    )
-  }
-
-  if (ciLinks === 0 && checkedItems > 0) {
-    fail(
-      '❌ DoD checklist shows passing items but no CI evidence links found. Add CI status table with evidence links.'
+      `❌ Acceptance Criteria: ${result.withoutEvidence.length} checked item(s) missing inline evidence link. Format: - [x] AC description - [Evidence](URL) - notes`
     )
   }
 }
+
+if (codeQualitySection) {
+  const result = validateCheckedItemsWithEvidence(codeQualitySection[0], 'Code Quality')
+  if (result.withoutEvidence.length > 0) {
+    fail(
+      `❌ Code Quality: ${result.withoutEvidence.length} checked item(s) missing inline evidence link. Format: - [x] Item - [Evidence](URL) - notes`
+    )
+  }
+}
+
+if (documentationSection) {
+  const result = validateCheckedItemsWithEvidence(documentationSection[0], 'Documentation')
+  if (result.withoutEvidence.length > 0) {
+    fail(
+      `❌ Documentation: ${result.withoutEvidence.length} checked item(s) missing inline evidence link. Format: - [x] Item - [Evidence](URL) - notes`
+    )
+  }
+}
+
+if (testingSection) {
+  const result = validateCheckedItemsWithEvidence(testingSection[0], 'Testing')
+  if (result.withoutEvidence.length > 0) {
+    fail(
+      `❌ Testing: ${result.withoutEvidence.length} checked item(s) missing inline evidence link. Format: - [x] Item - [Evidence](URL) - notes`
+    )
+  }
+}
+
+if (securitySection) {
+  const result = validateCheckedItemsWithEvidence(securitySection[0], 'Security & Review')
+  if (result.withoutEvidence.length > 0) {
+    fail(
+      `❌ Security & Review: ${result.withoutEvidence.length} checked item(s) missing inline evidence link. Format: - [x] Item - [Evidence](URL) - notes`
+    )
+  }
+}
+
+// Check 2b: Verify linked issue has Acceptance Criteria
+schedule(async () => {
+  try {
+    if (!danger.github || !danger.github.api) {
+      warn('⚠️ GitHub API not available. Unable to verify linked issue has Acceptance Criteria.')
+      return
+    }
+
+    const octokit = danger.github.api
+    const owner = danger.github.repo?.owner
+    const repo = danger.github.repo?.repo
+
+    if (!owner || !repo) {
+      warn('⚠️ Unable to determine repository owner/name. Skipping issue AC check.')
+      return
+    }
+
+    // Extract issue number from PR body (e.g., "Closes: #42")
+    const issueMatch = prBody.match(/(?:Closes|Fixes|Resolves):\s*#(\d+)/i)
+    if (!issueMatch) {
+      warn('⚠️ No linked issue found (format: "Closes: #42"). Please link the issue this PR addresses.')
+      return
+    }
+
+    const issueNumber = issueMatch[1]
+
+    // Fetch issue data
+    const issueData = await octokit.rest.issues.get({
+      owner,
+      repo,
+      issue_number: issueNumber
+    })
+
+    const issueBody = issueData.data.body || ''
+
+    // Check if issue has Acceptance Criteria section
+    const hasAC = /###\s*Acceptance\s+Criteria/i.test(issueBody) ||
+                  /##\s*Acceptance\s+Criteria/i.test(issueBody)
+
+    if (!hasAC) {
+      fail(
+        `❌ Linked issue #${issueNumber} does not contain an "Acceptance Criteria" section. The issue must define AC before this PR can be merged. Please update the issue.`
+      )
+    } else {
+      message(`✅ Issue #${issueNumber} has Acceptance Criteria defined`)
+    }
+  } catch (error) {
+    if (error.status === 404) {
+      fail('❌ Linked issue not found. Please ensure the issue number is correct.')
+    } else {
+      warn(`⚠️ Unable to verify linked issue has Acceptance Criteria: ${error.message}`)
+    }
+  }
+})
 
 // Check 3: Brutal Critical Review shows APPROVED
 const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/)
