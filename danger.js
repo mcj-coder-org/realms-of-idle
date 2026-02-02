@@ -3,6 +3,9 @@
 
 const { danger, fail, warn, message } = require('danger')
 
+// TEST: Verify file is being executed
+message('🧪 TEST: danger.js is being executed!')
+
 // Get information about the PR
 const pr = danger.github.pr
 const modifiedFiles = danger.git.modifiedFiles || []
