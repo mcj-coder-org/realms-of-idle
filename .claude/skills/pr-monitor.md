@@ -148,14 +148,161 @@ Identify common PR problems early:
 
 Track comment chains to resolution:
 
-**Comment Chain Tracking**:
+**⚠️ CRITICAL: Review Thread Resolution Process**
 
-For each review comment thread:
+> **MANDATORY RULE**: NEVER blindly mark review threads as resolved without verifying the actual issue is fixed.
 
-1. **Identify**: File, line, issue raised
-2. **Categorize**: Must-fix | Should-fix | Nice-to-have | Out-of-scope
-3. **Resolve**: Fix in PR | Create follow-on issue | Defer
-4. **Verify**: Confirm resolution addressed the concern
+**The Wrong Approach** (DO NOT DO THIS):
+
+```graphql
+# ❌ BAD: Batch resolve all threads without verification
+mutation {
+  resolveReviewThread(input: { threadId: "PRRT_..." })
+}
+```
+
+**The Correct Approach**:
+
+1. **Switch to Contributor credentials** (mcj-codificer)
+
+   ```bash
+   gh auth switch
+   git config user.email "m.c.j@live.co.uk"
+   git config user.name "mcj-codificer"
+   git config user.signingkey "1E3C5459E5FB8F2F"
+   ```
+
+2. **Read the review comment carefully**
+   - Identify the specific file and line
+   - Understand the actual issue being raised
+   - Note the severity (blocking vs. suggestion)
+
+3. **Implement the fix in code**
+   - Go to the exact file and line mentioned
+   - Make the necessary code changes
+   - Commit with conventional commit format
+   - Push to the PR branch
+
+4. **Reply to the review thread with evidence**
+   - Explain what was done to address the issue
+   - **MANDATORY**: Include link to evidence (commit, diff, or code location)
+   - Ask for verification if unsure
+
+   **Evidence Template**:
+
+   ```markdown
+   ### ✅ Fixed
+
+   **What was changed**: {description of fix}
+
+   **Evidence**: [{link type}]({url})
+
+   - Commit: `{commit SHA}` or [view commit](https://github.com/mcj-coder-org/realms-of-idle/commit/{sha})
+   - Diff: [view changes on line {line}]({diff_url})
+   - Or: [view file {path}:{line}](https://github.com/mcj-coder-org/realms-of-idle/blob/{branch}/{path}#L{line})
+
+   **Verification**: {how to verify the fix works}
+   ```
+
+5. **Switch to Maintainer credentials** (mcj-coder)
+
+   ```bash
+   gh auth switch --maintainer
+   git config user.email "martin.cjarvis@googlemail.com"
+   git config user.name "mcj-coder"
+   git config user.signingkey "7CEEB4F26A898514"
+   ```
+
+6. **Verify and mark as resolved**
+   - Review the fix pushed by Contributor
+   - Click through the evidence link to verify the actual code change
+   - Confirm it addresses the raised issue
+   - Mark the review thread as resolved
+   - (If all threads resolved) Approve PR and enable auto-merge
+
+**Review Thread Types**:
+
+1. **Review comments** (attached to specific lines in files)
+   - Accessed via GraphQL API: `repository.pullRequest(number).reviewThreads`
+   - Must be resolved before PR can merge
+   - Each has thread ID: `PRRT_kwDORGSN2s...`
+
+2. **PR comments** (general discussion)
+   - Accessed via: `gh pr comments {number}`
+   - General feedback and discussion
+   - Not blocking merge unless they reference required changes
+
+**How to Query Review Threads**:
+
+```bash
+# Get unresolved review threads
+gh api graphql -f query='
+query {
+  repository(owner: "mcj-coder-org", name: "realms-of-idle") {
+    pullRequest(number: 8) {
+      reviewThreads(first: 50) {
+        nodes {
+          id
+          isResolved
+          comments(first: 2) {
+            nodes {
+              databaseId
+              author {
+                login
+              }
+              body
+              path
+              line
+              state
+            }
+          }
+        }
+      }
+    }
+  }
+}' | jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)'
+```
+
+**How to Reply to a Review Thread**:
+
+```bash
+# Find the comment ID within the thread
+gh api graphql -f query='
+query {
+  repository(owner: "mcj-coder-org", name: "realms-of-idle") {
+    pullRequest(number: 8) {
+      reviewThread(id: "PRRT_kwDORGSN2s5sHMmg") {
+        comments(first: 10) {
+          nodes {
+            databaseId
+          }
+        }
+      }
+    }
+  }
+}' | jq '.data.repository.pullRequest.reviewThread.comments.nodes[].databaseId'
+
+# Reply as a comment to that specific ID
+gh api repos/mjc-coder-org/realms-of-idle/issues/8/comments/{databaseId} -f body="### ✅ Issue Fixed
+
+{Explain what was fixed}
+"
+```
+
+**Common Pitfalls**:
+
+❌ **Batch resolving threads** - Marking all as resolved without verification
+❌ **Using --admin flag** - Forces merge without proper verification
+❌ **Ignoring review comments** - Treating them as optional
+❌ **Marking own threads as resolved** - Reviewer should resolve, not contributor
+❌ **Replying without evidence** - Not linking to commit/diff proving the fix
+❌ **Wrong credentials for task** - Using Maintainer account to implement fixes
+
+✅ **Use correct account per task** - Contributor implements, Maintainer verifies
+✅ **Verify each fix** - Check the actual code before claiming it's fixed
+✅ **Reply with evidence** - Always include commit SHA or diff link
+✅ **Let reviewer resolve** - The person who raised the issue marks it resolved
+✅ **Create follow-on issues** - For out-of-scope or complex discussions
 
 **Follow-On Issue Template**:
 
@@ -250,6 +397,18 @@ All status checks passing. Auto-merge will proceed when:
 - **Maintainer account** (mcj-coder): Reviews PRs, approves changes, enables auto-merge
 - **Separation of concerns**: Implementation separate from review/merge
 - **GitHub CLI aliases**: `gh auth switch` for account toggling
+
+**Review Issue Resolution - Credential Flow**:
+
+| Step | Action               | Account     | Credentials                                 |
+| ---- | -------------------- | ----------- | ------------------------------------------- |
+| 1    | Implement code fix   | Contributor | mcj-codificer / <m.c.j@live.co.uk>          |
+| 2    | Commit and push fix  | Contributor | mcj-codificer / <m.c.j@live.co.uk>          |
+| 3    | Reply with evidence  | Contributor | mcj-codificer / <m.c.j@live.co.uk>          |
+| 4    | Verify the fix       | Maintainer  | mcj-coder / <martin.cjarvis@googlemail.com> |
+| 5    | Mark thread resolved | Maintainer  | mcj-coder / <martin.cjarvis@googlemail.com> |
+
+**Key Principle**: Contributor implements and provides evidence, Maintainer verifies and resolves. Never resolve your own review thread.
 
 ### Automated Code Review System
 
@@ -406,6 +565,8 @@ This PR was NOT opened by the Contributor account (mcj-codificer).
 - ✅ Verify account credentials (Contributor opens, Maintainer approves)
 - ✅ Track status check results (CI/CD, security, quality, tests)
 - ✅ Monitor review comment threads to resolution
+- ✅ Ensure review replies include evidence links (commit SHA, diff URL)
+- ✅ Guide proper credential usage (Contributor implements, Maintainer verifies)
 - ✅ Create follow-on GitHub issues for out-of-scope discussions
 - ✅ Report merge readiness with verified checklist
 - ✅ Detect and report workflow violations
