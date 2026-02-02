@@ -49,8 +49,6 @@ Realms of Idle is an offline-first solo play game with scalable multiplayer supp
 
 ### Getting Started
 
-### Getting Started
-
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/realms-of-idle.git

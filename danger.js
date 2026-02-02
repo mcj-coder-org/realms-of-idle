@@ -2,7 +2,6 @@
 // This file defines custom checks and rules for pull requests
 
 const { danger, fail, warn, message } = require('danger')
-const config = require('./danger.config.js').project
 
 // Get information about the PR
 const pr = danger.github.pr
@@ -19,10 +18,6 @@ const hasChangesIn = (paths) => {
 const hasFileType = (extension) => {
   const allFiles = [...modifiedFiles, ...createdFiles]
   return allFiles.some(file => file.endsWith(extension))
-}
-
-const getCommitMessages = () => {
-  return danger.git.commits.map(commit => commit.message)
 }
 
 // PR Title Validation
