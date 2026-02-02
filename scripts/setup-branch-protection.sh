@@ -74,7 +74,7 @@ setup_branch_protection() {
     local contexts_json=$(printf '%s\n' "${REQUIRED_STATUS_CHECKS[@]}" | jq -R . | jq -s .)
 
     local payload=$(jq -n \
-        --arg strict "true" \
+        --argjson strict true \
         --argjson contexts "$contexts_json" \
         --argjson dismiss_stale_reviews false \
         --argjson require_code_owner_reviews false \
