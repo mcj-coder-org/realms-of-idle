@@ -1,3 +1,19 @@
+---
+type: reference
+scope: high-level
+status: approved
+version: 1.1.0
+created: 2026-01-01
+updated: 2026-02-02
+subjects:
+  - development
+  - workflow
+  - guidelines
+dependencies: []
+---
+
+## status: active
+
 # CLAUDE.md
 
 <EXTREMELY_IMPORTANT>
@@ -74,9 +90,15 @@ Multi-step: `1. Step → verify: check`
 4. **Contributor** verify: 0 issues, 0 warnings, 0 failures
 5. **Contributor** `git rebase origin/main` → fix conflicts → re-test
 6. **Contributor** `git push` + `gh pr create`
-7. **Maintainer** reviews, approves, enables auto-merge (rebase)
-8. **Maintainer** (when checks pass): `git rebase origin/main` → `git merge --ff-only` → push
-9. **Maintainer** delete worktree + branch, close issue
+7. **PR Monitor**: Monitor PR until auto-merge completes
+   - Verify PR opened by Contributor account
+   - Track all status checks (CI/CD, security, quality)
+   - Ensure review comments resolved (fix or follow-on issue)
+   - Confirm Maintainer approval and auto-merge enabled
+   - Verify successful merge
+8. **Maintainer** reviews, approves, enables auto-merge (rebase)
+9. **Maintainer** (when checks pass): `git rebase origin/main` → `git merge --ff-only` → push
+10. **Maintainer** delete worktree + branch, close issue
 
 **Branch pattern**: `type/N-description` (feat/42-inventory, fix/117-leak, docs/23-readme, refactor/88-engine)
 

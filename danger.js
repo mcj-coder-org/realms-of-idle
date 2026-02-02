@@ -6,9 +6,9 @@ const config = require('./danger.config.js').project
 
 // Get information about the PR
 const pr = danger.github.pr
-const modifiedFiles = danger.git.modifiedFiles
-const createdFiles = danger.git.createdFiles
-const deletedFiles = danger.git.deletedFiles
+const modifiedFiles = danger.git.modifiedFiles || []
+const createdFiles = danger.git.createdFiles || []
+const deletedFiles = danger.git.deletedFiles || []
 
 // Helper functions
 const hasChangesIn = (paths) => {
