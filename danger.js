@@ -422,6 +422,10 @@ if (evidenceLinks.length === 0) {
 try {
   require('./danger-extensions.js')
 } catch (error) {
-  warn(`⚠️ Failed to load danger-extensions.js: ${error.message}`)
+  const errorMsg = error ? (error.message || error.toString() || String(error)) : 'unknown error'
+  warn(`⚠️ Failed to load danger-extensions.js: ${errorMsg}`)
+  if (error && error.stack) {
+    message(`🔍 Stack trace: ${error.stack.split('\n').slice(0, 3).join('\n')}`)
+  }
 }
 

@@ -1,7 +1,14 @@
 // Enhanced DangerJS extensions for comprehensive automated code review
+// This module is designed to be loaded from danger.js and shares its Danger DSL context
 const { danger, fail, warn, message, markdown } = require('danger')
 const fs = require('fs')
 const path = require('path')
+
+// Check if danger object exists (this file is being loaded within DangerJS context)
+if (!danger || !danger.github) {
+  console.error('ERROR: danger-extensions.js must be loaded within DangerJS context')
+  throw new Error('danger-extensions.js: danger object not available. This file must be loaded from danger.js within DangerJS runtime.')
+}
 
 // Load project configuration
 const config = require('./danger.config.js').project
