@@ -1,0 +1,11 @@
+name: Test Trigger
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "PR trigger test - this should run on all PRs"
