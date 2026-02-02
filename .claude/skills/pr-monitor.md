@@ -346,8 +346,47 @@ Before any Maintainer approval, a comprehensive "Brutal Critical Review" MUST be
 
 - After all CI checks pass
 - After all review comments are resolved
+- **AFTER EVERY CODE CHANGE** - Critical: Must re-review after fixes
 - BEFORE Maintainer grants approval
 - BEFORE auto-merge is enabled
+
+**⚠️ CRITICAL: Review Refresh After Changes**
+
+**Every time Contributor pushes fixes or changes, Maintainer MUST:**
+
+1. **Re-run Brutal Critical Review** from scratch
+   - New code may introduce new issues
+   - Fixes may break previously working code
+   - Edge cases may emerge from changes
+
+2. **Update PR Description** with new review findings
+   - Replace previous Brutal Critical Review section entirely
+   - Date-stamp the new review
+   - Document any NEW issues found
+
+3. **Re-verify ALL criteria** - not just changed parts
+   - Code quality checks on entire codebase
+   - All tests still passing
+   - No regressions introduced
+   - Evidence links still current
+
+4. **Update Assessment** based on latest review
+   - APPROVED only if ALL criteria still met
+   - NEEDS WORK if new issues found
+   - Document what changed since last review
+
+**Why This Matters**:
+
+A fix for issue A might:
+
+- Introduce issue B
+- Break test C
+- Violate coding standard D
+- Create security vulnerability E
+
+**Only a fresh full review catches these**. Partial reviews or "just check the fix" are insufficient.
+
+**Review Refresh Trigger**: ANY commit to PR branch = full Brutal Critical Review required
 
 **Review Performed By**: Maintainer (mcj-coder) using Maintainer credentials
 
@@ -549,6 +588,8 @@ gh pr merge {pr_number} --auto --rebase
 4. **Zero tolerance** - One blocker = NOT APPROVED
 5. **Document everything** - All findings go in PR description
 6. **Maintainer only** - Only mcj-coder performs this review
+7. **Refresh after changes** - ANY commit to PR branch = full Brutal Critical Review required
+8. **Full review only** - No partial reviews or "just check the fix" - review everything
 
 **What Happens After Brutal Critical Review**:
 
