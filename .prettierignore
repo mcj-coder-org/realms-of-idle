@@ -55,3 +55,6 @@ package-lock.json
 
 # Worktrees
 .worktrees/
+
+# Prettier YAML parser bug workaround
+.github/workflows/release.yml
