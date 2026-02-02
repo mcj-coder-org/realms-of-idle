@@ -166,12 +166,19 @@ if (!dodSection) {
   return
 }
 
+// Debug: Log DoD section
+message(`🔍 DEBUG: DoD found=true, length=${dodSection[0].length}`)
+message(`🔍 DEBUG: First 300 chars=${dodSection[0].substring(0, 300)}`)
+
 // Parse DoD subsections
 const acceptCriteriaSection = dodSection[0].match(/### Acceptance Criteria[\s\S]*?(?=###[^#]|##|$)/)
 const codeQualitySection = dodSection[0].match(/### Code Quality[\s\S]*?(?=###[^#]|##|$)/)
 const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
 const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
 const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
+
+// Debug subsections
+message(`🔍 DEBUG: AC=${!!acceptCriteriaSection}, CQ=${!!codeQualitySection}, DOC=${!!documentationSection}`)
 
 // Validate Acceptance Criteria section exists
 if (!acceptCriteriaSection) {
