@@ -2,8 +2,7 @@ name: Automated Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main, develop]
+    branches: [main]
 
 permissions:
   contents: read
