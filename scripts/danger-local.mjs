@@ -3,7 +3,7 @@
 // Local DangerJS runner for development/testing
 // This script simulates DangerJS in a local environment
 
-import { spawn } from 'child_process'
+import { spawn, spawnSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 
