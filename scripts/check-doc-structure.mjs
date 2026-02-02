@@ -6,7 +6,6 @@
  */
 
 import { readFileSync } from 'fs';
-import { join } from 'path';
 
 const FRONTMATTER_REGEX = /^---\s*\n([\s\S]*?)\n---\s*\n/;
 
