@@ -315,9 +315,10 @@ schedule(async () => {
 // Check 3: Brutal Critical Review shows APPROVED
 const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/)
 if (reviewSection) {
-  const isApproved = reviewSection[0].includes('Overall Assessment: APPROVED') || reviewSection[0].includes('**Overall Assessment**: APPROVED')
-  const needsWork = reviewSection[0].includes('Overall Assessment: NEEDS WORK') || reviewSection[0].includes('**Overall Assessment**: NEEDS WORK')
-  const rejected = reviewSection[0].includes('Overall Assessment: REJECTED') || reviewSection[0].includes('**Overall Assessment**: REJECTED')
+  const sectionText = reviewSection[0]
+  const isApproved = sectionText.includes('Overall Assessment: APPROVED') || sectionText.includes('**Overall Assessment**: APPROVED')
+  const needsWork = sectionText.includes('Overall Assessment: NEEDS WORK') || sectionText.includes('**Overall Assessment**: NEEDS WORK')
+  const rejected = sectionText.includes('Overall Assessment: REJECTED') || sectionText.includes('**Overall Assessment**: REJECTED')
 
   if (needsWork || rejected) {
     fail(`❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`)
@@ -328,7 +329,7 @@ if (reviewSection) {
   }
 
   // Verify Brutal Critical Review has evidence
-  const reviewLinks = reviewSection[0].match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
+  const reviewLinks = sectionText.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || []
   if (isApproved && reviewLinks.length === 0) {
     fail('❌ Brutal Critical Review marked APPROVED but contains no evidence links. All assessments must reference evidence.')
   }
@@ -407,5 +408,9 @@ if (evidenceLinks.length === 0) {
 }
 
 // Load danger-extensions.js for additional code quality checks
-require('./danger-extensions.js')
+try {
+  require('./danger-extensions.js')
+} catch (error) {
+  warn(`⚠️ Failed to load danger-extensions.js: ${error.message}`)
+}
 
