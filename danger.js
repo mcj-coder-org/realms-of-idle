@@ -158,25 +158,29 @@ if (!hasBrutalReview) {
 }
 
 // Check 2: DoD checklist is 100% passing WITH inline evidence links
-// Match until we hit another ## heading at the start of a line
-const dodSection = prBody.match(/#{2,3} Definition of Done[\s\S]+?(?=^##\s|\n##\s|$)/m)
-
-if (!dodSection) {
+// Find the DoD heading and extract everything until the next ## heading
+const dodHeadingMatch = prBody.match(/#{2,3} Definition of Done/)
+if (!dodHeadingMatch) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
-  // Return early to prevent null reference errors
   return
 }
 
+const dodHeadingIndex = prBody.indexOf(dodHeadingMatch[0])
+const nextHeadingMatch = prBody.substring(dodHeadingIndex + dodHeadingMatch[0].length).match(/\n##[^#]/)
+const dodSection = nextHeadingMatch
+  ? prBody.substring(dodHeadingIndex, dodHeadingIndex + dodHeadingMatch[0].length + nextHeadingMatch.index)
+  : prBody.substring(dodHeadingIndex)
+
 // Debug: Log DoD section
-message(`🔍 DEBUG: DoD found=true, length=${dodSection[0].length}`)
-message(`🔍 DEBUG: First 300 chars=${dodSection[0].substring(0, 300)}`)
+message(`🔍 DEBUG: DoD found=true, length=${dodSection.length}`)
+message(`🔍 DEBUG: First 300 chars=${dodSection.substring(0, 300)}`)
 
 // Parse DoD subsections
-const acceptCriteriaSection = dodSection[0].match(/### Acceptance Criteria[\s\S]*?(?=###[^#]|##|$)/)
-const codeQualitySection = dodSection[0].match(/### Code Quality[\s\S]*?(?=###[^#]|##|$)/)
-const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
-const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
-const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
+const acceptCriteriaSection = dodSection.match(/### Acceptance Criteria[\s\S]*?(?=###[^#]|##|$)/)
+const codeQualitySection = dodSection.match(/### Code Quality[\s\S]*?(?=###[^#]|##|$)/)
+const documentationSection = dodSection.match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
+const testingSection = dodSection.match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
+const securitySection = dodSection.match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
 
 // Debug subsections
 message(`🔍 DEBUG: AC=${!!acceptCriteriaSection}, CQ=${!!codeQualitySection}, DOC=${!!documentationSection}`)
