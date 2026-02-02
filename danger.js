@@ -167,11 +167,11 @@ if (!dodSection) {
 }
 
 // Parse DoD subsections
-const acceptCriteriaSection = dodSection[0].match(/#{3,4} Acceptance Criteria[\s\S]*?(?=###{3,4}|##|$)/)
-const codeQualitySection = dodSection[0].match(/#{3,4} Code Quality[\s\S]*?(?=###{3,4}|##|$)/)
-const documentationSection = dodSection[0].match(/#{3,4} Documentation[\s\S]*?(?=###{3,4}|##|$)/)
-const testingSection = dodSection[0].match(/#{3,4} Testing[\s\S]*?(?=###{3,4}|##|$)/)
-const securitySection = dodSection[0].match(/#{3,4} Security & Review[\s\S]*?(?=###{3,4}|##|$)/)
+const acceptCriteriaSection = dodSection[0].match(/### Acceptance Criteria[\s\S]*?(?=###[^#]|##|$)/)
+const codeQualitySection = dodSection[0].match(/### Code Quality[\s\S]*?(?=###[^#]|##|$)/)
+const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
+const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
+const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
 
 // Validate Acceptance Criteria section exists
 if (!acceptCriteriaSection) {
