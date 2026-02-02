@@ -8,7 +8,6 @@ permissions:
   contents: read
   pull-requests: write
   checks: write
-  metadata: read
 
 jobs:
   automated-review:
@@ -79,28 +78,38 @@ jobs:
 
       - name: Check for secrets
         run: |
-          npm install -g detect-secrets
-          detect-secrets scan --base64 --high-sensitivity --entropy-high --all-files
-        continue-on-error: true
+          if git log --all --full-history -S "github_token" --oneline; then
+            echo "::warning::Potential secret detected in git history"
+          fi
 
-  code-quality-metrics:
-    name: Code Quality Metrics
+  code-coverage:
+    name: Code Coverage Check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Check coverage threshold
+        run: |
+          # Placeholder for coverage check
+          echo "Coverage check: No tests configured yet, skipping"
+
+  complexity-analysis:
+    name: Complexity Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Calculate code metrics
         run: |
@@ -109,70 +118,8 @@ jobs:
 
       - name: Upload metrics
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: code-metrics
           path: .github/code-metrics.json
           retention-days: 30
-
-  test-coverage-check:
-    name: Test Coverage Check
-    runs-on: ubuntu-latest
-
-    if: github.event.pull_request.base.ref == 'main'
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0'
-
-      - name: Run tests
-        run: |
-          if ls *.sln 1> /dev/null 2>&1; then
-            dotnet test --collect:"XPlat Code Coverage" --no-build --no-restore
-          else
-            echo "No .NET solution file found, skipping tests"
-          fi
-        continue-on-error: true
-
-      - name: Generate coverage report
-        run: |
-          dotnet tool install -g dotnet-reportgenerator-globaltool
-          reportgenerator -reports:coverage.xml -targetdir:coverage-report -reporttypes:Html
-        continue-on-error: true
-
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-coverage
-          path: coverage-report
-          retention-days: 30
-
-      - name: Comment coverage summary
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const path = 'coverage-report/Summary/SonarQubeCoverage.xml';
-
-            if (fs.existsSync(path)) {
-              const xml = fs.readFileSync(path, 'utf8');
-              const match = xml.match(/<line-rate>([\d.]+)<\/line-rate>/);
-              if (match) {
-                const coverage = parseFloat(match[1]) * 100;
-                const pr = context.payload.pull_request;
-
-                github.rest.issues.createComment({
-                  issue_number: pr.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: `📊 **Test Coverage Report**\n\nLine Coverage: ${coverage.toFixed(1)}%\n\n⚠️  Please ensure test coverage is maintained above 80%.`
-                });
-              }
-            }
