@@ -313,16 +313,23 @@ schedule(async () => {
 })
 
 // Check 3: Brutal Critical Review shows APPROVED
-const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##[^#]|$)/)
-if (reviewSection) {
-  const sectionText = reviewSection[0]
+// Find the review heading and extract everything until the next ## heading
+const reviewHeadingMatch = prBody.match(/## 🔬 Brutal Critical Review/)
+if (!reviewHeadingMatch) {
+  fail(
+    '❌ Brutal Critical Review missing from PR description. Maintainer must perform and document review before approval. See .claude/skills/pr-monitor.md for template.'
+  )
+} else {
+  const reviewHeadingIndex = prBody.indexOf(reviewHeadingMatch[0])
+  const nextHeadingMatch = prBody.substring(reviewHeadingIndex + reviewHeadingMatch[0].length).match(/\n##[^#]/)
+  const reviewSection = nextHeadingMatch
+    ? prBody.substring(reviewHeadingIndex, reviewHeadingIndex + reviewHeadingMatch[0].length + nextHeadingMatch.index)
+    : prBody.substring(reviewHeadingIndex)
+
+  const sectionText = reviewSection
   const isApproved = sectionText.includes('Overall Assessment: APPROVED') || sectionText.includes('**Overall Assessment**: APPROVED')
   const needsWork = sectionText.includes('Overall Assessment: NEEDS WORK') || sectionText.includes('**Overall Assessment**: NEEDS WORK')
   const rejected = sectionText.includes('Overall Assessment: REJECTED') || sectionText.includes('**Overall Assessment**: REJECTED')
-
-  // Debug logging
-  message(`🔍 DEBUG: Review section length=${sectionText.length}`)
-  message(`🔍 DEBUG: Contains 'Overall Assessment: APPROVED'=${sectionText.includes('Overall Assessment: APPROVED')}`)
 
   if (needsWork || rejected) {
     fail(`❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`)
