@@ -120,13 +120,16 @@ jobs:
             }
 
             if (labels.size > 0) {
-              await github.rest.issues.addLabels({
-                issue_number: prNumber,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: Array.from(labels)
-              });
-              console.log(`Applied labels: ${Array.from(labels).join(', ')}`);
+              // Note: Auto-labeling disabled due to repository workflow permissions
+              // Repository has default workflow permissions set to 'read'
+              // To enable: Settings > Actions > General > Workflow permissions > Read and write
+              console.log(`Would apply labels: ${Array.from(labels).join(', ')}`);
+              // await github.rest.issues.addLabels({
+              //   issue_number: prNumber,
+              //   owner: context.repo.owner,
+              //   repo: context.repo.repo,
+              //   labels: Array.from(labels)
+              // });
             } else {
               console.log('No labels to apply');
             }
