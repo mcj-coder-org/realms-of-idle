@@ -65,7 +65,7 @@ module.exports = {
       patterns: {
         longFunction: /function\s+\w+\s*\{[\s\S]{300,}\}/g,
         shouldUseConst: /\bvar\s+\w+/g,
-        shouldUseArrow: /\.\map\s*\(\s*function\s*\(/g,
+        shouldUseArrow: /\.map\s*\(\s*function\s*\(/g,
         hasConsoleLog: /console\.(log|warn|error)\(/g
       }
     },

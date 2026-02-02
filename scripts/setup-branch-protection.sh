@@ -12,7 +12,7 @@ BRANCHES_TO_PROTECT=("main" "develop")
 REQUIRED_STATUS_CHECKS=('CI - Validate' 'CI - Test' 'CI - Build')
 REQUIRED_PR_REVIEW_COUNT=1
 REQUIRED_PR_REVIEWERS="mcj-coder"
-ADMIN_BYPASS=true
+ENFORCE_ADMINS=false
 
 # Colors for output
 RED='\033[0;31m'
@@ -80,7 +80,7 @@ setup_branch_protection() {
         --argjson require_code_owner_reviews false \
         --argjson require_last_push_approval false \
         --argjson required_approving_review_count "$REQUIRED_PR_REVIEW_COUNT" \
-        --argjson enforce_admins "$ADMIN_BYPASS" \
+        --argjson enforce_admins "$ENFORCE_ADMINS" \
         --argjson allow_force_pushes false \
         --argjson allow_deletions false \
         --argjson block_creations false \
@@ -175,7 +175,7 @@ show_summary() {
     echo "   Protected branches: ${BRANCHES_TO_PROTECT[*]}"
     echo "   Required status checks: ${REQUIRED_STATUS_CHECKS[*]}"
     echo "   PR reviews required: $REQUIRED_PR_REVIEW_COUNT (from $REQUIRED_PR_REVIEWERS)"
-    echo "   Admin bypass: $ADMIN_BYPASS"
+    echo "   Enforce admins: $ENFORCE_ADMINS"
 }
 
 main() {
