@@ -336,21 +336,247 @@ gh api repos/mjc-coder-org/realms-of-idle/issues/8/comments/{databaseId} -f body
 follow-up, from-pr-{number}, {area-label}
 ```
 
-### 4. Verify Merge Readiness
+### 4. Brutal Critical Review (Maintainer Only)
+
+**⚠️ GATEKEEPER: No PR passes this review without meeting ALL criteria**
+
+Before any Maintainer approval, a comprehensive "Brutal Critical Review" MUST be performed and documented in the PR description.
+
+**When This Happens**:
+
+- After all CI checks pass
+- After all review comments are resolved
+- BEFORE Maintainer grants approval
+- BEFORE auto-merge is enabled
+
+**Review Performed By**: Maintainer (mcj-coder) using Maintainer credentials
+
+**What Gets Reviewed**:
+
+1. **Code Quality**
+   - [ ] All code follows project coding standards
+   - [ ] No TODO/FIXME/HACK comments without follow-up issues
+   - [ ] No magic numbers or hardcoded values
+   - [ ] Proper error handling throughout
+   - [ ] No security vulnerabilities (SQL injection, XSS, etc.)
+   - [ ] No performance anti-patterns
+
+2. **Architecture & Design**
+   - [ ] Changes align with system architecture
+   - [ ] No unnecessary complexity or over-engineering
+   - [ ] Proper separation of concerns
+   - [ ] Dependencies are appropriate and minimal
+   - [ ] No tight coupling where loose coupling possible
+
+3. **Testing**
+   - [ ] All tests pass (unit, integration, E2E)
+   - [ ] Test coverage ≥80% for new code
+   - [ ] Tests actually verify behavior (not just coverage padding)
+   - [ ] Edge cases covered
+   - [ ] No flaky tests
+
+4. **Documentation**
+   - [ ] PR description accurately reflects changes
+   - [ ] DoD checklist is 100% accurate (not wishful thinking)
+   - [ ] Code comments where logic is complex
+   - [ ] API documentation updated (if applicable)
+   - [ ] README/docs updated if user-facing changes
+
+5. **Git History**
+   - [ ] All commits follow conventional commit format
+   - [ ] Commit messages are clear and specific
+   - [ ] No merge commits (linear history)
+   - [ ] Commits reference linked issue
+   - [ ] Signed with correct GPG key
+
+6. **Evidence Verification**
+   - [ ] All claims in PR description have evidence links
+   - [ ] CI logs actually show passing (not assumed)
+   - [ ] Review comment replies include commit SHAs or diff links
+   - [ ] Evidence links are current (not stale)
+
+**Brutal Critical Review Template**:
+
+```markdown
+## 🔬 Brutal Critical Review - Maintainer Assessment
+
+**Reviewed by**: @mcj-coder
+**Review Date**: {timestamp}
+**Review Scope**: Full PR + all commits + all changes
+
+### Critical Findings (Blockers)
+
+1. **[Category]**: {Issue description}
+   - Location: {file}:{line}
+   - Severity: BLOCKER
+   - Evidence: [link]({url})
+   - Must Fix: {what needs to be done}
+   - Follow-up Issue: #{issue_number} (if applicable)
+
+### Code Quality Assessment
+
+| Aspect         | Rating | Notes                   |
+| -------------- | ------ | ----------------------- |
+| Clean Code     | ✅/❌  | {observations}          |
+| Error Handling | ✅/❌  | {observations}          |
+| Performance    | ✅/❌  | {observations}          |
+| Security       | ✅/❌  | {observations}          |
+| Architecture   | ✅/❌  | {observations}          |
+| Test Coverage  | ✅/❌  | {percentage}% - {notes} |
+| Documentation  | ✅/❌  | {observations}          |
+
+### Specific Issues Found
+
+#### Blocking (Must Fix Before Merge)
+
+1. **{Title}**
+   - File: `{path}:{line}`
+   - Issue: {description}
+   - Fix: {required action}
+   - Evidence: [screenshot/code]({url})
+
+#### Non-Blocking (Should Fix)
+
+1. **{Title}**
+   - File: `{path}:{line}`
+   - Issue: {description}
+   - Follow-up: #{issue_number}
+
+### DoD Verification
+
+**DoD Checklist Reality Check**:
+
+- [✅/❌] All automated tests pass
+  - Actual: {count} checks passing
+  - Evidence: [CI run](url)
+  - **Verdict**: {PASS/FAIL}
+
+- [✅/❌] 0 build warnings
+  - Actual: {count} warnings
+  - Evidence: [build logs](url)
+  - **Verdict**: {PASS/FAIL}
+
+- [✅/❌] 0 linting issues
+  - Actual: {count} issues
+  - Evidence: [lint report](url)
+  - **Verdict**: {PASS/FAIL}
+
+- [✅/❌] Code coverage ≥80%
+  - Actual: {percentage}%
+  - Evidence: [coverage report](url)
+  - **Verdict**: {PASS/FAIL}
+
+- [✅/❌] Reviewed and approved by @mcj-coder
+  - **Verdict**: {APPROVED/NOT APPROVED}
+
+- [✅/❌] Documentation updated
+  - **Verdict**: {COMPLETE/INCOMPLETE}
+
+- [✅/❌] Evidence artifacts attached
+  - **Verdict**: {COMPLETE/INCOMPLETE}
+
+### Maintainer Decision
+
+**Overall Assessment**: {APPROVED / NEEDS WORK / REJECTED}
+
+**Rationale**: {detailed explanation}
+
+**Blocking Issues**: {count}
+
+**If APPROVED**:
+
+- ✅ All DoD items verified and passing
+- ✅ All review comments resolved
+- ✅ All CI checks passing
+- ✅ No blocking issues found
+- ✅ Evidence links verified current
+- ✅ PR description reflects reality
+
+**Next Step**: Enable auto-merge and monitor
+
+**If NEEDS WORK**:
+
+- ❌ Specific issues listed above
+- ❌ Contributor must address before re-review
+- ❌ Update PR description when fixes complete
+```
+
+**How to Perform the Review**:
+
+```bash
+# 1. Switch to Maintainer credentials
+gh auth switch --maintainer
+git config user.email "martin.cjarvis@googlemail.com"
+git config user.name "mcj-coder"
+git config user.signingkey "7CEEB4F26A898514"
+
+# 2. Checkout PR branch locally
+gh pr checkout {pr_number}
+
+# 3. Review the full diff
+gh pr diff {pr_number} > review-diff.patch
+# Read through the entire patch carefully
+
+# 4. Verify CI evidence
+gh pr checks {pr_number}
+# Click through to actual logs, don't assume
+
+# 5. Check test coverage
+npm run test:coverage
+# Verify actual coverage meets threshold
+
+# 6. Run linter locally
+npm run lint
+# Verify 0 issues
+
+# 7. Build locally
+npm run build
+# Verify 0 warnings
+
+# 8. Update PR description with Brutal Critical Review
+gh pr edit {pr_number} --body-file pr-with-review.md
+
+# 9. If approved: Approve and enable auto-merge
+gh pr review {pr_number} --approve
+gh pr merge {pr_number} --auto --rebase
+```
+
+**Critical Rules**:
+
+1. **No rubber stamps** - Every approval must have a Brutal Critical Review
+2. **Evidence verification** - Click through ALL links, verify they're current
+3. **DoD accuracy** - Update checkboxes to match ACTUAL state, not desired state
+4. **Zero tolerance** - One blocker = NOT APPROVED
+5. **Document everything** - All findings go in PR description
+6. **Maintainer only** - Only mcj-coder performs this review
+
+**What Happens After Brutal Critical Review**:
+
+| Review Result  | Action                                                                  |
+| -------------- | ----------------------------------------------------------------------- |
+| **APPROVED**   | Maintainer approves PR → Enables auto-merge → Monitors until merge      |
+| **NEEDS WORK** | Review added to PR description → Contributor fixes → Re-review required |
+| **REJECTED**   | PR closed → Contributor reopens with fixes → Full review cycle          |
+
+### 5. Verify Merge Readiness
 
 Confirm all conditions met for auto-merge:
 
 **Final Merge Checklist**:
 
 - [ ] Account: Opened by mcj-codificer (Contributor)
-- [ ] Approval: Approved by mcj-coder (Maintainer)
+- [ ] Brutal Critical Review: Completed and documented in PR description
+- [ ] DoD Checklist: 100% passing (all boxes checked ✅)
+- [ ] PR Description: Updated with Brutal Critical Review findings
+- [ ] Approval: Approved by mcj-coder (Maintainer) AFTER Brutal Critical Review
 - [ ] Auto-merge: Enabled with rebase method
 - [ ] Branch protection: All required checks passing
 - [ ] CI/CD: Build, test, security, quality all green
-- [ ] Review comments: All threads resolved
+- [ ] Review comments: All threads resolved with evidence links
 - [ ] Conflicts: None (or resolved with rebase)
 - [ ] Conventional commits: All commits follow pattern
 - [ ] Issue reference: Commits reference issue #{N}
+- [ ] DangerJS: Passes (verifies Brutal Critical Review present)
 
 **When All Checks Pass**:
 
@@ -359,22 +585,27 @@ Confirm all conditions met for auto-merge:
 
 **PR**: #{number} - {title}
 **Author**: mcj-codificer
-**Approver**: mcj-coder
+**Reviewer**: mcj-coder
+**Brutal Critical Review**: ✅ APPROVED
 **Method**: Auto-merge (rebase)
 
-All status checks passing. Auto-merge will proceed when:
+All status checks passing. Brutal Critical Review complete and documented. Auto-merge will proceed when:
 
 - Branch protection rules satisfied (✅ Complete)
 - No merge conflicts (✅ Clear)
 
 ### Verified Items
 
-- [x] Opened by Contributor account
-- [x] Approved by Maintainer account
-- [x] All CI/CD checks passing
-- [x] All review comments resolved
-- [x] Auto-merge enabled (rebase)
+- [x] Opened by Contributor account (mcj-codificer)
+- [x] Brutal Critical Review completed (mcj-coder)
+- [x] DoD Checklist 100% passing (all ✅)
+- [x] PR description updated with Brutal Critical Review
+- [x] All CI/CD checks passing (verified with evidence links)
+- [x] All review comments resolved (with evidence links)
+- [x] Approved by Maintainer account (after Brutal Critical Review)
+- [x] Auto-merge enabled (rebase method)
 - [x] No blocking issues
+- [x] DangerJS passing (verified Brutal Critical Review present)
 
 **Monitoring active** - will notify on merge or issues.
 ```
@@ -413,10 +644,70 @@ All status checks passing. Auto-merge will proceed when:
 ### Automated Code Review System
 
 - **DangerJS**: PR validation, conventional commits, security patterns
+  - **MANDATORY CHECK**: PR description must contain "🔬 Brutal Critical Review" section
+  - **MANDATORY CHECK**: All DoD checkboxes must be ✅ (not ❌ or missing)
+  - **MANDATORY CHECK**: Brutal Critical Review must show "APPROVED" status
+  - **FAIL IF**: Brutal Critical Review missing, incomplete, or shows "NEEDS WORK"/"REJECTED"
+  - **FAIL IF**: DoD checklist has any ❌ marks
+  - **FAIL IF**: Evidence links are missing or point to non-existent resources
 - **Security scanning**: Trivy vulnerability scanner, secret detection
 - **Code quality**: Complexity analysis, maintainability index
 - **Test coverage**: Coverage tracking and reporting
 - **Review scripts**: `generate-review-report.mjs`, `calculate-code-metrics.mjs`
+
+**DangerJS Brutal Critical Review Validation**:
+
+```javascript
+// In danger.js or danger-extensions.js
+
+// Check 1: Brutal Critical Review section exists
+const prBody = danger.github.pr.body || '';
+const hasBrutalReview = prBody.includes('## 🔬 Brutal Critical Review');
+if (!hasBrutalReview) {
+  fail(
+    '❌ Brutal Critical Review missing from PR description. Maintainer must perform and document review before approval.'
+  );
+}
+
+// Check 2: DoD checklist is 100% passing
+const dodSection = prBody.match(/### Definition of Done[\s\S]*?(?=##|$)/);
+if (dodSection) {
+  const uncheckedItems = (dodSection[0].match(/\[ \]/g) || []).length;
+  const failingItems = (dodSection[0].match(/\[❌\]/g) || []).length;
+  if (uncheckedItems > 0 || failingItems > 0) {
+    fail(
+      `❌ DoD Checklist incomplete: ${uncheckedItems} unchecked, ${failingItems} failing. All items must be ✅ before merge.`
+    );
+  }
+}
+
+// Check 3: Brutal Critical Review shows APPROVED
+const reviewSection = prBody.match(/## 🔬 Brutal Critical Review[\s\S]*?(?=##|$)/);
+if (reviewSection) {
+  const isApproved = reviewSection[0].includes('**Overall Assessment**: APPROVED');
+  const needsWork = reviewSection[0].includes('**Overall Assessment**: NEEDS WORK');
+  const rejected = reviewSection[0].includes('**Overall Assessment**: REJECTED');
+
+  if (needsWork || rejected) {
+    fail(
+      `❌ Brutal Critical Review not approved. Maintainer assessment: ${needsWork ? 'NEEDS WORK' : 'REJECTED'}`
+    );
+  }
+
+  if (!isApproved) {
+    warn(
+      '⚠️ Brutal Critical Review assessment unclear. Should explicitly state "APPROVED", "NEEDS WORK", or "REJECTED".'
+    );
+  }
+}
+
+// Check 4: Evidence links present and valid
+const evidenceLinks =
+  prBody.match(/\[.*?\]\(https:\/\/github\.com\/mcj-coder-org\/realms-of-idle\/.*?\)/g) || [];
+if (evidenceLinks.length === 0) {
+  warn('⚠️ No evidence links found in PR description. All claims should have supporting evidence.');
+}
+```
 
 ### Project-Specific Knowledge
 
@@ -942,10 +1233,22 @@ The dual-account workflow ensures:
 3. **Automated first**: CI/CD and quality gates before manual review
 4. **Comment resolution**: All review threads addressed (fix or follow-on)
 5. **Fast feedback**: Immediate reporting of blocking issues
-6. **Auto-merge verification**: Confirm proper setup after approval
-7. **Clean history**: Rebase workflow, no merge commits
-8. **Quality enforcement**: 0 issues, 0 warnings, 0 failures before merge
-9. **Description accuracy**: PR/Issue descriptions MUST reflect current state
+6. **Brutal Critical Review**: Maintainer MUST perform and document comprehensive review before approval
+7. **DoD enforcement**: 100% of DoD checkboxes must be ✅ before DangerJS passes
+8. **Auto-merge verification**: Confirm proper setup after approval
+9. **Clean history**: Rebase workflow, no merge commits
+10. **Quality enforcement**: 0 issues, 0 warnings, 0 failures before merge
+11. **Description accuracy**: PR/Issue descriptions MUST reflect current state
+12. **Evidence required**: All claims must have verifiable evidence links
+
+**Merge Requirements (ALL must be true)**:
+
+- ✅ Brutal Critical Review documented in PR description
+- ✅ DoD Checklist 100% passing (all ✅)
+- ✅ DangerJS validates Brutal Critical Review present
+- ✅ All CI/CD checks passing with evidence links
+- ✅ All review comments resolved with evidence links
+- ✅ Maintainer approval AFTER Brutal Critical Review
 
 ---
 
