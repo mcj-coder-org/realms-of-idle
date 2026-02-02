@@ -75,7 +75,14 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const files = context.payload.pull_request.files;
+
+            // Fetch files via GitHub API
+            const result = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            });
+            const files = result.data;
 
             const labels = new Set();
 
