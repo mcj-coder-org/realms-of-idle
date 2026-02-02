@@ -449,6 +449,8 @@ For active monitoring:
 3. **Comment tracking**: Monitor for new review comments
 4. **Auto-merge detection**: Confirm auto-merge enabled after approval
 5. **Merge confirmation**: Verify successful merge, close monitoring
+6. **PR description maintenance**: Update DoD checklist when status changes
+7. **Issue description sync**: Update linked issues with current status
 
 ### Issue Resolution
 
@@ -459,6 +461,124 @@ When issues are detected:
 3. **Recommend**: Specific action to resolve
 4. **Track**: Update status when resolved
 5. **Escalate**: If unable to resolve within expected timeframe
+
+### PR and Issue Description Maintenance
+
+**⚠️ CRITICAL: Keep Descriptions In Sync With Reality**
+
+PR and Issue descriptions MUST reflect the current state. Outdated descriptions mislead reviewers and block merge readiness.
+
+**When to Update Descriptions**:
+
+1. **After CI status changes**
+   - All checks pass → Update DoD checklist
+   - New check fails → Document with evidence link
+   - Check status flips → Update passing/failing counts
+
+2. **After fixing review comments**
+   - Thread resolved → Update resolved count
+   - New comment added → Update outstanding issues
+   - Evidence provided → Link to commit/diff
+
+3. **After code changes**
+   - New commits added → Update commits summary
+   - Files changed → Update scope
+   - Approach changed → Update overview
+
+**How to Update PR Description**:
+
+```bash
+# Using Contributor account (mcj-codificer)
+gh auth switch
+git config user.email "m.c.j@live.co.uk"
+git config user.name "mcj-codificer"
+
+# Edit PR description
+gh pr edit {number} --body-file pr-description.md
+
+# Or update directly via gh CLI
+gh pr edit {number} --body "$(cat <<'EOF'
+## Updated PR Description
+
+### Definition of Done - Current Status
+
+- [✅] All automated tests pass - **16/16 checks passing**
+- [✅] 0 build warnings - **Build passing**
+- [✅] 0 linting issues - **Passing**
+- [❌] Reviewed and approved by @mcj-coder - **Pending**
+
+### Evidence
+
+Latest CI Run: [link](https://github.com/mcj-coder-org/realms-of-idle/actions/runs/{run_id})
+
+EOF
+)"
+```
+
+**How to Update Linked Issue Description**:
+
+```bash
+# Using Contributor account
+gh issue edit {issue_number} --body-file issue-description.md
+
+# Or update directly
+gh issue edit {issue_number} --body "$(cat <<'EOF'
+## Issue Status
+
+**Status**: 🔄 In Progress
+**Linked PR**: #{pr_number}
+**Current Blocker**: {description}
+
+### Progress
+
+- [x] Task 1 completed
+- [ ] Task 2 in progress
+- [ ] Task 3 blocked
+
+### Latest Updates
+
+{timestamp}: {update description}
+
+EOF
+)"
+```
+
+**PR Description Maintenance Template**:
+
+```markdown
+## PR Status - {timestamp}
+
+### CI Status
+
+| Check    | Status  | Evidence    |
+| -------- | ------- | ----------- |
+| CI Build | ✅ Pass | [logs](url) |
+| Tests    | ✅ Pass | [logs](url) |
+| DangerJS | ✅ Pass | [logs](url) |
+
+### Definition of Done
+
+- [✅/❌] All automated tests pass ({count} checks)
+- [✅/❌] 0 build warnings
+- [✅/❌] Reviewed and approved
+
+### Review Status
+
+- Unresolved threads: {count}
+- Latest commit: {sha}
+```
+
+**Common Pitfalls**:
+
+❌ **Stale status sections** - "7 checks failing" when all are passing
+❌ **Outdated evidence links** - Pointing to old CI runs
+❌ **Wrong DoD checkboxes** - Marked failing when actually passing
+❌ **Missing update timestamps** - No indication when status changed
+
+✅ **Update on every status change** - CI pass/fail, review resolved
+✅ **Link to latest evidence** - Most recent CI run, commits
+✅ **Timestamp updates** - When was the status last checked?
+✅ **Sync linked issues** - Issue status should match PR progress
 
 ---
 
@@ -567,6 +687,8 @@ This PR was NOT opened by the Contributor account (mcj-codificer).
 - ✅ Monitor review comment threads to resolution
 - ✅ Ensure review replies include evidence links (commit SHA, diff URL)
 - ✅ Guide proper credential usage (Contributor implements, Maintainer verifies)
+- ✅ **Maintain PR description accuracy** - Update DoD checklist as status changes
+- ✅ **Maintain linked Issue description** - Sync status with linked issues
 - ✅ Create follow-on GitHub issues for out-of-scope discussions
 - ✅ Report merge readiness with verified checklist
 - ✅ Detect and report workflow violations
@@ -823,6 +945,7 @@ The dual-account workflow ensures:
 6. **Auto-merge verification**: Confirm proper setup after approval
 7. **Clean history**: Rebase workflow, no merge commits
 8. **Quality enforcement**: 0 issues, 0 warnings, 0 failures before merge
+9. **Description accuracy**: PR/Issue descriptions MUST reflect current state
 
 ---
 
