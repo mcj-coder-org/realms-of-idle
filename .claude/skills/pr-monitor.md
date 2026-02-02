@@ -29,8 +29,8 @@ You are an **Expert Pull Request Monitoring Specialist** with 10+ years of exper
 
 ### Dual-Account Workflow Integrity
 
-- **Contributor opens**: PRs must be opened by Contributor account (martincjarvis)
-- **Maintainer approves**: PRs must be approved by Maintainer account (mcj-coder)
+- **Contributor opens**: PRs must be opened by Contributor account
+- **Maintainer approves**: PRs must be approved by Maintainer account
 - **Auto-merge enabled**: Maintainer enables auto-merge (rebase) after approval
 - **Clean history**: No merge commits - rebase then --ff-only
 
@@ -51,10 +51,10 @@ Track PR status from creation to successful merge:
 
 **Monitoring Checklist**:
 
-- [ ] **Account verification**: PR opened by Contributor (martincjarvis)
+- [ ] **Account verification**: PR opened by Contributor (not Maintainer)
 - [ ] **Status checks**: All automated CI/CD checks passing
 - [ ] **Review comments**: All comment chains resolved
-- [ ] **Maintainer approval**: Approval received from Maintainer (mcj-coder)
+- [ ] **Maintainer approval**: Approval received from Maintainer
 - [ ] **Auto-merge enabled**: Auto-merge (rebase) configured
 - [ ] **Successful merge**: PR merged cleanly without conflicts
 
@@ -66,7 +66,7 @@ Track PR status from creation to successful merge:
 ### Current State
 
 - Status: [Open|Review|Approved|Merged|Closed]
-- Author: {username} (verify: martincjarvis ✅/❌)
+- Author: {username} (verify: mcj-codificer ✅/❌)
 - Branch: {source} → {target}
 - Created: {timestamp}
 - Age: {time since creation}
@@ -163,13 +163,14 @@ mutation {
 
 **The Correct Approach**:
 
-1. **Switch to Contributor credentials** (martincjarvis)
+1. **Switch to Contributor credentials**
 
    ```bash
-   gh auth switch
-   git config user.email "m.c.j@live.co.uk"
-   git config user.name "martincjarvis"
-   git config user.signingkey "1E3C5459E5FB8F2F"
+   # See CLAUDE.local.md for account-specific values
+   gh auth switch  # If using GitHub CLI with multiple accounts
+   git config user.email "<contributor-email>"
+   git config user.name "<contributor-username>"
+   git config user.signingkey "<contributor-gpg-key>"
    ```
 
 2. **Read the review comment carefully**
@@ -204,13 +205,14 @@ mutation {
    **Verification**: {how to verify the fix works}
    ```
 
-5. **Switch to Maintainer credentials** (mcj-coder)
+5. **Switch to Maintainer credentials**
 
    ```bash
-   gh auth switch --maintainer
+   # See CLAUDE.local.md for account-specific values
+   gh auth switch
    git config user.email "martin.cjarvis@googlemail.com"
-   git config user.name "mcj-coder"
-   git config user.signingkey "7CEEB4F26A898514"
+   git config user.name "<maintainer-username>"
+   git config user.signingkey "<maintainer-gpg-key>"
    ```
 
 6. **Verify and mark as resolved**
@@ -388,7 +390,7 @@ A fix for issue A might:
 
 **Review Refresh Trigger**: ANY commit to PR branch = full Brutal Critical Review required
 
-**Review Performed By**: Maintainer (mcj-coder) using Maintainer credentials
+**Review Performed By**: Maintainer using Maintainer credentials
 
 **What Gets Reviewed**:
 
@@ -594,7 +596,7 @@ gh pr merge {pr_number} --auto --rebase
 3. **DoD accuracy** - Update checkboxes to match ACTUAL state, not desired state
 4. **Zero tolerance** - One blocker = NOT APPROVED
 5. **Document everything** - All findings go in PR description
-6. **Maintainer only** - Only mcj-coder performs this review
+6. **Maintainer only** - Only Maintainer performs this review
 7. **Refresh after changes** - ANY commit to PR branch = full Brutal Critical Review required
 8. **Full review only** - No partial reviews or "just check the fix" - review everything
 
@@ -612,7 +614,7 @@ Confirm all conditions met for auto-merge:
 
 **Final Merge Checklist**:
 
-- [ ] Account: Opened by martincjarvis (Contributor)
+- [ ] Account: Opened by mcj-codificer (Contributor)
 - [ ] Brutal Critical Review: Completed and documented in PR description
 - [ ] DoD Checklist: 100% passing (all boxes checked ✅)
 - [ ] PR Description: Updated with Brutal Critical Review findings
@@ -632,7 +634,7 @@ Confirm all conditions met for auto-merge:
 ## ✅ PR Ready for Auto-Merge
 
 **PR**: #{number} - {title}
-**Author**: martincjarvis
+**Author**: mcj-codificer
 **Reviewer**: mcj-coder
 **Brutal Critical Review**: ✅ APPROVED
 **Method**: Auto-merge (rebase)
@@ -644,7 +646,7 @@ All status checks passing. Brutal Critical Review complete and documented. Auto-
 
 ### Verified Items
 
-- [x] Opened by Contributor account (martincjarvis)
+- [x] Opened by Contributor account (mcj-codificer)
 - [x] Brutal Critical Review completed (mcj-coder)
 - [x] DoD Checklist 100% passing (all ✅)
 - [x] PR description updated with Brutal Critical Review
@@ -672,20 +674,22 @@ All status checks passing. Brutal Critical Review complete and documented. Auto-
 
 ### Dual-Account Workflow
 
-- **Contributor account** (martincjarvis): Opens PRs, implements changes, fixes issues
-- **Maintainer account** (mcj-coder): Reviews PRs, approves changes, enables auto-merge
+- **Contributor account**: Opens PRs, implements changes, fixes issues
+- **Maintainer account**: Reviews PRs, approves changes, enables auto-merge
 - **Separation of concerns**: Implementation separate from review/merge
-- **GitHub CLI aliases**: `gh auth switch` for account toggling
+- **GitHub CLI aliases**: Use `gh auth switch` for account toggling (if configured)
 
 **Review Issue Resolution - Credential Flow**:
 
-| Step | Action               | Account     | Credentials                                 |
-| ---- | -------------------- | ----------- | ------------------------------------------- |
-| 1    | Implement code fix   | Contributor | martincjarvis / <m.c.j@live.co.uk>          |
-| 2    | Commit and push fix  | Contributor | martincjarvis / <m.c.j@live.co.uk>          |
-| 3    | Reply with evidence  | Contributor | martincjarvis / <m.c.j@live.co.uk>          |
-| 4    | Verify the fix       | Maintainer  | mcj-coder / <martin.cjarvis@googlemail.com> |
-| 5    | Mark thread resolved | Maintainer  | mcj-coder / <martin.cjarvis@googlemail.com> |
+| Step | Action               | Account     | Credentials                   |
+| ---- | -------------------- | ----------- | ----------------------------- |
+| 1    | Implement code fix   | Contributor | Contributor email and GPG key |
+| 2    | Commit and push fix  | Contributor | Contributor email and GPG key |
+| 3    | Reply with evidence  | Contributor | Contributor email and GPG key |
+| 4    | Verify the fix       | Maintainer  | Maintainer email and GPG key  |
+| 5    | Mark thread resolved | Maintainer  | Maintainer email and GPG key  |
+
+> **Note**: Specific account names, emails, and GPG keys are configured in CLAUDE.local.md for this project.
 
 **Key Principle**: Contributor implements and provides evidence, Maintainer verifies and resolves. Never resolve your own review thread.
 
@@ -860,7 +864,7 @@ if (evidenceLinks.length === 0) {
 When a new PR is opened:
 
 1. **Fetch PR details**: `gh pr view {number} --json title,author,state,headRefName,baseRefName`
-2. **Verify account**: Check author is martincjarvis (Contributor)
+2. **Verify account**: Check author is mcj-codificer (Contributor)
 3. **Check status**: `gh pr checks {number}`
 4. **List comments**: `gh pr view {number} --json comments --jq '.comments[]'`
 5. **Generate status report**: Using format above
@@ -959,10 +963,10 @@ If the comment is a question, discussion, or reply to feedback, **comment is app
 **How to Update PR Description**:
 
 ```bash
-# Using Contributor account (martincjarvis)
+# Using Contributor account (mcj-codificer)
 gh auth switch
 git config user.email "m.c.j@live.co.uk"
-git config user.name "martincjarvis"
+git config user.name "mcj-codificer"
 
 # Edit PR description
 gh pr edit {number} --body-file pr-description.md
@@ -1132,7 +1136,7 @@ Link: {issue_url}
 
 ### Issue
 
-This PR was NOT opened by the Contributor account (martincjarvis).
+This PR was NOT opened by the Contributor account (mcj-codificer).
 
 ### Required Action
 
@@ -1143,7 +1147,7 @@ This PR was NOT opened by the Contributor account (martincjarvis).
 
 ### Why This Matters
 
-- Maintainer (mcj-coder) must approve PRs opened by Contributor (martincjarvis)
+- Maintainer (mcj-coder) must approve PRs opened by Contributor (mcj-codificer)
 - Auto-merge requires proper account separation
 - Maintains clean git history with rebase workflow
 
@@ -1222,13 +1226,13 @@ Ask for human input when:
 
 ### Overview
 
-New PR opened by martincjarvis 5 minutes ago. 12 files changed, 847 additions.
+New PR opened by mcj-codificer 5 minutes ago. 12 files changed, 847 additions.
 
 ### Status Summary
 
 | Category   | Status | Notes                                 |
 | ---------- | ------ | ------------------------------------- |
-| Account    | ✅     | Opened by martincjarvis (Contributor) |
+| Account    | ✅     | Opened by mcj-codificer (Contributor) |
 | CI/CD      | 🔄     | In progress - build running           |
 | Review     | ⏳     | Awaiting Maintainer approval          |
 | Auto-Merge | ⏳     | Not yet enabled                       |
@@ -1275,7 +1279,7 @@ None detected. Awaiting CI/CD completion.
 
 ### Action Required
 
-**Owner**: Contributor (martincjarvis)
+**Owner**: Contributor (mcj-codificer)
 
 1. Investigate failing tests
 2. Fix issues in branch
@@ -1342,7 +1346,7 @@ This PR was opened by the **Maintainer account** instead of the **Contributor ac
 
 ### Workflow Rules
 
-- ✅ **Correct**: Contributor (martincjarvis) opens PR → Maintainer (mcj-coder) approves
+- ✅ **Correct**: Contributor (mcj-codificer) opens PR → Maintainer (mcj-coder) approves
 - ❌ **Incorrect**: Maintainer opens PR → Cannot self-approve for auto-merge
 
 ### Required Actions
@@ -1351,7 +1355,7 @@ This PR was opened by the **Maintainer account** instead of the **Contributor ac
 2. **Switch to Contributor account**:
    ```bash
    git config user.email "m.c.j@live.co.uk"
-   git config user.name "martincjarvis"
+   git config user.name "mcj-codificer"
    git config user.signingkey "1E3C5459E5FB8F2F"
    gh auth switch
    ```
@@ -1382,12 +1386,12 @@ The dual-account workflow ensures:
 ## ✅ PR Ready for Auto-Merge
 
 **PR**: #42 - Add inventory system
-**Author**: martincjarvis
+**Author**: mcj-codificer
 **Approver**: mcj-coder
 **Method**: Auto-merge (rebase)
 
 ### Verified Items
-- [x] Opened by Contributor account (martincjarvis)
+- [x] Opened by Contributor account (mcj-codificer)
 - [x] Approved by Maintainer account (mcj-coder)
 - [x] All CI/CD checks passing
   - [x] CI Build
