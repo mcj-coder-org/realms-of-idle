@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - 'v*'
-    branches: [ main ]
+    branches: [main]
 
 env:
   NODE_VERSION: '20'
@@ -59,15 +59,15 @@ jobs:
             // Add sections
             Object.entries(commitsByType).forEach(([type, messages]) => {
               const typeTitle = type === 'feat' ? 'Features' :
-                              type === 'fix' ? 'Bug Fixes' :
-                              type === 'docs' ? 'Documentation' :
-                              type === 'refactor' ? 'Refactoring' :
-                              type === 'test' ? 'Tests' :
-                              type === 'chore' ? 'Chores' : 'Other Changes';
+                                type === 'fix' ? 'Bug Fixes' :
+                                type === 'docs' ? 'Documentation' :
+                                type === 'refactor' ? 'Refactoring' :
+                                type === 'test' ? 'Tests' :
+                                type === 'chore' ? 'Chores' : 'Other Changes';
               changelog += `\n### ${typeTitle}\n\n${messages.join('\n')}\n`;
             });
 
-            // Update body
+            // Create release
             const { data: release } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -122,10 +122,12 @@ jobs:
           script: |
             const { execSync } = require('child_process');
             const tagName = process.env.GITHUB_REF_NAME;
-            const [major, minor] = tagName.replace('v', '').split('.');
+            const parts = tagName.replace('v', '').split('.');
+            const major = parts[0];
+            const minor = parts[1];
 
             // Create new issue template for next version
-            const nextVersion = `v${major}.${parseInt(minor) + 1}.0`;
+            const nextVersion = `v${major}.${Number(minor) + 1}.0`;
             const template = `## Release ${nextVersion}
 
 ### Planned Features
@@ -160,8 +162,8 @@ jobs:
             // Commit the change
             execSync('git config --global user.name "github-actions[bot]"');
             execSync('git config --global user.email "github-actions[bot]@users.noreply.github.com"');
-            execSync(`git add .github/ISSUE_TEMPLATE/release.md`);
-            execSync(`git commit -m "docs: update release template for ${nextVersion}"`);
-            execSync(`git push origin main`);
+            execSync('git add .github/ISSUE_TEMPLATE/release.md');
+            execSync('git commit -m "docs: update release template for ${nextVersion}"');
+            execSync('git push origin main');
 
             console.log('Release template updated for', nextVersion);
