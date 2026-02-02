@@ -173,6 +173,10 @@ const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=##
 const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
 const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
 
+// Debug: Log what we found
+message(`🔍 DEBUG: acceptCriteriaSection=${!!acceptCriteriaSection}, codeQualitySection=${!!codeQualitySection}`)
+message(`🔍 DEBUG: DoD section length=${dodSection[0].length}, first 200 chars=${dodSection[0].substring(0, 200)}`)
+
 // Validate Acceptance Criteria section exists
 if (!acceptCriteriaSection) {
   fail('❌ DoD is missing "### Acceptance Criteria" subsection. Copy Acceptance Criteria from the linked Issue.')
