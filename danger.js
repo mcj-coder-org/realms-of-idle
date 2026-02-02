@@ -158,7 +158,7 @@ if (!hasBrutalReview) {
 }
 
 // Check 2: DoD checklist is 100% passing WITH inline evidence links
-const dodSection = prBody.match(/#{2,3} Definition of Done[\s\S]*?(?=##|$)/)
+const dodSection = prBody.match(/#{2,3} Definition of Done[\s\S]*?(?=\n##|$)/)
 
 if (!dodSection) {
   fail('❌ PR description is missing "### Definition of Done" section. Please copy the PR template and fill out the DoD checklist.')
@@ -172,10 +172,6 @@ const codeQualitySection = dodSection[0].match(/### Code Quality[\s\S]*?(?=###[^
 const documentationSection = dodSection[0].match(/### Documentation[\s\S]*?(?=###[^#]|##|$)/)
 const testingSection = dodSection[0].match(/### Testing[\s\S]*?(?=###[^#]|##|$)/)
 const securitySection = dodSection[0].match(/### Security & Review[\s\S]*?(?=###[^#]|##|$)/)
-
-// Debug: Log what we found
-message(`🔍 DEBUG: acceptCriteriaSection=${!!acceptCriteriaSection}, codeQualitySection=${!!codeQualitySection}`)
-message(`🔍 DEBUG: DoD section length=${dodSection[0].length}, first 200 chars=${dodSection[0].substring(0, 200)}`)
 
 // Validate Acceptance Criteria section exists
 if (!acceptCriteriaSection) {
