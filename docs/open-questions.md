@@ -19,21 +19,22 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 | Priority     | Questions | Resolved | Recommendations | Status      |
 | ------------ | --------- | -------- | --------------- | ----------- |
 | **CRITICAL** | 12        | 12       | 36              | ✅ Complete |
-| **HIGH**     | 28        | 15       | 70              | In Progress |
+| **HIGH**     | 43        | 15       | 77              | In Progress |
 | **MEDIUM**   | 45        | 0        | 108             | Beta Block  |
 | **LOW**      | 26        | 0        | 52              | Post-Launch |
-| **Total**    | **111**   | **27**   | **266**         |             |
+| **Total**    | **126**   | **27**   | **273**         |             |
 
 **Recently Resolved:**
 
-- ✅ 2026-02-03: Combat System (10 HIGH) → [combat-system-gdd.md](design/systems/combat-system-gdd.md)
+- ✅ 2026-02-03: Combat System (10 HIGH) → [combat-system-gdd.md](design/systems/combat-system-gdd.md) — **Design Review: 4.5/5** — 7 gaps identified below
 - ✅ 2026-02-03: NPC Core Systems (5 HIGH) → [npc-core-systems-gdd.md](design/systems/npc-core-systems-gdd.md)
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 - ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
 - ✅ 2026-02-03: Skill & Recipe System (5 CRITICAL) → [skill-recipe-system-gdd.md](design/systems/skill-recipe-system-gdd.md)
 
 **🎉 All CRITICAL priority questions resolved!**
-**🚀 HIGH priority in progress: 15/28 resolved (54%)**
+**🚀 HIGH priority in progress: 15/43 resolved (35%)**
+**⚠️ Combat System GDD requires 7 critical formula additions (§8) before implementation**
 
 **Legend:**
 
@@ -2195,13 +2196,317 @@ Feels rewarding, not annoying
 
 ---
 
-## MEDIUM PRIORITY (Important for Polish)
+## 8. Combat System GDD - Formula Gaps (Design Review Findings)
+
+**Context:** The Combat System GDD received a comprehensive design review (2026-02-03) with an overall rating of **4.5/5**. The following critical and important gaps were identified that must be resolved before implementation.
+
+### 8.1 Combat XP Reward Formula ✅ NEW
+
+**Question:** How much XP does a character gain from combat actions? Base XP per hit, kill, skill use?
+
+**Current State:** Combat system mentions "XP Gained: combat.melee.sword +25 XP" but no formula defining rewards.
+
+**Recommendations:**
+
+#### Option A: Action-Based XP (Recommended)
+
+```
+Base XP Rewards:
+- Basic attack (hit): 5 XP to relevant bucket
+- Basic attack (kill): +10 XP bonus
+- Skill use (hit): 8 XP to relevant bucket
+- Skill use (kill): +15 XP bonus
+- Taking damage: +2 XP to combat.toughness bucket
+
+Modifiers:
+× Enemy Level Modifier (if enemy level > character level):
+  - Same level: ×1.0
+  - 1-3 levels higher: ×1.2
+  - 4-6 levels higher: ×1.5
+  - 7+ levels higher: ×2.0 (cap)
+
+× Party Size Modifier:
+  - Solo: ×1.0
+  - 2 characters: ×0.8
+  - 3 characters: ×0.7
+  - 4+ characters: ×0.6
+
+Example: Level 5 Marcus kills Level 6 Goblin Warrior
+Basic attack: 5 XP
+Kill bonus: +10 XP
+Enemy level modifier: ×1.2 (goblin is 1 level higher)
+Total: (5 + 10) × 1.2 = 18 XP to combat.melee.sword
+```
+
+- **Completeness:** 5/5 - Fully specified formula
+- **Game Fit:** 5/5 - Rewards challenging combat
+- **Implementation:** 2/5 - Simple calculation on combat actions
+
+**Rationale:** Players progress faster fighting challenging enemies solo, slower in groups (balance idle farming).
+
+---
+
+### 8.2 Armor Absorption Formula ✅ NEW
+
+**Question:** What determines how much damage armor absorbs? Is it a DEF stat? Material-based? Fixed value?
+
+**Current State:** Combat example shows "Armor layer: Absorbs 8" but no formula for calculating absorption.
+
+**Recommendations:**
+
+#### Option A: Armor Value + END Modifier (Recommended)
+
+```
+Armor Absorption Formula:
+BaseArmor = Equipment Armor Value (from item stats)
+ENDModifier = END ÷ 10 (END 12 = +20% absorption)
+
+TotalAbsorption = BaseArmor × (1 + ENDModifier)
+MaxAbsorption = BaseArmor × 1.5 (hard cap)
+
+Example: Chain Shirt (Armor Value: 8) + END 13 (+30%)
+TotalAbsorption = 8 × 1.3 = 10.4 → 10 damage absorbed
+
+Incoming Damage: 25
+→ Shield absorbs first (if present)
+→ Armor absorbs: min(25, 10) = 10 damage
+→ Armor durability decreases: 10 ÷ 15 = 1 durability lost
+→ Overflow: 25 - 10 = 15 damage to health
+```
+
+- **Completeness:** 5/5 - Fully specified
+- **Game Fit:** 5/5 - END matters for tanks
+- **Implementation:** 2/5 - Simple formula
+
+**Rationale:** High-END characters get more value from armor, reinforcing tank builds.
+
+---
+
+### 8.3 AI Threat Calculation ✅ NEW
+
+**Question:** How does AI determine which enemy is "highest threat" for targeting?
+
+**Current State:** Role-based targeting mentions "High-threat enemies" but no threat formula.
+
+**Recommendations:**
+
+#### Option A: Composite Threat Score (Recommended)
+
+```
+Threat Score Calculation:
+Threat = (DamageDealt × 1.0) + (Presence × 0.5) + (Debuffs × 0.3) + (Level × 0.2)
+
+DamageDealt: Total damage to this character in last 10 seconds
+Presence: Character is in front row (+20 threat) or attacking ally (+10)
+Debuffs: Number of debuffs applied (poison, stun, etc.)
+Level: Character level (higher level = more threat)
+
+Example:
+Elena (Mage): 45 damage dealt + front row (20) + 1 poison (3) + level 7 (1.4)
+Threat = 45 + 10 + 3 + 1.4 = 59.4
+
+Marcus (Warrior): 12 damage dealt + front row (20) + 0 debuffs + level 8 (1.6)
+Threat = 12 + 10 + 0 + 1.6 = 23.6
+
+AI Target: Elena (higher threat)
+```
+
+- **Completeness:** 5/5 - Fully specified algorithm
+- **Game Fit:** 5/5 - Smart AI targeting
+- **Implementation:** 3/5 - Track damage over time window
+
+**Rationale:** Threat reflects actual danger, not just raw damage output.
+
+---
+
+### 8.4 Power Ratio Calculation ✅ NEW
+
+**Question:** How does the game detect "outmatched 3× stronger" for surrender/morale triggers?
+
+**Current State:** Surrender system mentions "Power Ratio < 0.5" but no power calculation formula.
+
+**Recommendations:**
+
+#### Option A: Stat-Based Power Rating (Recommended)
+
+```
+Character Power Rating:
+Power = (Attack × 1.0) + (Defense × 0.5) + (MaxHP × 0.1) + (Level × 5)
+
+Attack: Average damage per second (weapon damage × attack speed)
+Defense: Armor value + shield value
+MaxHP: Maximum health pool
+Level: Character level
+
+Party Power = Sum of all member power ratings
+
+Power Ratio = YourPartyPower ÷ EnemyPartyPower
+
+Example:
+Your Party: Marcus (150) + Elena (120) + Kira (90) + Toren (110) = 470
+Enemy Party: Goblin Warrior (45) + Goblin Spearman (35) + Goblin Shaman (40) = 120
+Power Ratio = 470 ÷ 120 = 3.92
+
+Outmatched Check: 3.92 > 3.0 → Enemies may surrender
+Morale Check: Each death causes morale check (see Combat GDD §9.2)
+```
+
+- **Completeness:** 5/5 - Fully specified
+- **Game Fit:** 5/5 - Accurate strength assessment
+- **Implementation:** 2/5 - Simple stat aggregation
+
+**Rationale:** Power rating reflects overall combat capability, not just damage.
+
+---
+
+### 8.5 Offline Combat Resolution ✅ NEW
+
+**Question:** How does combat resolve during offline simulation? Statistical formula or tick simulation?
+
+**Current State:** Background mode mentioned but no resolution algorithm specified.
+
+**Recommendations:**
+
+#### Option A: Statistical Power Comparison (Recommended)
+
+```
+OFFLINE COMBAT RESOLUTION:
+
+Pre-combat:
+Calculate YourPower and EnemyPower (see §8.4)
+PowerRatio = YourPower ÷ EnemyPower
+
+Resolution Outcomes:
+PowerRatio > 2.0:
+  → Victory (0-10% party damage taken)
+  → Full loot (no rare items offline)
+  → XP: 75% of online rate
+
+1.5 < PowerRatio ≤ 2.0:
+  → Victory (10-30% party damage taken)
+  → Full loot
+  → XP: 100% of online rate
+
+1.0 < PowerRatio ≤ 1.5:
+  → Victory (30-50% party damage taken)
+  → 20% chance: One character falls (0 HP, survives)
+  → Full loot
+  → XP: 100% of online rate
+
+0.67 < PowerRatio ≤ 1.0:
+  → 50% Victory / 50% Flee
+  → Victory: 50-80% damage, half loot
+  → Flee: No loot, no death, survive
+  → XP: 75% of online rate
+
+PowerRatio ≤ 0.67:
+  → Flee (guaranteed)
+  → No loot, no death
+  → XP: 50% of online rate
+
+Time to resolve: Instant (math only, no simulation)
+```
+
+- **Completeness:** 5/5 - Fully specified offline system
+- **Game Fit:** 5/5 - Fair offline progression
+- **Implementation:** 2/5 - Power calculation + outcome table
+
+**Rationale:** Offline combat deterministic, server-efficient, no RNG abuse, rewards fair play.
+
+---
+
+### 8.6 Attribute Progression per Class Level ✅ NEW
+
+**Question:** Which attributes do classes grant at level-up? Is it random or fixed?
+
+**Current State:** Combat GDD shows "+1-2 to class-relevant attributes" but no mapping table.
+
+**Recommendations:**
+
+#### Option A: Class-Specific Attribute Tables (Recommended)
+
+```
+Class Attribute Progression (per level-up):
+
+[Warrior]:
+  Primary: STR +1, END +1 (every level)
+  Secondary: AWR +1 (every 2 levels)
+
+[Mage]:
+  Primary: WIT +1 (every level)
+  Secondary: END +1 (every 2 levels), AWR +1 (every 3 levels)
+
+[Healer]:
+  Primary: CHA +1, WIT +1 (every level)
+  Secondary: END +1 (every 2 levels)
+
+[Ranger]:
+  Primary: FIN +1, AWR +1 (every level)
+  Secondary: STR +1 (every 2 levels)
+
+[Rogue]:
+  Primary: FIN +1 (every level)
+  Secondary: AWR +1 (every 2 levels), CHA +1 (every 3 levels)
+
+Multi-Classing:
+  - XP split applies to attribute gains
+  - Example: 60/40 split → [Warrior] gets STR+1 END+1, [Mage] gets WIT+0
+```
+
+- **Completeness:** 5/5 - Fully specified per class
+- **Game Fit:** 5/5 - Classes have distinct identities
+- **Implementation:** 2/5 - Class level-up tables
+
+**Rationale:** Clear character advancement, predictable build paths.
+
+---
+
+### 8.7 Multiplayer Possession Scenarios ✅ NEW
+
+**Question:** What happens if 2+ players possess characters in the same fight?
+
+**Current State:** Multiplayer section mentions "if multiplayer AND other_players_involved: Switch to TURN-BASED" but doesn't address multiple possessions.
+
+**Recommendations:**
+
+#### Option A: First-Come First-Served (Recommended)
+
+```
+Multiplayer Possession Rules:
+
+If 2+ players possess characters in same combat:
+→ Turn-based mode activates (as specified)
+
+Possession Priority:
+1. First player to possess gets "Party Leader" role
+2. Party Leader can issue orders to AI-controlled allies
+3. Other possessed characters act on their turns
+4. No direct control over other players' possessed characters
+
+Possession Transfer:
+- Player can release possession at any time
+- Released character returns to AI control
+- Another player can then possess (if favourited)
+
+Communication:
+- Built-in chat for coordination
+- "Suggest Action" feature (non-binding recommendation to ally)
+- Ping system (highlight enemy, request heal)
+```
+
+- **Completeness:** 5/5 - Fully specified multiplayer rules
+- **Game Fit:** 5/5 - Fair multiplayer experience
+- **Implementation:** 3/5 - Party role + chat system
+
+**Rationale:** Prevents conflicts, enables coordination, maintains agency.
+
+---
+
+## 9. Technical Architecture Decisions
 
 These questions affect game quality and player experience but can be iterated on post-prototype.
 
-## 8. Technical Architecture Decisions
-
-### 8.1 Maximum Offline Simulation Duration
+### 9.1 Maximum Offline Simulation Duration
 
 **Question:** What is the maximum offline time supported? 24h? 48h? Unlimited with diminishing returns?
 
@@ -2493,7 +2798,7 @@ Cost: Offloaded storage to client devices
 
 ---
 
-## 9. Performance & Testing
+## 10. Performance & Testing
 
 ### 9.1 CI/CD Pipeline Structure
 
@@ -2742,7 +3047,7 @@ Cons: Slower, setup complexity
 
 These questions are important but not blocking for prototype/alpha. Can be addressed during beta or post-launch.
 
-## 10. Social & Multiplayer Features
+## 11. Social & Multiplayer Features
 
 ### 10.1 PvP System
 
@@ -2905,7 +3210,7 @@ Requirements:
 
 ---
 
-## 11. Monetization Specifics
+## 12. Monetization Specifics
 
 ### 11.1 Premium Currency Name & Rate
 
@@ -3136,7 +3441,7 @@ RATIONALE:
 
 ---
 
-## 12. Art & Asset Pipeline
+## 13. Art & Asset Pipeline
 
 ### 12.1 Cozy Fantasy Art Style Definition
 
