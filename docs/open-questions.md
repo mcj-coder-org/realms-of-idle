@@ -19,18 +19,20 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 | Priority     | Questions | Resolved | Recommendations | Status      |
 | ------------ | --------- | -------- | --------------- | ----------- |
 | **CRITICAL** | 12        | 12       | 36              | ✅ Complete |
-| **HIGH**     | 28        | 0        | 70              | Alpha Block |
+| **HIGH**     | 28        | 5        | 70              | In Progress |
 | **MEDIUM**   | 45        | 0        | 108             | Beta Block  |
 | **LOW**      | 26        | 0        | 52              | Post-Launch |
-| **Total**    | **111**   | **12**   | **266**         |             |
+| **Total**    | **111**   | **17**   | **266**         |             |
 
 **Recently Resolved:**
 
+- ✅ 2026-02-03: NPC Core Systems (5 HIGH) → [npc-core-systems-gdd.md](design/systems/npc-core-systems-gdd.md)
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 - ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
 - ✅ 2026-02-03: Skill & Recipe System (5 CRITICAL) → [skill-recipe-system-gdd.md](design/systems/skill-recipe-system-gdd.md)
 
 **🎉 All CRITICAL priority questions resolved!**
+**🚀 HIGH priority in progress: 5/28 resolved**
 
 **Legend:**
 
@@ -1398,11 +1400,15 @@ Temporary catch-up for players who want to invest time/money
 
 ## 5. NPC Core Systems
 
-### 5.1 Goal Re-evaluation Triggers
+### 5.1 Goal Re-evaluation Triggers ✅ RESOLVED
 
 **Question:** How frequently are NPC goals re-evaluated? Weekly mentioned, but what triggers immediate re-eval?
 
-**Current State:** Partially defined, triggers unclear.
+**Resolution:** Time-Based + Event Triggers with rate limiting. See [NPC Core Systems GDD §1](design/systems/npc-core-systems-gdd.md#1-goal-re-evaluation-triggers)
+
+**Status:** ✅ **RESOLVED** - Weekly scheduled reviews plus immediate triggers for major events, rate-limited to 1 per day
+
+**Previous State:** Partially defined, triggers unclear.
 
 **Recommendations:**
 
@@ -1465,11 +1471,15 @@ No automatic reactivity, player-driven influence
 
 ---
 
-### 5.2 Concurrent Goal Limit
+### 5.2 Concurrent Goal Limit ✅ RESOLVED
 
 **Question:** What is the maximum number of concurrent goals per NPC? Per timeframe category? Total?
 
-**Current State:** Unspecified.
+**Resolution:** Timeframe categories with survival override (8 max total). See [NPC Core Systems GDD §2](design/systems/npc-core-systems-gdd.md#2-concurrent-goal-limits)
+
+**Status:** ✅ **RESOLVED** - 2 immediate, 3 short-term, 2 medium-term, 1 long-term. Survival interrupts all (except voluntary sacrifice for legendary achievements)
+
+**Previous State:** Unspecified.
 
 **Recommendations:**
 
@@ -1537,11 +1547,15 @@ Smart NPCs = more complex lives
 
 ---
 
-### 5.3 Conflicting Goal Resolution
+### 5.3 Conflicting Goal Resolution ✅ RESOLVED
 
 **Question:** How are conflicting goals resolved? Priority only, or more complex resolution?
 
-**Current State:** Unresolved.
+**Resolution:** Personality + Priority + Age scoring algorithm. See [NPC Core Systems GDD §3](design/systems/npc-core-systems-gdd.md#3-conflicting-goal-resolution)
+
+**Status:** ✅ **RESOLVED** - Three-stage algorithm: priority score + age bonus → personality tiebreaker within 15 points
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -1611,11 +1625,15 @@ Relationship boost: +5 affinity for advice given
 
 ---
 
-### 5.4 Secret NPC Goals
+### 5.4 Secret NPC Goals ✅ RESOLVED
 
 **Question:** Can NPCs have secret goals hidden from players? Villain covert operations implied, but mechanics?
 
-**Current State:** Implied but undefined.
+**Resolution:** Goal Visibility Tiers with information disclosure skills. See [NPC Core Systems GDD §4](design/systems/npc-core-systems-gdd.md#4-secret-npc-goals--information-disclosure)
+
+**Status:** ✅ **RESOLVED** - PUBLIC/REVEALABLE/SECRET/VILLAIN tiers with [Observation], [Insight], [True Sight] skills and item requirements
+
+**Previous State:** Implied but undefined.
 
 **Recommendations:**
 
@@ -1684,11 +1702,15 @@ Focus on: Helping NPCs achieve goals, not uncovering secrets
 
 ---
 
-### 5.5 Goal Failure vs Abandonment
+### 5.5 Goal Failure vs Abandonment ✅ RESOLVED
 
 **Question:** How is goal "failure" determined vs "abandoned"? Timeout? Blocked progress?
 
-**Current State:** Unclear.
+**Resolution:** State-based classification (BLOCKED/ABANDONED/FAILED). See [NPC Core Systems GDD §5](design/systems/npc-core-systems-gdd.md#5-goal-failure-vs-abandonment-states)
+
+**Status:** ✅ **RESOLVED** - BLOCKED (temporary, 4-week threshold) → ABANDONED (voluntary, no penalty) or FAILED (permanent blocker, -10 mood for 3 days)
+
+**Previous State:** Unclear.
 
 **Recommendations:**
 
