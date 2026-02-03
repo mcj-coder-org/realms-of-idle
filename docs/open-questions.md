@@ -27,6 +27,7 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 **Recently Resolved:**
 
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
+- ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
 
 **Legend:**
 
