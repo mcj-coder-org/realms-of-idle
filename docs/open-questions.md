@@ -19,20 +19,21 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 | Priority     | Questions | Resolved | Recommendations | Status      |
 | ------------ | --------- | -------- | --------------- | ----------- |
 | **CRITICAL** | 12        | 12       | 36              | ✅ Complete |
-| **HIGH**     | 28        | 5        | 70              | In Progress |
+| **HIGH**     | 28        | 15       | 70              | In Progress |
 | **MEDIUM**   | 45        | 0        | 108             | Beta Block  |
 | **LOW**      | 26        | 0        | 52              | Post-Launch |
-| **Total**    | **111**   | **17**   | **266**         |             |
+| **Total**    | **111**   | **27**   | **266**         |             |
 
 **Recently Resolved:**
 
+- ✅ 2026-02-03: Combat System (10 HIGH) → [combat-system-gdd.md](design/systems/combat-system-gdd.md)
 - ✅ 2026-02-03: NPC Core Systems (5 HIGH) → [npc-core-systems-gdd.md](design/systems/npc-core-systems-gdd.md)
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 - ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
 - ✅ 2026-02-03: Skill & Recipe System (5 CRITICAL) → [skill-recipe-system-gdd.md](design/systems/skill-recipe-system-gdd.md)
 
 **🎉 All CRITICAL priority questions resolved!**
-**🚀 HIGH priority in progress: 5/28 resolved**
+**🚀 HIGH priority in progress: 15/28 resolved (54%)**
 
 **Legend:**
 
@@ -2264,9 +2265,13 @@ Mitigation: Server-side validation limits (prevent exploits)
 
 ---
 
-### 8.2 Offline Combat Resolution
+### 8.2 Offline Combat Resolution ✅ RESOLVED
 
 **Question:** How are combat encounters resolved during offline simulation? Simplified combat model needed.
+
+**Resolution:** Three-mode combat system implemented - Background Simulation (tick-based instant), Spectator Mode (animated tick-based), Player Control (real-time with pause). Full combat mechanics with mode-adaptive complexity. See [Combat System GDD §1](design/systems/combat-system-gdd.md#1-combat-modes)
+
+**Status:** ✅ **RESOLVED** - Combat system fully specified with all mechanics
 
 **Recommendations:**
 
