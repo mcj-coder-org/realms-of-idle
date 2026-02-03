@@ -16,13 +16,17 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 
 ## Summary
 
-| Priority     | Questions | Recommendations | Status          |
-| ------------ | --------- | --------------- | --------------- |
-| **CRITICAL** | 12        | 36              | Prototype Block |
-| **HIGH**     | 28        | 70              | Alpha Block     |
-| **MEDIUM**   | 45        | 108             | Beta Block      |
-| **LOW**      | 26        | 52              | Post-Launch     |
-| **Total**    | **111**   | **266**         |                 |
+| Priority     | Questions | Resolved | Recommendations | Status        |
+| ------------ | --------- | -------- | --------------- | ------------- |
+| **CRITICAL** | 12        | 7        | 36              | Partial Block |
+| **HIGH**     | 28        | 0        | 70              | Alpha Block   |
+| **MEDIUM**   | 45        | 0        | 108             | Beta Block    |
+| **LOW**      | 26        | 0        | 52              | Post-Launch   |
+| **Total**    | **111**   | **7**    | **266**         |               |
+
+**Recently Resolved:**
+
+- ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 
 **Legend:**
 
@@ -39,11 +43,15 @@ These questions block core gameplay systems. The game cannot function without an
 
 ## 1. Core Formulas & Progression
 
-### 1.1 XP Curve Formula
+### 1.1 XP Curve Formula ✅ RESOLVED
 
 **Question:** What is the exact XP curve formula from level 1 to level 50?
 
-**Current State:** Mentioned as `Base XP = 100 × (Level ^ 1.5)` but needs full specification including modifiers.
+**Resolution:** Classical MMORPG Scaling (Option A) - Implemented in [Core Progression System GDD §1](design/systems/core-progression-system-gdd.md#1-xp-curve--level-progression)
+
+**Status:** ✅ **RESOLVED** - XP buckets are permanent, dual tracking system implemented
+
+**Previous State:** Mentioned as `Base XP = 100 × (Level ^ 1.5)` but needs full specification including modifiers.
 
 **Recommendations:**
 
@@ -100,11 +108,15 @@ Target: ~1 hour per level 1-10, ~8 hours per level 40-50
 
 ---
 
-### 1.2 Tag Affinity Decay Formula
+### 1.2 Tag Affinity Decay Formula ✅ RESOLVED
 
 **Question:** What are the exact formulas for tag affinity decay, including linear vs compound, floor values, and activity reset mechanics?
 
-**Current State:** Mentioned as "5% per week" but mechanics undefined.
+**Resolution:** **N/A** - XP buckets are permanent, no decay implemented. See [Core Progression System GDD §2.2](design/systems/core-progression-system-gdd.md#22-bucket-persistence)
+
+**Status:** ✅ **RESOLVED** - Design decision: Permanent buckets (no decay) for player-friendly progression
+
+**Previous State:** Mentioned as "5% per week" but mechanics undefined.
 
 **Recommendations:**
 
@@ -161,11 +173,15 @@ ProportionalDecay = (TagAffinity ÷ TotalTagGrowth) × 0.05
 
 ---
 
-### 1.3 Tag XP Per Action Formula
+### 1.3 Tag XP Per Action Formula ✅ RESOLVED
 
 **Question:** What is the tag XP scaling formula per action, including base XP and all modifiers?
 
-**Current State:** "Base XP per action × modifiers" not defined.
+**Resolution:** Hierarchical distribution with diminishing returns (100%/70%/50%/35%). See [Core Progression System GDD §2.1](design/systems/core-progression-system-gdd.md#21-action-xp-distribution)
+
+**Status:** ✅ **RESOLVED** - Most specific tag gets most XP, parent buckets get reduced share
+
+**Previous State:** "Base XP per action × modifiers" not defined.
 
 **Recommendations:**
 
@@ -220,11 +236,15 @@ At threshold: +100 bonus XP (one-time)
 
 ---
 
-### 1.4 Wildcard Tag Resolution
+### 1.4 Wildcard Tag Resolution ✅ RESOLVED
 
 **Question:** How are "wildcard" tags (e.g., `craft.*`) resolved in requirements? Does any craft tag satisfy, or sum of all?
 
-**Current State:** Unresolved.
+**Resolution:** Any Single Match logic: `Max(all matching tags) ≥ Requirement`. See [Core Progression System GDD §2.3](design/systems/core-progression-system-gdd.md#23-purposes-of-xp-buckets)
+
+**Status:** ✅ **RESOLVED** - Wildcards use best match, rewards specialization
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -278,11 +298,15 @@ Logic: Count(matching tags >= threshold) >= RequiredCount
 
 ---
 
-### 1.5 Idle Loop Efficiency Curve Interaction
+### 1.5 Idle Loop Efficiency Curve Interaction ✅ RESOLVED
 
 **Question:** How do tag affinities interact with the idle loop efficiency curve? Do tags decay faster during low-efficiency idle periods?
 
-**Current State:** Unresolved interaction.
+**Resolution:** Decoupled systems - Efficiency affects class XP only, buckets always get 100%. See [Core Progression System GDD §6.1](design/systems/core-progression-system-gdd.md#61-diminishing-returns-curve)
+
+**Status:** ✅ **RESOLVED** - Buckets permanent, efficiency only affects class progression
+
+**Previous State:** Unresolved interaction.
 
 **Recommendations:**
 
@@ -336,11 +360,15 @@ At 0% efficiency: 1× tag XP (normal)
 
 ## 2. Class System Mechanics
 
-### 2.1 Dormant Class Handling
+### 2.1 Dormant Class Handling ✅ RESOLVED
 
 **Question:** What happens to dormant classes? Can they be reactivated? Do they decay?
 
-**Current State:** Unresolved.
+**Resolution:** Persistent, reactivatable anytime with no penalty. See [Core Progression System GDD §5.3](design/systems/core-progression-system-gdd.md#53-inactivedormant-classes)
+
+**Status:** ✅ **RESOLVED** - XP paused while dormant, levels retained, no cooldown
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -394,11 +422,15 @@ Dormant Classes:
 
 ---
 
-### 2.2 Class Evolution Choice Presentation
+### 2.2 Class Evolution Choice Presentation ✅ RESOLVED
 
 **Question:** How is class evolution choice presented to the player? Automatic based on tags, or player choice from qualified options?
 
-**Current State:** Unresolved.
+**Resolution:** Level Up Event with choice presentation, can defer to backlog. See [Core Progression System GDD §3.3](design/systems/core-progression-system-gdd.md#33-level-up-event-interface)
+
+**Status:** ✅ **RESOLVED** - Player choice with default accept, backlog system for deferral
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -452,11 +484,15 @@ Player can undo via respec (cost: premium currency)
 
 ---
 
-### 2.3 Class Evolution Rejection
+### 2.3 Class Evolution Rejection ✅ RESOLVED
 
 **Question:** Can players reject a class evolution and stay at current class?
 
-**Current State:** Strategic choice for tag optimization unclear.
+**Resolution:** Yes, can defer evolution choices to backlog. Level up is mandatory but evolution can be postponed. See [Core Progression System GDD §3.4](design/systems/core-progression-system-gdd.md#34-acceptrefuse-rules)
+
+**Status:** ✅ **RESOLVED** - Existing classes must level, but evolution/skills can be refused
+
+**Previous State:** Strategic choice for tag optimization unclear.
 
 **Recommendations:**
 
