@@ -16,18 +16,21 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 
 ## Summary
 
-| Priority     | Questions | Resolved | Recommendations | Status        |
-| ------------ | --------- | -------- | --------------- | ------------- |
-| **CRITICAL** | 12        | 7        | 36              | Partial Block |
-| **HIGH**     | 28        | 0        | 70              | Alpha Block   |
-| **MEDIUM**   | 45        | 0        | 108             | Beta Block    |
-| **LOW**      | 26        | 0        | 52              | Post-Launch   |
-| **Total**    | **111**   | **7**    | **266**         |               |
+| Priority     | Questions | Resolved | Recommendations | Status      |
+| ------------ | --------- | -------- | --------------- | ----------- |
+| **CRITICAL** | 12        | 12       | 36              | ✅ Complete |
+| **HIGH**     | 28        | 0        | 70              | Alpha Block |
+| **MEDIUM**   | 45        | 0        | 108             | Beta Block  |
+| **LOW**      | 26        | 0        | 52              | Post-Launch |
+| **Total**    | **111**   | **12**   | **266**         |             |
 
 **Recently Resolved:**
 
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 - ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
+- ✅ 2026-02-03: Skill & Recipe System (5 CRITICAL) → [skill-recipe-system-gdd.md](design/systems/skill-recipe-system-gdd.md)
+
+**🎉 All CRITICAL priority questions resolved!**
 
 **Legend:**
 
@@ -551,11 +554,15 @@ Tradeoff:
 
 ---
 
-### 2.4 Excluding Tags for Class Acquisition
+### 2.4 Excluding Tags for Class Acquisition ✅ RESOLVED
 
 **Question:** How do "excluding_tags" work for class acquisition? Hard block or soft penalty?
 
-**Current State:** Unclear.
+**Resolution:** Soft Penalty (2× requirements) with redemption paths. See [Skill & Recipe System GDD §5](design/systems/skill-recipe-system-gdd.md#5-excluding-tags-mechanics)
+
+**Status:** ✅ **RESOLVED** - Excluding tags multiply requirements by 2×, allows redemption arcs
+
+**Previous State:** Unclear.
 
 **Recommendations:**
 
@@ -615,11 +622,15 @@ When acquiring class with excluding_tags:
 
 ## 3. Skill System Mechanics
 
-### 3.1 Active Skill Limit
+### 3.1 Active Skill Limit ✅ RESOLVED
 
 **Question:** How many skills can a player have active simultaneously?
 
-**Current State:** Unlimited? Slot-based? Per-class limit?
+**Resolution:** Unlimited skills, 5 quick slots for rapid access. See [Skill & Recipe System GDD §2](design/systems/skill-recipe-system-gdd.md#2-skill-slot-system)
+
+**Status:** ✅ **RESOLVED** - Unlimited skill accumulation, 5 quick slots for instant access, passives always on
+
+**Previous State:** Unlimited? Slot-based? Per-class limit?
 
 **Recommendations:**
 
@@ -679,11 +690,15 @@ Tradeoff: Diminishing returns on similar skills
 
 ---
 
-### 3.2 Skill Forgetting/Respec
+### 3.2 Skill Forgetting/Respec ✅ RESOLVED
 
 **Question:** Can skills be forgotten/replaced? What are respec mechanics?
 
-**Current State:** Unresolved.
+**Resolution:** Skip - no forgetting mechanic, skills accumulate forever with search/filter UI. See [Skill & Recipe System GDD §2](design/systems/skill-recipe-system-gdd.md#2-skill-slot-system)
+
+**Status:** ✅ **RESOLVED** - No forgetting needed, unlimited skill accumulation with robust search/filter
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -741,11 +756,15 @@ Allows: Genuine mistakes to be corrected
 
 ---
 
-### 3.3 Skill Tier Tag Requirements
+### 3.3 Skill Tier Tag Requirements ✅ RESOLVED
 
 **Question:** How do skill tiers (Basic → Legendary) interact with tag requirements? Does [Greater Heal] require more tags than [Heal]?
 
-**Current State:** Unresolved.
+**Resolution:** Already solved - tag hierarchy handles filtering by class tier (warrior.journeyman). See [Skill & Recipe System GDD §3.3](design/systems/skill-recipe-system-gdd.md#33-tag-based-skill-filtering)
+
+**Status:** ✅ **RESOLVED** - Skill tiers use tag-based filtering (class.tag + class.tier), no separate bucket thresholds
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
@@ -811,11 +830,15 @@ But skills gated by class progress
 
 ---
 
-### 3.4 Skill Rarity Roll Formula
+### 3.4 Skill Rarity Roll Formula ✅ RESOLVED
 
 **Question:** What is the rarity roll formula for skill acquisition? Level modifier, tag affinity modifier, luck stat?
 
-**Current State:** Unresolved.
+**Resolution:** Tag affinity + Achievement bonus system with legendary early unlocks. See [Skill & Recipe System GDD §4](design/systems/skill-recipe-system-gdd.md#4-skill-rarity--achievement-system)
+
+**Status:** ✅ **RESOLVED** - Base weighted random + tag affinity bonus (+5% per 1000 XP) + achievement bonuses (up to +50%) for extraordinary feats
+
+**Previous State:** Unresolved.
 
 **Recommendations:**
 
