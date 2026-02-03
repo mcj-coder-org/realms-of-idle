@@ -5,13 +5,13 @@ status: review
 version: 1.0.0
 created: 2026-02-02
 updated: 2026-02-02
-subjects: [classes, tags, progression, the-wandering-inn]
-dependencies: [twi-skills.md]
+subjects: [classes, tags, progression, game-design]
+dependencies: [reference-skills.md]
 ---
 
-# The Wandering Inn: Class Tag Mapping
+# Reference: Class Design Patterns
 
-## Extracted Classes with Tag Requirements & Evolution Paths
+## Example Classes with Tag Requirements & Evolution Paths
 
 ---
 
@@ -524,7 +524,7 @@ evolution_paths:
   Lv.10: [Tavern Keeper], [Boarding House Owner], [Restaurateur]
   Lv.20: [Master Innkeeper], [Haven Keeper], [Legendary Host]
   Lv.30: [Grandmaster Innkeeper], [Sanctuary Lord]
-special_note: "Erin Solstice's primary class - known for unusual Skill acquisitions"
+special_note: "Primary class known for unusual skill acquisitions"
 ```
 
 ### [Courier] / [Runner]
@@ -680,4 +680,4 @@ consequences:
 
 ---
 
-_Document Version 1.0 — Classes extracted from The Wandering Inn_
+_Document Version 1.0 — Design patterns for generic fantasy worldbuilding_

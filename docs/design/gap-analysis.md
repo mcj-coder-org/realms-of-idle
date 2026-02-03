@@ -19,39 +19,39 @@ dependencies: []
 
 ### Coverage Assessment by Domain
 
-| Domain                | TWI Coverage | Gaps Identified                 | Priority |
-| --------------------- | ------------ | ------------------------------- | -------- |
-| `combat.melee`        | Strong       | Grappling, reach weapons        | Medium   |
-| `combat.ranged`       | Moderate     | Firearms, siege, thrown mastery | High     |
-| `combat.defense`      | Strong       | Reaction-based, magical defense | Low      |
-| `combat.tactical`     | Moderate     | Stealth tactics, naval          | High     |
-| `craft.alchemy`       | Strong       | Artifice, rune-crafting         | Medium   |
-| `craft.smithing`      | Strong       | Tinkering, clockwork            | Medium   |
-| `craft.cooking`       | Strong       | Brewing distinction             | Low      |
-| `craft.textile`       | Weak         | Full tree underdeveloped        | High     |
-| `craft.construction`  | Moderate     | Traps, mechanisms               | Medium   |
-| `gather.mining`       | Strong       | -                               | Low      |
-| `gather.herbalism`    | Strong       | Fungi specialization            | Low      |
-| `gather.hunting`      | Strong       | Monster specialization          | Medium   |
-| `gather.logging`      | Weak         | Full tree underdeveloped        | High     |
-| `gather.fishing`      | Weak         | Full tree underdeveloped        | High     |
-| `gather.farming`      | Missing      | Entire subtree needed           | Critical |
-| `magic.elemental`     | Strong       | Sound, gravity, void            | Medium   |
-| `magic.restoration`   | Moderate     | Resurrection, limb regrowth     | Medium   |
-| `magic.arcane`        | Strong       | Illusion specialization         | Medium   |
-| `magic.summoning`     | Moderate     | Planar, construct types         | High     |
-| `magic.death`         | Moderate     | Soul magic, curses              | Medium   |
-| `magic.nature`        | Weak         | Full tree needed                | Critical |
-| `magic.divine`        | Missing      | Entire domain needed            | Critical |
-| `social.trade`        | Strong       | Auction, contracts              | Low      |
-| `social.diplomacy`    | Strong       | Deception specialization        | Medium   |
-| `social.leadership`   | Strong       | Inspiration mechanics           | Low      |
-| `social.performance`  | Weak         | Full tree needed                | High     |
-| `social.reputation`   | Moderate     | Infamy mechanics                | Medium   |
-| `utility.exploration` | Moderate     | Climbing, swimming, survival    | High     |
-| `utility.stealth`     | Moderate     | Disguise, forgery               | Medium   |
-| `utility.knowledge`   | Weak         | Research, crafting lore         | High     |
-| `utility.service`     | Moderate     | More service types              | Medium   |
+| Domain                | Current Coverage | Gaps Identified                 | Priority |
+| --------------------- | ---------------- | ------------------------------- | -------- |
+| `combat.melee`        | Strong           | Grappling, reach weapons        | Medium   |
+| `combat.ranged`       | Moderate         | Firearms, siege, thrown mastery | High     |
+| `combat.defense`      | Strong           | Reaction-based, magical defense | Low      |
+| `combat.tactical`     | Moderate         | Stealth tactics, naval          | High     |
+| `craft.alchemy`       | Strong           | Artifice, rune-crafting         | Medium   |
+| `craft.smithing`      | Strong           | Tinkering, clockwork            | Medium   |
+| `craft.cooking`       | Strong           | Brewing distinction             | Low      |
+| `craft.textile`       | Weak             | Full tree underdeveloped        | High     |
+| `craft.construction`  | Moderate         | Traps, mechanisms               | Medium   |
+| `gather.mining`       | Strong           | -                               | Low      |
+| `gather.herbalism`    | Strong           | Fungi specialization            | Low      |
+| `gather.hunting`      | Strong           | Monster specialization          | Medium   |
+| `gather.logging`      | Weak             | Full tree underdeveloped        | High     |
+| `gather.fishing`      | Weak             | Full tree underdeveloped        | High     |
+| `gather.farming`      | Missing          | Entire subtree needed           | Critical |
+| `magic.elemental`     | Strong           | Sound, gravity, void            | Medium   |
+| `magic.restoration`   | Moderate         | Resurrection, limb regrowth     | Medium   |
+| `magic.arcane`        | Strong           | Illusion specialization         | Medium   |
+| `magic.summoning`     | Moderate         | Planar, construct types         | High     |
+| `magic.death`         | Moderate         | Soul magic, curses              | Medium   |
+| `magic.nature`        | Weak             | Full tree needed                | Critical |
+| `magic.divine`        | Missing          | Entire domain needed            | Critical |
+| `social.trade`        | Strong           | Auction, contracts              | Low      |
+| `social.diplomacy`    | Strong           | Deception specialization        | Medium   |
+| `social.leadership`   | Strong           | Inspiration mechanics           | Low      |
+| `social.performance`  | Weak             | Full tree needed                | High     |
+| `social.reputation`   | Moderate         | Infamy mechanics                | Medium   |
+| `utility.exploration` | Moderate         | Climbing, swimming, survival    | High     |
+| `utility.stealth`     | Moderate         | Disguise, forgery               | Medium   |
+| `utility.knowledge`   | Weak             | Research, crafting lore         | High     |
+| `utility.service`     | Moderate         | More service types              | Medium   |
 
 ---
 
@@ -217,7 +217,7 @@ utility.knowledge → knowledge (promoted to domain)
     Lv.30: [Legendary Ranger], [Nature's Blade]
   source: "D&D Ranger"
 
-[Druid]:  # Expanded from TWI
+[Druid]:  # Expanded from core concept
   tags_primary: [magic.nature]
   tags_secondary: [gather.herbalism, knowledge.lore.nature]
   acquisition:
@@ -284,7 +284,7 @@ utility.knowledge → knowledge (promoted to domain)
 ### 3.4 Skill Specialist Classes
 
 ```yaml
-[Rogue]:  # Expanded beyond TWI [Thief]
+[Rogue]:  # Expanded from core archetype
   tags_primary: [utility.stealth, combat.melee.dagger]
   tags_secondary: [social.trade, utility.exploration]
   acquisition:

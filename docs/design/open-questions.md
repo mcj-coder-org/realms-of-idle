@@ -48,21 +48,21 @@ dependencies: ['gdd', 'minimal-actions', 'npc-design']
 
 ### 1.2 Class System
 
-| #     | Question                                                        | Document    | Notes                                                             |
-| ----- | --------------------------------------------------------------- | ----------- | ----------------------------------------------------------------- |
-| 1.2.1 | What happens to dormant classes?                                | GDD §4.4    | Can they be reactivated? Do they decay?                           |
-| 1.2.2 | How is class evolution choice presented to the player?          | GDD §4.3    | Automatic based on tags, or player choice from qualified options? |
-| 1.2.3 | Can players reject a class evolution and stay at current class? | GDD §4.3    | Strategic choice for tag optimization?                            |
-| 1.2.4 | How do "excluding_tags" work for class acquisition?             | TWI Classes | Hard block or soft penalty?                                       |
+| #     | Question                                                        | Document              | Notes                                                             |
+| ----- | --------------------------------------------------------------- | --------------------- | ----------------------------------------------------------------- |
+| 1.2.1 | What happens to dormant classes?                                | GDD §4.4              | Can they be reactivated? Do they decay?                           |
+| 1.2.2 | How is class evolution choice presented to the player?          | GDD §4.3              | Automatic based on tags, or player choice from qualified options? |
+| 1.2.3 | Can players reject a class evolution and stay at current class? | GDD §4.3              | Strategic choice for tag optimization?                            |
+| 1.2.4 | How do "excluding_tags" work for class acquisition?             | Class Design Document | Hard block or soft penalty?                                       |
 
 ### 1.3 Skill System
 
-| #     | Question                                                               | Document   | Notes                                              |
-| ----- | ---------------------------------------------------------------------- | ---------- | -------------------------------------------------- |
-| 1.3.1 | How many skills can a player have active simultaneously?               | GDD §5     | Unlimited? Slot-based? Per-class limit?            |
-| 1.3.2 | Can skills be forgotten/replaced?                                      | GDD §5     | Respec mechanics?                                  |
-| 1.3.3 | How do skill tiers (Basic → Legendary) interact with tag requirements? | TWI Skills | Does [Greater Heal] require more tags than [Heal]? |
-| 1.3.4 | What is the rarity roll formula for skill acquisition?                 | GDD §5.1   | Level modifier, tag affinity modifier, luck stat?  |
+| #     | Question                                                               | Document              | Notes                                              |
+| ----- | ---------------------------------------------------------------------- | --------------------- | -------------------------------------------------- |
+| 1.3.1 | How many skills can a player have active simultaneously?               | GDD §5                | Unlimited? Slot-based? Per-class limit?            |
+| 1.3.2 | Can skills be forgotten/replaced?                                      | GDD §5                | Respec mechanics?                                  |
+| 1.3.3 | How do skill tiers (Basic → Legendary) interact with tag requirements? | Skill Design Document | Does [Greater Heal] require more tags than [Heal]? |
+| 1.3.4 | What is the rarity roll formula for skill acquisition?                 | GDD §5.1              | Level modifier, tag affinity modifier, luck stat?  |
 
 ---
 
@@ -78,13 +78,13 @@ dependencies: ['gdd', 'minimal-actions', 'npc-design']
 
 ### 2.2 Progression Balance
 
-| #     | Question                                                              | Document    | Notes                                                        |
-| ----- | --------------------------------------------------------------------- | ----------- | ------------------------------------------------------------ |
-| 2.2.1 | What is the exact XP curve formula?                                   | GDD §7.2    | `Base XP = 100 × (Level ^ 1.5)` but needs full specification |
-| 2.2.2 | How long should it take to reach level 10? 20? 30?                    | GDD §7      | Target hours/days not specified                              |
-| 2.2.3 | What are the tag thresholds for each class tier?                      | TWI Classes | Level 10 evolution requires X tags, level 20 requires Y?     |
-| 2.2.4 | How does the diminishing returns curve interact with premium players? | GDD §6.2    | Can rest skips reset efficiency?                             |
-| 2.2.5 | What is the catch-up mechanic XP bonus percentage?                    | GDD §7.3    | Mentorship bonus = ?%                                        |
+| #     | Question                                                              | Document              | Notes                                                        |
+| ----- | --------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------ |
+| 2.2.1 | What is the exact XP curve formula?                                   | GDD §7.2              | `Base XP = 100 × (Level ^ 1.5)` but needs full specification |
+| 2.2.2 | How long should it take to reach level 10? 20? 30?                    | GDD §7                | Target hours/days not specified                              |
+| 2.2.3 | What are the tag thresholds for each class tier?                      | Class Design Document | Level 10 evolution requires X tags, level 20 requires Y?     |
+| 2.2.4 | How does the diminishing returns curve interact with premium players? | GDD §6.2              | Can rest skips reset efficiency?                             |
+| 2.2.5 | What is the catch-up mechanic XP bonus percentage?                    | GDD §7.3              | Mentorship bonus = ?%                                        |
 
 ---
 
@@ -128,11 +128,11 @@ dependencies: ['gdd', 'minimal-actions', 'npc-design']
 
 ### 4.3 Recipes & Spells
 
-| #     | Question                                 | Document   | Notes                                  |
-| ----- | ---------------------------------------- | ---------- | -------------------------------------- |
-| 4.3.1 | How many recipes are needed for launch?  | GDD §5.5   | Per craft category                     |
-| 4.3.2 | How many spells per magic school?        | TWI Skills | Minimum viable spell list              |
-| 4.3.3 | What is the recipe/spell discovery rate? | GDD §5.5   | Random drops vs guaranteed progression |
+| #     | Question                                 | Document              | Notes                                  |
+| ----- | ---------------------------------------- | --------------------- | -------------------------------------- |
+| 4.3.1 | How many recipes are needed for launch?  | GDD §5.5              | Per craft category                     |
+| 4.3.2 | How many spells per magic school?        | Skill Design Document | Minimum viable spell list              |
+| 4.3.3 | What is the recipe/spell discovery rate? | GDD §5.5              | Random drops vs guaranteed progression |
 
 ---
 
@@ -181,9 +181,9 @@ dependencies: ['gdd', 'minimal-actions', 'npc-design']
 
 ### 6.3 Red Class Enforcement
 
-| #     | Question                                      | Document    | Notes                            |
-| ----- | --------------------------------------------- | ----------- | -------------------------------- |
-| 6.3.1 | How does the bounty system work mechanically? | TWI Classes | Player-placed? System-generated? |
+| #     | Question                                      | Document              | Notes                            |
+| ----- | --------------------------------------------- | --------------------- | -------------------------------- |
+| 6.3.1 | How does the bounty system work mechanically? | Class Design Document | Player-placed? System-generated? |
 
 ---
 

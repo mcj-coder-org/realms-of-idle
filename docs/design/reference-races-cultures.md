@@ -5,13 +5,13 @@ status: review
 version: 1.0.0
 created: 2026-02-02
 updated: 2026-02-02
-subjects: [races, cultures, world-building, the-wandering-inn]
+subjects: [races, cultures, world-building, game-design]
 dependencies: []
 ---
 
-# The Wandering Inn: Races & Cultures Reference Guide
+# Reference: Race & Culture Design Patterns
 
-A comprehensive guide to the sentient peoples of Innworld, their cultures, histories, and social considerations.
+A guide to designing sentient peoples for fantasy worlds, their cultures, histories, and social considerations.
 
 ---
 
@@ -140,7 +140,7 @@ Goblins are survivors above all. They're often cunning, opportunistic, and distr
 
 ### Overview
 
-Humans are widespread across Innworld but lack a unified culture, varying dramatically by continent and nation.
+Humans are widespread across fantasy worlds but lack a unified culture, varying dramatically by region and nation.
 
 ### Regional Cultures
 
@@ -158,7 +158,7 @@ Humans are widespread across Innworld but lack a unified culture, varying dramat
 - Chandrarian humans vary wildly—Kheltian humans are proud; Nerrhavian humans may have complex caste dynamics
 - Northern Izril humans may be suspicious of Drakes
 - Class and level are common conversation topics
-- Earth-humans (like Erin, Ryoka) are anomalies with different cultural assumptions
+- World-travelers from distant lands are anomalies with different cultural assumptions
 
 ---
 
@@ -252,7 +252,7 @@ Large bull-headed humanoids from the House of Minos, an island nation known for 
 
 ### Culture & History
 
-Minotaurs built one of the most respected civilizations in Innworld. The House of Minos produces exceptional [Warriors], architects, and craftspeople. They fought in the Demon Wars on Rhir and are considered honorable enemies even by those who've faced them in battle.
+Minotaurs built one of the most respected civilizations in fantasy worlds. The House of Minos produces exceptional [Warriors], architects, and craftspeople. They fought in ancient wars and are considered honorable enemies even by those who've faced them in battle.
 
 Their culture emphasizes personal excellence, honest combat, and quality in all things. Shoddy work or cowardice are deeply shameful.
 
@@ -361,7 +361,7 @@ Undead humanoids requiring blood to survive. They live in extreme secrecy due to
 
 Vampires are hunted relentlessly—revealing oneself means death. They live hidden among other races, carefully concealing their nature. Family lines and hidden communities provide support networks.
 
-They possess enhanced physical abilities and weaknesses to sunlight and various traditional banes. Not all folklore is accurate to Innworld vampires.
+They possess enhanced physical abilities and weaknesses to sunlight and various traditional banes. Not all folklore is accurate to these vampires.
 
 ### Temperament
 
@@ -392,7 +392,7 @@ The God of Death's corruption on Rhir complicates everything.
 
 ### Temperament
 
-Unknown to most Innworlders, who never converse with Demons. Those who have encountered them describe surprising complexity.
+Unknown to most people, who never converse with Demons. Those who have encountered them describe surprising complexity.
 
 ### Conversational Considerations
 
@@ -514,7 +514,7 @@ Highly variable by individual. Many Gazers are intelligent and magically incline
 
 ---
 
-## General Innworld Conversational Notes
+## General Conversational Notes for Fantasy Worlds
 
 ### The Level System
 
@@ -541,7 +541,7 @@ Highly variable by individual. Many Gazers are intelligent and magically incline
 
 ## Racial Evolutions, Variations & Triggers
 
-This section covers the known evolutionary paths, variant forms, and the conditions that trigger transformations within Innworld's races.
+This section covers the known evolutionary paths, variant forms, and the conditions that trigger transformations within fantasy races.
 
 ---
 
@@ -691,7 +691,7 @@ The original hundred elite Antinium, most lost in Rhir. Each possessed unique ab
   - Creative activities (art, music, chess)
   - Religious faith (the Small Queen's faith)
   - Being treated as individuals rather than units
-  - The influence of Erin Solstice specifically
+  - The influence of extraordinary individuals who champion their cause
   - The Free Queen's deliberate tolerance/encouragement
 
 **Painted Antinium**
@@ -1009,4 +1009,4 @@ Any race can potentially become undead:
 
 ---
 
-_This guide reflects information through Volume 9 of The Wandering Inn. Evolutionary paths and triggers may be further revealed as the story progresses._
+_Document Version 1.0 — Design patterns for generic fantasy worldbuilding_

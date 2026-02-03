@@ -84,7 +84,7 @@ Recipes and Spells follow the same tag-based system for discovery and eligibilit
 
 ## 1. Executive Summary
 
-**Idle Worlds** is a persistent multiplayer idle RPG inspired by organic class/skill progression systems like those in _The Wandering Inn_. Players don't choose classes—they _earn_ them through their actions. The idle mechanics simulate a character living their life, gaining experience through meaningful activity, and growing in unexpected directions based on player choices and emergent gameplay.
+**Idle Worlds** is a persistent multiplayer idle RPG inspired by organic class/skill progression systems. Players don't choose classes—they _earn_ them through their actions. The idle mechanics simulate a character living their life, gaining experience through meaningful activity, and growing in unexpected directions based on player choices and emergent gameplay.
 
 **Core Fantasy:** You are not the hero yet. You are a person in a living world, and what you become depends entirely on what you do.
 

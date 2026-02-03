@@ -5,19 +5,19 @@ status: review
 version: 1.0.0
 created: 2026-02-02
 updated: 2026-02-02
-subjects: [skills, tags, progression, the-wandering-inn]
-dependencies: [twi-classes.md]
+subjects: [skills, tags, progression, game-design]
+dependencies: [reference-classes.md]
 ---
 
-# The Wandering Inn: Skill Tag Mapping
+# Reference: Skill Design Patterns
 
-## Extracted Skills with Tag Requirements, Effects & Scaling
+## Example Skills with Tag Requirements, Effects & Scaling
 
 ---
 
 ## Skill Prefix System
 
-TWI uses prefixes to denote skill power tiers:
+This system uses prefixes to denote skill power tiers:
 
 | Prefix      | Tier | Level Range | Tag Multiplier |
 | ----------- | ---- | ----------- | -------------- |
@@ -65,7 +65,7 @@ TWI uses prefixes to denote skill power tiers:
   type: Active
   effect: "Devastating unarmed strike. Massive damage + knockback."
   cooldown: 60s
-  special_note: "Erin Solstice signature skill - acquired through extraordinary circumstances"
+  special_note: "Rare signature skill - acquired through extraordinary circumstances"
 
 [Sword Art: (Variant)]:
   tags: [combat.melee.sword.art]
@@ -464,7 +464,7 @@ TWI uses prefixes to denote skill power tiers:
     magic.arcane: 50
   type: Passive
   effect: 'Cooked food provides magical effects'
-  special_note: 'Erin Solstice skill variant'
+  special_note: 'Rare skill variant'
 
 [Preservation]:
   tags: [craft.cooking.preservation]
@@ -741,7 +741,7 @@ TWI uses prefixes to denote skill power tiers:
 
 ---
 
-## Innkeeper-Specific Skills (Erin Solstice Notable)
+## Innkeeper-Specific Skills
 
 ```yaml
 [Inn's Aura]:
@@ -751,7 +751,7 @@ TWI uses prefixes to denote skill power tiers:
     social.diplomacy: 100
   type: Passive (Aura)
   effect: 'Inn provides comfort, safety, and various buffs to guests'
-  special_note: "Rare [Innkeeper] skill - Erin's signature"
+  special_note: 'Rare [Innkeeper] skill - signature ability'
 
 [Immortal Moment]:
   tags: [magic.arcane.time, combat.tactical.special]
@@ -759,7 +759,7 @@ TWI uses prefixes to denote skill power tiers:
     # Extraordinary circumstances - not normal acquisition
   type: Active
   effect: 'Freeze a moment in time. Legendary skill.'
-  special_note: "Erin Solstice's most notable skill - acquired through extreme circumstances"
+  special_note: 'Legendary signature skill - acquired through extreme circumstances'
 
 [Wondrous Fare]:
   tags: [craft.cooking.technique.magical, utility.service.innkeep]
@@ -780,4 +780,4 @@ TWI uses prefixes to denote skill power tiers:
 
 ---
 
-_Document Version 1.0 — Skills extracted from The Wandering Inn_
+_Document Version 1.0 — Design patterns for generic fantasy worldbuilding_
