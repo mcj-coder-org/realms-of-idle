@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: detailed
-status: draft
+status: review
 version: 1.0.0
 created: 2026-02-02
 updated: 2026-02-02
