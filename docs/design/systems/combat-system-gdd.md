@@ -3,7 +3,7 @@ title: Combat System
 type: system
 category: authoritative
 status: authoritative
-version: 1.0.0
+version: 1.1.0
 created: 2026-02-03
 updated: 2026-02-03
 subjects: ['design', 'mechanics', 'gameplay', 'combat', 'AI']
@@ -1819,20 +1819,26 @@ Player chooses:
 
 This Combat System GDD resolves the following open questions:
 
-| Question ID | Question                  | Resolution                                                                                   |
-| ----------- | ------------------------- | -------------------------------------------------------------------------------------------- |
-| **8.2**     | Offline Combat Resolution | Three-mode system (Background/Spectator/Player Control) with appropriate complexity per mode |
-| **HIGH**    | Combat formula structure  | (Base + Additive) × Multiplicative formula with clear skill integration                      |
-| **HIGH**    | Damage types              | Full 6-type system (Physical, Fire, Cold, Poison, Electric, Arcane)                          |
-| **HIGH**    | Status effects            | Full system (Stun, Poison, Burn, Freeze, Slow, etc.)                                         |
-| **HIGH**    | Defense layers            | Shields → Armor → Health with degradation and repair                                         |
-| **HIGH**    | Speed/cooldown system     | Hybrid approach (character speed + weapon cooldown)                                          |
-| **HIGH**    | Positioning               | Range-based auto-rows, tactical depth in player control                                      |
-| **HIGH**    | AI targeting              | Mode-adaptive (simple aggro / personality / role-based)                                      |
-| **HIGH**    | Skill activation          | Manual when controlling, auto when AI                                                        |
-| **HIGH**    | Combat end conditions     | Context-aware (elimination / morale / surrender)                                             |
+| Question ID | Question                        | Resolution                                                                                   |
+| ----------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
+| **8.1**     | Combat XP Reward Formula        | Action-based XP with enemy level modifier, party size modifier, and first-kill bonus (§16.1) |
+| **8.2**     | Armor Absorption Formula        | BaseArmor × (1 + ENDModifier) with degradation rate per armor type (§16.2)                   |
+| **8.3**     | AI Threat Calculation           | Composite threat score with damage, presence, debuffs, level, and decay (§16.3)              |
+| **8.4**     | Power Ratio Calculation         | (Attack×1.0 + Defense×0.5 + MaxHP×0.1 + Speed×0.3 + Level×5) for party totals (§16.4)        |
+| **8.5**     | Offline Combat Resolution       | Statistical power comparison with outcome table and casualty rules (§16.5)                   |
+| **8.6**     | Attribute Progression per Level | Fixed per-class tables with primary/secondary progression (§16.6)                            |
+| **8.7**     | Multiplayer Possession          | Turn-based mode with initiative, timeout, chat, and conflict resolution (§16.7)              |
+| **HIGH**    | Combat formula structure        | (Base + Additive) × Multiplicative formula with clear skill integration                      |
+| **HIGH**    | Damage types                    | Full 6-type system (Physical, Fire, Cold, Poison, Electric, Arcane)                          |
+| **HIGH**    | Status effects                  | Full system (Stun, Poison, Burn, Freeze, Slow, etc.)                                         |
+| **HIGH**    | Defense layers                  | Shields → Armor → Health with degradation and repair                                         |
+| **HIGH**    | Speed/cooldown system           | Hybrid approach (character speed + weapon cooldown)                                          |
+| **HIGH**    | Positioning                     | Range-based auto-rows, tactical depth in player control                                      |
+| **HIGH**    | AI targeting                    | Mode-adaptive (simple aggro / personality / role-based)                                      |
+| **HIGH**    | Skill activation                | Manual when controlling, auto when AI                                                        |
+| **HIGH**    | Combat end conditions           | Context-aware (elimination / morale / surrender)                                             |
 
-**Total HIGH Priority Questions Resolved: 10/28**
+**Total HIGH Priority Questions Resolved: 17/28 (7 critical formula gaps now filled)**
 
 ---
 
@@ -1845,6 +1851,739 @@ The following systems interact with combat but need separate GDDs:
 3. **Quest System** — Combat quests, bounties, encounters
 4. **Magic System** — Spell schools, mana regeneration, enchanting
 5. **Crafting System** — Equipment repair, item creation, material costs
+
+---
+
+## 16. Critical Combat Formulas
+
+This section provides the exact formulas required for combat system implementation. These are the authoritative calculations used by all three combat modes.
+
+### 16.1 Combat XP Reward Formula
+
+Combat actions grant XP to relevant tag buckets. XP is awarded per action, with bonuses for kills and challenging enemies.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                    COMBAT XP REWARD FORMULA                                │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  BASE XP REWARDS (per action):                                             │
+│    Basic Attack (hit):         5 XP to relevant bucket                     │
+│    Basic Attack (kill):        +10 XP bonus                                │
+│    Skill Use (hit):            8 XP to relevant bucket                     │
+│    Skill Use (kill):           +15 XP bonus                                │
+│    Taking Damage:              +2 XP to combat.toughness bucket            │
+│    Successful Block:           +3 XP to combat.defense bucket             │
+│    Successful Dodge:           +3 XP to combat.evasion bucket             │
+│                                                                            │
+│  MODIFIERS (applied to base XP):                                            │
+│    × Enemy Level Modifier:                                                   │
+│      - Same level:                   ×1.0                                   │
+│      - 1-3 levels higher:            ×1.2                                   │
+│      - 4-6 levels higher:            ×1.5                                   │
+│      - 7+ levels higher:             ×2.0 (cap)                             │
+│      - Lower level:                 ×1.0 (no penalty, anti-farm)           │
+│                                                                            │
+│    × Party Size Modifier:                                                  │
+│      - Solo:                         ×1.0                                   │
+│      - 2 characters:                 ×0.8                                   │
+│      - 3 characters:                 ×0.7                                   │
+│      - 4+ characters:                ×0.6                                   │
+│                                                                            │
+│    × First Kill Bonus (per enemy type):                                    │
+│      - Never killed before:          ×2.0 (discovery bonus)                 │
+│      - Killed 1-10 times:            ×1.0                                   │
+│      - Killed 11+ times:             ×0.5 (familiarity penalty)           │
+│                                                                            │
+│  FINAL XP = (Base XP + Kill Bonus) × Enemy Mod × Party Mod × First Kill   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Example Calculations**
+
+```
+Level 5 Marcus kills Level 6 Goblin Warrior (first time):
+
+Basic Attack: 5 XP
+Kill Bonus: +10 XP
+Subtotal: 15 XP
+
+Enemy Level Modifier: ×1.2 (goblin is 1 level higher)
+Party Size Modifier: ×0.8 (4 character party)
+First Kill Bonus: ×2.0 (never killed goblin warrior before)
+
+Final: 15 × 1.2 × 0.8 × 2.0 = 28.8 → 28 XP to combat.melee.sword
+```
+
+```
+Level 10 Elena kills Level 8 Goblin Shaman (killed 15 times before):
+
+Fireball (skill use): 8 XP
+Kill Bonus: +15 XP
+Subtotal: 23 XP
+
+Enemy Level Modifier: ×1.0 (enemy is lower level)
+Party Size Modifier: ×1.0 (solo)
+First Kill Bonus: ×0.5 (familiar with this enemy type)
+
+Final: 23 × 1.0 × 1.0 × 0.5 = 11.5 → 11 XP to magic.fire
+```
+
+**XP Distribution to Buckets**
+
+```
+Single action grants XP to multiple buckets:
+
+Action: Fireball (kills Goblin Shaman)
+Primary Bucket: magic.fire (+11 XP)
+Parent Buckets: magic.destruction (+8 XP, 70%)
+                magic (+5 XP, 50%)
+
+Taking damage during combat:
+Primary Bucket: combat.toughness (+2 XP per hit)
+```
+
+### 16.2 Armor Absorption Formula
+
+Armor absorbs damage before it reaches health. The absorption amount is calculated from base armor value plus END modifier.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                    ARMOR ABSORPTION FORMULA                                │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  TotalAbsorption = BaseArmor × (1 + ENDModifier)                          │
+│  MaxAbsorption = BaseArmor × 1.5 (hard cap)                                │
+│                                                                            │
+│  WHERE:                                                                    │
+│    BaseArmor = Equipment Armor Value (from item stats)                     │
+│    ENDModifier = (END - 10) × 0.02 (END below 10 reduces absorption)      │
+│                                                                            │
+│  END MODIFIER TABLE:                                                       │
+│    END 5:  -10% absorption  (1.0 × 0.9 = 0.9)                            │
+│    END 8:  -4% absorption   (1.0 × 0.96 = 0.96)                           │
+│    END 10: 0% modifier (baseline)                                         │
+│    END 12: +4% absorption   (1.0 × 1.04 = 1.04)                           │
+│    END 15: +10% absorption  (1.0 × 1.10 = 1.10)                           │
+│    END 18: +16% absorption  (1.0 × 1.16 = 1.16)                           │
+│    END 20: +20% absorption  (1.0 × 1.20 = 1.20, capped at 1.5×)           │
+│                                                                            │
+│  ARMOR DURABILITY LOSS:                                                     │
+│    DamageAbsorbed = min(IncomingDamage, TotalAbsorption)                   │
+│    DurabilityLost = ceil(DamageAbsorbed / DegradationRate)                 │
+│                                                                            │
+│    Degradation Rate by Armor Type:                                         │
+│      - Light Armor: 1 durability per 10 damage                            │
+│      - Medium Armor: 1 durability per 15 damage                           │
+│      - Heavy Armor: 1 durability per 25 damage                            │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Full Damage Flow Example**
+
+```
+Character: Marcus (END 13, Chain Shirt Armor 8)
+Incoming Damage: 25
+
+Step 1: Calculate Total Absorption
+  BaseArmor = 8
+  ENDModifier = (13 - 10) × 0.02 = +0.06 (+6%)
+  TotalAbsorption = 8 × 1.06 = 8.48 → 8 damage absorbed
+  MaxAbsorption = 8 × 1.5 = 12 (cap)
+
+Step 2: Apply Shield (if present)
+  Shield: 20 points remaining
+  Shield absorbs: min(25, 20) = 20 damage
+  Shield remaining: 0
+  Overflow to armor: 5 damage
+
+Step 3: Apply Armor
+  Armor absorbs: min(5, 8) = 5 damage
+  Armor durability: 50 → 50 (5 damage ÷ 15 rate = 0 durability lost)
+  Overflow to health: 0
+
+Step 4: Apply Health
+  Health damage: 0 (fully blocked)
+
+RESULT: 20 shield points consumed, 0 health damage taken
+```
+
+**Shield Integration**
+
+```
+Shield absorption calculation is separate from armor:
+
+Physical Shield:
+  - Absorbs up to current shield points
+  - Degrades 1:1 with damage absorbed
+  - Does NOT benefit from END modifier
+
+Aura Shield (magical):
+  - Absorbs up to current aura points
+  - Does NOT degrade (regenerates)
+  - Does NOT benefit from END modifier
+
+Stacking Example:
+  Physical Shield: 20 points
+  Aura Shield: 10 points
+  Total Shield Pool: 30 points
+
+  Incoming: 25 damage
+  → Physical absorbs: 20 (degrades to 0)
+  → Aura absorbs: 5 (reduces to 5/10)
+  → Overflow: 0
+```
+
+### 16.3 AI Threat Calculation
+
+AI uses a composite threat score to determine targeting priority in Spectator and Player Control modes.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                       AI THREAT CALCULATION                                │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  ThreatScore = (DamageDealt × 1.0) + (Presence × 0.5) +                   │
+│                  (Debuffs × 0.3) + (Level × 0.2) + (ThreatBonus)          │
+│                                                                            │
+│  WHERE:                                                                    │
+│    DamageDealt = Total damage to this character in last 10 seconds         │
+│    Presence = Position-based threat (front row = 20, back row = 5)        │
+│    Debuffs = Number of debuffs applied to enemies (poison, stun, etc.)    │
+│    Level = Character level (higher level = more threat)                    │
+│    ThreatBonus = Bonus from skills/actions (taunt, mark, etc.)            │
+│                                                                            │
+│  THREAT DECAY:                                                             │
+│    DamageDealt decays by 10% per second                                    │
+│    (After 10 seconds, old damage contributions are negligible)            │
+│                                                                            │
+│  RECALCULATION:                                                            │
+│    Threat score recalculated every 2 seconds                               │
+│    AI retargets if new highest threat exceeds current by 20%               │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Threat Calculation Examples**
+
+```
+Example 1: Mage with high damage output
+Elena (Level 7 Mage):
+  - Damage dealt (last 10s): 45 (fireball + ice spike)
+  - Presence: 5 (back row)
+  - Debuffs: 3 (applied freeze × 2, burn × 1)
+  - Level: 7 × 0.2 = 1.4
+  - ThreatBonus: 0
+
+  Threat = 45 + 2.5 + 0.9 + 1.4 = 49.8
+
+Example 2: Warrior in front row
+Marcus (Level 8 Warrior):
+  - Damage dealt (last 10s): 12 (one attack)
+  - Presence: 20 (front row)
+  - Debuffs: 0
+  - Level: 8 × 0.2 = 1.6
+  - ThreatBonus: 0
+
+  Threat = 12 + 10 + 0 + 1.6 = 23.6
+
+Result: AI targets Elena (49.8 > 23.6)
+```
+
+```
+Example 3: Tank with Taunt
+Marcus (Level 8 Warrior) uses [Taunt]:
+  - Damage dealt: 5
+  - Presence: 20
+  - Debuffs: 0
+  - Level: 1.6
+  - ThreatBonus: +30 (Taunt skill effect)
+
+  Threat = 5 + 10 + 0 + 1.6 + 30 = 46.6
+
+Result: AI targets Marcus despite lower damage (Taunt creates artificial threat)
+```
+
+**Personality-Based Targeting Override**
+
+```
+Some personalities modify threat weighting:
+
+Brave Personality:
+  - ThreatBonus: +10 for high-threat targets
+  - Actively seeks the strongest enemy
+
+Cowardly Personality:
+  - ThreatBonus: -20 for high-threat targets
+  - Targets lowest threat (wounded, low level)
+
+Protective Personality:
+  - ThreatBonus: +50 for enemies attacking ward
+  - Prioritizes intercepting damage to protected ally
+
+Opportunistic Personality:
+  - Weight: Debuffs × 1.0 (increased from 0.3)
+  - Targets vulnerable (stunned, low HP) enemies
+```
+
+### 16.4 Power Ratio Calculation
+
+Power ratio determines surrender triggers, morale checks, and combat outcome prediction for offline resolution.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                       POWER RATIO CALCULATION                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Character Power Rating:                                                  │
+│    Power = (Attack × 1.0) + (Defense × 0.5) + (MaxHP × 0.1) +             │
+│            (Speed × 0.3) + (Level × 5)                                    │
+│                                                                            │
+│  WHERE:                                                                    │
+│    Attack = Average damage per second (weapon damage ÷ attack speed)         │
+│    Defense = Armor value + Shield value (current)                          │
+│    MaxHP = Maximum health pool                                            │
+│    Speed = Character speed (FIN - armor penalty)                          │
+│    Level = Character level                                                 │
+│                                                                            │
+│  Party Power = Sum of all member power ratings                             │
+│  Power Ratio = YourPartyPower ÷ EnemyPartyPower                            │
+│                                                                            │
+│  THRESHOLDS:                                                               │
+│    Power Ratio > 3.0:  Overwhelming advantage (enemies may surrender)      │
+│    Power Ratio > 1.5:  Strong advantage (likely victory)                   │
+│    Power Ratio 1.0:   Even match                                           │
+│    Power Ratio < 0.67: Disadvantage (may flee)                             │
+│    Power Ratio < 0.33: Overwhelming disadvantage (likely defeat)           │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Power Calculation Examples**
+
+```
+Example 1: Solo Character
+Marcus (Level 8 Warrior):
+  - Attack: (12-18 avg 15) ÷ 2.0s cooldown = 7.5 DPS
+  - Defense: 8 (armor) + 0 (shield) = 8
+  - MaxHP: 120
+  - Speed: 10 (FIN 11, medium armor -1)
+  - Level: 8
+
+  Power = (7.5 × 1.0) + (8 × 0.5) + (120 × 0.1) + (10 × 0.3) + (8 × 5)
+       = 7.5 + 4 + 12 + 3 + 40
+       = 66.5
+
+Example 2: Enemy Party
+Goblin Warrior (Level 5):  Power = 35
+Goblin Spearman (Level 4): Power = 28
+Goblin Shaman (Level 5):   Power = 30 (includes magic DPS)
+
+Enemy Party Power = 35 + 28 + 30 = 93
+
+Example 3: Player Party (4 characters)
+Marcus (Warrior):  67
+Elena (Mage):      58 (high DPS, low HP)
+Kira (Healer):     45 (low DPS, medium HP)
+Toren (Ranger):    52 (medium DPS, medium HP)
+
+Player Party Power = 67 + 58 + 45 + 52 = 222
+
+Power Ratio = 222 ÷ 93 = 2.39 (Strong advantage)
+```
+
+**Surrender Threshold Check**
+
+```
+When Power Ratio < 0.5 (weaker side):
+  Each weaker character makes surrender decision based on personality:
+
+  Surrender Chance = 50% + PersonalityModifier
+
+  Personality Modifiers:
+    Brave:     -30% (20% chance)
+    Honest:    -10% (40% chance)
+    Neutral:    0% (50% chance)
+    Cowardly:  +30% (80% chance)
+    Dishonest: +10% (60% chance)
+
+Example: Goblin (Cowardly) with Power Ratio 0.4:
+  Surrender Chance = 50% + 30% = 80%
+  Roll: 1d100 = 62 → SUCCESS → Goblin surrenders
+```
+
+### 16.5 Offline Combat Resolution
+
+Background mode combat (no player observing) uses statistical resolution for instant outcome calculation.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                    OFFLINE COMBAT RESOLUTION                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  STEP 1: CALCULATE POWER                                                   │
+│    YourPower = Sum of all party member power ratings                      │
+│    EnemyPower = Sum of all enemy power ratings                             │
+│    PowerRatio = YourPower ÷ EnemyPower                                    │
+│                                                                            │
+│  STEP 2: DETERMINE OUTCOME                                                  │
+│    PowerRatio > 2.0:  → VICTORY (0-10% party damage taken)                 │
+│    1.5 < PowerRatio ≤ 2.0: → VICTORY (10-30% party damage taken)          │
+│    1.0 < PowerRatio ≤ 1.5: → VICTORY (30-50% party damage taken)          │
+│    0.67 < PowerRatio ≤ 1.0: → 50% VICTORY / 50% FLEE                      │
+│    PowerRatio ≤ 0.67: → FLEE (guaranteed, no combat)                      │
+│                                                                            │
+│  STEP 3: CALCULATE REWARDS                                                  │
+│    XP: 75% of online rate for PowerRatio > 2.0                            │
+│        100% of online rate for 1.0 < PowerRatio ≤ 2.0                    │
+│        75% of online rate for PowerRatio ≤ 1.0                            │
+│                                                                            │
+│    Loot: Full loot table for Victory                                      │
+│          20% loot chance for Flee                                         │
+│          No rare items offline                                            │
+│          No equipment drops from offline kills                            │
+│                                                                            │
+│  STEP 4: CALCULATE CASUALTIES                                               │
+│    Death Chance:                                                           │
+│      PowerRatio > 1.5: 0%                                                 │
+│      1.0 < PowerRatio ≤ 1.5: 20% one character falls (0 HP, survives)    │
+│      0.67 < PowerRatio ≤ 1.0: 50% one character falls                     │
+│      PowerRatio ≤ 0.67: N/A (flee before combat)                          │
+│                                                                            │
+│    Fallen character: 0 HP, survives, requires healing                      │
+│    Cannot occur: True death (permanent loss) in offline combat            │
+│                                                                            │
+│  STEP 5: GENERATE COMBAT LOG                                                │
+│    Summary log generated showing:                                         │
+│      - Outcome (Victory/Flee/Defeat)                                     │
+│      - Total damage dealt to each side                                   │
+│      - Damage taken per character                                        │
+│      - XP gained                                                          │
+│      - Loot received                                                      │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Offline Resolution Examples**
+
+```
+Example 1: Dominating Victory
+Your Power: 470 (4 level 8-10 characters)
+Enemy Power: 120 (3 level 5 goblins)
+Power Ratio: 3.92
+
+Outcome: VICTORY (0-10% damage)
+Damage Roll: 7% of total HP taken
+XP: 75% of online rate
+Loot: Full loot (no rare items)
+
+Combat Log:
+"Your party defeated 3 goblins while you were away.
+Damage taken: 8% total HP.
+Loot gained: 45 copper, 3 low-quality items.
+XP gained: combat.melee.sword +18 XP (offline bonus applied)"
+```
+
+```
+Example 2: Close Fight
+Your Power: 180 (2 level 8 characters)
+Enemy Power: 150 (2 level 10 orcs)
+Power Ratio: 1.2
+
+Outcome: VICTORY (30-50% damage)
+Damage Roll: 42% of total HP taken
+XP: 100% of online rate
+Death Chance: 0% (PowerRatio > 1.0)
+Loot: Full loot
+
+Combat Log:
+"Your party defeated 2 orcs while you were away.
+Damage taken: 42% total HP. Marcus (Warrior) took 58 damage.
+Loot gained: 2 silver, 1 medium-quality item.
+XP gained: combat.melee.sword +35 XP"
+```
+
+```
+Example 3: Outmatched Flee
+Your Power: 90 (1 level 8 character)
+Enemy Power: 200 (2 level 15 elites)
+Power Ratio: 0.45
+
+Outcome: FLEE (guaranteed)
+Damage taken: 0
+XP: 50% (participation award)
+Loot: None
+
+Combat Log:
+"Your party encountered overwhelming forces and fled safely.
+No damage taken.
+XP gained: combat.evasion +5 XP (retreat bonus)"
+```
+
+### 16.6 Attribute Progression per Class Level
+
+Each class grants specific attribute bonuses at level-up. These are fixed per class, with minor random variation.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                   CLASS ATTRIBUTE PROGRESSION TABLE                       │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  FORMAT: Primary (+X every level) | Secondary (+Y every N levels)        │
+│                                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐ │
+│  │ MARTIAL CLASSES                                                       │ │
+│  ├──────────────────────────────────────────────────────────────────────┤ │
+│  │ [Warrior]        STR +1, END +1 (every level)                       │ │
+│  │                  AWR +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Berserker]      STR +2, END +1 (every level)                       │ │
+│  │                  FIN +1 (every 3 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Guardian]       STR +1, END +2 (every level)                       │ │
+│  │                  CHA +1 (every 3 levels, leadership)                 │ │
+│  │                                                                       │ │
+│  │ [Rogue]          FIN +2 (every level)                                │ │
+│  │                  AWR +1 (every 2 levels)                             │ │
+│  │                  CHA +1 (every 3 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Ranger]         FIN +1, AWR +1 (every level)                        │ │
+│  │                  STR +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Monk]          FIN +1, END +1 (every level)                        │ │
+│  │                  WIT +1 (every 3 levels)                             │ │
+│  └──────────────────────────────────────────────────────────────────────┘ │
+│                                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐ │
+│  │ MAGIC CLASSES                                                         │ │
+│  ├──────────────────────────────────────────────────────────────────────┤ │
+│  │ [Mage]           WIT +2 (every level)                                │ │
+│  │                  END +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Healer]         CHA +1, WIT +1 (every level)                        │ │
+│  │                  END +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Cleric]        WIT +1, CHA +1 (every level)                        │ │
+│  │                  END +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Necromancer]    WIT +2 (every level)                                │ │
+│  │                  CHA +1 (every 3 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Druid]          WIT +1, END +1 (every level)                        │ │
+│  │                  CHA +1 (every 3 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Summoner]       WIT +2 (every level)                                │ │
+│  │                  FIN +1 (every 3 levels)                             │ │
+│  └──────────────────────────────────────────────────────────────────────┘ │
+│                                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐ │
+│  │ HYBRID CLASSES                                                        │ │
+│  ├──────────────────────────────────────────────────────────────────────┤ │
+│  │ [Paladin]       STR +1, CHA +1 (every level)                        │ │
+│  │                  END +1 (every 2 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Ranger-Mage]    FIN +1, WIT +1 (every level)                       │ │
+│  │                  AWR +1 (every 3 levels)                             │ │
+│  │                                                                       │ │
+│  │ [Battle-Caster]  STR +1, WIT +1 (every level)                       │ │
+│  │                  END +1 (every 2 levels)                             │ │
+│  └──────────────────────────────────────────────────────────────────────┘ │
+│                                                                            │
+│  RANDOM VARIATION:                                                         │
+│    20% chance: +1 bonus to one primary attribute (random which)          │
+│    Prevents all characters of same class/level from being identical       │
+│                                                                            │
+│  MULTI-CLASSING:                                                           │
+│    Each active class gains XP independently based on XP split             │
+│    Attributes granted by each class at its own level-up                   │
+│    Example: Warrior 5 (grants STR/END) + Mage 3 (grants WIT)              │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Level-Up Example**
+
+```
+Marcus levels up from 8 to 9 as [Warrior]:
+
+Guaranteed:
+  STR: 14 → 15
+  END: 13 → 14
+
+Random Roll (20% chance):
+  Roll: 87 (fail) → no bonus
+
+If Roll was 17 (success):
+  Random attribute: STR selected
+  STR: 15 → 16 (bonus point)
+
+Final Stats:
+  STR: 15, FIN: 11, END: 14, WIT: 9, AWR: 10, CHA: 8
+```
+
+**Multi-Class Attribute Example**
+
+```
+Elena is [Mage] 7 + [Healer] 4:
+
+From Mage 7→8:
+  WIT +2 (15 → 17)
+  END +0 (on even level only)
+
+From Healer 4→5:
+  CHA +1 (11 → 12)
+  WIT +1 (17 → 18)
+
+Total from both level-ups:
+  WIT: +3 (major boost from dual caster classes)
+  CHA: +1
+  END: 0
+
+Final Stats:
+  STR: 8, FIN: 10, END: 9, WIT: 18, AWR: 12, CHA: 12
+```
+
+### 16.7 Multiplayer Possession Scenarios
+
+When multiple players possess characters in the same combat, the system switches to turn-based mode.
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                   MULTIPLAYER POSSESSION RULES                             │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  DETECTION:                                                                 │
+│    IF 2+ players possess characters in same combat:                       │
+│      → Switch to TURN-BASED MODE                                          │
+│      → All players notified of mode switch                                 │
+│                                                                            │
+│  TURN ORDER:                                                               │
+│    Initiative Phase:                                                       │
+│      Each character rolls (AWR + d20)                                      │
+│      Sort descending by result                                             │
+│      Ties: Favor possessed characters (player agency)                      │
+│                                                                            │
+│    Turn Structure:                                                         │
+│      - Each player controls their possessed character's turn              │
+│      - AI-controlled characters act after all players                      │
+│      - 30-second timer per turn (configurable)                            │
+│      - Auto-pass if timer expires (can be disabled)                       │
+│                                                                            │
+│  POSSESSION PRIORITY (if conflict):                                        │
+│    1. First player to possess gets "Party Leader" role                    │
+│       → Can issue orders to AI party members                              │
+│       → Breaks ties in initiative                                         │
+│       → Gets final say on surrender decisions                             │
+│                                                                            │
+│    2. Other possessed characters act in initiative order                  │
+│       → Cannot control other players' characters                          │
+│       → Can see other players' selected actions (not change them)         │
+│                                                                            │
+│    3. AI characters follow their possessed owner's orders                 │
+│       → If no owner: Act based on personality targeting                    │
+│                                                                            │
+│  COMMUNICATION:                                                            │
+│    Built-in chat:                                                          │
+│      - Available during combat                                            │
+│      - Messages shown to all players in combat                            │
+│      - 200 character limit per message                                    │
+│                                                                            │
+│    "Suggest Action" feature:                                               │
+│      - Player can suggest action to ally                                   │
+│      - Non-binding recommendation                                          │
+│      - Shows as notification: "Sarah suggests: Fireball Shaman"          │
+│                                                                            │
+│    Ping system:                                                            │
+│      - Tap enemy to "ping" for all players                                 │
+│      - Visual marker appears on all clients                                │
+│      - 5-second duration, max 3 active pings                              │
+│                                                                            │
+│  TURN TIMEOUT:                                                             │
+│    30-second timer per player turn:                                        │
+│      - Countdown visible to all players                                   │
+│      - At 10 seconds: Warning sound                                        │
+│      - At 0 seconds: Auto-pass (can be disabled in settings)              │
+│      - Other players can skip your turn with majority vote                │
+│                                                                            │
+│    AFK Handling:                                                           │
+│      - If player disconnects: Character goes AI control                   │
+│      - AI uses "defensive" stance (protect self, follow party)            │
+│      - Player can reconnect and resume control                            │
+│                                                                            │
+│  CONFLICT RESOLUTION:                                                      │
+│    Both players want same target:                                          │
+│      → First to confirm action gets priority                              │
+│      → Second player's action auto-targets next highest threat            │
+│      → Notification: "Target already engaged, redirected to..."          │
+│                                                                            │
+│    Disagreement on surrender:                                             │
+│      → Party Leader's decision wins                                       │
+│      → Others can "Abandon Combat" (leave, forfeit loot share)           │
+│      → Or: Vote system (majority rules, 60-second timer)                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Multiplayer Combat Flow Example**
+
+```
+COMBAT START:
+  Players: Sarah (possessing Elena), Mike (possessing Toren)
+  Enemy: 3 Goblins
+
+MODE SWITCH: "Multiplayer detected → Switching to TURN-BASED"
+
+INITIATIVE:
+  Elena (Sarah): AWR 12 + roll 15 = 27
+  Toren (Mike): AWR 13 + roll 12 = 25
+  Goblin Warrior: AWR 8 + roll 18 = 26
+  Goblin Spearman: AWR 7 + roll 10 = 17
+  Goblin Shaman: AWR 9 + roll 14 = 23
+
+TURN ORDER:
+  1. Elena (Sarah) - [YOUR TURN] 30s
+  2. Goblin Warrior
+  3. Toren (Mike) - [WAITING FOR SARAH]
+  4. Goblin Shaman
+  5. Goblin Spearman
+
+TURN 1 (Sarah's Action):
+  Sarah selects: [Fireball] → Targets: All Goblins
+  Confirm → Action queued for execution after all turns selected
+
+TURN 1 (Goblin Warrior - AI):
+  Targets: Elena (highest threat)
+  Action: Basic Attack
+  Queued damage: 12 to Elena
+
+TURN 1 (Mike's Action):
+  Mike selects: [Precise Shot] → Targets: Goblin Shaman
+  Confirm → Action queued
+
+TURN 1 (Goblin Shaman - AI):
+  Targets: Elena (highest threat after Fireball)
+  Action: [Poison Cloud]
+  Queued: Elena poisoned
+
+TURN 1 (Goblin Spearman - AI):
+  Targets: Toren (nearest threat)
+  Action: Basic Attack
+  Queued damage: 8 to Toren
+
+RESOLUTION PHASE:
+  All queued actions resolve simultaneously
+  - Fireball hits all 3 goblins (45, 38, 28 damage)
+  - Goblin Warrior hits Elena (12 damage, blocked)
+  - Precise Shot hits Shaman (35 damage, killed)
+  - Poison Cloud hits Elena (poisoned, 5/tick)
+  - Spearman hits Toren (8 damage)
+
+END OF TURN 1:
+  Combat log shown to all players
+  Turn 2 begins (30s timer)
+```
 
 ---
 
@@ -1874,6 +2613,7 @@ Key combat mechanics reference documentation (migrated from cozy-fantasy-rpg pro
 
 ---
 
-**Document Status**: ✅ AUTHORITATIVE
+**Document Status**: ✅ AUTHORITATIVE (All critical formulas resolved)
 **Last Updated**: 2026-02-03
+**Version**: 1.1.0 (Added §16: Critical Combat Formulas)
 **Next Review**: After Equipment & Items System GDD completion

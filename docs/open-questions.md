@@ -2,7 +2,7 @@
 type: system
 scope: detailed
 status: draft
-version: 2.0.0
+version: 2.1.0
 created: 2026-02-02
 updated: 2026-02-03
 subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
@@ -19,22 +19,22 @@ subjects: ['design', 'mechanics', 'gameplay', 'technical', 'economy']
 | Priority     | Questions | Resolved | Recommendations | Status      |
 | ------------ | --------- | -------- | --------------- | ----------- |
 | **CRITICAL** | 12        | 12       | 36              | ✅ Complete |
-| **HIGH**     | 43        | 15       | 77              | In Progress |
+| **HIGH**     | 43        | 22       | 77              | In Progress |
 | **MEDIUM**   | 45        | 0        | 108             | Beta Block  |
 | **LOW**      | 26        | 0        | 52              | Post-Launch |
-| **Total**    | **126**   | **27**   | **273**         |             |
+| **Total**    | **126**   | **34**   | **273**         |             |
 
 **Recently Resolved:**
 
-- ✅ 2026-02-03: Combat System (10 HIGH) → [combat-system-gdd.md](design/systems/combat-system-gdd.md) — **Design Review: 4.5/5** — 7 gaps identified below
+- ✅ 2026-02-03: Combat System Formula Gaps (7 CRITICAL) → [combat-system-gdd.md v1.1.0](design/systems/combat-system-gdd.md) — **All 7 formula gaps resolved** (§16)
 - ✅ 2026-02-03: NPC Core Systems (5 HIGH) → [npc-core-systems-gdd.md](design/systems/npc-core-systems-gdd.md)
 - ✅ 2026-02-03: Core Progression System (7 CRITICAL) → [core-progression-system-gdd.md](design/systems/core-progression-system-gdd.md)
 - ✅ 2026-02-03: Class System & Specializations (CRITICAL 2.1-2.3) → [class-system-gdd.md](design/systems/class-system-gdd.md)
 - ✅ 2026-02-03: Skill & Recipe System (5 CRITICAL) → [skill-recipe-system-gdd.md](design/systems/skill-recipe-system-gdd.md)
 
 **🎉 All CRITICAL priority questions resolved!**
-**🚀 HIGH priority in progress: 15/43 resolved (35%)**
-**⚠️ Combat System GDD requires 7 critical formula additions (§8) before implementation**
+**🚀 HIGH priority in progress: 22/43 resolved (51%)**
+**✅ Combat System GDD v1.1.0 - All 7 critical formulas now documented (§16)**
 
 **Legend:**
 
@@ -2198,13 +2198,17 @@ Feels rewarding, not annoying
 
 ## 8. Combat System GDD - Formula Gaps (Design Review Findings)
 
-**Context:** The Combat System GDD received a comprehensive design review (2026-02-03) with an overall rating of **4.5/5**. The following critical and important gaps were identified that must be resolved before implementation.
+**Context:** The Combat System GDD received a comprehensive design review (2026-02-03) with an overall rating of **4.5/5**. The following critical and important gaps were identified and have now been **RESOLVED** in version 1.1.0.
 
-### 8.1 Combat XP Reward Formula ✅ NEW
+### 8.1 Combat XP Reward Formula ✅ RESOLVED
 
 **Question:** How much XP does a character gain from combat actions? Base XP per hit, kill, skill use?
 
-**Current State:** Combat system mentions "XP Gained: combat.melee.sword +25 XP" but no formula defining rewards.
+**Resolution:** Action-based XP with enemy level modifier, party size modifier, and first-kill bonus. See [Combat System GDD §16.1](design/systems/combat-system-gdd.md#161-combat-xp-reward-formula)
+
+**Status:** ✅ **RESOLVED** - Full formula with base XP rewards, modifiers, and examples documented
+
+**Previous State:** Combat system mentioned "XP Gained: combat.melee.sword +25 XP" but no formula defining rewards.
 
 **Recommendations:**
 
@@ -2246,11 +2250,15 @@ Total: (5 + 10) × 1.2 = 18 XP to combat.melee.sword
 
 ---
 
-### 8.2 Armor Absorption Formula ✅ NEW
+### 8.2 Armor Absorption Formula ✅ RESOLVED
 
 **Question:** What determines how much damage armor absorbs? Is it a DEF stat? Material-based? Fixed value?
 
-**Current State:** Combat example shows "Armor layer: Absorbs 8" but no formula for calculating absorption.
+**Resolution:** BaseArmor × (1 + ENDModifier) formula with degradation rate per armor type. See [Combat System GDD §16.2](design/systems/combat-system-gdd.md#162-armor-absorption-formula)
+
+**Status:** ✅ **RESOLVED** - Full armor calculation with END modifier table, durability loss, and shield integration
+
+**Previous State:** Combat example shows "Armor layer: Absorbs 8" but no formula for calculating absorption.
 
 **Recommendations:**
 
@@ -2282,11 +2290,15 @@ Incoming Damage: 25
 
 ---
 
-### 8.3 AI Threat Calculation ✅ NEW
+### 8.3 AI Threat Calculation ✅ RESOLVED
 
 **Question:** How does AI determine which enemy is "highest threat" for targeting?
 
-**Current State:** Role-based targeting mentions "High-threat enemies" but no threat formula.
+**Resolution:** Composite threat score (DamageDealt × 1.0 + Presence × 0.5 + Debuffs × 0.3 + Level × 0.2 + ThreatBonus). See [Combat System GDD §16.3](design/systems/combat-system-gdd.md#163-ai-threat-calculation)
+
+**Status:** ✅ **RESOLVED** - Full threat formula with decay, recalculation timing, and personality-based overrides
+
+**Previous State:** Role-based targeting mentions "High-threat enemies" but no threat formula.
 
 **Recommendations:**
 
@@ -2319,11 +2331,15 @@ AI Target: Elena (higher threat)
 
 ---
 
-### 8.4 Power Ratio Calculation ✅ NEW
+### 8.4 Power Ratio Calculation ✅ RESOLVED
 
 **Question:** How does the game detect "outmatched 3× stronger" for surrender/morale triggers?
 
-**Current State:** Surrender system mentions "Power Ratio < 0.5" but no power calculation formula.
+**Resolution:** Character Power = (Attack × 1.0) + (Defense × 0.5) + (MaxHP × 0.1) + (Speed × 0.3) + (Level × 5). See [Combat System GDD §16.4](design/systems/combat-system-gdd.md#164-power-ratio-calculation)
+
+**Status:** ✅ **RESOLVED** - Complete power calculation formula with thresholds for surrender/morale triggers
+
+**Previous State:** Surrender system mentions "Power Ratio < 0.5" but no power calculation formula.
 
 **Recommendations:**
 
@@ -2359,11 +2375,15 @@ Morale Check: Each death causes morale check (see Combat GDD §9.2)
 
 ---
 
-### 8.5 Offline Combat Resolution ✅ NEW
+### 8.5 Offline Combat Resolution ✅ RESOLVED
 
 **Question:** How does combat resolve during offline simulation? Statistical formula or tick simulation?
 
-**Current State:** Background mode mentioned but no resolution algorithm specified.
+**Resolution:** Statistical power comparison with outcome table (PowerRatio > 2.0: Victory 0-10% damage, etc.). See [Combat System GDD §16.5](design/systems/combat-system-gdd.md#165-offline-combat-resolution)
+
+**Status:** ✅ **RESOLVED** - Complete offline resolution algorithm with casualty rules, XP scaling, and loot restrictions
+
+**Previous State:** Background mode mentioned but no resolution algorithm specified.
 
 **Recommendations:**
 
@@ -2415,11 +2435,15 @@ Time to resolve: Instant (math only, no simulation)
 
 ---
 
-### 8.6 Attribute Progression per Class Level ✅ NEW
+### 8.6 Attribute Progression per Class Level ✅ RESOLVED
 
 **Question:** Which attributes do classes grant at level-up? Is it random or fixed?
 
-**Current State:** Combat GDD shows "+1-2 to class-relevant attributes" but no mapping table.
+**Resolution:** Fixed per-class progression tables with primary/secondary attributes and 20% random variation bonus. See [Combat System GDD §16.6](design/systems/combat-system-gdd.md#166-attribute-progression-per-class-level)
+
+**Status:** ✅ **RESOLVED** - Complete progression tables for Martial, Magic, and Hybrid classes with multi-classing rules
+
+**Previous State:** Combat GDD shows "+1-2 to class-relevant attributes" but no mapping table.
 
 **Recommendations:**
 
@@ -2461,11 +2485,15 @@ Multi-Classing:
 
 ---
 
-### 8.7 Multiplayer Possession Scenarios ✅ NEW
+### 8.7 Multiplayer Possession Scenarios ✅ RESOLVED
 
 **Question:** What happens if 2+ players possess characters in the same fight?
 
-**Current State:** Multiplayer section mentions "if multiplayer AND other_players_involved: Switch to TURN-BASED" but doesn't address multiple possessions.
+**Resolution:** Turn-based mode with initiative order, 30s timer per turn, chat/suggest/ping systems, and conflict resolution rules. See [Combat System GDD §16.7](design/systems/combat-system-gdd.md#167-multiplayer-possession-scenarios)
+
+**Status:** ✅ **RESOLVED** - Complete multiplayer rules including possession priority, timeout handling, and AFK detection
+
+**Previous State:** Multiplayer section mentions "if multiplayer AND other_players_involved: Switch to TURN-BASED" but doesn't address multiple possessions.
 
 **Recommendations:**
 
