@@ -3,7 +3,7 @@ title: Combat System
 type: system
 category: authoritative
 status: authoritative
-version: 1.1.0
+version: 1.2.0
 created: 2026-02-03
 updated: 2026-02-03
 subjects: ['design', 'mechanics', 'gameplay', 'combat', 'AI']
@@ -2216,110 +2216,220 @@ Example: Goblin (Cowardly) with Power Ratio 0.4:
 
 ### 16.5 Offline Combat Resolution
 
-Background mode combat (no player observing) uses statistical resolution for instant outcome calculation.
+Background mode combat (no player observing) uses **simplified turn-based simulation** for authentic, unique combat outcomes.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────┐
-│                    OFFLINE COMBAT RESOLUTION                               │
+│                    OFFLINE COMBAT SIMULATION                                │
 ├────────────────────────────────────────────────────────────────────────────┤
 │                                                                            │
-│  STEP 1: CALCULATE POWER                                                   │
-│    YourPower = Sum of all party member power ratings                      │
-│    EnemyPower = Sum of all enemy power ratings                             │
-│    PowerRatio = YourPower ÷ EnemyPower                                    │
+│  DESIGN PHILOSOPHY:                                                        │
+│    Offline combat should feel like what would happen if you were watching   │
+│    Each combat is unique (RNG in hits, crits, skill activations)           │
+│    Skills, buffs, debuffs matter tactically                              │
+│    Fast enough for thousands of concurrent combats                          │
 │                                                                            │
-│  STEP 2: DETERMINE OUTCOME                                                  │
-│    PowerRatio > 2.0:  → VICTORY (0-10% party damage taken)                 │
-│    1.5 < PowerRatio ≤ 2.0: → VICTORY (10-30% party damage taken)          │
-│    1.0 < PowerRatio ≤ 1.5: → VICTORY (30-50% party damage taken)          │
-│    0.67 < PowerRatio ≤ 1.0: → 50% VICTORY / 50% FLEE                      │
-│    PowerRatio ≤ 0.67: → FLEE (guaranteed, no combat)                      │
+│  SIMULATION RULES:                                                          │
+│    1. Uses same combat formulas as online (§3.1: Damage Calculation)       │
+│    2. AI controls all characters (personality targeting, §6.2)            │
+│    3. Skills auto-cast by priority (AI logic, §10.2)                      │
+│    4. Maximum 50 turns per combat (prevents infinite loops)              │
+│    5. Combat ends when: one side eliminated, morale break, or turn limit   │
 │                                                                            │
-│  STEP 3: CALCULATE REWARDS                                                  │
-│    XP: 75% of online rate for PowerRatio > 2.0                            │
-│        100% of online rate for 1.0 < PowerRatio ≤ 2.0                    │
-│        75% of online rate for PowerRatio ≤ 1.0                            │
+│  DETERMINISTIC RNG (event sourcing compatibility):                           │
+│    Combat uses game's global RNG stream (event-sourced architecture)       │
+│    → All RNG calls logged to event log with timestamps                    │
+│    → Same combat replayed always produces identical results              │
+│    → Player cannot influence by re-logging (events already committed)   │
+│    → Multiple players see identical combat when viewing same event       │
 │                                                                            │
-│    Loot: Full loot table for Victory                                      │
-│          20% loot chance for Flee                                         │
-│          No rare items offline                                            │
-│          No equipment drops from offline kills                            │
+│    Event Log Entry Example:                                                 │
+│      { combatId, timestamp, playerParty, enemyParty, rngEvents: [...] }   │
+│      → Server replays logged RNG calls during simulation                  │
+│      → Supports multiplayer state sync and combat replay                   │
 │                                                                            │
-│  STEP 4: CALCULATE CASUALTIES                                               │
-│    Death Chance:                                                           │
-│      PowerRatio > 1.5: 0%                                                 │
-│      1.0 < PowerRatio ≤ 1.5: 20% one character falls (0 HP, survives)    │
-│      0.67 < PowerRatio ≤ 1.0: 50% one character falls                     │
-│      PowerRatio ≤ 0.67: N/A (flee before combat)                          │
-│                                                                            │
-│    Fallen character: 0 HP, survives, requires healing                      │
-│    Cannot occur: True death (permanent loss) in offline combat            │
-│                                                                            │
-│  STEP 5: GENERATE COMBAT LOG                                                │
-│    Summary log generated showing:                                         │
-│      - Outcome (Victory/Flee/Defeat)                                     │
-│      - Total damage dealt to each side                                   │
-│      - Damage taken per character                                        │
-│      - XP gained                                                          │
-│      - Loot received                                                      │
+│  SPEED OPTIMIZATION:                                                        │
+│    - No animations, instant calculations                                  │
+│    - Batch processing: 1000 combats in ~50-100ms server time             │
+│    - Results cached per-player, flushed on login                          │
 │                                                                            │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**Offline Resolution Examples**
+**Simulation Algorithm**
 
 ```
-Example 1: Dominating Victory
-Your Power: 470 (4 level 8-10 characters)
-Enemy Power: 120 (3 level 5 goblins)
-Power Ratio: 3.92
-
-Outcome: VICTORY (0-10% damage)
-Damage Roll: 7% of total HP taken
-XP: 75% of online rate
-Loot: Full loot (no rare items)
-
-Combat Log:
-"Your party defeated 3 goblins while you were away.
-Damage taken: 8% total HP.
-Loot gained: 45 copper, 3 low-quality items.
-XP gained: combat.melee.sword +18 XP (offline bonus applied)"
+┌────────────────────────────────────────────────────────────────────────────┐
+│                    TURN-BY-TURN SIMULATION LOOP                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  INITIALIZATION:                                                            │
+│    Load all character stats (attributes, skills, equipment)                │
+│    Generate deterministic RNG seed                                          │
+│    Initialize combat state (HP, stamina, mana, cooldowns, buffs)         │
+│    Turn = 0                                                                │
+│                                                                            │
+│  MAIN LOOP (until combat ends or Turn = 50):                               │
+│    FOR EACH character (speed-sorted initiative):                           │
+│      1. Check: Can act? (alive, not stunned, cooldown ready)              │
+│         → NO: Skip to next character                                      │
+│      2. Select target: AI targeting logic (highest threat or personality) │
+│      3. Select action: Basic attack OR highest-priority available skill   │
+│      4. Calculate damage: Full formula (base + additives) × multipliers  │
+│      5. Apply damage: Target's shields → armor → HP                       │
+│      6. Process effects: Status applications, buffs/debuffs             │
+│      7. Check: Death? HP ≤ 0 → Character falls (survives offline)       │
+│      8. Check: Morale break? After each death, roll morale check        │
+│    END FOR                                                                  │
+│    Turn++                                                                   │
+│    Check: Combat end conditions met? → BREAK                             │
+│                                                                            │
+│  COMBAT END:                                                                │
+│    IF one side eliminated: → Victory for other side                         │
+│    IF Turn ≥ 50: → Draw (both sides flee, no loot)                        │
+│    IF morale break: → Losing side flees                                   │
+│    IF player side morale breaks: → Auto-flee, survive                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
-```
-Example 2: Close Fight
-Your Power: 180 (2 level 8 characters)
-Enemy Power: 150 (2 level 10 orcs)
-Power Ratio: 1.2
-
-Outcome: VICTORY (30-50% damage)
-Damage Roll: 42% of total HP taken
-XP: 100% of online rate
-Death Chance: 0% (PowerRatio > 1.0)
-Loot: Full loot
-
-Combat Log:
-"Your party defeated 2 orcs while you were away.
-Damage taken: 42% total HP. Marcus (Warrior) took 58 damage.
-Loot gained: 2 silver, 1 medium-quality item.
-XP gained: combat.melee.sword +35 XP"
-```
+**Speed & Targeting (Simplified for Offline)**
 
 ```
-Example 3: Outmatched Flee
-Your Power: 90 (1 level 8 character)
-Enemy Power: 200 (2 level 15 elites)
-Power Ratio: 0.45
+OFFLINE INITIATIVE (calculated once, not per turn):
+  Initiative = AWR + Level + SpeedModifier
+  Sort all characters descending, act in that order each turn
 
-Outcome: FLEE (guaranteed)
-Damage taken: 0
-XP: 50% (participation award)
+OFFLINE TARGETING (simplified personality logic):
+  IF character has:
+    - Aggressive personality: Target highest HP enemy
+    - Cautious personality: Target lowest HP enemy
+    - Protective personality: Target nearest ally if ally < 50% HP
+    - Default: Target highest damage dealer (threat tracking)
+
+OFFLINE SKILL USE (priority-based):
+  Priority 1: Survival skills (if HP < 30%)
+  Priority 2: High-damage skills (if stamina/mana sufficient)
+  Priority 3: Basic attack (fallback)
+```
+
+**Offline Combat Constraints**
+
+| Constraint          | Rule                                            |
+| ------------------- | ----------------------------------------------- |
+| **True Death**      | Cannot occur offline - 0 HP = "falls, survives" |
+| **Equipment Drops** | Disabled - no equipment from offline kills      |
+| **Rare Items**      | Disabled - only common/uncommon loot            |
+| **XP Rate**         | 100% of online rate (full progression)          |
+| **Skill XP**        | Full bucket XP granted (skills matter!)         |
+| **Stamina/Mana**    | Regens between turns (free resource use)        |
+
+**Morale System (Offline)**
+
+```
+Morale Check Triggered After Each Death:
+  Base Morale = 100%
+  Losses: -25% per ally death, -10% per ally fall (0 HP)
+
+  Check: Roll d100 ≤ Current Morale
+  Success: Continue fighting
+  Fail: Side breaks, all survivors flee
+
+  Personality Modifiers:
+    Brave: +20% morale (harder to break)
+    Cowardly: -20% morale (easier to break)
+
+Offline-Specific:
+  Auto-flee if Turn ≥ 25 AND (dealing < 10% of damage received)
+  Prevents endless stalemates
+```
+
+**Combat Log Generation**
+
+```
+Combat produces summary log for player review:
+
+"Offline Combat Report (3 encounters while away):
+
+[1] Victory vs Goblin Pack (Turn 8)
+  Marcus: 12 hits (2 crits), 84 damage dealt
+  Elena: Fireball (2x), Ice Spike (1x), 103 damage dealt
+  Kira: Heals (3x), +45 HP restored
+  Toren: Precise Shot (4x), 67 damage dealt
+  Result: 0 damage taken. Loot: 32 copper, 2 low-quality items.
+  XP: combat.melee.sword +18, magic.fire +24
+
+[2] Victory vs Orc Scout (Turn 12)
+  Solo: Marcus only (others resting)
+  Result: 22 damage taken (armor absorbed 45)
+  XP: combat.melee.sword +12, combat.toughness +3
+
+[3] Flee from Elite Patrol (Turn 3)
+  Power mismatch detected, auto-flee
+  Result: 0 damage taken
+  XP: combat.evasion +5"
+```
+
+**Simulation Examples**
+
+```
+Example 1: Dominating Victory (Fast Resolution)
+Your Party: Marcus (L8), Elena (L7), Kira (L5), Toren (L6)
+Enemy: 3 Goblins (L5-6)
+
+Power Comparison: 222 vs 93 (2.39:1 advantage)
+Simulation: 8 turns, all enemies eliminated
+
+Turn Highlights:
+  1: Elena crits Goblin Warrior with Fireball (45 fire damage)
+  3: Marcus drops Goblin Spearman (Power Strike, 35 damage)
+  6: Toren kills Goblin Shaman (Precise Shot, 28 damage)
+  8: Combat ends, 0 player HP damage
+
+Result: Victory, 0% damage taken
+Loot: Full table (no rares)
+XP: 100% online rate
+
+Example 2: Close Fight (Turns to 34)
+Your Party: Marcus (L8), Elena (L7)
+Enemy: 2 Orcs (L10, L10)
+
+Power Comparison: 125 vs 150 (0.83:1 disadvantage)
+Simulation: 34 turns, brutal combat
+
+Turn Highlights:
+  2: Marcus hit for 22 (armor blocked 15), Elena poisoned
+  5: Elena casts [Cleanse] on self (cured poison), heals Marcus
+  12: Orc Warrior crits Elena (28 damage), she falls (0 HP, survives)
+  18: Marcus uses [Whirlwind] (hits both orcs, 22 damage each)
+  24: Elena recovered, casts [Fireball] (orcs resist -25%, still 38 damage)
+  28: Marcus falls (0 HP, survives), Elena solo finish
+  34: Final orc defeated
+
+Result: Victory, 58% total damage taken
+Marcus: 0/120 HP (fell, survived)
+Elena: 18/80 HP (took 62 damage)
+Loot: Full table + 1 uncommon item
+XP: 100% online rate + survival bonus
+
+Example 3: Outmatched Flee (Turn 2)
+Your Party: Marcus (L8) solo
+Enemy: 2 Elite Guards (L15, L15)
+
+Power Comparison: 67 vs 200 (0.34:1)
+Simulation: Turn 2 - Flee Check
+
+Turn 1:
+  Marcus attacks, deals 15 damage (barely scratches)
+  Elite Guard #1 hits for 45 damage (Marcus at 75/120)
+
+Morale Check (Marcus alone, outmatched):
+  Roll: 82 vs 40 (morale after solo disadvantage)
+  Result: FAIL → Morale break, flee triggered
+
+Result: Flee, 45 damage taken, 0 deaths
 Loot: None
-
-Combat Log:
-"Your party encountered overwhelming forces and fled safely.
-No damage taken.
-XP gained: combat.evasion +5 XP (retreat bonus)"
+XP: combat.evasion +8 XP (retreat bonus)
 ```
 
 ### 16.6 Attribute Progression per Class Level
@@ -2615,5 +2725,5 @@ Key combat mechanics reference documentation (migrated from cozy-fantasy-rpg pro
 
 **Document Status**: ✅ AUTHORITATIVE (All critical formulas resolved)
 **Last Updated**: 2026-02-03
-**Version**: 1.1.0 (Added §16: Critical Combat Formulas)
+**Version**: 1.2.0 (§16.5: Offline combat simulation with event-sourced RNG)
 **Next Review**: After Equipment & Items System GDD completion

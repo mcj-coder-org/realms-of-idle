@@ -2379,59 +2379,45 @@ Morale Check: Each death causes morale check (see Combat GDD §9.2)
 
 **Question:** How does combat resolve during offline simulation? Statistical formula or tick simulation?
 
-**Resolution:** Statistical power comparison with outcome table (PowerRatio > 2.0: Victory 0-10% damage, etc.). See [Combat System GDD §16.5](design/systems/combat-system-gdd.md#165-offline-combat-resolution)
+**Resolution:** Simplified turn-based simulation (max 50 turns) with full combat formulas. Uses deterministic RNG seed for event sourcing compatibility. Skills, buffs, debuffs apply tactically. See [Combat System GDD §16.5](design/systems/combat-system-gdd.md#165-offline-combat-resolution)
 
-**Status:** ✅ **RESOLVED** - Complete offline resolution algorithm with casualty rules, XP scaling, and loot restrictions
+**Status:** ✅ **RESOLVED** - Simulated combat with unique outcomes, full XP, deterministic RNG (event source compatible)
 
 **Previous State:** Background mode mentioned but no resolution algorithm specified.
 
 **Recommendations:**
 
-#### Option A: Statistical Power Comparison (Recommended)
+#### Option B: Simulated Turn-Based (SELECTED) ✅
 
 ```
-OFFLINE COMBAT RESOLUTION:
+OFFLINE COMBAT SIMULATION:
 
-Pre-combat:
-Calculate YourPower and EnemyPower (see §8.4)
-PowerRatio = YourPower ÷ EnemyPower
+Run simplified combat loop (max 50 turns per combat):
+- Turn 1: Your party acts (initiative order)
+- Turn 2: Enemy party acts
+- Repeat until one side eliminated or 50 turns max
 
-Resolution Outcomes:
-PowerRatio > 2.0:
-  → Victory (0-10% party damage taken)
-  → Full loot (no rare items offline)
-  → XP: 75% of online rate
+Features:
+- Uses same combat formulas as online (damage, skills, buffs)
+- AI controls all characters (personality targeting)
+- Skills auto-cast by priority (AI logic)
+- Deterministic RNG seed (PlayerID + EnemyID + Timestamp)
+- Max 50 turns prevents infinite loops
 
-1.5 < PowerRatio ≤ 2.0:
-  → Victory (10-30% party damage taken)
-  → Full loot
-  → XP: 100% of online rate
+Outcomes:
+- Victory: Full loot table (no rare/equipment offline)
+- Defeat: Characters fall (survive), no loot
+- Morale break: Losing side flees (survives)
+- Turn 50: Draw (both flee, no loot)
 
-1.0 < PowerRatio ≤ 1.5:
-  → Victory (30-50% party damage taken)
-  → 20% chance: One character falls (0 HP, survives)
-  → Full loot
-  → XP: 100% of online rate
-
-0.67 < PowerRatio ≤ 1.0:
-  → 50% Victory / 50% Flee
-  → Victory: 50-80% damage, half loot
-  → Flee: No loot, no death, survive
-  → XP: 75% of online rate
-
-PowerRatio ≤ 0.67:
-  → Flee (guaranteed)
-  → No loot, no death
-  → XP: 50% of online rate
-
-Time to resolve: Instant (math only, no simulation)
+Time to resolve: ~5-50ms per combat (depends on turns)
 ```
 
-- **Completeness:** 5/5 - Fully specified offline system
-- **Game Fit:** 5/5 - Fair offline progression
-- **Implementation:** 2/5 - Power calculation + outcome table
+- **Completeness:** 5/5 - Fully specified simulation system
+- **Game Fit:** 5/5 - Authentic to online combat, unique outcomes
+- **Implementation:** 3/5 - Combat simulation loop with deterministic RNG
 
-**Rationale:** Offline combat deterministic, server-efficient, no RNG abuse, rewards fair play.
+**Rationale:** Event-sourced RNG ensures combat results sync between players. Skills matter tactically. Each combat is unique but reproducible.
 
 ---
 
