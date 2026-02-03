@@ -13,15 +13,42 @@ const fs = require('fs');
 const path = require('path');
 
 const SKIP_EXTENSIONS = new Set([
-  '.exe', '.dll', '.pdb', '.so', '.dylib', '.bin',
-  '.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg',
-  '.zip', '.tar', '.gz', '.7z', '.rar',
-  '.pdf', '.doc', '.docx', '.xls', '.xlsx',
+  '.exe',
+  '.dll',
+  '.pdb',
+  '.so',
+  '.dylib',
+  '.bin',
+  '.png',
+  '.jpg',
+  '.jpeg',
+  '.gif',
+  '.ico',
+  '.svg',
+  '.zip',
+  '.tar',
+  '.gz',
+  '.7z',
+  '.rar',
+  '.pdf',
+  '.doc',
+  '.docx',
+  '.xls',
+  '.xlsx',
 ]);
 
 const SKIP_DIRS = new Set([
-  'node_modules', '.git', 'bin', 'obj', 'dist', 'build',
-  'target', 'vendor', '.venv', 'venv', '.claude',
+  'node_modules',
+  '.git',
+  'bin',
+  'obj',
+  'dist',
+  'build',
+  'target',
+  'vendor',
+  '.venv',
+  'venv',
+  '.claude',
 ]);
 
 // Commands that need npx prefix
@@ -66,7 +93,9 @@ function globToRegex(pattern) {
   let regex = pattern;
   regex = regex.replace(/\{([^}]+)\}/g, (match, contents) => {
     const options = contents.split(',').map(s => s.trim());
-    return '(' + options.map(opt => opt.replace(/\./g, '\\\\.').replace(/\*/g, '.*')).join('|') + ')';
+    return (
+      '(' + options.map(opt => opt.replace(/\./g, '\\\\.').replace(/\*/g, '.*')).join('|') + ')'
+    );
   });
   regex = regex.replace(/^\*\*\//, '.*');
   regex = regex.replace(/(?<!\.)\*/g, '[^/]*');
@@ -83,7 +112,20 @@ function formatWithLintStaged(filePath, projectRoot) {
   const config = getLintStagedConfig(projectRoot);
   if (!config) {
     const ext = path.extname(filePath).toLowerCase();
-    const prettierExts = ['.js', '.jsx', '.ts', '.tsx', '.json', '.yaml', '.yml', '.css', '.scss', '.html', '.vue', '.svelte'];
+    const prettierExts = [
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.yaml',
+      '.yml',
+      '.css',
+      '.scss',
+      '.html',
+      '.vue',
+      '.svelte',
+    ];
     if (prettierExts.includes(ext)) {
       runCommand(`npx prettier --write "${filePath}"`, projectRoot);
     }

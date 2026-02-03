@@ -133,3 +133,8 @@ nul
 .session-state/
 test-results/
 .claude/grepai.exe
+
+# GitHub tokens and secrets
+.github.env
+*.gh-token
+danger-report-*.md
