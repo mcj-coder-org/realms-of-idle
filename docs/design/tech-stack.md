@@ -184,16 +184,27 @@ SVG supported for resolution-independent UI elements.
           ▼                                       ▼
 ┌─────────────────────────┐         ┌─────────────────────────────┐
 │      SOLO MODE          │         │      MULTIPLAYER MODE       │
-│   (100% Offline)        │         │   (Cloud Infrastructure)    │
+│   (100% Offline)        │         │                             │
 ├─────────────────────────┤         ├─────────────────────────────┤
-│ .NET MAUI App           │         │ Azure Container Apps        │
-│ Local LiteDB            │         │ (Scale to zero)             │
-│ Embedded Game Engine    │         │                             │
-│ Local NPC Simulation    │         │ Orleans on ACA              │
-│ No network required     │         │ PostgreSQL Flexible         │
-│                         │  ←SYNC→ │ Redis Cache                 │
-│ Full game experience    │         │ SignalR for real-time       │
-└─────────────────────────┘         └─────────────────────────────┘
+│ .NET MAUI App           │         │ ┌─────────────────────────┐ │
+│ Local LiteDB            │         │ │  .NET ASPIRE (Local)     │ │
+│ Embedded Game Engine    │         │ │  Development Option    │ │
+│ Local NPC Simulation    │         │ ├─────────────────────────┤ │
+│ No network required     │         │ │ Full stack locally      │ │
+│                         │         │ │ Orleans + PostgreSQL   │ │
+│ Full game experience    │         │ │ Redis + SignalR         │ │
+└─────────────────────────┘         │ │ No cloud required       │ │
+                                     │ └─────────────────────────┘ │
+                                     │              ▲                │
+                                     │              │  OR            │
+                                     │              ▼                │
+                                     │ ┌─────────────────────────┐ │
+                                     │ │  AZURE (Production)     │ │
+                                     │ ├─────────────────────────┤ │
+                                     │ │ Container Apps (scale)  │ │
+                                     │ │ Managed infrastructure  │ │
+                                     │ └─────────────────────────┘ │
+                                     └─────────────────────────────┘
 ```
 
 ### Key Design Decisions
@@ -456,6 +467,168 @@ SCALE-TO-ZERO FLOW
 
 **Comparison:** Traditional always-on VMs would cost $200-500/month minimum even with 0 players.
 
+### 4.5 Local Development with .NET Aspire
+
+For development, testing, and self-hosted scenarios, .NET Aspire provides local orchestration of the full multiplayer stack without requiring cloud resources.
+
+```
+.NET ASPIRE LOCAL HOSTING
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    DEVELOPER WORKSTATION                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │              .NET ASPIRE DASHBOARD                       │  │
+│   │  (http://localhost:5000)                                 │  │
+│   ├─────────────────────────────────────────────────────────┤  │
+│   │  ┌─────────────┐  ┌─────────────┐  ┌───────────────┐  │  │
+│   │  │ API Project │  │ Orleans     │  │ PostgreSQL    │  │  │
+│   │  │ (Frontend)  │  │ Silos       │  │ (Container)   │  │  │
+│   │  │             │  │             │  │               │  │  │
+│   │  │ • Endpoints │  │ • 4 Silos    │  │ • Port 5432   │  │  │
+│   │  │ • SignalR   │  │ • Auto-scale│  │ • Persisted   │  │  │
+│   │  │ • Health    │  │ • Dashboard  │  │               │  │  │
+│   │  │             │  │             │  │  ┌───────────┐ │  │  │
+│   │  │ Running:    │  │ Running:    │  │  │  Redis    │ │  │  │
+│   │  │ ✓ Healthy   │  │ ✓ Healthy   │  │  │ (Container)│ │  │  │
+│   │  └─────────────┘  └─────────────┘  │  │            │ │  │  │
+│   │                                  │  │ • Port 6379│ │  │  │
+│   │  ┌─────────────────────────────┐  │  │ • Clustering│ │  │  │
+│   │  │         LOGS                │  │  └────────────┘ │  │  │
+│   │  │  • Structured console output │  │                 │  │  │
+│   │  │  • Distributed tracing      │  │                 │  │  │
+│   │  │  • Metrics & telemetry      │  │                 │  │  │
+│   │  └─────────────────────────────┘  │                 │  │  │
+│   │                                  │                 │  │  │
+│   │  [Resources]                      [Resources]       │  │
+│   │  CPU: 8%   Memory: 2.1GB          CPU: 12%  Mem: 1.8GB│  │
+│   └─────────────────────────────────────────────────────────┘  │
+│                                                                 │
+│   ALL SERVICES RUN LOCALLY VIA DOCKER CONTAINERS                  │
+│   NO CLOUD CONNECTION REQUIRED                                   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Aspire Project Structure
+
+```yaml
+# IdleWorlds.AppHost/AspireApp.Host.csproj
+{
+  'Projects':
+    [
+      {
+        'Name': 'IdleWorlds.Server.Api',
+        'Type': 'project',
+        'Path': '../IdleWorlds.Server.Api/IdleWorlds.Server.Api.csproj',
+        'Args': ['--urls', 'https://localhost:7001'],
+      },
+      {
+        'Name': 'IdleWorlds.Server.Orleans',
+        'Type': 'project',
+        'Path': '../IdleWorlds.Server.Orleans/IdleWorlds.Server.Orleans.csproj',
+        'Args': ['--silo', 'primary'],
+        'Environment': { 'ASPNETCORE_ENVIRONMENT': 'Development', 'ORLEANS_SILO_PRIMARY': 'true' },
+      },
+      {
+        'Name': 'postgres',
+        'Type': 'container',
+        'Image': 'postgres:16-alpine',
+        'Environment': { 'POSTGRES_PASSWORD': '{postgres.password}', 'POSTGRES_DB': 'idleworlds' },
+        'Bindings': { 'tcp': { 'Port': 5432, 'HostPort': 5432 } },
+        'Endpoints': [{ 'Name': 'tcp', 'TargetPort': 5432 }],
+      },
+      {
+        'Name': 'redis',
+        'Type': 'container',
+        'Image': 'redis:7-alpine',
+        'Bindings': { 'tcp': { 'Port': 6379, 'HostPort': 6379 } },
+      },
+    ],
+}
+```
+
+#### Aspire Benefits
+
+| Benefit                   | Description                                                 |
+| ------------------------- | ----------------------------------------------------------- |
+| **Full Stack Local**      | Entire multiplayer ecosystem runs locally with `dotnet run` |
+| **Zero Cloud Cost**       | Development needs no Azure subscription                     |
+| **Production Parity**     | Same Orleans, PostgreSQL, Redis stack as production         |
+| **Live Reload**           | Code changes hot-reload without restarting containers       |
+| **Resource Dashboard**    | Built-in monitoring of CPU, memory, logs                    |
+| **Distributed Tracing**   | OpenTelemetry integration for debugging                     |
+| **Environment Variables** | Config per dev/staging/production profiles                  |
+
+#### Development Workflow
+
+```bash
+# Start entire stack with one command
+dotnet run --project src/IdleWorlds.AppHost
+
+# Aspire automatically:
+# 1. Spins up PostgreSQL container
+# 2. Spins up Redis container
+# 3. Starts API project
+# 4. Starts Orleans silos (4 silos by default)
+# 5. Opens dashboard at http://localhost:5000
+# 6. Applies environment variables and configuration
+# 7. Enables hot reload for all projects
+
+# Develop with full multiplayer experience
+# - Multiple clients connect to localhost:7001
+# - Real-time SignalR works locally
+# - Orleans grains activate on local silos
+# - Database persists in container (restart-safe)
+
+# Stop everything with Ctrl+C
+# Containers stop, but database persists between runs
+```
+
+#### Self-Hosting with Aspire
+
+Aspire orchestration enables self-hosting scenarios beyond development:
+
+| Scenario                | Configuration                                                              |
+| ----------------------- | -------------------------------------------------------------------------- |
+| **LAN Party**           | Aspire dashboard accessible on local network, clients connect via local IP |
+| **Private Server**      | Deploy Aspire AppHost to VPS, same stack as local dev                      |
+| **Testing Environment** | Spin up identical environment for integration testing                      |
+| **Cost Optimization**   | Run on existing hardware instead of paying for cloud                       |
+
+#### Transition to Cloud
+
+Moving from Aspire local to Azure production is straightforward:
+
+```
+ASPIRE (Local)                    AZURE (Production)
+    │                                    │
+    ▼                                    ▼
+┌─────────────┐                  ┌──────────────┐
+│ PostgreSQL  │                  │ Azure        │
+│ (Container) │    deploy →     │ PostgreSQL   │
+│             │                  │ Flexible     │
+└─────────────┘                  └──────────────┘
+    │                                    │
+    ▼                                    ▼
+┌─────────────┐                  ┌──────────────┐
+│ Redis       │                  │ Azure        │
+│ (Container) │    deploy →     │ Cache for    │
+│             │                  │ Redis        │
+└─────────────┘                  └──────────────┘
+    │                                    │
+    ▼                                    ▼
+┌─────────────┐                  ┌──────────────┐
+│ Orleans     │    deploy →     │ Azure        │
+│ Silos       │                  │ Container    │
+│ (Process)   │                  │ Apps         │
+└─────────────┘                  └──────────────┘
+
+NO CODE CHANGES REQUIRED — CONNECTION STRINGS UPDATED VIA CONFIGURATION
+```
+
 ---
 
 ## 5. Sync Architecture
@@ -527,15 +700,16 @@ Because the game engine uses seeded RNG:
 
 ### 6.2 Server Technologies
 
-| Component           | Technology                | Rationale                                |
-| ------------------- | ------------------------- | ---------------------------------------- |
-| **Actor Framework** | Microsoft Orleans         | Perfect fit for NPC actors, proven scale |
-| **API**             | ASP.NET Core Minimal APIs | Lightweight, fast, good DX               |
-| **Real-time**       | SignalR                   | Built-in .NET, works with Orleans        |
-| **Event Store**     | Marten (on PostgreSQL)    | .NET-native event sourcing, projections  |
-| **Cache**           | Redis                     | Orleans clustering, caching, pub/sub     |
-| **Hosting**         | Azure Container Apps      | Scale-to-zero, cheap, managed            |
-| **Database**        | PostgreSQL Flexible       | Burstable tier, Marten compatible        |
+| Component                | Technology                | Rationale                                |
+| ------------------------ | ------------------------- | ---------------------------------------- |
+| **Actor Framework**      | Microsoft Orleans         | Perfect fit for NPC actors, proven scale |
+| **API**                  | ASP.NET Core Minimal APIs | Lightweight, fast, good DX               |
+| **Real-time**            | SignalR                   | Built-in .NET, works with Orleans        |
+| **Event Store**          | Marten (on PostgreSQL)    | .NET-native event sourcing, projections  |
+| **Cache**                | Redis                     | Orleans clustering, caching, pub/sub     |
+| **Orchestration (Dev)**  | .NET Aspire               | Full local stack, zero cloud cost        |
+| **Hosting (Production)** | Azure Container Apps      | Scale-to-zero, cheap, managed            |
+| **Database**             | PostgreSQL Flexible       | Burstable tier, Marten compatible        |
 
 ### 6.3 Shared Technologies
 
@@ -782,6 +956,7 @@ IdleWorlds/
 | Local Storage        | LiteDB               | MIT              | SQLite (more setup), Realm (proprietary)                   |
 | Actor Framework      | Orleans              | MIT              | Akka.NET (less .NET-native), Proto.Actor (smaller)         |
 | Event Store          | Marten               | MIT              | EventStoreDB (separate service), custom                    |
+| Dev Orchestration    | .NET Aspire          | MIT              | Docker Compose (less integrated), manual container mgmt    |
 | Cloud Host           | Azure Container Apps | N/A              | AKS (complex), App Service (no scale-to-zero)              |
 | BDD Testing          | Reqnroll             | BSD-3-Clause     | SpecFlow (commercial), xBehave (less tooling)              |
 | Assertions           | AwesomeAssertions    | Apache 2.0       | FluentAssertions (less permissive)                         |
@@ -801,7 +976,8 @@ LICENSE SUMMARY
 
 MIT License:
   .NET MAUI, Orleans, Marten, LiteDB, xUnit, NSubstitute,
-  Bogus, Verify, CommunityToolkit.Mvvm, Mapperly, BenchmarkDotNet
+  Bogus, Verify, CommunityToolkit.Mvvm, Mapperly, BenchmarkDotNet,
+  .NET Aspire
 
 Apache 2.0:
   Playwright, NBomber, Stryker.NET, AwesomeAssertions
@@ -817,4 +993,4 @@ No proprietary or copyleft (GPL) dependencies in core stack.
 
 ---
 
-_Document Version 2.3 — High-Level Architecture (Cozy Fantasy Art Style)_
+_Document Version 2.4 — High-Level Architecture (.NET Aspire Added)_
