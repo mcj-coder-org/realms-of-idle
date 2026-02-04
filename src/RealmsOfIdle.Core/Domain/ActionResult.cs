@@ -1,10 +1,20 @@
 namespace RealmsOfIdle.Core.Domain;
 
-public readonly record ActionResult(
-    bool Success,
-    string? Message = null,
-    IReadOnlyList<GameEvent>? Events = null)
+using System.Collections.Generic;
+
+public class ActionResult
 {
+    public bool Success { get; }
+    public string? Message { get; }
+    public IReadOnlyList<GameEvent>? Events { get; }
+
+    public ActionResult(bool success, string? message = null, IReadOnlyList<GameEvent>? events = null)
+    {
+        Success = success;
+        Message = message;
+        Events = events;
+    }
+
     public static ActionResult Ok(string message = "Success") =>
         new(true, message);
 

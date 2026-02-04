@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RealmsOfIdle.Core/RealmsOfIdle.Core.csproj" />
+  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />
   </Folder>

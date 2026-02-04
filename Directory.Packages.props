@@ -7,10 +7,11 @@
   <ItemGroup>
     <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.12" />
     <PackageVersion Include="Spectre.Console.ImageSharp" Version="0.54.0" />
-    <PackageVersion Include="StronglyTypedId" Version="1.16.0" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.2" />
   </ItemGroup>
   <!-- Source generators -->
   <ItemGroup>
+    <PackageVersion Include="StronglyTypedId" Version="1.0.0-beta08" />
     <PackageVersion Include="Ardalis.SmartEnum" Version="8.0.0" />
     <PackageVersion Include="Riok.Mapperly" Version="4.1.1" />
   </ItemGroup>

@@ -1,6 +1,17 @@
 namespace RealmsOfIdle.Core.Domain;
 
-public readonly record GameAction(
-    string ActionName,
-    string? TargetId = null,
-    Dictionary<string, object>? Parameters = null);
+using System.Collections.Generic;
+
+public class GameAction
+{
+    public string ActionName { get; }
+    public string? TargetId { get; }
+    public Dictionary<string, object>? Parameters { get; }
+
+    public GameAction(string actionName, string? targetId = null, Dictionary<string, object>? parameters = null)
+    {
+        ActionName = actionName;
+        TargetId = targetId;
+        Parameters = parameters;
+    }
+}

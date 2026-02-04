@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>RealmsOfIdle.Core</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="StronglyTypedId" Version="1.0.0-beta08" />
+    <PackageReference Include="StronglyTypedId" />
     <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="Ardalis.SmartEnum" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
   </ItemGroup>
 </Project>

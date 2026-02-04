@@ -1,5 +1,7 @@
 namespace RealmsOfIdle.Core.Domain;
 
+using System;
+
 public class GameEvent
 {
     public string EventType { get; set; } = "Unknown";
