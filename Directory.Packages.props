@@ -68,9 +68,6 @@
     <PackageVersion Include="Microsoft.Orleans.Core" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Orleans.Client" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Clustering.Redis" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Persistence.Memory" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Reminders.Memory" Version="8.0.0" />
   </ItemGroup>
   <!-- Analyzer packages -->
   <ItemGroup>
