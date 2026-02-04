@@ -1,3 +1,5 @@
+using Xunit;
+
 namespace RealmsOfIdle.Tests;
 
 public class PipelineTests

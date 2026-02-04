@@ -8,5 +8,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Core.Tests/RealmsOfIdle.Core.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.Orleans.Tests/RealmsOfIdle.Server.Orleans.Tests.csproj" />
   </Folder>
 </Solution>

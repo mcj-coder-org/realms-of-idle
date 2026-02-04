@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
   </ItemGroup>
 
 </Project>
