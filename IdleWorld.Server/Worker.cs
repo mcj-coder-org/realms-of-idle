@@ -1,6 +1,6 @@
 namespace IdleWorld.Server;
 
-public class Worker : BackgroundService
+internal class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
 

@@ -1,11 +1,8 @@
-using Microsoft.Extensions.Logging;
-using Orleans;
 using RealmsOfIdle.Core.Domain.Models;
-using RealmsOfIdle.Core.Domain.PlayerId;
 
 namespace IdleWorld.Server.Grains;
 
-public class HealthGrain : Grain, IHealthGrain
+internal class HealthGrain : Grain, IHealthGrain
 {
     private readonly ILogger<HealthGrain> _logger;
     private readonly IGameService _gameService;
