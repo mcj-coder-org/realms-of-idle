@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>RealmsOfIdle.Core</RootNamespace>
     <!-- Suppress design analyzers temporarily for MVP -->
@@ -8,7 +7,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StronglyTypedId" />
-    <PackageReference Include="System.Text.Json" />
     <PackageReference Include="Ardalis.SmartEnum" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
     <PackageReference Include="OpenTelemetry" />

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging.Abstractions;
 using RealmsOfIdle.Server.Orleans.Grains;
 using Xunit;
 using Xunit.Abstractions;
@@ -21,7 +22,7 @@ public class HealthGrainTests
     public void HealthGrain_CanBeInstantiated()
     {
         // Act & Assert - should not throw
-        var grain = new HealthGrain();
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
         Assert.NotNull(grain);
     }
 
@@ -29,7 +30,7 @@ public class HealthGrainTests
     public async Task GetHealthStatusAsync_ReturnsHealthyStatus()
     {
         // Arrange
-        var grain = new HealthGrain();
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
 
         // Act
         var health = await grain.GetHealthStatusAsync();
@@ -45,7 +46,7 @@ public class HealthGrainTests
     public async Task MultipleCalls_ReturnsConsistentResults()
     {
         // Arrange
-        var grain = new HealthGrain();
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
 
         // Act
         var health1 = await grain.GetHealthStatusAsync();
@@ -61,7 +62,7 @@ public class HealthGrainTests
     public async Task HealthTimestamp_IsRecent()
     {
         // Arrange
-        var grain = new HealthGrain();
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
         var before = DateTime.UtcNow;
 
         // Act
@@ -76,7 +77,7 @@ public class HealthGrainTests
     public async Task Health_ContainsAllRequiredFields()
     {
         // Arrange
-        var grain = new HealthGrain();
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
 
         // Act
         var health = await grain.GetHealthStatusAsync();

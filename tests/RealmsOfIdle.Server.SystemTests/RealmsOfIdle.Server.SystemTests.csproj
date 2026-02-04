@@ -15,9 +15,11 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="AwesomeAssertions" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Api\RealmsOfIdle.Server.Api.csproj" />
     <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
   </ItemGroup>
 

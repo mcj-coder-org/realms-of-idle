@@ -1,19 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Orleans.Core" />
-    <PackageReference Include="Microsoft.Orleans.Server" />
+    <PackageReference Include="Microsoft.Orleans.Client" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
     <ProjectReference Include="..\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="RealmsOfIdle.Server.SystemTests" />
   </ItemGroup>
 
 </Project>
