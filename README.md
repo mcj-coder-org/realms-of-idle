@@ -67,6 +67,56 @@ npm run lint
 npm run format
 ```
 
+### MCP Servers (AI Development Tools)
+
+This project uses Model Context Protocol (MCP) servers to enhance AI-assisted development with Claude Code. MCP servers provide capabilities like semantic code search, web search, and context management.
+
+#### Available MCP Servers
+
+| Server             | Purpose                                           | Setup Required       |
+| ------------------ | ------------------------------------------------- | -------------------- |
+| `context7`         | Upstash context management for long conversations | None (via npx)       |
+| `web-search-prime` | Web search for API documentation and references   | None                 |
+| `zai-mcp-server`   | Z.ai integration for enhanced AI capabilities     | None                 |
+| `grepai`           | Semantic code search across the codebase          | Ollama + index build |
+
+#### Initial Setup
+
+Run the setup script to configure MCP servers:
+
+```powershell
+.\scripts\setup-mcp.ps1
+```
+
+This will:
+
+1. Check Ollama installation
+2. Pull the `nomic-embed-text` model (~275MB)
+3. Build the semantic code index for grepai
+
+#### Manual Setup (if script fails)
+
+1. **Install Ollama** from [ollama.ai](https://ollama.ai)
+2. **Pull the embedding model**:
+
+   ```bash
+   ollama pull nomic-embed-text
+   ```
+
+3. **Build the grepai index**:
+
+   ```powershell
+   .\.claude\grepai.exe index
+   ```
+
+#### Maintaining the Index
+
+The grepai index updates automatically when files change. If search results seem stale, rebuild manually:
+
+```powershell
+.\.claude\grepai.exe index --force
+```
+
 ### Development Workflow
 
 This project follows strict development standards:
