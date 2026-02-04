@@ -7,7 +7,9 @@
   <ItemGroup>
     <PackageVersion Include="Aspire.Hosting.PostgreSQL" Version="13.1.0" />
     <PackageVersion Include="Aspire.Hosting.Redis" Version="13.1.0" />
+    <PackageVersion Include="Microsoft.Orleans.Core.Abstractions" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Orleans.Runtime.Abstractions" Version="3.8.0" />
+    <PackageVersion Include="Microsoft.Orleans.Serialization.Abstractions" Version="10.0.0" />
     <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.12" />
     <PackageVersion Include="Spectre.Console.ImageSharp" Version="0.54.0" />
     <PackageVersion Include="System.Text.Json" Version="10.0.2" />
@@ -69,14 +71,15 @@
   </ItemGroup>
   <!-- Orleans packages -->
   <ItemGroup>
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Logging" Version="8.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.0" />
     <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Core" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Client" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Server" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Core" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Client" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Server" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.TestingHost" Version="10.0.0" />
   </ItemGroup>
   <!-- Health Checks packages -->
   <ItemGroup>
