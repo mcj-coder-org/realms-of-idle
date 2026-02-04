@@ -1,0 +1,67 @@
+#!/bin/bash
+# Pre-push hook: Quality gate for C# and TypeScript changes
+set -e
+
+echo "🔍 Pre-push quality checks..."
+
+# Check if any .cs files are staged
+if git diff --cached --name-only | grep -E '\.cs$'; then
+    echo "📦 C# changes detected - running checks..."
+
+    # Build
+    echo "🔨 Building solution..."
+    dotnet build --no-restore 2>&1 | tee /tmp/build.log
+
+    if grep -i "warning" /tmp/build.log >/dev/null 2>&1; then
+        echo "❌ BUILD WARNINGS - Fix warnings before pushing"
+        grep -i "warning" /tmp/build.log | head -5
+        exit 1
+    fi
+
+    if grep -i "error" /tmp/build.log >/dev/null 2>&1; then
+        echo "❌ BUILD ERRORS - Fix errors before pushing"
+        grep -i "error" /tmp/build.log | head -5
+        exit 1
+    fi
+
+    # Unit Tests
+    echo "🧪 Running .NET tests..."
+    dotnet test --no-build --verbosity quiet 2>&1 | tee /tmp/test.log
+
+    if grep -i "Failed:" /tmp/test.log >/dev/null 2>&1; then
+        echo "❌ .NET TESTS FAILED"
+        grep "Failed:" /tmp/test.log | head -5
+        exit 1
+    fi
+
+    echo "✅ .NET checks passed!"
+fi
+
+# Check if any .ts files are staged
+if git diff --cached --name-only | grep -E '\.ts$'; then
+    # Look for TS test files in typical locations
+    if [ -f "package.json" ] && grep -q "test" package.json; then
+        echo "📦 TypeScript changes detected - running tests..."
+        npm test 2>&1 | tee /tmp/npm-test.log
+
+        if [ ${PIPESTATUS[0]} -ne 0 ]; then
+            echo "❌ TYPESCRIPT TESTS FAILED"
+            tail -20 /tmp/npm-test.log
+            exit 1
+        fi
+
+        echo "✅ TypeScript tests passed!"
+    fi
+fi
+
+# Check for BDD/E2E test coverage (if code exists)
+if git diff --cached --name-only | grep -E '\.(cs|ts)$'; then
+    echo "🔍 Checking BDD/E2E test coverage..."
+    if dotnet test --list-tests --no-build 2>&1 | grep -i "Total.*0" >/dev/null 2>&1; then
+        echo "⚠️  WARNING: No tests found"
+        echo "   Tests must be implemented before pushing to remote"
+        exit 1
+    fi
+fi
+
+echo "✅ All checks passed!"
