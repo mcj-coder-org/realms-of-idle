@@ -5,4 +5,5 @@
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />
   </Folder>
+  <Project Path="IdleWorld.Server/IdleWorld.Server.csproj" />
 </Solution>
