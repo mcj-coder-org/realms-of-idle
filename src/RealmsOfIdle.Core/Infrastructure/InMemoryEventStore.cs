@@ -7,6 +7,7 @@ using RealmsOfIdle.Core.Domain;
 using RealmsOfIdle.Core.Domain.Models;
 using RealmsOfIdle.Core.Core.Exceptions;
 
+#pragma warning disable IDE0005 // Using directive is unnecessary
 #pragma warning disable CA1050 // Declare types in namespaces
 #pragma warning disable CA1851 // Possible multiple enumerations of 'IEnumerable' collection
 
