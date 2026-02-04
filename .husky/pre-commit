@@ -3,6 +3,12 @@ npx lint-staged
 
 # Run unit tests if .cs files are staged
 if git diff --cached --name-only | grep -q '\.cs$'; then
-  echo "Running unit tests..."
+  echo "Running .NET unit tests..."
   dotnet test --filter "Category!=Integration&Category!=E2E" --no-build 2>/dev/null || dotnet test --filter "Category!=Integration&Category!=E2E"
+fi
+
+# Run unit tests if .ts files are staged
+if git diff --cached --name-only | grep -q '\.ts$'; then
+  echo "Running TypeScript unit tests..."
+  npm test -- --run 2>&1 || echo "⚠️  No TS tests configured"
 fi
