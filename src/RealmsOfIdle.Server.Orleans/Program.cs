@@ -39,8 +39,8 @@ app.MapControllers();
 
 app.MapGet("/health", async (IGrainFactory grainFactory) =>
 {
-    var healthGrain = grainFactory.GetGrain<IHealthGrain>("health");
-    var health = await healthGrain.GetHealthAsync();
+    var healthGrain = grainFactory.GetGrain<IHealthGrain>(0);
+    var health = await healthGrain.GetHealthStatusAsync();
 
     return Results.Ok(new
     {
