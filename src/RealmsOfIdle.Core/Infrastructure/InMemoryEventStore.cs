@@ -1,9 +1,14 @@
 using System.Collections.Concurrent;
 using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain;
 using RealmsOfIdle.Core.Domain.Models;
 using RealmsOfIdle.Core.Core.Exceptions;
+
+#pragma warning disable CA1050 // Declare types in namespaces
+#pragma warning disable CA1851 // Possible multiple enumerations of 'IEnumerable' collection
 
 /// <summary>
 /// In-memory implementation of IEventStore for testing and development scenarios.
