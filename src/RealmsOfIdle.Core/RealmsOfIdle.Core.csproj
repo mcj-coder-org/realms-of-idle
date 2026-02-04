@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>RealmsOfIdle.Core</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="StronglyTypedId" Version="1.0.0-beta08" />
     <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 </Project>
