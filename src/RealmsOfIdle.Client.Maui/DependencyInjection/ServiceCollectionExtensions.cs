@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using LiteDB;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using OpenTelemetry.Trace;
 using RealmsOfIdle.Client.Maui.Logging;
 using RealmsOfIdle.Client.Maui.Services;
