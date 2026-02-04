@@ -66,7 +66,7 @@ Runs:
 - Unit tests
 - Build verification
 
-#### Continuous Integration (automatic on push to main/develop)
+#### Continuous Integration (automatic on push to main)
 
 - Format validation
 - Linting

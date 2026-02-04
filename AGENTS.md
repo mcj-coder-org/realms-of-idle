@@ -68,7 +68,7 @@ Author, review, and curate all Game Design Documents (GDDs).
 
 Invoke when:
 
-- ✅ Creating new game design documents
+- ✅ Creating new game design documents with `docs/design`
 - ✅ Reviewing documentation quality
 - ✅ Restructuring/reorganizing docs
 - ✅ Adding frontmatter to legacy docs
@@ -98,7 +98,7 @@ Invoke when:
 
 ### Frontmatter Requirements
 
-All documents MUST have this frontmatter:
+All `docs/design` documents MUST have this frontmatter:
 
 ```yaml
 ---
@@ -335,13 +335,19 @@ echo "$CHANGED_FILES" | grep -E "Tests/.*\.cs$|.*\.Tests\.csproj$" && invoke_qa_
 
 **Invocation Rules**:
 
-1. **Always Invoke Base Trio**: Code Reviewer, Security Reviewer, Architect (for every PR)
+1. **Always Invoke Base Reviewers**: Code Reviewer, Security Reviewer, Architect, User
 2. **Detect Changes**: Use `git diff --name-only origin/main` to get changed files
 3. **Match Patterns**: Apply file pattern globs to determine which additional experts to invoke
 4. **Sequential Review**: Invoke experts in logical order (Architecture → Security → Code Quality → Specialized)
 5. **Consolidate Findings**: Merge all expert feedback into single issue triage
 
 **Specialized Persona Focus Areas**:
+
+**User**
+
+- Game is playable and accessible
+- UI is graphical and not text heavy
+- UI is responsive to interactions
 
 **GDD Designer** (when `docs/design/**/*.md` changed):
 
