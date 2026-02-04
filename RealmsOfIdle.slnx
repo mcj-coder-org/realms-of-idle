@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/RealmsOfIdle.Core/RealmsOfIdle.Core.csproj" />
+    <Project Path="src/RealmsOfIdle.Server.Api/RealmsOfIdle.Server.Api.csproj" />
+    <Project Path="src/RealmsOfIdle.Server.Orleans/RealmsOfIdle.Server.Orleans.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />

@@ -19,7 +19,7 @@ public readonly struct PlayerId
         throw new NotImplementedException();
     }
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         throw new NotImplementedException();
     }

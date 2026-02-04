@@ -1,5 +1,5 @@
 using Orleans;
-using RealmsOfIdle.Core.Domain.Models;
+using RealmsOfIdle.Core;
 
 namespace RealmsOfIdle.Server.Orleans.Interfaces;
 

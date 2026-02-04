@@ -1,5 +1,6 @@
 using Orleans;
 using RealmsOfIdle.Core;
+using RealmsOfIdle.Server.Orleans.Interfaces;
 
 namespace RealmsOfIdle.Server.Orleans.Grains;
 
@@ -10,7 +11,7 @@ public class HealthGrain : Grain, IHealthGrain
         return Task.FromResult(new GameHealth
         {
             Status = HealthStatus.Healthy,
-            SiloStatus = this.SiloAddress.Status.ToString(),
+            SiloStatus = "Active",
             Timestamp = DateTime.UtcNow
         });
     }
