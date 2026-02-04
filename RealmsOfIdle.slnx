@@ -1,5 +1,17 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RealmsOfIdle.AppHost/RealmsOfIdle.AppHost.csproj" />
+    <Project Path="src/RealmsOfIdle.Client.Maui/RealmsOfIdle.Client.Maui.csproj" />
+    <Project Path="src/RealmsOfIdle.Core/RealmsOfIdle.Core.csproj" />
+    <Project Path="src/RealmsOfIdle.Server.Api/RealmsOfIdle.Server.Api.csproj" />
+    <Project Path="src/RealmsOfIdle.Server.Orleans/RealmsOfIdle.Server.Orleans.csproj" />
+  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Core.Tests/RealmsOfIdle.Core.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.Orleans.Tests/RealmsOfIdle.Server.Orleans.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.SystemTests/RealmsOfIdle.Server.SystemTests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.E2ETests/RealmsOfIdle.Server.E2ETests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.IntegrationTests/RealmsOfIdle.Server.IntegrationTests.csproj" />
   </Folder>
 </Solution>

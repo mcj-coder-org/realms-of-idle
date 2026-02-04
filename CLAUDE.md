@@ -76,6 +76,21 @@ Runs:
 
 ```
 
+## Implementation Execution Preferences
+
+**Subagent-Driven Development**: When implementing from detailed plans, use subagent-driven approach:
+- Dispatch fresh subagent per task
+- Review results between tasks
+- Fast iteration with checkpoints
+- Stay in current session
+
+**Worktree Strategy**: Use git worktrees for feature isolation:
+- Worktrees created in `.worktrees/` directory (gitignored)
+- Create feature branch before starting implementation
+- Clean up worktree after merge
+
+---
+
 ## Conventions
 
 **Branches**: `type/description` (feat/inventory, fix/leak, docs/readme, refactor/engine)

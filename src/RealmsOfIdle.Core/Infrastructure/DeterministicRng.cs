@@ -4,8 +4,6 @@ namespace RealmsOfIdle.Core.Infrastructure;
 /// Deterministic random number generator that produces repeatable sequences based on a seed.
 /// Useful for testing scenarios where you need predictable random results.
 /// </summary>
-using System;
-using System.Collections.Concurrent;
 public class DeterministicRng
 {
     private readonly int _seed;
