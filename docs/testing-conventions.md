@@ -32,44 +32,44 @@ This document provides quick-reference conventions for testing in the Realms of 
 
 ### Suffix Convention
 
-| Suffix               | Purpose                       | Example                              | Runs At      |
-| -------------------- | ----------------------------- | ------------------------------------ | ------------ |
-| `.Tests`             | Unit tests                    | `IdleWorlds.Core.Tests`              | Pre-commit   |
-| `.SystemTests`       | System tests (TestServer)     | `IdleWorlds.Server.SystemTests`      | Pre-commit   |
-| `.IntegrationTests`  | Integration (TestContainers)  | `IdleWorlds.Server.IntegrationTests` | Pre-push     |
-| `.E2ETests`          | End-to-end user journeys      | `IdleWorlds.E2ETests`                | Manual       |
-| `.SimulationTests`   | BDD simulation scenarios      | `IdleWorlds.SimulationTests`         | Pre-commit   |
-| `.ArchitectureTests` | Architecture rules validation | `IdleWorlds.ArchitectureTests`       | Pre-commit   |
-| `.Performance.Tests` | Load/stress/soak testing      | `IdleWorlds.Performance.Tests`       | CI/Scheduled |
+| Suffix               | Purpose                       | Example                                | Runs At      |
+| -------------------- | ----------------------------- | -------------------------------------- | ------------ |
+| `.Tests`             | Unit tests                    | `RealmsOfIdle.Core.Tests`              | Pre-commit   |
+| `.SystemTests`       | System tests (TestServer)     | `RealmsOfIdle.Server.SystemTests`      | Pre-commit   |
+| `.IntegrationTests`  | Integration (TestContainers)  | `RealmsOfIdle.Server.IntegrationTests` | Pre-push     |
+| `.E2ETests`          | End-to-end user journeys      | `RealmsOfIdle.E2ETests`                | Manual       |
+| `.SimulationTests`   | BDD simulation scenarios      | `RealmsOfIdle.SimulationTests`         | Pre-commit   |
+| `.ArchitectureTests` | Architecture rules validation | `RealmsOfIdle.ArchitectureTests`       | Pre-commit   |
+| `.Performance.Tests` | Load/stress/soak testing      | `RealmsOfIdle.Performance.Tests`       | CI/Scheduled |
 
 ### Directory Structure
 
 ```
 tests/
-├── IdleWorlds.Core.Tests/              # Unit tests only
+├── RealmsOfIdle.Core.Tests/              # Unit tests only
 │   ├── Actions/
 │   ├── Classes/
 │   ├── Skills/
 │   └── Tags/
 │
-├── IdleWorlds.Server.SystemTests/      # System tests (TestServer, mocked)
+├── RealmsOfIdle.Server.SystemTests/      # System tests (TestServer, mocked)
 │   ├── Api/
 │   ├── Middleware/
 │   └── Orleans/
 │
-├── IdleWorlds.Server.IntegrationTests/ # Integration tests (TestContainers)
+├── RealmsOfIdle.Server.IntegrationTests/ # Integration tests (TestContainers)
 │   ├── Features/                       # Reqnroll .feature files
 │   ├── StepDefinitions/
 │   └── Helpers/
 │
-├── IdleWorlds.SimulationTests/         # Solution-level BDD simulation
+├── RealmsOfIdle.SimulationTests/         # Solution-level BDD simulation
 │   ├── Features/
 │   └── Helpers/
 │
-├── IdleWorlds.ArchitectureTests/       # Architecture rules
+├── RealmsOfIdle.ArchitectureTests/       # Architecture rules
 │   └── VerticalSlices/
 │
-└── IdleWorlds.Performance.Tests/       # NBomber
+└── RealmsOfIdle.Performance.Tests/       # NBomber
     └── Load/
 ```
 
@@ -79,10 +79,10 @@ Test namespaces match their **test project name**, not the source project:
 
 ```csharp
 // Correct
-namespace IdleWorlds.Core.Tests.Actions;
+namespace RealmsOfIdle.Core.Tests.Actions;
 
 // Incorrect - this is the source namespace
-namespace IdleWorlds.Core.Actions;
+namespace RealmsOfIdle.Core.Actions;
 ```
 
 ---
@@ -164,7 +164,7 @@ Each Reqnroll project must have a `reqnroll.json`:
 
 ```json
 {
-  "bindingAssemblies": ["IdleWorlds.Server.IntegrationTests"],
+  "bindingAssemblies": ["RealmsOfIdle.Server.IntegrationTests"],
   "traits": {
     "category": "Integration"
   }
@@ -215,7 +215,7 @@ Each Reqnroll project must have a `reqnroll.json`:
 When needed, add manually:
 
 ```csharp
-[assembly: InternalsVisibleTo("IdleWorlds.Core.Tests")]
+[assembly: InternalsVisibleTo("RealmsOfIdle.Core.Tests")]
 ```
 
 ---
@@ -224,7 +224,7 @@ When needed, add manually:
 
 ### CapturingLoggerProvider
 
-**Location:** `tests/IdleWorlds.Server.IntegrationTests/Helpers/CapturingLoggerProvider.cs`
+**Location:** `tests/RealmsOfIdle.Server.IntegrationTests/Helpers/CapturingLoggerProvider.cs`
 
 Captures and asserts on log output in integration tests:
 
@@ -253,7 +253,7 @@ public class DatabaseIntegrationTests
 
 ### SimulationHealthValidator
 
-**Location:** `tests/IdleWorlds.SimulationTests/Helpers/SimulationHealthValidator.cs`
+**Location:** `tests/RealmsOfIdle.SimulationTests/Helpers/SimulationHealthValidator.cs`
 
 Validates simulation invariants after BDD scenarios:
 
