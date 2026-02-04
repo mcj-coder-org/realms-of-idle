@@ -1,7 +1,7 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 // Add PostgreSQL
-var postgres = builder.AddPostgreSQL("postgres")
+var postgres = builder.AddPostgres("postgres")
     .WithImageTag("16-alpine")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
@@ -14,20 +14,11 @@ var redis = builder.AddRedis("redis")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
-// Add Orleans Silo
-var orleans = builder.AddProject<Projects.RealmsOfIdle_Server_Orleans.RealmsOfIdleServerOrleans>("orleans")
-    .WithReference(postgresDb)
-    .WithReference(redis)
-    .WaitFor(postgres)
-    .WaitFor(redis);
-
 // Add API Server
-var api = builder.AddProject<Projects.RealmsOfIdle_Server_Api.RealmsOfIdleServerApi>("api")
-    .WithReference(orleans)
+var api = builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
     .WithReference(postgresDb)
     .WithReference(redis)
     .WithExternalHttpEndpoints()
-    .WaitFor(orleans)
     .WaitFor(postgres)
     .WaitFor(redis);
 
