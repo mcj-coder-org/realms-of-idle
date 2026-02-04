@@ -18,4 +18,12 @@
     <NoWarn>CA1014;CS1591</NoWarn>
   </PropertyGroup>
 
+  <!-- InternalsVisibleTo: Auto-configure for .Tests projects -->
+  <!-- Applied to source projects (not test projects themselves) -->
+  <ItemGroup Condition="$(MSBuildProjectDirectory.EndsWith('tests')) == false AND $(MSBuildProjectName.EndsWith('.Tests')) == false AND $(MSBuildProjectName.EndsWith('.SystemTests')) == false AND $(MSBuildProjectName.EndsWith('.IntegrationTests')) == false AND $(MSBuildProjectName.EndsWith('.E2ETests')) == false AND $(MSBuildProjectName.EndsWith('.SimulationTests')) == false AND $(MSBuildProjectName.EndsWith('.ArchitectureTests')) == false">
+    <InternalsVisibleTo Include="$(MSBuildProjectName).Tests" />
+    <InternalsVisibleTo Include="$(MSBuildProjectName).SystemTests" />
+    <InternalsVisibleTo Include="$(MSBuildProjectName).IntegrationTests" />
+  </ItemGroup>
+
 </Project>

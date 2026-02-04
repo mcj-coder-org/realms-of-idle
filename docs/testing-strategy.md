@@ -1264,4 +1264,157 @@ public class PlayerProgressionSnapshots
 
 ---
 
-_Document Version 1.0 — Automated Testing Strategy_
+## 9. Test Project Conventions
+
+### 9.1 Test Type Suffixes
+
+All test projects use a suffix to indicate test type and validation gate:
+
+| Suffix               | Purpose                                       | Example                              | Gate         |
+| -------------------- | --------------------------------------------- | ------------------------------------ | ------------ |
+| `.Tests`             | Unit tests only                               | `IdleWorlds.Core.Tests`              | Pre-commit   |
+| `.SystemTests`       | System tests (TestServer, mocked externals)   | `IdleWorlds.Server.SystemTests`      | Pre-commit   |
+| `.IntegrationTests`  | Integration tests (TestContainers, real deps) | `IdleWorlds.Server.IntegrationTests` | Pre-push     |
+| `.E2ETests`          | User journey BDD (manual)                     | `IdleWorlds.E2ETests`                | Manual       |
+| `.SimulationTests`   | Simulation BDD (pure game logic)              | `IdleWorlds.SimulationTests`         | Pre-commit   |
+| `.ArchitectureTests` | Architecture validation                       | `IdleWorlds.ArchitectureTests`       | Pre-commit   |
+| `.Performance.Tests` | Load/stress/soak                              | `IdleWorlds.Performance.Tests`       | CI/Scheduled |
+
+### 9.2 Namespace Convention
+
+Test namespaces match their test project name, not the source project:
+
+```csharp
+// Correct
+namespace IdleWorlds.Core.Tests.Actions;
+
+// Incorrect - matches source project
+namespace IdleWorlds.Core.Actions;
+```
+
+### 9.3 Test Categorization
+
+Every test class must have a category trait:
+
+```csharp
+[Trait("Category", "Unit")]
+public class ActionTests { }
+
+[Trait("Category", "System")]
+public class ApiEndpointTests { }
+
+[Trait("Category", "Integration")]
+public class DatabaseTests { }
+```
+
+---
+
+## 10. Shared Test Utilities
+
+### 10.1 Capturing Logger Provider
+
+Integration tests can capture and assert on log output:
+
+```csharp
+public class DatabaseIntegrationTests
+{
+    private readonly CapturingLoggerProvider _logger;
+
+    public DatabaseIntegrationTests(ITestOutputHelper output)
+    {
+        _logger = new CapturingLoggerProvider(output);
+        _logger.SetCurrentTest(nameof(DatabaseIntegrationTests));
+    }
+
+    [Fact]
+    public async Task PlayerAction_LogsExpectedMessages()
+    {
+        _logger.Clear();
+        // ... act ...
+
+        _logger.GetLogsForLevel(LogLevel.Warning).Should().BeEmpty();
+        _logger.GetLogsContaining("Strike").Should().ContainSingle();
+    }
+}
+```
+
+Location: `tests/IdleWorlds.Server.IntegrationTests/Helpers/CapturingLoggerProvider.cs`
+
+### 10.2 Simulation Health Validator
+
+BDD simulation tests validate invariants after scenarios:
+
+```csharp
+[AfterScenario]
+public void ValidateSimulationHealth()
+{
+    if (_simulationResult is null) return;
+
+    var expectation = _scenarioContext.ContainsKey("ExpectedDeaths")
+        ? new SimulationHealthExpectation()
+            .WithExpectedDeath(_scenarioContext["CombatVictimId"])
+        : null;
+
+    SimulationHealthValidator.ValidateSimulationHealth(_simulationResult, expectation);
+}
+```
+
+Location: `tests/IdleWorlds.SimulationTests/Helpers/SimulationHealthValidator.cs`
+
+Validates:
+
+- No unexpected NPC deaths
+- Currency conservation
+- Item conservation
+- NPC time allocation (if specified)
+- No unexpected errors in logs
+
+---
+
+## 11. Architecture Tests
+
+Using NetArchTest.Rules with vertical slice validation:
+
+```csharp
+public class VerticalSliceTests
+{
+    [Fact]
+    public void Domain_Layer_Should_Not_Depend_On_Application_Or_Infrastructure()
+    {
+        var result = Types.InAssembly(typeof(DomainEntity).Assembly)
+            .ShouldNot()
+            .ReferenceAny(typeof(ApplicationMediator).Assembly, typeof(InfrastructureRepository).Assembly)
+            .GetResult();
+
+        result.IsSuccessful.Should().BeTrue();
+    }
+}
+```
+
+---
+
+## 12. Validation Gates
+
+### 12.1 Git Hook Filters
+
+| Hook       | Command Filter                                                                     |
+| ---------- | ---------------------------------------------------------------------------------- |
+| Pre-commit | `Category=Unit \| Category=System \| Category=Simulation \| Category=Architecture` |
+| Pre-push   | `Category!=E2E & Category!=Performance`                                            |
+
+### 12.2 Reqnroll Configuration
+
+Each Reqnroll project requires `reqnroll.json`:
+
+```json
+{
+  "bindingAssemblies": ["IdleWorlds.Server.IntegrationTests"],
+  "traits": {
+    "category": "Integration"
+  }
+}
+```
+
+---
+
+_Document Version 1.1 — Automated Testing Strategy_

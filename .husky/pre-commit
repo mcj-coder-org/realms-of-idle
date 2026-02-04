@@ -1,10 +1,11 @@
 # Lint staged files (markdown, json, yaml)
 npx lint-staged
 
-# Run unit tests if .cs files are staged
+# Run fast tests if .cs files are staged
+# Categories: Unit, System, Simulation, Architecture
 if git diff --cached --name-only | grep -q '\.cs$'; then
-  echo "Running .NET unit tests..."
-  dotnet test --filter "Category!=Integration&Category!=E2E" --no-build 2>/dev/null || dotnet test --filter "Category!=Integration&Category!=E2E"
+  echo "Running .NET fast tests (Unit|System|Simulation|Architecture)..."
+  dotnet test --filter "Category=Unit|Category=System|Category=Simulation|Category=Architecture" --no-build 2>/dev/null || dotnet test --filter "Category=Unit|Category=System|Category=Simulation|Category=Architecture"
 fi
 
 # Run unit tests if .ts files are staged

@@ -24,9 +24,9 @@ if git diff --cached --name-only | grep -E '\.cs$'; then
         exit 1
     fi
 
-    # Unit Tests
-    echo "🧪 Running .NET tests..."
-    dotnet test --no-build --verbosity quiet 2>&1 | tee /tmp/test.log
+    # All tests except E2E and Performance
+    echo "🧪 Running .NET tests (excluding E2E and Performance)..."
+    dotnet test --filter "Category!=E2E&Category!=Performance" --no-build --verbosity quiet 2>&1 | tee /tmp/test.log
 
     if grep -i "Failed:" /tmp/test.log >/dev/null 2>&1; then
         echo "❌ .NET TESTS FAILED"
