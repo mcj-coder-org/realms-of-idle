@@ -5,7 +5,6 @@ namespace RealmsOfIdle.Core.Infrastructure;
 /// Useful for testing scenarios where you need predictable random results.
 /// </summary>
 using System;
-using System.Collections.Concurrent;
 public class DeterministicRng
 {
     private readonly int _seed;

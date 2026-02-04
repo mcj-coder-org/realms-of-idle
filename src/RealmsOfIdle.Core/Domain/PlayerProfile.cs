@@ -2,7 +2,6 @@ namespace RealmsOfIdle.Core.Domain;
 
 using System;
 using System.Collections.Generic;
-using RealmsOfIdle.Core.Domain.Models;
 
 public class PlayerProfile
 {

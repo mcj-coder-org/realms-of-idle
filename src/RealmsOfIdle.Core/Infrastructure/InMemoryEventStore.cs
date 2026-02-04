@@ -1,11 +1,8 @@
 using System.Collections.Concurrent;
-using System;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain;
 using RealmsOfIdle.Core.Domain.Models;
-using RealmsOfIdle.Core.Core.Exceptions;
 
 #pragma warning disable IDE0005 // Using directive is unnecessary
 #pragma warning disable CA1050 // Declare types in namespaces
