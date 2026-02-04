@@ -1,11 +1,4 @@
 {
-  "enabledPlugins": {
-    "ralph-loop@claude-plugins-official": false,
-    "csharp-lsp@claude-plugins-official": true,
-    "github@claude-plugins-official": false,
-    "superpowers@claude-plugins-official": false,
-    "oh-my-claudecode@omc": true
-  },
   "hooks": {
     "PostToolUse": [
       {
@@ -18,5 +11,12 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "ralph-loop@claude-plugins-official": false,
+    "csharp-lsp@claude-plugins-official": true,
+    "github@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": true,
+    "oh-my-claudecode@omc": true
   }
 }
