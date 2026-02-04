@@ -31,6 +31,6 @@ public static class TelemetryConfiguration
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
                 .AddConsoleExporter())
-            .Build();
+            .Services;
     }
 }

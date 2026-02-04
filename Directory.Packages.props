@@ -66,8 +66,11 @@
   <ItemGroup>
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Orleans.Core" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Orleans.Hosting.InProcess" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Client" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Orleans.Server" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Clustering.Redis" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Persistence.Memory" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Reminders.Memory" Version="8.0.0" />
   </ItemGroup>
   <!-- Analyzer packages -->
   <ItemGroup>
