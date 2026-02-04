@@ -1,4 +1,5 @@
 using RealmsOfIdle.Server.Orleans.Grains;
+using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 
@@ -26,10 +27,6 @@ builder.Host.UseOrleans(siloBuilder =>
         .Configure<MemoryGrainStorageOptions>(options =>
         {
             options.NumStorageGrains = 1;
-        })
-        .Configure<MemoryReminderTableOptions>(options =>
-        {
-            options.NumTableGrains = 1;
         });
 });
 
