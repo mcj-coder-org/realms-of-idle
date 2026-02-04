@@ -1,8 +1,11 @@
+#pragma warning disable IDE0005 // Using directive is required by Orleans source generator
+using Orleans;
+#pragma warning restore IDE0005
+
 namespace RealmsOfIdle.Core.Domain.Models;
 
-using System;
-using System.Collections.Generic;
-
+[Immutable]
+[GenerateSerializer]
 public record GameHealth(
     HealthStatus Status,
     GameMode Mode,
