@@ -1,11 +1,12 @@
 namespace RealmsOfIdle.Core.Domain.Models;
 
-public readonly record GameHealth(
+using System;
+using System.Collections.Generic;
+
+public record GameHealth(
     HealthStatus Status,
     GameMode Mode,
     DateTime Timestamp,
     string? Database = null,
     string? SiloStatus = null,
     Dictionary<string, string>? Dependencies = null);
-
-public enum HealthStatus { Healthy, Unhealthy, Degraded }
