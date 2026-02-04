@@ -11,6 +11,7 @@
     <Project Path="tests/RealmsOfIdle.Core.Tests/RealmsOfIdle.Core.Tests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.Orleans.Tests/RealmsOfIdle.Server.Orleans.Tests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.SystemTests/RealmsOfIdle.Server.SystemTests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Server.E2ETests/RealmsOfIdle.Server.E2ETests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.IntegrationTests/RealmsOfIdle.Server.IntegrationTests.csproj" />
   </Folder>
 </Solution>
