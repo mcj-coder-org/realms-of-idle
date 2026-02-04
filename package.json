@@ -1,12 +1,12 @@
 {
-  "name": "cozy-fantasy-rpg",
+  "name": "realms-of-idle",
   "version": "0.1.0",
-  "description": "Cozy Slice-of-Life Fantasy RPG - Mobile/Web Unity Game",
+  "description": "Realms of Idle - Cozy Slice-of-Life Fantasy RPG",
   "private": true,
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "test": "dotnet test CozyFantasyRpg.slnx",
+    "test": "dotnet test RealmsOfIdle.slnx",
     "lint": "npm run lint:format && npm run lint:md && npm run lint:links",
     "lint:format": "prettier --check .",
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#.worktrees\" \"#.omc\"",
