@@ -10,6 +10,7 @@
 | **web-reader** | ✅ Active | Web content fetching via @executeautomation/web-reader-mcp-server |
 | **filesystem** | ✅ Available | Filesystem access via @modelcontextprotocol/server-filesystem |
 | **image-analysis** | ✅ Available | 4.5v MCP image analysis |
+| **grepai** | ✅ Active | Semantic code search via Ollama nomic-embed-text model |
 
 ## Optional/Configured ⚠️
 
@@ -17,7 +18,7 @@
 |--------|--------|--------------|
 | **context7** | 🔴 Disabled | Requires `UPSTASH_REDIS_URL` environment variable |
 | **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from https://api.search.brave.com/register |
-| **grepai** | 🔴 Not Installed | See setup instructions below |
+| **grepai** | ✅ Active | Installed at `.claude/grepai`, using Ollama nomic-embed-text |
 
 ## Setup Instructions
 
@@ -41,36 +42,27 @@
    ```
 3. Set `"disabled": false`
 
-### Enable grepai (Semantic Code Search)
+### grepai (Semantic Code Search) ✅
 
-**Prerequisites:**
-- Go compiler
-- Ollama with nomic-embed-text model
+**Status:** Installed and working
 
-**Installation:**
+**Location:** `.claude/grepai`
+**Model:** Ollama nomic-embed-text (274MB)
+**Index:** `.grepai/index.gob` (108 files indexed)
+
+**Usage:**
 ```bash
-# Install Go (if not installed)
-sudo apt update
-sudo apt install golang
+# Semantic search
+.claude/grepai search "your query here"
 
-# Install grepai
-go install github.com/yoanbernabeu/grepai@latest
+# Trace symbol callers/callees
+.claude/grepai trace SymbolName
 
-# Install Ollama (Linux)
-curl -fsSL https://ollama.ai/install.sh | sh
-
-# Pull the embedding model
-ollama pull nomic-embed-text
-
-# Build semantic index for the project
-cd /home/mcjarvis/projects/realms-of-idle
-~/go/bin/grepai index
-
-# Enable in .mcp.json
-# Set command to: "/home/mcjarvis/go/bin/grepai"
-# Set args to: ["mcp"]
-# Set "disabled": false
+# Rebuild index (after code changes)
+.claude/grepai watch
 ```
+
+**To update index:** The grepai daemon runs in background and auto-updates when files change.
 
 ## Configuration File
 

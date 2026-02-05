@@ -133,6 +133,7 @@ nul
 .session-state/
 test-results/
 .claude/grepai.exe
+.claude/grepai
 
 # GitHub tokens and secrets
 .github.env
