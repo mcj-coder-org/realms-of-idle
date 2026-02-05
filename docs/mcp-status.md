@@ -13,7 +13,7 @@
 | **grepai** | ✅ Active | Semantic code search via Ollama nomic-embed-text model |
 | **web-search-prime** | ✅ Active | Z.ai web search via HTTP API |
 | **zai-mcp-server** | ✅ Active | Z.ai AI assistant and search |
-| **context7** | ✅ Active | Upstash context management |
+| **context7** | ✅ Active | Upstash library/tooling documentation lookup |
 
 ## Optional/Configured ⚠️
 
@@ -24,11 +24,18 @@
 
 ## Setup Instructions
 
-### context7 (Upstash Context Management) ✅
+### context7 (Upstash Documentation Lookup) ✅
 
 **Status:** Configured and working with API key
 
-Context7 provides persistent context management across sessions. No additional setup required.
+Context7 provides access to current library and tooling documentation. It can fetch the latest docs for frameworks, libraries, and APIs to ensure AI assistance uses up-to-date information.
+
+**Example usage:**
+- "Show me the latest Orleans documentation for grains"
+- "What's the current API for LiteDB in .NET 8?"
+- "Get the latest documentation for ASP.NET Core Minimal APIs"
+
+No additional setup required.
 
 ### Enable brave-search
 
@@ -97,5 +104,5 @@ To test if MCP servers are working, try using them in Claude Code:
 - The filesystem MCP provides access to `/home/mcjarvis/projects`
 - grepai provides semantic code search using Ollama embeddings
 - Z.ai servers provide enhanced web search and AI assistance
-- context7 provides persistent context management across sessions
+- context7 provides current library and tooling documentation lookup
 - For Windows/PowerShell environment, see `scripts/setup-mcp.ps1`
