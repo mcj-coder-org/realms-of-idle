@@ -11,14 +11,15 @@
 | **filesystem** | ✅ Available | Filesystem access via @modelcontextprotocol/server-filesystem |
 | **image-analysis** | ✅ Available | 4.5v MCP image analysis |
 | **grepai** | ✅ Active | Semantic code search via Ollama nomic-embed-text model |
+| **web-search-prime** | ✅ Active | Z.ai web search via HTTP API |
+| **zai-mcp-server** | ✅ Active | Z.ai AI assistant and search |
 
 ## Optional/Configured ⚠️
 
 | Server | Status | Requirements |
 |--------|--------|--------------|
-| **context7** | 🔴 Disabled | Requires `UPSTASH_REDIS_URL` environment variable |
+| **context7** | ⚠️ Configured | Requires `UPSTASH_REDIS_URL` environment variable |
 | **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from https://api.search.brave.com/register |
-| **grepai** | ✅ Active | Installed at `.claude/grepai`, using Ollama nomic-embed-text |
 
 ## Setup Instructions
 
@@ -64,6 +65,19 @@
 
 **To update index:** The grepai daemon runs in background and auto-updates when files change.
 
+### Z.ai Servers ✅
+
+**Status:** Configured and working
+
+**Servers:**
+- **web-search-prime:** HTTP-based web search via Z.ai API
+- **zai-mcp-server:** AI assistant and intelligent search
+
+**Configuration:** API keys configured in `.mcp.json`
+
+**Usage:**
+These servers provide enhanced web search and AI-assisted capabilities through Claude Code. No additional setup required.
+
 ## Configuration File
 
 Main configuration: `.mcp.json`
@@ -75,10 +89,15 @@ To test if MCP servers are working, try using them in Claude Code:
 1. **Web Reader:** Ask Claude to fetch and summarize a URL
 2. **Filesystem:** Ask Claude to list files in a directory
 3. **Image Analysis:** Ask Claude to analyze an image
+4. **grepai:** Ask Claude to semantically search code (e.g., "find code related to player health")
+5. **Z.ai Search:** Ask Claude to search the web for current information
 
 ## Notes
 
-- The web-reader MCP is pre-configured and working
+- **Working servers:** web-reader, filesystem, grepai, web-search-prime (Z.ai), zai-mcp-server (Z.ai)
+- The web-reader MCP provides web content fetching
 - The filesystem MCP provides access to `/home/mcjarvis/projects`
-- Additional MCP servers can be added to `.mcp.json` as needed
+- grepai provides semantic code search using Ollama embeddings
+- Z.ai servers provide enhanced web search and AI assistance
+- context7 requires UPSTASH_REDIS_URL environment variable to activate
 - For Windows/PowerShell environment, see `scripts/setup-mcp.ps1`
