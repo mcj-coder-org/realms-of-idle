@@ -1,23 +1,9 @@
----
-type: reference
-scope: high-level
-status: approved
-version: 1.0.0
-created: 2026-02-01
-updated: 2026-02-02
-subjects:
-  - agents
-  - documentation
-  - claude-code
-dependencies: []
----
-
 # AGENTS.md - Agent Documentation for Realms of Idle
 
 This document describes specialized agents available for working on the Realms of Idle project.
 
 ---
-
+<!-- VERBATIM: EXTREMELY_IMPORTANT -->
 <EXTREMELY_IMPORTANT>
 
 These apply during active development (implementation, fixes, refactoring), not exploration/research.
@@ -38,6 +24,7 @@ These apply during active development (implementation, fixes, refactoring), not 
 - ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
 
 </EXTREMELY_IMPORTANT>
+<!-- END VERBATIM -->
 
 ## GDD Designer - Game Design Documentation Specialist
 

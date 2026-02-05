@@ -1,20 +1,27 @@
----
-type: reference
-scope: high-level
-status: approved
-version: 1.3.0
-created: 2026-01-01
-updated: 2026-02-02
-subjects:
-  - development
-  - workflow
-  - guidelines
-dependencies: []
----
-
 # CLAUDE.md
 
+<!-- VERBATIM: EXTREMELY_IMPORTANT -->
 <EXTREMELY_IMPORTANT>
+
+These apply during active development (implementation, fixes, refactoring), not exploration/research.
+
+- NEVER skip or weaken GitHooks (--no-verify requires explicit user permission); always fix root causes
+- NEVER create merge commits; use rebase for linear history, then --ff-only for merges
+- ALWAYS use Conventional Commit messages
+- ALWAYS use git worktrees and feature branches (isolates work, prevents commits to main)
+- ALWAYS commit after self-verification but before declaring complete (run tests/build/lint first)
+- ALWAYS treat Warnings as Errors (configure in tooling)
+    - 0 Linting Issues
+    - 0 Build Warnings
+    - 0 Commit Warnings
+    - 0 Build Errors
+    - 0 Test Failures (tests must be run)
+- ALWAYS TDD + Automated Tests First during implementation (not during planning/exploration)
+- ALWAYS automate repetitive tasks (git hooks, scripts, tools); never manual repeat
+- ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
+
+</EXTREMELY_IMPORTANT>
+<!-- END VERBATIM -->
 **Scope**: Development only (not exploration)
 
 ## Standards Matrix
@@ -135,11 +142,13 @@ When delegating to a subagent via the Task tool, you MUST include:
 Copy the quality gates above VERBATIM into your task prompt:
 
 ```
+<!-- VERBATIM: Quality Gates -->
 Quality Gates (VERBATIM):
 1. Minimal Changes: Only implement what was specified
 2. Best Practices: Follow existing code patterns and conventions
 3. Testing: Write tests for all new functionality
 4. No Breaking Changes: Ensure existing features continue working
+<!-- END VERBATIM -->
 ```
 
 ### 2. Spec Reference
@@ -159,6 +168,57 @@ Always include the delivery plan path so the subagent can reference it:
 ```
 Delivery Plan: docs/delivery-plan.md
 ```
+
+### 4. Context Strategy: QMD, grepai, or CodeContext
+
+When delegating Tasks, provide appropriate context using the right search tool:
+
+<!-- VERBATIM: Context Strategy -->
+**QMD** (Semantic Documentation Search)
+- **Use for:** Design docs, specs, GDDs, README files, architecture docs
+- **When to include:** Task requires understanding design decisions, game mechanics, or system architecture
+- **Example prompts:**
+  - "Search QMD for 'idle progression system design'"
+  - "Find documentation on combat resolution mechanics"
+  - "What does the GDD say about prestige mechanics?"
+
+**grepai** (Semantic Code Search)
+- **Use for:** Finding specific implementations, functions, patterns in code
+- **When to include:** Task requires understanding existing code, locating related implementations
+- **Example prompts:**
+  - "Search grepai for 'player health management'"
+  - "Find code related to Orleans grain lifecycle"
+  - "Show me implementations of IGameService"
+
+**CodeContext** (Codebase Architecture Analysis)
+- **Use for:** Understanding overall structure, directory layouts, symbol extraction
+- **When to include:** Task requires high-level understanding of codebase organization
+- **Example prompts:**
+  - "Analyze the architecture of the Core domain layer"
+  - "Show me the structure of the Server.Api project"
+  - "What are the main components in the Maui client?"
+<!-- END VERBATIM -->
+
+**Decision Tree:**
+1. Need design requirements or game mechanics? → **QMD**
+2. Need existing code implementations? → **grepai**
+3. Need to understand codebase structure? → **CodeContext**
+
+**Including in Task Delegation:**
+
+When you need context, include search instructions in your task prompt:
+
+```
+## Context Gathering
+
+Before implementing, gather context using the appropriate tool:
+
+1. Search QMD for "idle progression system" to understand design requirements
+2. Search grepai for "IPlayerState" to find existing implementations
+3. Use CodeContext to analyze the Core domain structure
+```
+
+**Important:** Do NOT summarize search results in your task prompt. The subagent will perform the searches themselves. Include the search queries for them to execute.
 
 ## Post-Task Checklist
 
