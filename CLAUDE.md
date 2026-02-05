@@ -110,4 +110,74 @@ Examples:
 ---
 
 **Success**: Minimal diffs, clarifying questions before mistakes, no rewrites.
+
+---
+
+# Autonomous Development Execution Protocol
+
+This section defines the execution protocol for autonomous development tasks using subagents.
+
+## Quality Gates
+
+Every task must satisfy these quality gates before being marked complete:
+
+1. **Minimal Changes**: Code changes ONLY what was explicitly requested. No "helpful" additions or premature abstractions.
+2. **Best Practices**: Code follows existing project patterns, naming conventions, and error handling.
+3. **Testing**: Tests are written and passing for all new functionality.
+4. **No Breaking Changes**: Existing functionality remains intact.
+
+## Task Delegation Requirements
+
+When delegating to a subagent via the Task tool, you MUST include:
+
+### 1. Quality Gates (VERBATIM)
+
+Copy the quality gates above VERBATIM into your task prompt:
+
 ```
+Quality Gates (VERBATIM):
+1. Minimal Changes: Only implement what was specified
+2. Best Practices: Follow existing code patterns and conventions
+3. Testing: Write tests for all new functionality
+4. No Breaking Changes: Ensure existing features continue working
+```
+
+### 2. Spec Reference
+
+Include the relevant spec or design documentation. Include FULL requirements, not a summary:
+
+```
+## Spec Reference
+
+[Full spec section or design requirements]
+```
+
+### 3. Delivery Plan Path
+
+Always include the delivery plan path so the subagent can reference it:
+
+```
+Delivery Plan: docs/delivery-plan.md
+```
+
+## Post-Task Checklist
+
+After each Task completes, review before accepting:
+
+- [ ] Does this change ONLY what was requested?
+- [ ] Are there "helpful" additions not in the spec?
+- [ ] Can any lines be removed while still satisfying requirements?
+- [ ] Does code follow project patterns?
+- [ ] Are ALL quality gates satisfied?
+- [ ] Tests written and passing?
+- [ ] No breaking changes to existing code?
+
+## Git Workflow
+
+After verifying code quality:
+
+1. Review changes: `git diff`
+2. Stage relevant files: `git add <files>`
+3. Create a commit: `git commit`
+
+Uncommitted work may be lost. Commit before proceeding to next task.

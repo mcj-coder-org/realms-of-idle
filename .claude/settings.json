@@ -10,6 +10,50 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/PreToolUse.cjs"
+          }
+        ]
+      }
+    ],
+    "PostTask": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/PostTask.cjs"
+          }
+        ]
+      }
+    ],
+    "PreEdit": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/PreEdit.cjs"
+          }
+        ]
+      }
+    ],
+    "PostWrite": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/ArtifactTracker.cjs"
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
