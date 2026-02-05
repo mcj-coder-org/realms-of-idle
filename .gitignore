@@ -134,6 +134,7 @@ nul
 test-results/
 .claude/grepai.exe
 .claude/grepai
+.claude/state/
 
 # GitHub tokens and secrets
 .github.env
