@@ -13,24 +13,22 @@
 | **grepai** | ✅ Active | Semantic code search via Ollama nomic-embed-text model |
 | **web-search-prime** | ✅ Active | Z.ai web search via HTTP API |
 | **zai-mcp-server** | ✅ Active | Z.ai AI assistant and search |
+| **context7** | ✅ Active | Upstash context management |
 
 ## Optional/Configured ⚠️
 
 | Server | Status | Requirements |
 |--------|--------|--------------|
-| **context7** | ⚠️ Configured | Requires `UPSTASH_REDIS_URL` environment variable |
+| **context7** | ✅ Active | Upstash context management with API key |
 | **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from https://api.search.brave.com/register |
 
 ## Setup Instructions
 
-### Enable context7 (Upstash Context Management)
+### context7 (Upstash Context Management) ✅
 
-1. Create Upstash Redis database at https://upstash.com
-2. Set environment variable:
-   ```bash
-   export UPSTASH_REDIS_URL="your_redis_url_here"
-   ```
-3. Enable in `.mcp.json` by setting `"disabled": false`
+**Status:** Configured and working with API key
+
+Context7 provides persistent context management across sessions. No additional setup required.
 
 ### Enable brave-search
 
@@ -94,10 +92,10 @@ To test if MCP servers are working, try using them in Claude Code:
 
 ## Notes
 
-- **Working servers:** web-reader, filesystem, grepai, web-search-prime (Z.ai), zai-mcp-server (Z.ai)
+- **Working servers:** web-reader, filesystem, grepai, web-search-prime (Z.ai), zai-mcp-server (Z.ai), context7 (Upstash)
 - The web-reader MCP provides web content fetching
 - The filesystem MCP provides access to `/home/mcjarvis/projects`
 - grepai provides semantic code search using Ollama embeddings
 - Z.ai servers provide enhanced web search and AI assistance
-- context7 requires UPSTASH_REDIS_URL environment variable to activate
+- context7 provides persistent context management across sessions
 - For Windows/PowerShell environment, see `scripts/setup-mcp.ps1`
