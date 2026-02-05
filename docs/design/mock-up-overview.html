@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Realm Keeper - Retro Terminal Sprites</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        :root {
+            --bg-primary: #0a0e14;
+            --bg-secondary: #0f1419;
+            --bg-panel: rgba(13, 17, 23, 0.95);
+            --border-color: #1e3a29;
+            --text-primary: #c5d1c5;
+            --text-bright: #e8f5e8;
+            --text-dim: #5a6a5a;
+            --accent-green: #4ade80;
+            --accent-green-dark: #22c55e;
+            --accent-gold: #fbbf24;
+            --accent-red: #ef4444;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+            --accent-orange: #fb923c;
+            
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'VT323', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: calc(16px + var(--safe-top)) 16px calc(16px + var(--safe-bottom));
+            font-size: 18px;
+            line-height: 1.4;
+            image-rendering: pixelated;
+        }
+        
+        /* Scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            z-index: 9999;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px var(--accent-green);
+            letter-spacing: 4px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: var(--accent-gold);
+            margin: 24px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed var(--border-color);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+        
+        .sprite-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .sprite-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .sprite-card:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+        }
+        
+        .sprite-card canvas {
+            image-rendering: pixelated;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .sprite-card .label {
+            font-size: 14px;
+            color: var(--accent-green);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .size-note {
+            font-size: 14px;
+            color: var(--text-dim);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        /* Scale selector */
+        .scale-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .scale-btn {
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            padding: 8px 20px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .scale-btn:hover {
+            border-color: var(--accent-green);
+        }
+        
+        .scale-btn.active {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+        }
+        
+        /* Color mode toggle */
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .mode-btn {
+            font-family: 'VT323', monospace;
+            font-size: 16px;
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .mode-btn.active {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+    <h1>[ RETRO TERMINAL ]</h1>
+    <p class="subtitle">CRT aesthetic • Green phosphor • Monochrome option</p>
+    
+    <div class="mode-selector">
+        <button class="mode-btn active" data-mode="color">Color</button>
+        <button class="mode-btn" data-mode="green">Green Mono</button>
+        <button class="mode-btn" data-mode="amber">Amber Mono</button>
+    </div>
+    
+    <div class="scale-selector">
+        <button class="scale-btn" data-scale="1">[1x]</button>
+        <button class="scale-btn active" data-scale="2">[2x]</button>
+        <button class="scale-btn" data-scale="3">[3x]</button>
+    </div>
+    
+    <h2>> Humanoid Races</h2>
+    <p class="size-note">Base sprite: 16x20 pixels</p>
+    <div class="sprite-grid" id="humanoid-grid"></div>
+    
+    <h2>> Monster Races</h2>
+    <p class="size-note">Base sprite: 16x20 pixels (Dragon: 24x20)</p>
+    <div class="sprite-grid" id="monster-grid"></div>
+    
+    <h2>> Animals</h2>
+    <p class="size-note">Base sprite: 16x12 pixels</p>
+    <div class="sprite-grid" id="animal-grid"></div>
+
+    <script>
+        // Color palettes
+        const palettes = {
+            color: {
+                // Skin tones
+                skinLight: '#f4b6b2',
+                skinMed: '#e8b89d',
+                skinDark: '#d4a574',
+                skinElf: '#f4e4bc',
+                // Hair
+                hairBrown: '#8b5a2b',
+                hairBlonde: '#feae34',
+                hairOrange: '#f77622',
+                hairBlack: '#1a1c2c',
+                // Clothing
+                blue: '#60a5fa',
+                green: '#4ade80',
+                greenDark: '#22c55e',
+                red: '#ef4444',
+                brown: '#8b5a2b',
+                brownDark: '#5d4037',
+                // Armor
+                metalLight: '#9ca3af',
+                metalDark: '#6b7280',
+                metalBlack: '#3a3a4a',
+                // Monster colors
+                goblinGreen: '#4ade80',
+                goblinDark: '#22c55e',
+                trollGreen: '#7c9a6e',
+                trollDark: '#6b8a5e',
+                orcGreen: '#5a7247',
+                orcDark: '#4a6237',
+                dragonRed: '#ef4444',
+                dragonDark: '#b91c1c',
+                // Accent
+                gold: '#fbbf24',
+                white: '#f4f4f4',
+                black: '#1a1c2c',
+                // Animals
+                wolfGray: '#6b7280',
+                wolfDark: '#4b5563',
+                deerBrown: '#c4956a',
+                deerLight: '#e8d5b5',
+                cream: '#f4e4bc'
+            },
+            green: {
+                skinLight: '#7bc96f',
+                skinMed: '#5a9a4f',
+                skinDark: '#4a8a3f',
+                skinElf: '#8bd97f',
+                hairBrown: '#3a6a2f',
+                hairBlonde: '#9bd98f',
+                hairOrange: '#6baa5f',
+                hairBlack: '#1a3a14',
+                blue: '#5aba6f',
+                green: '#4ade80',
+                greenDark: '#3ace70',
+                red: '#6bba5f',
+                brown: '#4a7a3f',
+                brownDark: '#3a5a2f',
+                metalLight: '#7baa6f',
+                metalDark: '#5a8a4f',
+                metalBlack: '#2a4a24',
+                goblinGreen: '#6bda7f',
+                goblinDark: '#4aba5f',
+                trollGreen: '#5a9a4f',
+                trollDark: '#4a8a3f',
+                orcGreen: '#4a7a3f',
+                orcDark: '#3a6a2f',
+                dragonRed: '#6bba5f',
+                dragonDark: '#4a9a3f',
+                gold: '#8bda8f',
+                white: '#9bea9f',
+                black: '#1a3a14',
+                wolfGray: '#5a8a4f',
+                wolfDark: '#3a6a2f',
+                deerBrown: '#6a9a5f',
+                deerLight: '#8bba7f',
+                cream: '#8bca7f'
+            },
+            amber: {
+                skinLight: '#e8c078',
+                skinMed: '#c8a058',
+                skinDark: '#a88048',
+                skinElf: '#f8d088',
+                hairBrown: '#785020',
+                hairBlonde: '#f8d088',
+                hairOrange: '#d8a048',
+                hairBlack: '#382810',
+                blue: '#c8a058',
+                green: '#d8b068',
+                greenDark: '#b89048',
+                red: '#d8a048',
+                brown: '#987040',
+                brownDark: '#684020',
+                metalLight: '#c8a868',
+                metalDark: '#a88848',
+                metalBlack: '#584828',
+                goblinGreen: '#d8c078',
+                goblinDark: '#b8a058',
+                trollGreen: '#a89048',
+                trollDark: '#988038',
+                orcGreen: '#988048',
+                orcDark: '#786028',
+                dragonRed: '#d8a048',
+                dragonDark: '#b88038',
+                gold: '#f8d088',
+                white: '#f8e8a8',
+                black: '#382810',
+                wolfGray: '#a88848',
+                wolfDark: '#786028',
+                deerBrown: '#b89058',
+                deerLight: '#d8c088',
+                cream: '#e8d088'
+            }
+        };
+        
+        let currentPalette = palettes.color;
+        let currentScale = 2;
+        
+        // Sprite definitions
+        function getSprites(p) {
+            return {
+                humanoids: [
+                    {
+                        name: 'Human',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.hairBrown;
+                            ctx.fillRect(5, 0, 6, 4);
+                            ctx.fillStyle = p.skinLight;
+                            ctx.fillRect(5, 3, 6, 6);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(6, 5, 2, 2);
+                            ctx.fillRect(9, 5, 2, 2);
+                            ctx.fillStyle = p.blue;
+                            ctx.fillRect(4, 9, 8, 6);
+                            ctx.fillStyle = p.skinLight;
+                            ctx.fillRect(2, 9, 2, 5);
+                            ctx.fillRect(12, 9, 2, 5);
+                            ctx.fillStyle = p.brownDark;
+                            ctx.fillRect(5, 15, 3, 5);
+                            ctx.fillRect(9, 15, 3, 5);
+                        }
+                    },
+                    {
+                        name: 'Elf',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.hairBlonde;
+                            ctx.fillRect(4, 0, 8, 3);
+                            ctx.fillRect(3, 3, 2, 8);
+                            ctx.fillRect(11, 3, 2, 8);
+                            ctx.fillStyle = p.skinElf;
+                            ctx.fillRect(2, 4, 2, 3);
+                            ctx.fillRect(12, 4, 2, 3);
+                            ctx.fillRect(1, 3, 1, 2);
+                            ctx.fillRect(14, 3, 1, 2);
+                            ctx.fillRect(5, 2, 6, 7);
+                            ctx.fillStyle = p.green;
+                            ctx.fillRect(6, 4, 2, 2);
+                            ctx.fillRect(9, 4, 2, 2);
+                            ctx.fillStyle = p.greenDark;
+                            ctx.fillRect(4, 9, 8, 6);
+                            ctx.fillStyle = p.skinElf;
+                            ctx.fillRect(2, 9, 2, 5);
+                            ctx.fillRect(12, 9, 2, 5);
+                            ctx.fillStyle = p.brownDark;
+                            ctx.fillRect(5, 15, 3, 5);
+                            ctx.fillRect(9, 15, 3, 5);
+                        }
+                    },
+                    {
+                        name: 'Dwarf',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.metalDark;
+                            ctx.fillRect(4, 0, 8, 4);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(6, 1, 4, 2);
+                            ctx.fillStyle = p.skinMed;
+                            ctx.fillRect(4, 4, 8, 5);
+                            ctx.fillStyle = p.hairOrange;
+                            ctx.fillRect(4, 7, 8, 5);
+                            ctx.fillRect(3, 9, 2, 3);
+                            ctx.fillRect(11, 9, 2, 3);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(5, 5, 2, 2);
+                            ctx.fillRect(9, 5, 2, 2);
+                            ctx.fillStyle = p.metalDark;
+                            ctx.fillRect(3, 12, 10, 4);
+                            ctx.fillStyle = p.metalLight;
+                            ctx.fillRect(5, 12, 2, 4);
+                            ctx.fillRect(9, 12, 2, 4);
+                            ctx.fillStyle = p.brownDark;
+                            ctx.fillRect(4, 16, 4, 4);
+                            ctx.fillRect(9, 16, 4, 4);
+                        }
+                    },
+                    {
+                        name: 'Goblin',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.goblinGreen;
+                            ctx.fillRect(1, 3, 3, 4);
+                            ctx.fillRect(12, 3, 3, 4);
+                            ctx.fillRect(4, 1, 8, 8);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(5, 3, 3, 3);
+                            ctx.fillRect(9, 3, 3, 3);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(6, 4, 2, 2);
+                            ctx.fillRect(10, 4, 2, 2);
+                            ctx.fillStyle = p.goblinDark;
+                            ctx.fillRect(7, 6, 2, 2);
+                            ctx.fillStyle = p.brown;
+                            ctx.fillRect(5, 9, 6, 5);
+                            ctx.fillStyle = p.goblinGreen;
+                            ctx.fillRect(3, 9, 2, 4);
+                            ctx.fillRect(11, 9, 2, 4);
+                            ctx.fillRect(6, 14, 2, 6);
+                            ctx.fillRect(9, 14, 2, 6);
+                        }
+                    },
+                    {
+                        name: 'Troll',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.trollGreen;
+                            ctx.fillRect(3, 0, 10, 9);
+                            ctx.fillStyle = p.trollDark;
+                            ctx.fillRect(1, 2, 2, 3);
+                            ctx.fillRect(13, 2, 2, 3);
+                            ctx.fillRect(4, 2, 8, 2);
+                            ctx.fillStyle = p.red;
+                            ctx.fillRect(5, 4, 2, 2);
+                            ctx.fillRect(9, 4, 2, 2);
+                            ctx.fillStyle = p.trollDark;
+                            ctx.fillRect(7, 5, 2, 3);
+                            ctx.fillStyle = p.cream;
+                            ctx.fillRect(5, 7, 2, 2);
+                            ctx.fillRect(9, 7, 2, 2);
+                            ctx.fillStyle = p.trollGreen;
+                            ctx.fillRect(2, 9, 12, 7);
+                            ctx.fillStyle = p.brown;
+                            ctx.fillRect(5, 14, 6, 3);
+                            ctx.fillStyle = p.trollDark;
+                            ctx.fillRect(3, 16, 4, 4);
+                            ctx.fillRect(9, 16, 4, 4);
+                        }
+                    },
+                    {
+                        name: 'Orc',
+                        width: 16, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.orcGreen;
+                            ctx.fillRect(4, 0, 8, 8);
+                            ctx.fillStyle = p.orcDark;
+                            ctx.fillRect(2, 2, 2, 4);
+                            ctx.fillRect(12, 2, 2, 4);
+                            ctx.fillStyle = p.red;
+                            ctx.fillRect(5, 2, 2, 2);
+                            ctx.fillRect(9, 2, 2, 2);
+                            ctx.fillStyle = p.orcDark;
+                            ctx.fillRect(6, 4, 4, 3);
+                            ctx.fillStyle = p.cream;
+                            ctx.fillRect(4, 5, 2, 3);
+                            ctx.fillRect(10, 5, 2, 3);
+                            ctx.fillStyle = p.metalBlack;
+                            ctx.fillRect(3, 8, 10, 7);
+                            ctx.fillStyle = p.metalDark;
+                            ctx.fillRect(2, 8, 2, 3);
+                            ctx.fillRect(12, 8, 2, 3);
+                            ctx.fillStyle = p.orcDark;
+                            ctx.fillRect(4, 15, 3, 5);
+                            ctx.fillRect(9, 15, 3, 5);
+                        }
+                    },
+                    {
+                        name: 'Dragon',
+                        width: 24, height: 20,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.dragonDark;
+                            ctx.fillRect(0, 4, 4, 8);
+                            ctx.fillRect(20, 4, 4, 8);
+                            ctx.fillStyle = p.dragonRed;
+                            ctx.fillRect(1, 5, 3, 6);
+                            ctx.fillRect(20, 5, 3, 6);
+                            ctx.fillRect(8, 6, 8, 10);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(10, 8, 4, 7);
+                            ctx.fillStyle = p.dragonRed;
+                            ctx.fillRect(10, 2, 4, 5);
+                            ctx.fillRect(8, 0, 8, 5);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(7, 0, 2, 3);
+                            ctx.fillRect(15, 0, 2, 3);
+                            ctx.fillRect(9, 1, 2, 2);
+                            ctx.fillRect(13, 1, 2, 2);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(10, 2, 1, 1);
+                            ctx.fillRect(13, 2, 1, 1);
+                            ctx.fillStyle = p.dragonDark;
+                            ctx.fillRect(10, 3, 4, 2);
+                            ctx.fillRect(8, 14, 3, 6);
+                            ctx.fillRect(13, 14, 3, 6);
+                            ctx.fillStyle = p.dragonRed;
+                            ctx.fillRect(16, 12, 4, 3);
+                            ctx.fillRect(20, 11, 3, 2);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(22, 10, 2, 3);
+                        }
+                    }
+                ],
+                animals: [
+                    {
+                        name: 'Wolf',
+                        width: 16, height: 12,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.wolfGray;
+                            ctx.fillRect(4, 4, 10, 5);
+                            ctx.fillRect(0, 2, 5, 5);
+                            ctx.fillStyle = p.metalLight;
+                            ctx.fillRect(0, 4, 2, 3);
+                            ctx.fillStyle = p.wolfDark;
+                            ctx.fillRect(1, 0, 2, 3);
+                            ctx.fillRect(4, 0, 2, 3);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(2, 3, 2, 2);
+                            ctx.fillStyle = p.wolfDark;
+                            ctx.fillRect(5, 9, 2, 3);
+                            ctx.fillRect(8, 9, 2, 3);
+                            ctx.fillRect(11, 9, 2, 3);
+                            ctx.fillStyle = p.wolfGray;
+                            ctx.fillRect(14, 3, 2, 4);
+                        }
+                    },
+                    {
+                        name: 'Deer',
+                        width: 16, height: 12,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.deerBrown;
+                            ctx.fillRect(4, 4, 9, 5);
+                            ctx.fillRect(0, 3, 5, 4);
+                            ctx.fillStyle = p.brown;
+                            ctx.fillRect(1, 0, 1, 3);
+                            ctx.fillRect(0, 0, 2, 1);
+                            ctx.fillRect(4, 0, 1, 3);
+                            ctx.fillRect(4, 0, 2, 1);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(2, 4, 2, 2);
+                            ctx.fillRect(0, 5, 1, 1);
+                            ctx.fillStyle = p.deerLight;
+                            ctx.fillRect(6, 7, 5, 2);
+                            ctx.fillStyle = p.deerBrown;
+                            ctx.fillRect(5, 9, 2, 3);
+                            ctx.fillRect(10, 9, 2, 3);
+                            ctx.fillStyle = p.deerLight;
+                            ctx.fillRect(13, 4, 2, 2);
+                        }
+                    },
+                    {
+                        name: 'Sheep',
+                        width: 16, height: 12,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.white;
+                            ctx.fillRect(3, 2, 10, 7);
+                            ctx.fillRect(2, 3, 12, 5);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(0, 3, 4, 4);
+                            ctx.fillStyle = p.white;
+                            ctx.fillRect(1, 4, 1, 1);
+                            ctx.fillStyle = p.metalDark;
+                            ctx.fillRect(0, 2, 2, 2);
+                            ctx.fillRect(3, 2, 2, 2);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(4, 9, 2, 3);
+                            ctx.fillRect(7, 9, 2, 3);
+                            ctx.fillRect(10, 9, 2, 3);
+                        }
+                    },
+                    {
+                        name: 'Chicken',
+                        width: 16, height: 12,
+                        draw: (ctx) => {
+                            ctx.fillStyle = p.cream;
+                            ctx.fillRect(5, 4, 7, 5);
+                            ctx.fillStyle = p.red;
+                            ctx.fillRect(12, 2, 2, 2);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(13, 3, 2, 2);
+                            ctx.fillStyle = p.green;
+                            ctx.fillRect(14, 4, 2, 2);
+                            ctx.fillStyle = p.cream;
+                            ctx.fillRect(2, 3, 4, 4);
+                            ctx.fillStyle = p.red;
+                            ctx.fillRect(3, 1, 3, 3);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(0, 4, 2, 2);
+                            ctx.fillStyle = p.black;
+                            ctx.fillRect(3, 4, 1, 1);
+                            ctx.fillStyle = p.red;
+                            ctx.fillRect(2, 6, 2, 2);
+                            ctx.fillStyle = p.gold;
+                            ctx.fillRect(6, 9, 1, 3);
+                            ctx.fillRect(9, 9, 1, 3);
+                            ctx.fillRect(5, 11, 3, 1);
+                            ctx.fillRect(8, 11, 3, 1);
+                        }
+                    }
+                ]
+            };
+        }
+        
+        function drawSprites() {
+            const sprites = getSprites(currentPalette);
+            
+            document.getElementById('humanoid-grid').innerHTML = '';
+            document.getElementById('monster-grid').innerHTML = '';
+            document.getElementById('animal-grid').innerHTML = '';
+            
+            sprites.humanoids.slice(0, 4).forEach(sprite => {
+                createSpriteCard(sprite, 'humanoid-grid');
+            });
+            
+            sprites.humanoids.slice(3).forEach(sprite => {
+                createSpriteCard(sprite, 'monster-grid');
+            });
+            
+            sprites.animals.forEach(sprite => {
+                createSpriteCard(sprite, 'animal-grid');
+            });
+        }
+        
+        function createSpriteCard(sprite, gridId) {
+            const card = document.createElement('div');
+            card.className = 'sprite-card';
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = sprite.width * currentScale;
+            canvas.height = sprite.height * currentScale;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = false;
+            ctx.scale(currentScale, currentScale);
+            sprite.draw(ctx);
+            
+            const label = document.createElement('div');
+            label.className = 'label';
+            label.textContent = sprite.name;
+            
+            card.appendChild(canvas);
+            card.appendChild(label);
+            document.getElementById(gridId).appendChild(card);
+        }
+        
+        // Scale selector
+        document.querySelectorAll('.scale-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentScale = parseInt(btn.dataset.scale);
+                drawSprites();
+            });
+        });
+        
+        // Mode selector
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentPalette = palettes[btn.dataset.mode];
+                drawSprites();
+            });
+        });
+        
+        // Initial draw
+        drawSprites();
+    </script>
+</body>
+</html>

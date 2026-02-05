@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Layouts - Realms of Idle UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e14;
+            --bg-secondary: #0f1419;
+            --bg-panel: rgba(13, 17, 23, 0.98);
+            --bg-hover: rgba(74, 222, 128, 0.1);
+            --text-primary: #c5d1c5;
+            --text-bright: #e8f5e8;
+            --text-dim: #5a6a5a;
+            --accent-primary: #4ade80;
+            --accent-secondary: #22c55e;
+            --accent-gold: #fbbf24;
+            --accent-red: #ef4444;
+            --accent-blue: #60a5fa;
+            --border-color: #1e3a29;
+            --border-bright: #4ade80;
+            --glow-primary: 0 0 10px rgba(74, 222, 128, 0.3);
+            --glow-text: 0 0 10px var(--accent-primary);
+            --transition-normal: 200ms;
+            --space-sm: 8px;
+            --space-md: 12px;
+            --space-lg: 16px;
+            --space-xl: 24px;
+        }
+
+        [data-theme="amber"] {
+            --accent-primary: #fbbf24;
+            --accent-secondary: #f59e0b;
+            --border-color: #3a2e1a;
+            --border-bright: #fbbf24;
+            --bg-hover: rgba(251, 191, 36, 0.1);
+            --glow-primary: 0 0 10px rgba(251, 191, 36, 0.3);
+            --glow-text: 0 0 10px var(--accent-primary);
+        }
+
+        [data-theme="color"] {
+            --accent-primary: #4ade80;
+            --border-color: #2a3a2a;
+            --border-bright: #4ade80;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 18px;
+            line-height: 1.4;
+            image-rendering: pixelated;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            z-index: 9999;
+        }
+
+        /* Screen Selector */
+        .screen-selector {
+            position: fixed;
+            top: var(--space-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: var(--space-md);
+            z-index: 1000;
+            background: var(--bg-panel);
+            border: 2px solid var(--border-color);
+            padding: var(--space-sm) var(--space-md);
+        }
+
+        .screen-btn {
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            padding: var(--space-sm) var(--space-lg);
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .screen-btn:hover {
+            color: var(--accent-primary);
+        }
+
+        .screen-btn.active {
+            color: var(--accent-primary);
+            text-shadow: var(--glow-text);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            z-index: 1000;
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .theme-btn {
+            font-family: 'VT323', monospace;
+            font-size: 14px;
+            padding: 4px 12px;
+            background: var(--bg-panel);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .theme-btn:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .theme-btn.active {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Scene Container */
+        .scene-container {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scene-container.active {
+            display: block;
+        }
+
+        /* Game Scene Background */
+        .game-scene {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(180deg, #1a2a1a 0%, #0f1419 100%);
+        }
+
+        /* Scene Canvas */
+        .scene-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Scene Objects (Interactive Elements) */
+        .scene-object {
+            position: absolute;
+            cursor: pointer;
+            transition: filter var(--transition-normal);
+            z-index: 10;
+        }
+
+        .scene-object:hover {
+            filter: brightness(1.3) drop-shadow(0 0 10px var(--accent-primary));
+        }
+
+        .scene-object.focused {
+            filter: brightness(1.5) drop-shadow(0 0 15px var(--accent-gold));
+        }
+
+        /* Debug mode - show clickable regions */
+        body.show-clickable-regions .scene-object,
+        body.show-clickable-regions .character-sprite {
+            outline: 2px dashed var(--accent-red) !important;
+            outline-offset: 2px;
+            background: rgba(239, 68, 68, 0.1) !important;
+        }
+
+        /* Characters in Scene */
+        .character-sprite {
+            position: absolute;
+            width: 64px;
+            height: 80px;
+            cursor: pointer;
+            transition: transform var(--transition-normal);
+            z-index: 15;
+        }
+
+        .character-sprite:hover {
+            transform: scale(1.1);
+        }
+
+        .character-sprite canvas {
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+        }
+
+        .character-label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            white-space: nowrap;
+            color: var(--text-primary);
+            text-shadow: 1px 1px 2px black;
+        }
+
+        /* Floating Labels above objects */
+        .floating-label {
+            position: absolute;
+            font-size: 14px;
+            color: var(--accent-primary);
+            text-shadow: 1px 1px 2px black;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* Context Menu / Tooltip Overlay */
+        .context-overlay {
+            position: absolute;
+            background: var(--bg-panel);
+            border: 2px solid var(--accent-primary);
+            padding: var(--space-md);
+            min-width: 200px;
+            max-width: 300px;
+            z-index: 100;
+            box-shadow: var(--glow-primary);
+            display: none;
+        }
+
+        .context-overlay.visible {
+            display: block;
+            animation: fadeIn 0.15s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .context-title {
+            font-size: 20px;
+            color: var(--accent-gold);
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .context-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            padding: var(--space-xs) 0;
+        }
+
+        .context-actions {
+            margin-top: var(--space-md);
+            padding-top: var(--space-sm);
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            font-family: 'VT323', monospace;
+            font-size: 16px;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            text-align: left;
+            transition: all var(--transition-normal);
+        }
+
+        .action-btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+        }
+
+        .action-btn.primary {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Focus Indicator Ring */
+        .focus-ring {
+            position: absolute;
+            border: 3px solid var(--accent-gold);
+            border-radius: 4px;
+            pointer-events: none;
+            animation: pulse 1.5s infinite;
+            display: none;
+        }
+
+        .focus-ring.visible {
+            display: block;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Top HUD */
+        .top-hud {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-md) var(--space-lg);
+            background: linear-gradient(180deg, rgba(10, 14, 20, 0.9) 0%, transparent 100%);
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .hud-left, .hud-right {
+            display: flex;
+            gap: var(--space-md);
+            pointer-events: auto;
+        }
+
+        .hud-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 16px;
+            background: var(--bg-panel);
+            padding: 4px 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hud-stat-icon {
+            font-size: 18px;
+        }
+
+        .hud-stat-value {
+            color: var(--accent-gold);
+        }
+
+        /* Bottom HUD */
+        .bottom-hud {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: linear-gradient(0deg, rgba(10, 14, 20, 0.9) 0%, transparent 100%);
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .bottom-hud > * {
+            pointer-events: auto;
+        }
+
+        /* Quick Action Bar */
+        .action-bar {
+            display: flex;
+            gap: var(--space-xs);
+            background: var(--bg-panel);
+            padding: var(--space-xs);
+            border: 2px solid var(--border-color);
+        }
+
+        .action-slot {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .action-slot:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-primary);
+        }
+
+        .action-slot .cooldown {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .action-slot .key-hint {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+
+        /* Notification Toast */
+        .toast-container {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            z-index: 200;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--bg-panel);
+            border: 2px solid var(--accent-primary);
+            padding: var(--space-sm) var(--space-md);
+            font-size: 16px;
+            animation: toastSlide 0.3s ease;
+        }
+
+        @keyframes toastSlide {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Mini Map */
+        .minimap {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 150px;
+            height: 150px;
+            background: var(--bg-panel);
+            border: 2px solid var(--border-color);
+            z-index: 50;
+        }
+
+        .minimap-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Progress Bar Mini */
+        .progress-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+        }
+
+        .progress-mini-track {
+            width: 60px;
+            height: 8px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-mini-fill {
+            height: 100%;
+            background: var(--accent-primary);
+        }
+
+        /* Help Panel */
+        .help-panel {
+            position: fixed;
+            bottom: var(--space-lg);
+            left: var(--space-lg);
+            background: var(--bg-panel);
+            border: 2px solid var(--border-color);
+            padding: var(--space-md);
+            font-size: 14px;
+            max-width: 200px;
+            z-index: 50;
+        }
+
+        .help-panel-title {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .help-key {
+            display: inline-block;
+            background: var(--bg-secondary);
+            padding: 2px 6px;
+            border: 1px solid var(--border-color);
+            margin-right: 4px;
+        }
+
+        /* Click indicator animation */
+        .click-indicator {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: clickRipple 0.5s ease forwards;
+        }
+
+        @keyframes clickRipple {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* Idle Progress Indicator */
+        .idle-progress {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .idle-progress-bar {
+            width: 40px;
+            height: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            margin-top: 2px;
+        }
+
+        .idle-progress-fill {
+            height: 100%;
+            background: var(--accent-secondary);
+            transition: width var(--transition-normal);
+        }
+
+        .idle-progress-time {
+            font-size: 12px;
+            color: var(--accent-secondary);
+            margin-top: 2px;
+        }
+
+        /* Info Panel (large overlay) */
+        .info-panel {
+            position: absolute;
+            background: var(--bg-panel);
+            border: 3px solid var(--accent-gold);
+            padding: var(--space-lg);
+            min-width: 300px;
+            max-width: 400px;
+            z-index: 150;
+            display: none;
+        }
+
+        .info-panel.visible {
+            display: block;
+        }
+
+        .info-panel-title {
+            font-size: 24px;
+            color: var(--accent-gold);
+            text-shadow: var(--glow-text);
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+
+        .info-panel-section {
+            margin-bottom: var(--space-md);
+        }
+
+        .info-panel-section-title {
+            font-size: 14px;
+            color: var(--accent-secondary);
+            margin-bottom: var(--space-xs);
+            text-transform: uppercase;
+        }
+
+        .info-panel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+        }
+
+        .info-stat {
+            background: var(--bg-secondary);
+            padding: var(--space-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-stat-label {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .info-stat-value {
+            font-size: 18px;
+            color: var(--accent-primary);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-red);
+        }
+
+        /* Multiple choice overlay */
+        .choice-overlay {
+            position: absolute;
+            background: var(--bg-panel);
+            border: 2px solid var(--accent-primary);
+            padding: var(--space-md);
+            z-index: 100;
+            min-width: 180px;
+            display: none;
+        }
+
+        .choice-overlay.visible {
+            display: block;
+        }
+
+        .choice-item {
+            padding: var(--space-sm);
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .choice-item:hover {
+            background: var(--bg-hover);
+        }
+
+        .choice-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Status icons above characters */
+        .status-icons {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2px;
+        }
+
+        .status-icon {
+            width: 16px;
+            height: 16px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+
+        /* Tablet (768px and below) */
+        @media (max-width: 768px) {
+            .screen-selector {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: var(--space-xs) var(--space-sm);
+                max-width: 90%;
+            }
+
+            .screen-btn {
+                font-size: 14px;
+                padding: 4px var(--space-sm);
+            }
+
+            .theme-toggle {
+                top: var(--space-sm);
+                right: var(--space-sm);
+                flex-wrap: wrap;
+                max-width: 120px;
+            }
+
+            .theme-btn {
+                font-size: 12px;
+                padding: 2px 8px;
+            }
+
+            /* Top HUD - stack vertically */
+            .top-hud {
+                flex-direction: column;
+                gap: var(--space-xs);
+                padding: var(--space-xs) var(--space-sm);
+            }
+
+            .hud-left, .hud-right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .hud-stat {
+                font-size: 12px;
+                padding: 2px 4px;
+            }
+
+            .hud-stat-icon {
+                font-size: 14px;
+            }
+
+            /* Bottom HUD - smaller action bar */
+            .bottom-hud {
+                padding: var(--space-xs);
+            }
+
+            .action-bar {
+                gap: 2px;
+                padding: 2px;
+            }
+
+            .action-slot {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .minimap {
+                width: 100px;
+                height: 100px;
+                bottom: var(--space-sm);
+                right: var(--space-sm);
+            }
+
+            .help-panel {
+                display: none; /* Hide help panel on mobile to save space */
+            }
+
+            /* Characters - smaller */
+            .character-sprite {
+                width: 48px;
+                height: 60px;
+            }
+
+            .character-label {
+                font-size: 11px;
+                bottom: -16px;
+            }
+
+            /* Floating labels - smaller */
+            .floating-label {
+                font-size: 11px;
+            }
+
+            /* Scene objects - auto scale */
+            .scene-object {
+                transform-origin: center center;
+            }
+
+            /* Info panel - full width on mobile */
+            .info-panel {
+                position: fixed !important;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%);
+                min-width: unset !important;
+                max-width: 90vw !important;
+                max-height: 70vh !important;
+                overflow-y: auto;
+                bottom: auto !important;
+                right: auto !important;
+            }
+
+            /* Context overlay - full width */
+            .context-overlay {
+                position: fixed !important;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%);
+                min-width: unset !important;
+                max-width: 90vw !important;
+            }
+
+            /* Idle progress - smaller */
+            .idle-progress-bar {
+                width: 30px;
+                height: 4px;
+            }
+
+            .idle-progress-time {
+                font-size: 10px;
+            }
+
+            /* Toast - adjust position */
+            .toast-container {
+                bottom: 60px;
+            }
+
+            .toast {
+                font-size: 14px;
+                padding: var(--space-xs) var(--space-sm);
+            }
+        }
+
+        /* Mobile (480px and below) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .screen-selector {
+                width: 90%;
+            }
+
+            .screen-btn {
+                font-size: 12px;
+                padding: 2px 6px;
+            }
+
+            /* Hide theme toggle on very small screens - use theme menu in game */
+            .theme-toggle {
+                top: 50px;
+                right: 4px;
+            }
+
+            /* Compact HUD */
+            .top-hud {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hud-left, .hud-right {
+                gap: 2px;
+            }
+
+            .hud-stat {
+                font-size: 10px;
+                padding: 1px 3px;
+            }
+
+            .hud-stat-icon {
+                font-size: 12px;
+            }
+
+            /* Hide minimap on very small screens */
+            .minimap {
+                display: none;
+            }
+
+            /* Even smaller characters */
+            .character-sprite {
+                width: 40px;
+                height: 50px;
+            }
+
+            .character-label {
+                font-size: 10px;
+                bottom: -14px;
+            }
+
+            /* Smaller floating labels */
+            .floating-label {
+                font-size: 10px;
+            }
+
+            /* Compact action bar */
+            .action-bar {
+                gap: 1px;
+            }
+
+            .action-slot {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            .action-slot .key-hint {
+                font-size: 8px;
+            }
+
+            /* Full screen info panel */
+            .info-panel {
+                max-width: 95vw !important;
+                max-height: 80vh !important;
+                padding: var(--space-sm);
+            }
+
+            .info-panel-title {
+                font-size: 18px;
+            }
+
+            .info-panel-section-title {
+                font-size: 12px;
+            }
+
+            .info-stat {
+                padding: 4px;
+            }
+
+            .info-stat-label {
+                font-size: 10px;
+            }
+
+            .info-stat-value {
+                font-size: 14px;
+            }
+
+            /* Level up panel adjustments */
+            #levelUpPanel {
+                max-width: 95vw !important;
+                max-height: 85vh !important;
+                overflow-y: auto;
+                padding: var(--space-sm) !important;
+            }
+
+            #levelUpPanel .info-panel-title {
+                font-size: 16px;
+            }
+
+            /* Smaller status icons */
+            .status-icon {
+                width: 12px;
+                height: 12px;
+                font-size: 8px;
+            }
+
+            /* Adjust toast position */
+            .toast-container {
+                bottom: 50px;
+            }
+        }
+
+        /* Landscape mobile - specific adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .top-hud {
+                padding: 2px var(--space-sm);
+            }
+
+            .bottom-hud {
+                padding: 2px;
+            }
+
+            .action-bar {
+                padding: 2px;
+            }
+
+            .action-slot {
+                width: 32px;
+                height: 32px;
+            }
+
+            /* Move screen selector to side */
+            .screen-selector {
+                top: var(--space-sm);
+                left: var(--space-sm);
+                transform: none;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .theme-toggle {
+                top: var(--space-sm);
+                right: var(--space-sm);
+            }
+
+            /* Compact info panel for landscape */
+            .info-panel {
+                max-height: 40vh !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button class="theme-btn active" data-theme="green">GREEN</button>
+        <button class="theme-btn" data-theme="amber">AMBER</button>
+        <button class="theme-btn" data-theme="color">COLOR</button>
+    </div>
+
+    <!-- Screen Selector -->
+    <div class="screen-selector">
+        <button class="screen-btn active" data-scene="inn">🏠 INN</button>
+        <button class="screen-btn" data-scene="guild">⚔ GUILD</button>
+        <button class="screen-btn" data-scene="levelup">⭐ LEVEL UP</button>
+    </div>
+
+    <!-- Top HUD -->
+    <div class="top-hud">
+        <div class="hud-left">
+            <div class="hud-stat">
+                <span class="hud-stat-icon">💰</span>
+                <span class="hud-stat-value" id="playerGold">2,450</span>
+            </div>
+            <div class="hud-stat">
+                <span class="hud-stat-icon">⭐</span>
+                <span class="hud-stat-value">Lv.12</span>
+            </div>
+        </div>
+        <div class="hud-right">
+            <div class="hud-stat">
+                <span>🏺 Inn Lv.8</span>
+            </div>
+            <div class="hud-stat">
+                <span>⚔ Guild Rank 3</span>
+            </div>
+            <div class="hud-stat">
+                <span class="hud-stat-icon">⚡</span>
+                <span>+5% XP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INN SCENE ==================== -->
+    <div class="scene-container active" id="inn-scene">
+        <canvas id="innCanvas" class="scene-canvas"></canvas>
+
+        <!-- Interactive Objects in Inn -->
+        <!-- Kitchen Area: canvas at w*0.1, h*0.38, w*0.2, h*0.25 -->
+        <div class="scene-object" id="inn-kitchen" style="left: 10%; top: 38%; width: 20%; height: 25%;" data-object="kitchen">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🍳 Kitchen</div>
+            <div class="idle-progress" style="top: -40px; left: 50%; transform: translateX(-50%);">
+                <div class="idle-progress-bar"><div class="idle-progress-fill" style="width: 65%;"></div></div>
+                <div class="idle-progress-time">12 min</div>
+            </div>
+        </div>
+
+        <!-- Bar Counter: canvas at w*0.35, h*0.55, w*0.35, h*0.08 -->
+        <div class="scene-object" id="inn-bar" style="left: 35%; top: 55%; width: 35%; height: 8%;" data-object="bar">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🍶 Bar Counter</div>
+        </div>
+
+        <!-- Tables: canvas at fixed pixel positions -->
+        <div class="scene-object" id="inn-table1" style="left: 24%; top: 42%; width: 70px; height: 40px;" data-object="table"></div>
+        <div class="scene-object" id="inn-table2" style="left: 54%; top: 37%; width: 70px; height: 40px;" data-object="table"></div>
+        <div class="scene-object" id="inn-table3" style="left: 69%; top: 47%; width: 70px; height: 40px;" data-object="table"></div>
+
+        <!-- Rooms Door: canvas at w*0.88, h*0.33, 50x70 -->
+        <div class="scene-object" id="inn-rooms" style="left: 88%; top: 33%; width: 50px; height: 70px;" data-object="rooms">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🚪 Rooms</div>
+        </div>
+
+        <!-- Front Door: canvas at w*0.45, h*0.18, 70x(h*0.08) -->
+        <div class="scene-object" id="inn-entrance" style="left: 45%; top: 18%; width: 70px; height: 8%;" data-object="entrance">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🚪 Entrance</div>
+        </div>
+
+        <!-- Characters in Inn -->
+        <div class="character-sprite" id="inn-barbara" style="left: 50%; top: 55%;" data-character="barbara">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Barbara</div>
+            <div class="status-icons">
+                <div class="status-icon">💚</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="inn-tom" style="left: 18%; top: 50%;" data-character="tom">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Tom</div>
+        </div>
+
+        <div class="character-sprite" id="inn-guest1" style="left: 28%; top: 42%;" data-character="guest">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Marcus</div>
+            <div class="idle-progress" style="top: -30px; left: 50%; transform: translateX(-50%);">
+                <div class="idle-progress-bar"><div class="idle-progress-fill" style="width: 85%;"></div></div>
+                <div class="idle-progress-time" style="color: var(--accent-gold);">Eating</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="inn-guest2" style="left: 58%; top: 37%;" data-character="guest">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Elara</div>
+        </div>
+
+        <div class="character-sprite" id="inn-guest3" style="right: 12%; top: 40%;" data-character="guest">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Merchant</div>
+            <div class="status-icons">
+                <div class="status-icon">💤</div>
+            </div>
+        </div>
+
+        <!-- Focus Ring -->
+        <div class="focus-ring" id="focusRing"></div>
+
+        <!-- Context Overlay -->
+        <div class="context-overlay" id="contextOverlay"></div>
+
+        <!-- Info Panel -->
+        <div class="info-panel" id="infoPanel">
+            <button class="close-btn" onclick="closeInfoPanel()">✕</button>
+            <div class="info-panel-title" id="infoTitle">Title</div>
+            <div class="info-panel-section">
+                <div class="info-panel-section-title">Stats</div>
+                <div class="info-panel-grid" id="infoStats"></div>
+            </div>
+            <div class="info-panel-section" id="infoActionsSection">
+                <div class="info-panel-section-title">Actions</div>
+                <div class="context-actions" id="infoActions"></div>
+            </div>
+        </div>
+
+        <!-- Minimap -->
+        <div class="minimap">
+            <canvas id="innMinimap" class="minimap-canvas"></canvas>
+        </div>
+
+        <!-- Help Panel -->
+        <div class="help-panel">
+            <div class="help-panel-title">Controls</div>
+            <div><span class="help-key">Click</span> Select/Focus</div>
+            <div><span class="help-key">ESC</span> Clear focus</div>
+            <div><span class="help-key">Space</span> Context menu</div>
+            <div><span class="help-key">F1</span> Toggle debug</div>
+        </div>
+    </div>
+
+    <!-- ==================== GUILD SCENE ==================== -->
+    <div class="scene-container" id="guild-scene">
+        <canvas id="guildCanvas" class="scene-canvas"></canvas>
+
+        <!-- Guild Hall Objects -->
+        <!-- Quest Board: canvas at w*0.28, h*0.08, 110x70 -->
+        <div class="scene-object" id="guild-board" style="left: 28%; top: 8%; width: 110px; height: 70px;" data-object="questboard">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">📜 Quest Board</div>
+            <div class="status-icons" style="top: -35px; left: 50%; transform: translateX(-50%);">
+                <div class="status-icon" style="background: var(--accent-gold);">3</div>
+            </div>
+        </div>
+
+        <!-- Armory: canvas at w*0.10, h*0.50, 90x60 -->
+        <div class="scene-object" id="guild-armory" style="left: 10%; top: 50%; width: 90px; height: 60px;" data-object="armory">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">⚔ Armory</div>
+        </div>
+
+        <!-- Barracks: canvas at w*0.75, h*0.45, 120x80 -->
+        <div class="scene-object" id="guild-barracks" style="left: 75%; top: 45%; width: 120px; height: 80px;" data-object="barracks">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🛏 Barracks</div>
+        </div>
+
+        <!-- Throne: canvas at w*0.40, h*0.20, 100x50 -->
+        <div class="scene-object" id="guild-throne" style="left: 40%; top: 20%; width: 100px; height: 50px;" data-object="throne">
+            <div class="floating-label" style="left: 50%; bottom: 100%; transform: translateX(-50%);">👑 Guildmaster Seat</div>
+        </div>
+
+        <!-- Guild Characters -->
+        <div class="character-sprite" id="guild-thorn" style="left: 45%; top: 40%;" data-character="adventurer">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Thorn</div>
+            <div class="status-icons">
+                <div class="status-icon">⚔</div>
+                <div class="status-icon">✓</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="guild-lyra" style="left: 60%; top: 35%;" data-character="adventurer">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Lyra</div>
+            <div class="status-icons">
+                <div class="status-icon">🛡</div>
+                <div class="status-icon">⏳</div>
+            </div>
+            <div class="idle-progress" style="top: -40px;">
+                <div class="idle-progress-bar"><div class="idle-progress-fill" style="width: 60%;"></div></div>
+                <div class="idle-progress-time">Questing</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="guild-vex" style="right: 18%; top: 55%;" data-character="adventurer">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Vex</div>
+            <div class="status-icons">
+                <div class="status-icon">💤</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="guild-rowan" style="left: 25%; top: 45%;" data-character="adventurer">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Rowan</div>
+            <div class="status-icons">
+                <div class="status-icon">🏹</div>
+                <div class="status-icon">✓</div>
+            </div>
+        </div>
+
+        <div class="character-sprite" id="guild-npc" style="left: 48%; top: 28%;" data-character="npc">
+            <canvas width="64" height="80"></canvas>
+            <div class="character-label">Guildmaster</div>
+        </div>
+
+        <!-- Focus Ring -->
+        <div class="focus-ring" id="focusRing2"></div>
+
+        <!-- Context Overlay -->
+        <div class="context-overlay" id="contextOverlay2"></div>
+
+        <!-- Info Panel -->
+        <div class="info-panel" id="infoPanel2">
+            <button class="close-btn" onclick="closeInfoPanel2()">✕</button>
+            <div class="info-panel-title" id="infoTitle2">Title</div>
+            <div class="info-panel-section">
+                <div class="info-panel-section-title">Stats</div>
+                <div class="info-panel-grid" id="infoStats2"></div>
+            </div>
+            <div class="info-panel-section" id="infoActionsSection2">
+                <div class="info-panel-section-title">Actions</div>
+                <div class="context-actions" id="infoActions2"></div>
+            </div>
+        </div>
+
+        <!-- Minimap -->
+        <div class="minimap">
+            <canvas id="guildMinimap" class="minimap-canvas"></canvas>
+        </div>
+
+        <!-- Help Panel -->
+        <div class="help-panel">
+            <div class="help-panel-title">Controls</div>
+            <div><span class="help-key">Click</span> Select/Focus</div>
+            <div><span class="help-key">R</span> Recruit</div>
+            <div><span class="help-key">Q</span> Quest Board</div>
+            <div><span class="help-key">F1</span> Toggle debug</div>
+        </div>
+    </div>
+
+    <!-- ==================== LEVEL UP SCENE (Rest) ==================== -->
+    <div class="scene-container" id="levelup-scene">
+        <canvas id="levelupCanvas" class="scene-canvas"></canvas>
+
+        <!-- Rest Scene - Simple Camp/Room -->
+        <div class="scene-object" id="rest-bed" style="left: 45%; top: 50%; width: 100px; height: 80px;" data-object="bed">
+            <div class="floating-label" style="left: 50%; top: -20px; transform: translateX(-50%);">🛏 Resting...</div>
+        </div>
+
+        <!-- Resting Character -->
+        <div class="character-sprite" id="rest-player" style="left: 47%; top: 52%; width: 80px; height: 64px;" data-character="player">
+            <canvas width="80" height="64"></canvas>
+        </div>
+
+        <!-- XP Progress Floating -->
+        <div style="position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center;">
+            <div style="font-size: 48px; color: var(--accent-gold); text-shadow: var(--glow-text);">⭐</div>
+            <div style="font-size: 20px; color: var(--accent-primary);">LEVEL UP EVENT</div>
+            <div style="font-size: 14px; color: var(--text-dim); margin-top: 8px;">During rest...</div>
+        </div>
+
+        <!-- Level Up Modal Overlay -->
+        <div class="info-panel visible" id="levelUpPanel" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 400px;">
+            <div class="info-panel-title">⭐ LEVEL UP EVENT ⭐</div>
+            <div style="text-align: center; margin-bottom: 16px; color: var(--text-dim); font-size: 14px;">
+                XP thresholds reached! Choose your rewards:
+            </div>
+
+            <!-- New Class Offers -->
+            <div style="margin-bottom: 16px;">
+                <div style="color: var(--accent-gold); margin-bottom: 8px; font-size: 14px; text-transform: uppercase;">> New Class Offers:</div>
+                <div style="background: var(--bg-primary); padding: 12px; margin-bottom: 8px; border: 1px solid var(--accent-primary);">
+                    <label style="display: flex; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" checked id="class-warrior">
+                        <div style="flex: 1;">
+                            <div style="color: var(--accent-primary);">☑ [Warrior]</div>
+                            <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">
+                                combat.melee ≥ 1,000 (you have 1,450)
+                            </div>
+                            <div style="font-size: 12px; margin-top: 4px;">
+                                Skills: Power Strike, Parry
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Existing Class Level Ups -->
+            <div style="margin-bottom: 16px;">
+                <div style="color: var(--accent-gold); margin-bottom: 8px; font-size: 14px; text-transform: uppercase;">> Class Level Up:</div>
+                <div style="background: var(--bg-primary); padding: 12px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>[Blacksmith] 3 → 4</span>
+                        <span style="color: var(--accent-secondary);">Required</span>
+                    </div>
+                    <div style="font-size: 12px; color: var(--text-dim);">Skill: Efficient Forge</div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="context-actions" id="levelUpActions">
+                <button class="action-btn primary" onclick="acceptLevelUp()">[✓] Accept Selected</button>
+                <button class="action-btn" onclick="deferLevelUp()">[→] Defer to Backlog</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom HUD -->
+    <div class="bottom-hud">
+        <div class="action-bar">
+            <div class="action-slot" data-action="focus"><span class="key-hint">F</span>🎯</div>
+            <div class="action-slot" data-action="interact"><span class="key-hint">E</span>👆</div>
+            <div class="action-slot" data-action="talk"><span class="key-hint">T</span>💬</div>
+            <div class="action-slot" data-action="inventory"><span class="key-hint">I</span>🎒</div>
+            <div class="action-slot" data-action="map"><span class="key-hint">M</span>🗺</div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // ==================== THEME SWITCHER ====================
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.documentElement.setAttribute('data-theme', btn.dataset.theme);
+            });
+        });
+
+        // ==================== SCREEN SELECTOR ====================
+        document.querySelectorAll('.screen-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.screen-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.scene-container').forEach(s => s.classList.remove('active'));
+                btn.classList.add('active');
+                const scene = document.getElementById(btn.dataset.scene + '-scene');
+                if (scene) {
+                    scene.classList.add('active');
+                    if (btn.dataset.scene === 'inn') initInnScene();
+                    if (btn.dataset.scene === 'guild') initGuildScene();
+                    if (btn.dataset.scene === 'levelup') initLevelUpScene();
+                }
+            });
+        });
+
+        // ==================== PALETTE ====================
+        const palettes = {
+            green: {
+                skinLight: '#f4b6b2', skinMed: '#e8b89d', skinDark: '#d4a574',
+                hairBrown: '#8b5a2b', hairBlonde: '#feae34',
+                blue: '#60a5fa', green: '#4ade80', greenDark: '#22c55e',
+                brown: '#8b5a2b', brownDark: '#5d4037',
+                white: '#f4f4f4', black: '#1a1c2c',
+                red: '#ef4444', gold: '#fbbf24'
+            },
+            amber: {
+                skinLight: '#e8c078', skinMed: '#c8a058', skinDark: '#a88048',
+                hairBrown: '#785020', hairBlonde: '#f8d088',
+                blue: '#c8a058', green: '#d8b068',
+                brown: '#987040', brownDark: '#684020',
+                white: '#f8e8a8', black: '#382810',
+                red: '#d8a048', gold: '#f8d088'
+            }
+        };
+
+        // ==================== SPRITE DRAWING ====================
+        function drawSprite(ctx, type, x, y, scale, palette) {
+            const p = palette || palettes.green;
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(scale, scale);
+
+            if (type === 'barbara') {
+                // Waitress female
+                ctx.fillStyle = p.hairBlonde;
+                ctx.fillRect(5, 0, 6, 4);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.black;
+                ctx.fillRect(6, 5, 2, 2);
+                ctx.fillRect(9, 5, 2, 2);
+                ctx.fillStyle = p.blue;
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(2, 9, 2, 5);
+                ctx.fillRect(12, 9, 2, 5);
+                ctx.fillStyle = p.brown;
+                ctx.fillRect(5, 15, 3, 5);
+                ctx.fillRect(9, 15, 3, 5);
+                // Apron
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(4, 9, 8, 4);
+            } else if (type === 'tom') {
+                // Cook male
+                ctx.fillStyle = p.hairOrange;
+                ctx.fillRect(5, 0, 6, 4);
+                ctx.fillStyle = p.skinMed;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.black;
+                ctx.fillRect(6, 5, 2, 2);
+                ctx.fillRect(9, 5, 2, 2);
+                ctx.fillStyle = p.brownDark;
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.skinMed;
+                ctx.fillRect(2, 9, 2, 5);
+                ctx.fillRect(12, 9, 2, 5);
+                ctx.fillStyle = p.black;
+                ctx.fillRect(5, 15, 3, 5);
+                ctx.fillRect(9, 15, 3, 5);
+                // Hat
+                ctx.fillStyle = p.white;
+                ctx.fillRect(4, 0, 8, 3);
+            } else if (type === 'warrior') {
+                // Warrior with sword
+                ctx.fillStyle = p.hairBrown;
+                ctx.fillRect(5, 0, 6, 4);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.black;
+                ctx.fillRect(6, 5, 2, 2);
+                ctx.fillRect(9, 5, 2, 2);
+                ctx.fillStyle = p.blue;
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(2, 9, 2, 5);
+                ctx.fillRect(12, 9, 2, 5);
+                ctx.fillStyle = p.brownDark;
+                ctx.fillRect(5, 15, 3, 5);
+                ctx.fillRect(9, 15, 3, 5);
+                // Sword
+                ctx.fillStyle = p.grey || '#9ca3af';
+                ctx.fillRect(14, 8, 2, 12);
+            } else if (type === 'guest') {
+                // Generic guest
+                ctx.fillStyle = p.hairBrown;
+                ctx.fillRect(5, 0, 6, 4);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.black;
+                ctx.fillRect(6, 5, 2, 2);
+                ctx.fillRect(9, 5, 2, 2);
+                ctx.fillStyle = p.green;
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(2, 9, 2, 5);
+                ctx.fillRect(12, 9, 2, 5);
+                ctx.fillStyle = p.brownDark;
+                ctx.fillRect(5, 15, 3, 5);
+                ctx.fillRect(9, 15, 3, 5);
+            } else if (type === 'mage') {
+                // Mage/Elara
+                ctx.fillStyle = p.hairBlonde;
+                ctx.fillRect(4, 0, 8, 3);
+                ctx.fillRect(3, 3, 2, 6);
+                ctx.fillRect(11, 3, 2, 6);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(5, 2, 6, 7);
+                ctx.fillStyle = p.blue;
+                ctx.fillRect(6, 4, 2, 2);
+                ctx.fillRect(9, 4, 2, 2);
+                ctx.fillStyle = p.purple || '#a78bfa';
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(2, 9, 2, 5);
+                ctx.fillRect(12, 9, 2, 5);
+                ctx.fillStyle = p.brownDark;
+                ctx.fillRect(5, 15, 3, 5);
+                ctx.fillRect(9, 15, 3, 5);
+            } else if (type === 'paladin') {
+                // Paladin/Lyra
+                ctx.fillStyle = p.hairBlonde;
+                ctx.fillRect(5, 0, 6, 4);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.blue;
+                ctx.fillRect(4, 9, 8, 6);
+                ctx.fillStyle = p.gold;
+                ctx.fillRect(6, 10, 4, 2);
+            } else if (type === 'ranger') {
+                // Ranger/Rowan
+                ctx.fillStyle = p.brown;
+                ctx.fillRect(5, 0, 6, 3);
+                ctx.fillStyle = p.skinMed;
+                ctx.fillRect(5, 2, 6, 7);
+                ctx.fillStyle = p.green;
+                ctx.fillRect(4, 9, 8, 6);
+            } else if (type === 'npc') {
+                // Guildmaster
+                ctx.fillStyle = p.grey || '#888';
+                ctx.fillRect(4, 0, 8, 4);
+                ctx.fillStyle = p.skinMed;
+                ctx.fillRect(5, 3, 6, 6);
+                ctx.fillStyle = p.gold;
+                ctx.fillRect(6, 1, 4, 2);
+                ctx.fillStyle = p.red;
+                ctx.fillRect(4, 9, 8, 6);
+            } else if (type === 'resting') {
+                // Laying down sprite
+                ctx.fillStyle = p.hairBrown;
+                ctx.fillRect(0, 8, 6, 4);
+                ctx.fillStyle = p.skinLight;
+                ctx.fillRect(0, 10, 6, 5);
+                ctx.fillStyle = p.blue;
+                ctx.fillRect(0, 14, 6, 5);
+                ctx.fillStyle = p.brown;
+                ctx.fillRect(0, 18, 6, 4);
+            }
+
+            ctx.restore();
+        }
+
+        // ==================== SCENE INITIALIZATION ====================
+        function initInnScene() {
+            const canvas = document.getElementById('innCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Draw Inn interior
+            drawInnBackground(ctx, canvas.width, canvas.height);
+
+            // Draw character sprites
+            document.querySelectorAll('#inn-scene .character-sprite canvas').forEach(spriteCanvas => {
+                const char = spriteCanvas.parentElement;
+                const spriteCtx = spriteCanvas.getContext('2d');
+                spriteCtx.clearRect(0, 0, 64, 80);
+                const type = char.dataset.character;
+                if (type === 'barbara') drawSprite(spriteCtx, 'barbara', 16, 0, 2);
+                else if (type === 'tom') drawSprite(spriteCtx, 'tom', 16, 0, 2);
+                else if (type === 'guest') drawSprite(spriteCtx, 'guest', 16, 0, 2);
+                else drawSprite(spriteCtx, 'guest', 16, 0, 2);
+            });
+
+            // Draw minimap
+            drawInnMinimap();
+        }
+
+        function initGuildScene() {
+            const canvas = document.getElementById('guildCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Draw Guild interior
+            drawGuildBackground(ctx, canvas.width, canvas.height);
+
+            // Draw character sprites
+            document.querySelectorAll('#guild-scene .character-sprite canvas').forEach(spriteCanvas => {
+                const char = spriteCanvas.parentElement;
+                const spriteCtx = spriteCanvas.getContext('2d');
+                spriteCtx.clearRect(0, 0, 64, 80);
+                const type = char.dataset.character;
+                if (type === 'adventurer') {
+                    const name = char.id.replace('guild-', '');
+                    if (name === 'thorn') drawSprite(spriteCtx, 'warrior', 16, 0, 2);
+                    else if (name === 'lyra') drawSprite(spriteCtx, 'paladin', 16, 0, 2);
+                    else if (name === 'vex') drawSprite(spriteCtx, 'mage', 16, 0, 2);
+                    else if (name === 'rowan') drawSprite(spriteCtx, 'ranger', 16, 0, 2);
+                    else drawSprite(spriteCtx, 'guest', 16, 0, 2);
+                } else if (type === 'npc') {
+                    drawSprite(spriteCtx, 'npc', 16, 0, 2);
+                }
+            });
+
+            // Draw minimap
+            drawGuildMinimap();
+        }
+
+        function initLevelUpScene() {
+            const canvas = document.getElementById('levelupCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Draw camp/room background
+            drawRestBackground(ctx, canvas.width, canvas.height);
+
+            // Draw resting character
+            const restCanvas = document.querySelector('#rest-player canvas');
+            if (restCanvas) {
+                const spriteCtx = restCanvas.getContext('2d');
+                spriteCtx.clearRect(0, 0, 80, 64);
+                drawSprite(spriteCtx, 'resting', 0, 0, 3);
+            }
+        }
+
+        // ==================== BACKGROUND DRAWING ====================
+        function drawInnBackground(ctx, w, h) {
+            // Floor
+            ctx.fillStyle = '#1a2a1a';
+            ctx.fillRect(0, h * 0.35, w, h * 0.65);
+
+            // Floorboards
+            ctx.strokeStyle = '#253525';
+            ctx.lineWidth = 2;
+            for (let i = 0; i < h * 0.65; i += 30) {
+                ctx.beginPath();
+                ctx.moveTo(0, h * 0.35 + i);
+                ctx.lineTo(w, h * 0.35 + i);
+                ctx.stroke();
+            }
+
+            // Walls
+            ctx.fillStyle = '#2a3a2a';
+            ctx.fillRect(0, 0, w, h * 0.35);
+
+            // Wall paneling
+            ctx.strokeStyle = '#1a2a1a';
+            ctx.lineWidth = 3;
+            for (let i = 0; i < w; i += 150) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, h * 0.35);
+                ctx.stroke();
+            }
+            ctx.beginPath();
+            ctx.moveTo(0, h * 0.15);
+            ctx.lineTo(w, h * 0.15);
+            ctx.stroke();
+
+            // Kitchen area (back left)
+            ctx.fillStyle = '#1a2515';
+            ctx.fillRect(w * 0.1, h * 0.38, w * 0.2, h * 0.25);
+            ctx.strokeStyle = '#2a3525';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(w * 0.1, h * 0.38, w * 0.2, h * 0.25);
+
+            // Bar counter
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(w * 0.35, h * 0.55, w * 0.35, h * 0.08);
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.35, h * 0.55, w * 0.35, h * 0.02);
+
+            // Tables
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(w * 0.24, h * 0.42, 70, 40);
+            ctx.fillRect(w * 0.54, h * 0.37, 70, 40);
+            ctx.fillRect(w * 0.69, h * 0.47, 70, 40);
+
+            // Chairs
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.26, h * 0.48, 20, 25);
+            ctx.fillRect(w * 0.30, h * 0.38, 20, 25);
+            ctx.fillRect(w * 0.56, h * 0.43, 20, 25);
+            ctx.fillRect(w * 0.60, h * 0.33, 20, 25);
+            ctx.fillRect(w * 0.71, h * 0.53, 20, 25);
+
+            // Fireplace
+            ctx.fillStyle = '#1a0a0a';
+            ctx.fillRect(w * 0.45, h * 0.36, 60, 50);
+            ctx.fillStyle = '#ff6622';
+            ctx.globalAlpha = 0.3 + Math.sin(Date.now() / 500) * 0.1;
+            ctx.fillRect(w * 0.47, h * 0.40, 50, 35);
+            ctx.globalAlpha = 1;
+
+            // Windows
+            ctx.fillStyle = '#0a1a2a';
+            ctx.fillRect(w * 0.15, h * 0.08, 80, 100);
+            ctx.fillRect(w * 0.75, h * 0.08, 80, 100);
+            // Window light
+            ctx.fillStyle = 'rgba(74, 222, 128, 0.05)';
+            ctx.fillRect(w * 0.15, h * 0.08, 80, 100);
+            ctx.fillRect(w * 0.75, h * 0.08, 80, 100);
+
+            // Door entrance
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.45, h * 0.18, 70, h * 0.08);
+            ctx.fillStyle = '#1a0a00';
+            ctx.fillRect(w * 0.47, h * 0.20, 30, h * 0.06);
+
+            // Rooms door
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.88, h * 0.33, 50, 70);
+
+            // Candlelight glow
+            const gradient = ctx.createRadialGradient(w * 0.5, h * 0.5, 0, w * 0.5, h * 0.5, 200);
+            gradient.addColorStop(0, 'rgba(251, 191, 36, 0.05)');
+            gradient.addColorStop(1, 'transparent');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, h * 0.35, w, h * 0.65);
+        }
+
+        function drawGuildBackground(ctx, w, h) {
+            // Stone floor
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, h * 0.3, w, h * 0.7);
+
+            // Floor pattern
+            ctx.fillStyle = '#252525';
+            for (let x = 0; x < w; x += 60) {
+                for (let y = h * 0.3; y < h; y += 60) {
+                    if ((x / 60 + y / 60) % 2 === 0) {
+                        ctx.fillRect(x, y, 60, 60);
+                    }
+                }
+            }
+
+            // Stone walls
+            ctx.fillStyle = '#2a2a2a';
+            ctx.fillRect(0, 0, w, h * 0.3);
+
+            // Stone texture on walls
+            ctx.fillStyle = '#353535';
+            for (let i = 0; i < 20; i++) {
+                const x = Math.random() * w;
+                const y = Math.random() * h * 0.25;
+                ctx.fillRect(x, y, 20 + Math.random() * 30, 10 + Math.random() * 15);
+            }
+
+            // Quest board on wall
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(w * 0.28, h * 0.08, 110, 70);
+            ctx.fillStyle = '#e8d5b5';
+            ctx.fillRect(w * 0.30, h * 0.10, 90, 50);
+
+            // Banners
+            ctx.fillStyle = '#4a2525';
+            ctx.fillRect(w * 0.20, h * 0.10, 30, 80);
+            ctx.fillStyle = '#254a4a';
+            ctx.fillRect(w * 0.75, h * 0.10, 30, 80);
+
+            // Guildmaster throne area
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(w * 0.40, h * 0.20, 100, 50);
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.42, h * 0.22, 60, 35);
+
+            // Armory area
+            ctx.fillStyle = '#2a1a1a';
+            ctx.fillRect(w * 0.10, h * 0.50, 90, 60);
+            // Weapon racks
+            ctx.fillStyle = '#1a0a0a';
+            ctx.fillRect(w * 0.12, h * 0.52, 15, 40);
+            ctx.fillRect(w * 0.18, h * 0.52, 15, 40);
+
+            // Barracks area
+            ctx.fillStyle = '#2a1a1a';
+            ctx.fillRect(w * 0.75, h * 0.45, 120, 80);
+            // Beds
+            ctx.fillStyle = '#1a0a0a';
+            ctx.fillRect(w * 0.77, h * 0.50, 40, 25);
+            ctx.fillRect(w * 0.85, h * 0.50, 40, 25);
+
+            // Torches
+            ctx.fillStyle = '#ff6622';
+            ctx.globalAlpha = 0.5 + Math.sin(Date.now() / 300) * 0.2;
+            ctx.fillRect(w * 0.08, h * 0.15, 8, 15);
+            ctx.fillRect(w * 0.90, h * 0.15, 8, 15);
+            ctx.globalAlpha = 1;
+
+            // Ambient lighting
+            const gradient = ctx.createRadialGradient(w * 0.5, h * 0.5, 0, w * 0.5, h * 0.5, 300);
+            gradient.addColorStop(0, 'rgba(251, 191, 36, 0.03)');
+            gradient.addColorStop(1, 'transparent');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, w, h);
+        }
+
+        function drawRestBackground(ctx, w, h) {
+            // Dark camp background
+            ctx.fillStyle = '#0a0a14';
+            ctx.fillRect(0, 0, w, h);
+
+            // Night sky
+            ctx.fillStyle = '#0a0a20';
+            ctx.fillRect(0, 0, w, h * 0.5);
+
+            // Stars
+            ctx.fillStyle = '#ffffff';
+            for (let i = 0; i < 50; i++) {
+                const x = (i * 137) % w;
+                const y = (i * 73) % (h * 0.4);
+                const size = (i % 3) + 1;
+                ctx.globalAlpha = 0.3 + (i % 5) * 0.1;
+                ctx.fillRect(x, y, size, size);
+            }
+            ctx.globalAlpha = 1;
+
+            // Moon
+            ctx.fillStyle = '#fffef0';
+            ctx.beginPath();
+            ctx.arc(w * 0.8, h * 0.15, 30, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Ground
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, h * 0.5, w, h * 0.5);
+
+            // Campfire
+            const fireX = w * 0.35;
+            const fireY = h * 0.55;
+            const fireGradient = ctx.createRadialGradient(fireX, fireY, 0, fireX, fireY, 80);
+            fireGradient.addColorStop(0, 'rgba(255, 100, 0, 0.4)');
+            fireGradient.addColorStop(0.5, 'rgba(255, 50, 0, 0.2)');
+            fireGradient.addColorStop(1, 'transparent');
+            ctx.fillStyle = fireGradient;
+            ctx.fillRect(fireX - 80, fireY - 80, 160, 160);
+
+            // Flickering flames
+            ctx.fillStyle = '#ff6600';
+            ctx.globalAlpha = 0.6 + Math.sin(Date.now() / 200) * 0.3;
+            ctx.beginPath();
+            ctx.moveTo(fireX - 15, fireY + 20);
+            ctx.lineTo(fireX, fireY - 10);
+            ctx.lineTo(fireX + 15, fireY + 20);
+            ctx.fill();
+            ctx.fillStyle = '#ffaa00';
+            ctx.beginPath();
+            ctx.moveTo(fireX - 8, fireY + 15);
+            ctx.lineTo(fireX, fireY);
+            ctx.lineTo(fireX + 8, fireY + 15);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+
+            // Tent
+            ctx.fillStyle = '#3a3a2a';
+            ctx.beginPath();
+            ctx.moveTo(w * 0.45, h * 0.65);
+            ctx.lineTo(w * 0.50, h * 0.40);
+            ctx.lineTo(w * 0.55, h * 0.65);
+            ctx.closePath();
+            ctx.fill();
+
+            // Tent opening
+            ctx.fillStyle = '#1a1a1a';
+            ctx.beginPath();
+            ctx.arc(w * 0.50, h * 0.62, 15, 0, Math.PI);
+            ctx.fill();
+
+            // Bed roll
+            ctx.fillStyle = '#4a3a2a';
+            ctx.fillRect(w * 0.47, h * 0.52, 60, 25);
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(w * 0.47, h * 0.52, 60, 5);
+
+            // Rest zone glow
+            const restGlow = ctx.createRadialGradient(w * 0.50, h * 0.55, 0, w * 0.50, h * 0.55, 100);
+            restGlow.addColorStop(0, 'rgba(74, 222, 128, 0.1)');
+            restGlow.addColorStop(1, 'transparent');
+            ctx.fillStyle = restGlow;
+            ctx.fillRect(w * 0.30, h * 0.35, w * 0.40, h * 0.40);
+        }
+
+        // ==================== MINIMAP ====================
+        function drawInnMinimap() {
+            const canvas = document.getElementById('innMinimap');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 150;
+            canvas.height = 150;
+
+            ctx.fillStyle = '#0f1419';
+            ctx.fillRect(0, 0, 150, 150);
+
+            // Rooms
+            ctx.strokeStyle = '#1e3a29';
+            ctx.strokeRect(10, 30, 130, 100);
+
+            // Kitchen
+            ctx.fillStyle = '#1a2515';
+            ctx.fillRect(15, 80, 30, 40);
+
+            // Bar area
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(50, 70, 50, 50);
+
+            // Rooms
+            ctx.fillStyle = '#2a1a1a';
+            ctx.fillRect(105, 35, 30, 45);
+
+            // Player position
+            ctx.fillStyle = '#4ade80';
+            ctx.beginPath();
+            ctx.arc(75, 90, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Character dots
+            ctx.fillStyle = '#60a5fa';
+            ctx.beginPath();
+            ctx.arc(40, 75, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(85, 65, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(55, 85, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(110, 50, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawGuildMinimap() {
+            const canvas = document.getElementById('guildMinimap');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 150;
+            canvas.height = 150;
+
+            ctx.fillStyle = '#0f1419';
+            ctx.fillRect(0, 0, 150, 150);
+
+            // Main hall
+            ctx.strokeStyle = '#1e3a29';
+            ctx.strokeRect(10, 20, 130, 110);
+
+            // Quest board
+            ctx.fillStyle = '#3a2a1a';
+            ctx.fillRect(40, 30, 25, 20);
+
+            // Throne
+            ctx.fillStyle = '#2a1a0a';
+            ctx.fillRect(62, 35, 25, 15);
+
+            // Armory
+            ctx.fillRect(15, 70, 25, 25);
+
+            // Barracks
+            ctx.fillRect(100, 60, 35, 35);
+
+            // Player
+            ctx.fillStyle = '#4ade80';
+            ctx.beginPath();
+            ctx.arc(75, 75, 4, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // ==================== INTERACTION DATA ====================
+        const interactionData = {
+            kitchen: {
+                title: '🍳 Kitchen',
+                stats: { 'Status': 'Cooking', 'Progress': '65%', 'Chefs': '1' },
+                actions: [
+                    { label: 'Check Menu', primary: true },
+                    { label: 'Add Recipe' },
+                    { label: 'Upgrade Kitchen' }
+                ]
+            },
+            bar: {
+                title: '🍶 Bar Counter',
+                stats: { 'Capacity': '8 seats', 'Occupied': '3', 'Supplies': 'Adequate' },
+                actions: [
+                    { label: 'Tend Bar', primary: true },
+                    { label: 'Restock Drinks' },
+                    { label: 'View Menu' }
+                ]
+            },
+            table: {
+                title: '🪑 Table',
+                stats: { 'Seats': '4', 'Status': 'Available' },
+                actions: [
+                    { label: 'Seat Guest', primary: true },
+                    { label: 'Clear Table' },
+                    { label: 'Add Decoration' }
+                ]
+            },
+            rooms: {
+                title: '🚪 Guest Rooms',
+                stats: { 'Total': '3 rooms', 'Occupied': '1', 'Revenue': '150g/night' },
+                actions: [
+                    { label: 'View Guests', primary: true },
+                    { label: 'Upgrade Rooms' },
+                    { label: 'Set Prices' }
+                ]
+            },
+            entrance: {
+                title: '🚪 Entrance',
+                stats: { 'Status': 'Open', 'Reputation': '⭐⭐⭐⭐☆' },
+                actions: [
+                    { label: 'Advertise', primary: true },
+                    { label: 'Close Inn' },
+                    { label: 'View Reviews' }
+                ]
+            },
+            questboard: {
+                title: '📜 Quest Board',
+                stats: { 'Available': '3 quests', 'Active': '2 quests', 'Slots': '2/4' },
+                actions: [
+                    { label: 'View Quests', primary: true },
+                    { label: 'Post Contract' },
+                    { label: 'Refresh Board' }
+                ]
+            },
+            armory: {
+                title: '⚔ Armory',
+                stats: { 'Weapons': '5', 'Armor': '3', 'Potions': '8' },
+                actions: [
+                    { label: 'Manage Equipment', primary: true },
+                    { label: 'Craft Gear' },
+                    { label: 'Upgrade Armory' }
+                ]
+            },
+            barracks: {
+                title: '🛏 Barracks',
+                stats: { 'Capacity': '8', 'Resting': '1', 'Beds': '8' },
+                actions: [
+                    { label: 'View Roster', primary: true },
+                    { label: 'Recruit Adventurer' },
+                    { label: 'Upgrade Barracks' }
+                ]
+            },
+            throne: {
+                title: '👑 Guildmaster Seat',
+                stats: { 'Your Rank': '3', 'Next Rank': '2,000 rep' },
+                actions: [
+                    { label: 'Manage Guild', primary: true },
+                    { label: 'View Reputation' },
+                    { label: 'Prestige Options' }
+                ]
+            }
+        };
+
+        const characterData = {
+            barbara: {
+                title: 'Barbara',
+                subtitle: 'Server • Level 5',
+                stats: { 'State': 'Idle', 'Speed': 'Above Average', 'Morale': 'High' },
+                actions: [
+                    { label: 'Assign to Table', primary: true },
+                    { label: 'Give Break' },
+                    { label: 'View Stats' }
+                ]
+            },
+            tom: {
+                title: 'Tom',
+                subtitle: 'Cook • Level 3',
+                stats: { 'State': 'Cooking', 'Specialty': 'Stews', 'Energy': 'Medium' },
+                actions: [
+                    { label: 'Change Recipe', primary: true },
+                    { label: 'Give Break' },
+                    { label: 'View Stats' }
+                ]
+            },
+            guest: {
+                title: 'Guest',
+                subtitle: 'Traveler',
+                stats: { 'Patience': 'Good', 'Gold': 'Medium', 'Order': 'Ready' },
+                actions: [
+                    { label: 'Take Order', primary: true },
+                    { label: 'Chat' },
+                    { label: 'Offer Room' }
+                ]
+            },
+            adventurer: {
+                title: 'Adventurer',
+                subtitle: 'Available for Quests',
+                stats: { 'Level': 'Varies', 'Class': 'Varies', 'State': 'Ready' },
+                actions: [
+                    { label: 'View Details', primary: true },
+                    { label: 'Add to Party' },
+                    { label: 'View Equipment' }
+                ]
+            }
+        };
+
+        // ==================== FOCUS & INTERACTION SYSTEM ====================
+        let focusedElement = null;
+        let currentScene = 'inn';
+
+        function setFocus(element, type) {
+            // Clear previous focus
+            clearFocus();
+
+            focusedElement = { element, type, data: interactionData[type] || characterData[element.id.split('-')[1]] };
+
+            // Show focus ring - position relative to scene container
+            const ring = currentScene === 'inn' ? document.getElementById('focusRing') : document.getElementById('focusRing2');
+            const scene = element.closest('.scene-container');
+
+            // Get element position relative to scene container
+            const elementLeft = element.offsetLeft;
+            const elementTop = element.offsetTop;
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+
+            ring.style.left = (elementLeft - 4) + 'px';
+            ring.style.top = (elementTop - 4) + 'px';
+            ring.style.width = (elementWidth + 8) + 'px';
+            ring.style.height = (elementHeight + 8) + 'px';
+            ring.classList.add('visible');
+
+            // Focus the element
+            element.classList.add('focused');
+
+            // Show info panel
+            showInfoPanel(focusedElement);
+        }
+
+        function clearFocus() {
+            if (focusedElement) {
+                focusedElement.element.classList.remove('focused');
+            }
+            focusedElement = null;
+
+            const ring = currentScene === 'inn' ? document.getElementById('focusRing') : document.getElementById('focusRing2');
+            ring.classList.remove('visible');
+
+            closeInfoPanel();
+            closeInfoPanel2();
+        }
+
+        function showInfoPanel(focus) {
+            const panel = currentScene === 'inn' ? document.getElementById('infoPanel') : document.getElementById('infoPanel2');
+            const title = currentScene === 'inn' ? document.getElementById('infoTitle') : document.getElementById('infoTitle2');
+            const stats = currentScene === 'inn' ? document.getElementById('infoStats') : document.getElementById('infoStats2');
+            const actions = currentScene === 'inn' ? document.getElementById('infoActions') : document.getElementById('infoActions2');
+
+            const data = focus.data;
+            title.textContent = data.title;
+            if (data.subtitle) {
+                title.textContent = data.title + ' • ' + data.subtitle;
+            }
+
+            // Build stats grid
+            stats.innerHTML = '';
+            for (const [key, value] of Object.entries(data.stats)) {
+                stats.innerHTML += `
+                    <div class="info-stat">
+                        <div class="info-stat-label">${key}</div>
+                        <div class="info-stat-value">${value}</div>
+                    </div>
+                `;
+            }
+
+            // Build actions
+            actions.innerHTML = '';
+            data.actions.forEach(action => {
+                const btnClass = action.primary ? 'action-btn primary' : 'action-btn';
+                actions.innerHTML += `<button class="${btnClass}" onclick="doAction('${action.label}')">${action.label}</button>`;
+            });
+
+            // Position panel near focused element (relative to scene container)
+            const element = focus.element;
+            const elementLeft = element.offsetLeft;
+            const elementTop = element.offsetTop;
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+            const scene = element.closest('.scene-container');
+
+            let panelLeft = elementLeft + elementWidth + 16;
+            let panelTop = elementTop;
+
+            // Don't go off screen (scene width/height)
+            const sceneWidth = scene.offsetWidth;
+            const sceneHeight = scene.offsetHeight;
+
+            if (panelLeft + 350 > sceneWidth) {
+                panelLeft = elementLeft - 360;
+                if (panelLeft < 0) panelLeft = 10;
+            }
+            if (panelTop + 300 > sceneHeight) {
+                panelTop = sceneHeight - 310;
+                if (panelTop < 10) panelTop = 10;
+            }
+            if (panelTop < 10) panelTop = 10;
+
+            panel.style.left = panelLeft + 'px';
+            panel.style.top = panelTop + 'px';
+            panel.classList.add('visible');
+        }
+
+        function closeInfoPanel() {
+            document.getElementById('infoPanel').classList.remove('visible');
+        }
+
+        function closeInfoPanel2() {
+            document.getElementById('infoPanel2').classList.remove('visible');
+        }
+
+        function doAction(action) {
+            showToast('Action: ' + action);
+            // Keep panel open for more actions
+        }
+
+        // ==================== EVENT LISTENERS ====================
+        function setupSceneListeners(sceneId) {
+            const scene = document.getElementById(sceneId);
+            currentScene = sceneId.replace('-scene', '');
+
+            // Scene objects
+            scene.querySelectorAll('.scene-object').forEach(obj => {
+                obj.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setFocus(obj, obj.dataset.object);
+                    createClickIndicator(e.clientX, e.clientY);
+                });
+            });
+
+            // Characters
+            scene.querySelectorAll('.character-sprite').forEach(char => {
+                char.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setFocus(char, char.dataset.character);
+                    createClickIndicator(e.clientX, e.clientY);
+                });
+            });
+
+            // Background click to clear focus
+            scene.addEventListener('click', (e) => {
+                if (e.target === scene || e.target.classList.contains('scene-canvas')) {
+                    clearFocus();
+                }
+            });
+
+            // Keyboard
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    clearFocus();
+                } else if (e.key === 'F1') {
+                    e.preventDefault();
+                    document.body.classList.toggle('show-clickable-regions');
+                    showToast('Debug mode: ' + (document.body.classList.contains('show-clickable-regions') ? 'ON' : 'OFF'));
+                } else if (e.key === ' ' && focusedElement) {
+                    e.preventDefault();
+                    // Toggle context menu
+                }
+            });
+        }
+
+        function createClickIndicator(x, y) {
+            const indicator = document.createElement('div');
+            indicator.className = 'click-indicator';
+            indicator.style.left = (x - 10) + 'px';
+            indicator.style.top = (y - 10) + 'px';
+            document.body.appendChild(indicator);
+            setTimeout(() => indicator.remove(), 500);
+        }
+
+        // ==================== TOAST SYSTEM ====================
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // ==================== LEVEL UP ACTIONS ====================
+        function acceptLevelUp() {
+            const warriorChecked = document.getElementById('class-warrior')?.checked;
+            if (warriorChecked) {
+                showToast('⭐ [Warrior] Lv.1 acquired!');
+            }
+            showToast('[Blacksmith] Lv.3 → Lv.4 complete!');
+            showToast('⚔ Efficient Forge learned!');
+            closeInfoPanel();
+            closeInfoPanel2();
+        }
+
+        function deferLevelUp() {
+            showToast('Items moved to backlog');
+            closeInfoPanel();
+            closeInfoPanel2();
+        }
+
+        // ==================== ANIMATION LOOP ====================
+        let lastTime = 0;
+        function animate(time) {
+            if (time - lastTime > 100) { // Update every 100ms
+                // Redraw scenes with animation
+                if (document.getElementById('inn-scene').classList.contains('active')) {
+                    initInnScene();
+                }
+                if (document.getElementById('guild-scene').classList.contains('active')) {
+                    initGuildScene();
+                }
+                if (document.getElementById('levelup-scene').classList.contains('active')) {
+                    initLevelUpScene();
+                }
+                lastTime = time;
+            }
+            requestAnimationFrame(animate);
+        }
+
+        // ==================== INITIALIZATION ====================
+        window.addEventListener('load', () => {
+            setupSceneListeners('inn-scene');
+            setupSceneListeners('guild-scene');
+            initInnScene();
+            adjustSceneForMobile();
+            animate();
+        });
+
+        window.addEventListener('resize', () => {
+            if (document.getElementById('inn-scene').classList.contains('active')) initInnScene();
+            if (document.getElementById('guild-scene').classList.contains('active')) initGuildScene();
+            if (document.getElementById('levelup-scene').classList.contains('active')) initLevelUpScene();
+            adjustSceneForMobile();
+        });
+
+        // ==================== RESPONSIVE ADJUSTMENTS ====================
+        function adjustSceneForMobile() {
+            const width = window.innerWidth;
+
+            // On very small screens, reduce label clutter
+            if (width < 480) {
+                document.querySelectorAll('.scene-container.active .floating-label').forEach(label => {
+                    label.style.fontSize = '10px';
+                });
+            }
+        }
+
+        // Action bar
+        document.querySelectorAll('.action-slot').forEach(slot => {
+            slot.addEventListener('click', () => {
+                const action = slot.dataset.action;
+                if (action === 'focus') {
+                    showToast('Click on any character or object to focus');
+                } else if (action === 'interact') {
+                    if (focusedElement) {
+                        doAction('Interact');
+                    } else {
+                        showToast('Select a target first');
+                    }
+                } else {
+                    showToast(action + ' - Not implemented yet');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
