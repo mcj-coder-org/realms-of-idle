@@ -1,3 +1,4 @@
+#!/bin/sh
 # Lint staged files (markdown, json, yaml)
 npx lint-staged
 
