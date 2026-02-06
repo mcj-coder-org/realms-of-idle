@@ -136,6 +136,9 @@ test-results/
 .claude/grepai
 .claude/state/
 
+# Environment files
+.env
+
 # GitHub tokens and secrets
 .github.env
 *.gh-token
