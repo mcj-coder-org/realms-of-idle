@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using RealmsOfIdle.Server.Orleans.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,34 +8,60 @@ builder.Services.AddOrleansClient(client =>
     client.UseLocalhostClustering();
 });
 
-// Add standard health checks with custom Orleans health check
-builder.Services.AddHealthChecks()
-    .AddCheck<OrleansHealthCheck>("orleans")
-    .AddCheck("api", () => HealthCheckResult.Healthy("API is running"));
+// Register named HttpClient for Orleans silo health check
+builder.Services.AddHttpClient("OrleansSilo", client =>
+{
+    // Service discovery URL with env var fallback
+    var orleansUrl = builder.Configuration["services:orleans-silo:http:0"]
+        ?? Environment.GetEnvironmentVariable("E2E_ORLEANS_BASE_URL")
+        ?? "http://localhost:5001";
+    client.BaseAddress = new Uri(orleansUrl);
+    client.Timeout = TimeSpan.FromSeconds(5);
+});
+
+// Health checks: api self + Orleans silo + PostgreSQL + Redis
+var healthChecks = builder.Services.AddHealthChecks()
+    .AddCheck("api", () => HealthCheckResult.Healthy("API is running"))
+    .AddCheck<OrleansHttpHealthCheck>("orleans");
+
+// Add PostgreSQL health check if connection string is available (injected by Aspire)
+var pgConn = builder.Configuration.GetConnectionString("realmsOfIdle");
+if (!string.IsNullOrEmpty(pgConn))
+{
+    healthChecks.AddNpgSql(pgConn, name: "postgresql");
+}
+
+// Add Redis health check if connection string is available (injected by Aspire)
+var redisConn = builder.Configuration.GetConnectionString("redis");
+if (!string.IsNullOrEmpty(redisConn))
+{
+    healthChecks.AddRedis(redisConn, name: "redis");
+}
 
 var app = builder.Build();
 
-// Standard health check endpoint at /health
+app.MapGet("/ping", () => Results.Text("pong", "text/plain"));
 app.MapHealthChecks("/health");
 
 app.Run();
 
 #pragma warning disable CA1515
 // Expose Program class for testing
-public partial class Program { }
+public partial class Program;
 #pragma warning restore CA1515
 
 /// <summary>
-/// Custom health check for Orleans cluster connectivity.
+/// Health check that verifies Orleans silo is reachable via HTTP /ping endpoint.
+/// Returns Degraded (not throws) on failure to prevent cascading health failures.
 /// </summary>
-internal class OrleansHealthCheck : IHealthCheck
+internal sealed class OrleansHttpHealthCheck : IHealthCheck
 {
-    private readonly IGrainFactory _grainFactory;
-    private readonly ILogger<OrleansHealthCheck> _logger;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly ILogger<OrleansHttpHealthCheck> _logger;
 
-    public OrleansHealthCheck(IGrainFactory grainFactory, ILogger<OrleansHealthCheck> logger)
+    public OrleansHttpHealthCheck(IHttpClientFactory httpClientFactory, ILogger<OrleansHttpHealthCheck> logger)
     {
-        _grainFactory = grainFactory;
+        _httpClientFactory = httpClientFactory;
         _logger = logger;
     }
 
@@ -46,18 +71,17 @@ internal class OrleansHealthCheck : IHealthCheck
     {
         try
         {
-            // Try to get a grain to verify Orleans connectivity
-            var healthGrain = _grainFactory.GetGrain<IHealthGrain>(0);
-            await healthGrain.GetHealthStatusAsync();
-
-            return HealthCheckResult.Healthy("Orleans cluster is reachable");
+            using var client = _httpClientFactory.CreateClient("OrleansSilo");
+            var response = await client.GetAsync(new Uri("/ping", UriKind.Relative), cancellationToken);
+            response.EnsureSuccessStatusCode();
+            return HealthCheckResult.Healthy("Orleans silo is reachable");
         }
 #pragma warning disable CA1031
         catch (Exception ex)
 #pragma warning restore CA1031
         {
             _logger.LogWarning(ex, "Orleans health check failed");
-            return HealthCheckResult.Degraded($"Orleans cluster unavailable: {ex.Message}");
+            return HealthCheckResult.Degraded($"Orleans silo unavailable: {ex.Message}");
         }
     }
 }
