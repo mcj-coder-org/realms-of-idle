@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Time.Testing;
 using RealmsOfIdle.Server.Orleans.Grains;
 using Xunit;
 using Xunit.Abstractions;
@@ -22,7 +23,7 @@ public class HealthGrainTests
     public void HealthGrain_CanBeInstantiated()
     {
         // Act & Assert - should not throw
-        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, TimeProvider.System);
         Assert.NotNull(grain);
     }
 
@@ -30,7 +31,7 @@ public class HealthGrainTests
     public async Task GetHealthStatusAsync_ReturnsHealthyStatus()
     {
         // Arrange
-        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, TimeProvider.System);
 
         // Act
         var health = await grain.GetHealthStatusAsync();
@@ -46,7 +47,7 @@ public class HealthGrainTests
     public async Task MultipleCalls_ReturnsConsistentResults()
     {
         // Arrange
-        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, TimeProvider.System);
 
         // Act
         var health1 = await grain.GetHealthStatusAsync();
@@ -62,7 +63,7 @@ public class HealthGrainTests
     public async Task HealthTimestamp_IsRecent()
     {
         // Arrange
-        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, TimeProvider.System);
         var before = DateTime.UtcNow;
 
         // Act
@@ -77,7 +78,7 @@ public class HealthGrainTests
     public async Task Health_ContainsAllRequiredFields()
     {
         // Arrange
-        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, TimeProvider.System);
 
         // Act
         var health = await grain.GetHealthStatusAsync();
@@ -86,5 +87,20 @@ public class HealthGrainTests
         Assert.NotNull(health.Status);
         Assert.NotNull(health.Mode);
         Assert.True(health.Timestamp > DateTime.MinValue);
+    }
+
+    [Fact]
+    public async Task GetHealthStatusAsync_UsesInjectedTimeProvider()
+    {
+        // Arrange
+        var fakeTime = new DateTimeOffset(2025, 6, 15, 12, 0, 0, TimeSpan.Zero);
+        var fakeTimeProvider = new FakeTimeProvider(fakeTime);
+        var grain = new HealthGrain(NullLogger<HealthGrain>.Instance, fakeTimeProvider);
+
+        // Act
+        var health = await grain.GetHealthStatusAsync();
+
+        // Assert
+        Assert.Equal(fakeTime.UtcDateTime, health.Timestamp);
     }
 }
