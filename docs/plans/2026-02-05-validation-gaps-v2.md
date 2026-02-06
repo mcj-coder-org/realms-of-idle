@@ -574,7 +574,7 @@ git commit -m "test(maui): verify MAUI app structure and service resolution
 
 ---
 
-# Platform-Agnostic Tasks (Linux ✅)
+## Platform-Agnostic Tasks (Linux ✅)
 
 **Tasks 3-7**: Can execute on Linux without platform restrictions
 
