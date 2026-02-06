@@ -2,20 +2,11 @@
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Edit|Write",
+        "matcher": "Edit|Write|Task",
         "hooks": [
           {
             "type": "command",
             "command": "node .claude/hooks/postToolUse.cjs"
-          }
-        ]
-      },
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/ArtifactTracker.cjs"
           }
         ]
       },
@@ -25,6 +16,15 @@
           {
             "type": "command",
             "command": "node .claude/hooks/PostTask.cjs"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/ArtifactTracker.cjs"
           }
         ]
       }
