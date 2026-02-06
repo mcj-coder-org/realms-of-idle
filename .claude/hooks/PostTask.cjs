@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * PostTask Hook — Brutal Code Review Prompt
+ * PostTask Hook — Brutal Code Review with Quality Gate Enforcement
  *
- * After Task completes, prompt for thorough code review before accepting.
- * Helps catch quality gate failures and process deviations.
- * Also checks for uncommitted changes and delivery plan updates.
+ * After Task completes, ENFORCE quality gates before accepting.
+ * Runs actual checks, not just reminders.
+ * Triggers specialist personas for code review (architect, security, critic).
  */
 
 const { execSync } = require('child_process');
@@ -25,10 +25,64 @@ process.stdin.on('end', () => {
     if (input.tool_name === 'Task') {
       console.error(`
 ╔═══════════════════════════════════════════════════════════════════╗
-║                  BRUTAL CODE REVIEW CHECKPOINT                      ║
+║              BRUTAL CODE REVIEW + QUALITY GATE ENFORCEMENT              ║
 ╚═══════════════════════════════════════════════════════════════════╝
 
-Before accepting this Task as complete, review the changes:
+🔍 RUNNING AUTOMATED QUALITY GATE CHECKS...
+`);
+
+      // Run quality gates
+      const buildPassed = runBuildCheck();
+      const testPassed = runTestCheck();
+      const formatPassed = runFormatCheck();
+      const hasUncommitted = checkUncommittedChanges();
+
+      console.error(`
+───────────────────────────────────────────────────────────────────
+
+QUALITY GATE RESULTS:
+  Build:     ${buildPassed ? '✅ PASS' : '❌ FAIL'}
+  Tests:     ${testPassed ? '✅ PASS' : '❌ FAIL'}
+  Format:    ${formatPassed ? '✅ PASS' : '❌ FAIL'}
+  Committed:  ${hasUncommitted ? '⚠️  PENDING' : '✅ YES'}
+`);
+
+      if (!buildPassed || !testPassed || !formatPassed) {
+        console.error(`
+╔═══════════════════════════════════════════════════════════════════╗
+║                   QUALITY GATES FAILED - BLOCKING                       ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+❌ CANNOT MARK TASK COMPLETE - Fix failures first
+   - Review errors above
+   - Run: dotnet build
+   - Run: dotnet test
+   - Run: dotnet format
+   - Then retry TaskUpdate
+
+TASK NOT ACCEPTED.
+`);
+        process.exit(1); // Non-zero exit blocks the operation
+      }
+
+      if (hasUncommitted) {
+        console.error(`
+⚠️  WARNING: Work is not committed!
+
+Before marking task complete:
+  1. Review changes: git diff
+  2. Stage files: git add <files>
+  3. Commit: git commit -m "type(scope): description"
+
+Uncommitted work may be lost.
+`);
+      }
+
+      console.error(`
+───────────────────────────────────────────────────────────────────
+✅ QUALITY GATES PASSED
+
+Now complete the BRUTAL SELF REVIEW:
 
 🔍 MINIMAL CHANGES CHECK:
    [ ] Does this change ONLY what was requested?
@@ -40,39 +94,14 @@ Before accepting this Task as complete, review the changes:
    [ ] Are naming conventions consistent?
    [ ] Is error handling appropriate?
 
-🔍 QUALITY GATE CHECK:
-   [ ] Are ALL quality gates satisfied?
-   [ ] Tests written and passing?
-   [ ] No breaking changes to existing code?
-
-Use grepai_trace to verify no unexpected callers were affected.
-Use git diff to see exact changes.
+Verify with:
+  - git diff <commit> to see exact changes
+  - grepai_trace to verify no unexpected callers affected
 
 If ANY check fails: Request fixes before marking complete.
 `);
 
-      // Check for uncommitted changes
-      try {
-        const gitStatus = execSync('git status --porcelain', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
-        const hasUncommittedChanges = gitStatus.trim().length > 0;
-
-        if (hasUncommittedChanges) {
-          console.error(`
-⚠️  WARNING: There are uncommitted changes after Task completion.
-
-After verification passes, remember to:
-  1. Review changes with: git diff
-  2. Stage relevant files: git add <files>
-  3. Create a commit: git commit
-
-Uncommitted work may be lost. Commit before proceeding to next task.
-`);
-        }
-      } catch (error) {
-        // Not in a git repo or git not available - silently ignore
-      }
-
-      // Check delivery plan for incomplete task updates
+      // Check delivery plan
       checkDeliveryPlan();
     }
 
@@ -85,6 +114,93 @@ Uncommitted work may be lost. Commit before proceeding to next task.
     console.log(inputData);
   }
 });
+
+/**
+ * Run build check
+ */
+function runBuildCheck() {
+  try {
+    console.error('\n🔨 Building...');
+    const output = execSync('dotnet build', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+
+    // Check for warnings
+    if (output.includes('warning') || output.includes('Warning')) {
+      console.error('⚠️  Build succeeded but has warnings');
+      return false;
+    }
+
+    console.error('✅ Build successful (0 errors, 0 warnings)');
+    return true;
+  } catch (error) {
+    console.error('❌ Build failed:\n' + error.message);
+    return false;
+  }
+}
+
+/**
+ * Run test check
+ */
+function runTestCheck() {
+  try {
+    console.error('\n🧪 Running tests...');
+    const output = execSync('dotnet test --no-build', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+
+    // Parse results
+    const lines = output.split('\n');
+    let failed = 0;
+    let passed = 0;
+
+    for (const line of lines) {
+      if (line.includes('Failed:')) {
+        const match = line.match(/Failed:\s+(\d+)/);
+        if (match) failed = parseInt(match[1]);
+      }
+      if (line.includes('Passed:')) {
+        const match = line.match(/Passed:\s+(\d+)/);
+        if (match) passed += parseInt(match[1]);
+      }
+    }
+
+    if (failed > 0) {
+      console.error(`❌ Tests failed: ${passed} passed, ${failed} failed`);
+      return false;
+    }
+
+    console.error(`✅ Tests passed: ${passed} passed, 0 failed`);
+    return true;
+  } catch (error) {
+    console.error('❌ Test run failed:\n' + error.message);
+    return false;
+  }
+}
+
+/**
+ * Run format check
+ */
+function runFormatCheck() {
+  try {
+    console.error('\n🎨 Checking formatting...');
+    execSync('dotnet format --verify-no-changes', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+    console.error('✅ All files formatted correctly');
+    return true;
+  } catch (error) {
+    console.error('❌ Formatting issues found:\n' + error.message);
+    console.error('   Run: dotnet format');
+    return false;
+  }
+}
+
+/**
+ * Check for uncommitted changes
+ */
+function checkUncommittedChanges() {
+  try {
+    const gitStatus = execSync('git status --porcelain', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] });
+    return gitStatus.trim().length > 0;
+  } catch (error) {
+    return false;
+  }
+}
 
 /**
  * Check if delivery plan has tasks still marked as in progress

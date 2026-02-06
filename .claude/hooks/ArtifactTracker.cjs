@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * Artifact Tracker Hook — Transient Script Lifecycle Management
+ * Artifact Tracker Hook — Block Unasked-For Artifacts
  *
- * Tracks created scripts for wrap-up review and documentation.
- * Helps identify which scripts are transient (test helpers, one-off scripts)
- * vs. permanent (deployment scripts, build tools).
+ * Blocks creation of unasked-for reports, scripts, and documentation files.
+ * Prompts for wrap-up review when entire plan is delivered.
+ * All reviews and evidence must go into the plan file, not new files.
  */
 
 const fs = require('fs');
@@ -13,6 +13,18 @@ const path = require('path');
 
 const MANIFEST_PATH = '.claude/transient-artifacts.json';
 const SCRIPT_EXTENSIONS = ['.sh', '.ps1', '.bat', '.py', '.js', '.cjs', '.mjs'];
+
+// Blocked documentation patterns
+const BLOCKED_PATTERNS = [
+  /findings/i,
+  /review/i,
+  /summary-/i,
+  /execution-/i,
+  /session-/i,
+  /brutal/i,
+  /-report\.md$/,
+  /-analysis\.md$/,
+];
 
 // Read stdin for hook input
 let inputData = '';
@@ -30,8 +42,61 @@ process.stdin.on('end', () => {
 
       if (filePath) {
         const ext = path.extname(filePath).toLowerCase();
+        const fileName = path.basename(filePath).toLowerCase();
 
-        // Track script files
+        // BLOCK: Unasked-for documentation files
+        if (filePath.endsWith('.md') && !isAllowedDocumentation(filePath)) {
+          // Check if it matches blocked patterns
+          for (const pattern of BLOCKED_PATTERNS) {
+            if (pattern.test(fileName)) {
+              console.error(`
+╔═══════════════════════════════════════════════════════════════════╗
+║           BLOCKED: Unasked-For Documentation/Report                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+❌ CANNOT CREATE: ${filePath}
+
+This file matches a blocked pattern: ${pattern}
+
+**All reviews and evidence must go into the PLAN FILE**, not separate documents.
+
+Update the plan's Execution Log section instead:
+- docs/plans/XXXX-XX-XX-*.md - Add findings to Execution Log
+- docs/validation-report.md - Update validation status
+
+**Blocked files create documentation sprawl and drift from the plan.**
+
+If you need to create this file, ask the user for explicit permission first.
+`);
+              process.exit(1); // BLOCK the Write operation
+            }
+          }
+
+          // Check if it's a docs/ file not in allowed list
+          const dirName = path.dirname(filePath).toLowerCase();
+          if (dirName.startsWith('docs/') && !isAllowedDocumentation(filePath)) {
+            console.error(`
+╔═══════════════════════════════════════════════════════════════════╗
+║           BLOCKED: Unapproved Documentation File                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+❌ CANNOT CREATE: ${filePath}
+
+**Approved docs/ files:**
+- docs/plans/*.md - Implementation plans (add Execution Log entries here)
+- docs/validation-report.md - Official validation report
+- docs/quickstart.md - Getting started guide
+- docs/testing-conventions.md - Test standards
+- docs/architecture.md - System architecture
+- docs/gdd.md - Game design document
+
+Please use the plan's Execution Log section instead of creating new files.
+`);
+            process.exit(1);
+          }
+        }
+
+        // Track script files for later cleanup review
         if (SCRIPT_EXTENSIONS.includes(ext)) {
           const manifest = loadManifest(MANIFEST_PATH);
 
@@ -124,4 +189,32 @@ function inferTaskFromContext(filePath) {
   }
 
   return 'unknown';
+}
+
+/**
+ * Check if documentation file is in allowed list
+ * @param {string} filePath
+ * @returns {boolean}
+ */
+function isAllowedDocumentation(filePath) {
+  const fileName = path.basename(filePath).toLowerCase();
+
+  const allowedFiles = [
+    'readme.md',
+    'claude.md',
+    'validation-report.md',
+    'delivery-plan.md',
+    'quickstart.md',
+    'testing-conventions.md',
+    'architecture.md',
+    'gdd.md',
+    'changelog.md',
+  ];
+
+  // Allow plan files (YYYY-MM-DD-*.md pattern)
+  if (fileName.match(/^\d{4}-\d{2}-\d{2}-/)) {
+    return true;
+  }
+
+  return allowedFiles.includes(fileName);
 }
