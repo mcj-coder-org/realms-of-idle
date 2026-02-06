@@ -1,16 +1,16 @@
-using Microsoft.Extensions.Logging;
-using RealmsOfIdle.Server.Orleans.Interfaces;
+#pragma warning disable CA1515
 
 namespace RealmsOfIdle.Server.Orleans.Grains;
 
-#pragma warning disable CA1515
-public class HealthGrain : Grain, IHealthGrain
+public class HealthGrain : Grain, Interfaces.IHealthGrain
 {
     private readonly ILogger<HealthGrain> _logger;
+    private readonly TimeProvider _timeProvider;
 
-    public HealthGrain(ILogger<HealthGrain> logger)
+    public HealthGrain(ILogger<HealthGrain> logger, TimeProvider? timeProvider = null)
     {
         _logger = logger;
+        _timeProvider = timeProvider ?? TimeProvider.System;
     }
 
     public Task<Core.Domain.Models.GameHealth> GetHealthStatusAsync()
@@ -28,7 +28,7 @@ public class HealthGrain : Grain, IHealthGrain
         return Task.FromResult(new Core.Domain.Models.GameHealth(
             Status: Core.Domain.Models.HealthStatus.Healthy,
             Mode: Core.Domain.Models.GameMode.Online,
-            Timestamp: DateTime.UtcNow,
+            Timestamp: _timeProvider.GetUtcNow().DateTime,
             Database: "postgresql", // TODO: actual DB health check
             SiloStatus: siloStatus,
             Dependencies: dependencies

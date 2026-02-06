@@ -19,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Api\RealmsOfIdle.Server.Api.csproj" />
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Api\RealmsOfIdle.Server.Api.csproj">
+      <Aliases>ServerApi</Aliases>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
   </ItemGroup>
 

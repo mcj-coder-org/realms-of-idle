@@ -1,4 +1,5 @@
 #pragma warning disable IDE0005
+extern alias ServerApi;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,7 +39,7 @@ public class HealthEndpointTests
     public void Program_HasPublicEntryPoint()
     {
         // Act & Assert - Program class should be accessible for testing
-        var programType = typeof(Program);
+        var programType = typeof(ServerApi::Program);
         Assert.NotNull(programType);
         Assert.Equal("Program", programType.Name);
     }
@@ -48,7 +49,7 @@ public class HealthEndpointTests
     /// Note: Orleans services are configured in Program.cs and require
     /// a running silo. Full endpoint testing requires IntegrationTests with TestContainers.
     /// </summary>
-    private class TestWebApplicationFactory : WebApplicationFactory<Program>
+    private class TestWebApplicationFactory : WebApplicationFactory<ServerApi::Program>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
