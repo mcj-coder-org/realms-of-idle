@@ -3,7 +3,7 @@ using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain;
 using RealmsOfIdle.Core.Domain.Models;
 
-namespace RealmsOfIdle.Client.Maui.Storage;
+namespace RealmsOfIdle.Client.Shared.Storage;
 
 /// <summary>
 /// LiteDB-backed event store for offline play

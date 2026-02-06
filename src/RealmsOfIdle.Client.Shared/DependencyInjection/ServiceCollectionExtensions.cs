@@ -3,13 +3,13 @@ using LiteDB;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OpenTelemetry.Trace;
-using RealmsOfIdle.Client.Maui.Logging;
-using RealmsOfIdle.Client.Maui.Services;
-using RealmsOfIdle.Client.Maui.Storage;
+using RealmsOfIdle.Client.Shared.Logging;
+using RealmsOfIdle.Client.Shared.Services;
+using RealmsOfIdle.Client.Shared.Storage;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Infrastructure;
 
-namespace RealmsOfIdle.Client.Maui.DependencyInjection;
+namespace RealmsOfIdle.Client.Shared.DependencyInjection;
 
 /// <summary>
 /// Dependency injection extensions for MAUI client

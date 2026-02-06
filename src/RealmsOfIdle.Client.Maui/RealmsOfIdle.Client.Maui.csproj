@@ -1,20 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk.Maui">
   <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>RealmsOfIdle.Client.Maui</RootNamespace>
+    <ApplicationTitle>RealmsOfIdle.Client.Maui</ApplicationTitle>
+    <ApplicationId>com.realmsofidle.client</ApplicationId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiteDB" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
-    <PackageReference Include="Microsoft.Extensions.Logging" />
-    <PackageReference Include="Microsoft.Extensions.Http" />
-    <PackageReference Include="OpenTelemetry" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
+    <ProjectReference Include="..\RealmsOfIdle.Client.Shared\RealmsOfIdle.Client.Shared.csproj" />
   </ItemGroup>
-
 </Project>

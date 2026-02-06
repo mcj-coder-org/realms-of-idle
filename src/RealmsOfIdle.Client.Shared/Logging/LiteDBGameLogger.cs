@@ -1,7 +1,7 @@
 using LiteDB;
 using RealmsOfIdle.Core.Abstractions;
 
-namespace RealmsOfIdle.Client.Maui.Logging;
+namespace RealmsOfIdle.Client.Shared.Logging;
 
 /// <summary>
 /// LiteDB-backed game logger for offline play with 7-day rolling window

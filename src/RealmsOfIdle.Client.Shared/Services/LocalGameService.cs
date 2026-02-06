@@ -2,7 +2,7 @@ using LiteDB;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain;
 
-namespace RealmsOfIdle.Client.Maui.Services;
+namespace RealmsOfIdle.Client.Shared.Services;
 
 /// <summary>
 /// Local game service for offline play - stores data in LiteDB

@@ -2,7 +2,7 @@ using System.Net.Http.Json;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain;
 
-namespace RealmsOfIdle.Client.Maui.Services;
+namespace RealmsOfIdle.Client.Shared.Services;
 
 /// <summary>
 /// HTTP-based game service for online play

@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
-using RealmsOfIdle.Client.Maui.Logging;
+using RealmsOfIdle.Client.Shared.Logging;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain.Models;
 
-namespace RealmsOfIdle.Client.Maui.Services;
+namespace RealmsOfIdle.Client.Shared.Services;
 
 /// <summary>
 /// Service for managing game mode (offline/online) and routing to appropriate implementations

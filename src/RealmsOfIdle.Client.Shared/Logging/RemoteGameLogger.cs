@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using RealmsOfIdle.Core.Abstractions;
 
-namespace RealmsOfIdle.Client.Maui.Logging;
+namespace RealmsOfIdle.Client.Shared.Logging;
 
 /// <summary>
 /// Remote logger using OpenTelemetry for online play
