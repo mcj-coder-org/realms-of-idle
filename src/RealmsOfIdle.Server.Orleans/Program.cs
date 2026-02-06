@@ -1,6 +1,9 @@
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using RealmsOfIdle.Core.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenTelemetryServices("RealmsOfIdle.Server.Orleans");
 
 builder.UseOrleans(siloBuilder =>
 {
