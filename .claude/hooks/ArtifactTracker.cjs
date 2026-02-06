@@ -42,57 +42,33 @@ process.stdin.on('end', () => {
 
       if (filePath) {
         const ext = path.extname(filePath).toLowerCase();
-        const fileName = path.basename(filePath).toLowerCase();
 
-        // BLOCK: Unasked-for documentation files
-        if (filePath.endsWith('.md') && !isAllowedDocumentation(filePath)) {
-          // Check if it matches blocked patterns
-          for (const pattern of BLOCKED_PATTERNS) {
-            if (pattern.test(fileName)) {
-              console.error(`
-╔═══════════════════════════════════════════════════════════════════╗
-║           BLOCKED: Unasked-For Documentation/Report                   ║
-╚═══════════════════════════════════════════════════════════════════╝
+        // For .md files and scripts, prompt for review
+        if (filePath.endsWith('.md') || SCRIPT_EXTENSIONS.includes(ext)) {
+          // Check if this is in the current plan
+          const isInPlan = isDocumentedInCurrentPlan(filePath);
 
-❌ CANNOT CREATE: ${filePath}
-
-This file matches a blocked pattern: ${pattern}
-
-**All reviews and evidence must go into the PLAN FILE**, not separate documents.
-
-Update the plan's Execution Log section instead:
-- docs/plans/XXXX-XX-XX-*.md - Add findings to Execution Log
-- docs/validation-report.md - Update validation status
-
-**Blocked files create documentation sprawl and drift from the plan.**
-
-If you need to create this file, ask the user for explicit permission first.
-`);
-              process.exit(1); // BLOCK the Write operation
-            }
-          }
-
-          // Check if it's a docs/ file not in allowed list
-          const dirName = path.dirname(filePath).toLowerCase();
-          if (dirName.startsWith('docs/') && !isAllowedDocumentation(filePath)) {
+          if (!isInPlan) {
             console.error(`
 ╔═══════════════════════════════════════════════════════════════════╗
-║           BLOCKED: Unapproved Documentation File                   ║
+║           ARTIFACT CREATION REVIEW REQUIRED                          ║
 ╚═══════════════════════════════════════════════════════════════════╝
 
-❌ CANNOT CREATE: ${filePath}
+⚠️  ABOUT TO CREATE: ${filePath}
 
-**Approved docs/ files:**
-- docs/plans/*.md - Implementation plans (add Execution Log entries here)
-- docs/validation-report.md - Official validation report
-- docs/quickstart.md - Getting started guide
-- docs/testing-conventions.md - Test standards
-- docs/architecture.md - System architecture
-- docs/gdd.md - Game design document
+**Before creating, ask yourself:**
+1. Was this file explicitly requested by the user?
+2. Does the plan or spec mention this file?
+3. Could this information go into the plan's Execution Log instead?
+4. Is this a permanent artifact or transient script?
 
-Please use the plan's Execution Log section instead of creating new files.
+**All reviews and evidence should go into the PLAN FILE**, not new documents:
+- docs/plans/XXXX-XX-XX-*.md - Add to Execution Log section
+- docs/validation-report.md - Update validation status
+
+**If you proceed anyway**, you'll need to justify why a separate file is necessary.
 `);
-            process.exit(1);
+            // Don't block - just prompt for conscious consideration
           }
         }
 
@@ -103,7 +79,7 @@ Please use the plan's Execution Log section instead of creating new files.
           manifest[filePath] = {
             created: new Date().toISOString(),
             task: inferTaskFromContext(filePath),
-            planned: false // Will be updated during wrap-up review
+            planned: isDocumentedInCurrentPlan(filePath) // Track if it was planned
           };
 
           saveManifest(MANIFEST_PATH, manifest);
@@ -217,4 +193,87 @@ function isAllowedDocumentation(filePath) {
   }
 
   return allowedFiles.includes(fileName);
+}
+
+/**
+ * Check if file is documented in current plan
+ * @param {string} filePath
+ * @returns {boolean}
+ */
+function isDocumentedInCurrentPlan(filePath) {
+  const fileName = path.basename(filePath);
+
+  // Check if it's an allowed file
+  if (isAllowedDocumentation(filePath)) {
+    return true;
+  }
+
+  // Check if mentioned in current delivery plan
+  try {
+    const stateFile = '.claude/state/current-delivery-plan.txt';
+    let planPath = null;
+
+    if (fs.existsSync(stateFile)) {
+      planPath = fs.readFileSync(stateFile, 'utf8').trim();
+    } else {
+      // Try to find plan
+      const plans = findPlans();
+      if (plans.length > 0) {
+        planPath = plans[0];
+      }
+    }
+
+    if (planPath && fs.existsSync(planPath)) {
+      const content = fs.readFileSync(planPath, 'utf8');
+      // Check if file is mentioned in plan
+      return content.includes(fileName) || content.includes(filePath);
+    }
+  } catch (error) {
+    // Ignore errors
+  }
+
+  return false;
+}
+
+/**
+ * Find plan files
+ * @returns {string[]} Array of plan paths
+ */
+function findPlans() {
+  const path = require('path');
+  const os = require('os');
+  const plans = [];
+
+  // Standard paths
+  const standardPaths = [
+    'docs/delivery-plan.md',
+    'docs/delivery_plan.md',
+  ];
+
+  for (const p of standardPaths) {
+    if (fs.existsSync(p)) {
+      plans.push(p);
+    }
+  }
+
+  // Search docs/plans directory
+  const plansDir = 'docs/plans';
+  if (fs.existsSync(plansDir)) {
+    try {
+      const files = fs.readdirSync(plansDir)
+        .filter(f => f.endsWith('.md'))
+        .map(f => path.join(plansDir, f))
+        .sort((a, b) => {
+          const statA = fs.statSync(a);
+          const statB = fs.statSync(b);
+          return statB.mtimeMs - statA.mtimeMs; // Most recent first
+        });
+
+      plans.push(...files);
+    } catch (error) {
+      // Ignore
+    }
+  }
+
+  return plans;
 }
