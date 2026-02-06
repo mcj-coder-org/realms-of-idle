@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/RealmsOfIdle.AppHost/RealmsOfIdle.AppHost.csproj" />
+    <Project Path="src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj" />
     <Project Path="src/RealmsOfIdle.Client.Shared/RealmsOfIdle.Client.Shared.csproj" />
     <Project Path="src/RealmsOfIdle.Core/RealmsOfIdle.Core.csproj" />
     <Project Path="src/RealmsOfIdle.Server.Api/RealmsOfIdle.Server.Api.csproj" />
