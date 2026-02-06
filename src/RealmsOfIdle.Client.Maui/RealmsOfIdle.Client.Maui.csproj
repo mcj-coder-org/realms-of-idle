@@ -6,6 +6,7 @@
     <RootNamespace>RealmsOfIdle.Client.Maui</RootNamespace>
     <ApplicationTitle>RealmsOfIdle.Client.Maui</ApplicationTitle>
     <ApplicationId>com.realmsofidle.client</ApplicationId>
+    <!-- MAUI requires Windows or macOS for building - Linux is community-supported only -->
   </PropertyGroup>
 
   <ItemGroup>
