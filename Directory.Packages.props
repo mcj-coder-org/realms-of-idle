@@ -83,6 +83,10 @@
     <PackageVersion Include="Microsoft.Orleans.Server" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Orleans.TestingHost" Version="10.0.0" />
   </ItemGroup>
+  <!-- Configuration packages -->
+  <ItemGroup>
+    <PackageVersion Include="DotNetEnv" Version="3.1.1" />
+  </ItemGroup>
   <!-- Health Checks packages -->
   <ItemGroup>
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
