@@ -10,6 +10,7 @@ public static class Program
         var host = Host.CreateDefaultBuilder(args)
             .UseOrleans(siloBuilder =>
             {
+                // Use development clustering by default (Aspire overrides via env vars)
                 siloBuilder
                     .UseLocalhostClustering()
                     .AddMemoryGrainStorage("Default");

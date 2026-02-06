@@ -14,20 +14,23 @@ var redis = builder.AddRedis("redis")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
+// Add Orleans cluster
+var orleans = builder.AddOrleans("orleans")
+    .WithDevelopmentClustering()
+    .WithMemoryGrainStorage("Default");
+
 // Add Orleans Silo
-var orleans = builder.AddProject<Projects.RealmsOfIdle_Server_Orleans>("orleans")
-    .WithReference(redis)
-    .WithExternalHttpEndpoints()
+builder.AddProject<Projects.RealmsOfIdle_Server_Orleans>("orleans-silo")
+    .WithReference(orleans)
     .WaitFor(redis);
 
 // Add API Server
-var api = builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
+builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
     .WithReference(postgresDb)
     .WithReference(redis)
-    .WithReference(orleans)
+    .WithReference(orleans.AsClient())
     .WithExternalHttpEndpoints()
     .WaitFor(postgres)
-    .WaitFor(redis)
-    .WaitFor(orleans);
+    .WaitFor(redis);
 
 builder.Build().Run();
