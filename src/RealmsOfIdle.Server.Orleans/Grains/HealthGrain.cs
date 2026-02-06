@@ -3,6 +3,7 @@ using RealmsOfIdle.Server.Orleans.Interfaces;
 
 namespace RealmsOfIdle.Server.Orleans.Grains;
 
+#pragma warning disable CA1515
 public class HealthGrain : Grain, IHealthGrain
 {
     private readonly ILogger<HealthGrain> _logger;

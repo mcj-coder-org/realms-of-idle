@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RealmsOfIdle.Server.Api\RealmsOfIdle.Server.Api.csproj" />
+    <ProjectReference Include="..\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
   </ItemGroup>
 
   <ItemGroup>
