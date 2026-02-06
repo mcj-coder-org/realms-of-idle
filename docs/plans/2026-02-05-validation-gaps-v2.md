@@ -870,7 +870,7 @@ git commit -m "docs(validation): mark validation gaps resolved - 100% complete"
 
 ## Completion Checklist
 
-- [ ] Task 1: Client library renamed, proper MAUI project created
+- [x] Task 1: Client library renamed, proper MAUI project created
 - [ ] Task 2: MAUI app entry point and service resolution verified
 - [ ] Task 3: Blazor client implemented OR decision documented
 - [ ] Task 4: Solution file updated
