@@ -1,6 +1,7 @@
 # CLAUDE.md
 
 <!-- VERBATIM: EXTREMELY_IMPORTANT -->
+
 <EXTREMELY_IMPORTANT>
 
 These apply during active development (implementation, fixes, refactoring), not exploration/research.
@@ -11,17 +12,23 @@ These apply during active development (implementation, fixes, refactoring), not 
 - ALWAYS use git worktrees and feature branches (isolates work, prevents commits to main)
 - ALWAYS commit after self-verification but before declaring complete (run tests/build/lint first)
 - ALWAYS treat Warnings as Errors (configure in tooling)
-    - 0 Linting Issues
-    - 0 Build Warnings
-    - 0 Commit Warnings
-    - 0 Build Errors
-    - 0 Test Failures (tests must be run)
+  - 0 Linting Issues
+  - 0 Build Warnings
+  - 0 Commit Warnings
+  - 0 Build Errors
+  - 0 Test Failures (tests must be run)
 - ALWAYS TDD + Automated Tests First during implementation (not during planning/exploration)
+- ALWAYS write REAL tests that genuinely test behavior
+  - NEVER create fake tests, TODO tests, or Assert.True(true) placeholders
+  - NEVER skip tests with [Fact(Skip = "TODO: ...")] - if it can't run, don't commit it
+  - Tests must pass and provide actual verification of behavior
 - ALWAYS automate repetitive tasks (git hooks, scripts, tools); never manual repeat
 - ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
 
 </EXTREMELY_IMPORTANT>
+
 <!-- END VERBATIM -->
+
 **Scope**: Development only (not exploration)
 
 ## Standards Matrix
@@ -142,13 +149,17 @@ When delegating to a subagent via the Task tool, you MUST include:
 Copy the quality gates above VERBATIM into your task prompt:
 
 ```
+
 <!-- VERBATIM: Quality Gates -->
+
 Quality Gates (VERBATIM):
+
 1. Minimal Changes: Only implement what was specified
 2. Best Practices: Follow existing code patterns and conventions
 3. Testing: Write tests for all new functionality
 4. No Breaking Changes: Ensure existing features continue working
 <!-- END VERBATIM -->
+
 ```
 
 ### 2. Spec Reference
@@ -156,9 +167,11 @@ Quality Gates (VERBATIM):
 Include the relevant spec or design documentation. Include FULL requirements, not a summary:
 
 ```
+
 ## Spec Reference
 
 [Full spec section or design requirements]
+
 ```
 
 ### 3. Delivery Plan Path
@@ -166,7 +179,9 @@ Include the relevant spec or design documentation. Include FULL requirements, no
 Always include the delivery plan path so the subagent can reference it:
 
 ```
+
 Delivery Plan: docs/delivery-plan.md
+
 ```
 
 ### 4. Context Strategy: QMD, grepai, or CodeContext
@@ -209,6 +224,7 @@ When delegating Tasks, provide appropriate context using the right search tool:
 When you need context, include search instructions in your task prompt:
 
 ```
+
 ## Context Gathering
 
 Before implementing, gather context using the appropriate tool:
@@ -216,6 +232,7 @@ Before implementing, gather context using the appropriate tool:
 1. Search QMD for "idle progression system" to understand design requirements
 2. Search grepai for "IPlayerState" to find existing implementations
 3. Use CodeContext to analyze the Core domain structure
+
 ```
 
 **Important:** Do NOT summarize search results in your task prompt. The subagent will perform the searches themselves. Include the search queries for them to execute.
@@ -241,3 +258,4 @@ After verifying code quality:
 3. Create a commit: `git commit`
 
 Uncommitted work may be lost. Commit before proceeding to next task.
+```
