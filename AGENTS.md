@@ -3,7 +3,9 @@
 This document describes specialized agents available for working on the Realms of Idle project.
 
 ---
+
 <!-- VERBATIM: EXTREMELY_IMPORTANT -->
+
 <EXTREMELY_IMPORTANT>
 
 These apply during active development (implementation, fixes, refactoring), not exploration/research.
@@ -24,6 +26,7 @@ These apply during active development (implementation, fixes, refactoring), not 
 - ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
 
 </EXTREMELY_IMPORTANT>
+
 <!-- END VERBATIM -->
 
 ## GDD Designer - Game Design Documentation Specialist

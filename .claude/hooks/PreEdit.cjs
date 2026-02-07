@@ -12,7 +12,7 @@ const path = require('path');
 
 // Read stdin for hook input
 let inputData = '';
-process.stdin.on('data', (chunk) => {
+process.stdin.on('data', chunk => {
   inputData += chunk;
 });
 
@@ -52,7 +52,6 @@ If user didn't explicitly approve this edit, cancel and ask first.
 
     // Always allow the edit to proceed (warning only)
     console.log(JSON.stringify(input));
-
   } catch (error) {
     // On error, log and pass through
     console.error('[PreEdit Hook Error]:', error.message);
@@ -82,7 +81,7 @@ function findVerbatimSections(content) {
       currentSection = {
         name: verbatimMatch[1].trim(),
         startLine: i + 1, // 1-indexed
-        endLine: null
+        endLine: null,
       };
     } else if (endMatch && currentSection) {
       currentSection.endLine = i + 1;

@@ -19,9 +19,9 @@
 
 ## Optional/Configured ⚠️
 
-| Server           | Status      | Requirements                                                          |
-| ---------------- | ----------- | --------------------------------------------------------------------- |
-| **context7**     | ✅ Active   | Upstash context management with API key                               |
+| Server           | Status      | Requirements                                                        |
+| ---------------- | ----------- | ------------------------------------------------------------------- |
+| **context7**     | ✅ Active   | Upstash context management with API key                             |
 | **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from <https://api.search.brave.com/register> |
 
 ## Setup Instructions

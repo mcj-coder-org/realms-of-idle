@@ -1,1431 +1,1814 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gibberish Speech Synthesiser — Prototype</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-
-  :root {
-    --bg-dark: #0a0a12;
-    --bg-panel: #12121f;
-    --bg-panel-hover: #1a1a2e;
-    --border: #2a2a44;
-    --border-glow: #4a4a7a;
-    --text: #c8c8e0;
-    --text-dim: #6a6a8a;
-    --accent: #ff6b4a;
-    --accent-glow: #ff8b6a;
-    --accent-dim: #993f2d;
-    --green: #4ae06b;
-    --blue: #4a9eff;
-    --purple: #b04aff;
-    --yellow: #ffe04a;
-    --cyan: #4ae0e0;
-    --pink: #ff4a9e;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--bg-dark);
-    color: var(--text);
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* Scanline overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.08) 2px,
-      rgba(0,0,0,0.08) 4px
-    );
-    pointer-events: none;
-    z-index: 1000;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 20px;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 2px solid var(--border);
-  }
-
-  header h1 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 18px;
-    color: var(--accent);
-    text-shadow: 0 0 20px rgba(255,107,74,0.4);
-    margin-bottom: 8px;
-    line-height: 1.6;
-  }
-
-  header p {
-    color: var(--text-dim);
-    font-size: 16px;
-  }
-
-  /* Control panels */
-  .controls-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  @media (max-width: 680px) {
-    .controls-grid { grid-template-columns: 1fr; }
-  }
-
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 16px;
-    position: relative;
-  }
-
-  .panel::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
-    border-radius: 4px 4px 0 0;
-  }
-
-  .panel-race::before { background: var(--green); }
-  .panel-sex::before { background: var(--blue); }
-  .panel-emotion::before { background: var(--purple); }
-
-  .panel-label {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .panel-race .panel-label { color: var(--green); }
-  .panel-sex .panel-label { color: var(--blue); }
-  .panel-emotion .panel-label { color: var(--purple); }
-
-  /* Radio button groups */
-  .option-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .option-group input[type="radio"] { display: none; }
-
-  .option-group label {
-    font-family: 'VT323', monospace;
-    font-size: 16px;
-    padding: 4px 10px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-    color: var(--text-dim);
-    background: transparent;
-  }
-
-  .option-group label:hover {
-    border-color: var(--border-glow);
-    color: var(--text);
-  }
-
-  .panel-race input:checked + label {
-    background: rgba(74,224,107,0.15);
-    border-color: var(--green);
-    color: var(--green);
-    box-shadow: 0 0 8px rgba(74,224,107,0.2);
-  }
-
-  .panel-sex input:checked + label {
-    background: rgba(74,158,255,0.15);
-    border-color: var(--blue);
-    color: var(--blue);
-    box-shadow: 0 0 8px rgba(74,158,255,0.2);
-  }
-
-  .panel-emotion input:checked + label {
-    background: rgba(176,74,255,0.15);
-    border-color: var(--purple);
-    color: var(--purple);
-    box-shadow: 0 0 8px rgba(176,74,255,0.2);
-  }
-
-  /* Phrase section */
-  .phrase-section {
-    margin-bottom: 24px;
-  }
-
-  .phrase-section .panel-label {
-    color: var(--yellow);
-    margin-bottom: 12px;
-  }
-
-  .phrase-presets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .phrase-btn {
-    font-family: 'VT323', monospace;
-    font-size: 17px;
-    padding: 6px 14px;
-    background: var(--bg-panel);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .phrase-btn:hover {
-    border-color: var(--yellow);
-    color: var(--yellow);
-    box-shadow: 0 0 8px rgba(255,224,74,0.15);
-  }
-
-  .phrase-btn.active {
-    background: rgba(255,224,74,0.12);
-    border-color: var(--yellow);
-    color: var(--yellow);
-  }
-
-  .custom-input-row {
-    display: flex;
-    gap: 10px;
-  }
-
-  .custom-input-row input {
-    flex: 1;
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    padding: 8px 12px;
-    background: var(--bg-dark);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .custom-input-row input:focus {
-    border-color: var(--yellow);
-  }
-
-  .custom-input-row input::placeholder {
-    color: var(--text-dim);
-  }
-
-  /* Play button */
-  .play-btn {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 12px;
-    padding: 12px 28px;
-    background: var(--accent);
-    color: var(--bg-dark);
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
-  }
-
-  .play-btn:hover {
-    background: var(--accent-glow);
-    box-shadow: 0 0 20px rgba(255,107,74,0.4);
-  }
-
-  .play-btn:active {
-    transform: scale(0.97);
-  }
-
-  .play-btn:disabled {
-    background: var(--accent-dim);
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-
-  /* Dialogue box */
-  .dialogue-box {
-    background: var(--bg-panel);
-    border: 2px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 24px;
-    margin-bottom: 24px;
-    min-height: 80px;
-    position: relative;
-  }
-
-  .dialogue-box::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 4px 4px 0 0;
-  }
-
-  .speaker-name {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    color: var(--cyan);
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(74,224,224,0.3);
-  }
-
-  .dialogue-text {
-    font-size: 22px;
-    line-height: 1.5;
-    min-height: 36px;
-    color: var(--text);
-  }
-
-  .dialogue-text .cursor {
-    display: inline-block;
-    width: 10px;
-    height: 20px;
-    background: var(--text);
-    animation: blink 0.6s step-end infinite;
-    vertical-align: text-bottom;
-    margin-left: 2px;
-  }
-
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
-
-  /* Params readout */
-  .params-panel {
-    margin-bottom: 24px;
-  }
-
-  .params-panel .panel-label {
-    color: var(--cyan);
-    margin-bottom: 10px;
-  }
-
-  .params-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 6px 16px;
-    font-size: 15px;
-  }
-
-  .param-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 0;
-    border-bottom: 1px solid rgba(42,42,68,0.5);
-  }
-
-  .param-key { color: var(--text-dim); }
-  .param-val { color: var(--cyan); font-weight: bold; }
-
-  /* Waveform viz */
-  .viz-panel {
-    margin-bottom: 24px;
-  }
-
-  .viz-panel .panel-label {
-    color: var(--pink);
-    margin-bottom: 10px;
-  }
-
-  canvas#waveform {
-    width: 100%;
-    height: 100px;
-    display: block;
-    background: var(--bg-dark);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    color: var(--text-dim);
-    font-size: 14px;
-  }
-
-  /* Chatter section */
-  .chatter-section {
-    margin-bottom: 24px;
-    position: relative;
-  }
-
-  .chatter-section::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--green), var(--blue), var(--purple), var(--pink));
-    border-radius: 4px 4px 0 0;
-  }
-
-  .chatter-section .panel-label {
-    color: var(--pink);
-  }
-
-  .chatter-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .chatter-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .chatter-btn {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 9px;
-    padding: 8px 16px;
-    background: transparent;
-    color: var(--pink);
-    border: 1px solid var(--pink);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .chatter-btn:hover {
-    background: rgba(255,74,158,0.15);
-    box-shadow: 0 0 12px rgba(255,74,158,0.2);
-  }
-
-  .chatter-btn.active {
-    background: var(--pink);
-    color: var(--bg-dark);
-  }
-
-  .chatter-vol-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-  }
-
-  .chatter-slider {
-    width: 70px;
-    accent-color: var(--pink);
-    cursor: pointer;
-  }
-
-  .scene-presets {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-
-  .scene-btn {
-    font-family: 'VT323', monospace;
-    font-size: 16px;
-    padding: 4px 10px;
-    background: transparent;
-    color: var(--text-dim);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .scene-btn:hover {
-    border-color: var(--pink);
-    color: var(--text);
-  }
-
-  .scene-btn.active {
-    background: rgba(255,74,158,0.12);
-    border-color: var(--pink);
-    color: var(--pink);
-  }
-
-  .chatter-activity {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    min-height: 28px;
-    align-items: center;
-  }
-
-  .chatter-idle {
-    color: var(--text-dim);
-    font-size: 15px;
-    font-style: italic;
-  }
-
-  .chatter-voice {
-    font-size: 14px;
-    padding: 2px 8px;
-    border-radius: 2px;
-    border: 1px solid var(--border);
-    transition: all 0.3s;
-    opacity: 0.4;
-  }
-
-  .chatter-voice.speaking {
-    opacity: 1;
-    border-color: var(--pink);
-    box-shadow: 0 0 6px rgba(255,74,158,0.3);
-  }
-</style>
-</head>
-<body>
-<div class="container">
-
-  <header>
-    <h1>⚔ Gibberish Speech<br>Synthesiser ⚔</h1>
-    <p>Approach 1+5 Prototype — Waveform Synthesis + Rules Engine</p>
-  </header>
-
-  <!-- Controls -->
-  <div class="controls-grid">
-    <div class="panel panel-race">
-      <span class="panel-label">Race</span>
-      <div class="option-group" id="raceGroup">
-        <input type="radio" name="race" id="r-human" value="human" checked><label for="r-human">Human</label>
-        <input type="radio" name="race" id="r-elf" value="elf"><label for="r-elf">Elf</label>
-        <input type="radio" name="race" id="r-dwarf" value="dwarf"><label for="r-dwarf">Dwarf</label>
-        <input type="radio" name="race" id="r-orc" value="orc"><label for="r-orc">Orc</label>
-        <input type="radio" name="race" id="r-goblin" value="goblin"><label for="r-goblin">Goblin</label>
-        <input type="radio" name="race" id="r-fairy" value="fairy"><label for="r-fairy">Fairy</label>
-        <input type="radio" name="race" id="r-undead" value="undead"><label for="r-undead">Undead</label>
-        <input type="radio" name="race" id="r-construct" value="construct"><label for="r-construct">Construct</label>
-        <input type="radio" name="race" id="r-dragon" value="dragon"><label for="r-dragon">Dragon</label>
-        <input type="radio" name="race" id="r-beast" value="beastfolk"><label for="r-beast">Beastfolk</label>
-      </div>
-    </div>
-
-    <div class="panel panel-sex">
-      <span class="panel-label">Sex</span>
-      <div class="option-group" id="sexGroup">
-        <input type="radio" name="sex" id="s-male" value="male" checked><label for="s-male">Male</label>
-        <input type="radio" name="sex" id="s-female" value="female"><label for="s-female">Female</label>
-        <input type="radio" name="sex" id="s-neutral" value="neutral"><label for="s-neutral">Neutral</label>
-      </div>
-    </div>
-
-    <div class="panel panel-emotion">
-      <span class="panel-label">Emotion</span>
-      <div class="option-group" id="emotionGroup">
-        <input type="radio" name="emotion" id="e-neutral" value="neutral" checked><label for="e-neutral">Neutral</label>
-        <input type="radio" name="emotion" id="e-happy" value="happy"><label for="e-happy">Happy</label>
-        <input type="radio" name="emotion" id="e-sad" value="sad"><label for="e-sad">Sad</label>
-        <input type="radio" name="emotion" id="e-angry" value="angry"><label for="e-angry">Angry</label>
-        <input type="radio" name="emotion" id="e-scared" value="scared"><label for="e-scared">Scared</label>
-        <input type="radio" name="emotion" id="e-excited" value="excited"><label for="e-excited">Excited</label>
-        <input type="radio" name="emotion" id="e-warm" value="warm"><label for="e-warm">Warm</label>
-        <input type="radio" name="emotion" id="e-cold" value="cold"><label for="e-cold">Cold</label>
-        <input type="radio" name="emotion" id="e-mysterious" value="mysterious"><label for="e-mysterious">Mysterious</label>
-        <input type="radio" name="emotion" id="e-panicked" value="panicked"><label for="e-panicked">Panicked</label>
-      </div>
-    </div>
-  </div>
-
-  <!-- Phrase selection -->
-  <div class="panel phrase-section">
-    <span class="panel-label">Phrase</span>
-    <div class="phrase-presets" id="phrasePresets">
-      <button class="phrase-btn active" data-phrase="Welcome to the village, traveller.">Welcome to the village, traveller.</button>
-      <button class="phrase-btn" data-phrase="Have you seen the dragon?">Have you seen the dragon?</button>
-      <button class="phrase-btn" data-phrase="Run! They're coming for us!">Run! They're coming for us!</button>
-      <button class="phrase-btn" data-phrase="The forest whispers... dark things.">The forest whispers... dark things.</button>
-      <button class="phrase-btn" data-phrase="Ha! You call that a sword?">Ha! You call that a sword?</button>
-      <button class="phrase-btn" data-phrase="I... I don't know what to say.">I... I don't know what to say.</button>
-    </div>
-    <div class="custom-input-row">
-      <input type="text" id="customPhrase" placeholder="Type a custom phrase..." maxlength="200">
-      <button class="play-btn" id="playBtn" onclick="handlePlay()">▶ Speak</button>
-    </div>
-  </div>
-
-  <!-- Scene Chatter -->
-  <div class="panel chatter-section">
-    <div class="chatter-header">
-      <span class="panel-label">Scene Chatter</span>
-      <div class="chatter-controls">
-        <button class="chatter-btn" id="chatterToggle" onclick="toggleChatter()">▶ Start Chatter</button>
-        <div class="chatter-vol-row">
-          <span class="param-key">Vol</span>
-          <input type="range" id="chatterVol" min="5" max="60" value="25" class="chatter-slider">
-          <span class="param-val" id="chatterVolLabel">25%</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gibberish Speech Synthesiser — Prototype</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+      :root {
+        --bg-dark: #0a0a12;
+        --bg-panel: #12121f;
+        --bg-panel-hover: #1a1a2e;
+        --border: #2a2a44;
+        --border-glow: #4a4a7a;
+        --text: #c8c8e0;
+        --text-dim: #6a6a8a;
+        --accent: #ff6b4a;
+        --accent-glow: #ff8b6a;
+        --accent-dim: #993f2d;
+        --green: #4ae06b;
+        --blue: #4a9eff;
+        --purple: #b04aff;
+        --yellow: #ffe04a;
+        --cyan: #4ae0e0;
+        --pink: #ff4a9e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg-dark);
+        color: var(--text);
+        font-family: 'VT323', monospace;
+        font-size: 18px;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Scanline overlay */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.08) 2px,
+          rgba(0, 0, 0, 0.08) 4px
+        );
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid var(--border);
+      }
+
+      header h1 {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 18px;
+        color: var(--accent);
+        text-shadow: 0 0 20px rgba(255, 107, 74, 0.4);
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+
+      header p {
+        color: var(--text-dim);
+        font-size: 16px;
+      }
+
+      /* Control panels */
+      .controls-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      @media (max-width: 680px) {
+        .controls-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .panel {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 16px;
+        position: relative;
+      }
+
+      .panel::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        height: 3px;
+        border-radius: 4px 4px 0 0;
+      }
+
+      .panel-race::before {
+        background: var(--green);
+      }
+      .panel-sex::before {
+        background: var(--blue);
+      }
+      .panel-emotion::before {
+        background: var(--purple);
+      }
+
+      .panel-label {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .panel-race .panel-label {
+        color: var(--green);
+      }
+      .panel-sex .panel-label {
+        color: var(--blue);
+      }
+      .panel-emotion .panel-label {
+        color: var(--purple);
+      }
+
+      /* Radio button groups */
+      .option-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .option-group input[type='radio'] {
+        display: none;
+      }
+
+      .option-group label {
+        font-family: 'VT323', monospace;
+        font-size: 16px;
+        padding: 4px 10px;
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all 0.15s;
+        user-select: none;
+        color: var(--text-dim);
+        background: transparent;
+      }
+
+      .option-group label:hover {
+        border-color: var(--border-glow);
+        color: var(--text);
+      }
+
+      .panel-race input:checked + label {
+        background: rgba(74, 224, 107, 0.15);
+        border-color: var(--green);
+        color: var(--green);
+        box-shadow: 0 0 8px rgba(74, 224, 107, 0.2);
+      }
+
+      .panel-sex input:checked + label {
+        background: rgba(74, 158, 255, 0.15);
+        border-color: var(--blue);
+        color: var(--blue);
+        box-shadow: 0 0 8px rgba(74, 158, 255, 0.2);
+      }
+
+      .panel-emotion input:checked + label {
+        background: rgba(176, 74, 255, 0.15);
+        border-color: var(--purple);
+        color: var(--purple);
+        box-shadow: 0 0 8px rgba(176, 74, 255, 0.2);
+      }
+
+      /* Phrase section */
+      .phrase-section {
+        margin-bottom: 24px;
+      }
+
+      .phrase-section .panel-label {
+        color: var(--yellow);
+        margin-bottom: 12px;
+      }
+
+      .phrase-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .phrase-btn {
+        font-family: 'VT323', monospace;
+        font-size: 17px;
+        padding: 6px 14px;
+        background: var(--bg-panel);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .phrase-btn:hover {
+        border-color: var(--yellow);
+        color: var(--yellow);
+        box-shadow: 0 0 8px rgba(255, 224, 74, 0.15);
+      }
+
+      .phrase-btn.active {
+        background: rgba(255, 224, 74, 0.12);
+        border-color: var(--yellow);
+        color: var(--yellow);
+      }
+
+      .custom-input-row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .custom-input-row input {
+        flex: 1;
+        font-family: 'VT323', monospace;
+        font-size: 18px;
+        padding: 8px 12px;
+        background: var(--bg-dark);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        outline: none;
+        transition: border-color 0.15s;
+      }
+
+      .custom-input-row input:focus {
+        border-color: var(--yellow);
+      }
+
+      .custom-input-row input::placeholder {
+        color: var(--text-dim);
+      }
+
+      /* Play button */
+      .play-btn {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 12px;
+        padding: 12px 28px;
+        background: var(--accent);
+        color: var(--bg-dark);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.15s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        white-space: nowrap;
+      }
+
+      .play-btn:hover {
+        background: var(--accent-glow);
+        box-shadow: 0 0 20px rgba(255, 107, 74, 0.4);
+      }
+
+      .play-btn:active {
+        transform: scale(0.97);
+      }
+
+      .play-btn:disabled {
+        background: var(--accent-dim);
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      /* Dialogue box */
+      .dialogue-box {
+        background: var(--bg-panel);
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        padding: 20px 24px;
+        margin-bottom: 24px;
+        min-height: 80px;
+        position: relative;
+      }
+
+      .dialogue-box::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        height: 3px;
+        background: var(--accent);
+        border-radius: 4px 4px 0 0;
+      }
+
+      .speaker-name {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 10px;
+        color: var(--cyan);
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px rgba(74, 224, 224, 0.3);
+      }
+
+      .dialogue-text {
+        font-size: 22px;
+        line-height: 1.5;
+        min-height: 36px;
+        color: var(--text);
+      }
+
+      .dialogue-text .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background: var(--text);
+        animation: blink 0.6s step-end infinite;
+        vertical-align: text-bottom;
+        margin-left: 2px;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Params readout */
+      .params-panel {
+        margin-bottom: 24px;
+      }
+
+      .params-panel .panel-label {
+        color: var(--cyan);
+        margin-bottom: 10px;
+      }
+
+      .params-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 6px 16px;
+        font-size: 15px;
+      }
+
+      .param-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 0;
+        border-bottom: 1px solid rgba(42, 42, 68, 0.5);
+      }
+
+      .param-key {
+        color: var(--text-dim);
+      }
+      .param-val {
+        color: var(--cyan);
+        font-weight: bold;
+      }
+
+      /* Waveform viz */
+      .viz-panel {
+        margin-bottom: 24px;
+      }
+
+      .viz-panel .panel-label {
+        color: var(--pink);
+        margin-bottom: 10px;
+      }
+
+      canvas#waveform {
+        width: 100%;
+        height: 100px;
+        display: block;
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--text-dim);
+        font-size: 14px;
+      }
+
+      /* Chatter section */
+      .chatter-section {
+        margin-bottom: 24px;
+        position: relative;
+      }
+
+      .chatter-section::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--green), var(--blue), var(--purple), var(--pink));
+        border-radius: 4px 4px 0 0;
+      }
+
+      .chatter-section .panel-label {
+        color: var(--pink);
+      }
+
+      .chatter-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .chatter-controls {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .chatter-btn {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 9px;
+        padding: 8px 16px;
+        background: transparent;
+        color: var(--pink);
+        border: 1px solid var(--pink);
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+
+      .chatter-btn:hover {
+        background: rgba(255, 74, 158, 0.15);
+        box-shadow: 0 0 12px rgba(255, 74, 158, 0.2);
+      }
+
+      .chatter-btn.active {
+        background: var(--pink);
+        color: var(--bg-dark);
+      }
+
+      .chatter-vol-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      .chatter-slider {
+        width: 70px;
+        accent-color: var(--pink);
+        cursor: pointer;
+      }
+
+      .scene-presets {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .scene-btn {
+        font-family: 'VT323', monospace;
+        font-size: 16px;
+        padding: 4px 10px;
+        background: transparent;
+        color: var(--text-dim);
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .scene-btn:hover {
+        border-color: var(--pink);
+        color: var(--text);
+      }
+
+      .scene-btn.active {
+        background: rgba(255, 74, 158, 0.12);
+        border-color: var(--pink);
+        color: var(--pink);
+      }
+
+      .chatter-activity {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        min-height: 28px;
+        align-items: center;
+      }
+
+      .chatter-idle {
+        color: var(--text-dim);
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .chatter-voice {
+        font-size: 14px;
+        padding: 2px 8px;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        transition: all 0.3s;
+        opacity: 0.4;
+      }
+
+      .chatter-voice.speaking {
+        opacity: 1;
+        border-color: var(--pink);
+        box-shadow: 0 0 6px rgba(255, 74, 158, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⚔ Gibberish Speech<br />Synthesiser ⚔</h1>
+        <p>Approach 1+5 Prototype — Waveform Synthesis + Rules Engine</p>
+      </header>
+
+      <!-- Controls -->
+      <div class="controls-grid">
+        <div class="panel panel-race">
+          <span class="panel-label">Race</span>
+          <div class="option-group" id="raceGroup">
+            <input type="radio" name="race" id="r-human" value="human" checked /><label
+              for="r-human"
+              >Human</label
+            >
+            <input type="radio" name="race" id="r-elf" value="elf" /><label for="r-elf">Elf</label>
+            <input type="radio" name="race" id="r-dwarf" value="dwarf" /><label for="r-dwarf"
+              >Dwarf</label
+            >
+            <input type="radio" name="race" id="r-orc" value="orc" /><label for="r-orc">Orc</label>
+            <input type="radio" name="race" id="r-goblin" value="goblin" /><label for="r-goblin"
+              >Goblin</label
+            >
+            <input type="radio" name="race" id="r-fairy" value="fairy" /><label for="r-fairy"
+              >Fairy</label
+            >
+            <input type="radio" name="race" id="r-undead" value="undead" /><label for="r-undead"
+              >Undead</label
+            >
+            <input type="radio" name="race" id="r-construct" value="construct" /><label
+              for="r-construct"
+              >Construct</label
+            >
+            <input type="radio" name="race" id="r-dragon" value="dragon" /><label for="r-dragon"
+              >Dragon</label
+            >
+            <input type="radio" name="race" id="r-beast" value="beastfolk" /><label for="r-beast"
+              >Beastfolk</label
+            >
+          </div>
         </div>
-        <div class="chatter-vol-row">
-          <span class="param-key">Density</span>
-          <input type="range" id="chatterDensity" min="1" max="5" value="3" class="chatter-slider">
-          <span class="param-val" id="chatterDensityLabel">3</span>
+
+        <div class="panel panel-sex">
+          <span class="panel-label">Sex</span>
+          <div class="option-group" id="sexGroup">
+            <input type="radio" name="sex" id="s-male" value="male" checked /><label for="s-male"
+              >Male</label
+            >
+            <input type="radio" name="sex" id="s-female" value="female" /><label for="s-female"
+              >Female</label
+            >
+            <input type="radio" name="sex" id="s-neutral" value="neutral" /><label for="s-neutral"
+              >Neutral</label
+            >
+          </div>
+        </div>
+
+        <div class="panel panel-emotion">
+          <span class="panel-label">Emotion</span>
+          <div class="option-group" id="emotionGroup">
+            <input type="radio" name="emotion" id="e-neutral" value="neutral" checked /><label
+              for="e-neutral"
+              >Neutral</label
+            >
+            <input type="radio" name="emotion" id="e-happy" value="happy" /><label for="e-happy"
+              >Happy</label
+            >
+            <input type="radio" name="emotion" id="e-sad" value="sad" /><label for="e-sad"
+              >Sad</label
+            >
+            <input type="radio" name="emotion" id="e-angry" value="angry" /><label for="e-angry"
+              >Angry</label
+            >
+            <input type="radio" name="emotion" id="e-scared" value="scared" /><label for="e-scared"
+              >Scared</label
+            >
+            <input type="radio" name="emotion" id="e-excited" value="excited" /><label
+              for="e-excited"
+              >Excited</label
+            >
+            <input type="radio" name="emotion" id="e-warm" value="warm" /><label for="e-warm"
+              >Warm</label
+            >
+            <input type="radio" name="emotion" id="e-cold" value="cold" /><label for="e-cold"
+              >Cold</label
+            >
+            <input type="radio" name="emotion" id="e-mysterious" value="mysterious" /><label
+              for="e-mysterious"
+              >Mysterious</label
+            >
+            <input type="radio" name="emotion" id="e-panicked" value="panicked" /><label
+              for="e-panicked"
+              >Panicked</label
+            >
+          </div>
         </div>
       </div>
+
+      <!-- Phrase selection -->
+      <div class="panel phrase-section">
+        <span class="panel-label">Phrase</span>
+        <div class="phrase-presets" id="phrasePresets">
+          <button class="phrase-btn active" data-phrase="Welcome to the village, traveller.">
+            Welcome to the village, traveller.
+          </button>
+          <button class="phrase-btn" data-phrase="Have you seen the dragon?">
+            Have you seen the dragon?
+          </button>
+          <button class="phrase-btn" data-phrase="Run! They're coming for us!">
+            Run! They're coming for us!
+          </button>
+          <button class="phrase-btn" data-phrase="The forest whispers... dark things.">
+            The forest whispers... dark things.
+          </button>
+          <button class="phrase-btn" data-phrase="Ha! You call that a sword?">
+            Ha! You call that a sword?
+          </button>
+          <button class="phrase-btn" data-phrase="I... I don't know what to say.">
+            I... I don't know what to say.
+          </button>
+        </div>
+        <div class="custom-input-row">
+          <input
+            type="text"
+            id="customPhrase"
+            placeholder="Type a custom phrase..."
+            maxlength="200"
+          />
+          <button class="play-btn" id="playBtn" onclick="handlePlay()">▶ Speak</button>
+        </div>
+      </div>
+
+      <!-- Scene Chatter -->
+      <div class="panel chatter-section">
+        <div class="chatter-header">
+          <span class="panel-label">Scene Chatter</span>
+          <div class="chatter-controls">
+            <button class="chatter-btn" id="chatterToggle" onclick="toggleChatter()">
+              ▶ Start Chatter
+            </button>
+            <div class="chatter-vol-row">
+              <span class="param-key">Vol</span>
+              <input
+                type="range"
+                id="chatterVol"
+                min="5"
+                max="60"
+                value="25"
+                class="chatter-slider"
+              />
+              <span class="param-val" id="chatterVolLabel">25%</span>
+            </div>
+            <div class="chatter-vol-row">
+              <span class="param-key">Density</span>
+              <input
+                type="range"
+                id="chatterDensity"
+                min="1"
+                max="5"
+                value="3"
+                class="chatter-slider"
+              />
+              <span class="param-val" id="chatterDensityLabel">3</span>
+            </div>
+          </div>
+        </div>
+        <div class="scene-presets">
+          <span class="param-key" style="margin-right: 8px">Scene:</span>
+          <button class="scene-btn active" data-scene="tavern" onclick="selectScene(this)">
+            🍺 Tavern
+          </button>
+          <button class="scene-btn" data-scene="market" onclick="selectScene(this)">
+            🏪 Market
+          </button>
+          <button class="scene-btn" data-scene="forest" onclick="selectScene(this)">
+            🌲 Enchanted Forest
+          </button>
+          <button class="scene-btn" data-scene="dungeon" onclick="selectScene(this)">
+            💀 Dungeon
+          </button>
+          <button class="scene-btn" data-scene="court" onclick="selectScene(this)">
+            👑 Royal Court
+          </button>
+        </div>
+        <div class="chatter-activity" id="chatterActivity">
+          <span class="chatter-idle">Chatter inactive</span>
+        </div>
+      </div>
+
+      <!-- Dialogue display -->
+      <div class="dialogue-box">
+        <div class="speaker-name" id="speakerName">Human Male — Neutral</div>
+        <div class="dialogue-text" id="dialogueText"><span class="cursor"></span></div>
+      </div>
+
+      <!-- Resolved parameters -->
+      <div class="panel params-panel">
+        <span class="panel-label">Resolved Synth Parameters</span>
+        <div class="params-grid" id="paramsGrid"></div>
+      </div>
+
+      <!-- Waveform visualiser -->
+      <div class="panel viz-panel">
+        <span class="panel-label">Waveform</span>
+        <canvas id="waveform"></canvas>
+      </div>
+
+      <footer>Gibberish Speech System — Design Prototype v0.1</footer>
     </div>
-    <div class="scene-presets">
-      <span class="param-key" style="margin-right:8px;">Scene:</span>
-      <button class="scene-btn active" data-scene="tavern" onclick="selectScene(this)">🍺 Tavern</button>
-      <button class="scene-btn" data-scene="market" onclick="selectScene(this)">🏪 Market</button>
-      <button class="scene-btn" data-scene="forest" onclick="selectScene(this)">🌲 Enchanted Forest</button>
-      <button class="scene-btn" data-scene="dungeon" onclick="selectScene(this)">💀 Dungeon</button>
-      <button class="scene-btn" data-scene="court" onclick="selectScene(this)">👑 Royal Court</button>
-    </div>
-    <div class="chatter-activity" id="chatterActivity">
-      <span class="chatter-idle">Chatter inactive</span>
-    </div>
-  </div>
 
-  <!-- Dialogue display -->
-  <div class="dialogue-box">
-    <div class="speaker-name" id="speakerName">Human Male — Neutral</div>
-    <div class="dialogue-text" id="dialogueText"><span class="cursor"></span></div>
-  </div>
+    <script>
+      // ═══════════════════════════════════════════════════
+      // VOICE PROFILES — Race archetypes
+      // ═══════════════════════════════════════════════════
+      const RACE_PROFILES = {
+        human: {
+          waveform: 'square',
+          baseFreq: 160,
+          freqVar: 20,
+          syllMs: 55,
+          gapMs: 30,
+          vibRate: 4,
+          vibDepth: 4,
+          filterType: 'lowpass',
+          filterFreq: 2500,
+          filterQ: 1,
+          dist: 0.05,
+          reverb: 0.05,
+          qRise: 1.4,
+          exSpike: 1.3,
+          commaDrop: 0.85,
+        },
+        elf: {
+          waveform: 'sine',
+          baseFreq: 200,
+          freqVar: 15,
+          syllMs: 50,
+          gapMs: 28,
+          vibRate: 6,
+          vibDepth: 8,
+          filterType: 'highpass',
+          filterFreq: 300,
+          filterQ: 0.7,
+          dist: 0.0,
+          reverb: 0.1,
+          qRise: 1.5,
+          exSpike: 1.2,
+          commaDrop: 0.9,
+        },
+        dwarf: {
+          waveform: 'sawtooth',
+          baseFreq: 100,
+          freqVar: 15,
+          syllMs: 70,
+          gapMs: 35,
+          vibRate: 3,
+          vibDepth: 5,
+          filterType: 'lowpass',
+          filterFreq: 1800,
+          filterQ: 2,
+          dist: 0.2,
+          reverb: 0.08,
+          qRise: 1.3,
+          exSpike: 1.4,
+          commaDrop: 0.8,
+        },
+        orc: {
+          waveform: 'sawtooth',
+          baseFreq: 80,
+          freqVar: 12,
+          syllMs: 80,
+          gapMs: 40,
+          vibRate: 2.5,
+          vibDepth: 4,
+          filterType: 'lowpass',
+          filterFreq: 1500,
+          filterQ: 3,
+          dist: 0.3,
+          reverb: 0.06,
+          qRise: 1.25,
+          exSpike: 1.5,
+          commaDrop: 0.75,
+        },
+        goblin: {
+          waveform: 'square',
+          baseFreq: 300,
+          freqVar: 50,
+          syllMs: 35,
+          gapMs: 18,
+          vibRate: 8,
+          vibDepth: 12,
+          filterType: 'lowpass',
+          filterFreq: 4000,
+          filterQ: 1,
+          dist: 0.1,
+          reverb: 0.03,
+          qRise: 1.5,
+          exSpike: 1.3,
+          commaDrop: 0.9,
+        },
+        fairy: {
+          waveform: 'sine',
+          baseFreq: 500,
+          freqVar: 40,
+          syllMs: 30,
+          gapMs: 15,
+          vibRate: 10,
+          vibDepth: 15,
+          filterType: 'highpass',
+          filterFreq: 600,
+          filterQ: 0.5,
+          dist: 0.0,
+          reverb: 0.2,
+          qRise: 1.6,
+          exSpike: 1.2,
+          commaDrop: 0.95,
+        },
+        undead: {
+          waveform: 'sawtooth',
+          baseFreq: 120,
+          freqVar: 30,
+          syllMs: 90,
+          gapMs: 50,
+          vibRate: 2,
+          vibDepth: 3,
+          filterType: 'lowpass',
+          filterFreq: 1200,
+          filterQ: 5,
+          dist: 0.35,
+          reverb: 0.15,
+          qRise: 1.2,
+          exSpike: 1.2,
+          commaDrop: 0.7,
+        },
+        construct: {
+          waveform: 'triangle',
+          baseFreq: 180,
+          freqVar: 5,
+          syllMs: 65,
+          gapMs: 32,
+          vibRate: 0,
+          vibDepth: 0,
+          filterType: 'lowpass',
+          filterFreq: 3000,
+          filterQ: 0.5,
+          dist: 0.0,
+          reverb: 0.02,
+          qRise: 1.15,
+          exSpike: 1.1,
+          commaDrop: 0.95,
+        },
+        dragon: {
+          waveform: 'sawtooth',
+          baseFreq: 60,
+          freqVar: 10,
+          syllMs: 100,
+          gapMs: 50,
+          vibRate: 1.5,
+          vibDepth: 3,
+          filterType: 'lowpass',
+          filterFreq: 1000,
+          filterQ: 4,
+          dist: 0.4,
+          reverb: 0.2,
+          qRise: 1.2,
+          exSpike: 1.6,
+          commaDrop: 0.7,
+        },
+        beastfolk: {
+          waveform: 'square',
+          baseFreq: 140,
+          freqVar: 35,
+          syllMs: 50,
+          gapMs: 25,
+          vibRate: 5,
+          vibDepth: 6,
+          filterType: 'lowpass',
+          filterFreq: 3000,
+          filterQ: 1.5,
+          dist: 0.1,
+          reverb: 0.05,
+          qRise: 1.4,
+          exSpike: 1.35,
+          commaDrop: 0.85,
+        },
+      };
 
-  <!-- Resolved parameters -->
-  <div class="panel params-panel">
-    <span class="panel-label">Resolved Synth Parameters</span>
-    <div class="params-grid" id="paramsGrid"></div>
-  </div>
+      // ═══════════════════════════════════════════════════
+      // SEX MODIFIERS
+      // ═══════════════════════════════════════════════════
+      const SEX_MODS = {
+        male: { freqMult: 1.0, syllAdd: 5, vibMult: 0.8 },
+        female: { freqMult: 1.5, syllAdd: -5, vibMult: 1.2 },
+        neutral: { freqMult: 1.2, syllAdd: 0, vibMult: 1.0 },
+      };
 
-  <!-- Waveform visualiser -->
-  <div class="panel viz-panel">
-    <span class="panel-label">Waveform</span>
-    <canvas id="waveform"></canvas>
-  </div>
+      // ═══════════════════════════════════════════════════
+      // EMOTION MODIFIERS
+      // ═══════════════════════════════════════════════════
+      const EMOTION_MODS = {
+        neutral: {
+          freqShift: 0,
+          durMult: 1.0,
+          gapMult: 1.0,
+          volMult: 1.0,
+          distAdd: 0,
+          vibMult: 1.0,
+          varMult: 1.0,
+        },
+        happy: {
+          freqShift: 15,
+          durMult: 0.9,
+          gapMult: 0.8,
+          volMult: 1.15,
+          distAdd: 0,
+          vibMult: 1.2,
+          varMult: 1.2,
+        },
+        sad: {
+          freqShift: -20,
+          durMult: 1.3,
+          gapMult: 1.4,
+          volMult: 0.55,
+          distAdd: 0,
+          vibMult: 0.6,
+          varMult: 0.5,
+        },
+        angry: {
+          freqShift: 20,
+          durMult: 0.8,
+          gapMult: 0.6,
+          volMult: 1.5,
+          distAdd: 0.15,
+          vibMult: 1.5,
+          varMult: 1.4,
+        },
+        scared: {
+          freqShift: 15,
+          durMult: 1.4,
+          gapMult: 1.6,
+          volMult: 0.4,
+          distAdd: 0,
+          vibMult: 2.0,
+          varMult: 1.5,
+        },
+        excited: {
+          freqShift: 25,
+          durMult: 0.85,
+          gapMult: 0.8,
+          volMult: 1.3,
+          distAdd: 0,
+          vibMult: 1.3,
+          varMult: 1.5,
+        },
+        warm: {
+          freqShift: 5,
+          durMult: 1.1,
+          gapMult: 1.1,
+          volMult: 0.85,
+          distAdd: 0,
+          vibMult: 1.1,
+          varMult: 0.8,
+        },
+        cold: {
+          freqShift: -10,
+          durMult: 1.2,
+          gapMult: 1.3,
+          volMult: 0.7,
+          distAdd: 0,
+          vibMult: 0.3,
+          varMult: 0.3,
+        },
+        mysterious: {
+          freqShift: -5,
+          durMult: 1.15,
+          gapMult: 1.2,
+          volMult: 0.5,
+          distAdd: 0,
+          vibMult: 0.8,
+          varMult: 0.6,
+        },
+        panicked: {
+          freqShift: 30,
+          durMult: 0.75,
+          gapMult: 0.55,
+          volMult: 1.4,
+          distAdd: 0.12,
+          vibMult: 2.0,
+          varMult: 2.0,
+        },
+      };
 
-  <footer>Gibberish Speech System — Design Prototype v0.1</footer>
-</div>
+      // ═══════════════════════════════════════════════════
+      // RESOLVE VOICE PARAMETERS
+      // ═══════════════════════════════════════════════════
+      function resolveParams(race, sex, emotion) {
+        const r = RACE_PROFILES[race];
+        const s = SEX_MODS[sex];
+        const e = EMOTION_MODS[emotion];
 
-<script>
-// ═══════════════════════════════════════════════════
-// VOICE PROFILES — Race archetypes
-// ═══════════════════════════════════════════════════
-const RACE_PROFILES = {
-  human:     { waveform:'square',   baseFreq:160, freqVar:20,  syllMs:55,  gapMs:30, vibRate:4,   vibDepth:4,  filterType:'lowpass',  filterFreq:2500, filterQ:1,   dist:0.05, reverb:0.05, qRise:1.4, exSpike:1.3, commaDrop:0.85 },
-  elf:       { waveform:'sine',     baseFreq:200, freqVar:15,  syllMs:50,  gapMs:28, vibRate:6,   vibDepth:8,  filterType:'highpass', filterFreq:300,  filterQ:0.7, dist:0.0,  reverb:0.1,  qRise:1.5, exSpike:1.2, commaDrop:0.9  },
-  dwarf:     { waveform:'sawtooth', baseFreq:100, freqVar:15,  syllMs:70,  gapMs:35, vibRate:3,   vibDepth:5,  filterType:'lowpass',  filterFreq:1800, filterQ:2,   dist:0.2,  reverb:0.08, qRise:1.3, exSpike:1.4, commaDrop:0.8  },
-  orc:       { waveform:'sawtooth', baseFreq:80,  freqVar:12,  syllMs:80,  gapMs:40, vibRate:2.5, vibDepth:4,  filterType:'lowpass',  filterFreq:1500, filterQ:3,   dist:0.3,  reverb:0.06, qRise:1.25,exSpike:1.5, commaDrop:0.75 },
-  goblin:    { waveform:'square',   baseFreq:300, freqVar:50,  syllMs:35,  gapMs:18, vibRate:8,   vibDepth:12, filterType:'lowpass',  filterFreq:4000, filterQ:1,   dist:0.1,  reverb:0.03, qRise:1.5, exSpike:1.3, commaDrop:0.9  },
-  fairy:     { waveform:'sine',     baseFreq:500, freqVar:40,  syllMs:30,  gapMs:15, vibRate:10,  vibDepth:15, filterType:'highpass', filterFreq:600,  filterQ:0.5, dist:0.0,  reverb:0.2,  qRise:1.6, exSpike:1.2, commaDrop:0.95 },
-  undead:    { waveform:'sawtooth', baseFreq:120, freqVar:30,  syllMs:90,  gapMs:50, vibRate:2,   vibDepth:3,  filterType:'lowpass',  filterFreq:1200, filterQ:5,   dist:0.35, reverb:0.15, qRise:1.2, exSpike:1.2, commaDrop:0.7  },
-  construct: { waveform:'triangle', baseFreq:180, freqVar:5,   syllMs:65,  gapMs:32, vibRate:0,   vibDepth:0,  filterType:'lowpass',  filterFreq:3000, filterQ:0.5, dist:0.0,  reverb:0.02, qRise:1.15,exSpike:1.1, commaDrop:0.95 },
-  dragon:    { waveform:'sawtooth', baseFreq:60,  freqVar:10,  syllMs:100, gapMs:50, vibRate:1.5, vibDepth:3,  filterType:'lowpass',  filterFreq:1000, filterQ:4,   dist:0.4,  reverb:0.2,  qRise:1.2, exSpike:1.6, commaDrop:0.7  },
-  beastfolk: { waveform:'square',   baseFreq:140, freqVar:35,  syllMs:50,  gapMs:25, vibRate:5,   vibDepth:6,  filterType:'lowpass',  filterFreq:3000, filterQ:1.5, dist:0.1,  reverb:0.05, qRise:1.4, exSpike:1.35,commaDrop:0.85 },
-};
+        return {
+          waveform: r.waveform,
+          baseFreq: Math.round(r.baseFreq * s.freqMult + e.freqShift),
+          freqVar: Math.round(r.freqVar * e.varMult),
+          syllMs: Math.round((r.syllMs + s.syllAdd) * e.durMult),
+          gapMs: Math.round(r.gapMs * e.gapMult),
+          vibRate: +(r.vibRate * e.vibMult).toFixed(1),
+          vibDepth: +(r.vibDepth * s.vibMult * e.vibMult).toFixed(1),
+          volume: +e.volMult.toFixed(2),
+          filterType: r.filterType,
+          filterFreq: r.filterFreq,
+          filterQ: r.filterQ,
+          dist: +Math.min(1, r.dist + e.distAdd).toFixed(2),
+          reverb: r.reverb,
+          qRise: r.qRise,
+          exSpike: r.exSpike,
+          commaDrop: r.commaDrop,
+        };
+      }
 
-// ═══════════════════════════════════════════════════
-// SEX MODIFIERS
-// ═══════════════════════════════════════════════════
-const SEX_MODS = {
-  male:    { freqMult:1.0, syllAdd:5,  vibMult:0.8 },
-  female:  { freqMult:1.5, syllAdd:-5, vibMult:1.2 },
-  neutral: { freqMult:1.2, syllAdd:0,  vibMult:1.0 },
-};
+      // ═══════════════════════════════════════════════════
+      // SYLLABLE PARSER
+      // ═══════════════════════════════════════════════════
+      function parseSyllables(text) {
+        const syllables = [];
+        const clean = text.replace(/[{}]/g, '');
+        // Split into tokens preserving whitespace positions
+        const tokens = [];
+        let pos = 0;
+        const regex = /(\s+)|(\S+)/g;
+        let m;
+        while ((m = regex.exec(clean)) !== null) {
+          tokens.push({ text: m[0], start: m.index, isSpace: !!m[1] });
+        }
 
-// ═══════════════════════════════════════════════════
-// EMOTION MODIFIERS
-// ═══════════════════════════════════════════════════
-const EMOTION_MODS = {
-  neutral:    { freqShift:0,   durMult:1.0,  gapMult:1.0,  volMult:1.0,  distAdd:0,    vibMult:1.0,  varMult:1.0  },
-  happy:      { freqShift:15,  durMult:0.9,  gapMult:0.8,  volMult:1.15, distAdd:0,    vibMult:1.2,  varMult:1.2  },
-  sad:        { freqShift:-20, durMult:1.3,  gapMult:1.4,  volMult:0.55, distAdd:0,    vibMult:0.6,  varMult:0.5  },
-  angry:      { freqShift:20,  durMult:0.8,  gapMult:0.6,  volMult:1.5,  distAdd:0.15, vibMult:1.5,  varMult:1.4  },
-  scared:     { freqShift:15,  durMult:1.4,  gapMult:1.6,  volMult:0.4,  distAdd:0,    vibMult:2.0,  varMult:1.5  },
-  excited:    { freqShift:25,  durMult:0.85, gapMult:0.8,  volMult:1.3,  distAdd:0,    vibMult:1.3,  varMult:1.5  },
-  warm:       { freqShift:5,   durMult:1.1,  gapMult:1.1,  volMult:0.85, distAdd:0,    vibMult:1.1,  varMult:0.8  },
-  cold:       { freqShift:-10, durMult:1.2,  gapMult:1.3,  volMult:0.7,  distAdd:0,    vibMult:0.3,  varMult:0.3  },
-  mysterious: { freqShift:-5,  durMult:1.15, gapMult:1.2,  volMult:0.5,  distAdd:0,    vibMult:0.8,  varMult:0.6  },
-  panicked:   { freqShift:30,  durMult:0.75, gapMult:0.55, volMult:1.4,  distAdd:0.12, vibMult:2.0,  varMult:2.0  },
-};
+        for (const token of tokens) {
+          if (token.isSpace) continue;
 
-// ═══════════════════════════════════════════════════
-// RESOLVE VOICE PARAMETERS
-// ═══════════════════════════════════════════════════
-function resolveParams(race, sex, emotion) {
-  const r = RACE_PROFILES[race];
-  const s = SEX_MODS[sex];
-  const e = EMOTION_MODS[emotion];
+          const word = token.text;
+          const wordStart = token.start;
 
-  return {
-    waveform:    r.waveform,
-    baseFreq:    Math.round((r.baseFreq * s.freqMult) + e.freqShift),
-    freqVar:     Math.round(r.freqVar * e.varMult),
-    syllMs:      Math.round((r.syllMs + s.syllAdd) * e.durMult),
-    gapMs:       Math.round(r.gapMs * e.gapMult),
-    vibRate:     +(r.vibRate * e.vibMult).toFixed(1),
-    vibDepth:    +(r.vibDepth * s.vibMult * e.vibMult).toFixed(1),
-    volume:      +e.volMult.toFixed(2),
-    filterType:  r.filterType,
-    filterFreq:  r.filterFreq,
-    filterQ:     r.filterQ,
-    dist:        +Math.min(1, r.dist + e.distAdd).toFixed(2),
-    reverb:      r.reverb,
-    qRise:       r.qRise,
-    exSpike:     r.exSpike,
-    commaDrop:   r.commaDrop,
-  };
-}
+          // Detect trailing punctuation
+          const puncMatch = word.match(/([.!?,]+|\.{2,})$/);
+          const punc = puncMatch ? puncMatch[0] : '';
+          const bare = word.replace(/[^a-zA-Z']/g, '');
 
-// ═══════════════════════════════════════════════════
-// SYLLABLE PARSER
-// ═══════════════════════════════════════════════════
-function parseSyllables(text) {
-  const syllables = [];
-  const clean = text.replace(/[{}]/g, '');
-  // Split into tokens preserving whitespace positions
-  const tokens = [];
-  let pos = 0;
-  const regex = /(\s+)|(\S+)/g;
-  let m;
-  while ((m = regex.exec(clean)) !== null) {
-    tokens.push({ text: m[0], start: m.index, isSpace: !!m[1] });
-  }
+          if (bare.length === 0) continue;
 
-  for (const token of tokens) {
-    if (token.isSpace) continue;
+          // Count vowel clusters
+          const vowelClusters = bare.match(/[aeiouy]+/gi);
+          const count = vowelClusters ? Math.max(1, vowelClusters.length) : 1;
+          const charsPerSyll = Math.ceil(word.length / count);
 
-    const word = token.text;
-    const wordStart = token.start;
+          for (let i = 0; i < count; i++) {
+            const isLast = i === count - 1;
+            const charStart = wordStart + i * charsPerSyll;
+            const charEnd = isLast ? wordStart + word.length : wordStart + (i + 1) * charsPerSyll;
 
-    // Detect trailing punctuation
-    const puncMatch = word.match(/([.!?,]+|\.{2,})$/);
-    const punc = puncMatch ? puncMatch[0] : '';
-    const bare = word.replace(/[^a-zA-Z']/g, '');
+            syllables.push({
+              word: bare,
+              index: i,
+              isVowelHeavy: vowelClusters && vowelClusters[i] && vowelClusters[i].length > 1,
+              punctuation: isLast ? punc : '',
+              charStart: charStart,
+              charEnd: charEnd,
+            });
+          }
+        }
 
-    if (bare.length === 0) continue;
+        return syllables;
+      }
 
-    // Count vowel clusters
-    const vowelClusters = bare.match(/[aeiouy]+/gi);
-    const count = vowelClusters ? Math.max(1, vowelClusters.length) : 1;
-    const charsPerSyll = Math.ceil(word.length / count);
+      function buildProsodyCurve(syllables, params) {
+        const n = syllables.length;
+        const curve = new Array(n).fill(1.0);
 
-    for (let i = 0; i < count; i++) {
-      const isLast = (i === count - 1);
-      const charStart = wordStart + i * charsPerSyll;
-      const charEnd = isLast ? wordStart + word.length : wordStart + (i + 1) * charsPerSyll;
+        // Detect sentence ending
+        const lastPunc = n > 0 ? syllables[n - 1].punctuation : '';
+        const hasQuestion = lastPunc.includes('?');
+        const hasExclaim = lastPunc.includes('!');
 
-      syllables.push({
-        word: bare,
-        index: i,
-        isVowelHeavy: vowelClusters && vowelClusters[i] && vowelClusters[i].length > 1,
-        punctuation: isLast ? punc : '',
-        charStart: charStart,
-        charEnd: charEnd,
+        for (let i = 0; i < n; i++) {
+          // Vowel-heavy syllables slightly higher
+          if (syllables[i].isVowelHeavy) curve[i] *= 1.03;
+
+          // Natural sentence arc: gentle rise then fall
+          const arc = 1.0 + 0.05 * Math.sin((Math.PI * i) / Math.max(1, n - 1));
+          curve[i] *= arc;
+
+          // Question rise on last 3
+          if (hasQuestion && i >= n - 3) {
+            const riseAmount = 1 + (params.qRise - 1) * ((i - (n - 3) + 1) / 3);
+            curve[i] *= riseAmount;
+          }
+
+          // Exclamation spike on last syllable
+          if (hasExclaim && i === n - 1) {
+            curve[i] *= params.exSpike;
+          }
+
+          // Period: gentle fall on last 2
+          if (
+            !hasQuestion &&
+            !hasExclaim &&
+            lastPunc.includes('.') &&
+            !lastPunc.includes('..') &&
+            i >= n - 2
+          ) {
+            curve[i] *= 0.9;
+          }
+
+          // Comma drop
+          if (syllables[i].punctuation.includes(',')) {
+            curve[i] *= params.commaDrop;
+          }
+        }
+
+        return curve;
+      }
+
+      // ═══════════════════════════════════════════════════
+      // WEB AUDIO SYNTHESISER
+      // ═══════════════════════════════════════════════════
+      let audioCtx = null;
+      let analyserNode = null;
+      let masterGain = null;
+      let isPlaying = false;
+      let animFrame = null;
+
+      async function ensureAudioContext() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          analyserNode = audioCtx.createAnalyser();
+          analyserNode.fftSize = 2048;
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = 1.0;
+          masterGain.connect(analyserNode);
+          analyserNode.connect(audioCtx.destination);
+        }
+        if (audioCtx.state === 'suspended') {
+          await audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      function makeDistortionCurve(amount) {
+        const k = amount * 200;
+        const samples = 256;
+        const curve = new Float32Array(samples);
+        for (let i = 0; i < samples; i++) {
+          const x = (i * 2) / samples - 1;
+          curve[i] = ((3 + k) * x * 20 * (Math.PI / 180)) / (Math.PI + k * Math.abs(x));
+        }
+        return curve;
+      }
+
+      async function playSpeech(text, params) {
+        const ctx = await ensureAudioContext();
+        const syllables = parseSyllables(text);
+        const prosody = buildProsodyCurve(syllables, params);
+
+        if (syllables.length === 0) return { totalDuration: 0, timeline: [] };
+
+        const now = ctx.currentTime + 0.05;
+        let t = 0;
+        const vol = params.volume;
+        const timeline = []; // { timeMs, charEnd } for typewriter sync
+
+        for (let i = 0; i < syllables.length; i++) {
+          const syll = syllables[i];
+          const freq = params.baseFreq * prosody[i] + (Math.random() - 0.5) * 2 * params.freqVar;
+          const dur = Math.max(0.02, params.syllMs / 1000);
+          const startTime = now + t;
+
+          // Record timeline entry: when this syllable starts, reveal chars up to charEnd
+          timeline.push({ timeMs: t * 1000, charEnd: syll.charEnd });
+
+          // Oscillator
+          const osc = ctx.createOscillator();
+          osc.type = params.waveform === 'noise' ? 'sawtooth' : params.waveform;
+          osc.frequency.setValueAtTime(freq, startTime);
+
+          // Vibrato via LFO
+          if (params.vibRate > 0 && params.vibDepth > 0) {
+            const lfo = ctx.createOscillator();
+            const lfoGain = ctx.createGain();
+            lfo.frequency.value = params.vibRate;
+            lfoGain.gain.value = params.vibDepth;
+            lfo.connect(lfoGain);
+            lfoGain.connect(osc.frequency);
+            lfo.start(startTime);
+            lfo.stop(startTime + dur + 0.02);
+          }
+
+          // Gain envelope
+          const gainNode = ctx.createGain();
+          const attack = Math.min(0.008, dur * 0.15);
+          const release = Math.min(0.015, dur * 0.2);
+          const sustainTime = Math.max(0, dur - attack - release);
+
+          gainNode.gain.setValueAtTime(0.0001, startTime);
+          gainNode.gain.exponentialRampToValueAtTime(vol, startTime + attack);
+          if (sustainTime > 0) {
+            gainNode.gain.setValueAtTime(vol * 0.85, startTime + attack + sustainTime);
+          }
+          gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + dur);
+
+          // Filter
+          const filter = ctx.createBiquadFilter();
+          filter.type = params.filterType;
+          filter.frequency.value = params.filterFreq;
+          filter.Q.value = params.filterQ;
+
+          // Distortion
+          let distNode = null;
+          if (params.dist > 0.01) {
+            distNode = ctx.createWaveShaper();
+            distNode.curve = makeDistortionCurve(params.dist);
+            distNode.oversample = '2x';
+          }
+
+          // Connect chain
+          osc.connect(gainNode);
+          gainNode.connect(filter);
+          let tail = filter;
+          if (distNode) {
+            filter.connect(distNode);
+            tail = distNode;
+          }
+          tail.connect(masterGain);
+
+          osc.start(startTime);
+          osc.stop(startTime + dur + 0.02);
+
+          // Advance time
+          t += dur + params.gapMs / 1000;
+
+          // Punctuation pauses — with absolute minimum floors
+          const gapSec = params.gapMs / 1000;
+          if (syll.punctuation.includes('...')) {
+            t += Math.max(0.35, gapSec * 5);
+          } else if (syll.punctuation.includes(',')) {
+            t += Math.max(0.1, gapSec * 2);
+          } else if (syll.punctuation.includes('?') || syll.punctuation.includes('!')) {
+            t += Math.max(0.12, gapSec * 2.5);
+          } else if (syll.punctuation.includes('.')) {
+            t += Math.max(0.15, gapSec * 2.5);
+          }
+        }
+
+        const totalDuration = t * 1000;
+
+        // Add a final entry to ensure full text is revealed at the end
+        timeline.push({ timeMs: totalDuration, charEnd: text.length });
+
+        return { totalDuration, timeline };
+      }
+
+      // ═══════════════════════════════════════════════════
+      // WAVEFORM VISUALISER
+      // ═══════════════════════════════════════════════════
+      const canvas = document.getElementById('waveform');
+      const canvasCtx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
+        canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function drawWaveform() {
+        animFrame = requestAnimationFrame(drawWaveform);
+        if (!analyserNode) return;
+
+        const w = canvas.width;
+        const h = canvas.height;
+        const bufLen = analyserNode.frequencyBinCount;
+        const data = new Uint8Array(bufLen);
+        analyserNode.getByteTimeDomainData(data);
+
+        canvasCtx.fillStyle = '#0a0a12';
+        canvasCtx.fillRect(0, 0, w, h);
+
+        canvasCtx.lineWidth = 2 * (window.devicePixelRatio || 1);
+        canvasCtx.strokeStyle = '#ff6b4a';
+        canvasCtx.shadowColor = '#ff6b4a';
+        canvasCtx.shadowBlur = 6;
+        canvasCtx.beginPath();
+
+        const sliceWidth = w / bufLen;
+        let x = 0;
+        for (let i = 0; i < bufLen; i++) {
+          const v = data[i] / 128.0;
+          const y = (v * h) / 2;
+          if (i === 0) canvasCtx.moveTo(x, y);
+          else canvasCtx.lineTo(x, y);
+          x += sliceWidth;
+        }
+        canvasCtx.lineTo(w, h / 2);
+        canvasCtx.stroke();
+        canvasCtx.shadowBlur = 0;
+
+        // Grid lines
+        canvasCtx.strokeStyle = 'rgba(42,42,68,0.5)';
+        canvasCtx.lineWidth = 1;
+        canvasCtx.setLineDash([4, 4]);
+        canvasCtx.beginPath();
+        canvasCtx.moveTo(0, h / 2);
+        canvasCtx.lineTo(w, h / 2);
+        canvasCtx.stroke();
+        canvasCtx.setLineDash([]);
+      }
+      drawWaveform();
+
+      // ═══════════════════════════════════════════════════
+      // TYPEWRITER DISPLAY
+      // ═══════════════════════════════════════════════════
+      let typewriterRAF = null;
+
+      function typewriterDisplay(text, timeline) {
+        const el = document.getElementById('dialogueText');
+        el.innerHTML = '<span class="cursor"></span>';
+
+        if (typewriterRAF) cancelAnimationFrame(typewriterRAF);
+
+        if (!timeline || timeline.length === 0) {
+          el.innerHTML = text;
+          return;
+        }
+
+        // Build a flat schedule: [{timeMs, charIndex}] for every character
+        const charSchedule = [];
+        for (let i = 0; i < timeline.length; i++) {
+          const entry = timeline[i];
+          const prevCharEnd = i > 0 ? timeline[i - 1].charEnd : 0;
+          const prevTime = i > 0 ? timeline[i - 1].timeMs : 0;
+          const charsToReveal = entry.charEnd - prevCharEnd;
+          const timeSpan = entry.timeMs - prevTime;
+
+          if (charsToReveal <= 0) continue;
+
+          const charInterval = charsToReveal > 1 ? timeSpan / charsToReveal : 0;
+          for (let c = 0; c < charsToReveal; c++) {
+            charSchedule.push({
+              timeMs: prevTime + c * charInterval,
+              charIndex: prevCharEnd + c,
+            });
+          }
+        }
+
+        if (charSchedule.length === 0) {
+          el.innerHTML = text;
+          return;
+        }
+
+        const totalMs = timeline[timeline.length - 1].timeMs;
+        let scheduleIdx = 0;
+        let lastRevealed = -1;
+        const startStamp = performance.now();
+
+        function tick(now) {
+          const elapsed = now - startStamp;
+
+          // Advance through schedule
+          while (scheduleIdx < charSchedule.length && charSchedule[scheduleIdx].timeMs <= elapsed) {
+            lastRevealed = charSchedule[scheduleIdx].charIndex;
+            scheduleIdx++;
+          }
+
+          // Update DOM only when new chars revealed
+          if (lastRevealed >= 0) {
+            el.innerHTML = text.slice(0, lastRevealed + 1) + '<span class="cursor"></span>';
+          }
+
+          if (scheduleIdx < charSchedule.length) {
+            typewriterRAF = requestAnimationFrame(tick);
+          } else {
+            // All done
+            el.innerHTML = text;
+          }
+        }
+
+        typewriterRAF = requestAnimationFrame(tick);
+      }
+
+      // ═══════════════════════════════════════════════════
+      // UI DISPLAY
+      // ═══════════════════════════════════════════════════
+      function getSelected(name) {
+        const el = document.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : null;
+      }
+
+      function getPhrase() {
+        const custom = document.getElementById('customPhrase').value.trim();
+        if (custom) return custom;
+        const active = document.querySelector('.phrase-btn.active');
+        return active ? active.dataset.phrase : 'Hello there.';
+      }
+
+      function updateParamsDisplay(params) {
+        const grid = document.getElementById('paramsGrid');
+        const entries = [
+          ['Waveform', params.waveform],
+          ['Base Freq', params.baseFreq + ' Hz'],
+          ['Freq Variance', '±' + params.freqVar + ' Hz'],
+          ['Syllable', params.syllMs + ' ms'],
+          ['Gap', params.gapMs + ' ms'],
+          ['Vibrato Rate', params.vibRate + ' Hz'],
+          ['Vibrato Depth', params.vibDepth + ' Hz'],
+          ['Volume', (params.volume * 100).toFixed(0) + '%'],
+          ['Filter', params.filterType + ' @ ' + params.filterFreq + ' Hz'],
+          ['Filter Q', params.filterQ],
+          ['Distortion', params.dist],
+          ['Question Rise', '×' + params.qRise],
+        ];
+        grid.innerHTML = entries
+          .map(
+            ([k, v]) =>
+              `<div class="param-row"><span class="param-key">${k}</span><span class="param-val">${v}</span></div>`
+          )
+          .join('');
+      }
+
+      function updateSpeakerLabel() {
+        const race = getSelected('race');
+        const sex = getSelected('sex');
+        const emotion = getSelected('emotion');
+        const label = `${race.charAt(0).toUpperCase() + race.slice(1)} ${sex.charAt(0).toUpperCase() + sex.slice(1)} — ${emotion.charAt(0).toUpperCase() + emotion.slice(1)}`;
+        document.getElementById('speakerName').textContent = label;
+      }
+
+      // ═══════════════════════════════════════════════════
+      // EVENT HANDLERS
+      // ═══════════════════════════════════════════════════
+      async function handlePlay() {
+        if (isPlaying) return;
+
+        const race = getSelected('race');
+        const sex = getSelected('sex');
+        const emotion = getSelected('emotion');
+        const phrase = getPhrase();
+
+        if (!phrase) return;
+
+        const params = resolveParams(race, sex, emotion);
+        updateParamsDisplay(params);
+        updateSpeakerLabel();
+
+        const btn = document.getElementById('playBtn');
+        btn.disabled = true;
+        btn.textContent = '◼ Playing...';
+        isPlaying = true;
+
+        if (typewriterRAF) cancelAnimationFrame(typewriterRAF);
+
+        const result = await playSpeech(phrase, params);
+        typewriterDisplay(phrase, result.timeline);
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = '▶ Speak';
+          isPlaying = false;
+        }, result.totalDuration + 200);
+      }
+
+      // Phrase preset buttons
+      document.querySelectorAll('.phrase-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.phrase-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('customPhrase').value = '';
+        });
       });
-    }
-  }
 
-  return syllables;
-}
-
-function buildProsodyCurve(syllables, params) {
-  const n = syllables.length;
-  const curve = new Array(n).fill(1.0);
-
-  // Detect sentence ending
-  const lastPunc = n > 0 ? syllables[n-1].punctuation : '';
-  const hasQuestion = lastPunc.includes('?');
-  const hasExclaim = lastPunc.includes('!');
-
-  for (let i = 0; i < n; i++) {
-    // Vowel-heavy syllables slightly higher
-    if (syllables[i].isVowelHeavy) curve[i] *= 1.03;
-
-    // Natural sentence arc: gentle rise then fall
-    const arc = 1.0 + 0.05 * Math.sin(Math.PI * i / Math.max(1, n - 1));
-    curve[i] *= arc;
-
-    // Question rise on last 3
-    if (hasQuestion && i >= n - 3) {
-      const riseAmount = 1 + (params.qRise - 1) * ((i - (n - 3) + 1) / 3);
-      curve[i] *= riseAmount;
-    }
-
-    // Exclamation spike on last syllable
-    if (hasExclaim && i === n - 1) {
-      curve[i] *= params.exSpike;
-    }
-
-    // Period: gentle fall on last 2
-    if (!hasQuestion && !hasExclaim && lastPunc.includes('.') && !lastPunc.includes('..') && i >= n - 2) {
-      curve[i] *= 0.9;
-    }
-
-    // Comma drop
-    if (syllables[i].punctuation.includes(',')) {
-      curve[i] *= params.commaDrop;
-    }
-  }
-
-  return curve;
-}
-
-// ═══════════════════════════════════════════════════
-// WEB AUDIO SYNTHESISER
-// ═══════════════════════════════════════════════════
-let audioCtx = null;
-let analyserNode = null;
-let masterGain = null;
-let isPlaying = false;
-let animFrame = null;
-
-async function ensureAudioContext() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    analyserNode = audioCtx.createAnalyser();
-    analyserNode.fftSize = 2048;
-    masterGain = audioCtx.createGain();
-    masterGain.gain.value = 1.0;
-    masterGain.connect(analyserNode);
-    analyserNode.connect(audioCtx.destination);
-  }
-  if (audioCtx.state === 'suspended') {
-    await audioCtx.resume();
-  }
-  return audioCtx;
-}
-
-function makeDistortionCurve(amount) {
-  const k = amount * 200;
-  const samples = 256;
-  const curve = new Float32Array(samples);
-  for (let i = 0; i < samples; i++) {
-    const x = (i * 2) / samples - 1;
-    curve[i] = ((3 + k) * x * 20 * (Math.PI / 180)) / (Math.PI + k * Math.abs(x));
-  }
-  return curve;
-}
-
-async function playSpeech(text, params) {
-  const ctx = await ensureAudioContext();
-  const syllables = parseSyllables(text);
-  const prosody = buildProsodyCurve(syllables, params);
-
-  if (syllables.length === 0) return { totalDuration: 0, timeline: [] };
-
-  const now = ctx.currentTime + 0.05;
-  let t = 0;
-  const vol = params.volume;
-  const timeline = []; // { timeMs, charEnd } for typewriter sync
-
-  for (let i = 0; i < syllables.length; i++) {
-    const syll = syllables[i];
-    const freq = params.baseFreq * prosody[i] + (Math.random() - 0.5) * 2 * params.freqVar;
-    const dur = Math.max(0.02, params.syllMs / 1000);
-    const startTime = now + t;
-
-    // Record timeline entry: when this syllable starts, reveal chars up to charEnd
-    timeline.push({ timeMs: t * 1000, charEnd: syll.charEnd });
-
-    // Oscillator
-    const osc = ctx.createOscillator();
-    osc.type = params.waveform === 'noise' ? 'sawtooth' : params.waveform;
-    osc.frequency.setValueAtTime(freq, startTime);
-
-    // Vibrato via LFO
-    if (params.vibRate > 0 && params.vibDepth > 0) {
-      const lfo = ctx.createOscillator();
-      const lfoGain = ctx.createGain();
-      lfo.frequency.value = params.vibRate;
-      lfoGain.gain.value = params.vibDepth;
-      lfo.connect(lfoGain);
-      lfoGain.connect(osc.frequency);
-      lfo.start(startTime);
-      lfo.stop(startTime + dur + 0.02);
-    }
-
-    // Gain envelope
-    const gainNode = ctx.createGain();
-    const attack = Math.min(0.008, dur * 0.15);
-    const release = Math.min(0.015, dur * 0.2);
-    const sustainTime = Math.max(0, dur - attack - release);
-
-    gainNode.gain.setValueAtTime(0.0001, startTime);
-    gainNode.gain.exponentialRampToValueAtTime(vol, startTime + attack);
-    if (sustainTime > 0) {
-      gainNode.gain.setValueAtTime(vol * 0.85, startTime + attack + sustainTime);
-    }
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + dur);
-
-    // Filter
-    const filter = ctx.createBiquadFilter();
-    filter.type = params.filterType;
-    filter.frequency.value = params.filterFreq;
-    filter.Q.value = params.filterQ;
-
-    // Distortion
-    let distNode = null;
-    if (params.dist > 0.01) {
-      distNode = ctx.createWaveShaper();
-      distNode.curve = makeDistortionCurve(params.dist);
-      distNode.oversample = '2x';
-    }
-
-    // Connect chain
-    osc.connect(gainNode);
-    gainNode.connect(filter);
-    let tail = filter;
-    if (distNode) {
-      filter.connect(distNode);
-      tail = distNode;
-    }
-    tail.connect(masterGain);
-
-    osc.start(startTime);
-    osc.stop(startTime + dur + 0.02);
-
-    // Advance time
-    t += dur + (params.gapMs / 1000);
-
-    // Punctuation pauses — with absolute minimum floors
-    const gapSec = params.gapMs / 1000;
-    if (syll.punctuation.includes('...')) {
-      t += Math.max(0.35, gapSec * 5);
-    } else if (syll.punctuation.includes(',')) {
-      t += Math.max(0.1, gapSec * 2);
-    } else if (syll.punctuation.includes('?') || syll.punctuation.includes('!')) {
-      t += Math.max(0.12, gapSec * 2.5);
-    } else if (syll.punctuation.includes('.')) {
-      t += Math.max(0.15, gapSec * 2.5);
-    }
-  }
-
-  const totalDuration = t * 1000;
-
-  // Add a final entry to ensure full text is revealed at the end
-  timeline.push({ timeMs: totalDuration, charEnd: text.length });
-
-  return { totalDuration, timeline };
-}
-
-// ═══════════════════════════════════════════════════
-// WAVEFORM VISUALISER
-// ═══════════════════════════════════════════════════
-const canvas = document.getElementById('waveform');
-const canvasCtx = canvas.getContext('2d');
-
-function resizeCanvas() {
-  canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
-  canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-function drawWaveform() {
-  animFrame = requestAnimationFrame(drawWaveform);
-  if (!analyserNode) return;
-
-  const w = canvas.width;
-  const h = canvas.height;
-  const bufLen = analyserNode.frequencyBinCount;
-  const data = new Uint8Array(bufLen);
-  analyserNode.getByteTimeDomainData(data);
-
-  canvasCtx.fillStyle = '#0a0a12';
-  canvasCtx.fillRect(0, 0, w, h);
-
-  canvasCtx.lineWidth = 2 * (window.devicePixelRatio || 1);
-  canvasCtx.strokeStyle = '#ff6b4a';
-  canvasCtx.shadowColor = '#ff6b4a';
-  canvasCtx.shadowBlur = 6;
-  canvasCtx.beginPath();
-
-  const sliceWidth = w / bufLen;
-  let x = 0;
-  for (let i = 0; i < bufLen; i++) {
-    const v = data[i] / 128.0;
-    const y = (v * h) / 2;
-    if (i === 0) canvasCtx.moveTo(x, y);
-    else canvasCtx.lineTo(x, y);
-    x += sliceWidth;
-  }
-  canvasCtx.lineTo(w, h / 2);
-  canvasCtx.stroke();
-  canvasCtx.shadowBlur = 0;
-
-  // Grid lines
-  canvasCtx.strokeStyle = 'rgba(42,42,68,0.5)';
-  canvasCtx.lineWidth = 1;
-  canvasCtx.setLineDash([4, 4]);
-  canvasCtx.beginPath();
-  canvasCtx.moveTo(0, h/2);
-  canvasCtx.lineTo(w, h/2);
-  canvasCtx.stroke();
-  canvasCtx.setLineDash([]);
-}
-drawWaveform();
-
-// ═══════════════════════════════════════════════════
-// TYPEWRITER DISPLAY
-// ═══════════════════════════════════════════════════
-let typewriterRAF = null;
-
-function typewriterDisplay(text, timeline) {
-  const el = document.getElementById('dialogueText');
-  el.innerHTML = '<span class="cursor"></span>';
-
-  if (typewriterRAF) cancelAnimationFrame(typewriterRAF);
-
-  if (!timeline || timeline.length === 0) {
-    el.innerHTML = text;
-    return;
-  }
-
-  // Build a flat schedule: [{timeMs, charIndex}] for every character
-  const charSchedule = [];
-  for (let i = 0; i < timeline.length; i++) {
-    const entry = timeline[i];
-    const prevCharEnd = i > 0 ? timeline[i-1].charEnd : 0;
-    const prevTime = i > 0 ? timeline[i-1].timeMs : 0;
-    const charsToReveal = entry.charEnd - prevCharEnd;
-    const timeSpan = entry.timeMs - prevTime;
-
-    if (charsToReveal <= 0) continue;
-
-    const charInterval = charsToReveal > 1 ? timeSpan / charsToReveal : 0;
-    for (let c = 0; c < charsToReveal; c++) {
-      charSchedule.push({
-        timeMs: prevTime + c * charInterval,
-        charIndex: prevCharEnd + c,
+      // Custom input clears preset selection
+      document.getElementById('customPhrase').addEventListener('input', () => {
+        if (document.getElementById('customPhrase').value.trim()) {
+          document.querySelectorAll('.phrase-btn').forEach(b => b.classList.remove('active'));
+        }
       });
-    }
-  }
 
-  if (charSchedule.length === 0) {
-    el.innerHTML = text;
-    return;
-  }
+      // Enter key plays
+      document.getElementById('customPhrase').addEventListener('keydown', e => {
+        if (e.key === 'Enter') handlePlay();
+      });
 
-  const totalMs = timeline[timeline.length - 1].timeMs;
-  let scheduleIdx = 0;
-  let lastRevealed = -1;
-  const startStamp = performance.now();
+      // Update label on any control change
+      document.querySelectorAll('input[type="radio"]').forEach(r => {
+        r.addEventListener('change', updateSpeakerLabel);
+      });
 
-  function tick(now) {
-    const elapsed = now - startStamp;
+      // Init
+      updateSpeakerLabel();
+      updateParamsDisplay(resolveParams('human', 'male', 'neutral'));
 
-    // Advance through schedule
-    while (scheduleIdx < charSchedule.length && charSchedule[scheduleIdx].timeMs <= elapsed) {
-      lastRevealed = charSchedule[scheduleIdx].charIndex;
-      scheduleIdx++;
-    }
+      // ═══════════════════════════════════════════════════
+      // SCENE CHATTER ENGINE
+      // ═══════════════════════════════════════════════════
 
-    // Update DOM only when new chars revealed
-    if (lastRevealed >= 0) {
-      el.innerHTML = text.slice(0, lastRevealed + 1) + '<span class="cursor"></span>';
-    }
+      const SCENE_POOLS = {
+        tavern: {
+          label: 'Tavern',
+          voices: [
+            { name: 'Barkeep', race: 'human', sex: 'male', emotion: 'warm' },
+            { name: 'Barmaid', race: 'human', sex: 'female', emotion: 'happy' },
+            { name: 'Drunk Dwarf', race: 'dwarf', sex: 'male', emotion: 'happy' },
+            { name: 'Shady Goblin', race: 'goblin', sex: 'male', emotion: 'mysterious' },
+            { name: 'Bard', race: 'elf', sex: 'female', emotion: 'warm' },
+            { name: 'Mercenary', race: 'human', sex: 'male', emotion: 'neutral' },
+          ],
+          phrases: [
+            'Another round over here!',
+            'Ha ha ha!',
+            'Did you hear about the dragon?',
+            'Cheers, mate.',
+            'Keep it down...',
+            'That reminds me of a story.',
+            'More ale!',
+            'To the king!',
+            'Shh, not so loud.',
+            'What a day...',
+            'You believe that?',
+            'Pass the bread.',
+          ],
+        },
+        market: {
+          label: 'Market',
+          voices: [
+            { name: 'Fruit Seller', race: 'human', sex: 'female', emotion: 'excited' },
+            { name: 'Blacksmith', race: 'dwarf', sex: 'male', emotion: 'neutral' },
+            { name: 'Herb Merchant', race: 'elf', sex: 'female', emotion: 'warm' },
+            { name: 'Haggling Orc', race: 'orc', sex: 'male', emotion: 'angry' },
+            { name: 'Child', race: 'goblin', sex: 'neutral', emotion: 'happy' },
+            { name: 'Guard', race: 'human', sex: 'male', emotion: 'cold' },
+          ],
+          phrases: [
+            'Fresh apples, come and get them!',
+            'Best price in town!',
+            'That is too much.',
+            'Three silver, final offer.',
+            'Look at this craftsmanship!',
+            'Mama, look!',
+            'Move along, nothing to see.',
+            'Finest herbs from the glade.',
+            'Sold!',
+            'You call this fresh?',
+            'Step right up!',
+          ],
+        },
+        forest: {
+          label: 'Enchanted Forest',
+          voices: [
+            { name: 'Elder Dryad', race: 'elf', sex: 'female', emotion: 'mysterious' },
+            { name: 'Sprite', race: 'fairy', sex: 'neutral', emotion: 'happy' },
+            { name: 'Treant', race: 'dragon', sex: 'male', emotion: 'warm' },
+            { name: 'Wisp', race: 'fairy', sex: 'female', emotion: 'scared' },
+            { name: 'Ranger', race: 'human', sex: 'male', emotion: 'cold' },
+          ],
+          phrases: [
+            'The trees remember...',
+            'Tee hee hee!',
+            'Something stirs beneath.',
+            'Follow the light.',
+            'Shh... did you hear that?',
+            'The old magic is waking.',
+            'Stay on the path.',
+            'Wheeee!',
+            'Be careful...',
+            'The roots speak of change.',
+          ],
+        },
+        dungeon: {
+          label: 'Dungeon',
+          voices: [
+            { name: 'Skeleton', race: 'undead', sex: 'male', emotion: 'cold' },
+            { name: 'Ghost', race: 'undead', sex: 'female', emotion: 'sad' },
+            { name: 'Golem', race: 'construct', sex: 'neutral', emotion: 'neutral' },
+            { name: 'Imp', race: 'goblin', sex: 'male', emotion: 'excited' },
+            { name: 'Trapped Knight', race: 'human', sex: 'male', emotion: 'scared' },
+          ],
+          phrases: [
+            'Turn back...',
+            'Heh heh heh...',
+            'Intruder detected.',
+            'Please... help me.',
+            'You should not be here.',
+            'The dark... it watches.',
+            'Clank, clank, clank.',
+            'Who goes there?',
+            'I have been here... so long.',
+            'Foolish mortal!',
+          ],
+        },
+        court: {
+          label: 'Royal Court',
+          voices: [
+            { name: 'King', race: 'human', sex: 'male', emotion: 'cold' },
+            { name: 'Queen', race: 'elf', sex: 'female', emotion: 'warm' },
+            { name: 'Advisor', race: 'human', sex: 'male', emotion: 'mysterious' },
+            { name: 'Noble', race: 'human', sex: 'female', emotion: 'neutral' },
+            { name: 'Ambassador', race: 'dwarf', sex: 'male', emotion: 'warm' },
+            { name: 'Herald', race: 'human', sex: 'male', emotion: 'excited' },
+          ],
+          phrases: [
+            'Your Majesty, if I may...',
+            'The treasury cannot sustain this.',
+            'Hear, hear!',
+            'The alliance is fragile.',
+            'We must act with caution.',
+            'What say the people?',
+            'Quite so, quite so.',
+            'This is most irregular.',
+            'The ambassador brings news.',
+            'Order in the court!',
+          ],
+        },
+      };
 
-    if (scheduleIdx < charSchedule.length) {
-      typewriterRAF = requestAnimationFrame(tick);
-    } else {
-      // All done
-      el.innerHTML = text;
-    }
-  }
+      let chatterActive = false;
+      let chatterVoices = []; // active voice slots
+      let chatterTimers = [];
+      let currentScene = 'tavern';
 
-  typewriterRAF = requestAnimationFrame(tick);
-}
+      function selectScene(btn) {
+        document.querySelectorAll('.scene-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentScene = btn.dataset.scene;
+        if (chatterActive) {
+          stopChatter();
+          startChatter();
+        }
+      }
 
-// ═══════════════════════════════════════════════════
-// UI DISPLAY
-// ═══════════════════════════════════════════════════
-function getSelected(name) {
-  const el = document.querySelector(`input[name="${name}"]:checked`);
-  return el ? el.value : null;
-}
+      function toggleChatter() {
+        if (chatterActive) {
+          stopChatter();
+        } else {
+          startChatter();
+        }
+      }
 
-function getPhrase() {
-  const custom = document.getElementById('customPhrase').value.trim();
-  if (custom) return custom;
-  const active = document.querySelector('.phrase-btn.active');
-  return active ? active.dataset.phrase : 'Hello there.';
-}
+      function getChatterVolume() {
+        return parseInt(document.getElementById('chatterVol').value) / 100;
+      }
 
-function updateParamsDisplay(params) {
-  const grid = document.getElementById('paramsGrid');
-  const entries = [
-    ['Waveform', params.waveform],
-    ['Base Freq', params.baseFreq + ' Hz'],
-    ['Freq Variance', '±' + params.freqVar + ' Hz'],
-    ['Syllable', params.syllMs + ' ms'],
-    ['Gap', params.gapMs + ' ms'],
-    ['Vibrato Rate', params.vibRate + ' Hz'],
-    ['Vibrato Depth', params.vibDepth + ' Hz'],
-    ['Volume', (params.volume * 100).toFixed(0) + '%'],
-    ['Filter', params.filterType + ' @ ' + params.filterFreq + ' Hz'],
-    ['Filter Q', params.filterQ],
-    ['Distortion', params.dist],
-    ['Question Rise', '×' + params.qRise],
-  ];
-  grid.innerHTML = entries.map(([k,v]) =>
-    `<div class="param-row"><span class="param-key">${k}</span><span class="param-val">${v}</span></div>`
-  ).join('');
-}
+      function getChatterDensity() {
+        return parseInt(document.getElementById('chatterDensity').value);
+      }
 
-function updateSpeakerLabel() {
-  const race = getSelected('race');
-  const sex = getSelected('sex');
-  const emotion = getSelected('emotion');
-  const label = `${race.charAt(0).toUpperCase()+race.slice(1)} ${sex.charAt(0).toUpperCase()+sex.slice(1)} — ${emotion.charAt(0).toUpperCase()+emotion.slice(1)}`;
-  document.getElementById('speakerName').textContent = label;
-}
+      function startChatter() {
+        chatterActive = true;
+        const btn = document.getElementById('chatterToggle');
+        btn.textContent = '◼ Stop Chatter';
+        btn.classList.add('active');
 
-// ═══════════════════════════════════════════════════
-// EVENT HANDLERS
-// ═══════════════════════════════════════════════════
-async function handlePlay() {
-  if (isPlaying) return;
+        const scene = SCENE_POOLS[currentScene];
+        const density = getChatterDensity();
+        const voiceCount = Math.min(density, scene.voices.length);
 
-  const race = getSelected('race');
-  const sex = getSelected('sex');
-  const emotion = getSelected('emotion');
-  const phrase = getPhrase();
+        // Pick random voices from the pool
+        const shuffled = [...scene.voices].sort(() => Math.random() - 0.5);
+        chatterVoices = shuffled.slice(0, voiceCount);
 
-  if (!phrase) return;
+        // Build activity display
+        updateChatterActivity();
 
-  const params = resolveParams(race, sex, emotion);
-  updateParamsDisplay(params);
-  updateSpeakerLabel();
+        // Start each voice with staggered timing
+        chatterVoices.forEach((voice, idx) => {
+          const initialDelay = 200 + Math.random() * 800;
+          const timer = setTimeout(() => scheduleVoice(idx), initialDelay);
+          chatterTimers.push(timer);
+        });
+      }
 
-  const btn = document.getElementById('playBtn');
-  btn.disabled = true;
-  btn.textContent = '◼ Playing...';
-  isPlaying = true;
+      function stopChatter() {
+        chatterActive = false;
+        const btn = document.getElementById('chatterToggle');
+        btn.textContent = '▶ Start Chatter';
+        btn.classList.remove('active');
 
-  if (typewriterRAF) cancelAnimationFrame(typewriterRAF);
+        chatterTimers.forEach(t => clearTimeout(t));
+        chatterTimers = [];
+        chatterVoices = [];
 
-  const result = await playSpeech(phrase, params);
-  typewriterDisplay(phrase, result.timeline);
+        const activity = document.getElementById('chatterActivity');
+        activity.innerHTML = '<span class="chatter-idle">Chatter inactive</span>';
+      }
 
-  setTimeout(() => {
-    btn.disabled = false;
-    btn.textContent = '▶ Speak';
-    isPlaying = false;
-  }, result.totalDuration + 200);
-}
+      function updateChatterActivity() {
+        const activity = document.getElementById('chatterActivity');
+        activity.innerHTML = chatterVoices
+          .map(
+            (v, i) =>
+              `<span class="chatter-voice" id="cv-${i}" style="color:${voiceColor(v.race)}">${v.name}</span>`
+          )
+          .join('');
+      }
 
-// Phrase preset buttons
-document.querySelectorAll('.phrase-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.phrase-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('customPhrase').value = '';
-  });
-});
+      function voiceColor(race) {
+        const colors = {
+          human: '#c8c8e0',
+          elf: '#4ae06b',
+          dwarf: '#ff9b4a',
+          orc: '#ff4a4a',
+          goblin: '#ffe04a',
+          fairy: '#e04aff',
+          undead: '#6a8a6a',
+          construct: '#4a9eff',
+          dragon: '#ff4a4a',
+          beastfolk: '#ffb04a',
+        };
+        return colors[race] || '#c8c8e0';
+      }
 
-// Custom input clears preset selection
-document.getElementById('customPhrase').addEventListener('input', () => {
-  if (document.getElementById('customPhrase').value.trim()) {
-    document.querySelectorAll('.phrase-btn').forEach(b => b.classList.remove('active'));
-  }
-});
+      async function scheduleVoice(idx) {
+        if (!chatterActive || idx >= chatterVoices.length) return;
 
-// Enter key plays
-document.getElementById('customPhrase').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handlePlay();
-});
+        const voice = chatterVoices[idx];
+        const scene = SCENE_POOLS[currentScene];
+        const phrase = scene.phrases[Math.floor(Math.random() * scene.phrases.length)];
 
-// Update label on any control change
-document.querySelectorAll('input[type="radio"]').forEach(r => {
-  r.addEventListener('change', updateSpeakerLabel);
-});
+        // Resolve params at reduced volume
+        const params = resolveParams(voice.race, voice.sex, voice.emotion);
+        const chatterVol = getChatterVolume();
+        params.volume = params.volume * chatterVol;
 
-// Init
-updateSpeakerLabel();
-updateParamsDisplay(resolveParams('human', 'male', 'neutral'));
+        // Add slight random pitch variation so same-race voices sound distinct
+        params.baseFreq += (Math.random() - 0.5) * 30;
 
-// ═══════════════════════════════════════════════════
-// SCENE CHATTER ENGINE
-// ═══════════════════════════════════════════════════
+        // Highlight this voice in the activity display
+        const el = document.getElementById(`cv-${idx}`);
+        if (el) el.classList.add('speaking');
 
-const SCENE_POOLS = {
-  tavern: {
-    label: 'Tavern',
-    voices: [
-      { name: 'Barkeep',     race: 'human',    sex: 'male',   emotion: 'warm' },
-      { name: 'Barmaid',     race: 'human',    sex: 'female', emotion: 'happy' },
-      { name: 'Drunk Dwarf', race: 'dwarf',    sex: 'male',   emotion: 'happy' },
-      { name: 'Shady Goblin',race: 'goblin',   sex: 'male',   emotion: 'mysterious' },
-      { name: 'Bard',        race: 'elf',      sex: 'female', emotion: 'warm' },
-      { name: 'Mercenary',   race: 'human',    sex: 'male',   emotion: 'neutral' },
-    ],
-    phrases: [
-      'Another round over here!',
-      'Ha ha ha!',
-      'Did you hear about the dragon?',
-      'Cheers, mate.',
-      'Keep it down...',
-      'That reminds me of a story.',
-      'More ale!',
-      'To the king!',
-      'Shh, not so loud.',
-      'What a day...',
-      'You believe that?',
-      'Pass the bread.',
-    ]
-  },
-  market: {
-    label: 'Market',
-    voices: [
-      { name: 'Fruit Seller',  race: 'human',    sex: 'female', emotion: 'excited' },
-      { name: 'Blacksmith',    race: 'dwarf',    sex: 'male',   emotion: 'neutral' },
-      { name: 'Herb Merchant', race: 'elf',      sex: 'female', emotion: 'warm' },
-      { name: 'Haggling Orc',  race: 'orc',      sex: 'male',   emotion: 'angry' },
-      { name: 'Child',         race: 'goblin',   sex: 'neutral',emotion: 'happy' },
-      { name: 'Guard',         race: 'human',    sex: 'male',   emotion: 'cold' },
-    ],
-    phrases: [
-      'Fresh apples, come and get them!',
-      'Best price in town!',
-      'That is too much.',
-      'Three silver, final offer.',
-      'Look at this craftsmanship!',
-      'Mama, look!',
-      'Move along, nothing to see.',
-      'Finest herbs from the glade.',
-      'Sold!',
-      'You call this fresh?',
-      'Step right up!',
-    ]
-  },
-  forest: {
-    label: 'Enchanted Forest',
-    voices: [
-      { name: 'Elder Dryad',   race: 'elf',    sex: 'female', emotion: 'mysterious' },
-      { name: 'Sprite',        race: 'fairy',  sex: 'neutral',emotion: 'happy' },
-      { name: 'Treant',        race: 'dragon', sex: 'male',   emotion: 'warm' },
-      { name: 'Wisp',          race: 'fairy',  sex: 'female', emotion: 'scared' },
-      { name: 'Ranger',        race: 'human',  sex: 'male',   emotion: 'cold' },
-    ],
-    phrases: [
-      'The trees remember...',
-      'Tee hee hee!',
-      'Something stirs beneath.',
-      'Follow the light.',
-      'Shh... did you hear that?',
-      'The old magic is waking.',
-      'Stay on the path.',
-      'Wheeee!',
-      'Be careful...',
-      'The roots speak of change.',
-    ]
-  },
-  dungeon: {
-    label: 'Dungeon',
-    voices: [
-      { name: 'Skeleton',      race: 'undead',    sex: 'male',   emotion: 'cold' },
-      { name: 'Ghost',         race: 'undead',    sex: 'female', emotion: 'sad' },
-      { name: 'Golem',         race: 'construct', sex: 'neutral',emotion: 'neutral' },
-      { name: 'Imp',           race: 'goblin',    sex: 'male',   emotion: 'excited' },
-      { name: 'Trapped Knight',race: 'human',     sex: 'male',   emotion: 'scared' },
-    ],
-    phrases: [
-      'Turn back...',
-      'Heh heh heh...',
-      'Intruder detected.',
-      'Please... help me.',
-      'You should not be here.',
-      'The dark... it watches.',
-      'Clank, clank, clank.',
-      'Who goes there?',
-      'I have been here... so long.',
-      'Foolish mortal!',
-    ]
-  },
-  court: {
-    label: 'Royal Court',
-    voices: [
-      { name: 'King',          race: 'human',    sex: 'male',   emotion: 'cold' },
-      { name: 'Queen',         race: 'elf',      sex: 'female', emotion: 'warm' },
-      { name: 'Advisor',       race: 'human',    sex: 'male',   emotion: 'mysterious' },
-      { name: 'Noble',         race: 'human',    sex: 'female', emotion: 'neutral' },
-      { name: 'Ambassador',    race: 'dwarf',    sex: 'male',   emotion: 'warm' },
-      { name: 'Herald',        race: 'human',    sex: 'male',   emotion: 'excited' },
-    ],
-    phrases: [
-      'Your Majesty, if I may...',
-      'The treasury cannot sustain this.',
-      'Hear, hear!',
-      'The alliance is fragile.',
-      'We must act with caution.',
-      'What say the people?',
-      'Quite so, quite so.',
-      'This is most irregular.',
-      'The ambassador brings news.',
-      'Order in the court!',
-    ]
-  },
-};
+        const result = await playSpeech(phrase, params);
 
-let chatterActive = false;
-let chatterVoices = []; // active voice slots
-let chatterTimers = [];
-let currentScene = 'tavern';
+        // Remove highlight after speaking
+        setTimeout(() => {
+          if (el) el.classList.remove('speaking');
+        }, result.totalDuration);
 
-function selectScene(btn) {
-  document.querySelectorAll('.scene-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentScene = btn.dataset.scene;
-  if (chatterActive) {
-    stopChatter();
-    startChatter();
-  }
-}
+        // Schedule next utterance with random gap
+        const minGap = 800;
+        const maxGap = 3000;
+        const density = getChatterDensity();
+        // Higher density = shorter gaps
+        const gapRange = maxGap - (density - 1) * 400;
+        const nextDelay =
+          result.totalDuration + minGap + Math.random() * Math.max(minGap, gapRange);
 
-function toggleChatter() {
-  if (chatterActive) {
-    stopChatter();
-  } else {
-    startChatter();
-  }
-}
+        const timer = setTimeout(() => scheduleVoice(idx), nextDelay);
+        chatterTimers.push(timer);
+      }
 
-function getChatterVolume() {
-  return parseInt(document.getElementById('chatterVol').value) / 100;
-}
+      // Slider event listeners
+      document.getElementById('chatterVol').addEventListener('input', e => {
+        document.getElementById('chatterVolLabel').textContent = e.target.value + '%';
+      });
 
-function getChatterDensity() {
-  return parseInt(document.getElementById('chatterDensity').value);
-}
-
-function startChatter() {
-  chatterActive = true;
-  const btn = document.getElementById('chatterToggle');
-  btn.textContent = '◼ Stop Chatter';
-  btn.classList.add('active');
-
-  const scene = SCENE_POOLS[currentScene];
-  const density = getChatterDensity();
-  const voiceCount = Math.min(density, scene.voices.length);
-
-  // Pick random voices from the pool
-  const shuffled = [...scene.voices].sort(() => Math.random() - 0.5);
-  chatterVoices = shuffled.slice(0, voiceCount);
-
-  // Build activity display
-  updateChatterActivity();
-
-  // Start each voice with staggered timing
-  chatterVoices.forEach((voice, idx) => {
-    const initialDelay = 200 + Math.random() * 800;
-    const timer = setTimeout(() => scheduleVoice(idx), initialDelay);
-    chatterTimers.push(timer);
-  });
-}
-
-function stopChatter() {
-  chatterActive = false;
-  const btn = document.getElementById('chatterToggle');
-  btn.textContent = '▶ Start Chatter';
-  btn.classList.remove('active');
-
-  chatterTimers.forEach(t => clearTimeout(t));
-  chatterTimers = [];
-  chatterVoices = [];
-
-  const activity = document.getElementById('chatterActivity');
-  activity.innerHTML = '<span class="chatter-idle">Chatter inactive</span>';
-}
-
-function updateChatterActivity() {
-  const activity = document.getElementById('chatterActivity');
-  activity.innerHTML = chatterVoices.map((v, i) =>
-    `<span class="chatter-voice" id="cv-${i}" style="color:${voiceColor(v.race)}">${v.name}</span>`
-  ).join('');
-}
-
-function voiceColor(race) {
-  const colors = {
-    human:'#c8c8e0', elf:'#4ae06b', dwarf:'#ff9b4a', orc:'#ff4a4a',
-    goblin:'#ffe04a', fairy:'#e04aff', undead:'#6a8a6a', construct:'#4a9eff',
-    dragon:'#ff4a4a', beastfolk:'#ffb04a'
-  };
-  return colors[race] || '#c8c8e0';
-}
-
-async function scheduleVoice(idx) {
-  if (!chatterActive || idx >= chatterVoices.length) return;
-
-  const voice = chatterVoices[idx];
-  const scene = SCENE_POOLS[currentScene];
-  const phrase = scene.phrases[Math.floor(Math.random() * scene.phrases.length)];
-
-  // Resolve params at reduced volume
-  const params = resolveParams(voice.race, voice.sex, voice.emotion);
-  const chatterVol = getChatterVolume();
-  params.volume = params.volume * chatterVol;
-
-  // Add slight random pitch variation so same-race voices sound distinct
-  params.baseFreq += (Math.random() - 0.5) * 30;
-
-  // Highlight this voice in the activity display
-  const el = document.getElementById(`cv-${idx}`);
-  if (el) el.classList.add('speaking');
-
-  const result = await playSpeech(phrase, params);
-
-  // Remove highlight after speaking
-  setTimeout(() => {
-    if (el) el.classList.remove('speaking');
-  }, result.totalDuration);
-
-  // Schedule next utterance with random gap
-  const minGap = 800;
-  const maxGap = 3000;
-  const density = getChatterDensity();
-  // Higher density = shorter gaps
-  const gapRange = maxGap - (density - 1) * 400;
-  const nextDelay = result.totalDuration + minGap + Math.random() * Math.max(minGap, gapRange);
-
-  const timer = setTimeout(() => scheduleVoice(idx), nextDelay);
-  chatterTimers.push(timer);
-}
-
-// Slider event listeners
-document.getElementById('chatterVol').addEventListener('input', (e) => {
-  document.getElementById('chatterVolLabel').textContent = e.target.value + '%';
-});
-
-document.getElementById('chatterDensity').addEventListener('input', (e) => {
-  document.getElementById('chatterDensityLabel').textContent = e.target.value;
-  // Restart chatter with new density if active
-  if (chatterActive) {
-    stopChatter();
-    startChatter();
-  }
-});
-</script>
-</body>
+      document.getElementById('chatterDensity').addEventListener('input', e => {
+        document.getElementById('chatterDensityLabel').textContent = e.target.value;
+        // Restart chatter with new density if active
+        if (chatterActive) {
+          stopChatter();
+          startChatter();
+        }
+      });
+    </script>
+  </body>
 </html>
