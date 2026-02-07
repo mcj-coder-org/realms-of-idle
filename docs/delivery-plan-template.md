@@ -15,6 +15,12 @@ Brief description of what this feature does and why it matters.
 3. **Testing**: Write tests for all new functionality.
 4. **No Breaking Changes**: Ensure existing features continue working.
 
+## Branch
+
+**Branch name:** `type/description` (e.g., `feat/inventory`, `test/rng-coverage`)
+
+Implementer MUST create a feature branch before starting work. Never commit directly to main.
+
 ## Tasks
 
 - [ ] 1.1 Task name here
