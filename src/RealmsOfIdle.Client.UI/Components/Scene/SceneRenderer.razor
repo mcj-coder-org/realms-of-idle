@@ -1,6 +1,9 @@
 @inject IJSRuntime JSRuntime
+@inject ILogger<SceneRenderer> Logger
+@inject UiMetrics Metrics
 @implements IAsyncDisposable
 @using Microsoft.JSInterop
+@using RealmsOfIdle.Client.UI.Components.Observability
 
 <canvas @ref="canvasElement" id="@CanvasId" class="@GetCssClass()" style="@GetStyle()" />
 @if (ShowMinimap)
@@ -58,6 +61,7 @@
             _dotNetRef = DotNetObjectReference.Create(this);
             _isAnimating = true;
             await RequestAnimationFrameAsync();
+            Logger.LogDebug("Scene renderer initialized: {CanvasId}", CanvasId);
         }
     }
 
@@ -180,6 +184,9 @@
         var newPosition = _cameraPosition.Neighbor(direction);
         _cameraTarget = newPosition;
         _cameraMode = CameraMode.Manual;
+
+        Logger.LogDebug("Camera panned: {Direction}", direction);
+        Metrics.RecordCameraPan(direction.ToString(), "external");
     }
 
     public void StopAnimation()

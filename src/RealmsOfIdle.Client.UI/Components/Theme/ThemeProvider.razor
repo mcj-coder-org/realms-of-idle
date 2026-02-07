@@ -1,6 +1,9 @@
 @inject IJSRuntime JSRuntime
+@inject ILogger<ThemeProvider> Logger
+@inject UiMetrics Metrics
 @implements IAsyncDisposable
 @using Microsoft.JSInterop
+@using RealmsOfIdle.Client.UI.Components.Observability
 
 @* Theme state provider - should wrap app content *@
 @ChildContent
@@ -26,6 +29,7 @@
         {
             _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/RealmsOfIdle.Client.UI/js/theme-manager.js");
             _currentTheme = (Theme)(await _module.InvokeAsync<int>("getTheme"));
+            Logger.LogDebug("Theme provider initialized with theme: {Theme}", _currentTheme);
         }
     }
 
@@ -36,8 +40,12 @@
     {
         if (_module is null) return;
 
+        var oldTheme = _currentTheme;
         await _module.InvokeVoidAsync("setTheme", (int)theme);
         _currentTheme = theme;
+
+        Logger.LogDebug("Theme changed: {OldTheme} -> {NewTheme}", oldTheme, theme);
+        Metrics.RecordThemeChange(oldTheme.ToString(), theme.ToString());
 
         await OnThemeChanged.InvokeAsync(theme);
     }
@@ -49,8 +57,12 @@
     {
         if (_module is null) return;
 
+        var oldTheme = _currentTheme;
         var newTheme = (Theme)(await _module.InvokeAsync<int>("cycleTheme"));
         _currentTheme = newTheme;
+
+        Logger.LogDebug("Theme cycled: {OldTheme} -> {NewTheme}", oldTheme, newTheme);
+        Metrics.RecordThemeChange(oldTheme.ToString(), newTheme.ToString());
 
         await OnThemeChanged.InvokeAsync(newTheme);
     }

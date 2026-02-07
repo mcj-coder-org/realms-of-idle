@@ -1,5 +1,8 @@
 @inject IJSRuntime JSRuntime
+@inject ILogger<GameHud> Logger
+@inject UiMetrics Metrics
 @implements IAsyncDisposable
+@using RealmsOfIdle.Client.UI.Components.Observability
 
 <div class="game-hud">
     <!-- Top HUD -->
@@ -20,10 +23,10 @@
         IsVisible="@ShowInfoPanel"
         Position="@InfoPanelPosition"
         OnClose="CloseInfoPanel"
-        OnAction="OnInfoPanelAction" />
+        OnAction="HandleInfoPanelAction" />
 
     <!-- Action Bar -->
-    <ActionBar ActionSlots="@ActionSlots" OnAction="OnQuickAction" />
+    <ActionBar ActionSlots="@ActionSlots" OnAction="HandleQuickAction" />
 </div>
 
 @code {
@@ -84,6 +87,10 @@
         InfoContent = content;
         InfoPanelPosition = GetClampedPosition(x, y);
         ShowInfoPanel = true;
+
+        Logger.LogDebug("Info panel shown: {Title} at ({X}, {Y})", content.Title, x, y);
+        Metrics.RecordPanelView("info");
+
         StateHasChanged();
     }
 
@@ -93,12 +100,30 @@
     public void HideInfo()
     {
         ShowInfoPanel = false;
+        Logger.LogDebug("Info panel hidden");
         StateHasChanged();
     }
 
     private void CloseInfoPanel()
     {
+        Logger.LogDebug("Info panel closed by user");
         HideInfo();
+    }
+
+    private async Task HandleQuickAction(string actionId)
+    {
+        Logger.LogDebug("Quick action activated: {ActionId}", actionId);
+        Metrics.RecordQuickAction(actionId);
+
+        await OnQuickAction.InvokeAsync(actionId);
+    }
+
+    private async Task HandleInfoPanelAction(string actionId)
+    {
+        Logger.LogDebug("Info panel action clicked: {ActionId}", actionId);
+        Metrics.RecordElementClick("info_panel_action", actionId);
+
+        await OnInfoPanelAction.InvokeAsync(actionId);
     }
 
     private (double X, double Y) GetClampedPosition(double x, double y)
