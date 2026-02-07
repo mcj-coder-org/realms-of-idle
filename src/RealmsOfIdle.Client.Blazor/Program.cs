@@ -20,8 +20,9 @@ builder.Services.AddScoped<HttpGameService>();
 builder.Services.AddLogging(builder => builder.SetMinimumLevel(LogLevel.Debug));
 builder.Services.AddScoped<UiMetrics>();
 
-// Note: OpenTelemetry integration for WASM requires additional packages
-// For now, metrics are collected via System.Diagnostics.Metrics
-// and can be exported via OpenTelemetry in the future
+// OpenTelemetry OTLP export for WASM is deferred to Phase 7 (Online Mode)
+// due to browser sandbox limitations and experimental WASM OTLP support.
+// Metrics are collected via System.Diagnostics.Metrics and available
+// for in-browser inspection via DevTools Performance API.
 
 await builder.Build().RunAsync();
