@@ -23,7 +23,7 @@ Implementer MUST create a feature branch before starting work. Never commit dire
 
 ## Tasks
 
-- [ ] 1.1 Task name here
+- [ ] 1.1 Task name here — ⏳ Pending
   - Acceptance criteria:
     - [ ] Criterion 1
     - [ ] Criterion 2
@@ -31,16 +31,18 @@ Implementer MUST create a feature branch before starting work. Never commit dire
     - [ ] Changes are minimal and scoped
     - [ ] Code follows project patterns
     - [ ] Tests pass
+  - Commit: _none yet_
 
-- [ ] 1.2 Another task
+- [ ] 1.2 Another task — ⏳ Pending
   - Acceptance criteria:
     - [ ] Criterion 1
   - Quality gates:
     - [ ] Changes are minimal and scoped
     - [ ] Code follows project patterns
     - [ ] Tests pass
+  - Commit: _none yet_
 
-**Current Task:** [Task number e.g., 1.1]
+Task statuses: ⏳ Pending | 🔄 In Progress | ✅ Complete | ❌ Failed
 
 ## Notes
 

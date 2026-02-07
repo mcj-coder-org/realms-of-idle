@@ -49,55 +49,57 @@ These apply during active development (implementation, fixes, refactoring), not 
 3. **Surgical**: Edit only required, match style, clean only your orphans
 4. **Verifiable**: Transform goals → tests/checks (e.g., "add validation" → "write tests → pass")
 
-## Development Workflow (Dual-Session)
+## Development Workflow (Agent Teams)
 
-This project uses two Claude Code sessions with different providers for cost-optimized quality enforcement.
+This project uses Claude Code Agent Teams for automated quality enforcement.
+Start with `claude` in the project root — Agent Teams is enabled via settings.
 
-**Session 1 — Lead/Reviewer (`claude` / Opus)**
+### Team Structure
 
-1. Plan feature: define tasks with acceptance criteria in `docs/plans/<feature>.md`
-2. Each task has: deliverables, quality gates, dependencies
-3. After implementer commits, review changes against plan
-4. Report findings in plan file or create GitHub issues
-5. Approve or request changes
+**Lead** (delegate mode — coordination only)
 
-**Session 2 — Implementer (`claude-zia`)**
+- Plans feature: defines tasks with acceptance criteria
+- Spawns implementer and reviewer teammates
+- Requires plan approval before implementer begins coding
+- Reviews are dispatched automatically via task dependencies
+- Merges branch after reviewer approves
 
-1. Read plan file to find next task
-2. TDD cycle: write test → implement → verify
-3. TaskCompleted hook runs build + test (deterministic gate)
-4. 1 task = 1 commit (atomic, reviewable, conventional message)
-5. Read review feedback, address findings, commit fixes
+**Implementer** (teammate — plan approval required)
 
-**Handoff**: Git commits + plan files on disk. No shared memory.
+- Creates feature branch
+- Processes all tasks from the plan in order
+- TDD cycle: write test → implement → verify
+- 1 task = 1 commit (atomic, reviewable, conventional message)
+- TaskCompleted hook enforces build + test (hard gate)
+- Updates plan file with task status and commit hashes
 
-### Roles
+**Reviewer** (teammate — activated after implementation)
 
-**Lead/Reviewer** (run with `claude` — Opus)
+- Reviews implementer's changes with fresh context (no sunk cost bias)
+- Checks each task against plan deliverables and quality gates
+- Messages implementer directly with findings
+- Implementer addresses findings in follow-up commits
 
-- Plans tasks with clear acceptance criteria
-- Reviews completed work against plan (fresh context, no sunk cost bias)
-- Focus: spec compliance, code quality, edge cases, test coverage
-- Reports findings — does NOT implement fixes
-- Coordinates merge after review approval
+### Workflow
 
-**Implementer** (run with `claude-zia`)
-
-- Reads plan file for current task
-- Follows TDD: write test → implement → verify
-- 1 task = 1 commit (atomic, reviewable)
-- TaskCompleted hook enforces build + test automatically
-- Addresses review findings in follow-up commits
+1. User describes feature to lead
+2. Lead creates plan at `docs/plans/<feature>.md` with all tasks
+3. Lead spawns implementer (with plan approval required) and reviewer
+4. Lead creates tasks with dependencies (review tasks blocked by implementation tasks)
+5. Implementer submits plan → lead approves → implementer executes all tasks
+6. Review tasks auto-unblock → reviewer reviews all changes
+7. Lead merges after reviewer approves
 
 ### Quality Gate Layers
 
-| Layer         | Mechanism                                     | Enforcement               |
-| ------------- | --------------------------------------------- | ------------------------- |
-| Deterministic | Git hooks (lint, format, tests, commits)      | Hard gate — blocks commit |
-| Deterministic | TaskCompleted hook (build + test)             | Hard gate — blocks task   |
-| Structural    | Separate reviewer session (fresh context)     | Architectural             |
-| Structural    | Plan approval (lead reviews before code)      | Architectural             |
-| Behavioral    | CLAUDE.md conventions loaded at session start | Shapes initial behavior   |
+| Layer         | Mechanism                                         | Enforcement               |
+| ------------- | ------------------------------------------------- | ------------------------- |
+| Deterministic | Git hooks (lint, format, tests, commits)          | Hard gate — blocks commit |
+| Deterministic | TaskCompleted hook (build + test)                 | Hard gate — blocks task   |
+| Structural    | Separate reviewer teammate (fresh context)        | Architectural             |
+| Structural    | Plan approval (lead approves before coding)       | Architectural             |
+| Structural    | Delegate mode (lead can't code, only coordinates) | Architectural             |
+| Behavioral    | CLAUDE.md conventions loaded at session start     | Shapes initial behavior   |
 
 ### Quality Gates
 
