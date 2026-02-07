@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.Http" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RealmsOfIdle.Client.UI\RealmsOfIdle.Client.UI.csproj" />
+  </ItemGroup>
+
 </Project>

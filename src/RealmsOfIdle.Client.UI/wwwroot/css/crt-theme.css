@@ -1,0 +1,167 @@
+/* CRT Theme for Realms of Idle */
+/* Based on mock-up-overview.html design */
+
+/* Import VT323 font via @import or include as web font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* CSS Custom Properties - Color Theme */
+:root,
+[data-theme="color"] {
+    --bg-primary: #0a0e14;
+    --bg-secondary: #0f1419;
+    --bg-panel: rgba(13, 17, 23, 0.95);
+    --border-color: #1e3a29;
+    --text-primary: #c5d1c5;
+    --text-bright: #e8f5e8;
+    --text-dim: #5a6a5a;
+    --accent-green: #4ade80;
+    --accent-green-dark: #22c55e;
+    --accent-gold: #fbbf24;
+    --accent-red: #ef4444;
+    --accent-blue: #60a5fa;
+    --accent-purple: #a78bfa;
+    --accent-orange: #fb923c;
+}
+
+/* Green Mono Theme */
+[data-theme="green"] {
+    --bg-primary: #0a0e14;
+    --bg-secondary: #0f1419;
+    --bg-panel: rgba(10, 20, 10, 0.95);
+    --border-color: #1a3a1a;
+    --text-primary: #4ade80;
+    --text-bright: #86efac;
+    --text-dim: #22c55e;
+    --accent-green: #4ade80;
+    --accent-green-dark: #22c55e;
+    --accent-gold: #4ade80;
+    --accent-red: #22c55e;
+    --accent-blue: #4ade80;
+    --accent-purple: #4ade80;
+    --accent-orange: #4ade80;
+}
+
+/* Amber Mono Theme */
+[data-theme="amber"] {
+    --bg-primary: #0e0a08;
+    --bg-secondary: #140f0c;
+    --bg-panel: rgba(20, 15, 10, 0.95);
+    --border-color: #3a2a1e;
+    --text-primary: #fbbf24;
+    --text-bright: #fde68a;
+    --text-dim: #d97706;
+    --accent-green: #fbbf24;
+    --accent-green-dark: #d97706;
+    --accent-gold: #fbbf24;
+    --accent-red: #f59e0b;
+    --accent-blue: #fbbf24;
+    --accent-purple: #fbbf24;
+    --accent-orange: #fb923c;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 18px;
+    line-height: 1.4;
+    image-rendering: pixelated;
+}
+
+/* Scanline Effect - CRT aesthetic */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    z-index: 9999;
+}
+
+/* Typography */
+h1 {
+    font-size: 28px;
+    color: var(--accent-green);
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px var(--accent-green);
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 20px;
+    color: var(--accent-gold);
+    margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed var(--border-color);
+    letter-spacing: 2px;
+}
+
+/* Buttons */
+.btn {
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    text-shadow: 0 0 2px currentColor;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.btn-primary {
+    background: var(--accent-green-dark);
+    color: var(--bg-primary);
+    border-color: var(--accent-green);
+}
+
+.btn-danger {
+    background: var(--accent-red);
+    color: var(--bg-primary);
+    border-color: var(--accent-red);
+}
+
+/* Panels */
+.panel {
+    background: var(--bg-panel);
+    border: 2px solid var(--border-color);
+    padding: 16px;
+}
+
+.panel-header {
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* Utility Classes */
+.text-glow {
+    text-shadow: 0 0 10px currentColor;
+}
+
+.text-green { color: var(--accent-green); }
+.text-gold { color: var(--accent-gold); }
+.text-red { color: var(--accent-red); }
+.text-blue { color: var(--accent-blue); }
