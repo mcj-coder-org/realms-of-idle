@@ -63,6 +63,14 @@
     <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="9.4.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
   </ItemGroup>
+  <!-- Test packages - UI Testing -->
+  <ItemGroup>
+    <PackageVersion Include="bunit.web" Version="1.35.3" />
+    <PackageVersion Include="bunit.core" Version="1.35.3" />
+    <PackageVersion Include="Moq" Version="4.20.72" />
+    <PackageVersion Include="Microsoft.Playwright.MSTest" Version="1.49.0" />
+    <PackageVersion Include="Microsoft.Playwright.xUnit" Version="1.50.0" />
+  </ItemGroup>
   <!-- Telemetry packages -->
   <ItemGroup>
     <PackageVersion Include="OpenTelemetry" Version="1.9.0" />
