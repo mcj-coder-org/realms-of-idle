@@ -9,6 +9,7 @@
     <PackageVersion Include="Aspire.Hosting.PostgreSQL" Version="13.1.0" />
     <PackageVersion Include="Aspire.Hosting.Redis" Version="13.1.0" />
     <PackageVersion Include="Microsoft.Orleans.Core.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Orleans.Runtime" Version="10.0.1" />
     <PackageVersion Include="Microsoft.Orleans.Runtime.Abstractions" Version="3.8.0" />
     <PackageVersion Include="Microsoft.Orleans.Serialization.Abstractions" Version="10.0.0" />
     <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.12" />

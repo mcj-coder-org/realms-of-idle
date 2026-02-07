@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenTelemetryServices("RealmsOfIdle.Server.Api");
 
-// Configure Orleans client to connect to local silo
 builder.Services.AddOrleansClient(client =>
 {
     client.UseLocalhostClustering();
