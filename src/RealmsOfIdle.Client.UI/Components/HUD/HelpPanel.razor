@@ -1,0 +1,42 @@
+<div class="help-panel">
+    @if (ShowTitle)
+    {
+        <div class="help-panel-title">CONTROLS</div>
+    }
+    <div class="help-panel-hints">
+        @foreach (var hint in ControlHints)
+        {
+            <div class="control-hint">
+                <span class="control-key">@hint.Key</span>
+                <span class="control-action">@hint.Action</span>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public IReadOnlyList<ControlHint> ControlHints { get; set; } = Array.Empty<ControlHint>();
+
+    [Parameter]
+    public bool ShowTitle { get; set; } = true;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        // Default control hints if none provided
+        if (ControlHints.Count == 0)
+        {
+            ControlHints = new List<ControlHint>
+            {
+                new() { Key = "WASD / Arrows", Action = "Move Camera" },
+                new() { Key = "Click", Action = "Select/Interact" },
+                new() { Key = "1-5", Action = "Quick Actions" },
+                new() { Key = "I", Action = "Inventory" },
+                new() { Key = "M", Action = "Map" },
+                new() { Key = "ESC", Action = "Close Panel" }
+            };
+        }
+    }
+}

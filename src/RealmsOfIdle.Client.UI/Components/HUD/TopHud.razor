@@ -1,0 +1,60 @@
+@inject IJSRuntime JSRuntime
+
+<div class="top-hud">
+    <div class="top-hud-section">
+        <div class="resource-display">
+            <span class="resource-icon-gold">@GoldIcon</span>
+            <span class="resource-amount">@PlayerStats.Gold</span>
+        </div>
+    </div>
+
+    <div class="top-hud-section top-hud-center">
+        <div class="level-display">
+            <span class="level-label">LVL</span>
+            <span class="level-value">@PlayerStats.PlayerLevel</span>
+        </div>
+        @if (ShowInnLevel)
+        {
+            <div class="inn-display">
+                <span class="inn-label">INN</span>
+                <span class="inn-value">@PlayerStats.InnLevel</span>
+            </div>
+        }
+    </div>
+
+    @if (ShowHealth)
+    {
+        <div class="top-hud-section">
+            <div class="health-bar-compact">
+                <div class="health-bar-fill" style="width: @HealthPercent%">
+                    <span class="health-bar-text">@PlayerStats.Health/@PlayerStats.MaxHealth</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private const string GoldIcon = "💰";
+
+    [Parameter]
+    public PlayerStats PlayerStats { get; set; } = new()
+    {
+        Gold = 0,
+        PlayerLevel = 1,
+        InnLevel = 1,
+        Health = 100,
+        MaxHealth = 100
+    };
+
+    [Parameter]
+    public bool ShowInnLevel { get; set; } = true;
+
+    [Parameter]
+    public bool ShowHealth { get; set; } = true;
+
+    private double HealthPercent =>
+        PlayerStats.MaxHealth > 0
+            ? (double)PlayerStats.Health / PlayerStats.MaxHealth * 100
+            : 0;
+}

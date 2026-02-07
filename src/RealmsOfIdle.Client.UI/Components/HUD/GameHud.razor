@@ -1,0 +1,141 @@
+@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+
+<div class="game-hud">
+    <!-- Top HUD -->
+    <TopHud PlayerStats="@PlayerStats" ShowInnLevel="@ShowInnLevel" ShowHealth="@ShowHealth" />
+
+    <!-- Help Panel -->
+    <HelpPanel ControlHints="@ControlHints" ShowTitle="@ShowHelpTitle" />
+
+    <!-- Main Content Slot -->
+    @if (ChildContent is not null)
+    {
+        @ChildContent
+    }
+
+    <!-- Info Panel (floating) -->
+    <InfoPanel
+        Content="@InfoContent"
+        IsVisible="@ShowInfoPanel"
+        Position="@InfoPanelPosition"
+        OnClose="CloseInfoPanel"
+        OnAction="OnInfoPanelAction" />
+
+    <!-- Action Bar -->
+    <ActionBar ActionSlots="@ActionSlots" OnAction="OnQuickAction" />
+</div>
+
+@code {
+    [Parameter]
+    public PlayerStats PlayerStats { get; set; } = new()
+    {
+        Gold = 0,
+        PlayerLevel = 1,
+        InnLevel = 1,
+        Health = 100,
+        MaxHealth = 100
+    };
+
+    [Parameter]
+    public bool ShowInnLevel { get; set; } = true;
+
+    [Parameter]
+    public bool ShowHealth { get; set; } = true;
+
+    [Parameter]
+    public bool ShowHelpTitle { get; set; } = true;
+
+    [Parameter]
+    public IReadOnlyList<QuickActionSlot> ActionSlots { get; set; } = GetDefaultActionSlots();
+
+    [Parameter]
+    public IReadOnlyList<ControlHint> ControlHints { get; set; } = Array.Empty<ControlHint>();
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnQuickAction { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnInfoPanelAction { get; set; }
+
+    // Info panel state
+    private InfoPanelContent? InfoContent { get; set; }
+    private bool ShowInfoPanel { get; set; }
+    private (double X, double Y)? InfoPanelPosition { get; set; }
+
+    private static IReadOnlyList<QuickActionSlot> GetDefaultActionSlots() =>
+        new List<QuickActionSlot>
+        {
+            new() { Id = "focus", Label = "Focus", Icon = "🎯", KeyHint = "1", IsActive = false },
+            new() { Id = "interact", Label = "Interact", Icon = "✋", KeyHint = "2", IsActive = false },
+            new() { Id = "talk", Label = "Talk", Icon = "💬", KeyHint = "3", IsActive = false },
+            new() { Id = "inventory", Label = "Inventory", Icon = "🎒", KeyHint = "4", IsActive = false },
+            new() { Id = "map", Label = "Map", Icon = "🗺️", KeyHint = "5", IsActive = false }
+        };
+
+    /// <summary>
+    /// Show info panel at the specified position
+    /// </summary>
+    public void ShowInfo(InfoPanelContent content, double x, double y)
+    {
+        InfoContent = content;
+        InfoPanelPosition = GetClampedPosition(x, y);
+        ShowInfoPanel = true;
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Hide info panel
+    /// </summary>
+    public void HideInfo()
+    {
+        ShowInfoPanel = false;
+        StateHasChanged();
+    }
+
+    private void CloseInfoPanel()
+    {
+        HideInfo();
+    }
+
+    private (double X, double Y) GetClampedPosition(double x, double y)
+    {
+        // Default info panel size (approximate)
+        const double panelWidth = 300;
+        const double panelHeight = 200;
+        const double margin = 16;
+
+        // Clamp X position
+        if (x + panelWidth > WindowWidth - margin)
+        {
+            x = WindowWidth - panelWidth - margin;
+        }
+        if (x < margin)
+        {
+            x = margin;
+        }
+
+        // Clamp Y position
+        if (y + panelHeight > WindowHeight - margin)
+        {
+            y = WindowHeight - panelHeight - margin;
+        }
+        if (y < margin + 60) // Account for top HUD
+        {
+            y = margin + 60;
+        }
+
+        return (x, y);
+    }
+
+    private double WindowWidth => 1920; // TODO: Get from JS interop
+    private double WindowHeight => 1080; // TODO: Get from JS interop
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        // Cleanup when needed
+    }
+}

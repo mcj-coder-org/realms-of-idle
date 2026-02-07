@@ -1,0 +1,73 @@
+<div class="info-panel @(IsVisible ? "visible" : "")" style="@GetPanelStyle()">
+    <div class="info-panel-header">
+        <span class="info-panel-icon">@Content?.Icon</span>
+        <div class="info-panel-title-section">
+            <span class="info-panel-title">@Content?.Title</span>
+            @if (!string.IsNullOrEmpty(Content?.Subtitle))
+            {
+                <span class="info-panel-subtitle">@Content.Subtitle</span>
+            }
+        </div>
+        <button class="info-panel-close" @onclick="OnClose" aria-label="Close">✕</button>
+    </div>
+
+    @if (Content?.Stats.Count > 0)
+    {
+        <div class="info-panel-stats">
+            @foreach (var stat in Content.Stats)
+            {
+                <div class="info-panel-stat">
+                    <span class="stat-label">@stat.Key:</span>
+                    <span class="stat-value">@stat.Value</span>
+                </div>
+            }
+        </div>
+    }
+
+    @if (Content?.Actions.Count > 0)
+    {
+        <div class="info-panel-actions">
+            @foreach (var action in Content.Actions)
+            {
+                <button class="info-panel-action" @onclick="() => OnActionClick(action.Id)">
+                    @if (!string.IsNullOrEmpty(action.Icon))
+                    {
+                        <span>@action.Icon</span>
+                    }
+                    <span>@action.Label</span>
+                </button>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public InfoPanelContent? Content { get; set; }
+
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnAction { get; set; }
+
+    [Parameter]
+    public (double X, double Y)? Position { get; set; }
+
+    private string GetPanelStyle()
+    {
+        if (Position.HasValue)
+        {
+            return $"left: {Position.Value.X}px; top: {Position.Value.Y}px;";
+        }
+        return "";
+    }
+
+    private async Task OnActionClick(string actionId)
+    {
+        await OnAction.InvokeAsync(actionId);
+    }
+}

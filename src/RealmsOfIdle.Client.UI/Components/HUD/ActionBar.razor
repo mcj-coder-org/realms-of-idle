@@ -1,0 +1,44 @@
+<div class="action-bar">
+    @foreach (var slot in ActionSlots)
+    {
+        var isActive = slot.IsActive;
+        var cooldownStyle = slot.CooldownPercent.HasValue
+            ? $"--cooldown: {slot.CooldownPercent.Value}%"
+            : "";
+
+        <button
+            class="action-slot @(isActive ? "active" : "")"
+            style="@cooldownStyle"
+            title="@slot.Label"
+            @onclick="() => OnSlotClick(slot.Id)"
+            @onkeydown="HandleKeyDown">
+            <span class="action-slot-icon">@slot.Icon</span>
+            @if (!string.IsNullOrEmpty(slot.KeyHint))
+            {
+                <span class="action-slot-key">@slot.KeyHint</span>
+            }
+            @if (slot.CooldownPercent.HasValue && slot.CooldownPercent.Value > 0)
+            {
+                <div class="action-slot-cooldown" style="height: @slot.CooldownPercent.Value%"></div>
+            }
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public IReadOnlyList<QuickActionSlot> ActionSlots { get; set; } = Array.Empty<QuickActionSlot>();
+
+    [Parameter]
+    public EventCallback<string> OnAction { get; set; }
+
+    private async Task OnSlotClick(string slotId)
+    {
+        await OnAction.InvokeAsync(slotId);
+    }
+
+    private void HandleKeyDown(KeyboardEventArgs e)
+    {
+        // Let parent handle keyboard shortcuts
+    }
+}

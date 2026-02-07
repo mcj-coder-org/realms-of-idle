@@ -1,0 +1,224 @@
+@page "/hud-demo"
+@using RealmsOfIdle.Client.UI.Components.HUD
+@inject IJSRuntime JSRuntime
+
+<GameHud @ref="_hud"
+    PlayerStats="@_playerStats"
+    ActionSlots="@_actionSlots"
+    OnQuickAction="HandleQuickAction"
+    OnInfoPanelAction="HandleInfoPanelAction">
+    <div class="demo-content">
+        <div class="demo-header">
+            <h1>HUD Demo</h1>
+            <p class="text-dim">Click anywhere to show info panel at that location</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>Player Stats Controls</h2>
+            <div class="demo-controls">
+                <button class="btn" @onclick="AddGold">Add Gold</button>
+                <button class="btn" @onclick="LevelUp">Level Up</button>
+                <button class="btn" @onclick="TakeDamage">Take Damage</button>
+                <button class="btn" @onclick="Heal">Heal</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Quick Actions</h2>
+            <p class="text-dim">Press 1-5 or click the action slots to activate. Click again to set cooldown.</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>Interactive Areas</h2>
+            <div class="demo-objects">
+                <div class="demo-object" @onclick="() => ShowCharacterInfo(100, 150)">
+                    <span class="demo-object-icon">🧙</span>
+                    <span>Wizard</span>
+                </div>
+                <div class="demo-object" @onclick="() => ShowObjectInfo(300, 150)">
+                    <span class="demo-object-icon">🪑</span>
+                    <span>Chair</span>
+                </div>
+                <div class="demo-object" @onclick="() => ShowChestInfo(500, 150)">
+                    <span class="demo-object-icon">📦</span>
+                    <span>Chest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</GameHud>
+
+@code {
+    private GameHud? _hud;
+
+    private PlayerStats _playerStats = new()
+    {
+        Gold = 150,
+        PlayerLevel = 3,
+        InnLevel = 2,
+        Health = 75,
+        MaxHealth = 100
+    };
+
+    private List<QuickActionSlot> _actionSlots = new()
+    {
+        new() { Id = "focus", Label = "Focus", Icon = "🎯", KeyHint = "1", IsActive = false },
+        new() { Id = "interact", Label = "Interact", Icon = "✋", KeyHint = "2", IsActive = false },
+        new() { Id = "talk", Label = "Talk", Icon = "💬", KeyHint = "3", IsActive = false },
+        new() { Id = "inventory", Label = "Inventory", Icon = "🎒", KeyHint = "4", IsActive = false },
+        new() { Id = "map", Label = "Map", Icon = "🗺️", KeyHint = "5", IsActive = false }
+    };
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Handle keyboard shortcuts
+            // In production, this would be handled via JS interop
+        }
+    }
+
+    private void AddGold()
+    {
+        _playerStats = _playerStats with { Gold = _playerStats.Gold + 50 };
+    }
+
+    private void LevelUp()
+    {
+        _playerStats = _playerStats with
+        {
+            PlayerLevel = _playerStats.PlayerLevel + 1,
+            Experience = 0
+        };
+    }
+
+    private void TakeDamage()
+    {
+        _playerStats = _playerStats with
+        {
+            Health = Math.Max(0, _playerStats.Health - 25)
+        };
+    }
+
+    private void Heal()
+    {
+        _playerStats = _playerStats with
+        {
+            Health = Math.Min(_playerStats.MaxHealth, _playerStats.Health + 25)
+        };
+    }
+
+    private void ShowCharacterInfo(double x, double y)
+    {
+        var content = new InfoPanelContent
+        {
+            Title = "Elder Wizard",
+            Subtitle = "Level 5 Mystic",
+            Icon = "🧙",
+            Stats = new Dictionary<string, string>
+            {
+                ["Health"] = "80/100",
+                ["Mana"] = "150/150",
+                ["Role"] = "Merchant"
+            },
+            Actions = new List<InfoPanelAction>
+            {
+                new() { Id = "talk", Label = "Talk", Icon = "💬" },
+                new() { Id = "trade", Label = "Trade", Icon = "💰" },
+                new() { Id = "quest", Label = "Quests", Icon = "📜" }
+            }
+        };
+
+        ShowInfoAt(content, x, y);
+    }
+
+    private void ShowObjectInfo(double x, double y)
+    {
+        var content = new InfoPanelContent
+        {
+            Title = "Wooden Chair",
+            Icon = "🪑",
+            Stats = new Dictionary<string, string>
+            {
+                ["Condition"] = "Good",
+                ["Comfort"] = "+5"
+            },
+            Actions = new List<InfoPanelAction>
+            {
+                new() { Id = "sit", Label = "Sit", Icon = "🪑" },
+                new() { Id = "move", Label = "Move", Icon = "✋" }
+            }
+        };
+
+        ShowInfoAt(content, x, y);
+    }
+
+    private void ShowChestInfo(double x, double y)
+    {
+        var content = new InfoPanelContent
+        {
+            Title = "Old Chest",
+            Icon = "📦",
+            Stats = new Dictionary<string, string>
+            {
+                ["Locked"] = "Yes",
+                ["Contents"] = "Unknown"
+            },
+            Actions = new List<InfoPanelAction>
+            {
+                new() { Id = "unlock", Label = "Unlock", Icon = "🔑" },
+                new() { Id = "pick", Label = "Pick Lock", Icon = "🔧" }
+            }
+        };
+
+        ShowInfoAt(content, x, y);
+    }
+
+    private void ShowInfoAt(InfoPanelContent content, double x, double y)
+    {
+        // For demo, position relative to viewport
+        _hud?.ShowInfo(content, x, y);
+    }
+
+    private async Task HandleQuickAction(string actionId)
+    {
+        var index = _actionSlots.FindIndex(s => s.Id == actionId);
+        if (index >= 0)
+        {
+            var slot = _actionSlots[index];
+            if (slot.IsActive)
+            {
+                // Set cooldown
+                _actionSlots[index] = slot.WithActive(false).WithCooldown(100);
+                // Simulate cooldown ticking down
+                await SimulateCooldown(index);
+            }
+            else
+            {
+                // Activate slot
+                _actionSlots[index] = slot.WithActive(true);
+            }
+        }
+    }
+
+    private async Task SimulateCooldown(int index)
+    {
+        await Task.Delay(100);
+        var cooldown = 90;
+        while (cooldown > 0)
+        {
+            await Task.Delay(200);
+            cooldown -= 10;
+            _actionSlots[index] = _actionSlots[index].WithCooldown(cooldown);
+            StateHasChanged();
+        }
+        _actionSlots[index] = _actionSlots[index].WithCooldown(null);
+        StateHasChanged();
+    }
+
+    private void HandleInfoPanelAction(string actionId)
+    {
+        // Handle info panel action clicks
+        Console.WriteLine($"Info panel action: {actionId}");
+    }
+}
