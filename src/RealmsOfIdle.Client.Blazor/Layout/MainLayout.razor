@@ -1,16 +1,48 @@
-﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@inherits LayoutComponentBase
+@using RealmsOfIdle.Client.UI.Components
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+<div class="app-container">
+    <header>
+        <h1>REALMS OF IDLE</h1>
+    </header>
 
-        <article class="content px-4">
-            @Body
-        </article>
+    <main class="main-content">
+        @Body
     </main>
 </div>
+
+<style>
+    .app-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding: 16px;
+        border-bottom: 2px dashed var(--border-color);
+        text-align: center;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 16px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .demo-controls {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+    }
+
+    .canvas-wrapper {
+        display: inline-block;
+        margin: 16px auto;
+    }
+</style>

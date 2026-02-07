@@ -1,0 +1,106 @@
+@page "/canvas-demo"
+@using RealmsOfIdle.Client.UI.Components
+@inject ILogger<CanvasDemo> Logger
+
+<PageTitle>Canvas Demo - Realms of Idle</PageTitle>
+
+<div class="container">
+    <h1>Canvas Rendering Engine Demo</h1>
+    <p class="text-dim">Test the CRT pixel-art canvas renderer</p>
+
+    <div class="demo-controls">
+        <button class="btn" @onclick="DrawBackground">Draw Background</button>
+        <button class="btn" @onclick="DrawTiles">Draw Tiles</button>
+        <button class="btn" @onclick="DrawSprite">Draw Sprite</button>
+        <button class="btn" @onclick="DrawText">Draw Text</button>
+        <button class="btn btn-danger" @onclick="Clear">Clear</button>
+    </div>
+
+    <div class="canvas-wrapper panel">
+        <CanvasRenderer @ref="_canvas"
+                      CanvasId="demo-canvas"
+                      Width="640"
+                      Height="480"
+                      Style="border: 2px solid var(--border-color);" />
+    </div>
+</div>
+
+@code {
+    private CanvasRenderer _canvas = null!;
+    private bool _hasDrawnBackground = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Logger.LogInformation("Canvas demo page loaded");
+        }
+    }
+
+    private async Task DrawBackground()
+    {
+        await _canvas.DrawBackgroundAsync("#0a0e14");
+        _hasDrawnBackground = true;
+        Logger.LogInformation("Background drawn");
+    }
+
+    private async Task DrawTiles()
+    {
+        if (!_hasDrawnBackground)
+        {
+            await DrawBackground();
+        }
+
+        // Draw a grid of floor tiles
+        for (var y = 0; y < 10; y++)
+        {
+            for (var x = 0; x < 12; x++)
+            {
+                string tileType = (x + y) % 3 == 2 ? "wall" : "floor";
+                string color = tileType == "floor" ? "#1e3a29" : "#2d4a3d";
+                await _canvas.DrawTileAsync(x * 48, y * 44, tileType, color, 48);
+            }
+        }
+
+        Logger.LogInformation("Tiles drawn");
+    }
+
+    private async Task DrawSprite()
+    {
+        if (!_hasDrawnBackground)
+        {
+            await DrawBackground();
+        }
+
+        // Draw a few sprites at different positions
+        await _canvas.DrawSpriteAsync(100, 100, "#4ade80", 3);
+        await _canvas.DrawSpriteAsync(300, 150, "#fbbf24", 3);
+        await _canvas.DrawSpriteAsync(500, 200, "#ef4444", 3);
+
+        Logger.LogInformation("Sprites drawn");
+    }
+
+    private async Task DrawText()
+    {
+        if (!_hasDrawnBackground)
+        {
+            await DrawBackground();
+        }
+
+        await _canvas.DrawBackgroundAsync("#0a0e14");
+
+        // Draw some text with glow effect
+        await _canvas.DrawTextAsync("REALMS OF IDLE", 200, 100, "#4ade80", "28px VT323");
+        await _canvas.DrawTextAsync("Canvas Rendering Engine", 220, 150, "#fbbf24", "16px VT323");
+        await _canvas.DrawTextAsync("Press buttons to test rendering", 180, 200, "#5a6a5a", "14px VT323");
+
+        Logger.LogInformation("Text drawn");
+    }
+
+    private async Task Clear()
+    {
+        await _canvas.ClearAsync();
+        _hasDrawnBackground = false;
+        Logger.LogInformation("Canvas cleared");
+    }
+}

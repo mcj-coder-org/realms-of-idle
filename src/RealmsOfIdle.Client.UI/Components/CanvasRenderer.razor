@@ -1,0 +1,121 @@
+@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+
+<canvas @ref="canvasElement" id="@CanvasId" style="@GetStyle()" />
+
+@code {
+    private ElementReference canvasElement;
+    private bool _isInitialized = false;
+
+    [Parameter]
+    public string CanvasId { get; set; } = $"canvas-{Guid.NewGuid()}";
+
+    [Parameter]
+    public int Width { get; set; } = 800;
+
+    [Parameter]
+    public int Height { get; set; } = 600;
+
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Style { get; set; } = string.Empty;
+
+    private IJSObjectReference? _module;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/RealmsOfIdle.Client.UI/js/canvas-renderer.js");
+            await InitializeAsync();
+        }
+    }
+
+    private async Task InitializeAsync()
+    {
+        if (_module is null) return;
+
+        var success = await _module.InvokeAsync<bool>("initCanvas", CanvasId, Width, Height);
+        _isInitialized = success;
+
+        if (!success)
+        {
+            Console.WriteLine($"[Error] Failed to initialize canvas '{CanvasId}'");
+        }
+    }
+
+    public async Task ClearAsync()
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("clearCanvas", CanvasId);
+    }
+
+    public async Task DrawSpriteAsync(int x, int y, string color, int scale = 1)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("drawSprite", CanvasId, x, y, color, scale);
+    }
+
+    public async Task DrawTileAsync(int x, int y, string tileType, string color, int tileSize = 16)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("drawTile", CanvasId, x, y, tileType, color, tileSize);
+    }
+
+    public async Task DrawBackgroundAsync(string color)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("drawBackground", CanvasId, color);
+    }
+
+    public async Task DrawTextAsync(string text, int x, int y, string color, string? font = null)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("drawText", CanvasId, text, x, y, color, font ?? "16px VT323");
+    }
+
+    public async Task DrawRectAsync(int x, int y, int width, int height, string color, int lineWidth = 1)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("drawRect", CanvasId, x, y, width, height, color, lineWidth);
+    }
+
+    public async Task FillRectAsync(int x, int y, int width, int height, string color)
+    {
+        if (!_isInitialized || _module is null) return;
+        await _module.InvokeVoidAsync("fillRect", CanvasId, x, y, width, height, color);
+    }
+
+    public async Task<string?> ToDataURLAsync()
+    {
+        if (!_isInitialized || _module is null) return null;
+        return await _module.InvokeAsync<string?>("toDataURL", CanvasId);
+    }
+
+    private string GetStyle()
+    {
+        var baseStyle = $"width: {Width}px; height: {Height}px;";
+        if (!string.IsNullOrEmpty(Style))
+        {
+            baseStyle += $" {Style}";
+        }
+        return baseStyle;
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (_module is not null)
+        {
+            try
+            {
+                await _module.DisposeAsync();
+            }
+            catch (JSDisconnectedException)
+            {
+                // Browser is gone, ignore
+            }
+        }
+    }
+}

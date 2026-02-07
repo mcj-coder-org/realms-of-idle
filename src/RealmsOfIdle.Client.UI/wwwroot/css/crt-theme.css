@@ -165,3 +165,14 @@ h2 {
 .text-gold { color: var(--accent-gold); }
 .text-red { color: var(--accent-red); }
 .text-blue { color: var(--accent-blue); }
+
+/* Canvas specific styles */
+canvas {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.text-dim {
+    color: var(--text-dim);
+}
