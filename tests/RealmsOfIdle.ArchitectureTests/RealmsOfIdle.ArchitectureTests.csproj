@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
     <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
     <ProjectReference Include="..\..\src\RealmsOfIdle.Client.UI\RealmsOfIdle.Client.UI.csproj" />
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Client.Blazor\RealmsOfIdle.Client.Blazor.csproj" />
   </ItemGroup>
 
   <ItemGroup>
