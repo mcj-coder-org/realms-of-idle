@@ -1,0 +1,49 @@
+<div class="@GetCssClass()">
+    @if (!string.IsNullOrEmpty(Label))
+    {
+        <span class="progress-bar-label">@Label</span>
+    }
+    <div class="progress-bar-track">
+        <div class="progress-bar-fill @GetFillCssClass()" style="width: @Value%;"></div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int Value { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public ProgressBarVariant Variant { get; set; } = ProgressBarVariant.Default;
+
+    [Parameter]
+    public ProgressBarSize Size { get; set; } = ProgressBarSize.Standard;
+
+    private string GetCssClass()
+    {
+        var classes = new List<string> { "progress-bar" };
+
+        if (Size == ProgressBarSize.Large)
+        {
+            classes.Add("progress-bar-large");
+        }
+        else if (Size == ProgressBarSize.Compact)
+        {
+            classes.Add("progress-bar-compact");
+        }
+
+        return string.Join(" ", classes);
+    }
+
+    private string GetFillCssClass()
+    {
+        return Variant switch
+        {
+            ProgressBarVariant.Secondary => "secondary",
+            ProgressBarVariant.Danger => "danger",
+            _ => ""
+        };
+    }
+}

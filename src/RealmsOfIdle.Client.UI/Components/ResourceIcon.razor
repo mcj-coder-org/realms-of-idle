@@ -1,0 +1,31 @@
+<div class="@GetCssClass()">
+    @if (!string.IsNullOrEmpty(Emoji))
+    {
+        <span class="resource-icon-emoji">@Emoji</span>
+    }
+    @if (!string.IsNullOrEmpty(Amount))
+    {
+        <span class="resource-icon-amount">@Amount</span>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string? Emoji { get; set; }
+
+    [Parameter]
+    public string? Amount { get; set; }
+
+    [Parameter]
+    public ResourceIconSize Size { get; set; } = ResourceIconSize.Standard;
+
+    private string GetCssClass()
+    {
+        return Size switch
+        {
+            ResourceIconSize.Large => "resource-icon resource-icon-large",
+            ResourceIconSize.Compact => "resource-icon resource-icon-compact",
+            _ => "resource-icon"
+        };
+    }
+}

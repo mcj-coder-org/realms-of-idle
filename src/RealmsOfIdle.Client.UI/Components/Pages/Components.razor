@@ -1,0 +1,247 @@
+@page "/components"
+@using RealmsOfIdle.Client.UI.Components
+
+<PageTitle>Components - Realms of Idle</PageTitle>
+
+<div class="container">
+    <h1>Component Library</h1>
+    <p class="text-dim">CRT-themed UI components</p>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Buttons</h2>
+            <span class="component-tag">Variants & Sizes</span>
+        </div>
+        <p class="component-description">
+            Retro-styled buttons with hover glow effects. Available in Default, Primary, and Danger variants with Small, Standard, and Large sizes.
+        </p>
+
+        <div class="variations-container">
+            <div class="variation">
+                <div class="variation-header">Variants</div>
+                <div class="preview-area">
+                    <Button OnClick="@(() => LogClick("Default"))">Default</Button>
+                    <Button Variant="ButtonVariant.Primary" OnClick="@(() => LogClick("Primary"))">Primary</Button>
+                    <Button Variant="ButtonVariant.Danger" OnClick="@(() => LogClick("Danger"))">Danger</Button>
+                </div>
+            </div>
+
+            <div class="variation">
+                <div class="variation-header">Sizes</div>
+                <div class="preview-area">
+                    <Button Size="ButtonSize.Small" OnClick="@(() => LogClick("Small"))">Small</Button>
+                    <Button OnClick="@(() => LogClick("Standard"))">Standard</Button>
+                    <Button Size="ButtonSize.Large" OnClick="@(() => LogClick("Large"))">Large</Button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Retro Panel</h2>
+            <span class="component-tag">Container</span>
+        </div>
+        <p class="component-description">
+            Panel with CRT styling, optional header with dashed underline.
+        </p>
+
+        <div class="variations-container">
+            <div class="variation">
+                <div class="variation-header">With Header</div>
+                <RetroPanel Header="Panel Title" Style="min-width: 300px;">
+                    Panel content with retro border styling and dashed header separator.
+                </RetroPanel>
+            </div>
+
+            <div class="variation">
+                <div class="variation-header">Without Header</div>
+                <RetroPanel Style="min-width: 300px;">
+                    Simple panel without header section.
+                </RetroPanel>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Progress Bars</h2>
+            <span class="component-tag">Variants & Sizes</span>
+        </div>
+        <p class="component-description">
+            Horizontal progress bars with color variants (Default, Secondary, Danger) and size options.
+        </p>
+
+        <div class="variations-container">
+            <div class="variation">
+                <div class="variation-header">Variants</div>
+                <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+                    <ProgressBar Value="75" Label="Default" />
+                    <ProgressBar Value="60" Variant="ProgressBarVariant.Secondary" Label="Secondary" />
+                    <ProgressBar Value="30" Variant="ProgressBarVariant.Danger" Label="Danger" />
+                </div>
+            </div>
+
+            <div class="variation">
+                <div class="variation-header">Sizes</div>
+                <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+                    <ProgressBar Value="75" Size="ProgressBarSize.Compact" Label="Compact" />
+                    <ProgressBar Value="50" Label="Standard" />
+                    <ProgressBar Value="90" Size="ProgressBarSize.Large" Label="Large" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Stat Cards</h2>
+            <span class="component-tag">Layouts</span>
+        </div>
+        <p class="component-description">
+            Display stats with icon, label, and value. Horizontal, vertical, and minimal layouts available.
+        </p>
+
+        <div class="variations-container">
+            <div class="variation">
+                <div class="variation-header">Horizontal</div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <StatCard Icon="💰" Label="Gold" Value="1,250" />
+                    <StatCard Icon="⚔️" Label="Attack" Value="45" />
+                    <StatCard Icon="🛡️" Label="Defense" Value="32" />
+                </div>
+            </div>
+
+            <div class="variation">
+                <div class="variation-header">Vertical</div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <StatCard Layout="StatCardLayout.Vertical" Icon="📊" Label="Level" Value="42" />
+                    <StatCard Layout="StatCardLayout.Vertical" Icon="🎯" Label="XP" Value="8,750" />
+                    <StatCard Layout="StatCardLayout.Vertical" Icon="⭐" Label="Reputation" Value="125" />
+                </div>
+            </div>
+
+            <div class="variation">
+                <div class="variation-header">Minimal</div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <StatCard Layout="StatCardLayout.Minimal" Value="1,250 Gold" />
+                    <StatCard Layout="StatCardLayout.Minimal" Value="45 ATK" />
+                    <StatCard Layout="StatCardLayout.Minimal" Value="32 DEF" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Resource Icons</h2>
+            <span class="component-tag">Sizes</span>
+        </div>
+        <p class="component-description">
+            Display resources with emoji icon and gold-colored amount.
+        </p>
+
+        <div class="preview-area">
+            <ResourceIcon Emoji="💰" Amount="1,250" />
+            <ResourceIcon Emoji="💎" Amount="45" Size="ResourceIconSize.Large" />
+            <ResourceIcon Emoji="🪙" Amount="999" Size="ResourceIconSize.Compact" />
+        </div>
+    </div>
+
+    <div class="component-section">
+        <div class="component-header">
+            <h2>Notification Badges</h2>
+            <span class="component-tag">Dot & Count</span>
+        </div>
+        <p class="component-description">
+            Badge indicators for notifications. Dot for presence, count for numbers.
+        </p>
+
+        <div class="preview-area">
+            <NotificationBadge Type="NotificationBadgeType.Dot" ShowBadge="false">
+                <button class="btn">No Badge</button>
+            </NotificationBadge>
+            <NotificationBadge Type="NotificationBadgeType.Dot" ShowBadge="true">
+                <button class="btn">Dot Badge</button>
+            </NotificationBadge>
+            <NotificationBadge Type="NotificationBadgeType.Count" ShowBadge="true" Count="3">
+                <button class="btn">Count (3)</button>
+            </NotificationBadge>
+            <NotificationBadge Type="NotificationBadgeType.Count" ShowBadge="true" Count="99">
+                <button class="btn">Count (99)</button>
+            </NotificationBadge>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void LogClick(string action)
+    {
+        Console.WriteLine($"Button clicked: {action}");
+    }
+}
+
+<style>
+    .component-section {
+        margin-bottom: 40px;
+    }
+
+    .component-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .component-header h2 {
+        font-size: 24px;
+        color: var(--accent-green);
+    }
+
+    .component-tag {
+        font-size: 14px;
+        padding: 4px 8px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        color: var(--text-dim);
+    }
+
+    .component-description {
+        font-size: 16px;
+        color: var(--text-dim);
+        margin-bottom: 20px;
+    }
+
+    .variations-container {
+        display: grid;
+        gap: 20px;
+    }
+
+    .variation {
+        background: var(--bg-secondary);
+        border: 2px solid var(--border-color);
+        padding: 16px;
+    }
+
+    .variation-header {
+        font-size: 18px;
+        color: var(--accent-gold);
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed var(--border-color);
+    }
+
+    .preview-area {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        padding: 16px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+</style>

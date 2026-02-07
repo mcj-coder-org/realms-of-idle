@@ -1,0 +1,40 @@
+<button class="@GetCssClass()" @onclick="OnClick">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public ButtonVariant Variant { get; set; } = ButtonVariant.Default;
+
+    [Parameter]
+    public ButtonSize Size { get; set; } = ButtonSize.Standard;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    private string GetCssClass()
+    {
+        var classes = new List<string> { "btn" };
+
+        // Add variant class
+        classes.Add(Variant switch
+        {
+            ButtonVariant.Primary => "btn-primary",
+            ButtonVariant.Danger => "btn-danger",
+            _ => ""
+        });
+
+        // Add size class
+        classes.Add(Size switch
+        {
+            ButtonSize.Small => "btn-small",
+            ButtonSize.Large => "btn-large",
+            _ => ""
+        });
+
+        return string.Join(" ", classes.Where(c => !string.IsNullOrEmpty(c)));
+    }
+}

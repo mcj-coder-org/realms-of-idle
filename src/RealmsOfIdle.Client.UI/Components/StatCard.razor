@@ -1,0 +1,55 @@
+<div class="@GetCssClass()">
+    @if (!string.IsNullOrEmpty(Icon) || Layout == StatCardLayout.Horizontal)
+    {
+        <div class="stat-card-icon">@Icon</div>
+    }
+    <div class="stat-card-content">
+        @if (Layout != StatCardLayout.Minimal && !string.IsNullOrEmpty(Label))
+        {
+            <div class="stat-card-label">@Label</div>
+        }
+        <div class="stat-card-value">@Value</div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? Icon { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public string Value { get; set; } = "0";
+
+    [Parameter]
+    public StatCardLayout Layout { get; set; } = StatCardLayout.Horizontal;
+
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+
+    private string GetCssClass()
+    {
+        var classes = new List<string> { "stat-card" };
+
+        switch (Layout)
+        {
+            case StatCardLayout.Horizontal:
+                classes.Add("stat-card-horizontal");
+                break;
+            case StatCardLayout.Vertical:
+                classes.Add("stat-card-vertical");
+                break;
+            case StatCardLayout.Minimal:
+                classes.Add("stat-card-minimal");
+                break;
+        }
+
+        if (!string.IsNullOrEmpty(Class))
+        {
+            classes.Add(Class);
+        }
+
+        return string.Join(" ", classes);
+    }
+}
