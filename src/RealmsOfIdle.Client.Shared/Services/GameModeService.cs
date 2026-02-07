@@ -1,5 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using RealmsOfIdle.Client.Shared.Logging;
 using RealmsOfIdle.Core.Abstractions;
 using RealmsOfIdle.Core.Domain.Models;
 
@@ -55,13 +54,6 @@ public class GameModeService : IGameModeService
             : _serviceProvider.GetRequiredService<MultiplayerGameService>();
     }
 
-    public IGameLogger GetLogger()
-    {
-        return _currentMode == GameMode.Offline
-            ? _serviceProvider.GetRequiredService<LiteDBGameLogger>()
-            : _serviceProvider.GetRequiredService<RemoteGameLogger>();
-    }
-
     private void OnModeChanged()
     {
         ModeChanged?.Invoke(this, EventArgs.Empty);
@@ -107,9 +99,4 @@ public interface IGameModeService
     /// Get appropriate game service for current mode
     /// </summary>
     IGameService GetGameService();
-
-    /// <summary>
-    /// Get appropriate logger for current mode
-    /// </summary>
-    IGameLogger GetLogger();
 }

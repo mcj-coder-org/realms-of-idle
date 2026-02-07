@@ -1,9 +1,5 @@
-using System.Diagnostics;
 using LiteDB;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using OpenTelemetry.Trace;
-using RealmsOfIdle.Client.Shared.Logging;
 using RealmsOfIdle.Client.Shared.Services;
 using RealmsOfIdle.Client.Shared.Storage;
 using RealmsOfIdle.Core.Abstractions;
@@ -37,14 +33,6 @@ public static class ServiceCollectionExtensions
         // Storage
         services.AddSingleton<IEventStore, LiteDBEventStore>();
 
-        // Logging
-        services.AddSingleton<LiteDBGameLogger>();
-        services.AddSingleton<IGameLogger>(sp => sp.GetRequiredService<LiteDBGameLogger>()); // Default to local
-
-        // OpenTelemetry for online mode
-        services.AddSingleton<ActivitySource>(sp => new ActivitySource("RealmsOfIdle.Client"));
-        services.AddSingleton<RemoteGameLogger>();
-
         // Infrastructure
         services.AddSingleton<InMemoryEventStore>();
         services.AddSingleton<DeterministicRng>();
@@ -55,20 +43,6 @@ public static class ServiceCollectionExtensions
             client.BaseAddress = new Uri("https://localhost:5001");
             client.Timeout = TimeSpan.FromSeconds(30);
         });
-
-        return services;
-    }
-
-    /// <summary>
-    /// Add OpenTelemetry tracing for online mode
-    /// </summary>
-    public static IServiceCollection AddOpenTelemetryTracing(this IServiceCollection services, string serviceName = "RealmsOfIdle.Client")
-    {
-        services.AddOpenTelemetry()
-            .WithTracing(builder => builder
-                .AddSource(serviceName)
-                .AddHttpClientInstrumentation()
-                .AddConsoleExporter());
 
         return services;
     }
