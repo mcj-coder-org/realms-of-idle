@@ -1,0 +1,74 @@
+@page "/theme-demo"
+@using RealmsOfIdle.Client.UI.Components.Theme
+
+<div class="demo-content">
+    <div class="demo-header">
+        <h1>Theme Demo</h1>
+        <p class="text-dim">Click the theme button to cycle through color themes</p>
+    </div>
+
+    <div class="demo-section">
+        <div class="theme-controls">
+            <ThemeSwitcher />
+            <span class="theme-name">@GetCurrentThemeName()</span>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Color Preview</h2>
+        <div class="color-palette">
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-green)"></div>
+                <span>Green</span>
+            </div>
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-gold)"></div>
+                <span>Gold</span>
+            </div>
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-red)"></div>
+                <span>Red</span>
+            </div>
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-blue)"></div>
+                <span>Blue</span>
+            </div>
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-purple)"></div>
+                <span>Purple</span>
+            </div>
+            <div class="color-sample">
+                <div class="color-box" style="background: var(--accent-orange)"></div>
+                <span>Orange</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>UI Elements</h2>
+        <div class="ui-samples">
+            <button class="btn">Default Button</button>
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-danger">Danger Button</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Theme _currentTheme = Theme.Color;
+
+    private string GetCurrentThemeName()
+    {
+        return _currentTheme switch
+        {
+            Theme.Green => "Green Mono",
+            Theme.Amber => "Amber Mono",
+            _ => "Full Color"
+        };
+    }
+
+    private async Task HandleThemeChanged(Theme newTheme)
+    {
+        _currentTheme = newTheme;
+    }
+}
