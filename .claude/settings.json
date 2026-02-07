@@ -2,49 +2,24 @@
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Edit|Write|Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/postToolUse.cjs"
-          }
-        ]
-      },
-      {
-        "matcher": "Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/PostTask.cjs"
-          }
-        ]
-      },
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/ArtifactTracker.cjs"
-          }
-        ]
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "node .claude/hooks/postToolUse.cjs" }]
       }
     ],
     "PreToolUse": [
       {
-        "matcher": "Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/PreToolUse.cjs"
-          }
-        ]
-      },
-      {
         "matcher": "Edit",
+        "hooks": [{ "type": "command", "command": "node .claude/hooks/PreEdit.cjs" }]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/PreEdit.cjs"
+            "command": "node .claude/hooks/quality-gate.cjs",
+            "timeout": 120000
           }
         ]
       }
@@ -54,7 +29,7 @@
     "ralph-loop@claude-plugins-official": false,
     "csharp-lsp@claude-plugins-official": true,
     "github@claude-plugins-official": false,
-    "superpowers@claude-plugins-official": true,
-    "oh-my-claudecode@omc": true
+    "superpowers@claude-plugins-official": false,
+    "oh-my-claudecode@omc": false
   }
 }

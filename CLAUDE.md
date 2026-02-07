@@ -24,6 +24,8 @@ These apply during active development (implementation, fixes, refactoring), not 
   - Tests must pass and provide actual verification of behavior
 - ALWAYS automate repetitive tasks (git hooks, scripts, tools); never manual repeat
 - ALWAYS DRY, YAGNI, Less Code >> More Code (avoid premature abstractions and over-engineering)
+- NEVER create files not specified in the task (scripts, reports, summaries, documentation)
+  - If a utility script seems needed, ask first
 
 </EXTREMELY_IMPORTANT>
 
@@ -47,17 +49,55 @@ These apply during active development (implementation, fixes, refactoring), not 
 3. **Surgical**: Edit only required, match style, clean only your orphans
 4. **Verifiable**: Transform goals → tests/checks (e.g., "add validation" → "write tests → pass")
 
-## Solo Development Workflow
+## Development Workflow (Dual-Session)
 
-### Feature Development
+This project uses two Claude Code sessions with different providers for cost-optimized quality enforcement.
 
-1. **Plan feature** (update design docs if needed)
-2. **Create feature branch**: `git checkout -b feat/description`
-3. **TDD cycle**: test → implement → commit
-4. **Verify quality**: `npm run quality` (runs lint, tests, build)
-5. **Optional code review**: `npm run review:full`
-6. **Merge to main**: `git checkout main && git merge feat/description --ff-only`
-7. **Delete branch**: `git branch -d feat/description`
+**Session 1 — Lead/Reviewer (`claude` / Opus)**
+
+1. Plan feature: define tasks with acceptance criteria in `docs/plans/<feature>.md`
+2. Each task has: deliverables, quality gates, dependencies
+3. After implementer commits, review changes against plan
+4. Report findings in plan file or create GitHub issues
+5. Approve or request changes
+
+**Session 2 — Implementer (`claude-zia`)**
+
+1. Read plan file to find next task
+2. TDD cycle: write test → implement → verify
+3. TaskCompleted hook runs build + test (deterministic gate)
+4. 1 task = 1 commit (atomic, reviewable, conventional message)
+5. Read review feedback, address findings, commit fixes
+
+**Handoff**: Git commits + plan files on disk. No shared memory.
+
+### Roles
+
+**Lead/Reviewer** (run with `claude` — Opus)
+
+- Plans tasks with clear acceptance criteria
+- Reviews completed work against plan (fresh context, no sunk cost bias)
+- Focus: spec compliance, code quality, edge cases, test coverage
+- Reports findings — does NOT implement fixes
+- Coordinates merge after review approval
+
+**Implementer** (run with `claude-zia`)
+
+- Reads plan file for current task
+- Follows TDD: write test → implement → verify
+- 1 task = 1 commit (atomic, reviewable)
+- TaskCompleted hook enforces build + test automatically
+- Addresses review findings in follow-up commits
+
+### Quality Gate Layers
+
+| Layer         | Mechanism                                     | Enforcement               |
+| ------------- | --------------------------------------------- | ------------------------- |
+| Deterministic | Git hooks (lint, format, tests, commits)      | Hard gate — blocks commit |
+| Deterministic | TaskCompleted hook (build + test)             | Hard gate — blocks task   |
+| Structural    | Separate reviewer session (fresh context)     | Architectural             |
+| Structural    | Plan approval (lead reviews before code)      | Architectural             |
+| Behavioral    | CLAUDE.md conventions loaded at session start | Shapes initial behavior   |
 
 ### Quality Gates
 
@@ -88,20 +128,13 @@ Runs:
 - Build verification
 - Security scanning
 
-```
+### Available Tools
 
-## Implementation Execution Preferences
+When you need context, use the appropriate search tool:
 
-**Subagent-Driven Development**: When implementing from detailed plans, use subagent-driven approach:
-- Dispatch fresh subagent per task
-- Review results between tasks
-- Fast iteration with checkpoints
-- Stay in current session
-
-**Worktree Strategy**: Use git worktrees for feature isolation:
-- Worktrees created in `.worktrees/` directory (gitignored)
-- Create feature branch before starting implementation
-- Clean up worktree after merge
+- **QMD**: Design docs, specs, GDDs, architecture docs
+- **grepai**: Code implementations, functions, patterns
+- **CodeContext**: Codebase structure, directory layouts, symbols
 
 ---
 
@@ -124,138 +157,3 @@ Examples:
 ---
 
 **Success**: Minimal diffs, clarifying questions before mistakes, no rewrites.
-
----
-
-# Autonomous Development Execution Protocol
-
-This section defines the execution protocol for autonomous development tasks using subagents.
-
-## Quality Gates
-
-Every task must satisfy these quality gates before being marked complete:
-
-1. **Minimal Changes**: Code changes ONLY what was explicitly requested. No "helpful" additions or premature abstractions.
-2. **Best Practices**: Code follows existing project patterns, naming conventions, and error handling.
-3. **Testing**: Tests are written and passing for all new functionality.
-4. **No Breaking Changes**: Existing functionality remains intact.
-
-## Task Delegation Requirements
-
-When delegating to a subagent via the Task tool, you MUST include:
-
-### 1. Quality Gates (VERBATIM)
-
-Copy the quality gates above VERBATIM into your task prompt:
-
-```
-
-<!-- VERBATIM: Quality Gates -->
-
-Quality Gates (VERBATIM):
-
-1. Minimal Changes: Only implement what was specified
-2. Best Practices: Follow existing code patterns and conventions
-3. Testing: Write tests for all new functionality
-4. No Breaking Changes: Ensure existing features continue working
-<!-- END VERBATIM -->
-
-```
-
-### 2. Spec Reference
-
-Include the relevant spec or design documentation. Include FULL requirements, not a summary:
-
-```
-
-## Spec Reference
-
-[Full spec section or design requirements]
-
-```
-
-### 3. Delivery Plan Path
-
-Always include the delivery plan path so the subagent can reference it:
-
-```
-
-Delivery Plan: docs/delivery-plan.md
-
-```
-
-### 4. Context Strategy: QMD, grepai, or CodeContext
-
-When delegating Tasks, provide appropriate context using the right search tool:
-
-<!-- VERBATIM: Context Strategy -->
-**QMD** (Semantic Documentation Search)
-- **Use for:** Design docs, specs, GDDs, README files, architecture docs
-- **When to include:** Task requires understanding design decisions, game mechanics, or system architecture
-- **Example prompts:**
-  - "Search QMD for 'idle progression system design'"
-  - "Find documentation on combat resolution mechanics"
-  - "What does the GDD say about prestige mechanics?"
-
-**grepai** (Semantic Code Search)
-- **Use for:** Finding specific implementations, functions, patterns in code
-- **When to include:** Task requires understanding existing code, locating related implementations
-- **Example prompts:**
-  - "Search grepai for 'player health management'"
-  - "Find code related to Orleans grain lifecycle"
-  - "Show me implementations of IGameService"
-
-**CodeContext** (Codebase Architecture Analysis)
-- **Use for:** Understanding overall structure, directory layouts, symbol extraction
-- **When to include:** Task requires high-level understanding of codebase organization
-- **Example prompts:**
-  - "Analyze the architecture of the Core domain layer"
-  - "Show me the structure of the Server.Api project"
-  - "What are the main components in the Maui client?"
-<!-- END VERBATIM -->
-
-**Decision Tree:**
-1. Need design requirements or game mechanics? → **QMD**
-2. Need existing code implementations? → **grepai**
-3. Need to understand codebase structure? → **CodeContext**
-
-**Including in Task Delegation:**
-
-When you need context, include search instructions in your task prompt:
-
-```
-
-## Context Gathering
-
-Before implementing, gather context using the appropriate tool:
-
-1. Search QMD for "idle progression system" to understand design requirements
-2. Search grepai for "IPlayerState" to find existing implementations
-3. Use CodeContext to analyze the Core domain structure
-
-```
-
-**Important:** Do NOT summarize search results in your task prompt. The subagent will perform the searches themselves. Include the search queries for them to execute.
-
-## Post-Task Checklist
-
-After each Task completes, review before accepting:
-
-- [ ] Does this change ONLY what was requested?
-- [ ] Are there "helpful" additions not in the spec?
-- [ ] Can any lines be removed while still satisfying requirements?
-- [ ] Does code follow project patterns?
-- [ ] Are ALL quality gates satisfied?
-- [ ] Tests written and passing?
-- [ ] No breaking changes to existing code?
-
-## Git Workflow
-
-After verifying code quality:
-
-1. Review changes: `git diff`
-2. Stage relevant files: `git add <files>`
-3. Create a commit: `git commit`
-
-Uncommitted work may be lost. Commit before proceeding to next task.
-```
