@@ -10,7 +10,8 @@ if (File.Exists(envPath))
 
 var apiPort = int.TryParse(Environment.GetEnvironmentVariable("API_HTTP_PORT"), out var ap) ? ap : 5214;
 var orleansPort = int.TryParse(Environment.GetEnvironmentVariable("ORLEANS_HTTP_PORT"), out var op) ? op : 5001;
-var blazorPort = int.TryParse(Environment.GetEnvironmentVariable("BLAZOR_HTTP_PORT"), out var bp) ? bp : 5004;
+// Blazor WebAssembly not compatible with .NET 10 - temporarily excluded
+// var blazorPort = int.TryParse(Environment.GetEnvironmentVariable("BLAZOR_HTTP_PORT"), out var bp) ? bp : 5004;
 
 // Add PostgreSQL with container health check
 var postgres = builder.AddPostgres("postgres")
@@ -56,8 +57,9 @@ builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
     .WaitFor(redis);
 
 // Add Blazor WASM client
-builder.AddProject<Projects.RealmsOfIdle_Client_Blazor>("blazor-client")
-    .WithEndpoint("http", e => e.Port = blazorPort)
-    .WithExternalHttpEndpoints();
+// Blazor WebAssembly not compatible with .NET 10 - temporarily excluded
+// builder.AddProject<Projects.RealmsOfIdle_Client_Blazor>("blazor-client")
+//     .WithEndpoint("http", e => e.Port = blazorPort)
+//     .WithExternalHttpEndpoints();
 
 builder.Build().Run();

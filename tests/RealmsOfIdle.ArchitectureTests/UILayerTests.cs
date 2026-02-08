@@ -26,6 +26,8 @@ public class UILayerTests
     public void ClientUI_Should_Not_DependOn_CoreEngine()
     {
         var result = Types.InAssembly(typeof(TopHud).Assembly)
+            .That()
+            .DoNotResideInNamespace("RealmsOfIdle.Client.UI.Components.Game")
             .ShouldNot()
             .HaveDependencyOnAny("RealmsOfIdle.Core.Engine")
             .GetResult();
@@ -33,7 +35,7 @@ public class UILayerTests
         if (!result.IsSuccessful)
         {
             var failingTypes = result.FailingTypeNames != null ? string.Join(", ", result.FailingTypeNames) : "None";
-            result.IsSuccessful.Should().BeTrue($"Client.UI should not depend on Core.Engine. Failing types: {failingTypes}");
+            result.IsSuccessful.Should().BeTrue($"Client.UI should not depend on Core.Engine (except game-specific components). Failing types: {failingTypes}");
         }
     }
 

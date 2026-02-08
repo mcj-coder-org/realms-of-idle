@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RealmsOfIdle.Client.Blazor\RealmsOfIdle.Client.Blazor.csproj" />
+    <!-- Blazor WebAssembly not compatible with .NET 10 - temporarily excluded -->
+    <!-- <ProjectReference Include="..\RealmsOfIdle.Client.Blazor\RealmsOfIdle.Client.Blazor.csproj" /> -->
     <ProjectReference Include="..\RealmsOfIdle.Server.Api\RealmsOfIdle.Server.Api.csproj" />
     <ProjectReference Include="..\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
   </ItemGroup>
