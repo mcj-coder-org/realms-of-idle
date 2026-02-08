@@ -247,16 +247,12 @@ public class LocalGameService : IGameService
         var rng = new DeterministicRng(seed);
         var gameLoop = new InnGameLoop(innState, rng);
 
-        // Fast-forward to saved tick count
-        for (var i = 0; i < innStateDto.CurrentTick; i++)
-        {
-            gameLoop.ProcessTick();
-        }
-
+        // Note: We don't fast-forward because the state is already fully restored
+        // The CurrentTick will be 0, but we use the session's saved tick count
         _activeGames[playerId] = gameLoop;
 
-        session.InnState = gameLoop.State;
-        session.CurrentTick = gameLoop.CurrentTick;
+        session.InnState = innState;
+        session.CurrentTick = innStateDto.CurrentTick;
 
         _logger.LogInformation("Game loaded for player: {PlayerId}, Tick: {TickCount}", playerId, gameLoop.CurrentTick);
 
