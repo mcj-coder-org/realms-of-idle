@@ -18,6 +18,9 @@ public class ActionResult
     public static ActionResult Ok(string message = "Success") =>
         new(true, message);
 
+    public static ActionResult Ok(string message, IReadOnlyList<GameEvent> events) =>
+        new(true, message, events);
+
     public static ActionResult Fail(string message) =>
         new(false, message);
 }
