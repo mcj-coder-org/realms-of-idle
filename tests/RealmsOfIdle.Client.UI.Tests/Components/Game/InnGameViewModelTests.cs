@@ -1,7 +1,6 @@
 using RealmsOfIdle.Client.UI.Components.Game;
-using RealmsOfIdle.Core.Scenarios.Inn;
 using RealmsOfIdle.Core.Engine.Spatial;
-using Xunit;
+using RealmsOfIdle.Core.Scenarios.Inn;
 
 namespace RealmsOfIdle.Client.UI.Tests.Components.Game;
 
@@ -56,8 +55,8 @@ public class InnGameViewModelTests
         // Arrange
         var layout = new WorldLayout();
         var facilities = new Dictionary<string, InnFacility>();
-        var customer1 = new Customer("Hero");
-        var customer2 = new Customer("Merchant");
+        var customer1 = new Customer("Hero").WithPosition(new EntityPosition("entrance"));
+        var customer2 = new Customer("Merchant").WithPosition(new EntityPosition("table1"));
         var state = new InnState(layout, facilities)
             .AddCustomer(customer1)
             .AddCustomer(customer2);
@@ -76,8 +75,8 @@ public class InnGameViewModelTests
         // Arrange
         var layout = new WorldLayout();
         var facilities = new Dictionary<string, InnFacility>();
-        var staff1 = new StaffMember("Tom", "Cook");
-        var staff2 = new StaffMember("Barbara", "Waitress");
+        var staff1 = new StaffMember("Tom", "Cook").WithPosition(new EntityPosition("kitchen"));
+        var staff2 = new StaffMember("Barbara", "Waitress").WithPosition(new EntityPosition("bar"));
         var state = new InnState(layout, facilities)
             .AddStaff(staff1)
             .AddStaff(staff2);
@@ -96,7 +95,12 @@ public class InnGameViewModelTests
         // Arrange
         var layout = new WorldLayout();
         var facilities = new Dictionary<string, InnFacility>();
-        var state = new InnState(layout, facilities, gold: 100, reputation: 50, innLevel: 3);
+        var state = new InnState(layout, facilities)
+            .AddGold(100)
+            .AddReputation(50)
+            .LevelUp()
+            .LevelUp()
+            .LevelUp();
         var viewModel = new InnGameViewModel(state);
 
         // Act
@@ -104,6 +108,6 @@ public class InnGameViewModelTests
 
         // Assert
         Assert.Equal(100, stats.Gold);
-        Assert.Equal(3, stats.InnLevel);
+        Assert.Equal(4, stats.InnLevel);
     }
 }

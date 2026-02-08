@@ -13,4 +13,5 @@ public class GameStats
     public int AchievementsUnlocked { get; set; }
     public DateTime FirstPlayed { get; set; }
     public DateTime LastPlayed { get; set; }
+    public int TotalTicks { get; set; }
 }

@@ -12,6 +12,8 @@
   <Folder Name="/tests/">
     <Project Path="tests/RealmsOfIdle.Tests/RealmsOfIdle.Tests.csproj" />
     <Project Path="tests/RealmsOfIdle.Core.Tests/RealmsOfIdle.Core.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Client.Shared.Tests/RealmsOfIdle.Client.Shared.Tests.csproj" />
+    <Project Path="tests/RealmsOfIdle.Client.UI.Tests/RealmsOfIdle.Client.UI.Tests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.Orleans.Tests/RealmsOfIdle.Server.Orleans.Tests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.SystemTests/RealmsOfIdle.Server.SystemTests.csproj" />
     <Project Path="tests/RealmsOfIdle.Server.E2ETests/RealmsOfIdle.Server.E2ETests.csproj" />
