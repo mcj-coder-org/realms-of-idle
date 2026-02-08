@@ -51,7 +51,7 @@ Health (last resort)
   - Metal shields: [Blacksmith](../../content/classes/crafting/blacksmith.md)
   - Wood shields: [Carpenter](../../content/classes/crafting/carpenter.md)
 - Repair quality depends on crafter skill level
-- Higher quality shields have higher durability (see [Quality Tiers](../core/quality-tiers.md))
+- Higher quality shields have higher durability (see [Quality Tiers](quality-tiers.md))
 
 ### Armour Degradation
 
@@ -321,7 +321,7 @@ See [Adrenaline Mechanic](../core/adrenaline.md) for detailed configuration opti
 ### Core Systems
 
 - [Adrenaline Mechanic](../core/adrenaline.md) - Instant stamina recovery on combat exhaustion
-- [Quality Tiers](../core/quality-tiers.md) - Equipment quality and durability
+- [Quality Tiers](quality-tiers.md) - Equipment quality and durability
 - [Stacking Rules](../core/stacking-rules.md) - How bonuses combine
 - [Time and Rest](../core/time-and-rest.md) - Stamina recovery outside combat
 
