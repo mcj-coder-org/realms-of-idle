@@ -49,6 +49,14 @@ public sealed record class StaffMember(
     }
 
     /// <summary>
+    /// Creates a new staff member with a designated bed
+    /// </summary>
+    public StaffMember WithDesignatedBed(GridPosition bed)
+    {
+        return this with { DesignatedBed = bed };
+    }
+
+    /// <summary>
     /// Creates a new staff member with updated efficiency
     /// </summary>
     public StaffMember WithEfficiency(double efficiency)
