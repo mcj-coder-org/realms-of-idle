@@ -1,0 +1,174 @@
+@inject IJSRuntime JSRuntime
+@inject ILogger<InnGameHud> Logger
+@implements IAsyncDisposable
+@inherits ComponentBase
+@using RealmsOfIdle.Client.UI.Components.Game
+@using RealmsOfIdle.Client.UI.Components.HUD
+@using RealmsOfIdle.Client.UI.Components.Observability
+@using RealmsOfIdle.Core.Scenarios.Inn
+
+<div class="inn-game-hud">
+    <!-- Top HUD with resources -->
+    <TopHud PlayerStats="@PlayerStats" ShowInnLevel="true" ShowHealth="false" />
+
+    <!-- Info Panel -->
+    <InfoPanel
+        Content="@InfoContent"
+        IsVisible="@ShowInfoPanel"
+        Position="@InfoPanelPosition"
+        OnClose="CloseInfoPanel"
+        OnAction="HandleInfoPanelAction" />
+
+    <!-- Toast Notifications -->
+    <div class="toast-container">
+        @foreach (var toast in Toasts)
+        {
+            <div class="toast @GetToastTypeClass(toast.Type)">
+                <span class="toast-icon">@toast.Icon</span>
+                <span class="toast-message">@toast.Message</span>
+            </div>
+        }
+    </div>
+
+    <!-- Action Bar -->
+    <ActionBar ActionSlots="@ActionSlots" OnAction="HandleQuickAction" />
+</div>
+
+@code {
+    [Parameter]
+    public InnGameViewModel ViewModel { get; set; } = null!;
+
+    [Parameter]
+    public EventCallback<string> OnAction { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnInfoPanelAction { get; set; }
+
+    // HUD state
+    private PlayerStats PlayerStats => ViewModel?.PlayerStats ?? new PlayerStats();
+    private IReadOnlyList<QuickActionSlot> ActionSlots => ViewModel?.GetInnActionSlots() ?? Array.Empty<QuickActionSlot>();
+
+    // Info panel state
+    private InfoPanelContent? InfoContent { get; set; }
+    private bool ShowInfoPanel { get; set; }
+    private (double X, double Y)? InfoPanelPosition { get; set; }
+
+    // Toast notifications
+    private List<ToastNotification> Toasts { get; } = new();
+
+    /// <summary>
+    /// Updates the HUD with new game state
+    /// </summary>
+    public void UpdateState(InnState newState)
+    {
+        ViewModel?.UpdateState(newState);
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Shows info panel for an entity
+    /// </summary>
+    public void ShowEntityInfo(string entityId, string entityType, double x, double y)
+    {
+        if (ViewModel == null) return;
+
+        InfoContent = entityType switch
+        {
+            "customer" => GetCustomerInfo(entityId),
+            "staff" => GetStaffInfo(entityId),
+            _ => null
+        };
+
+        if (InfoContent != null)
+        {
+            InfoPanelPosition = GetClampedPosition(x, y);
+            ShowInfoPanel = true;
+            StateHasChanged();
+        }
+    }
+
+    /// <summary>
+    /// Shows a toast notification
+    /// </summary>
+    public void ShowToast(string message, ToastType type = ToastType.Info, string icon = "ℹ️")
+    {
+        var toast = new ToastNotification
+        {
+            Message = message,
+            Type = type,
+            Icon = icon,
+            Timestamp = DateTime.UtcNow
+        };
+
+        Toasts.Add(toast);
+
+        // Auto-remove after 3 seconds
+        _ = Task.Run(async () =>
+        {
+            await Task.Delay(3000);
+            Toasts.Remove(toast);
+            await InvokeAsync(StateHasChanged);
+        });
+
+        StateHasChanged();
+    }
+
+    private InfoPanelContent? GetCustomerInfo(string customerId)
+    {
+        var customer = ViewModel.Customers.FirstOrDefault(c => c.Name == customerId);
+        return customer != null ? ViewModel.GetCustomerInfo(customer) : null;
+    }
+
+    private InfoPanelContent? GetStaffInfo(string staffId)
+    {
+        var staff = ViewModel.Staff.FirstOrDefault(s => s.Name == staffId);
+        return staff != null ? ViewModel.GetStaffInfo(staff) : null;
+    }
+
+    private void CloseInfoPanel()
+    {
+        ShowInfoPanel = false;
+        StateHasChanged();
+    }
+
+    private async Task HandleQuickAction(string actionId)
+    {
+        Logger.LogDebug("Quick action activated: {ActionId}", actionId);
+        await OnAction.InvokeAsync(actionId);
+    }
+
+    private async Task HandleInfoPanelAction(string actionId)
+    {
+        Logger.LogDebug("Info panel action clicked: {ActionId}", actionId);
+        await OnInfoPanelAction.InvokeAsync(actionId);
+    }
+
+    private (double X, double Y) GetClampedPosition(double x, double y)
+    {
+        const double panelWidth = 300;
+        const double panelHeight = 200;
+        const double margin = 16;
+        const double topOffset = 60;
+
+        x = Math.Clamp(x, margin, 1920 - panelWidth - margin);
+        y = Math.Clamp(y, margin + topOffset, 1080 - panelHeight - margin);
+
+        return (x, y);
+    }
+
+    private string GetToastTypeClass(ToastType type)
+    {
+        return type switch
+        {
+            ToastType.Success => "toast-success",
+            ToastType.Warning => "toast-warning",
+            ToastType.Error => "toast-error",
+            _ => "toast-info"
+        };
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        // Cleanup when needed
+    }
+}

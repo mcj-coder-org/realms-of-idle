@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\RealmsOfIdle.Client.UI\RealmsOfIdle.Client.UI.csproj" />
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

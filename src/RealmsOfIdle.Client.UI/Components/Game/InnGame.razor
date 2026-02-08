@@ -1,0 +1,199 @@
+@inject IJSRuntime JSRuntime
+@inject ILogger<InnGame> Logger
+@implements IAsyncDisposable
+@inherits ComponentBase
+@using RealmsOfIdle.Client.UI.Components.Game
+@using RealmsOfIdle.Core.Scenarios.Inn.GameLoop
+@using RealmsOfIdle.Core.Infrastructure
+@using RealmsOfIdle.Core.Scenarios.Inn
+
+<div class="inn-game">
+    <!-- Game Scene -->
+    <InnGameScene
+        ViewModel="ViewModel"
+        Width="800"
+        Height="600"
+        TileSize="32"
+        ShowMinimap="true"
+        OnEntityClick="HandleEntityClick" />
+
+    <!-- Game HUD -->
+    <InnGameHud
+        ViewModel="ViewModel"
+        OnAction="HandleAction"
+        OnInfoPanelAction="HandleInfoPanelAction"
+        @ref="hudRef" />
+</div>
+
+@code {
+    private InnGameLoop _gameLoop = null!;
+    private InnGameViewModel _viewModel = null!;
+    private InnGameHud? hudRef;
+    private Timer? _gameTickTimer;
+    private bool _isDisposed;
+
+    [Parameter]
+    public InnState InitialState { get; set; } = null!;
+
+    [Parameter]
+    public DeterministicRng InitialRng { get; set; } = null!;
+
+    [Parameter]
+    public int TickIntervalMs { get; set; } = 100; // 10 ticks per second
+
+    // Public properties for external access
+    public InnGameViewModel ViewModel => _viewModel;
+    public InnState CurrentState => _gameLoop.State;
+    public int CurrentTick => _gameLoop.CurrentTick;
+
+    protected override void OnInitialized()
+    {
+        if (InitialState == null) throw new ArgumentNullException(nameof(InitialState));
+        if (InitialRng == null) throw new ArgumentNullException(nameof(InitialRng));
+
+        _gameLoop = new InnGameLoop(InitialState, InitialRng);
+        _viewModel = new InnGameViewModel(_gameLoop.State);
+
+        Logger.LogInformation("Inn game initialized with tick interval: {TickIntervalMs}ms", TickIntervalMs);
+    }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Start the game tick timer
+            _gameTickTimer = new Timer(OnGameTick, null, TickIntervalMs, TickIntervalMs);
+            Logger.LogInformation("Game tick timer started");
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private void OnGameTick(object? state)
+    {
+        if (_isDisposed) return;
+
+        try
+        {
+            // Process game tick
+            _gameLoop.ProcessTick();
+
+            // Update view model
+            _viewModel.UpdateState(_gameLoop.State);
+
+            // Update UI
+            InvokeAsync(async () =>
+            {
+                await UpdateUiAsync();
+            });
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error processing game tick");
+        }
+    }
+
+    private async Task UpdateUiAsync()
+    {
+        if (_isDisposed) return;
+
+        // Update HUD
+        hudRef?.UpdateState(_gameLoop.State);
+
+        // Trigger re-render
+        StateHasChanged();
+    }
+
+    private async Task HandleEntityClick(string entityId)
+    {
+        Logger.LogDebug("Entity clicked: {EntityId}", entityId);
+
+        // Show info panel for the entity
+        // Determine entity type by checking customers and staff
+        var customer = _gameLoop.State.Customers.FirstOrDefault(c => c.Name == entityId);
+        if (customer != null)
+        {
+            hudRef?.ShowEntityInfo(entityId, "customer", 100, 100);
+        }
+        else
+        {
+            var staff = _gameLoop.State.Staff.FirstOrDefault(s => s.Name == entityId);
+            if (staff != null)
+            {
+                hudRef?.ShowEntityInfo(entityId, "staff", 100, 100);
+            }
+        }
+
+        await Task.CompletedTask;
+    }
+
+    private async Task HandleAction(string actionId)
+    {
+        Logger.LogDebug("Action triggered: {ActionId}", actionId);
+
+        InnAction? action = actionId switch
+        {
+            "upgrade_kitchen" => InnAction.UpgradeKitchen(),
+            "upgrade_bar" => InnAction.UpgradeBar(),
+            "add_guest_room" => InnAction.AddGuestRoom(),
+            "advertise" => InnAction.Advertise(),
+            _ => null
+        };
+
+        if (action != null)
+        {
+            var result = _gameLoop.ProcessAction(action);
+
+            if (result.Success)
+            {
+                hudRef?.ShowToast(result.Message ?? "Action completed", ToastType.Success, "✅");
+                _viewModel.UpdateState(_gameLoop.State);
+            }
+            else
+            {
+                hudRef?.ShowToast(result.Message ?? "Action failed", ToastType.Error, "❌");
+            }
+        }
+
+        await Task.CompletedTask;
+    }
+
+    private async Task HandleInfoPanelAction(string actionId)
+    {
+        Logger.LogDebug("Info panel action: {ActionId}", actionId);
+        // Handle info panel specific actions
+        await Task.CompletedTask;
+    }
+
+    /// <summary>
+    /// Adds gold directly to the inn (for testing/debugging)
+    /// </summary>
+    public void AddGold(int amount)
+    {
+        _gameLoop.AddGold(amount);
+        _viewModel.UpdateState(_gameLoop.State);
+        hudRef?.ShowToast($"Added {amount} gold", ToastType.Info, "💰");
+    }
+
+    /// <summary>
+    /// Sets the reputation of the inn
+    /// </summary>
+    public void SetReputation(int reputation)
+    {
+        _gameLoop.SetReputation(reputation);
+        _viewModel.UpdateState(_gameLoop.State);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _isDisposed = true;
+
+        if (_gameTickTimer != null)
+        {
+            await _gameTickTimer.DisposeAsync();
+            _gameTickTimer = null;
+        }
+
+        Logger.LogInformation("Inn game disposed");
+    }
+}
