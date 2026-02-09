@@ -1,7 +1,7 @@
 {
   "id": "002",
   "type": "implementation",
-  "status": "claimed",
+  "status": "failed",
   "description": "Review existing IEventStore interface in src/RealmsOfIdle.Core/Abstractions/IEventStore.cs",
   "acceptanceCriteria": [],
   "owns": [],
@@ -37,6 +37,11 @@
       "status": "claimed",
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:39:15.109Z"
+    },
+    {
+      "status": "failed",
+      "agent": "implementer-2",
+      "timestamp": "2026-02-09T16:39:18.560Z"
     }
   ]
 }
