@@ -1,6 +1,6 @@
-using RealmsOfIdle.Core.Scenarios.Inn;
-using RealmsOfIdle.Core.Engine.Spatial;
 using RealmsOfIdle.Client.UI.Components.HUD;
+using RealmsOfIdle.Core.Engine.Spatial;
+using RealmsOfIdle.Core.Scenarios.Inn;
 
 namespace RealmsOfIdle.Client.UI.Components.Game;
 

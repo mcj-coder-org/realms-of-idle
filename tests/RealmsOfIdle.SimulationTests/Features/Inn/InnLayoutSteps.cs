@@ -1,8 +1,8 @@
-using Reqnroll;
+using AwesomeAssertions;
 using RealmsOfIdle.Core.Engine.Spatial;
 using RealmsOfIdle.SimulationTests.Infrastructure;
 using RealmsOfIdle.SimulationTests.Infrastructure.Drivers;
-using AwesomeAssertions;
+using Reqnroll;
 
 namespace RealmsOfIdle.SimulationTests.Features.Inn;
 

@@ -1,10 +1,10 @@
+using LiteDB;
+using Microsoft.Extensions.Logging;
+using Moq;
 using RealmsOfIdle.Client.Shared.Services;
 using RealmsOfIdle.Core.Domain;
 using RealmsOfIdle.Core.Scenarios.Inn;
 using RealmsOfIdle.Core.Scenarios.Inn.Persistence;
-using LiteDB;
-using Microsoft.Extensions.Logging;
-using Moq;
 
 namespace RealmsOfIdle.Client.Shared.Tests.Services;
 
