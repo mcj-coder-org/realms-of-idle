@@ -1,7 +1,7 @@
 {
   "id": "003",
   "type": "implementation",
-  "status": "pending",
+  "status": "claimed",
   "description": "Review existing GridPosition in src/RealmsOfIdle.Core/Engine/Spatial/GridPosition.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -9,6 +9,12 @@
   ],
   "touches": [],
   "blockedBy": [],
-  "claimedBy": null,
-  "history": []
+  "claimedBy": "implementer-1",
+  "history": [
+    {
+      "status": "claimed",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:28:09.153Z"
+    }
+  ]
 }
