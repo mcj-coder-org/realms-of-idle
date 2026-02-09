@@ -1,7 +1,7 @@
 {
   "id": "015",
   "type": "implementation",
-  "status": "claimed",
+  "status": "failed",
   "description": "Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -15,6 +15,11 @@
       "status": "claimed",
       "agent": "implementer-1",
       "timestamp": "2026-02-09T16:43:32.635Z"
+    },
+    {
+      "status": "failed",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:43:35.278Z"
     }
   ]
 }
