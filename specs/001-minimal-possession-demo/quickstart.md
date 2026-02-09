@@ -54,6 +54,8 @@ You should see:
 - Activity log showing autonomous NPC actions
 - World time ticking forward
 
+**Note**: State persists in LiteDB (browser-embedded database). Refresh the page → settlement state reloads.
+
 ---
 
 ## Using the Demo
@@ -282,6 +284,29 @@ dotnet test
 2. Look for JavaScript errors
 3. Check `SimulationEngine.Start()` is called in `PossessionDemo.OnInitialized()`
 4. Verify `Timer.Enabled == true` in debugger
+
+### State is Corrupted
+
+**Symptom**: Settlement has invalid data, NPCs in wrong state, crashes on load
+
+**Fix**:
+
+```bash
+# Clear LiteDB database (browser storage)
+# Open browser DevTools → Application tab → IndexedDB → Delete database
+# Or use Clear Storage → Clear site data
+```
+
+**Alternative**:
+
+```csharp
+// In SettlementGameService, add reset method
+public async Task ResetDatabaseAsync()
+{
+    _db.DropCollection("settlements");
+    _db.DropCollection("activityLog");
+}
+```
 
 ---
 
