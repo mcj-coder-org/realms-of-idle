@@ -5,24 +5,24 @@
 
 ## Currently Working ✅
 
-| Server | Status | Notes |
-|--------|--------|-------|
-| **web-reader** | ✅ Active | Web content fetching via @executeautomation/web-reader-mcp-server |
-| **filesystem** | ✅ Available | Filesystem access via @modelcontextprotocol/server-filesystem |
-| **image-analysis** | ✅ Available | 4.5v MCP image analysis |
-| **grepai** | ✅ Active | Semantic code search via Ollama nomic-embed-text model |
-| **qmd** | ✅ Active | Hybrid semantic doc search (BM25 + vector + LLM reranking) |
-| **code-context** | ✅ Active | Token-optimized codebase analysis via Tree-sitter |
-| **web-search-prime** | ✅ Active | Z.ai web search via HTTP API |
-| **zai-mcp-server** | ✅ Active | Z.ai AI assistant and search |
-| **context7** | ✅ Active | Upstash library/tooling documentation lookup |
+| Server               | Status       | Notes                                                             |
+| -------------------- | ------------ | ----------------------------------------------------------------- |
+| **web-reader**       | ✅ Active    | Web content fetching via @executeautomation/web-reader-mcp-server |
+| **filesystem**       | ✅ Available | Filesystem access via @modelcontextprotocol/server-filesystem     |
+| **image-analysis**   | ✅ Available | 4.5v MCP image analysis                                           |
+| **grepai**           | ✅ Active    | Semantic code search via Ollama nomic-embed-text model            |
+| **qmd**              | ✅ Active    | Hybrid semantic doc search (BM25 + vector + LLM reranking)        |
+| **code-context**     | ✅ Active    | Token-optimized codebase analysis via Tree-sitter                 |
+| **web-search-prime** | ✅ Active    | Z.ai web search via HTTP API                                      |
+| **zai-mcp-server**   | ✅ Active    | Z.ai AI assistant and search                                      |
+| **context7**         | ✅ Active    | Upstash library/tooling documentation lookup                      |
 
 ## Optional/Configured ⚠️
 
-| Server | Status | Requirements |
-|--------|--------|--------------|
-| **context7** | ✅ Active | Upstash context management with API key |
-| **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from https://api.search.brave.com/register |
+| Server           | Status      | Requirements                                                          |
+| ---------------- | ----------- | --------------------------------------------------------------------- |
+| **context7**     | ✅ Active   | Upstash context management with API key                               |
+| **brave-search** | 🔴 Disabled | Requires `BRAVE_API_KEY` from <https://api.search.brave.com/register> |
 
 ## Setup Instructions
 
@@ -33,6 +33,7 @@
 Context7 provides access to current library and tooling documentation. It can fetch the latest docs for frameworks, libraries, and APIs to ensure AI assistance uses up-to-date information.
 
 **Example usage:**
+
 - "Show me the latest Orleans documentation for grains"
 - "What's the current API for LiteDB in .NET 8?"
 - "Get the latest documentation for ASP.NET Core Minimal APIs"
@@ -41,13 +42,15 @@ No additional setup required.
 
 ### Enable brave-search
 
-1. Get API key from https://api.search.brave.com/register
+1. Get API key from <https://api.search.brave.com/register>
 2. Set in `.mcp.json`:
+
    ```json
    "env": {
      "BRAVE_API_KEY": "your_actual_api_key"
    }
    ```
+
 3. Set `"disabled": false`
 
 ### grepai (Semantic Code Search) ✅
@@ -59,6 +62,7 @@ No additional setup required.
 **Index:** `.grepai/index.gob` (108 files indexed)
 
 **Usage:**
+
 ```bash
 # Semantic search
 .claude/grepai search "your query here"
@@ -77,6 +81,7 @@ No additional setup required.
 **Status:** Configured and working
 
 **Servers:**
+
 - **web-search-prime:** HTTP-based web search via Z.ai API
 - **zai-mcp-server:** AI assistant and intelligent search
 
@@ -94,10 +99,12 @@ These servers provide enhanced web search and AI-assisted capabilities through C
 **Index:** `~/.cache/qmd/index.sqlite` (4.0 MB, 52 files, 147 vectors)
 
 **Collections:**
+
 - `realms-docs`: 42 markdown documentation files (design docs, ADRs, plans, technical docs)
 - `realms-src`: 45 C# source code files
 
 **Features:**
+
 - Hybrid search: BM25 + vector embeddings + LLM reranking
 - GGUF models (auto-downloaded, ~2GB total):
   - Embedding: embeddinggemma-300M-Q8_0 (329MB)
@@ -105,6 +112,7 @@ These servers provide enhanced web search and AI-assisted capabilities through C
   - Generation: Qwen3-0.6B-Q8_0 (downloads on first generation)
 
 **Usage:**
+
 ```bash
 # List collections
 qmd collection list
@@ -138,6 +146,7 @@ qmd embed
 **Method:** Global npm install
 
 **Features:**
+
 - Token-optimized codebase context export
 - Extracts directory structures and code symbols
 - Uses WebAssembly Tree-sitter parsers for code analysis
@@ -147,6 +156,7 @@ qmd embed
 The MCP server is configured in `.mcp.json` and provides code context tools to Claude Code automatically. No manual interaction needed.
 
 **Installation (if needed):**
+
 ```bash
 npm install -g code-context-provider-mcp
 ```
