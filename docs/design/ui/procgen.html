@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procedural Area Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+  :root {
+    --bg-dark: #0a0a12;
+    --bg-panel: #12121e;
+    --bg-panel-light: #1a1a2e;
+    --border: #2a2a44;
+    --border-bright: #4a4a6a;
+    --text: #c8c8d4;
+    --text-dim: #6a6a80;
+    --text-bright: #e8e8f0;
+    --accent-gold: #d4a843;
+    --accent-gold-dim: #8a6e2a;
+    --accent-red: #c44040;
+    --accent-red-dim: #6a2020;
+    --accent-green: #40a850;
+    --accent-green-dim: #206030;
+    --accent-blue: #4080c4;
+    --accent-blue-dim: #204060;
+    --accent-purple: #8060b0;
+    --accent-cyan: #40a8a8;
+    --settlement: #d4a843;
+    --dungeon: #c44040;
+    --mine: #a08040;
+    --forest: #40a850;
+    --node-size: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Scanline overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    z-index: 9999;
+  }
+
+  .app {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 24px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+    color: var(--accent-gold);
+    text-shadow: 0 0 20px rgba(212,168,67,0.3);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    color: var(--text-dim);
+    font-size: 16px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .control-group label {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+  }
+
+  .type-tabs {
+    display: flex;
+    gap: 0;
+  }
+
+  .type-tab {
+    padding: 8px 16px;
+    background: var(--bg-panel-light);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .type-tab:first-child { border-radius: 4px 0 0 4px; }
+  .type-tab:last-child { border-radius: 0 4px 4px 0; }
+  .type-tab + .type-tab { border-left: none; }
+
+  .type-tab:hover { background: var(--border); }
+  .type-tab.active-settlement { background: var(--settlement); color: var(--bg-dark); border-color: var(--settlement); }
+  .type-tab.active-dungeon { background: var(--dungeon); color: var(--bg-dark); border-color: var(--dungeon); }
+  .type-tab.active-mine { background: var(--mine); color: var(--bg-dark); border-color: var(--mine); }
+  .type-tab.active-forest { background: var(--forest); color: var(--bg-dark); border-color: var(--forest); }
+
+  input[type="number"], input[type="text"] {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    color: var(--text-bright);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    padding: 6px 10px;
+    width: 90px;
+    outline: none;
+  }
+
+  input:focus { border-color: var(--accent-gold); }
+
+  button.generate-btn {
+    padding: 8px 20px;
+    background: var(--accent-gold-dim);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+  }
+
+  button.generate-btn:hover {
+    background: var(--accent-gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(212,168,67,0.3);
+  }
+
+  button.random-btn {
+    padding: 8px 12px;
+    background: var(--bg-panel-light);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  button.random-btn:hover {
+    border-color: var(--text-dim);
+    color: var(--text);
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 16px;
+    min-height: 600px;
+  }
+
+  .map-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+  }
+
+  .map-title {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    z-index: 10;
+    padding: 4px 8px;
+    background: rgba(10,10,18,0.85);
+    border: 1px solid var(--border);
+  }
+
+  canvas#mapCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+  }
+
+  .info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .panel-box {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    padding: 14px;
+  }
+
+  .panel-box h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-size: 17px;
+  }
+
+  .stat-label { color: var(--text-dim); }
+  .stat-value { color: var(--text-bright); }
+  .stat-value.gold { color: var(--accent-gold); }
+  .stat-value.red { color: var(--accent-red); }
+  .stat-value.green { color: var(--accent-green); }
+  .stat-value.blue { color: var(--accent-blue); }
+
+  .legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-dim);
+  }
+
+  .legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .node-list {
+    max-height: 280px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .node-list-item {
+    padding: 5px 8px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(42,42,68,0.5);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  .node-list-item:hover {
+    background: var(--bg-panel-light);
+  }
+
+  .node-list-item .node-name { color: var(--text); }
+  .node-list-item .node-type { color: var(--text-dim); font-size: 14px; }
+
+  .poi-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    font-size: 13px;
+    border-radius: 2px;
+    margin: 1px 2px;
+  }
+
+  .poi-tag.resource { background: rgba(64,168,80,0.2); color: var(--accent-green); border: 1px solid rgba(64,168,80,0.3); }
+  .poi-tag.danger { background: rgba(196,64,64,0.2); color: var(--accent-red); border: 1px solid rgba(196,64,64,0.3); }
+  .poi-tag.service { background: rgba(64,128,196,0.2); color: var(--accent-blue); border: 1px solid rgba(64,128,196,0.3); }
+  .poi-tag.special { background: rgba(128,96,176,0.2); color: var(--accent-purple); border: 1px solid rgba(128,96,176,0.3); }
+
+  .nest-info {
+    padding: 8px;
+    margin: 4px 0;
+    border-left: 3px solid var(--accent-red);
+    background: rgba(196,64,64,0.08);
+  }
+
+  .nest-info.cleared {
+    border-left-color: var(--accent-green);
+    background: rgba(64,168,80,0.08);
+  }
+
+  .nest-info h4 {
+    font-size: 16px;
+    color: var(--accent-red);
+    margin-bottom: 4px;
+  }
+
+  .nest-info.cleared h4 { color: var(--accent-green); }
+
+  .hover-tooltip {
+    position: absolute;
+    background: rgba(10,10,18,0.95);
+    border: 1px solid var(--border-bright);
+    padding: 8px 12px;
+    font-size: 15px;
+    pointer-events: none;
+    z-index: 100;
+    max-width: 250px;
+    display: none;
+  }
+
+  .hover-tooltip .tt-name {
+    color: var(--text-bright);
+    font-size: 17px;
+    margin-bottom: 3px;
+  }
+
+  .hover-tooltip .tt-type { color: var(--text-dim); font-size: 14px; }
+  .hover-tooltip .tt-pois { margin-top: 4px; }
+
+  @media (max-width: 900px) {
+    .main-layout {
+      grid-template-columns: 1fr;
+    }
+    .map-panel { min-height: 450px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>⚔ Procedural Area Generator ⚔</h1>
+    <p>Settlement · Dungeon · Mine · Forest</p>
+  </header>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>Area Type</label>
+      <div class="type-tabs">
+        <button class="type-tab active-settlement" data-type="settlement" onclick="selectType(this)">Settlement</button>
+        <button class="type-tab" data-type="dungeon" onclick="selectType(this)">Dungeon</button>
+        <button class="type-tab" data-type="mine" onclick="selectType(this)">Mine</button>
+        <button class="type-tab" data-type="forest" onclick="selectType(this)">Forest</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <label>Seed</label>
+      <div style="display:flex;gap:4px;">
+        <input type="number" id="seedInput" value="42" min="0" max="99999">
+        <button class="random-btn" onclick="randomSeed()" title="Random seed">🎲</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <label>Depth</label>
+      <input type="number" id="depthInput" value="3" min="0" max="10">
+    </div>
+    <button class="generate-btn" onclick="generate()">GENERATE</button>
+  </div>
+
+  <div class="main-layout">
+    <div class="map-panel">
+      <div class="map-title" id="mapTitle">—</div>
+      <canvas id="mapCanvas"></canvas>
+      <div class="hover-tooltip" id="tooltip"></div>
+    </div>
+
+    <div class="info-panel">
+      <div class="panel-box">
+        <h3>Area Stats</h3>
+        <div id="statsContent">
+          <div class="stat-row"><span class="stat-label">Generate an area to begin</span></div>
+        </div>
+      </div>
+
+      <div class="panel-box">
+        <h3>Legend</h3>
+        <div class="legend" id="legendContent"></div>
+      </div>
+
+      <div class="panel-box" id="nestsPanel" style="display:none;">
+        <h3>Monster Nests</h3>
+        <div id="nestsContent"></div>
+      </div>
+
+      <div class="panel-box">
+        <h3>Nodes</h3>
+        <div class="node-list" id="nodeList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+//  SEEDED RANDOM
+// ============================================================
+class SeededRandom {
+  constructor(seed) { this.state = seed % 2147483647; if (this.state <= 0) this.state += 2147483646; }
+  next() { this.state = (this.state * 16807) % 2147483647; return (this.state - 1) / 2147483646; }
+  nextInt(min, max) { return Math.floor(this.next() * (max - min + 1)) + min; }
+  pick(arr) { return arr[this.nextInt(0, arr.length - 1)]; }
+  shuffle(arr) { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = this.nextInt(0, i); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  chance(p) { return this.next() < p; }
+}
+
+// ============================================================
+//  DATA STRUCTURES
+// ============================================================
+const NodeColors = {
+  Entrance: '#e8e840', Corridor: '#666680', Junction: '#8888a0', DeadEnd: '#555570',
+  Plaza: '#d4a843', Residential: '#887755', Market: '#c89040', Workshop: '#a07030',
+  Temple: '#8080c0', Tavern: '#c07040', Gate: '#b0b060',
+  Chamber: '#806060', Cavern: '#705050', Lair: '#c04040', TreasureRoom: '#d4a843',
+  TrapRoom: '#a04060', ShrineRoom: '#6080b0',
+  Shaft: '#907040', Vein: '#c0a040', CartTrack: '#706040', Collapse: '#605030', Excavation: '#a08040',
+  Clearing: '#50a050', Thicket: '#307030', Grove: '#40804a', Stream: '#4080a0',
+  Ridge: '#808060', Hollow: '#406040', Ruin: '#808080'
+};
+
+function createNode(index, type, label, gx, gy) {
+  return { index, type, label, gx, gy, threat: 'Safe', pois: [], isEntrance: false, nestIndex: null };
+}
+function createEdge(from, to, bidir = true, condition = null, cost = 1) {
+  return { from, to, bidir, condition, cost };
+}
+function createNest(index, hostNode, name, monsterPool, count, threat) {
+  return { index, hostNode, name, monsterPool, count, originalCount: count, threat, influence: [], cleared: false };
+}
+function createPOI(type, name, extra = {}) {
+  return { type, name, ...extra };
+}
+
+// ============================================================
+//  NAME GENERATORS
+// ============================================================
+const NameGen = {
+  settlementPrefix: ['Oak','Iron','Stone','Raven','Silver','Frost','Ember','Thorn','Copper','Ash','Elder','Wolf','Bear','Hawk','Storm','Moon','Sun','Dark','Bright','Still'],
+  settlementSuffix: ['holm','stead','haven','ford','wick','dale','gate','keep','fall','rest','moor','reach','watch','vale','mount'],
+  dungeonAdj: ['Dark','Echoing','Forgotten','Cursed','Ancient','Twisted','Silent','Burning','Frozen','Shadowed','Sunken','Howling'],
+  dungeonNoun: ['Depths','Catacombs','Caverns','Labyrinth','Crypts','Passages','Tunnels','Halls','Chambers','Pits','Abyss','Sanctum'],
+  minePrefix: ['Deep','Old','Rich','Dusty','Flooded','Abandoned','King\'s','Lost','Iron','Crystal','Shadow','Thunder'],
+  mineSuffix: ['Mine','Shaft','Dig','Quarry','Excavation','Tunnel','Pit','Bore','Delve','Lode'],
+  forestAdj: ['Whispering','Ancient','Tangled','Misty','Emerald','Twilight','Hollow','Verdant','Winding','Gnarled','Golden','Dark'],
+  forestNoun: ['Woods','Forest','Thicket','Wilds','Canopy','Glade','Grove','Weald','Timberland','Greenwood'],
+  tavernAdj: ['Golden','Silver','Rusty','Jolly','Prancing','Sleeping','Roaring','Wandering','Drunken','Merry'],
+  tavernNoun: ['Pony','Dragon','Griffin','Tankard','Sword','Shield','Lantern','Flagon','Barrel','Stag'],
+  roomAdj: ['Dusty','Damp','Narrow','Wide','Crumbling','Torchlit','Dark','Mossy','Carved','Rough'],
+  shopkeeper: ['Greybeard','Thornwick','Baldric','Morwen','Alric','Gwynn','Roderick','Elspeth','Dunstan','Hild'],
+
+  settlement(rng) { return rng.pick(this.settlementPrefix) + rng.pick(this.settlementSuffix); },
+  dungeon(rng) { return 'The ' + rng.pick(this.dungeonAdj) + ' ' + rng.pick(this.dungeonNoun); },
+  mine(rng) { return rng.pick(this.minePrefix) + ' ' + rng.pick(this.mineSuffix); },
+  forest(rng) { return rng.pick(this.forestAdj) + ' ' + rng.pick(this.forestNoun); },
+  tavern(rng) { return 'The ' + rng.pick(this.tavernAdj) + ' ' + rng.pick(this.tavernNoun); },
+  room(rng, base) { return rng.pick(this.roomAdj) + ' ' + base; },
+};
+
+// ============================================================
+//  SETTLEMENT GENERATOR
+// ============================================================
+function generateSettlement(seed, depth) {
+  const rng = new SeededRandom(seed);
+  const name = NameGen.settlement(rng);
+  const plazaCount = Math.min(Math.max(depth + 2, 2), 7);
+  const nodes = [], edges = [], nests = [];
+
+  // Place plazas on coarse grid
+  const plazas = [];
+  for (let i = 0; i < plazaCount; i++) {
+    const gx = (i % 3) * 5 + rng.nextInt(-1, 1);
+    const gy = Math.floor(i / 3) * 5 + rng.nextInt(-1, 1);
+    const n = createNode(nodes.length, 'Plaza', `${name} Square ${i+1}`, gx, gy);
+    nodes.push(n);
+    plazas.push(n);
+  }
+
+  // Buildings around each plaza
+  const buildingTypes = [
+    { type: 'Tavern', weight: 3, minDepth: 0 },
+    { type: 'Market', weight: 4, minDepth: 0 },
+    { type: 'Residential', weight: 5, minDepth: 0 },
+    { type: 'Workshop', weight: 3, minDepth: 1 },
+    { type: 'Temple', weight: 2, minDepth: 2 },
+  ];
+  const dirs = [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[1,-1],[-1,1],[1,1]];
+
+  plazas.forEach(plaza => {
+    const count = rng.nextInt(3, Math.min(5, 3 + depth));
+    const usedDirs = rng.shuffle(dirs).slice(0, count);
+    usedDirs.forEach(([dx, dy]) => {
+      const available = buildingTypes.filter(b => b.minDepth <= depth);
+      const total = available.reduce((s, b) => s + b.weight, 0);
+      let roll = rng.next() * total, bt;
+      for (const b of available) { roll -= b.weight; if (roll <= 0) { bt = b; break; } }
+      if (!bt) bt = available[0];
+
+      let label;
+      if (bt.type === 'Tavern') label = NameGen.tavern(rng);
+      else if (bt.type === 'Market') label = `${rng.pick(NameGen.shopkeeper)}'s Shop`;
+      else if (bt.type === 'Workshop') label = `${rng.pick(NameGen.shopkeeper)}'s Forge`;
+      else if (bt.type === 'Temple') label = 'Temple of Light';
+      else label = `${rng.pick(NameGen.settlementPrefix)} House`;
+
+      const n = createNode(nodes.length, bt.type, label, plaza.gx + dx * 1.5, plaza.gy + dy * 1.5);
+      nodes.push(n);
+      edges.push(createEdge(plaza.index, n.index));
+
+      // Assign POIs
+      if (bt.type === 'Tavern') { n.pois.push(createPOI('Inn', 'Rest & Save'), createPOI('QuestGiver', 'Barkeep')); }
+      if (bt.type === 'Market') { n.pois.push(createPOI('Shop', 'General Goods')); }
+      if (bt.type === 'Workshop') { n.pois.push(createPOI('Blacksmith', 'Smithy')); }
+      if (bt.type === 'Temple') { n.pois.push(createPOI('SavePoint', 'Altar'), createPOI('Healer', 'Priest')); }
+    });
+  });
+
+  // Connect plazas via MST
+  const connected = [0];
+  const remaining = plazas.slice(1).map((_, i) => i + 1);
+  while (remaining.length > 0) {
+    let bestDist = Infinity, bestFrom, bestTo, bestIdx;
+    for (const ci of connected) {
+      for (let ri = 0; ri < remaining.length; ri++) {
+        const rj = remaining[ri];
+        const d = Math.hypot(plazas[ci].gx - plazas[rj].gx, plazas[ci].gy - plazas[rj].gy);
+        if (d < bestDist) { bestDist = d; bestFrom = ci; bestTo = rj; bestIdx = ri; }
+      }
+    }
+    edges.push(createEdge(plazas[bestFrom].index, plazas[bestTo].index));
+    connected.push(bestTo);
+    remaining.splice(bestIdx, 1);
+  }
+
+  // Extra plaza connections
+  if (plazas.length > 2) {
+    for (let i = 0; i < Math.floor(plazas.length * 0.3); i++) {
+      const a = rng.nextInt(0, plazas.length - 1), b = rng.nextInt(0, plazas.length - 1);
+      if (a !== b && !edges.some(e => (e.from === plazas[a].index && e.to === plazas[b].index) || (e.from === plazas[b].index && e.to === plazas[a].index))) {
+        edges.push(createEdge(plazas[a].index, plazas[b].index));
+      }
+    }
+  }
+
+  // Gate / entrance
+  const gateNode = createNode(nodes.length, 'Gate', `${name} Gate`, plazas[0].gx - 3, plazas[0].gy);
+  gateNode.isEntrance = true;
+  nodes.push(gateNode);
+  edges.push(createEdge(gateNode.index, plazas[0].index));
+
+  return { name, type: 'settlement', seed, depth, nodes, edges, nests };
+}
+
+// ============================================================
+//  DUNGEON GENERATOR
+// ============================================================
+function generateDungeon(seed, depth) {
+  const rng = new SeededRandom(seed);
+  const name = NameGen.dungeon(rng);
+  const nodes = [], edges = [], nests = [];
+  const gridW = Math.min(12 + depth * 2, 28);
+  const gridH = Math.min(10 + depth * 2, 24);
+  const roomCount = Math.min(5 + depth * 2, 18);
+  const themes = ['Natural Cave', 'Ancient Ruin', 'Beast Den', 'Goblin Warren'];
+  const theme = rng.pick(themes);
+
+  // Room placement
+  const rooms = [];
+  const occupied = new Set();
+  const mark = (x, y, w, h) => { for (let dx = -1; dx <= w; dx++) for (let dy = -1; dy <= h; dy++) occupied.add(`${x+dx},${y+dy}`); };
+  const fits = (x, y, w, h) => { for (let dx = -1; dx <= w; dx++) for (let dy = -1; dy <= h; dy++) if (occupied.has(`${x+dx},${y+dy}`)) return false; return x >= 0 && y >= 0 && x + w < gridW && y + h < gridH; };
+
+  for (let attempt = 0; attempt < 200 && rooms.length < roomCount; attempt++) {
+    const w = rng.nextInt(1, 2), h = rng.nextInt(1, 2);
+    const x = rng.nextInt(1, gridW - w - 2), y = rng.nextInt(1, gridH - h - 2);
+    if (fits(x, y, w, h)) {
+      const cx = x + w / 2, cy = y + h / 2;
+      const roomTypes = theme === 'Natural Cave' ? ['Cavern','Chamber'] : theme === 'Ancient Ruin' ? ['Chamber','ShrineRoom'] : ['Chamber','Cavern'];
+      const n = createNode(nodes.length, rng.pick(roomTypes), '', cx * 2, cy * 2);
+      nodes.push(n);
+      rooms.push({ node: n, cx, cy, w, h });
+      mark(x, y, w, h);
+    }
+  }
+
+  if (rooms.length < 3) {
+    for (let i = rooms.length; i < 3; i++) {
+      const n = createNode(nodes.length, 'Chamber', '', i * 4, i * 3);
+      nodes.push(n);
+      rooms.push({ node: n, cx: i * 4 / 2, cy: i * 3 / 2, w: 1, h: 1 });
+    }
+  }
+
+  // Entrance
+  rooms[0].node.isEntrance = true;
+  rooms[0].node.type = 'Entrance';
+  rooms[0].node.label = 'Entrance';
+
+  // MST corridors
+  const roomConnected = [0];
+  const roomRemaining = Array.from({ length: rooms.length - 1 }, (_, i) => i + 1);
+  const corridorPairs = [];
+
+  while (roomRemaining.length > 0) {
+    let bestDist = Infinity, bestFrom, bestTo, bestIdx;
+    for (const ci of roomConnected) {
+      for (let ri = 0; ri < roomRemaining.length; ri++) {
+        const rj = roomRemaining[ri];
+        const d = Math.hypot(rooms[ci].cx - rooms[rj].cx, rooms[ci].cy - rooms[rj].cy);
+        if (d < bestDist) { bestDist = d; bestFrom = ci; bestTo = rj; bestIdx = ri; }
+      }
+    }
+    corridorPairs.push([bestFrom, bestTo]);
+    roomConnected.push(bestTo);
+    roomRemaining.splice(bestIdx, 1);
+  }
+
+  // Add some loop corridors
+  const loopCount = Math.max(1, Math.floor(rooms.length * 0.2));
+  for (let i = 0; i < loopCount; i++) {
+    const a = rng.nextInt(0, rooms.length - 1), b = rng.nextInt(0, rooms.length - 1);
+    if (a !== b && !corridorPairs.some(([f, t]) => (f === a && t === b) || (f === b && t === a))) {
+      corridorPairs.push([a, b]);
+    }
+  }
+
+  // Create corridor nodes
+  corridorPairs.forEach(([fi, ti]) => {
+    const fr = rooms[fi], tr = rooms[ti];
+    const midX = (fr.cx + tr.cx), midY = (fr.cy + tr.cy);
+    // L-shaped: horizontal then vertical
+    if (Math.abs(fr.cx - tr.cx) > 0.5 && Math.abs(fr.cy - tr.cy) > 0.5) {
+      const bend = createNode(nodes.length, 'Corridor', NameGen.room(rng, 'Corridor'), midX, fr.cy * 2);
+      nodes.push(bend);
+      edges.push(createEdge(fr.node.index, bend.index));
+      const bend2 = createNode(nodes.length, 'Corridor', NameGen.room(rng, 'Passage'), tr.cx * 2, midY);
+      nodes.push(bend2);
+      edges.push(createEdge(bend.index, bend2.index));
+      edges.push(createEdge(bend2.index, tr.node.index));
+    } else {
+      const cor = createNode(nodes.length, 'Corridor', NameGen.room(rng, 'Passage'), midX, midY);
+      nodes.push(cor);
+      edges.push(createEdge(fr.node.index, cor.index));
+      edges.push(createEdge(cor.index, tr.node.index));
+    }
+  });
+
+  // Dead ends with treasure
+  const deadEndCount = rng.nextInt(2, 4);
+  const corridorNodes = nodes.filter(n => n.type === 'Corridor');
+  for (let i = 0; i < deadEndCount && corridorNodes.length > 0; i++) {
+    const parent = rng.pick(corridorNodes);
+    const dx = rng.pick([-2, 2, 0]), dy = dx === 0 ? rng.pick([-2, 2]) : 0;
+    const de = createNode(nodes.length, 'DeadEnd', NameGen.room(rng, 'Alcove'), parent.gx + dx, parent.gy + dy);
+    de.pois.push(rng.chance(0.6) ? createPOI('TreasureChest', 'Treasure Chest') : createPOI('Trap', 'Hidden Trap'));
+    nodes.push(de);
+    edges.push(createEdge(parent.index, de.index));
+  }
+
+  // Boss lair (furthest room from entrance)
+  if (depth >= 2 && rooms.length > 2) {
+    let maxDist = 0, bossRoom;
+    rooms.forEach((r, i) => {
+      if (i === 0) return;
+      const d = Math.hypot(r.cx - rooms[0].cx, r.cy - rooms[0].cy);
+      if (d > maxDist) { maxDist = d; bossRoom = r; }
+    });
+    if (bossRoom) {
+      bossRoom.node.type = 'Lair';
+      bossRoom.node.label = NameGen.room(rng, 'Lair');
+      bossRoom.node.pois.push(createPOI('BossEncounter', 'Boss: ' + (theme === 'Ancient Ruin' ? 'Stone Golem' : theme === 'Beast Den' ? 'Alpha Predator' : theme === 'Goblin Warren' ? 'Goblin Chief' : 'Cave Horror')));
+      bossRoom.node.threat = 'Boss';
+      // Treasure room next to boss
+      const tr = createNode(nodes.length, 'TreasureRoom', 'Treasury', bossRoom.node.gx + 2, bossRoom.node.gy);
+      tr.pois.push(createPOI('TreasureChest', 'Boss Treasure'));
+      nodes.push(tr);
+      edges.push(createEdge(bossRoom.node.index, tr.index, true, 'BossGuarded'));
+    }
+  }
+
+  // Shrine room
+  const plainRooms = rooms.filter(r => r.node.type === 'Chamber' || r.node.type === 'Cavern');
+  if (plainRooms.length > 0) {
+    const shrine = rng.pick(plainRooms);
+    shrine.node.type = 'ShrineRoom';
+    shrine.node.label = NameGen.room(rng, 'Shrine');
+    shrine.node.pois.push(createPOI('SavePoint', 'Restoration Shrine'));
+  }
+
+  // Name remaining rooms
+  nodes.forEach(n => { if (!n.label) n.label = NameGen.room(rng, n.type === 'Cavern' ? 'Cavern' : 'Chamber'); });
+
+  // Monster nests
+  const nestCount = Math.min(1 + Math.floor(depth / 2), 5);
+  const nestCandidates = rooms.filter(r => !r.node.isEntrance && r.node.type !== 'ShrineRoom' && r.node.type !== 'Lair');
+  const nestPools = { 'Natural Cave': ['Spiders','Bats','Slimes'], 'Ancient Ruin': ['Undead','Spirits','Golems'], 'Beast Den': ['Wolves','Bears','Drakes'], 'Goblin Warren': ['Goblins','Rats','Hobgoblins'] };
+  for (let i = 0; i < nestCount && nestCandidates.length > 0; i++) {
+    const idx = rng.nextInt(0, nestCandidates.length - 1);
+    const room = nestCandidates.splice(idx, 1)[0];
+    const monsterType = rng.pick(nestPools[theme] || ['Monsters']);
+    const count = 3 + depth * 2 + rng.nextInt(0, 4);
+    const nest = createNest(nests.length, room.node.index, `${monsterType} Nest`, monsterType, count, 'Medium');
+    // Influence: find nodes within 1-2 edges
+    const inf = new Set([room.node.index]);
+    edges.forEach(e => { if (inf.has(e.from)) inf.add(e.to); if (inf.has(e.to)) inf.add(e.from); });
+    nest.influence = [...inf];
+    nest.influence.forEach(ni => { if (nodes[ni]) nodes[ni].threat = 'Medium'; });
+    room.node.nestIndex = nests.length;
+    nests.push(nest);
+  }
+
+  return { name: `${name} (${theme})`, type: 'dungeon', seed, depth, nodes, edges, nests, theme };
+}
+
+// ============================================================
+//  MINE GENERATOR
+// ============================================================
+function generateMine(seed, depth) {
+  const rng = new SeededRandom(seed);
+  const name = NameGen.mine(rng);
+  const nodes = [], edges = [], nests = [];
+  const shaftLen = Math.min(4 + depth, 14);
+  const branchCount = Math.min(2 + Math.floor(depth * 1.5), 8);
+
+  // Primary shaft
+  const shaftNodes = [];
+  for (let i = 0; i < shaftLen; i++) {
+    const type = i === 0 ? 'Entrance' : (i % 3 === 0 ? 'Junction' : (i % 2 === 0 ? 'CartTrack' : 'Shaft'));
+    const jx = rng.nextInt(-1, 1) * 0.3;
+    const n = createNode(nodes.length, type, i === 0 ? 'Mine Entrance' : NameGen.room(rng, type === 'Junction' ? 'Junction' : type === 'CartTrack' ? 'Cart Track' : 'Shaft'), jx + 0, i * 2);
+    if (i === 0) n.isEntrance = true;
+    nodes.push(n);
+    shaftNodes.push(n);
+    if (i > 0) edges.push(createEdge(nodes.length - 2, nodes.length - 1));
+  }
+
+  // Side branches from junctions
+  const junctions = shaftNodes.filter(n => n.type === 'Junction');
+  let branchesPlaced = 0;
+  junctions.forEach(junc => {
+    if (branchesPlaced >= branchCount) return;
+    const sides = rng.shuffle([-1, 1]);
+    sides.forEach(dir => {
+      if (branchesPlaced >= branchCount) return;
+      const len = rng.nextInt(2, 4);
+      let prev = junc;
+      for (let b = 0; b < len; b++) {
+        const isEnd = b === len - 1;
+        const type = isEnd ? 'Excavation' : 'Shaft';
+        const bn = createNode(nodes.length, type, NameGen.room(rng, isEnd ? 'Excavation' : 'Tunnel'), junc.gx + dir * (b + 1) * 2, junc.gy + rng.nextInt(-1, 1) * 0.3);
+        nodes.push(bn);
+        edges.push(createEdge(prev.index, bn.index));
+        prev = bn;
+      }
+      branchesPlaced++;
+    });
+  });
+
+  // Resource veins
+  const veinCount = 3 + depth * 2;
+  const veinTiers = [
+    { maxDepth: 2, resources: ['Copper Ore','Tin Ore','Coal','Clay'] },
+    { maxDepth: 5, resources: ['Iron Ore','Silver Ore','Quartz','Sulphur'] },
+    { maxDepth: 8, resources: ['Gold Ore','Mithril','Ruby','Sapphire'] },
+    { maxDepth: 99, resources: ['Adamantite','Dragonstone','Void Crystal'] },
+  ];
+  const tier = veinTiers.find(t => depth <= t.maxDepth) || veinTiers[0];
+  const veinNodes = nodes.filter(n => n.type === 'Excavation' || n.type === 'Shaft' || n.type === 'DeadEnd');
+  for (let i = 0; i < veinCount; i++) {
+    const target = veinNodes.length > 0 ? rng.pick(veinNodes) : rng.pick(nodes.slice(1));
+    const res = rng.pick(tier.resources);
+    target.pois.push(createPOI('OreVein', `${res} Vein`, { harvests: rng.nextInt(3, 8) }));
+  }
+
+  // Collapses
+  const collapseCount = rng.nextInt(0, Math.min(2, Math.floor(depth / 2)));
+  const branchEdges = edges.filter(e => {
+    const fn = nodes[e.from], tn = nodes[e.to];
+    return (fn.type === 'Shaft' || fn.type === 'Excavation') && tn.type !== 'Entrance';
+  });
+  for (let i = 0; i < collapseCount && branchEdges.length > 0; i++) {
+    const idx = rng.nextInt(0, branchEdges.length - 1);
+    branchEdges[idx].condition = 'Collapsed';
+    branchEdges.splice(idx, 1);
+  }
+
+  // Infrastructure POIs
+  if (shaftNodes.length > 2) shaftNodes[1].pois.push(createPOI('AbandonedCart', 'Abandoned Cart'));
+  const midShaft = shaftNodes[Math.floor(shaftNodes.length / 2)];
+  if (midShaft) midShaft.pois.push(createPOI('UndergroundSpring', 'Underground Spring'));
+
+  // Monster nests
+  const nestCount = Math.min(Math.floor(depth / 3), 3);
+  const deepNodes = nodes.filter(n => n.index > shaftLen / 2 && n.type !== 'Entrance' && !n.isEntrance);
+  const mineMonsters = ['Cave Spiders','Rock Elementals','Tunnel Bats','Mine Crawlers'];
+  for (let i = 0; i < nestCount && deepNodes.length > 0; i++) {
+    const idx = rng.nextInt(0, deepNodes.length - 1);
+    const hostNode = deepNodes.splice(idx, 1)[0];
+    const type = rng.pick(mineMonsters);
+    const count = 3 + depth + rng.nextInt(0, 3);
+    const nest = createNest(nests.length, hostNode.index, `${type} Nest`, type, count, 'Medium');
+    const inf = new Set([hostNode.index]);
+    edges.forEach(e => { if (inf.has(e.from)) inf.add(e.to); if (inf.has(e.to)) inf.add(e.from); });
+    nest.influence = [...inf];
+    nest.influence.forEach(ni => { if (nodes[ni]) nodes[ni].threat = 'Medium'; });
+    hostNode.nestIndex = nests.length;
+    nests.push(nest);
+  }
+
+  return { name, type: 'mine', seed, depth, nodes, edges, nests };
+}
+
+// ============================================================
+//  FOREST GENERATOR — Poisson Disc + Delaunay
+// ============================================================
+function generateForest(seed, depth) {
+  const rng = new SeededRandom(seed);
+  const name = NameGen.forest(rng);
+  const nodes = [], edges = [], nests = [];
+  const radius = 6 + depth * 1.5;
+  const clearingCount = Math.min(6 + depth * 2, 20);
+  const minSpacing = 2.8;
+
+  // Poisson disc sampling (simple dart throwing)
+  const points = [];
+  for (let attempt = 0; attempt < 2000 && points.length < clearingCount; attempt++) {
+    const angle = rng.next() * Math.PI * 2;
+    const dist = rng.next() * radius;
+    const x = Math.cos(angle) * dist;
+    const y = Math.sin(angle) * dist;
+    const tooClose = points.some(p => Math.hypot(p.x - x, p.y - y) < minSpacing);
+    if (!tooClose) points.push({ x, y });
+  }
+
+  // Assign types based on position
+  const clearingTypes = ['Clearing', 'Grove', 'Hollow', 'Ridge', 'Stream'];
+  points.forEach((p, i) => {
+    let type;
+    if (p.y > radius * 0.5) type = 'Ridge';
+    else if (p.y < -radius * 0.4) type = 'Stream';
+    else if (Math.hypot(p.x, p.y) < radius * 0.3) type = 'Grove';
+    else if (Math.hypot(p.x, p.y) > radius * 0.7) type = 'Hollow';
+    else type = 'Clearing';
+    const n = createNode(nodes.length, type, NameGen.room(rng, type), p.x * 2, p.y * 2);
+    nodes.push(n);
+  });
+
+  // Delaunay triangulation (simple incremental for small point sets)
+  const delaunayEdges = computeDelaunay(points);
+  delaunayEdges.forEach(([a, b]) => {
+    edges.push(createEdge(a, b));
+  });
+
+  // Insert thickets on some edges
+  const thicketRate = 0.25;
+  const edgesToSplit = [];
+  edges.forEach((e, i) => { if (rng.chance(thicketRate)) edgesToSplit.push(i); });
+  // Process in reverse to avoid index shifting
+  edgesToSplit.reverse().forEach(ei => {
+    const e = edges[ei];
+    const fn = nodes[e.from], tn = nodes[e.to];
+    const mx = (fn.gx + tn.gx) / 2 + rng.nextInt(-1, 1) * 0.3;
+    const my = (fn.gy + tn.gy) / 2 + rng.nextInt(-1, 1) * 0.3;
+    const thicket = createNode(nodes.length, 'Thicket', NameGen.room(rng, 'Thicket'), mx, my);
+    if (rng.chance(0.3)) thicket.pois.push(createPOI('HerbPatch', 'Hidden Herbs'));
+    nodes.push(thicket);
+    edges.splice(ei, 1);
+    edges.push(createEdge(e.from, thicket.index));
+    edges.push(createEdge(thicket.index, e.to));
+    if (rng.chance(0.2)) edges[edges.length - 1].condition = 'Overgrown';
+  });
+
+  // Entrance: closest to edge of circle
+  let maxDist = 0, entranceIdx = 0;
+  points.forEach((p, i) => {
+    const d = Math.hypot(p.x, p.y);
+    if (d > maxDist) { maxDist = d; entranceIdx = i; }
+  });
+  nodes[entranceIdx].isEntrance = true;
+  nodes[entranceIdx].type = 'Entrance';
+  nodes[entranceIdx].label = 'Forest Entrance';
+
+  // Resource distribution
+  const forestPOIs = [
+    { type: 'HerbPatch', name: 'Herb Patch', w: 30 },
+    { type: 'FruitTree', name: 'Fruit Tree', w: 20 },
+    { type: 'TimberStand', name: 'Timber Stand', w: 20 },
+    { type: 'HuntingGround', name: 'Hunting Ground', w: 15 },
+    { type: 'WildlifeNest', name: 'Wildlife Nest', w: 10 },
+    { type: 'AncientTree', name: 'Ancient Tree', w: 5 },
+  ];
+  const totalW = forestPOIs.reduce((s, p) => s + p.w, 0);
+  let ancientPlaced = false;
+  nodes.forEach(n => {
+    if (n.isEntrance || n.type === 'Thicket') return;
+    const poiCount = rng.nextInt(1, 3);
+    for (let i = 0; i < poiCount; i++) {
+      let roll = rng.next() * totalW, poi;
+      for (const p of forestPOIs) { roll -= p.w; if (roll <= 0) { poi = p; break; } }
+      if (!poi) poi = forestPOIs[0];
+      if (poi.type === 'AncientTree') {
+        if (ancientPlaced || depth < 4) { poi = forestPOIs[0]; } else { ancientPlaced = true; }
+      }
+      n.pois.push(createPOI(poi.type, poi.name));
+    }
+  });
+
+  // Ruin node
+  if (depth >= 3) {
+    const ruinParent = rng.pick(nodes.filter(n => !n.isEntrance && n.type !== 'Thicket'));
+    if (ruinParent) {
+      const ruin = createNode(nodes.length, 'Ruin', 'Ancient Ruin', ruinParent.gx + rng.pick([-2, 2]), ruinParent.gy + rng.pick([-2, 2]));
+      ruin.pois.push(createPOI('TreasureChest', 'Ruin Treasure'), createPOI('SecretPassage', 'Hidden Dungeon Entrance'));
+      nodes.push(ruin);
+      edges.push(createEdge(ruinParent.index, ruin.index));
+    }
+  }
+
+  // Monster nests
+  const nestCount = Math.min(1 + Math.floor(depth / 2), 4);
+  const forestMonsters = ['Wolves','Treants','Wild Boars','Fae Creatures','Bandits'];
+  const nestCands = nodes.filter(n => (n.type === 'Hollow' || n.type === 'Grove') && !n.isEntrance);
+  for (let i = 0; i < nestCount && nestCands.length > 0; i++) {
+    const idx = rng.nextInt(0, nestCands.length - 1);
+    const host = nestCands.splice(idx, 1)[0];
+    const mType = rng.pick(forestMonsters);
+    const count = 4 + depth * 2 + rng.nextInt(0, 4);
+    const nest = createNest(nests.length, host.index, `${mType} Den`, mType, count, 'Medium');
+    // Wider influence in forests
+    const inf = new Set([host.index]);
+    for (let pass = 0; pass < 2; pass++) {
+      edges.forEach(e => { if (inf.has(e.from)) inf.add(e.to); if (inf.has(e.to)) inf.add(e.from); });
+    }
+    nest.influence = [...inf];
+    nest.influence.forEach(ni => { if (nodes[ni]) nodes[ni].threat = 'Medium'; });
+    host.nestIndex = nests.length;
+    nests.push(nest);
+  }
+
+  return { name, type: 'forest', seed, depth, nodes, edges, nests };
+}
+
+// Simple Delaunay via edge-flipping (good enough for <50 points)
+function computeDelaunay(points) {
+  if (points.length < 2) return [];
+  if (points.length === 2) return [[0, 1]];
+
+  const edgeSet = new Set();
+  const addEdge = (a, b) => { const key = a < b ? `${a},${b}` : `${b},${a}`; edgeSet.add(key); };
+
+  // Simple approach: connect each point to its nearest neighbors, then fill with Gabriel graph edges
+  const n = points.length;
+  // Start with nearest-neighbor graph
+  for (let i = 0; i < n; i++) {
+    const dists = [];
+    for (let j = 0; j < n; j++) {
+      if (i === j) continue;
+      dists.push({ j, d: Math.hypot(points[i].x - points[j].x, points[i].y - points[j].y) });
+    }
+    dists.sort((a, b) => a.d - b.d);
+    // Connect to 3-5 nearest
+    const connectCount = Math.min(4, dists.length);
+    for (let k = 0; k < connectCount; k++) addEdge(i, dists[k].j);
+  }
+
+  // Add Gabriel graph edges (edge if no other point inside the diametral circle)
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const mx = (points[i].x + points[j].x) / 2;
+      const my = (points[i].y + points[j].y) / 2;
+      const r = Math.hypot(points[i].x - points[j].x, points[i].y - points[j].y) / 2;
+      let gabriel = true;
+      for (let k = 0; k < n; k++) {
+        if (k === i || k === j) continue;
+        if (Math.hypot(points[k].x - mx, points[k].y - my) < r * 0.95) { gabriel = false; break; }
+      }
+      if (gabriel) addEdge(i, j);
+    }
+  }
+
+  return [...edgeSet].map(k => k.split(',').map(Number));
+}
+
+// ============================================================
+//  CONNECTIVITY GUARANTEE
+// ============================================================
+function ensureConnectivity(area) {
+  const { nodes, edges } = area;
+  if (nodes.length === 0) return;
+
+  const adj = Array.from({ length: nodes.length }, () => []);
+  edges.forEach(e => {
+    adj[e.from].push(e.to);
+    if (e.bidir) adj[e.to].push(e.from);
+  });
+
+  const entrance = nodes.findIndex(n => n.isEntrance);
+  const start = entrance >= 0 ? entrance : 0;
+  const visited = new Set();
+  const queue = [start];
+  visited.add(start);
+  while (queue.length > 0) {
+    const cur = queue.shift();
+    for (const nb of adj[cur]) {
+      if (!visited.has(nb)) { visited.add(nb); queue.push(nb); }
+    }
+  }
+
+  // Connect unreachable nodes
+  const unreached = nodes.filter(n => !visited.has(n.index));
+  unreached.forEach(u => {
+    let bestDist = Infinity, bestR;
+    for (const ri of visited) {
+      const r = nodes[ri];
+      const d = Math.hypot(u.gx - r.gx, u.gy - r.gy);
+      if (d < bestDist) { bestDist = d; bestR = ri; }
+    }
+    if (bestR !== undefined) {
+      edges.push(createEdge(bestR, u.index));
+      // BFS from u to find more
+      const q2 = [u.index];
+      visited.add(u.index);
+      while (q2.length > 0) {
+        const c = q2.shift();
+        for (const nb of adj[c]) {
+          if (!visited.has(nb)) { visited.add(nb); q2.push(nb); }
+        }
+      }
+    }
+  });
+}
+
+// ============================================================
+//  RENDERING
+// ============================================================
+let currentArea = null;
+let hoveredNode = null;
+let canvasScale = 1;
+let canvasOffsetX = 0, canvasOffsetY = 0;
+
+function renderArea(area) {
+  const canvas = document.getElementById('mapCanvas');
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * 2;
+  canvas.height = rect.height * 2;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = rect.height + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(2, 2);
+  const W = rect.width, H = rect.height;
+
+  // Compute bounds
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  area.nodes.forEach(n => {
+    minX = Math.min(minX, n.gx); maxX = Math.max(maxX, n.gx);
+    minY = Math.min(minY, n.gy); maxY = Math.max(maxY, n.gy);
+  });
+  const rangeX = maxX - minX || 1, rangeY = maxY - minY || 1;
+  const pad = 60;
+  const scaleX = (W - pad * 2) / rangeX;
+  const scaleY = (H - pad * 2) / rangeY;
+  const scale = Math.min(scaleX, scaleY);
+  const cx = W / 2, cy = H / 2;
+  const midX = (minX + maxX) / 2, midY = (minY + maxY) / 2;
+
+  canvasScale = scale;
+  canvasOffsetX = cx - midX * scale;
+  canvasOffsetY = cy - midY * scale;
+
+  const toScreen = (gx, gy) => [gx * scale + canvasOffsetX, gy * scale + canvasOffsetY];
+
+  // Background
+  const bgColors = { settlement: '#0f0e08', dungeon: '#0a0808', mine: '#0c0a06', forest: '#060c06' };
+  ctx.fillStyle = bgColors[area.type] || '#0a0a12';
+  ctx.fillRect(0, 0, W, H);
+
+  // Grid dots
+  ctx.fillStyle = 'rgba(255,255,255,0.03)';
+  for (let x = 0; x < W; x += 20) for (let y = 0; y < H; y += 20) ctx.fillRect(x, y, 1, 1);
+
+  // Draw nest influence zones
+  area.nests.forEach(nest => {
+    if (nest.cleared) return;
+    nest.influence.forEach(ni => {
+      const n = area.nodes[ni];
+      if (!n) return;
+      const [sx, sy] = toScreen(n.gx, n.gy);
+      const grad = ctx.createRadialGradient(sx, sy, 0, sx, sy, scale * 2);
+      grad.addColorStop(0, 'rgba(196,64,64,0.12)');
+      grad.addColorStop(1, 'rgba(196,64,64,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(sx, sy, scale * 2, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  });
+
+  // Draw edges
+  area.edges.forEach(e => {
+    const fn = area.nodes[e.from], tn = area.nodes[e.to];
+    if (!fn || !tn) return;
+    const [x1, y1] = toScreen(fn.gx, fn.gy);
+    const [x2, y2] = toScreen(tn.gx, tn.gy);
+
+    ctx.strokeStyle = e.condition === 'Collapsed' ? '#604020' :
+                      e.condition === 'BossGuarded' ? '#c04040' :
+                      e.condition === 'Overgrown' ? '#206020' :
+                      area.type === 'settlement' ? '#5a4a30' :
+                      area.type === 'mine' ? '#4a3a20' :
+                      area.type === 'forest' ? '#2a4a2a' :
+                      '#3a3a50';
+    ctx.lineWidth = e.condition ? 2 : 1.5;
+    if (e.condition === 'Collapsed' || e.condition === 'Overgrown') ctx.setLineDash([4, 4]);
+    else ctx.setLineDash([]);
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Condition icon
+    if (e.condition) {
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      ctx.font = '10px serif';
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#888';
+      const icon = e.condition === 'Collapsed' ? '🪨' : e.condition === 'BossGuarded' ? '💀' : e.condition === 'Overgrown' ? '🌿' : '🔒';
+      ctx.fillText(icon, mx, my + 3);
+    }
+  });
+
+  // Draw nodes
+  const nodeSize = Math.max(5, Math.min(10, scale * 0.5));
+  area.nodes.forEach(n => {
+    const [sx, sy] = toScreen(n.gx, n.gy);
+    const color = NodeColors[n.type] || '#888888';
+    const isHovered = hoveredNode === n.index;
+
+    // Glow for special nodes
+    if (n.isEntrance || n.type === 'Lair' || n.type === 'TreasureRoom' || n.nestIndex !== null) {
+      const glowColor = n.isEntrance ? 'rgba(232,232,64,0.3)' :
+                        n.type === 'Lair' ? 'rgba(196,64,64,0.4)' :
+                        n.type === 'TreasureRoom' ? 'rgba(212,168,67,0.4)' :
+                        'rgba(196,64,64,0.25)';
+      const grad = ctx.createRadialGradient(sx, sy, 0, sx, sy, nodeSize * 2.5);
+      grad.addColorStop(0, glowColor);
+      grad.addColorStop(1, 'transparent');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(sx, sy, nodeSize * 2.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Node shape
+    ctx.fillStyle = isHovered ? '#ffffff' : color;
+    ctx.strokeStyle = isHovered ? '#ffffff' : 'rgba(0,0,0,0.5)';
+    ctx.lineWidth = 1;
+
+    if (n.isEntrance) {
+      // Diamond for entrance
+      ctx.beginPath();
+      ctx.moveTo(sx, sy - nodeSize * 1.2);
+      ctx.lineTo(sx + nodeSize * 1.2, sy);
+      ctx.lineTo(sx, sy + nodeSize * 1.2);
+      ctx.lineTo(sx - nodeSize * 1.2, sy);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    } else if (n.type === 'Lair' || n.type === 'BossEncounter') {
+      // Octagon for boss
+      ctx.beginPath();
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2 - Math.PI / 8;
+        const r = nodeSize * 1.3;
+        ctx.lineTo(sx + Math.cos(a) * r, sy + Math.sin(a) * r);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    } else if (n.nestIndex !== null) {
+      // Triangle for nest
+      ctx.beginPath();
+      ctx.moveTo(sx, sy - nodeSize * 1.2);
+      ctx.lineTo(sx + nodeSize * 1.1, sy + nodeSize * 0.8);
+      ctx.lineTo(sx - nodeSize * 1.1, sy + nodeSize * 0.8);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    } else if (n.type === 'Corridor' || n.type === 'Shaft' || n.type === 'CartTrack' || n.type === 'Thicket') {
+      // Small circle for passages
+      ctx.beginPath();
+      ctx.arc(sx, sy, nodeSize * 0.6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    } else {
+      // Standard circle
+      ctx.beginPath();
+      ctx.arc(sx, sy, nodeSize, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // POI indicators
+    if (n.pois.length > 0) {
+      const poiIcons = n.pois.slice(0, 3).map(p => {
+        if (p.type === 'OreVein' || p.type === 'GemDeposit') return '⛏';
+        if (p.type === 'HerbPatch' || p.type === 'FruitTree') return '🌿';
+        if (p.type === 'TreasureChest') return '📦';
+        if (p.type === 'Shop' || p.type === 'Blacksmith') return '🏪';
+        if (p.type === 'BossEncounter') return '⚔';
+        if (p.type === 'SavePoint') return '✦';
+        if (p.type === 'Trap') return '⚠';
+        if (p.type === 'TimberStand') return '🪵';
+        if (p.type === 'HuntingGround') return '🎯';
+        return '•';
+      }).join('');
+      ctx.font = '9px serif';
+      ctx.textAlign = 'center';
+      ctx.fillStyle = 'rgba(255,255,255,0.8)';
+      ctx.fillText(poiIcons, sx, sy - nodeSize - 4);
+    }
+
+    // Label for important nodes
+    if (n.isEntrance || n.type === 'Lair' || n.type === 'TreasureRoom' || n.type === 'ShrineRoom' || n.type === 'Plaza' || n.type === 'Gate' || n.nestIndex !== null || n.type === 'Ruin') {
+      ctx.font = '10px VT323, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillStyle = isHovered ? '#fff' : 'rgba(200,200,212,0.7)';
+      ctx.fillText(n.label.substring(0, 20), sx, sy + nodeSize + 14);
+    }
+  });
+}
+
+// ============================================================
+//  UI UPDATES
+// ============================================================
+function updateStats(area) {
+  const s = document.getElementById('statsContent');
+  const typeColor = { settlement: 'gold', dungeon: 'red', mine: 'gold', forest: 'green' };
+  const tc = typeColor[area.type] || '';
+  const poiCount = area.nodes.reduce((s, n) => s + n.pois.length, 0);
+  const entrance = area.nodes.find(n => n.isEntrance);
+
+  s.innerHTML = `
+    <div class="stat-row"><span class="stat-label">Name</span><span class="stat-value ${tc}">${area.name}</span></div>
+    <div class="stat-row"><span class="stat-label">Type</span><span class="stat-value">${area.type.charAt(0).toUpperCase() + area.type.slice(1)}</span></div>
+    <div class="stat-row"><span class="stat-label">Seed</span><span class="stat-value">${area.seed}</span></div>
+    <div class="stat-row"><span class="stat-label">Depth</span><span class="stat-value">${area.depth}</span></div>
+    <div class="stat-row"><span class="stat-label">Nodes</span><span class="stat-value">${area.nodes.length}</span></div>
+    <div class="stat-row"><span class="stat-label">Edges</span><span class="stat-value">${area.edges.length}</span></div>
+    <div class="stat-row"><span class="stat-label">POIs</span><span class="stat-value blue">${poiCount}</span></div>
+    <div class="stat-row"><span class="stat-label">Nests</span><span class="stat-value ${area.nests.length > 0 ? 'red' : ''}">${area.nests.length}</span></div>
+    ${area.theme ? `<div class="stat-row"><span class="stat-label">Theme</span><span class="stat-value">${area.theme}</span></div>` : ''}
+  `;
+}
+
+function updateLegend(area) {
+  const l = document.getElementById('legendContent');
+  const types = new Set();
+  area.nodes.forEach(n => types.add(n.type));
+  l.innerHTML = [...types].map(t => `
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:${NodeColors[t] || '#888'}"></div>
+      <span>${t}</span>
+    </div>
+  `).join('');
+}
+
+function updateNests(area) {
+  const panel = document.getElementById('nestsPanel');
+  const content = document.getElementById('nestsContent');
+  if (area.nests.length === 0) { panel.style.display = 'none'; return; }
+  panel.style.display = '';
+  content.innerHTML = area.nests.map(n => `
+    <div class="nest-info ${n.cleared ? 'cleared' : ''}">
+      <h4>${n.cleared ? '✓' : '☠'} ${n.name}</h4>
+      <div class="stat-row"><span class="stat-label">Host</span><span class="stat-value">${area.nodes[n.hostNode]?.label || '?'}</span></div>
+      <div class="stat-row"><span class="stat-label">Monsters</span><span class="stat-value red">${n.count}/${n.originalCount}</span></div>
+      <div class="stat-row"><span class="stat-label">Influence</span><span class="stat-value">${n.influence.length} nodes</span></div>
+      <div class="stat-row"><span class="stat-label">Type</span><span class="stat-value">${n.monsterPool}</span></div>
+    </div>
+  `).join('');
+}
+
+function updateNodeList(area) {
+  const list = document.getElementById('nodeList');
+  list.innerHTML = area.nodes.map(n => {
+    const poiTags = n.pois.map(p => {
+      const cls = ['OreVein','GemDeposit','HerbPatch','FruitTree','TimberStand','HuntingGround','WildlifeNest'].includes(p.type) ? 'resource' :
+                  ['Trap','BossEncounter'].includes(p.type) ? 'danger' :
+                  ['Shop','Blacksmith','Inn','Healer'].includes(p.type) ? 'service' : 'special';
+      return `<span class="poi-tag ${cls}">${p.name}</span>`;
+    }).join('');
+    return `<div class="node-list-item" onmouseenter="highlightNode(${n.index})" onmouseleave="highlightNode(null)">
+      <div>
+        <span class="node-name">${n.isEntrance ? '★ ' : ''}${n.label}</span>
+        <span class="node-type"> [${n.type}]</span>
+        ${n.threat !== 'Safe' ? `<span class="poi-tag danger">${n.threat}</span>` : ''}
+        <div>${poiTags}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function highlightNode(idx) {
+  hoveredNode = idx;
+  if (currentArea) renderArea(currentArea);
+}
+
+// ============================================================
+//  TOOLTIP
+// ============================================================
+const canvas = document.getElementById('mapCanvas');
+canvas.addEventListener('mousemove', (e) => {
+  if (!currentArea) return;
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+
+  let closest = null, closestDist = 20;
+  currentArea.nodes.forEach(n => {
+    const sx = n.gx * canvasScale + canvasOffsetX;
+    const sy = n.gy * canvasScale + canvasOffsetY;
+    const d = Math.hypot(mx - sx, my - sy);
+    if (d < closestDist) { closestDist = d; closest = n; }
+  });
+
+  const tt = document.getElementById('tooltip');
+  if (closest) {
+    const pois = closest.pois.map(p => `<span class="poi-tag ${
+      ['OreVein','GemDeposit','HerbPatch','FruitTree','TimberStand','HuntingGround','WildlifeNest'].includes(p.type) ? 'resource' :
+      ['Trap','BossEncounter'].includes(p.type) ? 'danger' :
+      ['Shop','Blacksmith','Inn','Healer'].includes(p.type) ? 'service' : 'special'
+    }">${p.name}</span>`).join(' ');
+
+    tt.innerHTML = `
+      <div class="tt-name">${closest.label}</div>
+      <div class="tt-type">${closest.type}${closest.threat !== 'Safe' ? ` · ${closest.threat} Threat` : ''}</div>
+      ${pois ? `<div class="tt-pois">${pois}</div>` : ''}
+    `;
+    tt.style.display = 'block';
+    tt.style.left = Math.min(mx + 15, rect.width - 260) + 'px';
+    tt.style.top = (my + 15) + 'px';
+
+    if (hoveredNode !== closest.index) {
+      hoveredNode = closest.index;
+      renderArea(currentArea);
+    }
+  } else {
+    tt.style.display = 'none';
+    if (hoveredNode !== null) {
+      hoveredNode = null;
+      renderArea(currentArea);
+    }
+  }
+});
+
+canvas.addEventListener('mouseleave', () => {
+  document.getElementById('tooltip').style.display = 'none';
+  if (hoveredNode !== null) { hoveredNode = null; if (currentArea) renderArea(currentArea); }
+});
+
+// ============================================================
+//  CONTROLS
+// ============================================================
+let selectedType = 'settlement';
+
+function selectType(btn) {
+  document.querySelectorAll('.type-tab').forEach(t => t.className = 'type-tab');
+  btn.className = `type-tab active-${btn.dataset.type}`;
+  selectedType = btn.dataset.type;
+}
+
+function randomSeed() {
+  document.getElementById('seedInput').value = Math.floor(Math.random() * 99999);
+}
+
+function generate() {
+  const seed = parseInt(document.getElementById('seedInput').value) || 42;
+  const depth = parseInt(document.getElementById('depthInput').value) || 3;
+
+  let area;
+  switch (selectedType) {
+    case 'settlement': area = generateSettlement(seed, depth); break;
+    case 'dungeon': area = generateDungeon(seed, depth); break;
+    case 'mine': area = generateMine(seed, depth); break;
+    case 'forest': area = generateForest(seed, depth); break;
+  }
+
+  ensureConnectivity(area);
+  currentArea = area;
+
+  // Update title
+  const titleColors = { settlement: 'var(--settlement)', dungeon: 'var(--dungeon)', mine: 'var(--mine)', forest: 'var(--forest)' };
+  document.getElementById('mapTitle').style.color = titleColors[area.type];
+  document.getElementById('mapTitle').textContent = area.name;
+
+  renderArea(area);
+  updateStats(area);
+  updateLegend(area);
+  updateNests(area);
+  updateNodeList(area);
+}
+
+// Resize handling
+window.addEventListener('resize', () => { if (currentArea) renderArea(currentArea); });
+
+// Initial generation
+generate();
+</script>
+</body>
+</html>
