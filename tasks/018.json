@@ -1,7 +1,7 @@
 {
   "id": "018",
   "type": "implementation",
-  "status": "pending",
+  "status": "claimed",
   "description": "Create ActivityLogEntry record in src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -9,6 +9,12 @@
   ],
   "touches": [],
   "blockedBy": [],
-  "claimedBy": null,
-  "history": []
+  "claimedBy": "implementer-1",
+  "history": [
+    {
+      "status": "claimed",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:43:52.999Z"
+    }
+  ]
 }
