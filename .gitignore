@@ -97,6 +97,7 @@ artifacts/
 ehthumbs.db
 Thumbs.db
 desktop.ini
+*:Zone.Identifier
 
 # Local configuration
 *.local.md
