@@ -1,7 +1,7 @@
 {
   "id": "006",
   "type": "implementation",
-  "status": "pending",
+  "status": "claimed",
   "description": "Create Models directory: src/RealmsOfIdle.Client.Blazor/Models/",
   "acceptanceCriteria": [],
   "owns": [],
@@ -9,7 +9,7 @@
     "src/RealmsOfIdle.Client.Blazor"
   ],
   "blockedBy": [],
-  "claimedBy": null,
+  "claimedBy": "implementer-1",
   "history": [
     {
       "status": "claimed",
@@ -21,6 +21,11 @@
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:43:10.987Z",
       "note": "reclaimed on startup"
+    },
+    {
+      "status": "claimed",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:43:12.256Z"
     }
   ]
 }
