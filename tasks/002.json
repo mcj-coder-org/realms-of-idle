@@ -1,7 +1,7 @@
 {
   "id": "002",
   "type": "implementation",
-  "status": "claimed",
+  "status": "pending",
   "description": "Review existing IEventStore interface in src/RealmsOfIdle.Core/Abstractions/IEventStore.cs",
   "acceptanceCriteria": [],
   "owns": [],
@@ -9,7 +9,7 @@
     "src/RealmsOfIdle.Core/Abstractions/IEventStore.cs"
   ],
   "blockedBy": [],
-  "claimedBy": "implementer-2",
+  "claimedBy": null,
   "history": [
     {
       "status": "claimed",
@@ -26,6 +26,12 @@
       "status": "claimed",
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:37:15.727Z"
+    },
+    {
+      "status": "pending",
+      "agent": "implementer-2",
+      "timestamp": "2026-02-09T16:39:06.688Z",
+      "note": "reclaimed on startup"
     }
   ]
 }
