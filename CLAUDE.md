@@ -159,3 +159,12 @@ Examples:
 ---
 
 **Success**: Minimal diffs, clarifying questions before mistakes, no rewrites.
+
+## Active Technologies
+
+- C# / .NET 10.0 (as per global.json) + Blazor WASM, System.Timers (game loop) (001-minimal-possession-demo)
+- In-memory only (MVP - state resets on page refresh) (001-minimal-possession-demo)
+
+## Recent Changes
+
+- 001-minimal-possession-demo: Added C# / .NET 10.0 (as per global.json) + Blazor WASM, System.Timers (game loop)
