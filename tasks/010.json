@@ -1,7 +1,7 @@
 {
   "id": "010",
   "type": "implementation",
-  "status": "claimed",
+  "status": "failed",
   "description": "Add LiteDB package reference to src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj",
   "acceptanceCriteria": [],
   "owns": [],
@@ -15,6 +15,11 @@
       "status": "claimed",
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:43:13.590Z"
+    },
+    {
+      "status": "failed",
+      "agent": "implementer-2",
+      "timestamp": "2026-02-09T16:43:16.181Z"
     }
   ]
 }
