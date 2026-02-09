@@ -7,7 +7,12 @@ builder.Services.AddOpenTelemetryServices("RealmsOfIdle.Server.Orleans");
 
 builder.UseOrleans(siloBuilder =>
 {
-    siloBuilder.UseLocalhostClustering();
+    // Fixed ports workaround for Aspire 13.1 + Orleans 10 dynamic port issue
+    // See: https://github.com/dotnet/aspire/issues/6940
+    siloBuilder.UseLocalhostClustering(
+        siloPort: 11111,
+        gatewayPort: 30000);
+
     siloBuilder.AddMemoryGrainStorageAsDefault();
     siloBuilder.AddMemoryGrainStorage("PubSubStore");
 });

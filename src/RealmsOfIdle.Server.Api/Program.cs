@@ -7,7 +7,9 @@ builder.Services.AddOpenTelemetryServices("RealmsOfIdle.Server.Api");
 
 builder.Services.AddOrleansClient(client =>
 {
-    client.UseLocalhostClustering();
+    // Fixed gateway port workaround for Aspire 13.1 + Orleans 10 dynamic port issue
+    // See: https://github.com/dotnet/aspire/issues/6940
+    client.UseLocalhostClustering(gatewayPort: 30000);
 });
 
 // Register named HttpClient for Orleans silo health check

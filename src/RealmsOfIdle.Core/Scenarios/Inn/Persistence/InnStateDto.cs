@@ -50,8 +50,16 @@ public class InnStateDto
             layout.AddArea(area);
         }
 
-        var facilities = Facilities
-            .ToDictionary(dto => dto.Id, dto => dto.ToDomain());
+        // Handle duplicate/empty IDs gracefully by filtering and taking first of each ID
+        var facilitiesList = Facilities.ToList(); // Materialize to avoid modification during enumeration
+        var facilities = new Dictionary<string, InnFacility>();
+        foreach (var dto in facilitiesList)
+        {
+            if (!string.IsNullOrEmpty(dto.Id) && !facilities.ContainsKey(dto.Id))
+            {
+                facilities[dto.Id] = dto.ToDomain();
+            }
+        }
 
         return new InnState(
             layout,

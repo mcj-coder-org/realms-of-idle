@@ -1,5 +1,6 @@
 namespace RealmsOfIdle.Core.Domain;
 
+using LiteDB;
 using RealmsOfIdle.Core.Scenarios.Inn;
 
 public class GameSession
@@ -16,6 +17,7 @@ public class GameSession
     /// Gets or sets the Inn scenario state
     /// Note: Not persisted directly - stored separately via InnStateDto in the persistence layer
     /// </summary>
+    [BsonIgnore]
     public InnState? InnState { get; set; }
 
     /// <summary>

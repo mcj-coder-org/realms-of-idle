@@ -27,8 +27,12 @@ var redis = builder.AddRedis("redis")
     .WithLifetime(ContainerLifetime.Persistent);
 
 // Add Orleans cluster
+// NOTE: Orleans projects use fixed ports (silo: 11111, gateway: 30000) as workaround
+// for Aspire 13.1 + Orleans 10 dynamic port issue: https://github.com/dotnet/aspire/issues/6940
+// NOTE: Explicit cluster ID "default" to match UseLocalhostClustering() in both projects
 var orleans = builder.AddOrleans("orleans")
     .WithDevelopmentClustering()
+    .WithClusterId("default")
     .WithMemoryGrainStorage("Default");
 
 // Add Orleans Silo
@@ -45,7 +49,8 @@ builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
     .WithReference(postgresDb)
     .WithReference(redis)
     .WithReference(orleans.AsClient())
-    .WithHttpHealthCheck("/health");
+    .WithHttpHealthCheck("/health")
+    .WaitFor(orleansSilo);
 
 // Add Blazor WASM client
 builder.AddProject<Projects.RealmsOfIdle_Client_Blazor>("blazor-client");
