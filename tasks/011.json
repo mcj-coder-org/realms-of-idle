@@ -1,7 +1,7 @@
 {
   "id": "011",
   "type": "implementation",
-  "status": "claimed",
+  "status": "failed",
   "description": "Create BuildingType enum in src/RealmsOfIdle.Client.Blazor/Models/Building.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -15,6 +15,11 @@
       "status": "claimed",
       "agent": "implementer-1",
       "timestamp": "2026-02-09T16:43:22.503Z"
+    },
+    {
+      "status": "failed",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:43:25.139Z"
     }
   ]
 }
