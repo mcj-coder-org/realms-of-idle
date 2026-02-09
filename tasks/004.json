@@ -1,7 +1,7 @@
 {
   "id": "004",
   "type": "implementation",
-  "status": "claimed",
+  "status": "pending",
   "description": "Review LocalGameService pattern in src/RealmsOfIdle.Client.Shared/Services/LocalGameService.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -9,12 +9,18 @@
   ],
   "touches": [],
   "blockedBy": [],
-  "claimedBy": "implementer-2",
+  "claimedBy": null,
   "history": [
     {
       "status": "claimed",
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:28:09.426Z"
+    },
+    {
+      "status": "pending",
+      "agent": "implementer-2",
+      "timestamp": "2026-02-09T16:37:11.349Z",
+      "note": "reclaimed on startup"
     }
   ]
 }
