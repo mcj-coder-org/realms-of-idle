@@ -1,8 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/RealmsOfIdle.AppHost/RealmsOfIdle.AppHost.csproj" />
-    <!-- Blazor WebAssembly not compatible with .NET 10 - temporarily excluded -->
-    <!-- <Project Path="src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj" /> -->
+    <Project Path="src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj" />
     <Project Path="src/RealmsOfIdle.Client.Shared/RealmsOfIdle.Client.Shared.csproj" />
     <Project Path="src/RealmsOfIdle.Client.UI/RealmsOfIdle.Client.UI.csproj" />
     <Project Path="src/RealmsOfIdle.Core/RealmsOfIdle.Core.csproj" />

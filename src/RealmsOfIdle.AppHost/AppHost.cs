@@ -10,56 +10,44 @@ if (File.Exists(envPath))
 
 var apiPort = int.TryParse(Environment.GetEnvironmentVariable("API_HTTP_PORT"), out var ap) ? ap : 5214;
 var orleansPort = int.TryParse(Environment.GetEnvironmentVariable("ORLEANS_HTTP_PORT"), out var op) ? op : 5001;
-// Blazor WebAssembly not compatible with .NET 10 - temporarily excluded
-// var blazorPort = int.TryParse(Environment.GetEnvironmentVariable("BLAZOR_HTTP_PORT"), out var bp) ? bp : 5004;
+var blazorPort = int.TryParse(Environment.GetEnvironmentVariable("BLAZOR_HTTP_PORT"), out var bp) ? bp : 5004;
 
-// Add PostgreSQL with container health check
+// Add PostgreSQL (Aspire containers have built-in health checks)
 var postgres = builder.AddPostgres("postgres")
     .WithImageTag("16-alpine")
     .WithDataVolume()
-    .WithLifetime(ContainerLifetime.Persistent)
-    .WithHealthCheck("postgres");
+    .WithLifetime(ContainerLifetime.Persistent);
 
 var postgresDb = postgres.AddDatabase("realmsOfIdle");
 
-// Add Redis with container health check
+// Add Redis (Aspire containers have built-in health checks)
 var redis = builder.AddRedis("redis")
     .WithImageTag("7-alpine")
     .WithDataVolume()
-    .WithLifetime(ContainerLifetime.Persistent)
-    .WithHealthCheck("redis");
+    .WithLifetime(ContainerLifetime.Persistent);
 
 // Add Orleans cluster
 var orleans = builder.AddOrleans("orleans")
     .WithDevelopmentClustering()
     .WithMemoryGrainStorage("Default");
 
-// Add Orleans Silo with HTTP health check
+// Add Orleans Silo
 var orleansSilo = builder.AddProject<Projects.RealmsOfIdle_Server_Orleans>("orleans-silo")
     .WithReference(orleans)
     .WithReference(postgresDb)
     .WithReference(redis)
-    .WithEndpoint("http", e => e.Port = orleansPort)
-    .WithHttpHealthCheck("/health")
-    .WaitFor(postgres)
-    .WaitFor(redis);
+    .WithHttpHealthCheck("/health");
 
-// Add API Server with HTTP health check
+// Add API Server
+// NOTE: .WaitFor(orleansSilo) removed due to health check blocking issue (#35)
+// API will retry Orleans connection on startup
 builder.AddProject<Projects.RealmsOfIdle_Server_Api>("api")
     .WithReference(postgresDb)
     .WithReference(redis)
     .WithReference(orleans.AsClient())
-    .WithEndpoint("http", e => e.Port = apiPort)
-    .WithExternalHttpEndpoints()
-    .WithHttpHealthCheck("/health")
-    .WaitFor(orleansSilo)
-    .WaitFor(postgres)
-    .WaitFor(redis);
+    .WithHttpHealthCheck("/health");
 
 // Add Blazor WASM client
-// Blazor WebAssembly not compatible with .NET 10 - temporarily excluded
-// builder.AddProject<Projects.RealmsOfIdle_Client_Blazor>("blazor-client")
-//     .WithEndpoint("http", e => e.Port = blazorPort)
-//     .WithExternalHttpEndpoints();
+builder.AddProject<Projects.RealmsOfIdle_Client_Blazor>("blazor-client");
 
 builder.Build().Run();

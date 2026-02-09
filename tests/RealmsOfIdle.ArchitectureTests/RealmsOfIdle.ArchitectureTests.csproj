@@ -26,8 +26,7 @@
     <ProjectReference Include="..\..\src\RealmsOfIdle.Core\RealmsOfIdle.Core.csproj" />
     <ProjectReference Include="..\..\src\RealmsOfIdle.Server.Orleans\RealmsOfIdle.Server.Orleans.csproj" />
     <ProjectReference Include="..\..\src\RealmsOfIdle.Client.UI\RealmsOfIdle.Client.UI.csproj" />
-    <!-- Blazor WebAssembly not compatible with .NET 10 - temporarily excluded -->
-    <!-- <ProjectReference Include="..\..\src\RealmsOfIdle.Client.Blazor\RealmsOfIdle.Client.Blazor.csproj" /> -->
+    <ProjectReference Include="..\..\src\RealmsOfIdle.Client.Blazor\RealmsOfIdle.Client.Blazor.csproj" />
   </ItemGroup>
 
   <ItemGroup>
