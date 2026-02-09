@@ -1,0 +1,12 @@
+{
+  "id": "082",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Verify Tomas at Forge sees blacksmith actions",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

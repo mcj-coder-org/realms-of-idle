@@ -1,0 +1,12 @@
+{
+  "id": "043",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement SettlementMap rendering of 2 buildings (Inn, Workshop) with GridPosition",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

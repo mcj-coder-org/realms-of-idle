@@ -1,0 +1,15 @@
+{
+  "id": "041",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create SettlementMap.razor component in src/RealmsOfIdle.Client.Blazor/Components/SettlementMap.razor (10x10 grid with buildings/NPCs)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "SettlementMap.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/SettlementMap.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

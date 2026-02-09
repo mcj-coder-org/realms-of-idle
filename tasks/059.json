@@ -1,0 +1,15 @@
+{
+  "id": "059",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create ActionPanel.razor component in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor (available actions when possessed)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "ActionPanel.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "038",
+  "type": "implementation",
+  "status": "pending",
+  "description": "bUnit component test for SettlementView rendering grid in tests/RealmsOfIdle.Client.Blazor.Tests/Components/SettlementViewTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Components/SettlementViewTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

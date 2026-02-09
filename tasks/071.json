@@ -1,0 +1,12 @@
+{
+  "id": "071",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Verify possessed NPC continues autonomous behavior after release",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

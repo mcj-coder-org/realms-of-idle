@@ -1,0 +1,12 @@
+{
+  "id": "063",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement ActionPanel to show context-appropriate actions for possessed NPC",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "062",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement PossessNPCAsync in SettlementGameService (set IsPossessed = true, pause autonomous AI)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

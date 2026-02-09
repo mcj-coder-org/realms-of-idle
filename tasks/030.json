@@ -1,0 +1,15 @@
+{
+  "id": "030",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create PossessionDemo.razor page in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor with route /possession-demo",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "PossessionDemo.razor",
+    "src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

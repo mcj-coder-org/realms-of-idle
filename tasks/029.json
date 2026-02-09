@@ -1,0 +1,16 @@
+{
+  "id": "029",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Register SimulationEngine as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor/Program.cs"
+  ],
+  "blockedBy": [
+    "028"
+  ],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "077",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement GetAvailableActions method in SettlementGameService (filters by class + building)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

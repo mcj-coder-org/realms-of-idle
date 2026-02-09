@@ -1,0 +1,12 @@
+{
+  "id": "045",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement ActivityLog with auto-scroll and max 20 entries",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

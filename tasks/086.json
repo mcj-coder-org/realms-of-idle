@@ -1,0 +1,18 @@
+{
+  "id": "086",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for priority persistence in LiteDB in tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "052",
+    "053",
+    "054"
+  ],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "112",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add CSS styling for possession demo in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

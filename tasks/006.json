@@ -1,0 +1,14 @@
+{
+  "id": "006",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create Models directory: src/RealmsOfIdle.Client.Blazor/Models/",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

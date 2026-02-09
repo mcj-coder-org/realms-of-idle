@@ -1,0 +1,17 @@
+{
+  "id": "008",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create Components directory structure: src/RealmsOfIdle.Client.Blazor/Components/",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor"
+  ],
+  "blockedBy": [
+    "006",
+    "007"
+  ],
+  "claimedBy": null,
+  "history": []
+}

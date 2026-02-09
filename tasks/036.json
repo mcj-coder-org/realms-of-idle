@@ -1,0 +1,17 @@
+{
+  "id": "036",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for NPCAIService.ChooseNextAction for Innkeeper in tests/RealmsOfIdle.Client.Blazor.Tests/Services/NPCAIServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "NPCAIService.ChooseNextAction",
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/NPCAIServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "027"
+  ],
+  "claimedBy": null,
+  "history": []
+}

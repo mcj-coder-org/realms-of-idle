@@ -1,0 +1,12 @@
+{
+  "id": "116",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add tooltips for action buttons explaining requirements",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

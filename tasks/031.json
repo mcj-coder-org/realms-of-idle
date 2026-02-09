@@ -1,0 +1,15 @@
+{
+  "id": "031",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create TopBar.razor component in src/RealmsOfIdle.Client.Blazor/Components/TopBar.razor (mode indicator, world time)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "TopBar.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/TopBar.razor"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

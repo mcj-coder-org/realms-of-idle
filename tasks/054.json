@@ -1,0 +1,18 @@
+{
+  "id": "054",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for SettlementGameService.ExecuteActionAsync in tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "SettlementGameService.ExecuteActionAsync",
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "052",
+    "053"
+  ],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "050",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add activity log entries when NPCs complete actions",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

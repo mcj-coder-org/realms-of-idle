@@ -1,0 +1,12 @@
+{
+  "id": "049",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add gold/reputation reward application on action completion",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

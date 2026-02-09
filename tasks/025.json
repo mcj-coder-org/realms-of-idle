@@ -1,0 +1,14 @@
+{
+  "id": "025",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NPCAIService class in src/RealmsOfIdle.Client.Blazor/Services/NPCAIService.cs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor/Services/NPCAIService.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

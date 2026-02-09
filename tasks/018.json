@@ -1,0 +1,14 @@
+{
+  "id": "018",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create ActivityLogEntry record in src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "070",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Update TopBar to show possession status (\"Possessed: Mara [Innkeeper] Lvl 5\")",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

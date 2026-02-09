@@ -1,0 +1,12 @@
+{
+  "id": "047",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement autonomous NPC action execution in NPCAIService (Innkeeper serves customers)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

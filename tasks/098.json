@@ -1,0 +1,14 @@
+{
+  "id": "098",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for notification badge logic in tests/RealmsOfIdle.Client.Blazor.Tests/Services/NotificationServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/NotificationServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "020",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create SettlementGameService class in src/RealmsOfIdle.Client.Blazor/Services/SettlementGameService.cs (implements IGameService, adapts LocalGameService pattern)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor/Services/SettlementGameService.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

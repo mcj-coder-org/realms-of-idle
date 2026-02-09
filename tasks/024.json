@@ -1,0 +1,14 @@
+{
+  "id": "024",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement game loop timer (System.Timers.Timer, 10 ticks/sec) in SimulationEngine",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "System.Timers.Timer"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

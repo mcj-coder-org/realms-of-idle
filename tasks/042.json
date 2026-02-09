@@ -1,0 +1,15 @@
+{
+  "id": "042",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create ActivityLog.razor component in src/RealmsOfIdle.Client.Blazor/Components/ActivityLog.razor (scrolling action history)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "ActivityLog.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/ActivityLog.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

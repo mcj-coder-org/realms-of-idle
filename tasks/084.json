@@ -1,0 +1,12 @@
+{
+  "id": "084",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add resource cost validation (disable \"Craft Iron Sword\" if insufficient IronOre)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

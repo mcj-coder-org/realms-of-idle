@@ -1,0 +1,14 @@
+{
+  "id": "125",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add README.md to possession demo explaining architecture",
+  "acceptanceCriteria": [],
+  "owns": [
+    "README.md"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

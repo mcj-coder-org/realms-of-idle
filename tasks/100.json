@@ -1,0 +1,14 @@
+{
+  "id": "100",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create FavoritesService class in src/RealmsOfIdle.Client.Blazor/Services/FavoritesService.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Services/FavoritesService.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

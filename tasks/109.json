@@ -1,0 +1,12 @@
+{
+  "id": "109",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add notification badge to FavoritesPanel entries when NPC completes action while not possessed",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

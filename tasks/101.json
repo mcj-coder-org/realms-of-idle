@@ -1,0 +1,14 @@
+{
+  "id": "101",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NotificationService class in src/RealmsOfIdle.Client.Blazor/Services/NotificationService.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Services/NotificationService.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

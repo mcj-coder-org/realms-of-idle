@@ -1,0 +1,12 @@
+{
+  "id": "129",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Accessibility: Ensure keyboard navigation works for all features",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

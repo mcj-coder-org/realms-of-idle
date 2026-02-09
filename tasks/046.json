@@ -1,0 +1,12 @@
+{
+  "id": "046",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Wire SettlementView to SettlementGameService for state updates",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "097",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for favorites list management in tests/RealmsOfIdle.Client.Blazor.Tests/Services/FavoritesServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/FavoritesServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "019",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Extend IGameService interface with possession operations in src/RealmsOfIdle.Core/Abstractions/IGameService.cs (PossessNPCAsync, ReleaseNPCAsync, ExecuteActionAsync)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Core/Abstractions/IGameService.cs"
+  ],
+  "blockedBy": [
+    "001"
+  ],
+  "claimedBy": null,
+  "history": []
+}

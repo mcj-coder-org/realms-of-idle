@@ -1,0 +1,14 @@
+{
+  "id": "099",
+  "type": "implementation",
+  "status": "pending",
+  "description": "bUnit component test for FavoritesPanel rendering in tests/RealmsOfIdle.Client.Blazor.Tests/Components/FavoritesPanelTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Components/FavoritesPanelTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

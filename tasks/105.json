@@ -1,0 +1,16 @@
+{
+  "id": "105",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Wire star icon click to FavoritesService.AddFavorite",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "FavoritesService.AddFavorite"
+  ],
+  "blockedBy": [
+    "103"
+  ],
+  "claimedBy": null,
+  "history": []
+}

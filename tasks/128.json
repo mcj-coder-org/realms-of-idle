@@ -1,0 +1,12 @@
+{
+  "id": "128",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Accessibility: Add ARIA labels to interactive components",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

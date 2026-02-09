@@ -1,0 +1,12 @@
+{
+  "id": "127",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Security: Validate NPC IDs before possession to prevent invalid access",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

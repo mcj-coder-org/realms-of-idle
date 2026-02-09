@@ -1,0 +1,14 @@
+{
+  "id": "055",
+  "type": "implementation",
+  "status": "pending",
+  "description": "bUnit component test for NPCSidebar rendering NPC portraits in tests/RealmsOfIdle.Client.Blazor.Tests/Components/NPCSidebarTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Components/NPCSidebarTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "106",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement FavoritesPanel to display favorited NPCs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

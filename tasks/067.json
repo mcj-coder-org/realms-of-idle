@@ -1,0 +1,12 @@
+{
+  "id": "067",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement action completion handler (apply rewards, update UI, log activity)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

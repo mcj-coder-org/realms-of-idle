@@ -1,0 +1,12 @@
+{
+  "id": "044",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement SettlementMap rendering of 4 NPCs (Mara, Cook, Tomas, Customer) with positions",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

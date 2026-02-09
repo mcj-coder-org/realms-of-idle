@@ -1,0 +1,14 @@
+{
+  "id": "039",
+  "type": "implementation",
+  "status": "pending",
+  "description": "bUnit component test for ActivityLog displaying entries in tests/RealmsOfIdle.Client.Blazor.Tests/Components/ActivityLogTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Components/ActivityLogTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

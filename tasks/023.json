@@ -1,0 +1,14 @@
+{
+  "id": "023",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create SimulationEngine class in src/RealmsOfIdle.Client.Blazor/Services/SimulationEngine.cs (adapts InnGameLoop pattern)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor/Services/SimulationEngine.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

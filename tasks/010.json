@@ -1,0 +1,14 @@
+{
+  "id": "010",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add LiteDB package reference to src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

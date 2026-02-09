@@ -1,0 +1,12 @@
+{
+  "id": "107",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement quick-possess from FavoritesPanel (click name → immediate possession)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

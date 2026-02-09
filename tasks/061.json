@@ -1,0 +1,12 @@
+{
+  "id": "061",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement \"Possess\" button on each NPC portrait in NPCSidebar",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

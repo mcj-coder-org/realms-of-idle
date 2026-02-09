@@ -1,0 +1,12 @@
+{
+  "id": "076",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add RequiredBuildings validation to NPCAction filtering logic in SettlementGameService",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

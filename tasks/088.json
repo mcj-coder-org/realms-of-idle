@@ -1,0 +1,15 @@
+{
+  "id": "088",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create PriorityPanel.razor component in src/RealmsOfIdle.Client.Blazor/Components/PriorityPanel.razor",
+  "acceptanceCriteria": [],
+  "owns": [
+    "PriorityPanel.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/PriorityPanel.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

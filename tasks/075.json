@@ -1,0 +1,12 @@
+{
+  "id": "075",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add RequiredClasses validation to NPCAction filtering logic in SettlementGameService",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

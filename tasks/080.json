@@ -1,0 +1,12 @@
+{
+  "id": "080",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add Blacksmith-specific actions to ActionCatalog (Craft Iron Sword, Check Materials, Set Priority)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

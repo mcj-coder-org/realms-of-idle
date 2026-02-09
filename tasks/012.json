@@ -1,0 +1,16 @@
+{
+  "id": "012",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create Building record in src/RealmsOfIdle.Client.Blazor/Models/Building.cs (reuse GridPosition from Core)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/Building.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "011"
+  ],
+  "claimedBy": null,
+  "history": []
+}

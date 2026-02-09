@@ -1,0 +1,14 @@
+{
+  "id": "110",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Register FavoritesService and NotificationService in Program.cs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "Program.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

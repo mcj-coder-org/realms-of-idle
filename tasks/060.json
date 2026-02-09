@@ -1,0 +1,12 @@
+{
+  "id": "060",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement NPCSidebar rendering 4 NPC cards with names, classes, locations",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

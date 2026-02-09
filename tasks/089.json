@@ -1,0 +1,12 @@
+{
+  "id": "089",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement \"Manage Cook\" action to open PriorityPanel for Cook NPC",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

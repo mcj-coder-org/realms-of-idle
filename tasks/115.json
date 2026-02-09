@@ -1,0 +1,14 @@
+{
+  "id": "115",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add error boundary component for graceful error handling in src/RealmsOfIdle.Client.Blazor/Components/ErrorBoundary.razor",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Components/ErrorBoundary.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

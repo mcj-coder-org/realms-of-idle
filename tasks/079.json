@@ -1,0 +1,12 @@
+{
+  "id": "079",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add Innkeeper-specific actions to ActionCatalog (Serve Customer, Manage Cook, Check Income)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

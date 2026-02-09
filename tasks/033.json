@@ -1,0 +1,12 @@
+{
+  "id": "033",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement OnInitialized to start SimulationEngine and subscribe to state changes",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "123",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Performance: Add memoization for GetAvailableActions filtering",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

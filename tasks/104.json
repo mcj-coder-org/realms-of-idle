@@ -1,0 +1,12 @@
+{
+  "id": "104",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add star icon (⭐) to each NPC portrait in NPCSidebar",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "032",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Inject IGameService and SimulationEngine in PossessionDemo.razor",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "PossessionDemo.razor"
+  ],
+  "blockedBy": [
+    "030"
+  ],
+  "claimedBy": null,
+  "history": []
+}

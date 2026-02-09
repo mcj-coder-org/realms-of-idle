@@ -1,0 +1,12 @@
+{
+  "id": "048",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement autonomous NPC action execution in NPCAIService (Blacksmith crafts swords)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

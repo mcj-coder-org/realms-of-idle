@@ -1,0 +1,15 @@
+{
+  "id": "034",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for Settlement.CreateMillbrook factory in tests/RealmsOfIdle.Client.Blazor.Tests/Models/SettlementTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "Settlement.CreateMillbrook",
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Models/SettlementTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

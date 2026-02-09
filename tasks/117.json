@@ -1,0 +1,12 @@
+{
+  "id": "117",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add visual feedback for disabled actions (red with tooltip)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

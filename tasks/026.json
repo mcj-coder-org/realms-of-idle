@@ -1,0 +1,14 @@
+{
+  "id": "026",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement NPCAIService.UpdateNPC with simple state machine (Idle/Working)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "NPCAIService.UpdateNPC"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

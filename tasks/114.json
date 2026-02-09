@@ -1,0 +1,12 @@
+{
+  "id": "114",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add loading spinner while settlement initializes",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

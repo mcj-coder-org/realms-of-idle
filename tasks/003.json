@@ -1,0 +1,14 @@
+{
+  "id": "003",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Review existing GridPosition in src/RealmsOfIdle.Core/Engine/Spatial/GridPosition.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Core/Engine/Spatial/GridPosition.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

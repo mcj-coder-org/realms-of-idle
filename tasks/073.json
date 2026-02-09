@@ -1,0 +1,16 @@
+{
+  "id": "073",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for action filtering by building type in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ActionFilterTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/ActionFilterTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "072"
+  ],
+  "claimedBy": null,
+  "history": []
+}

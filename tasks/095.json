@@ -1,0 +1,12 @@
+{
+  "id": "095",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Verify priority changes survive page refresh (LiteDB persistence)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

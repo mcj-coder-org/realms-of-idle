@@ -1,0 +1,12 @@
+{
+  "id": "093",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Update NPCAIService to respect NPC priorities when choosing actions",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "111",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Verify favorites persist across page refreshes (LiteDB)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

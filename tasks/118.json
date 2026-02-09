@@ -1,0 +1,12 @@
+{
+  "id": "118",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add animation for NPC portraits when possessed",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

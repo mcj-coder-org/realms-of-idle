@@ -1,0 +1,16 @@
+{
+  "id": "007",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create Services directory: src/RealmsOfIdle.Client.Blazor/Services/",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Client.Blazor"
+  ],
+  "blockedBy": [
+    "006"
+  ],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "001",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Review existing IGameService interface in src/RealmsOfIdle.Core/Abstractions/IGameService.cs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Core/Abstractions/IGameService.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

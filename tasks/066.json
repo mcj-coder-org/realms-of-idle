@@ -1,0 +1,12 @@
+{
+  "id": "066",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement action timer countdown display in ActionPanel",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

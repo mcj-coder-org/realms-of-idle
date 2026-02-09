@@ -1,0 +1,12 @@
+{
+  "id": "108",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement NotificationService to track unread actions for favorited NPCs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

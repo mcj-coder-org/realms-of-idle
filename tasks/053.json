@@ -1,0 +1,17 @@
+{
+  "id": "053",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for SettlementGameService.ReleaseNPCAsync in tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "SettlementGameService.ReleaseNPCAsync",
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "052"
+  ],
+  "claimedBy": null,
+  "history": []
+}

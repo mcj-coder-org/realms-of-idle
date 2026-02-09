@@ -1,0 +1,16 @@
+{
+  "id": "016",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create ActionCatalog class in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "015"
+  ],
+  "claimedBy": null,
+  "history": []
+}

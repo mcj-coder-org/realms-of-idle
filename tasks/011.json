@@ -1,0 +1,14 @@
+{
+  "id": "011",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create BuildingType enum in src/RealmsOfIdle.Client.Blazor/Models/Building.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/Building.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

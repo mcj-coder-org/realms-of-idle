@@ -1,0 +1,14 @@
+{
+  "id": "013",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NPCState enum in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/NPC.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

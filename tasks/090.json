@@ -1,0 +1,12 @@
+{
+  "id": "090",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement priority slider (Speed vs Quality) in PriorityPanel",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

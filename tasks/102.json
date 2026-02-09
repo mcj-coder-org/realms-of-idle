@@ -1,0 +1,15 @@
+{
+  "id": "102",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create FavoritesPanel.razor component in src/RealmsOfIdle.Client.Blazor/Components/FavoritesPanel.razor",
+  "acceptanceCriteria": [],
+  "owns": [
+    "FavoritesPanel.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/FavoritesPanel.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

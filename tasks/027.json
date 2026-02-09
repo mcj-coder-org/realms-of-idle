@@ -1,0 +1,14 @@
+{
+  "id": "027",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement NPCAIService.ChooseNextAction with priority-based selection",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "NPCAIService.ChooseNextAction"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

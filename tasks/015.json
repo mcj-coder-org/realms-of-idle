@@ -1,0 +1,14 @@
+{
+  "id": "015",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

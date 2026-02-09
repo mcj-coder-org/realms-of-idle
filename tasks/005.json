@@ -1,0 +1,14 @@
+{
+  "id": "005",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Review InnGameLoop pattern in src/RealmsOfIdle.Core/Scenarios/Inn/InnGameLoop.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Core/Scenarios/Inn/InnGameLoop.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

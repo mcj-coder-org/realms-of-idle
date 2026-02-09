@@ -1,0 +1,12 @@
+{
+  "id": "094",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add confirmation message \"Cook priorities updated. Changes persist after release.\"",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

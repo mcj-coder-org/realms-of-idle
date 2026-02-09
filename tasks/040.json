@@ -1,0 +1,15 @@
+{
+  "id": "040",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create SettlementView.razor component in src/RealmsOfIdle.Client.Blazor/Components/SettlementView.razor (top-level container)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "SettlementView.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/SettlementView.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

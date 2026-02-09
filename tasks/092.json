@@ -1,0 +1,12 @@
+{
+  "id": "092",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Wire \"Apply\" button to UpdateNPCPriorities and persist to LiteDB",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

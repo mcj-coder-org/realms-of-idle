@@ -1,0 +1,14 @@
+{
+  "id": "004",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Review LocalGameService pattern in src/RealmsOfIdle.Client.Shared/Services/LocalGameService.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Shared/Services/LocalGameService.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

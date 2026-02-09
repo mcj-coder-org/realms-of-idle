@@ -1,0 +1,14 @@
+{
+  "id": "085",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for NPC priority updates in tests/RealmsOfIdle.Client.Blazor.Tests/Models/NPCTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Models/NPCTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

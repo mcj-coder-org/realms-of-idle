@@ -1,0 +1,12 @@
+{
+  "id": "065",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement ExecuteActionAsync in SettlementGameService (start action timer, update NPC state)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

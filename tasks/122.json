@@ -1,0 +1,12 @@
+{
+  "id": "122",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Performance: Optimize SettlementMap rendering to avoid re-rendering entire grid",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

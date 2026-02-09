@@ -1,0 +1,14 @@
+{
+  "id": "072",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for action filtering by NPC class in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ActionFilterTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/ActionFilterTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

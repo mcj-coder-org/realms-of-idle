@@ -1,0 +1,12 @@
+{
+  "id": "113",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add responsive layout adjustments for desktop browsers",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

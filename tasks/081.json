@@ -1,0 +1,12 @@
+{
+  "id": "081",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Add Customer-generic actions to ActionCatalog (Order Drink)",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

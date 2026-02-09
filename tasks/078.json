@@ -1,0 +1,12 @@
+{
+  "id": "078",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Update ActionPanel to call GetAvailableActions and render filtered list",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

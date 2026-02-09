@@ -1,0 +1,16 @@
+{
+  "id": "014",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NPC record in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs with factory methods",
+  "acceptanceCriteria": [],
+  "owns": [
+    "src/RealmsOfIdle.Client.Blazor/Models/NPC.cs"
+  ],
+  "touches": [],
+  "blockedBy": [
+    "013"
+  ],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "074",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Integration test for context-aware action display (Innkeeper at Inn vs Workshop) in tests/RealmsOfIdle.Client.Blazor.Tests/Integration/ContextAwareActionsTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Integration/ContextAwareActionsTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

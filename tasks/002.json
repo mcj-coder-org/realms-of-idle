@@ -1,0 +1,14 @@
+{
+  "id": "002",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Review existing IEventStore interface in src/RealmsOfIdle.Core/Abstractions/IEventStore.cs",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [
+    "src/RealmsOfIdle.Core/Abstractions/IEventStore.cs"
+  ],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

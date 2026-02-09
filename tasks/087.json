@@ -1,0 +1,14 @@
+{
+  "id": "087",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Integration test for priority affecting NPC behavior in tests/RealmsOfIdle.Client.Blazor.Tests/Integration/PriorityPersistenceTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Integration/PriorityPersistenceTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

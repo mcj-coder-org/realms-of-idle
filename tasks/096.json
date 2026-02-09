@@ -1,0 +1,12 @@
+{
+  "id": "096",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Verify Cook's autonomous behavior reflects new priority after release",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

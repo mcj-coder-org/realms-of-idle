@@ -1,0 +1,15 @@
+{
+  "id": "058",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Create NPCSidebar.razor component in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor (NPC list with portraits)",
+  "acceptanceCriteria": [],
+  "owns": [
+    "NPCSidebar.razor",
+    "src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

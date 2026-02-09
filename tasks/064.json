@@ -1,0 +1,12 @@
+{
+  "id": "064",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement action button click handler in ActionPanel",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

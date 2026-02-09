@@ -1,0 +1,12 @@
+{
+  "id": "068",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Implement \"Release Control\" button in ActionPanel",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "057",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Integration test for possession flow (possess → execute → release) in tests/RealmsOfIdle.Client.Blazor.Tests/Integration/PossessionFlowTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Integration/PossessionFlowTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

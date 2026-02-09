@@ -1,0 +1,15 @@
+{
+  "id": "035",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Unit test for SimulationEngine.Start and tick processing in tests/RealmsOfIdle.Client.Blazor.Tests/Services/SimulationEngineTests.cs",
+  "acceptanceCriteria": [],
+  "owns": [
+    "SimulationEngine.Start",
+    "tests/RealmsOfIdle.Client.Blazor.Tests/Services/SimulationEngineTests.cs"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

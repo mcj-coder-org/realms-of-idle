@@ -1,0 +1,14 @@
+{
+  "id": "126",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Run quickstart.md validation manually",
+  "acceptanceCriteria": [],
+  "owns": [
+    "quickstart.md"
+  ],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}

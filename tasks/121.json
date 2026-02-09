@@ -1,0 +1,12 @@
+{
+  "id": "121",
+  "type": "implementation",
+  "status": "pending",
+  "description": "Code cleanup: Refactor duplicate code in NPCAIService",
+  "acceptanceCriteria": [],
+  "owns": [],
+  "touches": [],
+  "blockedBy": [],
+  "claimedBy": null,
+  "history": []
+}
