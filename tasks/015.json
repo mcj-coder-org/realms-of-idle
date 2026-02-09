@@ -1,7 +1,7 @@
 {
   "id": "015",
   "type": "implementation",
-  "status": "failed",
+  "status": "pending",
   "description": "Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -9,7 +9,7 @@
   ],
   "touches": [],
   "blockedBy": [],
-  "claimedBy": "implementer-1",
+  "claimedBy": null,
   "history": [
     {
       "status": "claimed",
@@ -20,6 +20,13 @@
       "status": "failed",
       "agent": "implementer-1",
       "timestamp": "2026-02-09T16:43:35.278Z"
+    },
+    {
+      "status": "pending",
+      "agent": "manual-reset",
+      "timestamp": "2026-02-09T16:59:13.916Z",
+      "note": "manually reset from failed"
     }
-  ]
+  ],
+  "retries": 0
 }
