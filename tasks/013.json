@@ -1,7 +1,7 @@
 {
   "id": "013",
   "type": "implementation",
-  "status": "claimed",
+  "status": "pending",
   "description": "Create NPCState enum in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs",
   "acceptanceCriteria": [],
   "owns": [
@@ -9,7 +9,7 @@
   ],
   "touches": [],
   "blockedBy": [],
-  "claimedBy": "implementer-2",
+  "claimedBy": null,
   "history": [
     {
       "status": "claimed",
@@ -26,6 +26,12 @@
       "status": "claimed",
       "agent": "implementer-2",
       "timestamp": "2026-02-09T16:59:09.969Z"
+    },
+    {
+      "status": "pending",
+      "agent": "implementer-2",
+      "timestamp": "2026-02-09T17:04:14.080Z",
+      "note": "reclaimed on startup"
     }
   ]
 }
