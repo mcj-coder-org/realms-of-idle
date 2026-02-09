@@ -1,7 +1,7 @@
 {
   "id": "001",
   "type": "implementation",
-  "status": "claimed",
+  "status": "pending",
   "description": "Review existing IGameService interface in src/RealmsOfIdle.Core/Abstractions/IGameService.cs",
   "acceptanceCriteria": [],
   "owns": [],
@@ -9,7 +9,7 @@
     "src/RealmsOfIdle.Core/Abstractions/IGameService.cs"
   ],
   "blockedBy": [],
-  "claimedBy": "implementer-1",
+  "claimedBy": null,
   "history": [
     {
       "status": "claimed",
@@ -26,6 +26,12 @@
       "status": "claimed",
       "agent": "implementer-1",
       "timestamp": "2026-02-09T16:37:14.817Z"
+    },
+    {
+      "status": "pending",
+      "agent": "implementer-1",
+      "timestamp": "2026-02-09T16:39:06.544Z",
+      "note": "reclaimed on startup"
     }
   ]
 }
