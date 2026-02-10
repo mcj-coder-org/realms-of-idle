@@ -26,7 +26,7 @@ Build a minimal playable web application (Blazor WASM) demonstrating core posses
 **Target Platform**: Blazor WASM (desktop web browsers, Chrome/Firefox/Edge)
 **Project Type**: Web application (Blazor client-side)
 **Performance Goals**: Game loop 10 ticks/second, <100ms possession switch, <2s page load
-**Constraints**: Desktop-only UI, client-side simulation with local persistence
+**Constraints**: Responsive UI (mobile to ultrawide desktop), client-side simulation with local persistence
 **Scale/Scope**: 4 NPCs, 2 buildings, 10x10 grid, 20-entry activity log
 **Existing Infrastructure**: Reuse IGameService, IEventStore, Spatial models (GridPosition)
 

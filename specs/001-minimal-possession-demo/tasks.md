@@ -345,7 +345,7 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 #### NFR-002f - Documentation
 
-- [ ] T143 [P] Document known limitations in README.md (vision/dexterity required, no screen reader support, minimum 1280x720)
+- [ ] T143 [P] Document resolution support (mobile 360x640 to ultrawide 3440x1440) and accessibility limitations in README.md (vision/dexterity required, no screen reader support)
 
 ---
 

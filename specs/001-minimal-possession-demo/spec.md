@@ -271,14 +271,17 @@ Bookmark frequently-used NPCs for quick access and receive notifications about t
 - Actionable errors SHOULD include guidance text for test validation
 - Errors SHOULD use `aria-live="assertive"` to trigger test framework listeners
 
-**NFR-002f - Known Limitations (Not Requirements)**:
+**NFR-002f - Known Limitations & Resolution Support**:
 
-- Desktop/mobile game - requires vision and manual dexterity (NOT accessible to blind/motor-impaired users)
+- **Resolution Support**: Mobile devices (phones, tablets) through ultra widescreen desktop
+  - Minimum: 360x640 (mobile portrait)
+  - Typical ranges: 360x640 (phone), 768x1024 (tablet), 1920x1080 (desktop), 3440x1440 (ultrawide)
+  - Responsive design MUST adapt layout for mobile, tablet, and desktop breakpoints
+- **Accessibility Limitations**: Requires vision and manual dexterity (NOT accessible to blind/motor-impaired users)
 - No keyboard-only navigation required (mouse/touch expected)
 - No screen reader optimization required (ARIA primarily for test automation)
 - No color contrast requirements (visual aesthetics prioritized)
 - No text-only browser support required
-- Minimum resolution: 1280x720 (smaller devices may have degraded UX)
 
 **Rationale**: This approach provides test automation benefits (stable selectors, state assertions, component hierarchy) without the development overhead of full WCAG 2.1 AA compliance. ARIA attributes serve dual purpose: minor accessibility improvements at no extra cost, primary benefit to automated testing.
 

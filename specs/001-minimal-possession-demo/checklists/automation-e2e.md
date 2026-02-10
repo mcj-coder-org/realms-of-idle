@@ -337,7 +337,7 @@
 
 - [ ] CHK169 - Are visual game requirements documented (vision required, not accessible to blind users)? [Completeness, Spec §NFR-002f]
 - [ ] CHK170 - Are manual dexterity requirements documented (mouse/touch expected)? [Clarity, Spec §NFR-002f]
-- [ ] CHK171 - Are minimum resolution requirements specified (1280x720, may degrade on smaller devices)? [Completeness, Spec §NFR-002f]
+- [ ] CHK171 - Are resolution support requirements specified (mobile 360x640 to ultrawide 3440x1440, responsive design)? [Completeness, Spec §NFR-002f]
 - [ ] CHK172 - Is lack of screen reader support documented as known limitation? [Coverage, Spec §NFR-002f]
 - [ ] CHK173 - Is lack of keyboard-only navigation documented as known limitation? [Completeness, Spec §NFR-002f]
 
