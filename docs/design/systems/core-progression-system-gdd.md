@@ -420,89 +420,104 @@ Player Journey:
    → [Warrior] Level Up: Level 1 → Level 2 ✓
 ```
 
-### 4.4 Multi-Classing XP Split
+### 4.4 Multi-Class Automatic Hierarchical XP
 
-When holding multiple classes, action XP splits among held classes:
+**All accepted classes are always active** - XP distribution is **automatic** based on tag hierarchy:
 
 ```
-Player holds: [Warrior] + [Blacksmith]
-Action config: Warrior 60% / Blacksmith 40%
+Player has: [Fighter], [Warrior], [Blade Dancer], [Blacksmith]
 
-Action: Swing sword
-  → combat.melee bucket: +10 XP (always full amount)
-  → [Warrior] class XP: +6 XP (60%)
-  → [Blacksmith] class XP: 0 XP (no tag match)
+Action: Attack with Sword → Tag: combat.melee.sword → Base 100 XP
 
-Action: Forge sword
-  → craft.smithing bucket: +10 XP (always full amount)
-  → [Warrior] class XP: 0 XP (no tag match)
-  → [Blacksmith] class XP: +6 XP (60% of class-XP split)
+Bucket XP (always full):
+  → combat.melee.sword bucket: +100 XP (full amount, no split)
+
+Class XP (hierarchical split):
+  → Blade Dancer: +50 XP (exact match: combat.melee.sword)
+  → Warrior: +25 XP (parent: combat.melee)
+  → Fighter: +12.5 XP (grandparent: combat)
+  → Blacksmith: 0 XP (no tag match)
+
+Action: Forge Iron Sword → Tag: craft.smithing.weapon.sword → Base 100 XP
+
+Bucket XP:
+  → craft.smithing.weapon.sword bucket: +100 XP (full)
+
+Class XP:
+  → Blacksmith: +50 XP (exact match: craft.smithing)
+  → Fighter: 0 XP (no match)
+  → Warrior: 0 XP (no match)
+  → Blade Dancer: 0 XP (no match)
 ```
 
-**Important:** Buckets always get full XP. Only class XP splits based on player configuration.
+**Formula**:
+
+1. Find most specific matching tag
+2. Award 50% to exact match
+3. Award 50% to parent level (split if multiple)
+4. Continue subdividing remainder up hierarchy
+
+**Important:** Buckets always get full XP. Class XP uses automatic hierarchical split.
 
 ---
 
-## 5. Multi-Classing Mechanics
+## 5. Multi-Class Mechanics
 
-### 5.1 Maximum Active Classes
+### 5.1 All Classes Always Active
 
-Players may hold up to **3 active classes** simultaneously:
-
-```
-1 Active Class:  100% XP to primary
-2 Active Classes: Player configures split (60%/40%)
-3 Active Classes: Player configures split (50%/30%/20%)
-
-Default distribution when 2nd class added:
-  Primary: 60%
-  Secondary: 40%
-
-Default distribution when 3rd class added:
-  Primary: 50%
-  Secondary: 30%
-  Tertiary: 20%
-```
-
-### 5.2 XP Split Configuration
-
-Players can customize the split at any time outside of rest:
+**Core Principle**: No class slots, no dormant classes - every accepted class is always active.
 
 ```
-Class XP Split Configuration:
-┌─────────────────────────────────┐
-│ Active Classes:                 │
-│                                 │
-│ [Warrior]         ████████ 60%  │
-│ [Blacksmith]      █████   40%   │
-│                                 │
-│ Adjust: [─] [────────] [+]      │
-│                                 │
-│ [Save Changes]                  │
-└─────────────────────────────────┘
+Character with 5 Classes:
+  - [Fighter - Apprentice]
+  - [Warrior - Journeyman]
+  - [Blade Dancer - Apprentice]
+  - [Blacksmith - Journeyman]
+  - [Miner - Apprentice]
 
-Rules:
-- Must total 100% across all active classes
-- Changes take effect next action
-- Cannot change during rest/combat
+All 5 classes gain XP from every action (hierarchical split)
+No activation required, no slots to manage
 ```
 
-### 5.3 Inactive/Dormant Classes
+### 5.2 Primary Class Determination
 
-When a player has 3 active classes and accepts a 4th:
+**Primary Class**: Highest-leveled **Tier 2** class (fallback: Tier 1)
 
 ```
-Options:
-1. Make 4th class active, move one to dormant
-2. Keep 4th class dormant (activate later)
+Example: Multiple Tier 2 Classes
+  Classes:
+    [Warrior - Level 15] (Tier 2) ← PRIMARY
+    [Blade Dancer - Level 8] (Tier 3)
+    [Blacksmith - Level 12] (Tier 2)
 
-Dormant Classes:
-- XP accumulation paused
-- Class levels retained
-- Can reactivate anytime (no penalty)
-- Max 3 active at once
-- No cooldown on switching
+  Primary: Warrior (highest Tier 2)
+
+Benefits:
+- Displayed in character nameplate
+- Determines UI class icon
+- No mechanical advantages (all classes always active)
 ```
+
+### 5.3 Foundational Class Coverage
+
+If no class tracks an action's tag, XP flows to **Foundational** classes (Tier 1):
+
+```
+Action: Attack with Sword → combat.melee.sword
+Character has: [Cook], [Miner] (neither track combat tags)
+
+Result:
+  Cook:  50 XP (Foundational class)
+  Miner: 50 XP (Foundational class)
+
+Rationale: XP always counts, even for non-matching actions
+```
+
+**Foundational Classes** (Tier 1):
+
+- Fighter, Crafter, Gatherer, Host, Trader, Scholar, Socialite
+
+**Rule**: If no classes match action tags, split XP equally among all Foundational classes.
 
 ### 5.4 Class Synergy Bonuses
 
@@ -596,7 +611,7 @@ This document resolves the following CRITICAL priority questions from open-quest
 | 1.3 | Tag XP Per Action            | Hierarchical distribution: 100%/70%/50%/35%              | ✅ Resolved |
 | 1.4 | Wildcard Tag Resolution      | Any Single Match: Max(matching tags) ≥ Requirement       | ✅ Resolved |
 | 1.5 | Idle Loop Efficiency         | Decoupled: Efficiency affects class XP only, not buckets | ✅ Resolved |
-| 2.1 | Dormant Class Handling       | Persistent, reactivable anytime, no penalty              | ✅ Resolved |
+| 2.1 | Multi-Class XP Distribution  | Automatic hierarchical split (50/25/12.5...)             | ✅ Resolved |
 | 2.2 | Class Evolution Presentation | Level Up Event with choices, deferred to backlog         | ✅ Resolved |
 | 2.3 | Class Evolution Rejection    | Yes, can defer evolution choices to backlog              | ✅ Resolved |
 
@@ -623,12 +638,19 @@ public class PlayerProgression
     // XP Buckets (permanent, never decay)
     public Dictionary<string, long> XPBuckets { get; set; }
 
-    // Active Classes
-    public List<ActiveClass> ActiveClasses { get; set; }
-    public int MaxActiveClasses => 3;
+    // All Classes (always active)
+    public List<PlayerClass> Classes { get; set; }
 
-    // Dormant Classes
-    public List<DormantClass> DormantClasses { get; set; }
+    // Primary class determination
+    public PlayerClass GetPrimaryClass()
+    {
+        // Highest-leveled Tier 2 class, fallback to Tier 1
+        var tier2Classes = Classes.Where(c => c.TreeTier == 2).OrderByDescending(c => c.Level);
+        if (tier2Classes.Any())
+            return tier2Classes.First();
+
+        return Classes.Where(c => c.TreeTier == 1).OrderByDescending(c => c.Level).FirstOrDefault();
+    }
 
     // Level Up Event State
     public LevelUpEvent PendingLevelUpEvent { get; set; }
@@ -652,14 +674,15 @@ public class XPBucket
 
 ### 9.2 Complexity Ratings
 
-| Component               | Implementation Complexity | Notes                        |
-| ----------------------- | ------------------------- | ---------------------------- |
-| XP Bucket Distribution  | Low (2/5)                 | Simple hierarchical math     |
-| Class Eligibility Check | Low (1/5)                 | Threshold comparison         |
-| Level Up Event Logic    | Medium (3/5)              | UI state management, backlog |
-| Class XP Calculation    | Low (2/5)                 | Standard XP curve            |
-| Multi-Class XP Split    | Medium (3/5)              | Configurable distribution    |
-| Idle Efficiency         | Low (2/5)                 | Time-based multiplier        |
+| Component                 | Implementation Complexity | Notes                        |
+| ------------------------- | ------------------------- | ---------------------------- |
+| XP Bucket Distribution    | Low (2/5)                 | Simple hierarchical math     |
+| Class Eligibility Check   | Low (1/5)                 | Threshold comparison         |
+| Level Up Event Logic      | Medium (3/5)              | UI state management, backlog |
+| Class XP Calculation      | Low (2/5)                 | Standard XP curve            |
+| Hierarchical XP Split     | High (4/5)                | Recursive tag tree traversal |
+| Primary Class Calculation | Low (2/5)                 | Sort by tier + level         |
+| Idle Efficiency           | Low (2/5)                 | Time-based multiplier        |
 
 ---
 
@@ -805,11 +828,13 @@ Starting State:
    → Player accepts [Blacksmith]
    → [Blacksmith] Level 1 granted
 
-3. Multi-classing active:
-   Active Classes: [Warrior] (60%), [Blacksmith] (40%)
+3. Multi-class automatic XP:
+   Current Classes: [Warrior], [Blacksmith]
 
-   Action: Sword combat
+   Action: Sword combat → Tag: combat.melee
      → combat.melee bucket: +10 XP (full)
+     → Warrior class XP: +5 XP (exact match: combat.melee)
+     → Blacksmith class XP: 0 XP (no match)
      → [Warrior] class XP: +6 XP (60%)
      → [Blacksmith] class XP: 0 XP (no tag match)
 
