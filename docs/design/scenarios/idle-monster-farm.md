@@ -1,12 +1,12 @@
 ---
-type: system
+type: scenario
 scope: detailed
 status: draft
 version: 1.0.0
 created: 2026-02-02
-updated: 2026-02-02
+updated: 2026-02-10
 subjects: [game-design, monster-farm, idle-game]
-dependencies: []
+dependencies: [idle-game-overview]
 ---
 
 # Monster Farm/Ranch - Idle Game Design Document
