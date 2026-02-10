@@ -297,66 +297,49 @@
 
 ---
 
-## UX/Accessibility Requirements Quality
+## Test Automation Hooks & Basic Accessibility Requirements Quality
 
-### Keyboard Navigation Requirements
+**Purpose**: Verify that requirements define ARIA labels and semantic markup primarily for automated UI testing (Playwright/Selenium) rather than full WCAG compliance. This is a visual mobile game requiring sight and dexterity - full accessibility for disabled users is not the goal.
 
-- [ ] CHK152 - Are keyboard navigation requirements defined for all interactive UI elements? [Completeness, Tasks §T129]
-- [ ] CHK153 - Are keyboard shortcut requirements specified (possess, release, action execution)? [Gap]
-- [ ] CHK154 - Are focus management requirements defined (initial focus, focus trap, focus restoration)? [Completeness, Gap]
-- [ ] CHK155 - Are tab order requirements specified for logical navigation flow? [Clarity, Gap]
-- [ ] CHK156 - Are keyboard-only operation requirements verified (no mouse-only interactions)? [Coverage, Gap]
-- [ ] CHK157 - Are escape key requirements defined for dismissing modals/panels? [Completeness, Gap]
-- [ ] CHK158 - Are arrow key navigation requirements specified for grid/list navigation? [Gap]
+### ARIA Labels for Test Automation
 
-### Screen Reader Requirements
+- [ ] CHK152 - Are aria-label requirements defined for major interactive components to enable test getByLabel() queries? [Completeness, Spec §NFR-002a]
+- [ ] CHK153 - Are aria-label requirements specified for test selector stability (not verbose descriptions)? [Clarity, Spec §NFR-002a]
+- [ ] CHK154 - Are data-testid fallback requirements defined for components without aria-labels? [Completeness, Spec §NFR-002a]
+- [ ] CHK155 - Are test selector priorities documented (prefer aria-label > data-testid > CSS)? [Clarity, Gap]
 
-- [ ] CHK159 - Are ARIA label requirements defined for all interactive components? [Completeness, Tasks §T128]
-- [ ] CHK160 - Are ARIA role requirements specified for custom components (grid, dialog, button)? [Clarity, Gap]
-- [ ] CHK161 - Are ARIA live region requirements defined for dynamic content (activity log, timer updates)? [Completeness, Gap]
-- [ ] CHK162 - Are ARIA state requirements specified (aria-pressed, aria-selected, aria-expanded)? [Completeness, Gap]
-- [ ] CHK163 - Are screen reader announcement requirements defined for state changes (possession, action completion)? [Coverage, Gap]
-- [ ] CHK164 - Are landmark region requirements specified (main, navigation, complementary)? [Completeness, Gap]
-- [ ] CHK165 - Are alternative text requirements defined for all images/icons? [Completeness, Gap]
+### Semantic HTML for Test Framework Compatibility
 
-### Visual Accessibility Requirements
+- [ ] CHK156 - Are button element requirements defined (<button> improves test reliability vs <div>)? [Completeness, Spec §NFR-002b]
+- [ ] CHK157 - Are list element requirements specified (ul/ol enables test framework list queries)? [Clarity, Spec §NFR-002b]
+- [ ] CHK158 - Are form label requirements defined (enables form validation tests)? [Completeness, Spec §NFR-002b]
+- [ ] CHK159 - Are heading hierarchy requirements specified (h1 → h2 → h3 for test landmark navigation)? [Coverage, Spec §NFR-002b]
 
-- [ ] CHK166 - Are color contrast requirements quantified (WCAG AA minimum 4.5:1 for text)? [Clarity, Gap]
-- [ ] CHK167 - Are color-independent indicator requirements defined (not relying on color alone)? [Completeness, Gap]
-- [ ] CHK168 - Are focus indicator requirements specified with measurable visibility criteria? [Clarity, Gap]
-- [ ] CHK169 - Are text sizing requirements defined (minimum font size, scalability)? [Completeness, Gap]
-- [ ] CHK170 - Are reduced motion requirements specified (respect prefers-reduced-motion)? [Coverage, Gap]
-- [ ] CHK171 - Are high contrast mode requirements defined? [Gap]
+### ARIA Roles for Component Identification
 
-### Semantic HTML Requirements
+- [ ] CHK160 - Are ARIA role requirements defined for custom components (role="grid", "toolbar", "dialog")? [Completeness, Spec §NFR-002c]
+- [ ] CHK161 - Are role requirements specified to enable test framework component navigation? [Clarity, Spec §NFR-002c]
+- [ ] CHK162 - Are modal identification requirements defined (role="dialog", aria-modal="true" for test detection)? [Completeness, Spec §NFR-002c]
 
-- [ ] CHK172 - Are semantic HTML element requirements specified (use button for buttons, not div)? [Completeness, Gap]
-- [ ] CHK173 - Are heading hierarchy requirements defined (logical h1-h6 structure)? [Clarity, Gap]
-- [ ] CHK174 - Are list element requirements specified for repeating content? [Completeness, Gap]
-- [ ] CHK175 - Are form label requirements defined (explicit label associations)? [Completeness, Gap]
-- [ ] CHK176 - Are table accessibility requirements specified (th, caption, scope)? [Coverage, Gap]
+### ARIA States for Test Assertions
 
-### Responsive Design Requirements
+- [ ] CHK163 - Are aria-pressed requirements defined for stateful buttons (enables test state assertions)? [Completeness, Spec §NFR-002d]
+- [ ] CHK164 - Are aria-disabled requirements specified for unavailable actions (test can verify state)? [Clarity, Spec §NFR-002d]
+- [ ] CHK165 - Are aria-busy requirements defined for loading states (test can wait for completion)? [Completeness, Spec §NFR-002d]
 
-- [ ] CHK177 - Are viewport requirements defined (desktop-only constraint documented in spec)? [Completeness, Spec §Technical Context]
-- [ ] CHK178 - Are minimum resolution requirements specified? [Clarity, Gap]
-- [ ] CHK179 - Are browser zoom requirements defined (support 200% zoom)? [Completeness, Gap]
-- [ ] CHK180 - Are overflow handling requirements specified (long text, small viewports)? [Coverage, Gap]
+### Error Detection for Test Automation
 
-### Error Message & Feedback Requirements
+- [ ] CHK166 - Are role="alert" requirements defined for error messages (test framework can detect errors)? [Completeness, Spec §NFR-002e]
+- [ ] CHK167 - Are aria-live="assertive" requirements specified for critical errors (triggers test listeners)? [Clarity, Spec §NFR-002e]
+- [ ] CHK168 - Are error message content requirements defined for test validation? [Coverage, Gap]
 
-- [ ] CHK181 - Are error message visibility requirements defined (prominent display)? [Completeness, Gap]
-- [ ] CHK182 - Are error message clarity requirements specified (actionable guidance)? [Clarity, Gap]
-- [ ] CHK183 - Are success feedback requirements defined (confirm action completion)? [Completeness, Gap]
-- [ ] CHK184 - Are loading state feedback requirements specified (visual + screen reader)? [Coverage, Gap]
-- [ ] CHK185 - Are timeout warning requirements defined (notify before session expires)? [Gap]
+### Known Accessibility Limitations
 
-### Cognitive Accessibility Requirements
-
-- [ ] CHK186 - Are consistent interaction pattern requirements defined across components? [Completeness, Gap]
-- [ ] CHK187 - Are clear affordance requirements specified (buttons look clickable)? [Clarity, Gap]
-- [ ] CHK188 - Are simple language requirements defined for UI text? [Gap]
-- [ ] CHK189 - Are help/tooltip requirements specified for complex interactions? [Coverage, Gap]
+- [ ] CHK169 - Are visual game requirements documented (vision required, not accessible to blind users)? [Completeness, Spec §NFR-002f]
+- [ ] CHK170 - Are manual dexterity requirements documented (mouse/touch expected)? [Clarity, Spec §NFR-002f]
+- [ ] CHK171 - Are minimum resolution requirements specified (1280x720, may degrade on smaller devices)? [Completeness, Spec §NFR-002f]
+- [ ] CHK172 - Is lack of screen reader support documented as known limitation? [Coverage, Spec §NFR-002f]
+- [ ] CHK173 - Is lack of keyboard-only navigation documented as known limitation? [Completeness, Spec §NFR-002f]
 
 ---
 
@@ -468,13 +451,14 @@
 - Health check and metrics infrastructure (CHK080-CHK092)
 - Test automation coverage thresholds (CHK105-CHK108)
 
-**UX/Accessibility Gaps** ✨ NEW:
+**Test Automation Hooks & Basic Accessibility** ✨ UPDATED:
 
-- Keyboard navigation requirements (CHK152-CHK158)
-- ARIA label and role requirements (CHK159-CHK165)
-- WCAG color contrast requirements (CHK166-CHK171)
-- Semantic HTML requirements (CHK172-CHK176)
-- Error message and feedback requirements (CHK181-CHK185)
+- ARIA labels for test selectors (CHK152-CHK155)
+- Semantic HTML for test compatibility (CHK156-CHK159)
+- ARIA roles for component identification (CHK160-CHK162)
+- ARIA states for test assertions (CHK163-CHK165)
+- Error detection for test automation (CHK166-CHK168)
+- Known accessibility limitations documented (CHK169-CHK173)
 
 **UI Test Automation Gaps** ✨ NEW:
 
@@ -488,9 +472,9 @@
 
 **Next Steps**:
 
-1. **Review accessibility gaps**: Add WCAG 2.1 AA compliance requirements to spec.md NFRs (CHK152-CHK189)
+1. **Verify test automation hooks**: Confirm ARIA labels and semantic HTML requirements support Playwright/Selenium test stability (CHK152-CHK173)
 2. **Define UI test automation requirements**: Add bUnit and Playwright testing requirements to plan.md (CHK190-CHK236)
-3. **Update spec.md**: Add missing NFRs for logging, observability, health checks, and accessibility
-4. **Update plan.md**: Add E2E test infrastructure, UI test automation, and accessibility requirements
-5. **Create accessibility testing plan**: Define automated accessibility testing strategy (axe-core, pa11y)
+3. **Update spec.md**: Add missing NFRs for logging, observability, health checks (accessibility now complete in NFR-002)
+4. **Update plan.md**: Add E2E test infrastructure and UI test automation requirements
+5. **Document limitations**: Ensure README.md documents known accessibility limitations (vision/dexterity required, no screen reader support)
 6. **Ensure all convention references**: Verify all references to testing-conventions.md and testing-strategy.md are complete

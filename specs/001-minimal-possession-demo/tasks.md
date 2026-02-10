@@ -309,97 +309,43 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 - [ ] T126 [P] Run quickstart.md validation manually
 - [ ] T127 Security: Validate NPC IDs before possession to prevent invalid access
 
-- [ ] T128 Accessibility: Add ARIA labels to interactive components (SUPERSEDED by T189-T249 - detailed NFR-002 implementation)
-- [ ] T129 Accessibility: Ensure keyboard navigation works for all features (SUPERSEDED by T189-T249 - detailed NFR-002 implementation)
+### Test Automation Hooks & Basic Accessibility (NFR-002)
 
-### Accessibility & WCAG 2.1 AA Compliance (NFR-002)
+**Purpose**: Add ARIA labels and semantic markup primarily for automated UI testing (Playwright, Selenium) rather than full accessibility compliance
 
-**Purpose**: Implement comprehensive accessibility requirements to ensure the application is usable by people with disabilities
+#### NFR-002a - ARIA Labels for Test Selectors
 
-#### NFR-002a - Keyboard Navigation
+- [ ] T128 [P] Add aria-label to NPC portraits (enables test getByLabel queries) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
+- [ ] T129 [P] Add aria-label to action buttons (stable test selectors) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
+- [ ] T130 [P] Add aria-label to settlement map and major components in src/RealmsOfIdle.Client.Blazor/Components/SettlementMap.razor
+- [ ] T131 [P] Add data-testid fallback attributes to components without aria-label throughout all components
 
-- [ ] T189 [P] Implement keyboard navigation for NPC portraits (Arrow keys, Tab/Shift+Tab) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T190 [P] Implement P key shortcut to possess focused NPC in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T191 [P] Implement Escape key shortcut to release possession in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T192 [P] Implement Space/Enter key shortcuts for executing focused action in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T193 Implement focus management on possession (focus moves to first action button) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T194 Implement focus management on release (focus returns to NPC portrait) in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T195 Implement focus trap for modals (OfflineProgressModal) in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
-- [ ] T196 [P] Add CSS focus indicators with minimum 3:1 contrast ratio in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T197 Verify tab order follows logical reading order (Top Bar → Sidebar → Map → Actions → Log)
+#### NFR-002b - Semantic HTML for Test Framework Compatibility
 
-#### NFR-002b - Screen Reader Support (ARIA)
+- [ ] T132 [P] Use <button> elements for all interactive actions (improves test reliability) throughout all components
+- [ ] T133 [P] Use <ul>/<ol> for lists (NPC roster, actions, activity log) for test framework navigation
+- [ ] T134 [P] Add heading hierarchy (h1, h2, h3) for landmark navigation in tests in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
 
-- [ ] T198 [P] Add ARIA labels to NPC portraits (name, class, level, gold, state, possess hint) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T199 [P] Add ARIA labels to action buttons (name, duration, rewards) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T200 [P] Add ARIA roles to settlement grid (role="grid", aria-label) in src/RealmsOfIdle.Client.Blazor/Components/SettlementMap.razor
-- [ ] T201 [P] Add ARIA roles to NPC sidebar (role="list", listitem, button) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T202 [P] Add ARIA roles to action panel (role="toolbar") in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T203 [P] Add ARIA live region to activity log (aria-live="polite", aria-atomic="false") in src/RealmsOfIdle.Client.Blazor/Components/ActivityLog.razor
-- [ ] T204 [P] Add ARIA live region for action completion (aria-live="assertive") in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T205 [P] Add ARIA live region to offline progress modal (aria-live="polite", role="dialog", aria-modal="true") in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
-- [ ] T206 [P] Add ARIA states to possessed NPC portrait (aria-pressed="true", aria-current="true") in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T207 [P] Add ARIA states to disabled actions (aria-disabled="true", aria-label explaining why) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T208 [P] Add ARIA landmarks (role="banner", "complementary", "main") to page sections in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T209 Verify screen reader announces all interactive elements correctly
+#### NFR-002c - ARIA Roles for Component Identification
 
-#### NFR-002c - Visual Accessibility (WCAG 2.1 AA)
+- [ ] T135 [P] Add role="grid" to settlement map in src/RealmsOfIdle.Client.Blazor/Components/SettlementMap.razor
+- [ ] T136 [P] Add role="toolbar" to action panel in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
+- [ ] T137 [P] Add role="dialog" and aria-modal="true" to modals in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
 
-- [ ] T210 [P] Audit color contrast ratios for all text (minimum 4.5:1 normal, 3:1 large) using browser DevTools or WCAG contrast checker
-- [ ] T211 [P] Audit color contrast ratios for interactive elements (minimum 3:1) using browser DevTools or WCAG contrast checker
-- [ ] T212 [P] Implement possessed state indicator with border + icon + text (not color alone) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T213 [P] Implement disabled action indicator with grey + strikethrough + disabled cursor + tooltip (not color alone) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T214 [P] Implement action completion indicator with color + checkmark icon + text (not color alone) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T215 [P] Convert all font sizes to relative units (rem/em) in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T216 [P] Set minimum base font size to 14px in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T217 [P] Implement prefers-reduced-motion media query to disable non-essential animations in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T218 Verify browser zoom 100%-200% works without horizontal scrolling
-- [ ] T219 Verify text reflows correctly at 200% zoom
+#### NFR-002d - ARIA States for Test Assertions
 
-#### NFR-002d - Semantic HTML
+- [ ] T138 [P] Add aria-pressed="true" to possessed NPC portraits (test can assert possession state) in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
+- [ ] T139 [P] Add aria-disabled="true" to unavailable actions (test can verify state) in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
+- [ ] T140 [P] Add aria-busy="true" to loading states (test can wait for completion) in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
 
-- [ ] T220 [P] Verify all interactive elements use <button> (not <div> with click handlers) throughout all components
-- [ ] T221 [P] Add proper heading hierarchy (h1, h2, h3) in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T222 [P] Convert NPC roster to <ul> with <li> in src/RealmsOfIdle.Client.Blazor/Components/NPCSidebar.razor
-- [ ] T223 [P] Convert action buttons to <ul role="toolbar"> with <li role="none"> in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T224 [P] Convert activity log to <ol> with <li> in src/RealmsOfIdle.Client.Blazor/Components/ActivityLog.razor
-- [ ] T225 [P] Add explicit labels to priority sliders (label for attribute) in src/RealmsOfIdle.Client.Blazor/Components/PriorityPanel.razor
-- [ ] T226 [P] Add alt text to all images (NPC portraits, building icons, decorative images) throughout all components
+#### NFR-002e - Error Detection for Tests
 
-#### NFR-002e - Error Messages & Feedback
+- [ ] T141 [P] Add role="alert" to error messages (test framework can detect errors) in src/RealmsOfIdle.Client.Blazor/Components/ErrorBoundary.razor
+- [ ] T142 [P] Add aria-live="assertive" to critical errors (triggers test listeners) throughout error handling components
 
-- [ ] T227 [P] Add aria-live="assertive" or role="alert" to error messages throughout all components
-- [ ] T228 [P] Implement error message visual distinction with color + icon in src/RealmsOfIdle.Client.Blazor/Components/ErrorBoundary.razor
-- [ ] T229 [P] Add actionable guidance to "Insufficient materials" error messages in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T230 [P] Add screen reader announcement for action completion success in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T231 [P] Add screen reader announcement for possession state changes in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T232 [P] Add loading state with spinner + text + aria-busy="true" in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor
-- [ ] T233 [P] Add auto-dismiss timeout warning (30s before close) to offline progress modal in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
+#### NFR-002f - Documentation
 
-#### NFR-002f - Responsive Design Constraints
-
-- [ ] T234 [P] Document desktop-only limitation (minimum 1280x720) in README.md
-- [ ] T235 Verify browser zoom 100%-200% without horizontal scroll (repeat verification for completeness)
-- [ ] T236 Verify text reflow at 200% zoom (repeat verification for completeness)
-
-#### NFR-002g - Cognitive Accessibility
-
-- [ ] T237 [P] Audit all action buttons for consistent visual style and behavior
-- [ ] T238 [P] Add raised/clickable appearance to buttons (visual depth cues) in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T239 [P] Add pointer cursor to all interactive elements in src/RealmsOfIdle.Client.Blazor/wwwroot/css/possession-demo.css
-- [ ] T240 [P] Audit error messages for plain language (no jargon)
-- [ ] T241 [P] Add help/tooltips to action buttons with requirements in src/RealmsOfIdle.Client.Blazor/Components/ActionPanel.razor
-- [ ] T242 [P] Add keyboard shortcuts documentation (help text or tooltip) in src/RealmsOfIdle.Client.Blazor/Components/TopBar.razor or separate help modal
-
-#### Accessibility Testing & Validation
-
-- [ ] T243 [P] Run axe DevTools accessibility scanner on all pages and fix issues
-- [ ] T244 [P] Test keyboard navigation flow (no mouse) through all features
-- [ ] T245 [P] Test screen reader (NVDA/JAWS on Windows, VoiceOver on macOS) with all features
-- [ ] T246 [P] Test browser zoom 100%-200% across all pages
-- [ ] T247 [P] Test prefers-reduced-motion setting in browser DevTools
-- [ ] T248 [P] Verify WCAG 2.1 AA compliance using WAVE or Lighthouse accessibility audit
-- [ ] T249 Document accessibility testing results and any known limitations in README.md
+- [ ] T143 [P] Document known limitations in README.md (vision/dexterity required, no screen reader support, minimum 1280x720)
 
 ---
 
@@ -538,7 +484,7 @@ With multiple developers:
 
 ## Task Count Summary
 
-- **Total Tasks**: 249 (was 154, added 61 accessibility tasks, T128-T129 superseded by detailed NFR-002 tasks)
+- **Total Tasks**: 170 (was 154, removed 61 excessive WCAG tasks, added 16 pragmatic test automation tasks)
 - **Phase 1 (Setup)**: 10 tasks
 - **Phase 2 (Foundational)**: 23 tasks
 - **Phase 2.5 (Offline Progress & Tab Visibility)**: 25 tasks (9 tests + 16 implementation) ⚠️ BLOCKING
@@ -547,22 +493,20 @@ With multiple developers:
 - **Phase 5 (User Story 3 - Context-Aware Actions)**: 13 tasks (3 tests + 10 implementation)
 - **Phase 6 (User Story 4 - Persistent Priorities)**: 12 tasks (3 tests + 9 implementation)
 - **Phase 7 (User Story 5 - Favorites System)**: 15 tasks (3 tests + 12 implementation)
-- **Phase 8 (Polish & Accessibility)**: 113 tasks (16 polish + 2 superseded accessibility + 61 NFR-002 accessibility + 7 testing/validation + 27 implementation tasks)
+- **Phase 8 (Polish & Test Automation Hooks)**: 34 tasks (16 polish + 16 NFR-002 test automation + 2 original T128-T129)
 
 **MVP Scope (Recommended)**: Phases 1 + 2 + 2.5 + 3 + 4 = 96 tasks (Setup + Foundation + Offline Progress + US1 + US2)
 
-**Accessibility Scope (NFR-002)**: 61 tasks across 7 sub-sections + 7 testing/validation tasks = 68 total accessibility tasks
+**Test Automation Scope (NFR-002)**: 16 tasks focused on ARIA labels for Playwright/Selenium test stability (not full accessibility)
 
-- NFR-002a: Keyboard Navigation (9 tasks: T189-T197)
-- NFR-002b: Screen Reader Support (12 tasks: T198-T209)
-- NFR-002c: Visual Accessibility (10 tasks: T210-T219)
-- NFR-002d: Semantic HTML (7 tasks: T220-T226)
-- NFR-002e: Error Messages & Feedback (7 tasks: T227-T233)
-- NFR-002f: Responsive Design (3 tasks: T234-T236)
-- NFR-002g: Cognitive Accessibility (6 tasks: T237-T242)
-- Accessibility Testing & Validation (7 tasks: T243-T249)
+- NFR-002a: ARIA Labels for Test Selectors (4 tasks: T128-T131)
+- NFR-002b: Semantic HTML for Test Compatibility (3 tasks: T132-T134)
+- NFR-002c: ARIA Roles for Component Identification (3 tasks: T135-T137)
+- NFR-002d: ARIA States for Test Assertions (3 tasks: T138-T140)
+- NFR-002e: Error Detection for Tests (2 tasks: T141-T142)
+- NFR-002f: Documentation (1 task: T143)
 
-**Parallel Opportunities**: 151 tasks marked [P] can run in parallel when dependencies allow (was 61, added 46 accessibility implementation tasks + 44 other accessibility tasks)
+**Parallel Opportunities**: 76 tasks marked [P] can run in parallel when dependencies allow (reduced from 151 after removing unnecessary WCAG tasks)
 
 **Independent Test Criteria**:
 
