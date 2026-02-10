@@ -168,3 +168,9 @@ Examples:
 ## Recent Changes
 
 - 001-minimal-possession-demo: Added C# / .NET 10.0 (as per global.json) + Blazor WASM, System.Timers (game loop)
+- 002-doc-migration-rationalization: Documentation structure and validation
+  - **Progressive Loading**: Start at `docs/design/index.md`, navigate via links (avoid deep paths)
+  - **Frontmatter**: Check `gdd_ref` for authoritative mechanics
+  - **GDD vs Content**: `systems/` = authoritative, `content/` = examples
+  - **Cross-Reference**: Use `reference/cross-reference/` for GDD ↔ Content mappings
+  - **Validation**: Run `.specify/scripts/validate-all.sh` before committing docs changes
