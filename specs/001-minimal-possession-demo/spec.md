@@ -229,6 +229,147 @@ Bookmark frequently-used NPCs for quick access and receive notifications about t
   3. Display warning: "Could not calculate offline progress. Loaded last saved state."
   4. Continue normal gameplay without modal
 
+#### NFR-002: Accessibility & WCAG 2.1 AA Compliance
+
+**NFR-002a - Keyboard Navigation**:
+
+- ALL interactive elements MUST be keyboard accessible (no mouse-only interactions)
+- Tab order MUST follow logical reading order: Top Bar → NPC Sidebar → Settlement Map → Action Panel → Activity Log
+- Focus indicators MUST be visible with minimum 3:1 contrast ratio against background
+- Keyboard shortcuts MUST be provided:
+  - `P` key: Possess focused NPC (when NPC portrait has focus)
+  - `Escape` key: Release possession and return to observer mode
+  - `Space` or `Enter`: Execute focused action
+  - `Arrow keys`: Navigate between NPC portraits in sidebar
+  - `Tab` / `Shift+Tab`: Navigate between interactive regions
+- Focus MUST be managed on state changes:
+  - On possession: Focus moves to first action button in Action Panel
+  - On release: Focus returns to previously possessed NPC portrait
+  - On modal display: Focus moves to modal, focus trap active within modal
+- All keyboard shortcuts MUST be documented in help text or tooltips
+
+**NFR-002b - Screen Reader Support (ARIA)**:
+
+- All interactive components MUST have ARIA labels:
+  - NPC portraits: `aria-label="Mara, Innkeeper, Level 5, 100 gold, currently idle. Press P to possess."`
+  - Action buttons: `aria-label="Serve Customer. Duration: 5 seconds. Reward: +5 gold, +2 reputation."`
+  - Release button: `aria-label="Release control of Mara and return to observer mode"`
+  - Activity log: `aria-label="Activity log showing last 20 NPC actions"`
+- ARIA roles MUST be assigned to custom components:
+  - Settlement grid: `role="grid"`, `aria-label="10x10 settlement map with 2 buildings and 4 NPCs"`
+  - NPC sidebar: `role="list"`, `aria-label="NPC roster"`
+  - NPC portrait: `role="listitem"` and `role="button"`
+  - Action panel: `role="toolbar"`, `aria-label="Available actions"`
+- ARIA live regions MUST announce dynamic content:
+  - Activity log: `aria-live="polite"`, `aria-atomic="false"` (announces new entries)
+  - Timer countdown: `aria-live="off"` (do NOT announce every tick, too verbose)
+  - Action completion: `aria-live="assertive"` (announce immediately on completion)
+  - Offline progress modal: `aria-live="polite"`, `role="dialog"`, `aria-modal="true"`
+- ARIA states MUST reflect current UI state:
+  - Possessed NPC portrait: `aria-pressed="true"`, `aria-current="true"`
+  - Disabled actions: `aria-disabled="true"` with `aria-label` explaining why (e.g., "Craft Sword - disabled, insufficient Iron Ore")
+  - Loading states: `aria-busy="true"` during initialization
+- Landmarks MUST be defined:
+  - Top bar: `role="banner"`
+  - NPC sidebar: `role="complementary"`, `aria-label="NPC roster"`
+  - Settlement map: `role="main"`, `aria-label="Settlement view"`
+  - Action panel: `role="complementary"`, `aria-label="Actions"`
+  - Activity log: `role="complementary"`, `aria-label="Activity log"`
+
+**NFR-002c - Visual Accessibility (WCAG 2.1 AA)**:
+
+- Color contrast MUST meet WCAG AA standards:
+  - Normal text (< 18pt): Minimum 4.5:1 contrast ratio
+  - Large text (≥ 18pt or 14pt bold): Minimum 3:1 contrast ratio
+  - Interactive elements: Minimum 3:1 contrast ratio for borders/icons
+  - Focus indicators: Minimum 3:1 contrast ratio against adjacent colors
+- Color MUST NOT be the only indicator of state:
+  - Possessed state: Border color + icon + text label ("POSSESSED")
+  - Disabled actions: Greyed out + strikethrough + disabled cursor + tooltip
+  - Action completion: Color + checkmark icon + text ("Complete!")
+- Text sizing MUST support:
+  - Browser zoom up to 200% without horizontal scrolling
+  - Minimum base font size: 14px for body text
+  - Relative units (rem/em) for all font sizes (not px)
+- Reduced motion MUST be respected:
+  - Detect `prefers-reduced-motion: reduce` media query
+  - IF reduced motion preferred THEN disable:
+    - NPC portrait animations on possession
+    - Action timer countdown animations
+    - Transition effects on modal open/close
+  - Keep essential animations: Timer progress bar (slowed), critical state changes
+- Focus indicators MUST be:
+  - Visible and clearly distinguishable (2px solid outline minimum)
+  - Maintained when navigating with keyboard
+  - Not hidden by CSS (`outline: none` prohibited without alternative)
+
+**NFR-002d - Semantic HTML**:
+
+- Buttons MUST use `<button>` elements (not `<div>` with click handlers)
+- Headings MUST follow logical hierarchy:
+  - Page title: `<h1>Millbrook Settlement</h1>`
+  - Section headings: `<h2>NPCs</h2>`, `<h2>Actions</h2>`
+  - Subsection headings: `<h3>` for NPC names, action categories
+- Lists MUST use proper list elements:
+  - NPC roster: `<ul>` with `<li>` for each NPC
+  - Action buttons: `<ul role="toolbar">` with `<li role="none">` wrappers
+  - Activity log: `<ol>` (ordered by time) with `<li>` for each entry
+- Form elements MUST have explicit labels:
+  - Priority sliders: `<label for="quality-slider">Quality Priority</label>`
+  - All inputs associated with `<label>` via `for` attribute or wrapping
+- Images MUST have alt text:
+  - NPC portraits: `alt="Portrait of Mara, Innkeeper"`
+  - Building icons: `alt="Inn building icon"`
+  - Decorative images: `alt=""` (empty string, not missing)
+
+**NFR-002e - Error Messages & Feedback**:
+
+- Error messages MUST be:
+  - Announced to screen readers via `aria-live="assertive"` or `role="alert"`
+  - Visible with clear visual distinction (color + icon, not color alone)
+  - Actionable with specific guidance: "Insufficient materials: need 2 Iron Ore. Visit the mine to gather more."
+  - Persistent until user acknowledges or error resolves
+- Success feedback MUST be provided:
+  - Action completion: Visual + audible (optional) + screen reader announcement
+  - State changes: Possession acquired/released announced to screen reader
+  - Offline progress: Modal summary + screen reader announcement of total rewards
+- Loading states MUST indicate progress:
+  - Initial load: Spinner + text "Loading settlement..." + `aria-busy="true"`
+  - Long actions: Progress bar + remaining time + screen reader updates (sparingly)
+- Timeout warnings MUST be announced:
+  - 30 seconds before auto-dismiss: "Modal will close in 30 seconds" (screen reader + visual)
+
+**NFR-002f - Responsive Design Constraints**:
+
+- Desktop-only UI (per Technical Context) documented as accessibility limitation
+- Minimum supported resolution: 1280x720 (HD)
+- Browser zoom MUST support 100%-200% without:
+  - Horizontal scrolling
+  - Content overlap
+  - Loss of functionality
+- Text reflow MUST work at 200% zoom:
+  - Multi-line wrapping for long NPC names or action descriptions
+  - Buttons remain clickable and readable
+
+**NFR-002g - Cognitive Accessibility**:
+
+- Interaction patterns MUST be consistent:
+  - All action buttons follow same visual style and behavior
+  - Possession flow identical for all NPCs
+  - Modal dismiss behavior consistent (Escape, X button, auto-dismiss)
+- UI affordances MUST be clear:
+  - Buttons appear raised/clickable (visual depth cues)
+  - Interactive elements change cursor to pointer
+  - Disabled elements clearly distinguished (not just lower opacity)
+- Language MUST be simple and clear:
+  - Avoid jargon: Use "Serve Customer" not "Execute Service Transaction"
+  - Action descriptions concise: "5 seconds, +5 gold" not "This action takes 5 seconds to complete and grants 5 gold upon successful completion"
+  - Error messages in plain language
+- Help/tooltips MUST be available:
+  - Hover or focus on action buttons shows tooltip with requirements
+  - First-time user sees brief tutorial or help text
+  - Keyboard shortcuts documented in accessible location
+
 ### Key Entities _(include if feature involves data)_
 
 - **Settlement**: Represents Millbrook with buildings and NPCs, tracks world time
