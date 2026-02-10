@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""
+generate_xref_report.py
+Generates cross-reference report mapping GDD sections to content files
+Part of 002-doc-migration-rationalization
+
+Output: docs/design/reference/cross-reference/gdd-to-content.md
+"""
+
+import re
+from pathlib import Path
+from datetime import datetime
+from collections import defaultdict
+from typing import Optional, Dict, List, Tuple
+
+def extract_frontmatter(file_path: Path) -> Optional[Dict[str, str]]:
+    """Extract frontmatter from markdown file"""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        if not content.startswith('---\n'):
+            return None
+
+        match = re.match(r'^---\n(.*?)\n---\n', content, re.DOTALL)
+        if not match:
+            return None
+
+        frontmatter_text = match.group(1)
+        frontmatter = {}
+
+        for line in frontmatter_text.split('\n'):
+            if ':' in line:
+                key, value = line.split(':', 1)
+                key = key.strip()
+                value = value.strip().strip('"').strip("'")
+                frontmatter[key] = value
+
+        return frontmatter
+
+    except Exception:
+        return None
+
+
+def scan_content_files(content_dir: Path) -> List[Tuple[str, str, str]]:
+    """Scan content files and collect gdd_ref links
+
+    Returns: List of (gdd_ref, title, rel_path) tuples
+    """
+    results = []
+    total_files = 0
+    files_with_gddref = 0
+
+    for md_file in content_dir.rglob("*.md"):
+        # Skip template and index directories
+        if "_templates" in md_file.parts or "_indexes" in md_file.parts:
+            continue
+
+        total_files += 1
+
+        fm = extract_frontmatter(md_file)
+        if not fm:
+            continue
+
+        gdd_ref = fm.get('gdd_ref')
+        if not gdd_ref:
+            continue
+
+        files_with_gddref += 1
+
+        title = fm.get('title', md_file.stem)
+        rel_path = md_file.relative_to(content_dir)
+
+        results.append((gdd_ref, title, str(rel_path)))
+
+    print(f"Found {files_with_gddref} content files with gdd_ref (out of {total_files} total)")
+    print("")
+
+    return results, total_files, files_with_gddref
+
+
+def generate_report(data: List[Tuple[str, str, str]], total_files: int, files_with_gddref: int, output_file: Path):
+    """Generate markdown cross-reference report"""
+
+    # Sort by gdd_ref
+    data.sort(key=lambda x: x[0])
+
+    # Group by GDD file and section
+    grouped = defaultdict(lambda: defaultdict(list))
+
+    for gdd_ref, title, rel_path in data:
+        # Parse gdd_ref
+        if '#' in gdd_ref:
+            gdd_path, section_id = gdd_ref.split('#', 1)
+        else:
+            gdd_path = gdd_ref
+            section_id = "(General)"
+
+        grouped[gdd_path][section_id].append((title, rel_path))
+
+    # Calculate coverage
+    coverage = (files_with_gddref / total_files * 100) if total_files > 0 else 0
+
+    # Generate report
+    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write("# GDD to Content Cross-Reference\n\n")
+        f.write(f"**Generated**: {timestamp}\n")
+        f.write("**Feature**: 002-doc-migration-rationalization\n")
+        f.write("**Purpose**: Maps authoritative GDD sections to content files that reference them\n\n")
+        f.write("---\n\n")
+        f.write("## Summary\n\n")
+        f.write(f"- **Total Content Files**: {total_files}\n")
+        f.write(f"- **Files with gdd_ref**: {files_with_gddref}\n")
+        f.write(f"- **Coverage**: {coverage:.1f}%\n\n")
+        f.write("---\n\n")
+        f.write("## Cross-Reference Map\n\n")
+        f.write("Format: Each GDD section lists all content files that reference it.\n\n")
+
+        # Write grouped data
+        for gdd_path in sorted(grouped.keys()):
+            f.write(f"### {gdd_path}\n\n")
+
+            for section_id in sorted(grouped[gdd_path].keys()):
+                f.write(f"#### #{section_id}\n\n")
+
+                for title, rel_path in sorted(grouped[gdd_path][section_id]):
+                    # Use relative path from docs/design/content
+                    f.write(f"- [{title}](../../content/{rel_path})\n")
+
+                f.write("\n")
+
+            f.write("\n")
+
+        # Footer
+        f.write("---\n\n")
+        f.write("## Usage\n\n")
+        f.write("This cross-reference map enables:\n\n")
+        f.write("1. **GDD Impact Analysis**: When updating a GDD section, find all affected content\n")
+        f.write("2. **Content Validation**: Verify content files correctly reference authoritative mechanics\n")
+        f.write("3. **Documentation Coverage**: Identify GDD sections with few/no content examples\n\n")
+        f.write("---\n\n")
+        f.write("## Validation\n\n")
+        f.write("To validate all gdd_ref links:\n\n")
+        f.write("```bash\n")
+        f.write(".specify/scripts/validate-gdd-references.sh\n")
+        f.write("```\n\n")
+        f.write("---\n\n")
+        f.write("_Generated by generate_xref_report.py from 002-doc-migration-rationalization_\n")
+
+
+def main():
+    # Find repo root
+    repo_root = Path(__file__).resolve().parent.parent.parent
+
+    # Paths
+    docs_dir = repo_root / "docs"
+    content_dir = docs_dir / "design" / "content"
+    output_dir = docs_dir / "design" / "reference" / "cross-reference"
+    output_file = output_dir / "gdd-to-content.md"
+
+    # Create output directory
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    print("=== Generating GDD Cross-Reference Report ===")
+    print("Scanning content files for gdd_ref links...")
+    print("")
+
+    # Scan content files
+    data, total_files, files_with_gddref = scan_content_files(content_dir)
+
+    # Generate report
+    generate_report(data, total_files, files_with_gddref, output_file)
+
+    print("Cross-reference report generated at:")
+    print(f"  {output_file}")
+    print("")
+    print("=== Report Statistics ===")
+    print(f"Total content files: {total_files}")
+    print(f"Files with gdd_ref: {files_with_gddref}")
+    coverage = (files_with_gddref / total_files * 100) if total_files > 0 else 0
+    print(f"Coverage: {coverage:.1f}%")
+
+
+if __name__ == '__main__':
+    main()
