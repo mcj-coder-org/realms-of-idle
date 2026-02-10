@@ -10,7 +10,7 @@ tree_tier: 1
 
 ### The Calling
 
-The Spiritcaller represents the awakening of connection to the spirit world - the moment when a person first senses the presence of spirits and learns to communicate with them. Before mastering shamanic arts, every tribal magic user must first become a Spiritcaller: understanding the nature of spirits, learning basic communion, and opening their soul to the spirit realm.
+The Spiritcaller represents the awakening of connection to the spirit world - the moment when a person first senses the presence of spirits and learns to communicate with them. Before mastering shamanic arts, every tribal magic user must first unlocks eligibility for Spiritcaller: understanding the nature of spirits, learning basic communion, and opening their soul to the spirit realm.
 
 Spiritcallers emerge when spiritual sensitivity manifests. The child who speaks to ancestors in dreams. The hunter who senses animal spirits before the prey appears. The healer who instinctively knows which herbs the land spirits favor. The spirit world chooses them, and they choose to develop the connection.
 
@@ -26,11 +26,11 @@ A Spiritcaller's development determines their future path. Some will become gene
 
 ### Prerequisites
 
-| Requirement        | Value                                                   |
-| ------------------ | ------------------------------------------------------- |
-| XP Threshold       | 100 spirit-related actions (guaranteed unlock)          |
-| Related Foundation | [Channeler](../channeler/) (optional, provides bonuses) |
-| Tag Depth Access   | 1 level (e.g., `Shamanic` only)                         |
+| Requirement        | Value                                                  |
+| ------------------ | ------------------------------------------------------ |
+| XP Threshold       | 100 spirit-related actions (guaranteed unlock)         |
+| Related Foundation | [Channeler](./channeler/) (optional, provides bonuses) |
+| Tag Depth Access   | 1 level (e.g., `Shamanic` only)                        |
 
 ### Unlock Requirements
 
@@ -47,10 +47,10 @@ A Spiritcaller's development determines their future path. Some will become gene
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Type            | Link                                                                           | Description                                   |
-| ------------------ | --------------- | ------------------------------------------------------------------------------ | --------------------------------------------- |
-| Spirit Pool Access | Mechanic Unlock | [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access/index.md) | Unlocks connection to tribal spirit pool      |
-| Spirit Sense       | Passive         | [Spirit Sense](../../skills/passive/spirit-sense/index.md)                     | Can detect spirit presence within short range |
+| Skill              | Type            | Link                                                                         | Description                                   |
+| ------------------ | --------------- | ---------------------------------------------------------------------------- | --------------------------------------------- |
+| Spirit Pool Access | Mechanic Unlock | [Spirit Pool Access](././skills/mechanic-unlock/spirit-pool-access/index.md) | Unlocks connection to tribal spirit pool      |
+| Spirit Sense       | Passive         | [Spirit Sense](././skills/passive/spirit-sense/index.md)                     | Can detect spirit presence within short range |
 
 ### XP Progression
 
@@ -76,7 +76,7 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 ### Progression Paths
 
-Spiritcaller transitions to Shaman upon reaching 5,000 XP:
+Spiritcaller unlock eligibility for Shaman upon reaching 5,000 XP:
 
 | Tier 2 Class | Focus                                           | Link                |
 | ------------ | ----------------------------------------------- | ------------------- |
@@ -94,7 +94,7 @@ As a Tier 1 class, Spiritcaller has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
-- **Shamanic Magic:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)
-- **Spirit Pool:** [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics)
-- **Skills:** [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access/index.md), [Spirit Sense](../../skills/passive/spirit-sense/index.md)
+- **Tier System:** [Class Tiers](./././systems/character/class-tiers/index.md)
+- **Shamanic Magic:** [Shamanic Magic](./././systems/magic/shamanic-magic/index.md)
+- **Spirit Pool:** [Spirit Pool Mechanics](./././systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics)
+- **Skills:** [Spirit Pool Access](././skills/mechanic-unlock/spirit-pool-access/index.md), [Spirit Sense](././skills/passive/spirit-sense/index.md)

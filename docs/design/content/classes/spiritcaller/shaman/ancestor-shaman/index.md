@@ -15,7 +15,7 @@ Ancestor Shamans have opened channels to the spirits of their lineage - the accu
 
 ### Tribal Role
 
-Ancestor Shamans serve as the living memory of their tribes, channeling ancestral wisdom for important decisions and guidance. They perform rituals to honor the deceased, ensure peaceful transitions to the spirit world, and maintain the connection between living tribe members and their ancestors. Many serve as historians, record-keepers, and funeral conductors, using their shamanic knowledge to manage the spiritual and practical aspects of death and remembrance.
+Ancestor Shamans serve as the living memory of their tribes, channeling ancestral wisdom for important decisions and guidance. They perform rituals to honor the deceased, ensure peaceful unlock eligibility for the spirit world, and maintain the connection between living tribe members and their ancestors. Many serve as historians, record-keepers, and funeral conductors, using their shamanic knowledge to manage the spiritual and practical aspects of death and remembrance.
 
 ## Mechanics
 
@@ -23,7 +23,7 @@ Ancestor Shamans serve as the living memory of their tribes, channeling ancestra
 
 | Requirement  | Value                                  |
 | ------------ | -------------------------------------- |
-| Class        | [Shaman](../) (Tier 2)                 |
+| Class        | [Shaman](./) (Tier 2)                  |
 | XP Threshold | 50,000 XP from ancestor spirit actions |
 | Tag Access   | `Shamanic/Spirit/Ancestor` (full)      |
 
@@ -40,7 +40,7 @@ Ancestor Shaman is a terminal Tier 3 specialization. No further progression path
 
 ### Related Content
 
-- **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Ancestor Bond](../../skills/tiered/ancestor-bond/index.md), [Death Wisdom](../../skills/tiered/death-wisdom/index.md)
-- **Spells:** [Ancestral Call](../../spells/nature/ancestral-call/index.md), [Spirit Ward](../../spells/nature/spirit-ward/index.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)
+- **Prerequisite Class:** [Shaman](./)
+- **Skills:** [Ancestor Bond](././skills/tiered/ancestor-bond/index.md), [Death Wisdom](././skills/tiered/death-wisdom/index.md)
+- **Spells:** [Ancestral Call](././spells/nature/ancestral-call/index.md), [Spirit Ward](././spells/nature/spirit-ward/index.md)
+- **System:** [Shamanic Magic](./././systems/magic/shamanic-magic/index.md)

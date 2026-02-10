@@ -40,10 +40,10 @@ The Merchants' Guild teaches trading fundamentals to all who seek commercial suc
 
 Skills automatically awarded when accepting this class:
 
-| Skill           | Type            | Link                                                                 | Description                        |
-| --------------- | --------------- | -------------------------------------------------------------------- | ---------------------------------- |
-| Market Access   | Mechanic Unlock | [Market Access](../../skills/mechanic-unlock/market-access/index.md) | Access to basic market information |
-| Price Awareness | Passive         | [Price Awareness](../../skills/common/appraiser/index.md)            | +5% accuracy in price estimation   |
+| Skill           | Type            | Link                                                               | Description                        |
+| --------------- | --------------- | ------------------------------------------------------------------ | ---------------------------------- |
+| Market Access   | Mechanic Unlock | [Market Access](././skills/mechanic-unlock/market-access/index.md) | Access to basic market information |
+| Price Awareness | Passive         | [Price Awareness](././skills/common/appraiser/index.md)            | +5% accuracy in price estimation   |
 
 ### XP Progression
 
@@ -67,13 +67,13 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 ### Progression Paths
 
-Trader can transition to the following Tier 2 classes upon reaching 5,000 XP:
+Trader can unlock eligibility for the following Tier 2 classes upon reaching 5,000 XP:
 
-| Tier 2 Class | Focus                          | Link                                     |
-| ------------ | ------------------------------ | ---------------------------------------- |
-| Merchant     | Advanced commerce and business | [Merchant](../trade/merchant/index.md)   |
-| Caravaner    | Long-distance trade routes     | [Caravaner](../trade/caravaner/index.md) |
-| Appraiser    | Item valuation and assessment  | [Appraiser](../trade/appraiser/index.md) |
+| Tier 2 Class | Focus                          | Link                                    |
+| ------------ | ------------------------------ | --------------------------------------- |
+| Merchant     | Advanced commerce and business | [Merchant](./trade/merchant/index.md)   |
+| Caravaner    | Long-distance trade routes     | [Caravaner](./trade/caravaner/index.md) |
+| Appraiser    | Item valuation and assessment  | [Appraiser](./trade/appraiser/index.md) |
 
 ### Tag Access
 
@@ -95,6 +95,6 @@ As a Tier 1 class, Trader has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
-- **Economy System:** [Economy](../../../systems/economy/index.md)
-- **See Also:** [Trade Classes Index](../trade/index.md)
+- **Tier System:** [Class Tiers](./././systems/character/class-tiers/index.md)
+- **Economy System:** [Economy](./././systems/economy/index.md)
+- **See Also:** [Trade Classes Index](./trade/index.md)

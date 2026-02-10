@@ -56,7 +56,7 @@ This camouflage training also informs their trap design philosophy. The perfect 
 
 ## Wood Trap Mastery
 
-Forest kobolds elevate simple materials into deadly art. A bent sapling becomes a spear trap. Balanced stones create crushing mechanisms. Vine nets conceal pit falls. Their traps use no metal, no complex mechanisms, nothing obviously artificial - yet prove as deadly as any elaborate contraption. They're also easy to reset and repair using materials found on-site.
+Forest kobolds elevate simple materials into deadly art. A bent sapling unlocks eligibility for spear trap. Balanced stones create crushing mechanisms. Vine nets conceal pit falls. Their traps use no metal, no complex mechanisms, nothing obviously artificial - yet prove as deadly as any elaborate contraption. They're also easy to reset and repair using materials found on-site.
 
 This specialization makes forest kobolds valuable to frontier settlements, rangers, and anyone needing defensive traps in wilderness areas. Their work looks like natural forest hazards, deterring intruders without advertising kobold presence.
 
@@ -64,17 +64,17 @@ This specialization makes forest kobolds valuable to frontier settlements, range
 
 **With Other Kobolds:** Forest Kobolds occupy an odd position in kobold society. Mountain Kobolds consider them compromised by surface adaptation, less "pure" in their kobold identity. Urban Kobolds see them as country cousins - useful but unsophisticated. Dragonsworn view them with mild pity for being so far from dragon proximity. Yet forest kobolds are often the most successful at securing valuable trade deals and surface resources that benefit all kobold variants.
 
-**With Other Races:** Forest Kobolds maintain the friendliest relationships with surface races of any kobold variant. [Humans](../humans/index.md) appreciate their wilderness expertise and trap-making services. [Elves](../elves/base/index.md) respect their forest knowledge while questioning their tunneling instincts. [Tribal races](../../monstrous/index.md) often establish mutual territories with forest kobold warrens, trading rather than fighting. Their adaptability and reduced sunlight sensitivity make them valuable allies in mixed expeditions.
+**With Other Races:** Forest Kobolds maintain the friendliest relationships with surface races of any kobold variant. [Humans](./humans/index.md) appreciate their wilderness expertise and trap-making services. [Elves](./elves/base/index.md) respect their forest knowledge while questioning their tunneling instincts. [Tribal races](././monstrous/index.md) often establish mutual territories with forest kobold warrens, trading rather than fighting. Their adaptability and reduced sunlight sensitivity make them valuable allies in mixed expeditions.
 
 ## Recommended Classes
 
 Forest Kobolds excel at wilderness and stealth classes that leverage their natural adaptation and surface comfort:
 
-- **[Ranger](../../../classes/../systems/world/index.md)**: Natural fit, combining woodland expertise with trap knowledge
-- **[Scout](../../../classes/../systems/world/index.md)**: Surface pathfinders and camouflage specialists
-- **[Trapsmith](../../../classes/crafting/index.md)**: Wood trap masters using natural materials
-- **[Herbalist](../../../classes/crafting/index.md)**: Forest resource specialists with botanical knowledge
-- **[Rogue](../../../classes/../systems/combat/index.md)**: Stealth experts with natural camouflage training
-- **[Druid](../../../classes/magic/index.md)**: Nature magic users with genuine forest connection
+- **[Ranger](./././classes/./systems/world/index.md)**: Natural fit, combining woodland expertise with trap knowledge
+- **[Scout](./././classes/./systems/world/index.md)**: Surface pathfinders and camouflage specialists
+- **[Trapsmith](./././classes/crafting/index.md)**: Wood trap masters using natural materials
+- **[Herbalist](./././classes/crafting/index.md)**: Forest resource specialists with botanical knowledge
+- **[Rogue](./././classes/./systems/combat/index.md)**: Stealth experts with natural camouflage training
+- **[Druid](./././classes/magic/index.md)**: Nature magic users with genuine forest connection
 
 Well-suited for any role requiring wilderness expertise, surface operations, or stealth. Less suitable for deep underground operations or heavy engineering roles that require extensive metal/stone facilities.

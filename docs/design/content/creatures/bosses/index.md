@@ -5,7 +5,7 @@ gdd_ref: systems/creature-system-gdd.md#creatures
 
 # Boss Creatures
 
-Boss creatures represent the pinnacle of challenges in adventuring - beings of such power, cunning, or significance that encountering them becomes a defining moment. Whether ancient dragons commanding regions, magical guardians protecting sacred sites, or corrupted beings threatening civilization, bosses are creatures that demand respect, preparation, and often cooperation to overcome.
+Boss creatures represent the pinnacle of challenges in adventuring - beings of such power, cunning, or significance that encountering them unlocks eligibility for defining moment. Whether ancient dragons commanding regions, magical guardians protecting sacred sites, or corrupted beings threatening civilization, bosses are creatures that demand respect, preparation, and often cooperation to overcome.
 
 ## Nature of Boss Creatures
 
@@ -47,12 +47,12 @@ What makes a creature a "boss" versus a standard threat:
 
 Threats to entire regions or kingdoms:
 
-| Creature                                         | Level | Type          | Threat Scope  |
-| ------------------------------------------------ | ----- | ------------- | ------------- |
-| [Ancient Dragon](ancient-dragon/index.md)        | 25-35 | Apex predator | Regional      |
-| [Lich King](../magical/undead/index.md)          | 25-30 | Undead mage   | Kingdom-level |
-| [Elemental Lord](../magical/elementals/index.md) | 22-28 | Elemental     | Geographical  |
-| [Demon Prince](index.md)                         | 28-35 | Fiend         | Planar        |
+| Creature                                        | Level | Type          | Threat Scope  |
+| ----------------------------------------------- | ----- | ------------- | ------------- |
+| [Ancient Dragon](ancient-dragon/index.md)       | 25-35 | Apex predator | Regional      |
+| [Lich King](./magical/undead/index.md)          | 25-30 | Undead mage   | Kingdom-level |
+| [Elemental Lord](./magical/elementals/index.md) | 22-28 | Elemental     | Geographical  |
+| [Demon Prince](index.md)                        | 28-35 | Fiend         | Planar        |
 
 ### Dungeon Bosses
 
@@ -280,9 +280,9 @@ Existed long before players:
 **Examples:**
 
 - [Ancient Dragon](ancient-dragon/index.md)
-- [Lich](../magical/undead/index.md)
+- [Lich](./magical/undead/index.md)
 - [Vampire Elder](index.md)
-- [Archfey](../magical/fey/index.md)
+- [Archfey](./magical/fey/index.md)
 
 ### The Guardian
 
@@ -333,10 +333,10 @@ Force of nature given form:
 
 **Examples:**
 
-- [Elemental Lord](../magical/elementals/index.md)
+- [Elemental Lord](./magical/elementals/index.md)
 - [Storm Giant](index.md)
 - [Kraken](index.md)
-- [Forest Spirit](../wildlife/exotic/forest-spirit/index.md) (when angry)
+- [Forest Spirit](./wildlife/exotic/forest-spirit/index.md) (when angry)
 
 ### The Conqueror
 
@@ -430,17 +430,17 @@ Victory creates legend:
 
 ## Related Systems
 
-- **[Combat System](../../../systems/index.md)** - Combat mechanics
-- **[Legendary Creatures](../../../systems/index.md)** - Special rules for bosses
-- **[Loot and Rewards](../../../systems/index.md)** - Treasure distribution
-- **[Experience System](../../../systems/index.md)** - Advancement from major encounters
-- **[Reputation](../../../systems/index.md)** - Fame from victories
-- **[Crafting](../../../crafting/)** - Using boss materials
+- **[Combat System](./././systems/index.md)** - Combat mechanics
+- **[Legendary Creatures](./././systems/index.md)** - Special rules for bosses
+- **[Loot and Rewards](./././systems/index.md)** - Treasure distribution
+- **[Experience System](./././systems/index.md)** - Advancement from major encounters
+- **[Reputation](./././systems/index.md)** - Fame from victories
+- **[Crafting](./././crafting/)** - Using boss materials
 
 ## See Also
 
 - **[Ancient Dragon](ancient-dragon/index.md)** - Apex predator world boss
 - **[Stone Sentinel](stone-sentinel/index.md)** - Dungeon guardian boss
-- **[Wildlife](../wildlife/)** - Standard creatures
-- **[Magical Creatures](../magical/)** - Other magical beings
-- **[Creature System](../creature-system/index.md)** - Complete mechanics
+- **[Wildlife](./wildlife/)** - Standard creatures
+- **[Magical Creatures](./magical/)** - Other magical beings
+- **[Creature System](./creature-system/index.md)** - Complete mechanics

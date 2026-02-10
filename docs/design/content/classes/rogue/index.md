@@ -40,10 +40,10 @@ The Thieves' Guild - if such a thing exists - teaches the fundamentals of shadow
 
 Skills automatically awarded when accepting this class:
 
-| Skill         | Type            | Link                                                               | Description                                   |
-| ------------- | --------------- | ------------------------------------------------------------------ | --------------------------------------------- |
-| Shadow Sense  | Mechanic Unlock | [Shadow Sense](../../skills/mechanic-unlock/shadow-sense/index.md) | Awareness of hiding spots and patrol patterns |
-| Light Fingers | Passive         | [Light Fingers](../../skills/passive/light-fingers/index.md)       | +5% success rate for pickpocketing            |
+| Skill         | Type            | Link                                                             | Description                                   |
+| ------------- | --------------- | ---------------------------------------------------------------- | --------------------------------------------- |
+| Shadow Sense  | Mechanic Unlock | [Shadow Sense](././skills/mechanic-unlock/shadow-sense/index.md) | Awareness of hiding spots and patrol patterns |
+| Light Fingers | Passive         | [Light Fingers](././skills/passive/light-fingers/index.md)       | +5% success rate for pickpocketing            |
 
 ### XP Progression
 
@@ -67,14 +67,14 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 ### Progression Paths
 
-Rogue can transition to the following Tier 2 classes upon reaching 5,000 XP:
+Rogue can unlock eligibility for the following Tier 2 classes upon reaching 5,000 XP:
 
-| Tier 2 Class | Focus                           | Link                                    |
-| ------------ | ------------------------------- | --------------------------------------- |
-| Thief        | Property theft and infiltration | [Thief](../trade/thief/index.md)        |
-| Assassin     | Stealth killing                 | [Assassin](../combat/assassin/index.md) |
-| Fence        | Stolen goods trading            | [Fence](../trade/fence/index.md)        |
-| Smuggler     | Illegal transportation          | [Smuggler](../trade/smuggler/index.md)  |
+| Tier 2 Class | Focus                           | Link                                   |
+| ------------ | ------------------------------- | -------------------------------------- |
+| Thief        | Property theft and infiltration | [Thief](./trade/thief/index.md)        |
+| Assassin     | Stealth killing                 | [Assassin](./combat/assassin/index.md) |
+| Fence        | Stolen goods trading            | [Fence](./trade/fence/index.md)        |
+| Smuggler     | Illegal transportation          | [Smuggler](./trade/smuggler/index.md)  |
 
 ### Tag Access
 
@@ -107,6 +107,6 @@ However, Dark Path classes offer unique abilities and access to underground netw
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
-- **Dark Path:** [Dark Path Classes](../../../systems/character/class-progression/index.md#10-dark-path-classes)
-- **See Also:** [Trade Classes Index](../trade/index.md), [Combat Classes Index](../combat/index.md)
+- **Tier System:** [Class Tiers](./././systems/character/class-tiers/index.md)
+- **Dark Path:** [Dark Path Classes](./././systems/character/class-progression/index.md#10-dark-path-classes)
+- **See Also:** [Trade Classes Index](./trade/index.md), [Combat Classes Index](./combat/index.md)

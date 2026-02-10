@@ -12,7 +12,7 @@ summary: 'Crackles with electrical energy that chains between foes and disrupts 
 
 ### Origin
 
-Lightning enchantments were born from storm-mages' attempts to harness thunderbolts - raw, chaotic power that destroys as readily as it protects. The breakthrough came when enchanters stopped trying to control lightning and instead learned to channel it. The item becomes a conduit, inviting electricity rather than containing it. This philosophical shift transformed lightning from a dangerous novelty into a reliable combat enchantment.
+Lightning enchantments were born from storm-mages' attempts to harness thunderbolts - raw, chaotic power that destroys as readily as it protects. The breakthrough came when enchanters stopped trying to control lightning and instead learned to channel it. The item unlocks eligibility for conduit, inviting electricity rather than containing it. This philosophical shift transformed lightning from a dangerous novelty into a reliable combat enchantment.
 
 The first successful Lightning blade was created during a literal thunderstorm, and superstitious enchanters maintained that tradition for decades afterward. Modern enchanters know that storm conditions aren't required, but many still prefer to work Lightning enchantments during stormy weather. There's something fitting about calling lightning while rain pounds the workshop roof.
 
@@ -28,25 +28,25 @@ Still, certain situations demand Lightning's unique properties. Metal-armored fo
 
 ### Requirements
 
-| Requirement      | Value                                                                                              |
-| ---------------- | -------------------------------------------------------------------------------------------------- |
-| Enchanting Skill | [Enchanting](../../skills/index.md) (Journeyman) 20                                                |
-| Reagents         | [Storm essence](../../materials/reagents/index.md), [Fulgurite](../../materials/reagents/index.md) |
-| Workspace        | Enchanting table, properly grounded                                                                |
+| Requirement      | Value                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------- |
+| Enchanting Skill | [Enchanting](././skills/index.md) (Journeyman) 20                                              |
+| Reagents         | [Storm essence](././materials/reagents/index.md), [Fulgurite](././materials/reagents/index.md) |
+| Workspace        | Enchanting table, properly grounded                                                            |
 
 ### Applicable Items
 
-| Item Category                                 | Effectiveness  | Notes                    |
-| --------------------------------------------- | -------------- | ------------------------ |
-| [Weapons](../../items/weapons/index.md) (all) | Full (100%)    | Bladed or blunt          |
-| [Arrows/Bolts](../../items/weapons/index.md)  | Full (100%)    | Electric projectiles     |
-| [Gauntlets](../../items/armor/index.md)       | High (90%)     | Shocking punches         |
-| [Rings](../../items/index.md)                 | Moderate (60%) | Touch attacks, signaling |
-| [Amulets](../../items/index.md)               | Low (40%)      | Electric aura            |
-| [Boots](../../items/clothing/index.md)        | High (85%)     | Shocking kicks           |
-| [Shields](../../items/armor/index.md)         | Moderate (70%) | Shocks attackers         |
-| [Staves](../../items/weapons/index.md)        | Full (100%)    | Excellent conductor      |
-| [Rods](../../items/tools/index.md)            | High (90%)     | Utility applications     |
+| Item Category                               | Effectiveness  | Notes                    |
+| ------------------------------------------- | -------------- | ------------------------ |
+| [Weapons](././items/weapons/index.md) (all) | Full (100%)    | Bladed or blunt          |
+| [Arrows/Bolts](././items/weapons/index.md)  | Full (100%)    | Electric projectiles     |
+| [Gauntlets](././items/armor/index.md)       | High (90%)     | Shocking punches         |
+| [Rings](././items/index.md)                 | Moderate (60%) | Touch attacks, signaling |
+| [Amulets](././items/index.md)               | Low (40%)      | Electric aura            |
+| [Boots](././items/clothing/index.md)        | High (85%)     | Shocking kicks           |
+| [Shields](././items/armor/index.md)         | Moderate (70%) | Shocks attackers         |
+| [Staves](././items/weapons/index.md)        | Full (100%)    | Excellent conductor      |
+| [Rods](././items/tools/index.md)            | High (90%)     | Utility applications     |
 
 **Special Note:** Metal items conduct Lightning enchantments 10% more effectively than non-metal items.
 
@@ -73,15 +73,15 @@ Still, certain situations demand Lightning's unique properties. Metal-armored fo
 
 ### Material Interactions
 
-| Material                                   | Compatibility | Special Effect                     |
-| ------------------------------------------ | ------------- | ---------------------------------- |
-| [Steel](../../materials/metals/index.md)   | Excellent     | Perfect conductor, +10% damage     |
-| [Silver](../../materials/metals/index.md)  | Excellent     | Enhanced magical effects           |
-| [Bronze](../../materials/metals/index.md)  | Good          | Standard bonuses                   |
-| [Mithril](../../materials/metals/index.md) | Fair          | Lightning appears golden-blue      |
-| [Wood](../../materials/wood/index.md)      | Poor          | Risk of item damage from discharge |
-| [Iron](../../materials/metals/index.md)    | Excellent     | Strong conductor                   |
-| [Copper](../../materials/metals/index.md)  | Excellent     | Best conductor (+15% damage)       |
+| Material                                 | Compatibility | Special Effect                     |
+| ---------------------------------------- | ------------- | ---------------------------------- |
+| [Steel](././materials/metals/index.md)   | Excellent     | Perfect conductor, +10% damage     |
+| [Silver](././materials/metals/index.md)  | Excellent     | Enhanced magical effects           |
+| [Bronze](././materials/metals/index.md)  | Good          | Standard bonuses                   |
+| [Mithril](././materials/metals/index.md) | Fair          | Lightning appears golden-blue      |
+| [Wood](././materials/wood/index.md)      | Poor          | Risk of item damage from discharge |
+| [Iron](././materials/metals/index.md)    | Excellent     | Strong conductor                   |
+| [Copper](././materials/metals/index.md)  | Excellent     | Best conductor (+15% damage)       |
 
 ### Utility Applications (Non-Combat)
 
@@ -108,7 +108,7 @@ Still, certain situations demand Lightning's unique properties. Metal-armored fo
 
 ## Related Content
 
-- **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Storm essence](../../materials/reagents/index.md), [Fulgurite](../../materials/reagents/index.md)
+- **Requires:** [Enchanting](././skills/index.md) (Journeyman), [Storm essence](././materials/reagents/index.md), [Fulgurite](././materials/reagents/index.md)
 - **Applied To:** Weapons, gauntlets, boots, shields, rings, staves (see Applicable Items table)
 - **See Also:** [Flaming](flaming/index.md), [Frost](frost/index.md), [Thundering](thundering/index.md)
 - **Enchantment Type:** Combat (elemental damage - electric)
