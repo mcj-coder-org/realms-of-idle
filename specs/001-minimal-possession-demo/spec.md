@@ -277,6 +277,10 @@ Bookmark frequently-used NPCs for quick access and receive notifications about t
   - Minimum: 360x640 (mobile portrait)
   - Typical ranges: 360x640 (phone), 768x1024 (tablet), 1920x1080 (desktop), 3440x1440 (ultrawide)
   - Responsive design MUST adapt layout for mobile, tablet, and desktop breakpoints
+- **High Pixel Density Support**: UI MUST render correctly on high DPI displays
+  - Pixel density ranges: 1x (standard), 2x (Retina/high DPI), 3x (high-end mobile), 4x (premium mobile)
+  - Graphics and UI elements MUST scale appropriately without pixelation
+  - Use vector graphics (SVG) or provide multiple resolution assets where appropriate
 - **Accessibility Limitations**: Requires vision and manual dexterity (NOT accessible to blind/motor-impaired users)
 - No keyboard-only navigation required (mouse/touch expected)
 - No screen reader optimization required (ARIA primarily for test automation)
