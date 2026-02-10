@@ -861,6 +861,121 @@ public OfflineProgressResult CalculateProgress(Settlement lastState, TimeSpan el
 
 ---
 
+### Phase 6: NPC Hiring & Resource Economy (Week 4) - Option B Addition
+
+**Purpose**: Add economic pressure via contracts/wages and resource production/consumption to create meaningful idle game decisions
+
+- ✅ Implement NPC employment system (Available/Employed/Unpaid states)
+- ✅ Add building treasury and contract costs (Cook: 50g, Tomas: 100g)
+- ✅ Implement daily wage payment cycle with grace period
+- ✅ Add resource production (Cook produces Food, Tomas crafts Tools)
+- ✅ Add resource consumption (Innkeeper consumes Food to serve customers)
+- ✅ Implement resource capacity limits (Food: 50 max, Iron Ore: 100 max)
+- ✅ Update offline progress to apply wages and cap cycles by resources
+- ✅ Create HiringService, WageService, ResourceService
+- ✅ Add Available NPCs panel with hire buttons
+- ✅ Update ActionCatalog with resource costs/production
+
+**Acceptance Criteria**:
+
+- Mara starts employed at Inn with 120g building treasury
+- Cook and Tomas available to hire from Town Square
+- Can hire Cook for 50g → Cook begins producing Food autonomously
+- Inn charges daily wage (5g/day) from building treasury
+- If Inn cannot pay wage → Cook becomes Unpaid → quits after 1 day
+- Innkeeper cannot serve customers without Food in Inn inventory
+- Cook produces Food until storage full (50/50)
+- Offline progress correctly deducts wages and caps actions by resources
+
+**Rationale**: Adds core idle game loop - hire staff, manage resources, watch settlement grow. Aligns with game design documents (core-architecture.md, npc-design.md).
+
+---
+
+### Phase 7: Building Upgrades (Week 4) - Option B Addition
+
+**Purpose**: Provide long-term progression goals via building level system
+
+- ✅ Add Level field to Building record (1-3)
+- ✅ Implement upgrade system (cost, time, benefits)
+- ✅ Inn Level 2: +50 Food storage, +1 staff capacity
+- ✅ Inn Level 3: +50% customer attraction
+- ✅ Workshop Level 2: +100 Iron Ore storage, +20% crafting speed
+- ✅ Workshop Level 3: Unlock advanced recipes
+- ✅ Create UpgradeService with time tracking
+- ✅ Integrate upgrade timers into SimulationEngine
+- ✅ Add BuildingUpgradePanel UI component
+- ✅ Update offline progress to complete pending upgrades
+
+**Acceptance Criteria**:
+
+- Buildings start at Level 1
+- Can initiate upgrade (100g for Inn L2, 60s duration)
+- Progress bar shows upgrade time remaining
+- Upgrade completes and benefits apply (Food storage 50→100)
+- Offline progress completes upgrades if elapsed time > duration
+- Cannot start new upgrade while one in progress
+
+**Rationale**: Settlement health progression (not player XP) via building improvements. Creates gold sink and visible progress.
+
+---
+
+### Phase 8: Observer-Friendly Tutorial (Week 5) - Option B Addition
+
+**Purpose**: Onboard new players without disrupting passive gameplay option
+
+- ✅ Implement TutorialService with localStorage persistence
+- ✅ Tutorial triggers ONLY on first Mara possession (not page load)
+- ✅ Progressive disclosure: 3-step modal sequence
+  - Step 1: Possession confirmed → highlight Action Panel
+  - Step 2: Action executing → highlight Release Control
+  - Step 3: Action complete → highlight other NPC portraits
+- ✅ Create TutorialModal.razor with highlight system
+- ✅ Add tutorial-highlights.css for glowing/pulsing animations
+- ✅ Implement skip functionality (button + Escape key)
+- ✅ Mark tutorial complete in localStorage after final step
+
+**Acceptance Criteria**:
+
+- Open page → watch NPCs work → NO tutorial appears (observer mode preserved)
+- Possess Mara → tutorial modal appears
+- Complete 3 steps or skip → tutorial never shows again
+- Tutorial completion persists across page refreshes
+- Can reset via dev console: `localStorage.removeItem('tutorial_completed')`
+
+**Rationale**: User clarification - preserve observer mode, only teach possession on first use.
+
+---
+
+### Phase 9: Performance & Playtesting (Week 5) - Option B Addition
+
+**Purpose**: Validate technical performance and player engagement before release
+
+**Performance Benchmarks**:
+
+- ✅ Game loop maintains 10 ticks/sec ±5% variance (10 min test)
+- ✅ Heap growth <10MB over 10 minutes (no memory leaks)
+- ✅ CPU usage <20% on mid-range device
+- ✅ Cross-browser tests pass on Chrome, Firefox, Edge
+
+**Playtesting Validation**:
+
+- ✅ Recruit 5 users, measure session length (target: avg >5 min)
+- ✅ Survey comprehension (target: 80% understand possession)
+- ✅ Survey engagement (target: 60% would play 30 min)
+- ✅ Analyze click heatmaps, identify confusing UI areas
+- ✅ Document findings in playtest-results.md
+
+**Acceptance Criteria**:
+
+- All performance benchmarks pass (tick rate, memory, CPU, browsers)
+- At least 80% playtest comprehension rate
+- At least 60% would-play-longer rate
+- UX improvements implemented based on heatmap analysis
+
+**Rationale**: Ensure MVP meets quality bar before public release. Validate core assumption: "possession mechanic is understandable and engaging."
+
+---
+
 ## Success Metrics
 
 ### Technical Metrics

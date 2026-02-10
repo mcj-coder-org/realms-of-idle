@@ -75,7 +75,8 @@ public sealed record Settlement(
     string Name,
     IReadOnlyList<Building> Buildings,
     IReadOnlyList<NPC> NPCs,
-    DateTime WorldTime)
+    DateTime WorldTime,
+    DateTime LastWagePayment)  // NEW: Track daily wage cycle
 {
     // Factory method
     public static Settlement CreateMillbrook()
@@ -85,8 +86,10 @@ public sealed record Settlement(
             Name: "Millbrook",
             Buildings: new List<Building>
             {
-                new Building("inn", "The Rusty Tankard", BuildingType.Inn, new GridPosition(2, 2), 3, 3, new Dictionary<string, int>()),
-                new Building("workshop", "Tomas' Forge", BuildingType.Workshop, new GridPosition(6, 2), 2, 2, new Dictionary<string, int> { { "IronOre", 10 } })
+                new Building("inn", "The Rusty Tankard", BuildingType.Inn, new GridPosition(2, 2), 3, 3,
+                    new Dictionary<string, int>(), 120, new List<string> { "mara" }),  // NEW: Gold + EmployedNPCs
+                new Building("workshop", "Tomas' Forge", BuildingType.Workshop, new GridPosition(6, 2), 2, 2,
+                    new Dictionary<string, int> { { "IronOre", 10 } }, 0, new List<string>())  // NEW: Gold + EmployedNPCs
             },
             NPCs: new List<NPC>
             {
@@ -95,7 +98,8 @@ public sealed record Settlement(
                 NPC.CreateTomas(),
                 NPC.CreateCustomer()
             },
-            WorldTime: DateTime.UtcNow
+            WorldTime: DateTime.UtcNow,
+            LastWagePayment: DateTime.UtcNow  // NEW: Initialize to current time
         );
     }
 }
@@ -138,7 +142,18 @@ public sealed record Building(
     GridPosition Position,
     int Width,
     int Height,
-    IReadOnlyDictionary<string, int> Resources);
+    IReadOnlyDictionary<string, int> Resources,
+    int Gold,                           // NEW: Building treasury
+    IReadOnlyList<string> EmployedNPCs, // NEW: NPC IDs employed here
+    int Level = 1,                      // NEW: Building upgrade level (1-3)
+    BuildingUpgradeStatus? UpgradeInProgress = null)  // NEW: Active upgrade tracking
+{
+    // Upgrade status record
+    public sealed record BuildingUpgradeStatus(
+        int TargetLevel,
+        DateTime StartTime,
+        int DurationSeconds);
+}
 
 public enum BuildingType
 {
@@ -199,28 +214,43 @@ public sealed record NPC(
     string ClassName,
     int Level,
     GridPosition Position,
-    string CurrentBuilding,
+    string? CurrentBuilding,  // NULL if unemployed (in Town Square)
     NPCState State,
     string? CurrentAction,
     DateTime? ActionStartTime,
     int? ActionDurationSeconds,
-    int Gold,
+    int Gold,  // Personal wealth (not used in MVP, for future)
     int Reputation,
     IReadOnlyDictionary<string, object> Priorities,
-    bool IsPossessed)
+    bool IsPossessed,
+    NPCEmploymentStatus EmploymentStatus,  // NEW
+    DateTime? HireDate,                      // NEW
+    IReadOnlyList<NPCTrait> Traits)         // NEW: Personality traits
 {
     // Factory methods
     public static NPC CreateMara() => new NPC(
         "mara", "Mara", "Innkeeper", 5,
         new GridPosition(3, 3), "inn", NPCState.Idle,
         null, null, null, 100, 50,
-        new Dictionary<string, object>(), false);
+        new Dictionary<string, object>(), false,
+        NPCEmploymentStatus.Employed, DateTime.UtcNow,
+        new List<NPCTrait> { NPCTrait.Efficient });
+
+    public static NPC CreateCook() => new NPC(
+        "cook", "Cook", "Cook", 3,
+        new GridPosition(5, 5), null, NPCState.Idle,  // NULL building = available to hire
+        null, null, null, 0, 0,
+        new Dictionary<string, object>(), false,
+        NPCEmploymentStatus.Available, null,
+        new List<NPCTrait> { NPCTrait.Perfectionist });
 
     public static NPC CreateTomas() => new NPC(
         "tomas", "Tomas", "Blacksmith", 8,
-        new GridPosition(7, 3), "workshop", NPCState.Idle,
+        new GridPosition(7, 3), null, NPCState.Idle,  // NULL building = available to hire
         null, null, null, 200, 30,
-        new Dictionary<string, object>(), false);
+        new Dictionary<string, object>(), false,
+        NPCEmploymentStatus.Available, null,
+        new List<NPCTrait> { NPCTrait.Stubborn });
 }
 
 public enum NPCState
@@ -230,6 +260,40 @@ public enum NPCState
     Traveling,
     Resting
 }
+
+public enum NPCEmploymentStatus
+{
+    Available,   // Not hired, idle in Town Square
+    Employed,    // Hired, working at building
+    Unpaid       // Employed but wages not paid (grace period)
+}
+
+public sealed record NPCTrait(
+    string Id,        // "efficient", "perfectionist", "stubborn"
+    string Name,      // "Efficient", "Perfectionist", "Stubborn"
+    string Icon,      // "⚡", "✨", "🛡️"
+    string Description, // "Completes actions 20% faster"
+    TraitEffect Effect  // { Type: "ActionSpeed", Modifier: 1.2 }
+)
+{
+    // Pre-defined traits
+    public static NPCTrait Efficient => new(
+        "efficient", "Efficient", "⚡", "Completes actions 20% faster",
+        new TraitEffect("ActionSpeed", 1.2));
+
+    public static NPCTrait Perfectionist => new(
+        "perfectionist", "Perfectionist", "✨", "Quality +10%, Speed -10%",
+        new TraitEffect("ActionSpeed", 0.9));
+
+    public static NPCTrait Stubborn => new(
+        "stubborn", "Stubborn", "🛡️", "Ignores priority changes for 60 seconds",
+        new TraitEffect("PriorityCooldown", 60));
+}
+
+public sealed record TraitEffect(
+    string Type,      // "ActionSpeed", "Quality", "PriorityCooldown"
+    double Modifier   // 1.2 (20% faster), 0.9 (10% slower), 60 (seconds)
+);
 ```
 
 ---
@@ -263,7 +327,8 @@ public sealed record NPCAction(
     string Name,
     string Description,
     int DurationSeconds,
-    IReadOnlyDictionary<string, int> ResourceCosts,
+    IReadOnlyDictionary<string, int> ResourceCosts,   // {"Food": 1} or {"IronOre": 2}
+    IReadOnlyDictionary<string, int> ResourceProduced, // NEW: {"Food": 1} or {"IronTools": 1}
     IReadOnlyDictionary<string, int> Rewards,
     IReadOnlyList<string> RequiredClasses,
     IReadOnlyList<string> RequiredBuildings);
@@ -276,9 +341,22 @@ public static class ActionCatalog
         "Serve Customer",
         "Serve a waiting customer food and drink",
         DurationSeconds: 5,
-        ResourceCosts: new Dictionary<string, int>(),
+        ResourceCosts: new Dictionary<string, int> { { "Food", 1 } },  // NEW: Consumes 1 Food
+        ResourceProduced: new Dictionary<string, int>(),
         Rewards: new Dictionary<string, int> { { "Gold", 5 }, { "Reputation", 2 } },
         RequiredClasses: new[] { "Innkeeper" },
+        RequiredBuildings: new[] { "Inn" }
+    );
+
+    public static NPCAction ProduceFood => new(
+        "produce_food",
+        "Prepare Food",
+        "Cook prepares meals for the inn",
+        DurationSeconds: 10,
+        ResourceCosts: new Dictionary<string, int>(),  // No cost
+        ResourceProduced: new Dictionary<string, int> { { "Food", 1 } },  // NEW: Produces 1 Food
+        Rewards: new Dictionary<string, int>(),  // No gold reward for production
+        RequiredClasses: new[] { "Cook" },
         RequiredBuildings: new[] { "Inn" }
     );
 
@@ -288,6 +366,7 @@ public static class ActionCatalog
         "Forge an iron sword from raw ore",
         DurationSeconds: 30,
         ResourceCosts: new Dictionary<string, int> { { "IronOre", 2 } },
+        ResourceProduced: new Dictionary<string, int> { { "IronTools", 1 } },  // NEW: Produces 1 Tool
         Rewards: new Dictionary<string, int> { { "Gold", 20 } },
         RequiredClasses: new[] { "Blacksmith" },
         RequiredBuildings: new[] { "Workshop" }

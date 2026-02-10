@@ -229,6 +229,233 @@ Bookmark frequently-used NPCs for quick access and receive notifications about t
   3. Display warning: "Could not calculate offline progress. Loaded last saved state."
   4. Continue normal gameplay without modal
 
+### FR-015: NPC Availability & Hiring
+
+**FR-015a - Starting State**:
+
+- Settlement starts with **1 employed NPC**: Mara (Innkeeper) at Rusty Tankard Inn
+- **3 NPCs available for hire** (not employed):
+  - Cook (Processor role) - standing idle at Town Square
+  - Tomas (Processor - Blacksmith) - standing idle at Workshop
+  - Customer (Social role) - wandering between buildings
+
+**FR-015b - Contract Costs**:
+
+- **Cook Contract**: 50 gold upfront, 5 gold/day wage
+- **Tomas Contract**: 100 gold upfront, 10 gold/day wage
+- **Customer**: Not hireable (wandering ambient NPC for atmosphere)
+
+**FR-015c - Hiring Requirements**:
+
+- Inn MUST have accumulated sufficient gold to cover contract cost
+- Hire button shows:
+  - Green + "Hire Cook (50g)" if Inn gold >= 50
+  - Red + "Insufficient Funds (25/50g)" if Inn gold < 50
+- Hiring deducts gold from **building's treasury**, not settlement-wide pool
+
+**FR-015d - Wage Payment**:
+
+- Wages deducted **daily** (every 1440 real-world minutes = 24 hours)
+- If building cannot pay wage: NPC becomes "Unpaid" state
+  - Unpaid NPCs work at 50% speed for 1 day grace period
+  - After 1 day unpaid, NPC quits and returns to "available to hire" pool
+- Wage payment notification: "Paid Cook 5g (Inn balance: 95g)"
+
+**FR-015e - Employment Persistence**:
+
+- Hired NPCs remain employed across page refreshes (persisted in LiteDB)
+- Offline progress applies wage deductions for elapsed time
+- If offline wages would bankrupt building, NPC quits (notification on return)
+
+---
+
+### FR-016: Resource Production & Consumption
+
+**FR-016a - Resource Types**:
+
+- **Food** (consumable) - Produced by Cook, consumed by Innkeeper serving customers
+- **Iron Ore** (material) - Initial stock at Workshop, consumed by Blacksmith crafting
+- **Iron Tools** (product) - Produced by Blacksmith, used by Cook (Iron Pots improve cooking speed)
+
+**FR-016b - Initial Resource Allocation**:
+
+- Rusty Tankard Inn: 0 Food (must hire Cook to produce)
+- Tomas' Forge: 10 Iron Ore (starter stock)
+- Town Square: 0 resources (unemployed NPCs have no building)
+
+**FR-016c - Resource Consumption Rules**:
+
+- **Serve Customer** action consumes 1 Food from Inn inventory
+  - If Inn has 0 Food: Innkeeper idle, "Serve Customer" button red + tooltip "No food available"
+  - Notification: "Inn out of food! Hire Cook or wait for delivery"
+- **Craft Iron Sword** action consumes 2 Iron Ore from Workshop inventory
+  - If Workshop has <2 Iron Ore: Tomas idle, "Craft Iron Sword" button red + tooltip "Insufficient Iron Ore (0/2)"
+
+**FR-016d - Resource Production Rates**:
+
+- **Cook produces Food**: 1 Food per 10 seconds (6 Food/minute)
+- **Innkeeper consumes Food**: 1 Food per customer (Serve Customer = 5 seconds, consumes 1 Food)
+- **Balance**: Cook slightly outpaces single Innkeeper (creates surplus for growth)
+- **Tomas produces Iron Tools**: 1 Tool per 30 seconds (consumes 2 Iron Ore)
+
+**FR-016e - Resource Capacity Limits**:
+
+- Buildings have storage caps:
+  - Inn Food Storage: 50 Food max
+  - Workshop Iron Ore Storage: 100 Iron Ore max
+- When storage full, production NPCs idle with notification: "Food storage full (50/50)"
+
+**FR-016f - Offline Resource Consumption**:
+
+- Offline progress calculation:
+  1. Calculate action cycles for each NPC
+  2. Check if resources available for that many cycles
+  3. Cap cycles at resource depletion point
+  4. Example: Inn has 20 Food, Innkeeper can serve 20 customers offline (20 cycles max)
+  5. Display: "While away: Mara served 20 customers (limited by food supply)"
+
+---
+
+### FR-017: Building Upgrade System
+
+**FR-017a - Upgrade Levels**:
+
+- All buildings start at **Level 1**
+- Max level: **Level 3** (MVP scope)
+- Upgrade benefits:
+  - **Inn Level 2** (100g cost): Food storage +50 (50→100), staff capacity +1 (allows hiring Server)
+  - **Inn Level 3** (250g cost): Customer attraction +50% (more customers = more revenue)
+  - **Workshop Level 2** (150g cost): Iron Ore storage +100 (100→200), crafting speed +20%
+  - **Workshop Level 3** (300g cost): Unlock advanced recipes (Iron Armor)
+
+**FR-017b - Upgrade Requirements**:
+
+- Building treasury must have sufficient gold
+- Upgrade time: 60 seconds (real-time)
+- Cannot start new upgrade while one in progress
+- Offline progress: Upgrade completes if elapsed time > upgrade duration
+
+**FR-017c - Upgrade UI**:
+
+- Building Info Panel shows "Upgrade to Level 2" button
+- Tooltip: "Cost: 100g | Time: 60s | Benefit: Food storage +50"
+- While upgrading: Progress bar + "Upgrading... 30s remaining"
+- On completion: Notification "Inn upgraded to Level 2!"
+
+---
+
+### FR-018: Contextual Tutorial System
+
+**FR-018a - Tutorial Trigger**:
+
+- Tutorial does NOT trigger on page load (preserves observer mode)
+- Tutorial triggers **only** on first possession of Mara:
+  1. Player clicks Mara's portrait
+  2. Player clicks "Possess" button
+  3. **On possession success**, tutorial modal appears
+
+**FR-018b - Tutorial Content** (Progressive Disclosure):
+
+**Step 1: Possession Confirmation** (Modal 1):
+
+- Message: "🎭 You are now possessing Mara. You see the world through her eyes. Try executing an action!"
+- Highlight: Action Panel with "Serve Customer" glowing
+- Button: [Got it]
+
+**Step 2: Action Execution** (After clicking "Serve Customer"):
+
+- Message: "⏱️ Action in Progress. Mara is serving a customer (5s). You can wait or release control."
+- Highlight: Release Control button
+- Button: [Got it]
+
+**Step 3: Action Complete** (After timer finishes):
+
+- Message: "✅ Action Complete! +5 gold, +2 reputation. Mara earned resources while you controlled her. Try possessing other NPCs to see different roles!"
+- Highlight: Other NPC portraits
+- Button: [Finish Tutorial]
+
+**FR-018c - Tutorial Persistence**:
+
+- Tutorial completion saved to browser localStorage (key: `tutorial_completed`)
+- Once completed, tutorial never shows again
+- Reset via dev console: `localStorage.removeItem('tutorial_completed')`
+
+**FR-018d - Tutorial Skipping**:
+
+- All modals have [Skip Tutorial] button in top-right corner
+- Clicking skip marks tutorial as completed (won't show again)
+
+---
+
+### FR-019: NPC Personality Traits
+
+**FR-019a - Trait Definitions**:
+
+- **Mara (Innkeeper)**: "Efficient: Actions 20% faster"
+  - Implementation: Reduce action duration by 20% (5s → 4s)
+- **Cook**: "Perfectionist: Quality +10%, Speed -10%"
+  - Implementation: Increase action duration by 10% (10s → 11s), increase Food quality (future: better customer satisfaction)
+- **Tomas (Blacksmith)**: "Stubborn: Ignores priority changes for 60 seconds"
+  - Implementation: Priority adjustments don't apply until 60s cooldown elapsed
+
+**FR-019b - Trait Display**:
+
+- NPC portrait tooltip shows trait: "Mara | Innkeeper Lv.5 | ⚡ Efficient"
+- Trait icon next to name in NPC Sidebar
+- Trait description in hover tooltip: "⚡ Efficient: Completes actions 20% faster"
+
+**FR-019c - Trait Effects**:
+
+- Traits apply to **all** actions by that NPC
+- Observer mode: Traits visible in autonomous behavior
+- Possession mode: Player benefits from traits (Mara possessed = faster Serve Customer)
+
+---
+
+### FR-020: Performance Benchmarks
+
+**FR-020a - Game Loop Performance**:
+
+- Target: 10 ticks/second with <5% variance
+- Test: Run simulation for 10 minutes, measure tick rate every second
+- Failure condition: Tick rate drops below 9.5 ticks/sec or exceeds 10.5 ticks/sec
+
+**FR-020b - Memory Leak Detection**:
+
+- Target: <10MB heap growth over 10 minutes
+- Test: Load page, wait 10 minutes, measure heap size increase
+- Failure condition: Heap grows >10MB (indicates memory leak)
+
+**FR-020c - Cross-Browser Compatibility**:
+
+- Target: User Stories 1-5 pass on Chrome, Firefox, Edge
+- Test: Run Playwright E2E tests on all 3 browsers
+- Failure condition: Any test fails on any browser
+
+---
+
+### FR-021: Playtesting Validation
+
+**FR-021a - Session Length Metric**:
+
+- Target: Average session length >5 minutes
+- Test: 5 users, measure time from page load to tab close
+- Failure condition: Average <5 minutes
+
+**FR-021b - Comprehension Survey**:
+
+- Target: 80% of users understand possession mechanic
+- Test: Post-play survey question: "Did you understand how to control NPCs?"
+- Failure condition: <4 out of 5 users answer "Yes"
+
+**FR-021c - Engagement Survey**:
+
+- Target: 60% would play for 30 minutes
+- Test: Survey question: "Would you play this for 30 minutes?"
+- Failure condition: <3 out of 5 users answer "Yes"
+
+---
+
 #### NFR-002: Test Automation Hooks & Basic Accessibility
 
 **Purpose**: Provide ARIA labels and semantic markup primarily to enable automated UI testing frameworks (Playwright, Selenium, etc.) rather than full accessibility compliance for disabled users. This is a visual mobile game requiring sight and manual dexterity.

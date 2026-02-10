@@ -349,6 +349,152 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 ---
 
+## Phase 9: NPC Hiring & Wage System + Resource Economy
+
+**Purpose**: Add economic pressure via NPC contracts and wages, creating hiring decisions. Add resource production/consumption to create supply chain dependencies.
+
+**Alignment**: Implements FR-015 (NPC Hiring & Contract System) and FR-016 (Resource Economy)
+
+### Tests for NPC Hiring & Wage System (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+- [ ] T155 [P] Unit test for contract cost validation in SettlementGameService (can afford, insufficient funds) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/SettlementGameServiceTests.cs
+- [ ] T156 [P] Unit test for wage payment cycle (daily deduction, grace period, quit after 1 day unpaid) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/WageServiceTests.cs
+- [ ] T157 [P] Unit test for hiring NPC (gold deduction, employment status change, staff roster update) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/HiringServiceTests.cs
+- [ ] T158 [P] Unit test for NPC quit on unpaid wages (status change, return to available pool) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/WageServiceTests.cs
+- [ ] T159 [P] bUnit test for Available NPCs panel rendering (unemployed NPCs, hire button states) in tests/RealmsOfIdle.Client.Blazor.Tests/Components/AvailableNPCsPanelTests.cs
+- [ ] T160 [P] bUnit test for building treasury display in TopBar or sidebar in tests/RealmsOfIdle.Client.Blazor.Tests/Components/BuildingTreasuryDisplayTests.cs
+
+### Implementation for NPC Hiring & Wage System
+
+- [ ] T161 [P] Add Gold and EmployedNPCs fields to Building record in src/RealmsOfIdle.Client.Blazor/Models/Building.cs
+- [ ] T162 [P] Add EmploymentStatus, HireDate, and Traits fields to NPC record in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs
+- [ ] T163 [P] Add LastWagePayment field to Settlement record in src/RealmsOfIdle.Client.Blazor/Models/Settlement.cs
+- [ ] T164 [P] Create NPCTrait and TraitEffect records in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs
+- [ ] T165 Create HiringService class in src/RealmsOfIdle.Client.Blazor/Services/HiringService.cs (validate contract cost, hire NPC, update building gold)
+- [ ] T166 Create WageService class in src/RealmsOfIdle.Client.Blazor/Services/WageService.cs (daily cycle check, deduct wages, handle unpaid state)
+- [ ] T167 Integrate WageService into SimulationEngine daily tick (check elapsed days, trigger wage payment)
+- [ ] T168 [P] Create AvailableNPCsPanel.razor in src/RealmsOfIdle.Client.Blazor/Components/AvailableNPCsPanel.razor (list unemployed NPCs, hire buttons)
+- [ ] T169 [P] Create BuildingTreasuryDisplay.razor in src/RealmsOfIdle.Client.Blazor/Components/BuildingTreasuryDisplay.razor or update TopBar.razor
+- [ ] T170 [P] Create HireNPCModal.razor confirmation dialog in src/RealmsOfIdle.Client.Blazor/Components/HireNPCModal.razor
+- [ ] T171 Update Settlement.CreateMillbrook factory to set initial employment states (Mara employed, others available)
+- [ ] T172 Update offline progress calculation to apply wage deductions for elapsed days in src/RealmsOfIdle.Client.Blazor/Services/OfflineProgressCalculator.cs
+- [ ] T173 Add wage payment notifications to ActivityLog (daily payments, warnings, quit events)
+- [ ] T174 Add hire/fire actions to ActionCatalog (available when possessing building owner)
+- [ ] T175 Update NPCAIService to handle unemployed NPCs (idle in Town Square, no work actions)
+- [ ] T176 Persist employment status and building gold to LiteDB (update SaveSettlementAsync)
+
+### Tests for Resource Economy (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+- [ ] T177 [P] Unit test for resource consumption validation (has resources, insufficient resources) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ResourceServiceTests.cs
+- [ ] T178 [P] Unit test for resource production (Cook produces Food, adds to building inventory) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ResourceServiceTests.cs
+- [ ] T179 [P] Unit test for action blocking when resources unavailable (Serve Customer fails if no Food) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ResourceServiceTests.cs
+- [ ] T180 [P] Unit test for resource capacity limits (Food production stops at 50/50) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/ResourceServiceTests.cs
+- [ ] T181 [P] Unit test for offline resource consumption (limit cycles by resource availability) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+
+### Implementation for Resource Economy
+
+- [ ] T182 [P] Add ResourceProduced field to NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs
+- [ ] T183 Update ActionCatalog with resource costs and production (ServeCustomer consumes Food, ProduceFood produces Food)
+- [ ] T184 Create ResourceService class in src/RealmsOfIdle.Client.Blazor/Services/ResourceService.cs (check availability, consume, produce, enforce caps)
+- [ ] T185 Integrate ResourceService into SettlementGameService.ExecuteActionAsync (validate resources before action, consume on start, produce on completion)
+- [ ] T186 Update NPCAIService to check resource availability before choosing action (skip actions with insufficient resources)
+- [ ] T187 Update offline progress calculation (OfflineProgressCalculator) to cap cycles by resource availability
+- [ ] T188 [P] Update SettlementMap building tooltips to show resource counts
+- [ ] T189 [P] Update ActionPanel to show resource requirements and availability
+- [ ] T190 Add resource production/consumption notifications to ActivityLog
+- [ ] T191 Update Settlement.CreateMillbrook to set initial resources (Inn: 0 Food, Workshop: 10 IronOre)
+
+**Checkpoint**: Economic systems (hiring + resources) functional. Hiring decisions matter, resource scarcity creates gameplay tension.
+
+---
+
+## Phase 10: Building Upgrades
+
+**Purpose**: Add building progression system to provide long-term goals and settlement growth
+
+**Alignment**: Implements FR-017 (Building Upgrade System)
+
+### Tests for Building Upgrades (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+- [ ] T192 [P] Unit test for upgrade cost validation (can afford, insufficient funds) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/UpgradeServiceTests.cs
+- [ ] T193 [P] Unit test for upgrade time tracking (start, progress, completion) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/UpgradeServiceTests.cs
+- [ ] T194 [P] Unit test for upgrade benefits application (food storage increase, speed boost) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/UpgradeServiceTests.cs
+- [ ] T195 [P] bUnit test for BuildingUpgradePanel rendering (upgrade button, progress bar) in tests/RealmsOfIdle.Client.Blazor.Tests/Components/BuildingUpgradePanelTests.cs
+
+### Implementation for Building Upgrades
+
+- [ ] T196 [P] Add Level and UpgradeInProgress fields to Building record in src/RealmsOfIdle.Client.Blazor/Models/Building.cs
+- [ ] T197 [P] Create BuildingUpgrade record in src/RealmsOfIdle.Client.Blazor/Models/BuildingUpgrade.cs (cost, duration, benefits)
+- [ ] T198 Create UpgradeService class in src/RealmsOfIdle.Client.Blazor/Services/UpgradeService.cs (validate cost, start upgrade, apply benefits)
+- [ ] T199 Integrate UpgradeService into SimulationEngine (track upgrade timers, complete on elapsed)
+- [ ] T200 [P] Create BuildingUpgradePanel.razor in src/RealmsOfIdle.Client.Blazor/Components/BuildingUpgradePanel.razor (upgrade button, progress bar)
+- [ ] T201 Add upgrade actions to ActionCatalog (available when possessing building owner)
+- [ ] T202 Update offline progress calculation to complete upgrades if elapsed time > duration
+- [ ] T203 Add upgrade notifications to ActivityLog (started, completed)
+
+**Checkpoint**: Building upgrades functional. Players can invest building gold to unlock capacity/speed increases.
+
+---
+
+## Phase 11: Observer-Friendly Tutorial System
+
+**Purpose**: Guide first-time players through possession mechanic WITHOUT disrupting observer mode
+
+**Alignment**: Implements FR-018 (Contextual Tutorial System)
+
+### Tests for Tutorial System (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+- [ ] T204 [P] Unit test for tutorial state persistence (localStorage save/load/reset) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/TutorialServiceTests.cs
+- [ ] T205 [P] bUnit test for TutorialModal rendering (steps, highlights, skip button) in tests/RealmsOfIdle.Client.Blazor.Tests/Components/TutorialModalTests.cs
+- [ ] T206 Integration test for tutorial trigger (only on first Mara possession, not page load) in tests/RealmsOfIdle.Client.Blazor.Tests/Integration/TutorialFlowTests.cs
+
+### Implementation for Tutorial System
+
+- [ ] T207 Create TutorialService class in src/RealmsOfIdle.Client.Blazor/Services/TutorialService.cs (check completion, mark complete, get next step)
+- [ ] T208 [P] Create TutorialModal.razor in src/RealmsOfIdle.Client.Blazor/Components/TutorialModal.razor (modal dialog, step content, highlight system)
+- [ ] T209 [P] Create tutorial-highlights.css for glowing/pulsing UI elements in src/RealmsOfIdle.Client.Blazor/wwwroot/css/tutorial-highlights.css
+- [ ] T210 Integrate TutorialService into PossessionDemo.razor (trigger on first Mara possession only)
+- [ ] T211 Add localStorage persistence for tutorial completion state
+- [ ] T212 Add tutorial skip functionality (button + Escape key)
+- [ ] T213 Test that observer mode works without tutorial interruption (open page, don't possess, watch NPCs work)
+
+**Checkpoint**: Tutorial guides new players through possession mechanic without disrupting observer mode.
+
+---
+
+## Phase 12: Performance & Playtesting Validation
+
+**Purpose**: Validate technical performance and player engagement before MVP release
+
+**Alignment**: Implements FR-020 (Performance Benchmarks) and FR-021 (Playtesting Validation)
+
+### Performance Tests (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+- [ ] T214 [P] Performance test: Game loop tick rate stability (10 min run, assert <5% variance) in tests/RealmsOfIdle.Client.Blazor.Tests/Performance/GameLoopPerformanceTests.cs
+- [ ] T215 [P] Performance test: Memory leak detection (10 min run, assert <10MB heap growth) in tests/RealmsOfIdle.Client.Blazor.Tests/Performance/MemoryLeakTests.cs
+- [ ] T216 [P] Performance test: CPU usage (assert <20% CPU on mid-range device) in tests/RealmsOfIdle.Client.Blazor.Tests/Performance/CPUUsageTests.cs
+- [ ] T217 Cross-browser E2E: Run US1-US5 tests on Chrome (assert all pass)
+- [ ] T218 Cross-browser E2E: Run US1-US5 tests on Firefox (assert all pass)
+- [ ] T219 Cross-browser E2E: Run US1-US5 tests on Edge (assert all pass)
+
+### Playtesting Tasks
+
+- [ ] T220 Manual playtest: Recruit 5 users, record session length (target: avg >5 min)
+- [ ] T221 Manual playtest: Survey comprehension (target: 80% understand possession)
+- [ ] T222 Manual playtest: Survey engagement (target: 60% would play 30 min)
+- [ ] T223 Analyze heatmap clicks (identify confusing UI areas)
+- [ ] T224 Document playtest findings in playtest-results.md
+
+### Fixes Based on Performance/Playtesting
+
+- [ ] T225 Fix performance regressions identified in T214-T216
+- [ ] T226 Fix cross-browser compatibility issues from T217-T219
+- [ ] T227 Improve UX based on playtest feedback from T220-T224
+
+**Checkpoint**: MVP passes performance benchmarks, cross-browser tests, and playtesting validation. Ready for release.
+
+---
+
 ## Dependencies & Execution Order
 
 ### Phase Dependencies
@@ -363,6 +509,10 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
   - User Story 4 (P2): Can start after Phase 2.5 - Enhances US2 possession with priority changes
   - User Story 5 (P3): Can start after Phase 2.5 - Quality of life feature, no story dependencies
 - **Polish (Phase 8)**: Depends on all desired user stories being complete
+- **NPC Hiring & Resource Economy (Phase 9)**: Depends on Phases 2, 2.5, 3, 4 completion (requires observer mode + possession + resource display)
+- **Building Upgrades (Phase 10)**: Depends on Phase 9 completion (requires building treasury from hiring system)
+- **Tutorial System (Phase 11)**: Depends on Phase 4 completion (requires possession mechanics), can run in parallel with Phases 9-10
+- **Performance & Validation (Phase 12)**: Depends on all desired features being complete (final validation phase)
 
 ### User Story Dependencies
 
@@ -484,18 +634,26 @@ With multiple developers:
 
 ## Task Count Summary
 
-- **Total Tasks**: 170 (was 154, removed 61 excessive WCAG tasks, added 16 pragmatic test automation tasks)
-- **Phase 1 (Setup)**: 10 tasks
-- **Phase 2 (Foundational)**: 23 tasks
-- **Phase 2.5 (Offline Progress & Tab Visibility)**: 25 tasks (9 tests + 16 implementation) ⚠️ BLOCKING
-- **Phase 3 (User Story 1 - Observer Mode)**: 18 tasks (6 tests + 12 implementation)
-- **Phase 4 (User Story 2 - Possess and Control)**: 20 tasks (6 tests + 14 implementation)
-- **Phase 5 (User Story 3 - Context-Aware Actions)**: 13 tasks (3 tests + 10 implementation)
-- **Phase 6 (User Story 4 - Persistent Priorities)**: 12 tasks (3 tests + 9 implementation)
-- **Phase 7 (User Story 5 - Favorites System)**: 15 tasks (3 tests + 12 implementation)
-- **Phase 8 (Polish & Test Automation Hooks)**: 34 tasks (16 polish + 16 NFR-002 test automation + 2 original T128-T129)
+- **Total Tasks**: 227 (original 170 + 57 new tasks for Option B Full MVP)
+- **Phase 1 (Setup)**: 10 tasks (T001-T010)
+- **Phase 2 (Foundational)**: 23 tasks (T011-T033)
+- **Phase 2.5 (Offline Progress & Tab Visibility)**: 25 tasks (T130-T154) ⚠️ BLOCKING
+- **Phase 3 (User Story 1 - Observer Mode)**: 18 tasks (T034-T051)
+- **Phase 4 (User Story 2 - Possess and Control)**: 20 tasks (T052-T071)
+- **Phase 5 (User Story 3 - Context-Aware Actions)**: 13 tasks (T072-T084)
+- **Phase 6 (User Story 4 - Persistent Priorities)**: 12 tasks (T085-T096)
+- **Phase 7 (User Story 5 - Favorites System)**: 15 tasks (T097-T111)
+- **Phase 8 (Polish & Test Automation Hooks)**: 34 tasks (T112-T143)
+- **Phase 9 (NPC Hiring & Resource Economy)**: 37 tasks (T155-T191) - 11 tests + 26 implementation
+- **Phase 10 (Building Upgrades)**: 12 tasks (T192-T203) - 4 tests + 8 implementation
+- **Phase 11 (Tutorial System)**: 10 tasks (T204-T213) - 3 tests + 7 implementation
+- **Phase 12 (Performance & Validation)**: 14 tasks (T214-T227) - 6 performance tests + 5 playtesting + 3 fixes
 
-**MVP Scope (Recommended)**: Phases 1 + 2 + 2.5 + 3 + 4 = 96 tasks (Setup + Foundation + Offline Progress + US1 + US2)
+**MVP Scope (Original - Technical Demo)**: Phases 1 + 2 + 2.5 + 3 + 4 = 96 tasks (Setup + Foundation + Offline Progress + US1 + US2)
+
+**Full MVP Scope (Option B - Playable Idle RPG)**: All phases (1-12) = 227 tasks total
+
+- **Estimated Effort**: Original MVP (96 tasks) = 2-3 weeks | Full MVP (227 tasks) = 4-5 weeks total (+5-7 days for Phases 9-12)
 
 **Test Automation Scope (NFR-002)**: 16 tasks focused on ARIA labels for Playwright/Selenium test stability (not full accessibility)
 
@@ -506,7 +664,7 @@ With multiple developers:
 - NFR-002e: Error Detection for Tests (2 tasks: T141-T142)
 - NFR-002f: Documentation (1 task: T143)
 
-**Parallel Opportunities**: 76 tasks marked [P] can run in parallel when dependencies allow (reduced from 151 after removing unnecessary WCAG tasks)
+**Parallel Opportunities**: Approximately 90 tasks marked [P] can run in parallel when dependencies allow (includes new Option B tasks)
 
 **Independent Test Criteria**:
 
