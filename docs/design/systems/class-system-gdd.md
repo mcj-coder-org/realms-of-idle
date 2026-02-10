@@ -19,7 +19,7 @@ The Class System defines how players acquire, progress, and specialize classes t
 
 - Class tier progression mechanics
 - Specialization discovery and requirements
-- Multi-class slot management
+- Multi-class XP distribution system
 - Specialization award methods (actions, training, discovery)
 
 **Design Philosophy:** Classes are discovered, not selected. Players earn classes through their actions, then expand their options through specializations. Tiers provide mastery depth while specializations provide build variety. Players can hold multiple classes simultaneously, creating unique combinations of abilities.
@@ -178,12 +178,12 @@ Player Journey:
    → [Blade Dancer - Apprentice] offered as NEW class
 
 3. Player accepts [Blade Dancer - Apprentice]
-   Active Classes (2/3):
+   Current Classes:
      - [Warrior - Apprentice]
      - [Blade Dancer - Apprentice]
 
 4. Continue playing sword combat
-   → Both classes gain class XP (split configured 60%/40%)
+   → Both classes gain XP (automatic hierarchical split: Blade Dancer 50%, Warrior 25%)
    → combat.melee.sword bucket continues growing
 
 5. Later: [Warrior] reaches tier threshold
@@ -214,103 +214,120 @@ Path B: Training (Bypass Bucket Requirements)
 
 ---
 
-## 3. Multi-Class Slot Management
+## 3. Multi-Class System
 
-### 3.1 Maximum Active Classes
+### 3.1 All Classes Always Active
 
-Players may hold up to **3 active classes** simultaneously:
-
-```
-1 Active Class:  100% class XP to primary
-2 Active Classes: Player configures split (60%/40%)
-3 Active Classes: Player configures split (50%/30%/20%)
-
-Default distribution when 2nd class added:
-  Primary: 60%
-  Secondary: 40%
-
-Default distribution when 3rd class added:
-  Primary: 50%
-  Secondary: 30%
-  Tertiary: 20%
-```
-
-### 3.2 Class Slot Strategy
-
-When accepting specializations, players must manage their 3 active slots:
+**Core Principle**: All accepted classes are **always active** and gaining XP simultaneously.
 
 ```
-Scenario: Already have 3 active classes
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Current Active Classes (3/3):
-  - [Warrior - Journeyman]
-  - [Blacksmith - Apprentice]
-  - [Merchant - Apprentice]
+No Class Slots:
+- No maximum number of active classes
+- No "dormant" or "inactive" classes
+- Every class you have is always active
+- All classes gain XP from every action (based on tag matching)
 
-Level Up Event: [Blade Dancer - Apprentice] offered
+Character with 5 Classes:
+  - [Warrior - Journeyman]      ← Always active
+  - [Blade Dancer - Apprentice] ← Always active
+  - [Blacksmith - Apprentice]   ← Always active
+  - [Miner - Apprentice]        ← Always active
+  - [Merchant - Apprentice]     ← Always active
 
-Options:
-1. Make [Blade Dancer] active, move one class to dormant
-2. Keep [Blade Dancer] dormant (activate later)
-
-Dormant Classes:
-- Class XP accumulation paused
-- Class level/tier retained
-- Can reactivate anytime (no penalty)
-- Max 3 active at once
+All 5 classes gain XP from every action (hierarchical split)
 ```
 
-### 3.3 XP Split Configuration
+### 3.2 Automatic Hierarchical XP Distribution
 
-Players can customize the split at any time outside of rest:
+XP is distributed **automatically** based on tag hierarchy, NOT player configuration.
 
-```
-Class XP Split Configuration:
-┌─────────────────────────────────┐
-│ Active Classes:                 │
-│                                 │
-│ [Warrior - Journeyman] ████████ 60% │
-│ [Blacksmith - Apprentice]  ████   40% │
-│                                 │
-│ Adjust: [─] [────────] [+]      │
-│                                 │
-│ [Save Changes]                  │
-└─────────────────────────────────┘
+**Formula**:
 
-Rules:
-- Must total 100% across all active classes
-- Changes take effect next action
-- Cannot change during rest/combat
-- Configuration saved per class set
-```
+1. Find most specific matching tag for action
+2. Award **50%** to exact match class
+3. Award **50%** to parent tag level (split if multiple)
+4. Continue subdividing remainder up hierarchy
 
-### 3.4 Dormant Class Management
+**Example**: Attack with Sword action fires tag `combat.melee.sword`
 
 ```
-Dormant Class Screen:
-┌────────────────────────────────────────────┐
-│            DORMANT CLASSES                 │
-├────────────────────────────────────────────┤
-│                                            │
-│ Available to Activate (select one):        │
-│                                            │
-│ ○ [Merchant - Apprentice]                 │
-│    Last active: 2 days ago                 │
-│    Class XP paused at 450                  │
-│                                            │
-│ ○ [Alchemist - Journeyman]                │
-│    Last active: 1 week ago                 │
-│    Class XP paused at 3,200                 │
-│                                            │
-│ [Activate Selected]  [Cancel]              │
-└────────────────────────────────────────────┘
+Character Classes:
+  - [Warrior] (tracks: combat.melee)
+  - [Blade Dancer] (tracks: combat.melee.sword)
+  - [Fighter] (tracks: combat)
 
-Activation Rules:
-- Can activate anytime (no cooldown)
-- Replaces currently active class
-- Deactivated class goes to dormant pool
-- No penalty for switching
+Action: Attack with Sword → Tag: combat.melee.sword → Base 100 XP
+
+Distribution:
+  Blade Dancer: 50 XP   (exact match: combat.melee.sword)
+  Warrior:      25 XP   (parent: combat.melee gets 50%, split among parents)
+  Fighter:      12.5 XP (grandparent: combat gets 25%, split among grandparents)
+  Remaining:    12.5 XP (flows to general pool, see 3.3)
+
+Total XP awarded: 100 XP
 ```
+
+**Key Rules**:
+
+- **Downward flow only**: Specific → General, never upward
+- **50% exact match**: Most specific tag always gets half
+- **Subdivide remainder**: Each parent level gets half of previous, split among siblings
+- **Multiplicative at same depth**: Multiple classes at same tag depth each get full percentage
+
+### 3.3 Foundational Class Coverage
+
+If no class tracks an action's tag, XP flows to **Foundational** classes (Tier 1):
+
+```
+Action: Attack with Sword → combat.melee.sword
+Character has: [Cook], [Miner] (neither track combat tags)
+
+Result:
+  Cook:  50 XP (Foundational class, gets 50%)
+  Miner: 50 XP (Foundational class, gets 50%)
+
+Rationale: XP always counts, even for non-matching actions
+```
+
+**Foundational Classes** (Tier 1):
+
+- Fighter, Crafter, Gatherer, Host, Trader, Scholar, Socialite
+
+**Rule**: If no classes match action tags, split XP equally among all Foundational classes.
+
+### 3.4 Primary Class Determination
+
+**Primary Class**: Highest-leveled **Tier 2** class (fallback: Tier 1)
+
+```
+Example 1: Tier 2 Dominant
+  Classes:
+    [Warrior - Level 15] (Tier 2) ← PRIMARY
+    [Blade Dancer - Level 8] (Tier 3)
+    [Blacksmith - Level 5] (Tier 2)
+
+  Primary: Warrior (highest Tier 2)
+
+Example 2: Only Tier 1 Classes
+  Classes:
+    [Fighter - Level 20] (Tier 1) ← PRIMARY
+    [Crafter - Level 10] (Tier 1)
+
+  Primary: Fighter (highest Tier 1, no Tier 2)
+
+Example 3: Tie at Tier 2
+  Classes:
+    [Warrior - Level 15] (Tier 2) ← PRIMARY (first acquired)
+    [Blacksmith - Level 15] (Tier 2)
+
+  Primary: Warrior (tie broken by acquisition order)
+```
+
+**Primary Class Benefits**:
+
+- Displayed in character nameplate
+- Determines UI class icon
+- No mechanical advantages (all classes always active)
 
 ---
 
@@ -438,13 +455,10 @@ Primary Tag: gather.herbalism
 ║   Skill Rewards:                                 ║
 ║     ☑ [Dancing Blade]                            ║
 ║                                                  ║
-║ CLASS SLOT MANAGEMENT:                           ║
-║ Active Slots: (2/3) - One slot available         ║
-║                                                  ║
 ║ [Accept Selected]  [View Backlog →]             ║
 ╚══════════════════════════════════════════════════╝
 
-Note: Accepting [Blade Dancer] uses 1 class slot
+Note: All accepted classes are always active and gaining XP
 ```
 
 ### 5.2 Specialization Backlog
@@ -525,11 +539,11 @@ This document resolves the following CRITICAL and HIGH priority questions from o
 
 | #   | Question                           | Resolution                                                     | Status      |
 | --- | ---------------------------------- | -------------------------------------------------------------- | ----------- |
-| 2.1 | Dormant Class Handling             | Persistent, reactivatable anytime, no penalty                  | ✅ Resolved |
+| 2.1 | Multi-Class XP Distribution        | Automatic hierarchical split (50/25/12.5...)                   | ✅ Resolved |
 | 2.2 | Class Evolution Presentation       | Level Up Event with choices, deferred backlog                  | ✅ Resolved |
 | 2.3 | Class Evolution Rejection          | Yes, can defer to backlog                                      | ✅ Resolved |
 | 3.X | Specialization Discovery Mechanics | Multiple paths: actions (3× if no parent), training, discovery | ✅ Resolved |
-| 3.X | Multi-Class Slot Strategy          | Max 3 active, dormant pool, no switching penalty               | ✅ Resolved |
+| 3.X | All Classes Always Active          | No slots, no dormant, all classes gain XP                      | ✅ Resolved |
 
 ---
 
@@ -558,15 +572,19 @@ public class SpecializationOffer
     public List<NPCTrainer> Trainers { get; set; }
 }
 
-public class ClassSlotManager
+public class ClassManager
 {
-    public int MaxActiveClasses => 3;
-    public List<PlayerClass> ActiveClasses { get; set; }
-    public List<PlayerClass> DormantClasses { get; set; }
+    // All accepted classes are always active
+    public List<PlayerClass> Classes { get; set; }
 
-    public bool CanAcceptNewClass()
+    public PlayerClass GetPrimaryClass()
     {
-        return ActiveClasses.Count < MaxActiveClasses;
+        // Highest-leveled Tier 2 class, fallback to Tier 1
+        var tier2Classes = Classes.Where(c => c.TreeTier == 2).OrderByDescending(c => c.Level);
+        if (tier2Classes.Any())
+            return tier2Classes.First();
+
+        return Classes.Where(c => c.TreeTier == 1).OrderByDescending(c => c.Level).FirstOrDefault();
     }
 }
 ```
@@ -587,13 +605,13 @@ On each action completion:
 
 ### 8.3 Complexity Ratings
 
-| Component                | Implementation Complexity | Notes                       |
-| ------------------------ | ------------------------- | --------------------------- |
-| Tier Progression         | Low (2/5)                 | Simple threshold check      |
-| Specialization Discovery | Medium (3/5)              | Bucket monitoring, 3× logic |
-| Multi-Class XP Split     | Medium (3/5)              | Configurable distribution   |
-| Dormant Class Management | Low (2/5)                 | State flags, activation UI  |
-| Training Paths           | Medium (3/5)              | NPC interaction, quests     |
+| Component                 | Implementation Complexity | Notes                        |
+| ------------------------- | ------------------------- | ---------------------------- |
+| Tier Progression          | Low (2/5)                 | Simple threshold check       |
+| Specialization Discovery  | Medium (3/5)              | Bucket monitoring, 3× logic  |
+| Hierarchical XP Split     | High (4/5)                | Recursive tag tree traversal |
+| Primary Class Calculation | Low (2/5)                 | Sort by tier + level         |
+| Training Paths            | Medium (3/5)              | NPC interaction, quests      |
 
 ---
 
@@ -612,9 +630,9 @@ On each action completion:
 
 **Trade-offs:**
 
-- Uses up limited class slots (3 max)
-- Players must make strategic choices about which classes to hold
-- Mitigated by: Dormant class system (no penalty for switching)
+- More classes to manage
+- Players may feel overwhelmed with many classes
+- Mitigated by: Primary class UI simplification, hierarchical display
 
 ### 9.2 Higher Threshold Without Parent Class
 
@@ -632,21 +650,23 @@ On each action completion:
 - May feel grindy to skip parent class
 - Mitigated by: Training paths provide guaranteed alternative
 
-### 9.3 Three Class Slot Limit
+### 9.3 All Classes Always Active
 
-**Decision:** Maximum 3 active classes, with dormant pool for additional.
+**Decision:** No class slots, no dormant classes - all accepted classes are always active.
 
 **Rationale:**
 
-- Forces strategic decisions about class combinations
-- Prevents "collect everything" mentality
-- Makes each class choice meaningful
-- Dormant system allows experimentation without penalty
+- Eliminates micromanagement of class activation
+- Ensures XP always counts (hierarchical distribution)
+- Simplifies mental model: "you are all your classes"
+- Reduces UI complexity (no slot management screens)
+- Encourages experimentation (no penalty for accepting classes)
 
 **Trade-offs:**
 
-- Limits build diversity at any given time
-- Mitigated by: No switching cooldown, can swap anytime
+- Less strategic decision-making about which classes to activate
+- May encourage "collect everything" mentality
+- Mitigated by: Primary class display, hierarchical XP dilution as natural limiter
 
 ### 9.4 No Explicit Level Ranges for Tiers
 
@@ -719,56 +739,71 @@ On each action completion:
 ### Example 1: Combat-Focused Build
 
 ```
-Active Classes (3/3):
-  [Warrior - Journeyman] (50%)
-  [Blade Dancer - Apprentice] (30%)
-  [Shield Bearer - Apprentice] (20%)
+Current Classes:
+  [Fighter - Apprentice]
+  [Warrior - Journeyman] ← Primary (highest Tier 2)
+  [Blade Dancer - Apprentice]
+  [Shield Bearer - Apprentice]
 
-Strategy:
-- Use [Warrior] for general combat (50% XP)
-- Switch to [Blade Dancer] when DPS needed (30% XP)
-- Switch to [Shield Bearer] when tanking (20% XP)
+XP Distribution (Attack with Sword):
+  Tag: combat.melee.sword → Base 100 XP
+  - Blade Dancer: 50 XP (exact match: combat.melee.sword)
+  - Warrior: 25 XP (parent: combat.melee)
+  - Fighter: 12.5 XP (grandparent: combat)
 
 Benefit:
 - Versatile in all combat situations
 - All sword actions feed all three classes
-- Rapid progression across all
+- Specializations progress faster (50% exact match)
+- Foundational classes still grow (hierarchical split)
 ```
 
 ### Example 2: Crafter-Gatherer Build
 
 ```
-Active Classes (3/3):
-  [Blacksmith - Journeyman] (50%)
-  [Miner - Apprentice] (30%)
-  [Merchant - Apprentice] (20%)
+Current Classes:
+  [Crafter - Apprentice]
+  [Blacksmith - Journeyman] ← Primary (highest Tier 2)
+  [Miner - Apprentice]
+  [Merchant - Apprentice]
 
-Strategy:
-- Mine ore → feeds [Miner] and [Blacksmith]
-- Forge items → feeds [Blacksmith]
-- Sell goods → feeds [Merchant]
+XP Distribution (Mine Iron Ore):
+  Tag: gather.mining.metal → Base 100 XP
+  - Miner: 50 XP (exact match: gather.mining)
+  - Crafter: 25 XP (parent: gather)
+
+XP Distribution (Forge Iron Sword):
+  Tag: craft.smithing.weapon.sword → Base 100 XP
+  - Blacksmith: 50 XP (exact match: craft.smithing.weapon)
+  - Crafter: 25 XP (parent: craft)
 
 Benefit:
 - Self-sufficient crafting loop
-- Can gather own materials
-- Can sell crafted goods at profit
+- All classes always progressing
+- Merchant gains XP from trade actions
 - [Material Intuition] synergy unlocked
 ```
 
 ### Example 3: Specialist Build
 
 ```
-Active Classes (2/3):
-  [Blade Dancer - Master] (70%)
-  [Weapon Smith - Journeyman] (30%)
+Current Classes:
+  [Fighter - Journeyman]
+  [Warrior - Journeyman]
+  [Blade Dancer - Master] ← Primary (highest level Tier 2)
+  [Weapon Smith - Journeyman]
 
-Dormant:
-  [Warrior - Journeyman] (not needed)
+XP Distribution (Attack with Sword):
+  Tag: combat.melee.sword → Base 100 XP
+  - Blade Dancer: 50 XP (exact match)
+  - Warrior: 25 XP (parent)
+  - Fighter: 12.5 XP (grandparent)
 
 Strategy:
 - Pure sword combat focus
 - Can craft own weapons
-- Ignoring general [Warrior] class
+- All combat classes benefit from every attack
+- No "dormant" classes - all gaining XP
 
 Benefit:
 - Highly specialized, powerful build
