@@ -1,0 +1,78 @@
+@* OfflineProgressModal.razor *@
+@* Place in: src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor *@
+
+@if (IsVisible)
+{
+    <div class="modal-overlay" @onclick="Close">
+        <div class="modal-content offline-progress-modal" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h2>Welcome Back!</h2>
+                <span class="modal-subtitle">While you were away...</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="time-elapsed">
+                    <span class="label">Time Elapsed:</span>
+                    <span class="value">@FormatTimeElapsed(Result!.CappedElapsedTime)</span>
+                </div>
+
+                <div class="actions-summary">
+                    <h3>Actions Completed</h3>
+                    @foreach (var (npcName, actionCount) in Result.ActionsCompleted)
+                    {
+                        @if (actionCount > 0)
+                        {
+                            <div class="npc-summary">
+                                <span class="npc-name">@npcName:</span>
+                                <span class="action-count">@actionCount actions</span>
+                            </div>
+                        }
+                    }
+                </div>
+
+                <div class="rewards-summary">
+                    <div class="reward-item gold">
+                        <span class="icon">💰</span>
+                        <span class="label">Gold:</span>
+                        <span class="value">+@Result.TotalGoldEarned</span>
+                    </div>
+                    <div class="reward-item reputation">
+                        <span class="icon">⭐</span>
+                        <span class="label">Reputation:</span>
+                        <span class="value">+@Result.TotalReputationEarned</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-primary" @onclick="Close">Continue</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public OfflineProgressResult? Result { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    private bool IsVisible => Result != null;
+
+    private void Close()
+    {
+        OnClose.InvokeAsync();
+    }
+
+    private string FormatTimeElapsed(TimeSpan elapsed)
+    {
+        if (elapsed.TotalHours >= 24)
+            return "24+ hours";
+        if (elapsed.TotalHours >= 1)
+            return $"{elapsed.Hours}h {elapsed.Minutes}m";
+        if (elapsed.TotalMinutes >= 1)
+            return $"{elapsed.Minutes}m {elapsed.Seconds}s";
+        return $"{elapsed.Seconds}s";
+    }
+}

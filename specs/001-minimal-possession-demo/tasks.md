@@ -85,6 +85,49 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 ---
 
+## Phase 2.5: Offline Progress & Tab Visibility (Foundational) ⚠️ BLOCKING
+
+**Purpose**: Implement offline progress calculation and tab visibility detection to enable idle game mechanics (required by FR-014, NFR-001)
+
+**⚠️ CRITICAL**: This phase is BLOCKING for all user stories - implements core idle game mechanics and graceful degradation
+
+### Tests for Offline Progress (REQUIRED - TDD NON-NEGOTIABLE) ⚠️
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [ ] T130 [P] Unit test for OfflineProgressCalculator with <60s elapsed (no calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T131 [P] Unit test for OfflineProgressCalculator with 5 minutes elapsed (correct cycles) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T132 [P] Unit test for OfflineProgressCalculator with 25 hours elapsed (24hr cap) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T133 [P] Unit test for OfflineProgressCalculator clearing possessed NPC state in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T134 [P] Unit test for OfflineProgressCalculator with no resources (no actions) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T135 [P] Unit test for OfflineProgressCalculator with multiple NPCs (independent calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T136 [P] Unit test for OfflineProgressCalculator immutability verification in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [ ] T137 [P] Unit test for TabVisibilityHandler event firing in tests/RealmsOfIdle.Client.Blazor.Tests/Services/TabVisibilityHandlerTests.cs
+- [ ] T138 [P] bUnit component test for OfflineProgressModal rendering in tests/RealmsOfIdle.Client.Blazor.Tests/Components/OfflineProgressModalTests.cs
+
+### Implementation for Offline Progress
+
+- [ ] T139 [P] Create OfflineProgressCalculator.cs service in src/RealmsOfIdle.Client.Blazor/Services/OfflineProgressCalculator.cs
+- [ ] T140 [P] Create TabVisibilityHandler.cs service in src/RealmsOfIdle.Client.Blazor/Services/TabVisibilityHandler.cs
+- [ ] T141 [P] Create tab-visibility.js JavaScript module in src/RealmsOfIdle.Client.Blazor/wwwroot/js/tab-visibility.js
+- [ ] T142 [P] Create OfflineProgressModal.razor component in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
+- [ ] T143 Implement OfflineProgressCalculator.CalculateProgress with 60s minimum, 24hr cap, and cycle calculation (see plan.md PR-004 pseudocode)
+- [ ] T144 Implement TabVisibilityHandler with JavaScript interop for Page Visibility API (document.hidden detection)
+- [ ] T145 Implement OfflineProgressModal with time elapsed, actions per NPC, total rewards, and auto-dismiss after 30s
+- [ ] T146 Register OfflineProgressCalculator as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [ ] T147 Register TabVisibilityHandler as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [ ] T148 Integrate TabVisibilityHandler in PossessionDemo.razor (OnAfterRenderAsync, OnDispose lifecycle)
+- [ ] T149 Implement OnTabHidden handler in PossessionDemo.razor (stop SimulationEngine, persist Settlement state to LiteDB)
+- [ ] T150 Implement OnTabVisible handler in PossessionDemo.razor (calculate offline progress if >= 60s, restart SimulationEngine)
+- [ ] T151 Implement ErrorBoundary wrapper for PossessionDemo.razor with reload functionality (see plan.md CL-003)
+- [ ] T152 Verify offline progress calculation with 5-minute tab hidden test (manual validation)
+- [ ] T153 Verify activity log summary entry creation after offline progress (format: "While away: X actions, +Y gold")
+- [ ] T154 Verify state persistence during tab hidden sequence (settlement state saved to LiteDB with WorldTime snapshot)
+
+**Checkpoint**: Offline progress infrastructure complete - tab visibility detection works, offline progress calculation tested, error boundaries in place
+
+---
+
 ## Phase 3: User Story 1 - Observer Mode (Priority: P1) 🎯 MVP
 
 **Goal**: Experience the living world simulation running autonomously before any player interaction
@@ -276,21 +319,22 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 - **Setup (Phase 1)**: No dependencies - can start immediately
 - **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
-- **User Stories (Phase 3-7)**: All depend on Foundational phase completion
-  - User Story 1 (P1): Can start after Foundational - No dependencies on other stories
-  - User Story 2 (P1): Can start after Foundational - Builds on US1 but independently testable
-  - User Story 3 (P2): Can start after Foundational - Enhances US2 possession with context filtering
-  - User Story 4 (P2): Can start after Foundational - Enhances US2 possession with priority changes
-  - User Story 5 (P3): Can start after Foundational - Quality of life feature, no story dependencies
+- **Offline Progress (Phase 2.5)**: Depends on Foundational completion - BLOCKS all user stories (idle game mechanics + error handling)
+- **User Stories (Phase 3-7)**: All depend on Foundational (Phase 2) AND Offline Progress (Phase 2.5) completion
+  - User Story 1 (P1): Can start after Phase 2.5 - No dependencies on other stories
+  - User Story 2 (P1): Can start after Phase 2.5 - Builds on US1 but independently testable
+  - User Story 3 (P2): Can start after Phase 2.5 - Enhances US2 possession with context filtering
+  - User Story 4 (P2): Can start after Phase 2.5 - Enhances US2 possession with priority changes
+  - User Story 5 (P3): Can start after Phase 2.5 - Quality of life feature, no story dependencies
 - **Polish (Phase 8)**: Depends on all desired user stories being complete
 
 ### User Story Dependencies
 
-- **User Story 1 (P1) - Observer Mode**: Can start after Foundational (Phase 2) - No dependencies on other stories - **RECOMMENDED MVP**
-- **User Story 2 (P1) - Possess and Control**: Can start after Foundational (Phase 2) - Builds on US1 simulation but independently testable - **RECOMMENDED MVP**
-- **User Story 3 (P2) - Context-Aware Actions**: Can start after Foundational (Phase 2) - Enhances US2 but can be tested independently
-- **User Story 4 (P2) - Persistent Priorities**: Can start after Foundational (Phase 2) - Enhances US2 but can be tested independently
-- **User Story 5 (P3) - Favorites System**: Can start after Foundational (Phase 2) - No dependencies on other stories, purely additive
+- **User Story 1 (P1) - Observer Mode**: Can start after Foundational (Phase 2) AND Offline Progress (Phase 2.5) - No dependencies on other stories - **RECOMMENDED MVP**
+- **User Story 2 (P1) - Possess and Control**: Can start after Foundational (Phase 2) AND Offline Progress (Phase 2.5) - Builds on US1 simulation but independently testable - **RECOMMENDED MVP**
+- **User Story 3 (P2) - Context-Aware Actions**: Can start after Foundational (Phase 2) AND Offline Progress (Phase 2.5) - Enhances US2 but can be tested independently
+- **User Story 4 (P2) - Persistent Priorities**: Can start after Foundational (Phase 2) AND Offline Progress (Phase 2.5) - Enhances US2 but can be tested independently
+- **User Story 5 (P3) - Favorites System**: Can start after Foundational (Phase 2) AND Offline Progress (Phase 2.5) - No dependencies on other stories, purely additive
 
 ### Within Each User Story
 
@@ -353,19 +397,21 @@ Task T059: "Create ActionPanel.razor component"
 
 1. Complete Phase 1: Setup (T001-T010)
 2. Complete Phase 2: Foundational (T011-T033) - CRITICAL - blocks all stories
-3. Complete Phase 3: User Story 1 - Observer Mode (T034-T051)
-4. **STOP and VALIDATE**: Test User Story 1 independently - NPCs work autonomously
-5. Complete Phase 4: User Story 2 - Possess and Control (T052-T071)
-6. **STOP and VALIDATE**: Test User Stories 1 AND 2 independently - Can possess and control NPCs
-7. Deploy/demo if ready - **THIS IS A COMPLETE, PLAYABLE MVP**
+3. Complete Phase 2.5: Offline Progress & Tab Visibility (T130-T154) - CRITICAL - blocks all stories, implements idle game mechanics
+4. **STOP and VALIDATE**: Test offline progress with 5-minute tab hidden test - progress calculated correctly
+5. Complete Phase 3: User Story 1 - Observer Mode (T034-T051)
+6. **STOP and VALIDATE**: Test User Story 1 independently - NPCs work autonomously, tab visibility works
+7. Complete Phase 4: User Story 2 - Possess and Control (T052-T071)
+8. **STOP and VALIDATE**: Test User Stories 1 AND 2 independently - Can possess and control NPCs, offline progress persists
+9. Deploy/demo if ready - **THIS IS A COMPLETE, PLAYABLE MVP**
 
-**Rationale**: User Stories 1 + 2 together demonstrate the core possession mechanic (autonomous NPCs + player control). This is the minimum viable feature set to validate the architecture.
+**Rationale**: User Stories 1 + 2 together demonstrate the core possession mechanic (autonomous NPCs + player control). Offline progress (Phase 2.5) is essential for idle game genre and graceful error handling. This is the minimum viable feature set to validate the architecture.
 
 ### Incremental Delivery
 
-1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (Autonomous world only)
-3. Add User Story 2 → Test independently → Deploy/Demo (MVP! Possession works)
+1. Complete Setup + Foundational + Offline Progress → Foundation ready with idle game mechanics
+2. Add User Story 1 → Test independently → Deploy/Demo (Autonomous world with offline progress)
+3. Add User Story 2 → Test independently → Deploy/Demo (MVP! Possession works with tab visibility handling)
 4. Add User Story 3 → Test independently → Deploy/Demo (Context-aware actions)
 5. Add User Story 4 → Test independently → Deploy/Demo (Persistent priorities)
 6. Add User Story 5 → Test independently → Deploy/Demo (Favorites system)
@@ -375,14 +421,14 @@ Task T059: "Create ActionPanel.razor component"
 
 With multiple developers:
 
-1. Team completes Setup + Foundational together (T001-T033)
-2. Once Foundational is done:
+1. Team completes Setup + Foundational + Offline Progress together (T001-T033, T130-T154) - CRITICAL blocking infrastructure
+2. Once Foundational AND Offline Progress are done:
    - Developer A: User Story 1 (T034-T051)
    - Developer B: User Story 2 (T052-T071) - can start in parallel if team capacity
    - Developer C: User Story 3 (T072-T084) - can start in parallel if team capacity
 3. Stories complete and integrate independently
 
-**Note**: User Stories 1 and 2 are both P1 (high priority) and together form the MVP. Recommend completing them sequentially to ensure autonomous behavior works before adding possession.
+**Note**: User Stories 1 and 2 are both P1 (high priority) and together form the MVP. Recommend completing them sequentially to ensure autonomous behavior and offline progress work before adding possession.
 
 ---
 
@@ -402,9 +448,10 @@ With multiple developers:
 
 ## Task Count Summary
 
-- **Total Tasks**: 129
+- **Total Tasks**: 154 (was 129, added 25 offline progress tasks)
 - **Phase 1 (Setup)**: 10 tasks
 - **Phase 2 (Foundational)**: 23 tasks
+- **Phase 2.5 (Offline Progress & Tab Visibility)**: 25 tasks (9 tests + 16 implementation) ⚠️ BLOCKING
 - **Phase 3 (User Story 1 - Observer Mode)**: 18 tasks (6 tests + 12 implementation)
 - **Phase 4 (User Story 2 - Possess and Control)**: 20 tasks (6 tests + 14 implementation)
 - **Phase 5 (User Story 3 - Context-Aware Actions)**: 13 tasks (3 tests + 10 implementation)
@@ -412,9 +459,9 @@ With multiple developers:
 - **Phase 7 (User Story 5 - Favorites System)**: 15 tasks (3 tests + 12 implementation)
 - **Phase 8 (Polish)**: 18 tasks
 
-**MVP Scope (Recommended)**: Phases 1 + 2 + 3 + 4 = 71 tasks (Setup + Foundation + US1 + US2)
+**MVP Scope (Recommended)**: Phases 1 + 2 + 2.5 + 3 + 4 = 96 tasks (Setup + Foundation + Offline Progress + US1 + US2)
 
-**Parallel Opportunities**: 45 tasks marked [P] can run in parallel when dependencies allow
+**Parallel Opportunities**: 61 tasks marked [P] can run in parallel when dependencies allow (was 45, added 16)
 
 **Independent Test Criteria**:
 

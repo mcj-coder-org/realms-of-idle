@@ -1,0 +1,126 @@
+@* PossessionDemo.razor - Offline Progress Integration Example *@
+@page "/possession-demo"
+@inject IGameService GameService
+@inject SimulationEngine SimulationEngine
+@inject OfflineProgressCalculator OfflineCalculator
+@inject ActionCatalog ActionCatalog
+@inject TabVisibilityHandler VisibilityHandler
+@implements IAsyncDisposable
+
+<PageTitle>Possession Demo - Realms of Idle</PageTitle>
+
+@* Offline Progress Modal *@
+<OfflineProgressModal Result="@_offlineProgressResult" OnClose="OnOfflineProgressModalClose" />
+
+@* Main UI Components *@
+<TopBar Settlement="@_settlement" />
+<SettlementView Settlement="@_settlement" />
+<NPCSidebar Settlement="@_settlement" OnPossess="OnPossessNPC" />
+<ActivityLog Entries="@_activityLog" />
+
+@code {
+    private Settlement? _settlement;
+    private List<ActivityLogEntry> _activityLog = new();
+    private OfflineProgressResult? _offlineProgressResult;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load or create settlement
+        _settlement = await GameService.GetCurrentSettlementAsync()
+            ?? Settlement.CreateMillbrook();
+
+        // Start simulation engine
+        SimulationEngine.OnTick += OnSimulationTick;
+        SimulationEngine.Start();
+
+        // Subscribe to tab visibility changes
+        VisibilityHandler.OnTabHidden += OnTabHidden;
+        VisibilityHandler.OnTabVisible += OnTabVisible;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await VisibilityHandler.InitializeAsync();
+        }
+    }
+
+    private async Task OnTabHidden()
+    {
+        // Stop simulation to conserve resources
+        SimulationEngine.Stop();
+
+        // Persist current state for offline calculation
+        await GameService.SaveSettlementAsync(_settlement!);
+
+        Console.WriteLine($"Tab hidden at {DateTime.UtcNow}. State persisted.");
+    }
+
+    private async Task OnTabVisible(TimeSpan elapsed)
+    {
+        Console.WriteLine($"Tab visible after {elapsed.TotalSeconds:F0} seconds");
+
+        // Calculate offline progress
+        if (elapsed.TotalSeconds >= 60)
+        {
+            var result = OfflineCalculator.CalculateProgress(
+                _settlement!,
+                elapsed,
+                ActionCatalog
+            );
+
+            // Update settlement with offline progress
+            _settlement = result.UpdatedSettlement;
+            await GameService.SaveSettlementAsync(_settlement);
+
+            // Show modal to user
+            _offlineProgressResult = result;
+
+            // Log summary to activity log
+            _activityLog.Add(new ActivityLogEntry(
+                Timestamp: DateTime.UtcNow,
+                ActorId: "system",
+                ActorName: "Offline Progress",
+                ActionName: "Calculated",
+                Result: $"+{result.TotalGoldEarned} gold, +{result.TotalReputationEarned} reputation"
+            ));
+
+            StateHasChanged();
+        }
+
+        // Resume simulation
+        SimulationEngine.Start();
+    }
+
+    private void OnOfflineProgressModalClose()
+    {
+        _offlineProgressResult = null;
+        StateHasChanged();
+    }
+
+    private void OnSimulationTick()
+    {
+        // Update simulation (existing logic)
+        // ...
+
+        InvokeAsync(StateHasChanged);
+    }
+
+    private async Task OnPossessNPC(string npcId)
+    {
+        await GameService.PossessNPCAsync(npcId);
+        StateHasChanged();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        SimulationEngine.OnTick -= OnSimulationTick;
+        SimulationEngine.Stop();
+        SimulationEngine.Dispose();
+
+        VisibilityHandler.OnTabHidden -= OnTabHidden;
+        VisibilityHandler.OnTabVisible -= OnTabVisible;
+        await VisibilityHandler.DisposeAsync();
+    }
+}
