@@ -820,18 +820,63 @@ Referenced by:
 [continues...]
 ```
 
+### Automation Strategy (Approved)
+
+**Validation Approach**:
+
+- **Trigger**: Pre-commit hook on modified docs/ files
+- **Scope**: Only validates modified files (not entire codebase)
+- **Blocking**: Commit blocked if validation fails on modified files
+- **Efficiency**: Fast validation, only checks what changed
+
+**Map Generation**:
+
+- **Trigger**: Auto-regenerates when docs/ files change
+- **Timing**: Pre-commit hook or CI pipeline
+- **Staleness**: Never stale (auto-regenerates before commit)
+- **Manual Option**: `.specify/scripts/generate-xref-report.sh` available
+
+**Section ID Format**:
+
+- **Standard**: Kebab-case (e.g., `#specialization-classes`)
+- **Requirement**: Must be GitHub Pages compatible
+- **Validation**: Section IDs checked during frontmatter validation
+
+**Implementation**:
+
+```bash
+# Pre-commit hook logic
+CHANGED_DOCS=$(git diff --cached --name-only --diff-filter=ACM | grep "^docs/design/")
+
+if [ -n "$CHANGED_DOCS" ]; then
+  # Validate only changed files
+  for file in $CHANGED_DOCS; do
+    validate-frontmatter.sh "$file"
+    validate-cross-references.sh "$file"
+  done
+
+  # Regenerate maps if content changed
+  if echo "$CHANGED_DOCS" | grep -q "docs/design/content/"; then
+    generate-xref-report.sh
+    git add docs/design/reference/cross-reference/gdd-to-content.md
+  fi
+fi
+```
+
+**Confidence**: Medium (75%) → High (90%) after automation decisions approved
+
 ---
 
 ## Summary & Recommendations
 
 ### Research Confidence Levels
 
-| Research Area           | Confidence   | Risk Level | Mitigation                                             |
-| ----------------------- | ------------ | ---------- | ------------------------------------------------------ |
-| R1: GDD Corrections     | High (95%)   | Low        | Scope clearly defined, examples provided               |
-| R2: Source Quality      | High (80%)   | Low        | Sample size adequate, consistent quality               |
-| R3: Progressive Loading | High (90%)   | Low        | Proven patterns from major projects                    |
-| R4: Cross-References    | Medium (75%) | Medium     | Novel approach, needs validation during implementation |
+| Research Area           | Confidence | Risk Level | Mitigation                                         |
+| ----------------------- | ---------- | ---------- | -------------------------------------------------- |
+| R1: GDD Corrections     | High (95%) | Low        | Mechanics clarified through user review            |
+| R2: Source Quality      | High (80%) | Low        | Sample size adequate, consistent quality           |
+| R3: Progressive Loading | High (90%) | Low        | Proven patterns from major projects                |
+| R4: Cross-References    | High (90%) | Low        | Automation strategy approved, implementation clear |
 
 ### Key Decisions Made
 
@@ -841,7 +886,10 @@ Referenced by:
 4. **Structure**: Index-based navigation with `<name>/index.md` pattern
 5. **Frontmatter**: Minimal schema (`title`, `gdd_ref`, optional `parent`/`tree_tier`)
 6. **Cross-References**: Generated maps + frontmatter links (Option C)
-7. **Validation**: Automated scripts for terminology, links, frontmatter, map freshness
+7. **Validation**: Pre-commit hook on modified files only (blocks invalid commits)
+8. **Map Generation**: Auto-regenerates on docs/ changes (never stale)
+9. **Section IDs**: Kebab-case format (GitHub Pages compatible)
+10. **Index Style**: Descriptive (list + 1 sentence per item, 200-300 lines)
 
 ### Blocking Issues Resolved
 
