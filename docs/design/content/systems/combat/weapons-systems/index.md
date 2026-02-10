@@ -37,13 +37,13 @@ Swords are the most versatile weapon category, offering options for every fighti
 
 #### Choosing Your Sword
 
-**For Beginners**: [Shortsword](../../content/items/weapons/swords/shortsword.md) - Learn fundamental techniques without overwhelming complexity. Light enough to practice for hours, versatile enough to remain useful as you advance.
+**For Beginners**: [Shortsword](../../content/items/weapons/swords/shortsword/index.md) - Learn fundamental techniques without overwhelming complexity. Light enough to practice for hours, versatile enough to remain useful as you advance.
 
-**For Versatility**: [Longsword](../../content/items/weapons/swords/longsword.md) - The professional's choice. Use with shield for defense, two-hand for power, or one-handed for flexibility. Unlocks advanced techniques.
+**For Versatility**: [Longsword](../../content/items/weapons/swords/longsword/index.md) - The professional's choice. Use with shield for defense, two-hand for power, or one-handed for flexibility. Unlocks advanced techniques.
 
-**For Finesse**: [Rapier](../../content/items/weapons/swords/rapier.md) - Speed and precision over raw power. Ideal for dexterous fighters, urban environments, and formal dueling. Socially acceptable in most contexts.
+**For Finesse**: [Rapier](../../content/items/weapons/swords/rapier/index.md) - Speed and precision over raw power. Ideal for dexterous fighters, urban environments, and formal dueling. Socially acceptable in most contexts.
 
-**For Power**: [Greatsword](../../content/items/weapons/swords/greatsword.md) - Maximum damage and reach at the cost of speed and flexibility. Excels against multiple enemies and breaking formations. Requires significant strength and training.
+**For Power**: [Greatsword](../../content/items/weapons/swords/greatsword/index.md) - Maximum damage and reach at the cost of speed and flexibility. Excels against multiple enemies and breaking formations. Requires significant strength and training.
 
 #### Sword Progression Path
 
@@ -144,6 +144,6 @@ Weapons carry social meaning beyond their combat utility:
 ## Related Content
 
 - [Item Weapons Overview](../../content/items/weapons/index.md)
-- [Combat Mechanics](./combat-mechanics.md)
-- [Equipment Economics](./equipment-economics.md)
-- [Armor Systems](./armor-systems.md)
+- [Combat Mechanics](./combat-mechanics/index.md)
+- [Equipment Economics](./equipment-economics/index.md)
+- [Armor Systems](./armor-systems/index.md)

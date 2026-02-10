@@ -35,4 +35,4 @@ tags: [Crafting/Smithing]
 ## Related Content
 
 - **Strong Synergy:** [Blacksmith](../../classes/crafter/blacksmith/), [Weaponsmith](../../classes/crafter/blacksmith/weaponsmith/), [Armorsmith](../../classes/crafter/blacksmith/armorsmith/)
-- **See Also:** [Heat Reading](heat-reading.md), [Forge Mastery](forge-mastery.md), [Smithing Skills](../index.md)
+- **See Also:** [Heat Reading](heat-reading/index.md), [Forge Mastery](forge-mastery/index.md), [Smithing Skills](../index.md)

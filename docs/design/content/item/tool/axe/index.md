@@ -49,10 +49,10 @@ Axes require maintenance. The bit must be sharpened daily. The handle must be ch
 
 ## Interactions
 
-| System                                               | Interaction                      |
-| ---------------------------------------------------- | -------------------------------- |
-| [Logging](../../../../systems/crafting/gathering.md) | Primary tool for wood harvesting |
-| [Combat](../../../../systems/combat/index.md)        | Can be used as improvised weapon |
+| System                                                     | Interaction                      |
+| ---------------------------------------------------------- | -------------------------------- |
+| [Logging](../../../../systems/crafting/gathering/index.md) | Primary tool for wood harvesting |
+| [Combat](../../../../systems/combat/index.md)              | Can be used as improvised weapon |
 
 ---
 

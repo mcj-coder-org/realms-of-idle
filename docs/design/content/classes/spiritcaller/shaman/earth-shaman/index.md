@@ -48,6 +48,6 @@ Earth Shaman is a terminal Tier 3 specialization. No further progression paths a
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Earth Spirit Bond](../../skills/tiered/earth-spirit-bond.md), [Stone Heart](../../skills/tiered/stone-heart.md)
-- **Spells:** [Spirit Stone](../../spells/nature/spirit-stone.md), [Earth Blessing](../../spells/nature/earth-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Earth Spirit Bond](../../skills/tiered/earth-spirit-bond/index.md), [Stone Heart](../../skills/tiered/stone-heart/index.md)
+- **Spells:** [Spirit Stone](../../spells/nature/spirit-stone/index.md), [Earth Blessing](../../spells/nature/earth-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

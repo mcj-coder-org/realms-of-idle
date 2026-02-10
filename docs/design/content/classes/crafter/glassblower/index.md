@@ -79,10 +79,10 @@ Master glassblowers create impossible things. Vessels so thin they seem made of 
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                     |
-| ------------------ | ------ | --------------------------------------------------------------- | --------------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Reading molten glass temperature is essential |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Glassblowing requires sustained concentration |
+| Skill              | Tier   | Link                                                                  | Reasoning                                     |
+| ------------------ | ------ | --------------------------------------------------------------------- | --------------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Reading molten glass temperature is essential |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Glassblowing requires sustained concentration |
 
 #### Synergy Skills
 
@@ -90,11 +90,11 @@ Skills with strong synergies for Glassblower:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
 
 **Glassblowing Skills** (specialized):
 
@@ -121,7 +121,7 @@ Actions that grant XP to the Glassblower class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                     | Requirements                      | Result Class | Tier |
 | -------------------------------------- | --------------------------------- | ------------ | ---- |
@@ -131,13 +131,13 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                           | Interaction                                                   |
-| ---------------------------------------------------------------- | ------------------------------------------------------------- |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Creates containers for alchemy and enchanting                 |
-| [Economy](../../../systems/economy/index.md)                     | Can establish glass shop; supplies alchemists and households  |
-| [Alchemy](../crafting/alchemist.md)                              | Creates essential laboratory apparatus                        |
-| [Enchanting](../../../systems/crafting/enchantment-mechanics.md) | Creates containers for magical substances                     |
-| [Settlement](../../../systems/world/settlements.md)              | Glass workshops provide windows, bottles, and specialty items |
+| System                                                                 | Interaction                                                   |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Creates containers for alchemy and enchanting                 |
+| [Economy](../../../systems/economy/index.md)                           | Can establish glass shop; supplies alchemists and households  |
+| [Alchemy](../crafting/alchemist/index.md)                              | Creates essential laboratory apparatus                        |
+| [Enchanting](../../../systems/crafting/enchantment-mechanics/index.md) | Creates containers for magical substances                     |
+| [Settlement](../../../systems/world/settlements/index.md)              | Glass workshops provide windows, bottles, and specialty items |
 
 ---
 
@@ -147,8 +147,8 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Materials Used:** Silica sand, wood ash, soda ash, metal oxides (for color)
 - **Creates:** Vials, bottles, flasks, windows, lenses, laboratory apparatus
 - **Recipes:** Glassblowing Recipes
-- **Synergy Classes:** [Alchemist](alchemist.md), [Enchanter](../magic/enchanter.md), [Jeweler](jeweler.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Alchemy Recipes](../../recipes/alchemy/index.md)
+- **Synergy Classes:** [Alchemist](alchemist/index.md), [Enchanter](../magic/enchanter/index.md), [Jeweler](jeweler/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Alchemy Recipes](../../recipes/alchemy/index.md)
 
 ## Tags
 

@@ -9,11 +9,11 @@ summary: 'Guerrilla warfare specialists who use wetland terrain and cunning tact
 
 # Swamp Orc
 
-> **Parent Race:** [Orcs](base.md)
+> **Parent Race:** [Orcs](base/index.md)
 
 ## Variant Overview
 
-Swamp Orcs are the smallest orc variant, but what they lack in size they compensate with cunning and tactical sophistication. They've adapted to wetland environments that other orcs find miserable - murky water, thick vegetation, disease, and terrain that shifts underfoot. Where [plains orcs](plains.md) charge gloriously and [mountain orcs](mountain.md) defend stubbornly, swamp orcs fight smart.
+Swamp Orcs are the smallest orc variant, but what they lack in size they compensate with cunning and tactical sophistication. They've adapted to wetland environments that other orcs find miserable - murky water, thick vegetation, disease, and terrain that shifts underfoot. Where [plains orcs](plains/index.md) charge gloriously and [mountain orcs](mountain/index.md) defend stubbornly, swamp orcs fight smart.
 
 They're the guerrilla warfare specialists of orc kind. Swamp orcs rarely face enemies in open battle - they use ambushes, terrain traps, hit-and-fade tactics, and psychological warfare. A swamp orc war band might harass invading forces for weeks without major engagement, bleeding them through attrition until morale breaks and survivors flee.
 
@@ -61,7 +61,7 @@ Swamp orcs excel at unconventional tactics that leverage terrain and psychologic
 
 **Additional Bonus:** +15% to all stealth-related skills when in swamp/wetland environments
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -73,14 +73,14 @@ Swamp Orcs receive **3 random skills** from their racial skill pool at character
 
 **Example Racial Skills:**
 
-| Skill                                                                   | Tags                              | Effect                                                 |
-| ----------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------ |
-| [Relentless Endurance](../../../skills/passive/relentless-endurance.md) | Physical/Endurance, Combat        | Survive lethal damage at 1 HP once per day             |
-| [Savage Attacks](../../../skills/passive/savage-attacks.md)             | Combat/Melee, Physical/Strength   | Extra weapon damage die on critical hits               |
-| [Swamp Stride](../../../skills/index.md)                                | Physical, Stealth                 | Move through wetlands without penalties or traces      |
-| [Ambush Mastery](../../../skills/index.md)                              | Combat, Stealth, Tribal           | +30% damage on ambush attacks, enhanced concealment    |
-| [Guerrilla Tactics](../../../skills/index.md)                           | Combat, Stealth, Universal/Mental | Enhanced at hit-and-fade warfare and harassment        |
-| [Swamp Camouflage](../../../skills/index.md)                            | Stealth, Physical                 | +15% stealth in wetlands, blend perfectly with terrain |
+| Skill                                                                         | Tags                              | Effect                                                 |
+| ----------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------ |
+| [Relentless Endurance](../../../skills/passive/relentless-endurance/index.md) | Physical/Endurance, Combat        | Survive lethal damage at 1 HP once per day             |
+| [Savage Attacks](../../../skills/passive/savage-attacks/index.md)             | Combat/Melee, Physical/Strength   | Extra weapon damage die on critical hits               |
+| [Swamp Stride](../../../skills/index.md)                                      | Physical, Stealth                 | Move through wetlands without penalties or traces      |
+| [Ambush Mastery](../../../skills/index.md)                                    | Combat, Stealth, Tribal           | +30% damage on ambush attacks, enhanced concealment    |
+| [Guerrilla Tactics](../../../skills/index.md)                                 | Combat, Stealth, Universal/Mental | Enhanced at hit-and-fade warfare and harassment        |
+| [Swamp Camouflage](../../../skills/index.md)                                  | Stealth, Physical                 | +15% stealth in wetlands, blend perfectly with terrain |
 
 ## Special Traits
 
@@ -107,13 +107,13 @@ Swamp orc culture diverges most from traditional orc values. This creates intern
 
 **Story Fighting**: Swamp orcs preserve tactical knowledge through detailed battle stories. Elders teach by recounting how specific ambushes succeeded or failed, what signs revealed enemy positions, how terrain dictated tactics. These stories function as tactical textbooks passed down generations.
 
-**Size Acceptance**: Swamp orcs are smaller than other variants (averaging 6-7 feet vs 7-8 feet for [plains orcs](plains.md)). Rather than shame, they embrace this - smaller warriors move quieter, hide easier, and tire opponents expecting orc size advantage. "Size is weakness in swamps" goes the saying.
+**Size Acceptance**: Swamp orcs are smaller than other variants (averaging 6-7 feet vs 7-8 feet for [plains orcs](plains/index.md)). Rather than shame, they embrace this - smaller warriors move quieter, hide easier, and tire opponents expecting orc size advantage. "Size is weakness in swamps" goes the saying.
 
 **Disease Resistance**: Swamp living builds immunity to diseases that kill outsiders. Swamp orcs rarely get sick; when they do, they recover quickly. This unintentional biological warfare makes invading swamp territories even deadlier.
 
 ## Relations
 
-**With Other Orc Variants:** Swamp orcs make other variants uncomfortable. [Plains orcs](plains.md) openly call them cowards for avoiding open combat. [Mountain orcs](mountain.md) respect their tactical thinking but disapprove of methods. [Desert orcs](desert.md) understand practical adaptation but think swamp orcs take it too far. Swamp orcs largely ignore these criticisms - they're alive and their critics' opinions won't change that.
+**With Other Orc Variants:** Swamp orcs make other variants uncomfortable. [Plains orcs](plains/index.md) openly call them cowards for avoiding open combat. [Mountain orcs](mountain/index.md) respect their tactical thinking but disapprove of methods. [Desert orcs](desert/index.md) understand practical adaptation but think swamp orcs take it too far. Swamp orcs largely ignore these criticisms - they're alive and their critics' opinions won't change that.
 
 **With Other Races:** Swamp orcs have strange relationships with settled races. They're feared for unpredictability and unsettling tactics, but also occasionally hired as guides through dangerous wetlands. Some human scouts learn swamp warfare from swamp orc veterans (carefully, both sides ready for betrayal). These limited cooperations never evolve into trust - just mutual pragmatism.
 

@@ -65,7 +65,7 @@ You instinctively coordinate with nearby allies, using pack hunting tactics lear
 
 **Synergizes with:**
 
-- [Commander's Voice](../tiered/commanders-voice.md) - Lead coordinated attacks
+- [Commander's Voice](../tiered/commanders-voice/index.md) - Lead coordinated attacks
 - Party-based combat tactics
 - Flanking maneuvers
 - Outnumbering strategies
@@ -85,6 +85,6 @@ You instinctively coordinate with nearby allies, using pack hunting tactics lear
 
 ## Related Content
 
-- [Rampage](rampage.md) - Extra attacks after kills (Gnoll)
-- [Fury of the Small](fury-of-the-small.md) - Damage boost vs larger foes (Goblin/Kobold)
-- [Tactical Assessment](../mechanic-unlock/tactical-assessment.md) - Combat analysis
+- [Rampage](rampage/index.md) - Extra attacks after kills (Gnoll)
+- [Fury of the Small](fury-of-the-small/index.md) - Damage boost vs larger foes (Goblin/Kobold)
+- [Tactical Assessment](../mechanic-unlock/tactical-assessment/index.md) - Combat analysis

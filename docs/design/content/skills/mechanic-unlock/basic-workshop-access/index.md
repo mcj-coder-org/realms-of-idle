@@ -43,4 +43,4 @@ tags: [Crafting]
 ## Related Content
 
 - **Strong Synergy:** All [Crafter specialties](../../classes/crafter/)
-- **See Also:** [Workshop System](../../systems/crafting/workshops.md), [Master Workshop Access](master-workshop-access.md)
+- **See Also:** [Workshop System](../../systems/crafting/workshops/index.md), [Master Workshop Access](master-workshop-access/index.md)

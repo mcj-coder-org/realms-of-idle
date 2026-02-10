@@ -22,14 +22,14 @@ Skills focused on metalworking, forging, tempering, and creating weapons and arm
 
 ### Tiered Skills
 
-- [Perfect Temper](perfect-temper.md) - Superior metal tempering technique
-- [Weapon Enhancement](weapon-enhancement.md) - Create enhanced weapon properties
+- [Perfect Temper](perfect-temper/index.md) - Superior metal tempering technique
+- [Weapon Enhancement](weapon-enhancement/index.md) - Create enhanced weapon properties
 
 ### Mechanic Unlocks
 
-- [Metal Sense](metal-sense.md) - Identify metal quality and properties
-- [Forge Fire](forge-fire.md) - Mastery of forge temperature control
-- [Armor Fitting](armor-fitting.md) - Custom fit armor for maximum effectiveness
+- [Metal Sense](metal-sense/index.md) - Identify metal quality and properties
+- [Forge Fire](forge-fire/index.md) - Mastery of forge temperature control
+- [Armor Fitting](armor-fitting/index.md) - Custom fit armor for maximum effectiveness
 
 ## Acquisition
 
@@ -39,4 +39,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

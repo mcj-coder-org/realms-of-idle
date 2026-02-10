@@ -83,10 +83,10 @@ The kitchen is organized chaos - controlled, purposeful movement. Ingredients ar
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                                  |
-| ------------------ | ------ | --------------------------------------------------------------- | ---------------------------------------------------------- |
-| Potent Brews       | Lesser | [See Skill](../../skills/tiered/potent-brews.md)                | Food preparation shares techniques with alchemy            |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding ingredient quality is fundamental to cooking |
+| Skill              | Tier   | Link                                                                  | Reasoning                                                  |
+| ------------------ | ------ | --------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Potent Brews       | Lesser | [See Skill](../../skills/tiered/potent-brews/index.md)                | Food preparation shares techniques with alchemy            |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding ingredient quality is fundamental to cooking |
 
 #### Synergy Skills
 
@@ -94,13 +94,13 @@ Skills with strong synergies for Cook:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Recipe Innovator](../../skills/passive-generator/recipe-innovator.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Recipe Innovator](../../skills/passive-generator/recipe-innovator/index.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
 
 **Cooking Skills** (specialized skills to be defined):
 
@@ -175,28 +175,28 @@ Actions that grant XP to the Cook class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                       | Requirements                            | Result Class | Tier |
-| ---------------------------------------- | --------------------------------------- | ------------ | ---- |
-| [Artisan](../consolidation/index.md)     | Cook + any Crafter class                | Artisan      | 1    |
-| [Chemist](../consolidation/index.md)     | Cook + [Alchemist](./alchemist.md)      | Chemist      | 1    |
-| [Innkeeper](../consolidation/index.md)   | Cook + [Merchant](../trade/index.md)    | Innkeeper    | 1    |
-| [Survivalist](../consolidation/index.md) | Cook + [Forager](../gathering/index.md) | Survivalist  | 1    |
-| [Homesteader](../consolidation/index.md) | Cook + [Farmer](../gathering/index.md)  | Homesteader  | 1    |
-| [Artificer](../consolidation/index.md)   | Master in 3+ crafting classes           | Artificer    | 3    |
+| Consolidation Path                       | Requirements                             | Result Class | Tier |
+| ---------------------------------------- | ---------------------------------------- | ------------ | ---- |
+| [Artisan](../consolidation/index.md)     | Cook + any Crafter class                 | Artisan      | 1    |
+| [Chemist](../consolidation/index.md)     | Cook + [Alchemist](./alchemist/index.md) | Chemist      | 1    |
+| [Innkeeper](../consolidation/index.md)   | Cook + [Merchant](../trade/index.md)     | Innkeeper    | 1    |
+| [Survivalist](../consolidation/index.md) | Cook + [Forager](../gathering/index.md)  | Survivalist  | 1    |
+| [Homesteader](../consolidation/index.md) | Cook + [Farmer](../gathering/index.md)   | Homesteader  | 1    |
+| [Artificer](../consolidation/index.md)   | Master in 3+ crafting classes            | Artificer    | 3    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                        |
-| ------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Primary food crafting class; unlocks cooking recipes               |
-| [Economy](../../../systems/economy/index.md)                  | Can establish restaurant, tavern, bakery; steady customers         |
-| [Social](../../../systems/social/index.md)                    | Shared meals improve relationships and morale                      |
-| [Combat](../../../systems/combat/index.md)                    | Quality meals provide buffs before battles                         |
-| [Gathering](../../../systems/crafting/gathering.md)           | Synergy: [Forager](../gathering/index.md) + Cook = diverse cuisine |
-| [Settlement](../../../systems/world/settlements.md)           | Cooking services improve settlement morale and health              |
-| [Exploration](../../../systems/world/exploration.md)          | Field cooking sustains long journeys                               |
+| System                                                              | Interaction                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Primary food crafting class; unlocks cooking recipes               |
+| [Economy](../../../systems/economy/index.md)                        | Can establish restaurant, tavern, bakery; steady customers         |
+| [Social](../../../systems/social/index.md)                          | Shared meals improve relationships and morale                      |
+| [Combat](../../../systems/combat/index.md)                          | Quality meals provide buffs before battles                         |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Synergy: [Forager](../gathering/index.md) + Cook = diverse cuisine |
+| [Settlement](../../../systems/world/settlements/index.md)           | Cooking services improve settlement morale and health              |
+| [Exploration](../../../systems/world/exploration/index.md)          | Field cooking sustains long journeys                               |
 
 ---
 
@@ -206,8 +206,8 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Materials Used:** [Meat](../../materials/index.md), [Vegetables](../../materials/index.md), [Grains](../../materials/index.md), [Herbs](../../materials/index.md), [Spices](../../materials/index.md)
 - **Creates:** Meals, baked goods, preserved foods, beverages
 - **Recipes:** [Cooking Recipes](../../../systems/crafting/index.md)
-- **Synergy Classes:** [Forager](../gathering/index.md), [Farmer](../gathering/index.md), [Alchemist](./alchemist.md), [Merchant](../trade/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Food System](../../../systems/core/index.md), [Morale System](../../../systems/combat/morale-and-surrender.md)
+- **Synergy Classes:** [Forager](../gathering/index.md), [Farmer](../gathering/index.md), [Alchemist](./alchemist/index.md), [Merchant](../trade/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Food System](../../../systems/core/index.md), [Morale System](../../../systems/combat/morale-and-surrender/index.md)
 
 ## Tags
 

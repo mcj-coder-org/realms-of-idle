@@ -47,4 +47,4 @@ tags: [Crafting/Smithing]
 
 - **Granted By:** [Blacksmith](../../classes/crafter/blacksmith/), [Weaponsmith](../../classes/crafter/blacksmith/weaponsmith/), [Armorsmith](../../classes/crafter/blacksmith/armorsmith/), [Miner](../../classes/gathering/miner/)
 - **Synergy Classes:** Blacksmith, Weaponsmith, Armorsmith, Miner
-- **See Also:** [Metal Sense](metal-sense.md), [Forge Mastery](forge-mastery.md), [Blacksmithing Progression](../../systems/crafting/crafting-progression.md)
+- **See Also:** [Metal Sense](metal-sense/index.md), [Forge Mastery](forge-mastery/index.md), [Blacksmithing Progression](../../systems/crafting/crafting-progression/index.md)

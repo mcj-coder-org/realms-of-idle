@@ -43,4 +43,4 @@ tags: [Crafting/Smithing]
 ## Related Content
 
 - **Strong Synergy:** [Armorsmith](../../classes/crafter/armorsmith/), [Weaponsmith](../../classes/crafter/weaponsmith/)
-- **See Also:** [Armor Crafting](../../systems/crafting/armor-crafting.md), [Articulated Armor](../../systems/items/armor-types.md)
+- **See Also:** [Armor Crafting](../../systems/crafting/armor-crafting/index.md), [Articulated Armor](../../systems/items/armor-types/index.md)

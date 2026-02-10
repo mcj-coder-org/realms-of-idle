@@ -66,4 +66,4 @@ Classes with strong synergies: All Gathering pool (Forager, Miner, Hunter, Fishe
 ## Related Content
 
 - **Strong Synergy:** All [Gathering Specialties](../../classes/gatherer/) (Forager, Miner, Hunter, Fisher, Lumberjack, Trapper, Herbalist)
-- **See Also:** [Resource Sense](resource-sense.md), [Gathering Skills](../index.md), [Gathering System](../../systems/gathering/index.md)
+- **See Also:** [Resource Sense](resource-sense/index.md), [Gathering Skills](../index.md), [Gathering System](../../systems/gathering/index.md)

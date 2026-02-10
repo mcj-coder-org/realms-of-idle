@@ -69,17 +69,17 @@ The profession attracts those with patience for repetitive perfection. A single 
 
 ### Starting Skills
 
-| Skill         | Tier     | Link                                                         | Description                             |
-| ------------- | -------- | ------------------------------------------------------------ | --------------------------------------- |
-| Armor Fitting | Greater  | [See Skill](../../skills/mechanic-unlock/armor-fitting.md)   | Custom fit armor for maximum protection |
-| Articulation  | Mechanic | [See Skill](../../../skills/mechanic-unlock/articulation.md) | Create armor that moves naturally       |
+| Skill         | Tier     | Link                                                               | Description                             |
+| ------------- | -------- | ------------------------------------------------------------------ | --------------------------------------- |
+| Armor Fitting | Greater  | [See Skill](../../skills/mechanic-unlock/armor-fitting/index.md)   | Custom fit armor for maximum protection |
+| Articulation  | Mechanic | [See Skill](../../../skills/mechanic-unlock/articulation/index.md) | Create armor that moves naturally       |
 
 ### Synergy Skills
 
 Skills with strong synergies for Armorsmith:
 
 - All [Blacksmith](../../blacksmith/index.md) synergy skills
-- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting.md) - Custom fit armor to wearers
+- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting/index.md) - Custom fit armor to wearers
 - [Articulation Mastery](../../skills/index.md) - Create armor with natural movement
 - [Impact Distribution](../../skills/index.md) - Design armor that spreads impact
 - [Material Mastery](../../skills/index.md) - Work with exotic armor materials
@@ -119,8 +119,8 @@ As a Tier 3 class, Armorsmith has full tag depth access:
 
 - **Requires:** Master forge, fitting tools, quality materials
 - **Creates:** [Armor](../../items/index.md) of exceptional quality
-- **Synergy Classes:** [Blacksmith](../../blacksmith/index.md), [Guard](../combat/guard.md), [Knight](../combat/knight.md), [Enchanter](../magic/enchanter.md)
-- **See Also:** [Class Tiers](../../../systems/character/class-tiers.md), [Crafting Progression](../../../systems/crafting/crafting-progression.md)
+- **Synergy Classes:** [Blacksmith](../../blacksmith/index.md), [Guard](../combat/guard/index.md), [Knight](../combat/knight/index.md), [Enchanter](../magic/enchanter/index.md)
+- **See Also:** [Class Tiers](../../../systems/character/class-tiers/index.md), [Crafting Progression](../../../systems/crafting/crafting-progression/index.md)
 
 ## Tags
 

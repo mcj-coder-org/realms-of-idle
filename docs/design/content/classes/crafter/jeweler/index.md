@@ -83,10 +83,10 @@ The workshop smells of metal polish and jeweler's rouge. Light floods the space 
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                                       |
-| ------------------ | ------ | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding gems and precious metals is essential for jewelry |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Precision work with valuable materials requires concentration   |
+| Skill              | Tier   | Link                                                                  | Reasoning                                                       |
+| ------------------ | ------ | --------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding gems and precious metals is essential for jewelry |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Precision work with valuable materials requires concentration   |
 
 #### Synergy Skills
 
@@ -94,18 +94,18 @@ Skills with strong synergies for Jeweler:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert repair capabilities
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert repair capabilities
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
 
 **Smithing Skills** (for metalwork):
 
-- [Metal Sense](../../skills/mechanic-unlock/metal-sense.md) - Mechanic - Intuitive understanding of metals
-- [Perfect Temper](../../skills/tiered/perfect-temper.md) - Lesser/Greater/Enhanced - Superior heat treatment
+- [Metal Sense](../../skills/mechanic-unlock/metal-sense/index.md) - Mechanic - Intuitive understanding of metals
+- [Perfect Temper](../../skills/tiered/perfect-temper/index.md) - Lesser/Greater/Enhanced - Superior heat treatment
 
 **Jewelry Skills** (specialized skills to be defined):
 
@@ -179,27 +179,27 @@ Actions that grant XP to the Jeweler class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                               | Requirements                             | Result Class        | Tier |
-| ------------------------------------------------ | ---------------------------------------- | ------------------- | ---- |
-| [Artisan](../consolidation/index.md)             | Jeweler + any Crafter class              | Artisan             | 1    |
-| [Goldsmith](../consolidation/index.md)           | Jeweler + [Blacksmith](./blacksmith.md)  | Goldsmith           | 1    |
-| [Gem Merchant](../consolidation/index.md)        | Jeweler + [Merchant](../trade/index.md)  | Gem Merchant        | 1    |
-| [Enchantment Crafter](../consolidation/index.md) | Jeweler + [Enchanter](../magic/index.md) | Enchantment Crafter | 1    |
-| [Artificer](../consolidation/index.md)           | Master in 3+ crafting classes            | Artificer           | 3    |
+| Consolidation Path                               | Requirements                                  | Result Class        | Tier |
+| ------------------------------------------------ | --------------------------------------------- | ------------------- | ---- |
+| [Artisan](../consolidation/index.md)             | Jeweler + any Crafter class                   | Artisan             | 1    |
+| [Goldsmith](../consolidation/index.md)           | Jeweler + [Blacksmith](./blacksmith/index.md) | Goldsmith           | 1    |
+| [Gem Merchant](../consolidation/index.md)        | Jeweler + [Merchant](../trade/index.md)       | Gem Merchant        | 1    |
+| [Enchantment Crafter](../consolidation/index.md) | Jeweler + [Enchanter](../magic/index.md)      | Enchantment Crafter | 1    |
+| [Artificer](../consolidation/index.md)           | Master in 3+ crafting classes                 | Artificer           | 3    |
 
 ### Interactions
 
-| System                                                           | Interaction                                                        |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Primary jewelry crafting class; unlocks jewelry recipes            |
-| [Economy](../../../systems/economy/index.md)                     | Can establish jewelry shop; high-value luxury goods market         |
-| [Enchanting](../../../systems/crafting/enchantment-mechanics.md) | Creates optimal focuses for enchanting; enchanted jewelry          |
-| [Magic](../../../systems/character/magic-system.md)              | Enchantment focuses improve spellcasting effectiveness             |
-| [Social](../../../systems/social/index.md)                       | Fine jewelry improves status and social standing significantly     |
-| [Gathering](../../../systems/crafting/gathering.md)              | Synergy: [Miner](../gathering/index.md) + Jeweler = gem processing |
-| [Settlement](../../../systems/world/settlements.md)              | Jewelry shops attract wealthy customers, boost economy             |
+| System                                                                 | Interaction                                                        |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Primary jewelry crafting class; unlocks jewelry recipes            |
+| [Economy](../../../systems/economy/index.md)                           | Can establish jewelry shop; high-value luxury goods market         |
+| [Enchanting](../../../systems/crafting/enchantment-mechanics/index.md) | Creates optimal focuses for enchanting; enchanted jewelry          |
+| [Magic](../../../systems/character/magic-system/index.md)              | Enchantment focuses improve spellcasting effectiveness             |
+| [Social](../../../systems/social/index.md)                             | Fine jewelry improves status and social standing significantly     |
+| [Gathering](../../../systems/crafting/gathering/index.md)              | Synergy: [Miner](../gathering/index.md) + Jeweler = gem processing |
+| [Settlement](../../../systems/world/settlements/index.md)              | Jewelry shops attract wealthy customers, boost economy             |
 
 ---
 
@@ -209,8 +209,8 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Materials Used:** [Gold](../../materials/index.md), [Silver](../../materials/index.md), [Platinum](../../materials/index.md), [Gems](../../materials/index.md)
 - **Creates:** [Rings](../../items/index.md), [Amulets](../../items/index.md), [Crowns](../../items/index.md), [Enchantment Focuses](../../items/index.md)
 - **Recipes:** [Jewelry Recipes](../../../systems/crafting/index.md)
-- **Synergy Classes:** [Miner](../gathering/index.md), [Enchanter](../magic/index.md), [Blacksmith](./blacksmith.md), [Merchant](../trade/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Enchantment System](../../../systems/crafting/enchantment-mechanics.md), [Precious Metals](../../materials/index.md)
+- **Synergy Classes:** [Miner](../gathering/index.md), [Enchanter](../magic/index.md), [Blacksmith](./blacksmith/index.md), [Merchant](../trade/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Enchantment System](../../../systems/crafting/enchantment-mechanics/index.md), [Precious Metals](../../materials/index.md)
 
 ## Tags
 

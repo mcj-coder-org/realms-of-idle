@@ -24,6 +24,6 @@ Organizations, guilds, and political groups that influence the game world.
 
 ## See Also
 
-- [Settlement System](../../systems/world/settlements.md)
+- [Settlement System](../../systems/world/settlements/index.md)
 - [Economy System](../../systems/economy/index.md)
 - [Social System](../../systems/social/index.md)

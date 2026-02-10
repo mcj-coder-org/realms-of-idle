@@ -136,7 +136,7 @@ Alchemists and enchanters who work with air elemental essence describe it as the
 
 - **Habitat:** [Mountain Peaks](../../../../systems/world/index.md), [Open Skies](../../../../systems/world/index.md), [Storm Systems](../../../../systems/world/index.md)
 - **Summoners:** [Air Mages](../../../classes/index.md), [Elementalists](../../../classes/index.md), [Storm Callers](../../../classes/index.md)
-- **Counterparts:** [Fire Elemental](fire-elemental.md), [Water Elemental](water-elemental.md), [Earth Elemental](earth-elemental.md)
-- **Magic:** [Air Magic](../../../../systems/character/magic-system.md), [Weather Magic](../../../../systems/character/magic-system.md)
+- **Counterparts:** [Fire Elemental](fire-elemental/index.md), [Water Elemental](water-elemental/index.md), [Earth Elemental](earth-elemental/index.md)
+- **Magic:** [Air Magic](../../../../systems/character/magic-system/index.md), [Weather Magic](../../../../systems/character/magic-system/index.md)
 - **Used By:** [Feather Fall Potion](../../../systems/crafting/index.md), [Boots of Speed](../../items/index.md), [Storm Blade](../../items/index.md)
-- **See Also:** [Elemental Plane](../../../../systems/world/index.md), [Weather Systems](../../../../systems/world/index.md), [Creature System](../../creature-system.md)
+- **See Also:** [Elemental Plane](../../../../systems/world/index.md), [Weather Systems](../../../../systems/world/index.md), [Creature System](../../creature-system/index.md)

@@ -35,7 +35,7 @@ This content requires the following tags for access/synergy:
 | `Crafting/Smithing`        | 2     | Blacksmith, Weaponsmith, Armorsmith |
 | `Crafting/Smithing/Weapon` | 3     | Weaponsmith                         |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../systems/content/tag-system/index.md) for details.
 
 ---
 

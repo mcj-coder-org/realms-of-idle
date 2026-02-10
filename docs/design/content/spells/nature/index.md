@@ -40,5 +40,5 @@ Nature magic is exclusive to shamans and draws power from the tribal spirit pool
 
 ## Related Documentation
 
-- [Shamanic Magic](../../../systems/magic/shamanic-magic.md) - Full shamanic magic system
-- [Tribe Mechanics](../../../systems/social/tribe-mechanics.md) - Spirit pools
+- [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md) - Full shamanic magic system
+- [Tribe Mechanics](../../../systems/social/tribe-mechanics/index.md) - Spirit pools

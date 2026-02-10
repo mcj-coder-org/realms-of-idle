@@ -24,11 +24,11 @@ The great elven civilizations rose in the deep forests and isolated valleys wher
 
 To walk through an elven settlement is to step into living history. Trees planted a thousand years ago form the bones of buildings. Artwork adorns walls in styles that predate human written language. The elf serving you tea might have fought in wars you only know from crumbling chronicles. Everything feels simultaneously ancient and perfectly maintained - because to elves, a century-old repair is practically new.
 
-Elves approach daily life with maddening (to [humans](../humans.md)) deliberation. Why rush a decision that can be reconsidered for the next fifty years? Why quickly patch a problem instead of taking a decade to solve it permanently? Why choose the fast solution when the elegant one is only a few years away? This patience makes elves incredible scholars, master crafters, and terrible business partners for anyone on a mortal timeline.
+Elves approach daily life with maddening (to [humans](../humans/index.md)) deliberation. Why rush a decision that can be reconsidered for the next fifty years? Why quickly patch a problem instead of taking a decade to solve it permanently? Why choose the fast solution when the elegant one is only a few years away? This patience makes elves incredible scholars, master crafters, and terrible business partners for anyone on a mortal timeline.
 
-Other races have complicated relationships with elves. [Humans](../humans.md) admire elven grace and magical prowess while finding their condescension insufferable. [Dwarves](dwarves/base.md) respect elven craftsmanship (grudgingly) while thinking them impractical dreamers. [Tribal races](../../monstrous/index.md) often view elves with suspicion - those long-lived folk remember tribal raids from generations past and don't forget easily. Yet everyone wants elven-made items, elven magical knowledge, and elven diplomatic support.
+Other races have complicated relationships with elves. [Humans](../humans/index.md) admire elven grace and magical prowess while finding their condescension insufferable. [Dwarves](dwarves/base/index.md) respect elven craftsmanship (grudgingly) while thinking them impractical dreamers. [Tribal races](../../monstrous/index.md) often view elves with suspicion - those long-lived folk remember tribal raids from generations past and don't forget easily. Yet everyone wants elven-made items, elven magical knowledge, and elven diplomatic support.
 
-Elves integrate into [human](../humans.md) societies more readily than you'd expect for such long-lived beings. An elf might spend a few decades in a human city as a "working vacation" from elven [settlements](../../../systems/world/settlements.md), teaching [magic](../../../systems/character/magic-system.md), crafting masterworks, or simply observing how quickly things change. They return with stories of human friends who grew old while the elf barely aged - a bittersweet reality elves learn young. "Love humans if you must," goes the elven saying, "but prepare to grieve."
+Elves integrate into [human](../humans/index.md) societies more readily than you'd expect for such long-lived beings. An elf might spend a few decades in a human city as a "working vacation" from elven [settlements](../../../systems/world/settlements/index.md), teaching [magic](../../../systems/character/magic-system/index.md), crafting masterworks, or simply observing how quickly things change. They return with stories of human friends who grew old while the elf barely aged - a bittersweet reality elves learn young. "Love humans if you must," goes the elven saying, "but prepare to grieve."
 
 The greatest challenge for elves isn't other races but themselves. Five centuries of life means five centuries of accumulated grudges, regrets, and sorrows. Elder elves often retreat into scholarship or meditation, not from wisdom but from weariness. The world changes faster than they can adapt, and watching everything you knew fade away - friends, places, customs - takes a toll no magic can heal.
 
@@ -64,13 +64,13 @@ The greatest challenge for elves isn't other races but themselves. Five centurie
 
 ### Common Elven Traits
 
-**Arcane Blood**: [Magic](../../../systems/character/magic-system.md) doesn't just flow through elves - it is part of them. Their [mana pools](../../../systems/character/magic-system.md) are significantly larger than [humans'](../humans.md) (+25%), and they regenerate mana faster naturally (+20%). This makes elven [mages](../../../classes/magic/index.md) formidable even without training differences.
+**Arcane Blood**: [Magic](../../../systems/character/magic-system/index.md) doesn't just flow through elves - it is part of them. Their [mana pools](../../../systems/character/magic-system/index.md) are significantly larger than [humans'](../humans/index.md) (+25%), and they regenerate mana faster naturally (+20%). This makes elven [mages](../../../classes/magic/index.md) formidable even without training differences.
 
-**Longevity**: Elves don't just live long (600-800 years) - they age slowly. An elf of 200 looks like a [human](../humans.md) of 30. This longevity affects everything from [skill development](../../../systems/character/index.md) to social relationships. Elves can afford to spend decades mastering a single technique.
+**Longevity**: Elves don't just live long (600-800 years) - they age slowly. An elf of 200 looks like a [human](../humans/index.md) of 30. This longevity affects everything from [skill development](../../../systems/character/index.md) to social relationships. Elves can afford to spend decades mastering a single technique.
 
-**Low-Light Vision**: Elven eyes adapt to faint light beautifully, allowing them to read by starlight or navigate forest depths by moon glow. This isn't [darkvision](../../../skills/passive/darkvision.md) - pitch black still blinds them - but twilight and shadow pose no problem.
+**Low-Light Vision**: Elven eyes adapt to faint light beautifully, allowing them to read by starlight or navigate forest depths by moon glow. This isn't [darkvision](../../../skills/passive/darkvision/index.md) - pitch black still blinds them - but twilight and shadow pose no problem.
 
-**Frail**: The cost of magical enhancement and longevity is physical fragility (-10% base health compared to [humans](../humans.md)). Elves bruise more easily, fall ill more readily, and generally can't take as much physical punishment. They compensate with grace and [magic](../../../systems/character/magic-system.md).
+**Frail**: The cost of magical enhancement and longevity is physical fragility (-10% base health compared to [humans](../humans/index.md)). Elves bruise more easily, fall ill more readily, and generally can't take as much physical punishment. They compensate with grace and [magic](../../../systems/character/magic-system/index.md).
 
 ### Interactions
 
@@ -98,9 +98,9 @@ The greatest challenge for elves isn't other races but themselves. Five centurie
 ## Related Content
 
 - **Classes**: [Mage](../../../classes/magic/index.md), [Enchanter](../../../classes/magic/index.md), [Ranger](../../../classes/combat/index.md)
-- **Magic**: [Magic System](../../../systems/character/magic-system.md), [Spellcasting](../../../systems/character/index.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Humans](../humans.md), [Dwarves](dwarves/base.md), [Lizardfolk](../lizardfolk.md), [Kobolds](../kobolds.md), [Race Comparison](../../races-and-tribes.md)
+- **Magic**: [Magic System](../../../systems/character/magic-system/index.md), [Spellcasting](../../../systems/character/index.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Humans](../humans/index.md), [Dwarves](dwarves/base/index.md), [Lizardfolk](../lizardfolk/index.md), [Kobolds](../kobolds/index.md), [Race Comparison](../../races-and-tribes/index.md)
 
 ---
 

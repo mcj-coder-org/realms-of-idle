@@ -51,7 +51,7 @@ Threats to entire regions or kingdoms:
 
 | Creature                                         | Level | Type          | Threat Scope  |
 | ------------------------------------------------ | ----- | ------------- | ------------- |
-| [Ancient Dragon](ancient-dragon.md)              | 25-35 | Apex predator | Regional      |
+| [Ancient Dragon](ancient-dragon/index.md)        | 25-35 | Apex predator | Regional      |
 | [Lich King](../magical/undead/index.md)          | 25-30 | Undead mage   | Kingdom-level |
 | [Elemental Lord](../magical/elementals/index.md) | 22-28 | Elemental     | Geographical  |
 | [Demon Prince](index.md)                         | 28-35 | Fiend         | Planar        |
@@ -60,12 +60,12 @@ Threats to entire regions or kingdoms:
 
 Guardian of specific locations:
 
-| Creature                            | Level | Type        | Typical Location |
-| ----------------------------------- | ----- | ----------- | ---------------- |
-| [Stone Sentinel](stone-sentinel.md) | 15-22 | Construct   | Temples, vaults  |
-| [Vampire Lord](index.md)            | 15-20 | Undead      | Castles, crypts  |
-| [Giant Spider Queen](index.md)      | 12-18 | Monster     | Caves, ruins     |
-| [Corrupted Guardian](index.md)      | 14-19 | Fallen hero | Sacred sites     |
+| Creature                                  | Level | Type        | Typical Location |
+| ----------------------------------------- | ----- | ----------- | ---------------- |
+| [Stone Sentinel](stone-sentinel/index.md) | 15-22 | Construct   | Temples, vaults  |
+| [Vampire Lord](index.md)                  | 15-20 | Undead      | Castles, crypts  |
+| [Giant Spider Queen](index.md)            | 12-18 | Monster     | Caves, ruins     |
+| [Corrupted Guardian](index.md)            | 14-19 | Fallen hero | Sacred sites     |
 
 ### Raid Bosses
 
@@ -281,7 +281,7 @@ Existed long before players:
 
 **Examples:**
 
-- [Ancient Dragon](ancient-dragon.md)
+- [Ancient Dragon](ancient-dragon/index.md)
 - [Lich](../magical/undead/index.md)
 - [Vampire Elder](index.md)
 - [Archfey](../magical/fey/index.md)
@@ -299,7 +299,7 @@ Protects something important:
 
 **Examples:**
 
-- [Stone Sentinel](stone-sentinel.md)
+- [Stone Sentinel](stone-sentinel/index.md)
 - [Treant Elder](index.md)
 - [Elemental Guardian](index.md)
 - [Spirit Warden](index.md)
@@ -338,7 +338,7 @@ Force of nature given form:
 - [Elemental Lord](../magical/elementals/index.md)
 - [Storm Giant](index.md)
 - [Kraken](index.md)
-- [Forest Spirit](../wildlife/exotic/forest-spirit.md) (when angry)
+- [Forest Spirit](../wildlife/exotic/forest-spirit/index.md) (when angry)
 
 ### The Conqueror
 
@@ -356,7 +356,7 @@ Seeks domination and power:
 - [Warlord](index.md)
 - [Evil Sorcerer](index.md)
 - [Demon Lord](index.md)
-- [Dragon Tyrant](ancient-dragon.md)
+- [Dragon Tyrant](ancient-dragon/index.md)
 
 ## Boss Encounter Design Philosophy
 
@@ -441,8 +441,8 @@ Victory creates legend:
 
 ## See Also
 
-- **[Ancient Dragon](ancient-dragon.md)** - Apex predator world boss
-- **[Stone Sentinel](stone-sentinel.md)** - Dungeon guardian boss
+- **[Ancient Dragon](ancient-dragon/index.md)** - Apex predator world boss
+- **[Stone Sentinel](stone-sentinel/index.md)** - Dungeon guardian boss
 - **[Wildlife](../wildlife/)** - Standard creatures
 - **[Magical Creatures](../magical/)** - Other magical beings
-- **[Creature System](../creature-system.md)** - Complete mechanics
+- **[Creature System](../creature-system/index.md)** - Complete mechanics

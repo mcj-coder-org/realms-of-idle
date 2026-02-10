@@ -48,6 +48,6 @@ Storm Caller is a terminal Tier 3 specialization. No further progression paths a
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Storm Spirit Bond](../../skills/tiered/storm-spirit-bond.md), [Thunder Voice](../../skills/tiered/thunder-voice.md)
-- **Spells:** [Spirit Lightning](../../spells/nature/spirit-lightning.md), [Storm Blessing](../../spells/nature/storm-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Storm Spirit Bond](../../skills/tiered/storm-spirit-bond/index.md), [Thunder Voice](../../skills/tiered/thunder-voice/index.md)
+- **Spells:** [Spirit Lightning](../../spells/nature/spirit-lightning/index.md), [Storm Blessing](../../spells/nature/storm-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

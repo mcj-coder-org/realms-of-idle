@@ -9,7 +9,7 @@ summary: 'Traditional underground goblins with enhanced darkvision, masters of m
 
 # Cave Goblin
 
-> **Parent Race:** [Goblins](base.md)
+> **Parent Race:** [Goblins](base/index.md)
 
 ## Variant Overview
 
@@ -44,13 +44,13 @@ Their isolation breeds suspicion from both sides. Cave Goblins view surface dwel
 
 ### Mining and Salvage
 
-Cave Goblins possess remarkable skill at identifying valuable materials in unlikely places. Where a [dwarf](../../enlightened/dwarves.md) sees a collapsed mine as lost investment, a Cave Goblin sees accessible ore veins and salvageable equipment. They work seams too narrow or dangerous for larger races, extract crystals from unstable caverns, and recover metals from flooded mine levels.
+Cave Goblins possess remarkable skill at identifying valuable materials in unlikely places. Where a [dwarf](../../enlightened/dwarves/index.md) sees a collapsed mine as lost investment, a Cave Goblin sees accessible ore veins and salvageable equipment. They work seams too narrow or dangerous for larger races, extract crystals from unstable caverns, and recover metals from flooded mine levels.
 
 Their mining operates on different principles than dwarven methods. Dwarves build permanent infrastructure designed to last centuries. Cave Goblins create temporary, adaptive access - shoring up tunnels just long enough to extract resources, then abandoning them as they move to new opportunities. It's pragmatic rather than ambitious, focused on immediate survival rather than generational legacy.
 
 ### Enhanced Darkvision
 
-The defining trait of Cave Goblins is their superior darkvision, adapted through countless generations in absolute darkness. Where typical goblin darkvision allows clear sight in darkness, Cave Goblin darkvision approaches supernatural clarity. They perceive detail, read expressions, and identify materials in pitch blackness that would leave even [dwarves](../../enlightened/dwarves.md) fumbling.
+The defining trait of Cave Goblins is their superior darkvision, adapted through countless generations in absolute darkness. Where typical goblin darkvision allows clear sight in darkness, Cave Goblin darkvision approaches supernatural clarity. They perceive detail, read expressions, and identify materials in pitch blackness that would leave even [dwarves](../../enlightened/dwarves/index.md) fumbling.
 
 This enhanced vision comes with adaptation costs. Cave Goblins find bright daylight painful, not debilitating but intensely uncomfortable. They operate on the surface primarily during twilight hours, dawn and dusk, when light levels suit their preferences. Extended surface work requires protective eyewear or magical adaptation.
 
@@ -64,7 +64,7 @@ Shared memory makes trap placement devastatingly effective. Every tribe member k
 
 **With Other Goblins:** Cave Goblins view themselves as maintaining true goblin traditions that other variants have compromised. They respect Swamp Goblins as fellow wilderness survivors but consider Urban Goblins corrupted by excessive contact with surface society. Mountain Goblins puzzle them - why work for surface dwellers when you could simply avoid them?
 
-**With Other Races:** Cave Goblins maintain minimal contact with most races. They trade occasionally with [dwarves](../../enlightened/dwarves.md) despite mutual suspicion - dwarves need underground intelligence, goblins need surface goods. They avoid [humans](../../enlightened/humans.md) when possible, steal from them when necessary. They treat [kobolds](../../enlightened/kobolds.md) as fellow small underground-dwellers deserving wary respect.
+**With Other Races:** Cave Goblins maintain minimal contact with most races. They trade occasionally with [dwarves](../../enlightened/dwarves/index.md) despite mutual suspicion - dwarves need underground intelligence, goblins need surface goods. They avoid [humans](../../enlightened/humans/index.md) when possible, steal from them when necessary. They treat [kobolds](../../enlightened/kobolds/index.md) as fellow small underground-dwellers deserving wary respect.
 
 ## Shared Memory in Darkness
 

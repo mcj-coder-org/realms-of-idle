@@ -117,6 +117,6 @@ The creation of Holy items is restricted in most realms. Churches typically main
 
 - **Requires:** [Enchanting](../../skills/index.md) (Master), [Religion](../../skills/index.md)/[Devotion](../../skills/index.md), [Holy water](../../materials/reagents/index.md), [Blessed silver](../../materials/metals/index.md), [Angel feather](../../materials/reagents/index.md)
 - **Applied To:** Weapons, shields, amulets, holy symbols, armor (see Applicable Items table)
-- **See Also:** [Blessed](blessed.md), [Smiting](smiting.md), [Purification](purification.md)
+- **See Also:** [Blessed](blessed/index.md), [Smiting](smiting/index.md), [Purification](purification/index.md)
 - **Enchantment Type:** Combat (divine damage - radiant)
 - **Faction:** Primarily controlled by religious institutions

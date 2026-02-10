@@ -10,10 +10,10 @@ Enchantments focused on healing and restoration - repairing items over time and 
 
 ## Available Enchantments
 
-| Enchantment                     | Tier       | Summary                                          | Cost Range   |
-| ------------------------------- | ---------- | ------------------------------------------------ | ------------ |
-| [Regeneration](regeneration.md) | Journeyman | Continuous HP healing over time (30-180 HP/hour) | 300-50000c   |
-| [Auto-Repair](auto-repair.md)   | Master     | Self-restoring items (1%-10% durability/hour)    | 3000-200000c |
+| Enchantment                           | Tier       | Summary                                          | Cost Range   |
+| ------------------------------------- | ---------- | ------------------------------------------------ | ------------ |
+| [Regeneration](regeneration/index.md) | Journeyman | Continuous HP healing over time (30-180 HP/hour) | 300-50000c   |
+| [Auto-Repair](auto-repair/index.md)   | Master     | Self-restoring items (1%-10% durability/hour)    | 3000-200000c |
 
 ## Category Overview
 

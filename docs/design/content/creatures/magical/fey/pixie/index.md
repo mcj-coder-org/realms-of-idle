@@ -223,9 +223,9 @@ Drawbacks:
 ## Related Content
 
 - **Habitat:** [Mushroom Circles](../../../../systems/world/index.md), [Crossroads](../../../../systems/world/index.md), [Wild Magic Zones](../../../../systems/world/index.md)
-- **Related Creatures:** [Sprite](sprite.md), [Dryad](dryad.md), [Fairy Dragon](index.md), [Brownie](index.md)
+- **Related Creatures:** [Sprite](sprite/index.md), [Dryad](dryad/index.md), [Fairy Dragon](index.md), [Brownie](index.md)
 - **Associated NPCs:** [Wild Mages](../../../classes/index.md), [Jesters](../../../classes/index.md), [Chaos Cultists](../../../classes/index.md)
 - **Items:** [Pixie Dust](../../../items/index.md), [Chaos Wand](../../../items/index.md), [Bag of Tricks](../../../items/index.md)
 - **Quests:** [The Pixie's Bargain](../../../../systems/world/index.md), [Catch the Uncatchable](../../../../systems/world/index.md), [Mushroom Circle Mystery](../../../../systems/world/index.md)
 - **Systems:** [Wild Magic](../../../../systems/magic/index.md), [Illusion Magic](../../../../systems/magic/index.md), [Fey Bargains](../../../../systems/index.md)
-- **See Also:** [Fey Creatures](index.md), [Sprite](sprite.md), [Creature System](../../creature-system.md)
+- **See Also:** [Fey Creatures](index.md), [Sprite](sprite/index.md), [Creature System](../../creature-system/index.md)

@@ -64,7 +64,7 @@ Your skin is as tough as leather - thick, calloused, and resistant to damage. Wh
 **Stacks with:**
 
 - Worn armor (additive AC bonus)
-- [Stout Constitution](stout-constitution.md) (both increase survivability)
+- [Stout Constitution](stout-constitution/index.md) (both increase survivability)
 - Armor-boosting enchantments
 - Class defensive bonuses
 
@@ -79,6 +79,6 @@ Your skin is as tough as leather - thick, calloused, and resistant to damage. Wh
 
 ## Related Content
 
-- [Scaly Hide](scaly-hide.md) - Lizardfolk variant with scales
-- [Stout Constitution](stout-constitution.md) - HP and poison resistance
-- [Rapid Regeneration](rapid-regeneration.md) - Healing over time (Troll)
+- [Scaly Hide](scaly-hide/index.md) - Lizardfolk variant with scales
+- [Stout Constitution](stout-constitution/index.md) - HP and poison resistance
+- [Rapid Regeneration](rapid-regeneration/index.md) - Healing over time (Troll)

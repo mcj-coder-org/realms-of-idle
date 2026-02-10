@@ -28,13 +28,13 @@ Skills that provide constant benefits without requiring activation.
 
 ## Skills
 
-| Skill                                       | Category   | Effect                    |
-| ------------------------------------------- | ---------- | ------------------------- |
-| [Arcane Sensitivity](arcane-sensitivity.md) | Perception | Detect magical auras      |
-| [Darkvision](darkvision.md)                 | Perception | See in darkness           |
-| [Dense Build](dense-build.md)               | Attribute  | Increased weight/strength |
-| [Elven Grace](elven-grace.md)               | Racial     | Improved finesse          |
-| [Magic Resistance](magic-resistance.md)     | Resistance | Reduce magical damage     |
+| Skill                                             | Category   | Effect                    |
+| ------------------------------------------------- | ---------- | ------------------------- |
+| [Arcane Sensitivity](arcane-sensitivity/index.md) | Perception | Detect magical auras      |
+| [Darkvision](darkvision/index.md)                 | Perception | See in darkness           |
+| [Dense Build](dense-build/index.md)               | Attribute  | Increased weight/strength |
+| [Elven Grace](elven-grace/index.md)               | Racial     | Improved finesse          |
+| [Magic Resistance](magic-resistance/index.md)     | Resistance | Reduce magical damage     |
 
 ## Related Documentation
 

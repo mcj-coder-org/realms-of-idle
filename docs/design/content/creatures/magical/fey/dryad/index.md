@@ -209,9 +209,9 @@ They struggle with:
 ## Related Content
 
 - **Habitat:** [Ancient Forests](../../../../systems/world/index.md), [Sacred Groves](../../../../systems/world/index.md), [Old Growth Woodlands](../../../../systems/world/index.md)
-- **Related Creatures:** [Sprite](sprite.md), [Treant](index.md), [Green Man](index.md), [Forest Spirit](../../wildlife/exotic/forest-spirit.md)
+- **Related Creatures:** [Sprite](sprite/index.md), [Treant](index.md), [Green Man](index.md), [Forest Spirit](../../wildlife/exotic/forest-spirit/index.md)
 - **Associated NPCs:** [Druids](../../../classes/index.md), [Rangers](../../../classes/index.md), [Wood Elves](../../races/index.md), [Forest Guardians](../../../classes/index.md)
 - **Items:** [Dryad Wood Staff](../../../items/index.md), [Dryad Sap](../../../items/index.md), [Living Wood Armor](../../../items/index.md)
 - **Quests:** [The Dying Grove](../../../../systems/world/index.md), [Ancient Wisdom](../../../../systems/world/index.md), [The Corrupted Tree](../../../../systems/world/index.md)
 - **Systems:** [Nature Magic](../../../../systems/magic/index.md), [Fey Reputation](../../../../systems/index.md), [Forest Ecology](../../../../systems/index.md)
-- **See Also:** [Fey Creatures](index.md), [Forest Spirit](../../wildlife/exotic/forest-spirit.md), [Creature System](../../creature-system.md)
+- **See Also:** [Fey Creatures](index.md), [Forest Spirit](../../wildlife/exotic/forest-spirit/index.md), [Creature System](../../creature-system/index.md)

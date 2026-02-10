@@ -8,7 +8,7 @@ summary: 'Versatile and ambitious mortals who adapt to any environment and excel
 
 # Humans
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ The baseline human, found in temperate regions across the world. Representing hu
 
 **Key Features:** Pure baseline, no environmental bonuses, maximum flexibility
 
-**[Learn More →](heartland.md)**
+**[Learn More →](heartland/index.md)**
 
 ### Northern Human
 
@@ -28,7 +28,7 @@ Cold-adapted humans from frozen tundra and icy mountains. Generations in harsh c
 
 **Key Features:** +1 END, +15% cold resistance, adapted to freezing conditions
 
-**[Learn More →](northern.md)**
+**[Learn More →](northern/index.md)**
 
 ### Desert Human
 
@@ -36,7 +36,7 @@ Heat-adapted humans from arid wastelands and scorching sands. Desert cultures em
 
 **Key Features:** +1 END, +15% heat resistance, +10% stamina efficiency
 
-**[Learn More →](desert.md)**
+**[Learn More →](desert/index.md)**
 
 ### Coastal Human
 
@@ -44,7 +44,7 @@ Maritime humans from shorelines, islands, and seafaring cultures. Raised around 
 
 **Key Features:** +1 FIN, enhanced swim speed, navigation bonuses
 
-**[Learn More →](coastal.md)**
+**[Learn More →](coastal/index.md)**
 
 ### Mountain Human
 
@@ -52,7 +52,7 @@ High-altitude humans adapted to thin air and steep terrain. Mountain cultures br
 
 **Key Features:** +1 END, altitude adaptation, +5% stamina efficiency
 
-**[Learn More →](mountain.md)**
+**[Learn More →](mountain/index.md)**
 
 ---
 
@@ -155,7 +155,7 @@ Humans have **unrestricted access to all classes** in the game. Every human vari
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
-- **[Elves](../elves.md)**: Long-lived specialists with tag affinities
-- **[Dwarves](../dwarves.md)**: Enduring crafters with strong traditions
-- **[Race Comparison](../../races-and-tribes.md)**: How humans compare to other races
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Elves](../elves/index.md)**: Long-lived specialists with tag affinities
+- **[Dwarves](../dwarves/index.md)**: Enduring crafters with strong traditions
+- **[Race Comparison](../../races-and-tribes/index.md)**: How humans compare to other races

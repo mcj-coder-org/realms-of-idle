@@ -48,9 +48,9 @@ Tongs must grip firmly but not mar the metal. Loose jaws mean dropped work. Tigh
 
 ## Interactions
 
-| System                                                           | Interaction                  |
-| ---------------------------------------------------------------- | ---------------------------- |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Required tool for forge work |
+| System                                                                 | Interaction                  |
+| ---------------------------------------------------------------------- | ---------------------------- |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Required tool for forge work |
 
 ---
 

@@ -156,7 +156,7 @@ Forest spirits cannot be tamed, controlled, or bound. They may choose to befrien
 ## Related Content
 
 - **Habitat:** [Ancient Forests](../../../../systems/world/index.md), [Sacred Groves](../../../../systems/world/index.md), [Old-Growth Woods](../../../../systems/world/index.md)
-- **Connection:** [Druids](../../../classes/index.md), [Rangers](../../../classes/index.md), [Nature Magic](../../../../systems/character/magic-system.md)
+- **Connection:** [Druids](../../../classes/index.md), [Rangers](../../../classes/index.md), [Nature Magic](../../../../systems/character/magic-system/index.md)
 - **Cultural:** [Forest Peoples](../../../../systems/world/index.md), [Sacred Sites](../../../../systems/social/index.md), [Druidic Traditions](../../../../systems/index.md)
-- **Magical:** [Nature Magic](../../../../systems/character/magic-system.md), [Blessings](../../../../systems/index.md), [Spirit Entities](../../magical/index.md)
-- **See Also:** [Giant Eagle](giant-eagle.md), [Dryad](../../magical/index.md), [Creature System](../../creature-system.md)
+- **Magical:** [Nature Magic](../../../../systems/character/magic-system/index.md), [Blessings](../../../../systems/index.md), [Spirit Entities](../../magical/index.md)
+- **See Also:** [Giant Eagle](giant-eagle/index.md), [Dryad](../../magical/index.md), [Creature System](../../creature-system/index.md)

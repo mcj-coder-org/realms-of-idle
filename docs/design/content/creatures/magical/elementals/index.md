@@ -11,12 +11,12 @@ Living manifestations of the four classical elements, elementals are beings of p
 
 ## The Four Elements
 
-| Element                     | Level | Behavior            | Primary Trait     |
-| --------------------------- | ----- | ------------------- | ----------------- |
-| [Fire](fire-elemental.md)   | 10-15 | Indifferent-Hostile | Consuming passion |
-| [Water](water-elemental.md) | 10-15 | Defensive-Neutral   | Adaptive flow     |
-| [Earth](earth-elemental.md) | 12-17 | Passive-Aggressive  | Patient endurance |
-| [Air](air-elemental.md)     | 11-16 | Indifferent-Playful | Restless freedom  |
+| Element                           | Level | Behavior            | Primary Trait     |
+| --------------------------------- | ----- | ------------------- | ----------------- |
+| [Fire](fire-elemental/index.md)   | 10-15 | Indifferent-Hostile | Consuming passion |
+| [Water](water-elemental/index.md) | 10-15 | Defensive-Neutral   | Adaptive flow     |
+| [Earth](earth-elemental/index.md) | 12-17 | Passive-Aggressive  | Patient endurance |
+| [Air](air-elemental/index.md)     | 11-16 | Indifferent-Playful | Restless freedom  |
 
 ## Elemental Nature
 
@@ -293,10 +293,10 @@ Different cultures view elementals differently:
 
 ## Related Systems
 
-- **[Summoning Magic](../../../../systems/character/magic-system.md)** - How to call elementals
-- **[Elemental Magic](../../../../systems/character/magic-system.md)** - Fire, water, earth, air spells
+- **[Summoning Magic](../../../../systems/character/magic-system/index.md)** - How to call elementals
+- **[Elemental Magic](../../../../systems/character/magic-system/index.md)** - Fire, water, earth, air spells
 - **[Alchemy](../../../../systems/index.md)** - Using elemental essences
-- **[Enchanting](../../../../systems/crafting/enchantment-mechanics.md)** - Elemental-aspected items
+- **[Enchanting](../../../../systems/crafting/enchantment-mechanics/index.md)** - Elemental-aspected items
 - **[Planar Mechanics](../../../../systems/world/index.md)** - The elemental planes
 
 ## See Also
@@ -304,4 +304,4 @@ Different cultures view elementals differently:
 - **[Wildlife](../../wildlife/)** - Natural creatures
 - **[Fey](../fey/)** - Other magical beings
 - **[Constructs](../index.md)** - Artificial beings (golems)
-- **[Creature System](../../creature-system.md)** - Complete creature mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete creature mechanics

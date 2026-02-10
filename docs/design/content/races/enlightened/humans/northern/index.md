@@ -9,7 +9,7 @@ summary: 'Cold-adapted humans from frozen regions with enhanced endurance and re
 
 # Northern Human
 
-> **See [Base Traits](base.md)** for shared human characteristics.
+> **See [Base Traits](base/index.md)** for shared human characteristics.
 
 ## Overview
 
@@ -141,8 +141,8 @@ A merchant who travels between northern settlements and temperate cities, profit
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Core human characteristics and cultural notes
+- **[Base Traits](base/index.md)**: Core human characteristics and cultural notes
 - **[Humans Index](index.md)**: All human variants and selection guidance
-- **[Heartland Human](heartland.md)**: Baseline variant
-- **[Desert Human](desert.md)**: Heat-adapted variant
-- **[Mountain Human](mountain.md)**: Altitude-adapted variant
+- **[Heartland Human](heartland/index.md)**: Baseline variant
+- **[Desert Human](desert/index.md)**: Heat-adapted variant
+- **[Mountain Human](mountain/index.md)**: Altitude-adapted variant

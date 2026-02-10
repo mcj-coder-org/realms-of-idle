@@ -11,11 +11,11 @@ Natural hunters that pose genuine threats to travelers, livestock, and unprepare
 
 ## Creatures
 
-| Creature                          | Level | Habitat            | Threat Level  | Primary Danger |
-| --------------------------------- | ----- | ------------------ | ------------- | -------------- |
-| [Wolf](wolf.md)                   | 5-8   | Forests, mountains | Moderate      | Pack tactics   |
-| [Mountain Lion](mountain-lion.md) | 8-12  | Mountains, rocks   | Moderate-High | Ambush attacks |
-| [Bear](bear.md)                   | 12-18 | Forests, caves     | High          | Raw power      |
+| Creature                                | Level | Habitat            | Threat Level  | Primary Danger |
+| --------------------------------------- | ----- | ------------------ | ------------- | -------------- |
+| [Wolf](wolf/index.md)                   | 5-8   | Forests, mountains | Moderate      | Pack tactics   |
+| [Mountain Lion](mountain-lion/index.md) | 8-12  | Mountains, rocks   | Moderate-High | Ambush attacks |
+| [Bear](bear/index.md)                   | 12-18 | Forests, caves     | High          | Raw power      |
 
 ## Threat Assessment
 
@@ -219,9 +219,9 @@ Natural hunters that pose genuine threats to travelers, livestock, and unprepare
 
 ## Related Systems
 
-- **[Hunting/Gathering System](../../../../systems/crafting/gathering.md)** - Tracking, combat, harvesting
+- **[Hunting/Gathering System](../../../../systems/crafting/gathering/index.md)** - Tracking, combat, harvesting
 - **[Survival Skills](../../../../systems/index.md)** - Avoiding encounters, reading signs
-- **[Ecology System](../../../../systems/crafting/gathering.md)** - Predator-prey relationships
+- **[Ecology System](../../../../systems/crafting/gathering/index.md)** - Predator-prey relationships
 - **[Alchemy](../../../../systems/index.md)** - Potion crafting from components
 - **[Leatherworking](../../../../systems/crafting/index.md)** - Pelt processing
 
@@ -229,5 +229,5 @@ Natural hunters that pose genuine threats to travelers, livestock, and unprepare
 
 - **[Docile Wildlife](../docile/)** - Prey species hunted by these predators
 - **[Exotic Wildlife](../exotic/)** - Rare and magical creatures
-- **[Creature System](../../creature-system.md)** - Complete creature mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete creature mechanics
 - **[Combat System](../../../../systems/combat/)** - Fighting dangerous wildlife

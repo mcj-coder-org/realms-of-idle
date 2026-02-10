@@ -9,7 +9,7 @@ summary: 'Baseline humans from temperate regions with pure versatility and no sp
 
 # Heartland Human
 
-> **See [Base Traits](base.md)** for shared human characteristics.
+> **See [Base Traits](base/index.md)** for shared human characteristics.
 
 ## Overview
 
@@ -142,9 +142,9 @@ Heartland humans have full access to all character classes without restriction. 
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Core human characteristics and cultural notes
+- **[Base Traits](base/index.md)**: Core human characteristics and cultural notes
 - **[Humans Index](index.md)**: All human variants and selection guidance
-- **[Northern Human](northern.md)**: Cold-adapted variant
-- **[Desert Human](desert.md)**: Heat-adapted variant
-- **[Coastal Human](coastal.md)**: Maritime variant
-- **[Mountain Human](mountain.md)**: Altitude-adapted variant
+- **[Northern Human](northern/index.md)**: Cold-adapted variant
+- **[Desert Human](desert/index.md)**: Heat-adapted variant
+- **[Coastal Human](coastal/index.md)**: Maritime variant
+- **[Mountain Human](mountain/index.md)**: Altitude-adapted variant

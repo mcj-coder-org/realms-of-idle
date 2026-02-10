@@ -79,21 +79,21 @@ Career Guards develop cynicism from witnessing humanity's worst behavior daily. 
 
 Skills automatically awarded when accepting this class:
 
-| Skill            | Tier     | Link                                                         | Reasoning                                   |
-| ---------------- | -------- | ------------------------------------------------------------ | ------------------------------------------- |
-| Shield Wall      | Lesser   | [See Skill](../../skills/tiered/shield-wall.md)              | Defensive specialty for protection duty     |
-| Sentinel's Watch | Mechanic | [See Skill](../../skills/mechanic-unlock/sentinels-watch.md) | Alertness and protection core to guard role |
+| Skill            | Tier     | Link                                                               | Reasoning                                   |
+| ---------------- | -------- | ------------------------------------------------------------------ | ------------------------------------------- |
+| Shield Wall      | Lesser   | [See Skill](../../skills/tiered/shield-wall/index.md)              | Defensive specialty for protection duty     |
+| Sentinel's Watch | Mechanic | [See Skill](../../skills/mechanic-unlock/sentinels-watch/index.md) | Alertness and protection core to guard role |
 
 #### Synergy Skills
 
 Skills with strong synergies for Guard:
 
-- [Alert Sentinel](../../skills/mechanic-unlock/sentinels-watch.md) - Lesser/Greater/Enhanced - Detect threats during guard duty
-- [Shield Wall](../../skills/tiered/shield-wall.md) - Lesser/Greater/Enhanced - Block attacks for allies
+- [Alert Sentinel](../../skills/mechanic-unlock/sentinels-watch/index.md) - Lesser/Greater/Enhanced - Detect threats during guard duty
+- [Shield Wall](../../skills/tiered/shield-wall/index.md) - Lesser/Greater/Enhanced - Block attacks for allies
 - [Intercept](../../skills/index.md) - Lesser/Greater/Enhanced - Block attacks meant for protected targets
 - [Enduring Vigilance](../../skills/index.md) - Lesser/Greater/Enhanced - Resist fatigue during long watches
-- [Threat Assessment](../../skills/mechanic-unlock/tactical-assessment.md) - Lesser/Greater/Enhanced - Evaluate danger levels accurately
-- [Defensive Stance](../../skills/common/defensive-stance.md) - Lesser/Greater/Enhanced - Increased defense at cost of damage
+- [Threat Assessment](../../skills/mechanic-unlock/tactical-assessment/index.md) - Lesser/Greater/Enhanced - Evaluate danger levels accurately
+- [Defensive Stance](../../skills/common/defensive-stance/index.md) - Lesser/Greater/Enhanced - Increased defense at cost of damage
 - [Quick Response](../../skills/index.md) - Lesser/Greater/Enhanced - Increased initiative when protecting
 - [Crowd Control](../../skills/index.md) - Lesser/Greater/Enhanced - Manage groups without violence
 - [Restraint](../../skills/index.md) - Lesser/Greater/Enhanced - Subdue without killing
@@ -157,25 +157,25 @@ Actions that grant XP to the Guard class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                                | Requirements                     | Result Class    | Tier |
-| ------------------------------------------------- | -------------------------------- | --------------- | ---- |
-| [Warden](../consolidation/index.md)               | Guard + [Warrior](./warrior.md)  | Warden          | 1    |
-| [Sentinel](../consolidation/index.md)             | Guard + defensive specialization | Sentinel        | 1    |
-| [Captain of the Guard](../consolidation/index.md) | Guard + leadership experience    | Captain         | 1    |
-| [Bodyguard Elite](../consolidation/index.md)      | Guard + VIP protection focus     | Bodyguard Elite | 1    |
+| Consolidation Path                                | Requirements                          | Result Class    | Tier |
+| ------------------------------------------------- | ------------------------------------- | --------------- | ---- |
+| [Warden](../consolidation/index.md)               | Guard + [Warrior](./warrior/index.md) | Warden          | 1    |
+| [Sentinel](../consolidation/index.md)             | Guard + defensive specialization      | Sentinel        | 1    |
+| [Captain of the Guard](../consolidation/index.md) | Guard + leadership experience         | Captain         | 1    |
+| [Bodyguard Elite](../consolidation/index.md)      | Guard + VIP protection focus          | Bodyguard Elite | 1    |
 
 ### Interactions
 
-| System                                                 | Interaction                                  |
-| ------------------------------------------------------ | -------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md) | Defensive specialist; protects allies        |
-| [Party](../../../systems/combat/party-mechanics.md)    | Tank role; draws enemy attention from allies |
-| [Settlement](../../../systems/world/settlements.md)    | Essential security force for communities     |
-| [Social](../../../systems/social/index.md)             | Authority figure; maintains order            |
-| [Economy](../../../systems/economy/index.md)           | Steady employment through guard contracts    |
-| [Crime](../../../systems/social/index.md)              | Prevents and responds to criminal activity   |
+| System                                                       | Interaction                                  |
+| ------------------------------------------------------------ | -------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Defensive specialist; protects allies        |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Tank role; draws enemy attention from allies |
+| [Settlement](../../../systems/world/settlements/index.md)    | Essential security force for communities     |
+| [Social](../../../systems/social/index.md)                   | Authority figure; maintains order            |
+| [Economy](../../../systems/economy/index.md)                 | Steady employment through guard contracts    |
+| [Crime](../../../systems/social/index.md)                    | Prevents and responds to criminal activity   |
 
 ---
 
@@ -183,6 +183,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Weapon, armor, guard post or patrol route
 - **Equipment:** [Armor](../../items/index.md), [Shields](../../items/index.md), [Weapons](../../items/index.md)
-- **Synergy Classes:** [Warrior](./warrior.md), [Knight](./knight.md), [Scout](./scout.md)
+- **Synergy Classes:** [Warrior](./warrior/index.md), [Knight](./knight/index.md), [Scout](./scout/index.md)
 - **Consolidates To:** [Warden](../consolidation/index.md), [Sentinel](../consolidation/index.md), [Captain](../consolidation/index.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md), [Settlement Security](../../../systems/world/settlements.md), [Law Enforcement](../../../systems/social/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md), [Settlement Security](../../../systems/world/settlements/index.md), [Law Enforcement](../../../systems/social/index.md)

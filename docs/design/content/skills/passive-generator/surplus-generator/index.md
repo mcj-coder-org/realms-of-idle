@@ -66,4 +66,4 @@ Classes with strong synergies: Farmer, Rancher
 ## Related Content
 
 - **Strong Synergy:** [Farmer](../../classes/gatherer/farmer/), [Rancher](../../classes/gatherer/rancher/)
-- **See Also:** [Bountiful Harvest](../tiered/bountiful-harvest.md), [Agriculture System](../../systems/gathering/agriculture.md)
+- **See Also:** [Bountiful Harvest](../tiered/bountiful-harvest/index.md), [Agriculture System](../../systems/gathering/agriculture/index.md)

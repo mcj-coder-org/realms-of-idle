@@ -13,4 +13,4 @@ _Assassin is available through the Rogue path. Fighter-path characters intereste
 ## Related Content
 
 - **Actual Class:** [Assassin (Rogue)](../../rogue/assassin/)
-- **See Also:** [Rogue Foundation](../../rogue/), [Dark Path Classes](../../systems/character/class-progression.md)
+- **See Also:** [Rogue Foundation](../../rogue/), [Dark Path Classes](../../systems/character/class-progression/index.md)

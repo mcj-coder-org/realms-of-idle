@@ -15,11 +15,11 @@ summary: Knowledge of medicinal herbs and creation of poultices and remedies
 
 ## Overview
 
-| Attribute | Value                                      |
-| --------- | ------------------------------------------ |
-| Type      | Passive                                    |
-| Pool      | [Shamanic Pool](../pools/shamanic-pool.md) |
-| Tags      | `Shamanic/Nature`, `Gathering/Herbalism`   |
+| Attribute | Value                                            |
+| --------- | ------------------------------------------------ |
+| Type      | Passive                                          |
+| Pool      | [Shamanic Pool](../pools/shamanic-pool/index.md) |
+| Tags      | `Shamanic/Nature`, `Gathering/Herbalism`         |
 
 ## Description
 
@@ -45,4 +45,4 @@ Herbalism grants knowledge of medicinal plants and the ability to create healing
 
 - **Class:** [Shaman](../../classes/spiritcaller/shaman/)
 - **Class:** [Herbalist](../../classes/gatherer/herbalist/)
-- **See Also:** [Shamanic Crafting](../../../systems/magic/shamanic-magic.md#3-shamanic-crafting-overview)
+- **See Also:** [Shamanic Crafting](../../../systems/magic/shamanic-magic/index.md#3-shamanic-crafting-overview)

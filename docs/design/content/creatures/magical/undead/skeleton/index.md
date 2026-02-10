@@ -16,7 +16,7 @@ Skeletons are not spontaneous phenomena but deliberate creations - or tragedies.
 
 The ethical horror of skeleton creation cannot be overstated. These were people - farmers, soldiers, parents, children - who deserved peaceful rest. Instead, their bones are puppeted like grotesque marionettes, serving purposes they would have found abhorrent in life. Most necromancers justify their art with claims that bones are "just matter," empty vessels devoid of the departed soul. Whether this is true or self-serving rationalization remains debated among [Clerics](../../classes/index.md) and philosophers.
 
-What makes skeletons particularly unsettling is their silence. They don't moan like [Zombies](zombie.md), don't wail like [Ghosts](ghost.md). They simply exist, clicking and clattering, empty eye sockets somehow conveying an impression of looking without seeing, following commands without comprehension. Some observers report feeling watched by skeletons, sensing residual awareness behind the animated bones. Others dismiss this as projection. Either way, encountering skeletons produces profound unease in most people.
+What makes skeletons particularly unsettling is their silence. They don't moan like [Zombies](zombie/index.md), don't wail like [Ghosts](ghost/index.md). They simply exist, clicking and clattering, empty eye sockets somehow conveying an impression of looking without seeing, following commands without comprehension. Some observers report feeling watched by skeletons, sensing residual awareness behind the animated bones. Others dismiss this as projection. Either way, encountering skeletons produces profound unease in most people.
 
 Different skeleton types exist based on source material. Human skeletons are most common, created from readily available remains. Animal skeletons occasionally serve [Necromancers](../../classes/index.md), particularly predators like wolves or bears, becoming bonded servants more dangerous than their human counterparts. Ancient battlefields might spawn armored skeleton warriors still wearing remnants of their military gear, muscle memory guiding sword arms long after flesh has rotted away.
 
@@ -206,9 +206,9 @@ All skeletons share common undead characteristics:
 ## Related Content
 
 - **Habitat:** [Crypts](../../../../systems/world/index.md), [Graveyards](../../../../systems/world/index.md), [Necromancer Towers](../../../../systems/world/index.md), [Cursed Battlefields](../../../../systems/world/index.md)
-- **Related Creatures:** [Zombie](zombie.md), [Ghost](ghost.md), [Lich](index.md), [Death Knight](index.md)
+- **Related Creatures:** [Zombie](zombie/index.md), [Ghost](ghost/index.md), [Lich](index.md), [Death Knight](index.md)
 - **Associated NPCs:** [Necromancer](../../classes/index.md), [Cleric](../../classes/index.md), [Grave Warden](../../classes/index.md)
 - **Items:** [Holy Water](../../../items/index.md), [Blessed Weapon](../../../items/index.md), [Bone Dust](../../../items/index.md)
 - **Quests:** [Clear the Crypt](../../../../systems/world/index.md), [Stop the Necromancer](../../../../systems/world/index.md), [Lay to Rest](../../../../systems/world/index.md)
 - **Systems:** [Necromancy Magic](../../../../systems/magic/index.md), [Holy Magic](../../../../systems/magic/index.md), [Death and Dying](../../../../systems/index.md)
-- **See Also:** [Undead Creatures](index.md), [Magic System](../../../../systems/magic/index.md), [Creature System](../../creature-system.md)
+- **See Also:** [Undead Creatures](index.md), [Magic System](../../../../systems/magic/index.md), [Creature System](../../creature-system/index.md)

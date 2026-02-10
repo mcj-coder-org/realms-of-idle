@@ -74,7 +74,7 @@ Your body is built like a boulder - dense, resilient, and incredibly difficult t
 
 ## Related Content
 
-- [Battle Hardened](../passive/battle-hardened.md) - Combat-earned toughness
-- [Thick Skin](thick-skin.md) - Damage reduction (Troll/Ogre)
-- [Dense Build](dense-build.md) - Knockback resistance (Dwarf)
-- [Steady Stance](steady-stance.md) - Knockdown resistance (Dwarf)
+- [Battle Hardened](../passive/battle-hardened/index.md) - Combat-earned toughness
+- [Thick Skin](thick-skin/index.md) - Damage reduction (Troll/Ogre)
+- [Dense Build](dense-build/index.md) - Knockback resistance (Dwarf)
+- [Steady Stance](steady-stance/index.md) - Knockdown resistance (Dwarf)

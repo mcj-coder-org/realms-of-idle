@@ -35,4 +35,4 @@ tags: [Crafting]
 ## Related Content
 
 - **Strong Synergy:** All [Crafter specialties](../../classes/crafter/)
-- **See Also:** [Recipe System](../../systems/crafting/recipes.md), [Crafting Skills](../index.md)
+- **See Also:** [Recipe System](../../systems/crafting/recipes/index.md), [Crafting Skills](../index.md)

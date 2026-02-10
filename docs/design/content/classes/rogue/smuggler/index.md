@@ -94,23 +94,23 @@ Skills that have strong synergies with Smuggler. These skills can be learned by 
 
 **Stealth Skills**:
 
-- [Shadow Step](../../skills/tiered/shadow-step.md) - Lesser/Greater/Enhanced - Move unseen through dangerous areas
-- [Vanish](../../skills/cooldown/vanish.md) - Lesser/Greater/Enhanced - Disappear when detection is imminent
-- [Evasion Expert](../../skills/tiered/evasion-expert.md) - Lesser/Greater/Enhanced - Avoid pursuit and capture
-- [Smugglers Instinct](../../skills/mechanic-unlock/smugglers-instinct.md) - Lesser/Greater/Enhanced - Sense danger and opportunities
+- [Shadow Step](../../skills/tiered/shadow-step/index.md) - Lesser/Greater/Enhanced - Move unseen through dangerous areas
+- [Vanish](../../skills/cooldown/vanish/index.md) - Lesser/Greater/Enhanced - Disappear when detection is imminent
+- [Evasion Expert](../../skills/tiered/evasion-expert/index.md) - Lesser/Greater/Enhanced - Avoid pursuit and capture
+- [Smugglers Instinct](../../skills/mechanic-unlock/smugglers-instinct/index.md) - Lesser/Greater/Enhanced - Sense danger and opportunities
 
 **Dark Path Skills**:
 
-- [Underworld Connections](../../skills/passive-generator/underworld-connections.md) - Passive Generator - Criminal network contacts
-- [False Identity](../../skills/mechanic-unlock/false-identity.md) - Lesser/Greater/Enhanced - Create cover identities and fake papers
-- [Money Laundering](../../skills/mechanic-unlock/money-laundering.md) - Lesser/Greater/Enhanced - Clean contraband profits
+- [Underworld Connections](../../skills/passive-generator/underworld-connections/index.md) - Passive Generator - Criminal network contacts
+- [False Identity](../../skills/mechanic-unlock/false-identity/index.md) - Lesser/Greater/Enhanced - Create cover identities and fake papers
+- [Money Laundering](../../skills/mechanic-unlock/money-laundering/index.md) - Lesser/Greater/Enhanced - Clean contraband profits
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know contraband prices and demand
-- [Silver Tongue](../../skills/tiered/silver-tongue.md) - Lesser/Greater/Enhanced - Deceive officials and negotiate
-- [Trade Network](../../skills/passive-generator/trade-network.md) - Passive Generator - Underground distribution contacts
-- [Caravan Master](../../skills/mechanic-unlock/caravan-master.md) - Lesser/Greater/Enhanced - Manage smuggling operations
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know contraband prices and demand
+- [Silver Tongue](../../skills/tiered/silver-tongue/index.md) - Lesser/Greater/Enhanced - Deceive officials and negotiate
+- [Trade Network](../../skills/passive-generator/trade-network/index.md) - Passive Generator - Underground distribution contacts
+- [Caravan Master](../../skills/mechanic-unlock/caravan-master/index.md) - Lesser/Greater/Enhanced - Manage smuggling operations
 
 #### Synergy Bonuses
 
@@ -190,25 +190,25 @@ Actions that grant XP to the Smuggler class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                            | Requirements                                 | Result Class     | Tier |
 | --------------------------------------------- | -------------------------------------------- | ---------------- | ---- |
 | [Smuggling Lord](../consolidation/index.md)   | Smuggler + control major routes              | Smuggling Lord   | 1    |
 | [Blockade Runner](../consolidation/index.md)  | Smuggler + naval focus                       | Blockade Runner  | 1    |
-| [Shadow Caravaner](../consolidation/index.md) | Smuggler + [Scout](../combat/scout.md)       | Shadow Caravaner | 1    |
+| [Shadow Caravaner](../consolidation/index.md) | Smuggler + [Scout](../combat/scout/index.md) | Shadow Caravaner | 1    |
 | [Contraband Baron](../consolidation/index.md) | Multiple smuggling operations + vast network | Contraband Baron | 2    |
 
 ### Interactions
 
-| System                                                       | Interaction                                    |
-| ------------------------------------------------------------ | ---------------------------------------------- |
-| [Black Market](../../../systems/economy/black-market.md)     | Essential transport for underground economy    |
-| [Travel](../../../systems/world/travel.md)                   | Uses covert routes avoiding official paths     |
-| [Crime](../../../systems/social/index.md)                    | Major criminal activity; severe penalties      |
-| [Reputation](../../../systems/social/factions-reputation.md) | Dual reputations: public cover and underground |
-| [Borders & Customs](../../../systems/world/index.md)         | Violates trade restrictions and borders        |
-| [Law Enforcement](../../../systems/social/index.md)          | High-priority target for authorities           |
+| System                                                             | Interaction                                    |
+| ------------------------------------------------------------------ | ---------------------------------------------- |
+| [Black Market](../../../systems/economy/black-market/index.md)     | Essential transport for underground economy    |
+| [Travel](../../../systems/world/travel/index.md)                   | Uses covert routes avoiding official paths     |
+| [Crime](../../../systems/social/index.md)                          | Major criminal activity; severe penalties      |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Dual reputations: public cover and underground |
+| [Borders & Customs](../../../systems/world/index.md)               | Violates trade restrictions and borders        |
+| [Law Enforcement](../../../systems/social/index.md)                | High-priority target for authorities           |
 
 ---
 
@@ -217,6 +217,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Requires:** Transport (wagon/ship), hidden compartments, route knowledge, contacts
 - **Equipment:** [Cargo Wagon](../../items/index.md), [Hidden Compartments](../../items/index.md), [False Papers](../../items/index.md)
 - **Prerequisite:** Often consolidates from [Caravaner](../trader/caravaner/) or [Trader](../trader/)
-- **Synergy Classes:** [Fence](./fence.md), [Thief](./thief.md), [Scout](../combat/scout.md)
+- **Synergy Classes:** [Fence](./fence/index.md), [Thief](./thief/index.md), [Scout](../combat/scout/index.md)
 - **Consolidates To:** [Smuggling Lord](../consolidation/index.md), [Blockade Runner](../consolidation/index.md), [Contraband Baron](../consolidation/index.md)
-- **See Also:** [Black Market System](../../../systems/economy/black-market.md), [Trade Routes](../../../systems/economy/index.md), [Crime & Punishment](../../../systems/social/index.md)
+- **See Also:** [Black Market System](../../../systems/economy/black-market/index.md), [Trade Routes](../../../systems/economy/index.md), [Crime & Punishment](../../../systems/social/index.md)

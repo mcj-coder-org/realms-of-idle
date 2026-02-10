@@ -22,19 +22,19 @@ Skills focused on stealth, subterfuge, infiltration, and evasion. These skills e
 
 ### Tiered Skills
 
-- [Shadow Step](shadow-step.md) - Enhanced stealth movement
-- [Backstab](backstab.md) - Bonus damage from stealth or behind
-- [Lockmaster](lockmaster.md) - Superior lockpicking ability
-- [Misdirection](misdirection.md) - Create diversions and false trails
-- [Evasion Expert](evasion-expert.md) - Superior ability to avoid attacks
+- [Shadow Step](shadow-step/index.md) - Enhanced stealth movement
+- [Backstab](backstab/index.md) - Bonus damage from stealth or behind
+- [Lockmaster](lockmaster/index.md) - Superior lockpicking ability
+- [Misdirection](misdirection/index.md) - Create diversions and false trails
+- [Evasion Expert](evasion-expert/index.md) - Superior ability to avoid attacks
 
 ### Mechanic Unlocks
 
-- [Vanish](vanish.md) - Emergency stealth entry
-- [Poison Craft](poison-craft.md) - Create and apply poisons
-- [Thieves' Cant](thieves-cant.md) - Secret criminal communication
-- [Silent Kill](silent-kill.md) - Eliminate without alerting others
-- [Smuggler's Instinct](smugglers-instinct.md) - Innate sense for hiding contraband
+- [Vanish](vanish/index.md) - Emergency stealth entry
+- [Poison Craft](poison-craft/index.md) - Create and apply poisons
+- [Thieves' Cant](thieves-cant/index.md) - Secret criminal communication
+- [Silent Kill](silent-kill/index.md) - Eliminate without alerting others
+- [Smuggler's Instinct](smugglers-instinct/index.md) - Innate sense for hiding contraband
 
 ## Acquisition
 
@@ -44,4 +44,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

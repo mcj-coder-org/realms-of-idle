@@ -82,4 +82,4 @@ Classes with strong synergies get faster learning, better effectiveness, and low
 ## Related Content
 
 - **Strong Synergy:** [Warrior](../../classes/fighter/warrior/), [Adventurer](../../classes/fighter/adventurer/), [Knight](../../classes/fighter/knight/), [Guard](../../classes/fighter/guard/), [Mercenary](../../classes/fighter/mercenary/)
-- **See Also:** [Combat System](../../systems/combat/index.md), [Armor Expert](../tiered/armor-expert.md)
+- **See Also:** [Combat System](../../systems/combat/index.md), [Armor Expert](../tiered/armor-expert/index.md)

@@ -84,4 +84,4 @@ Classes with strong synergies get faster learning, better effectiveness, and low
 ## Related Content
 
 - **Strong Synergy:** [Knight](../../classes/fighter/guard/), [Guard](../../classes/fighter/guard/), [Leader](../../classes/leader/), [Chieftain](../../classes/leader/chieftain/)
-- **See Also:** [Authority](authority.md), [Inspiring Leader](inspiring-leader.md), [Leadership Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Authority](authority/index.md), [Inspiring Leader](inspiring-leader/index.md), [Leadership Skills](../index.md), [Combat System](../../systems/combat/index.md)

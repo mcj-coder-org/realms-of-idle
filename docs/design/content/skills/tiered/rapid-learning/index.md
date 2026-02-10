@@ -42,4 +42,4 @@ Skills improve continuously with accumulated XP. More XP = better effectiveness,
 ## Related Content
 
 - **Strong Synergy:** [Scholar](../../classes/gatherer/scholar/), [Trainer](../../classes/npc/trainer/)
-- **See Also:** [Teaching](teaching.md), [Scholar Skills](../index.md), [Training System](../../systems/training/index.md)
+- **See Also:** [Teaching](teaching/index.md), [Scholar Skills](../index.md), [Training System](../../systems/training/index.md)

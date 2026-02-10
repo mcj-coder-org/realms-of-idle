@@ -69,4 +69,4 @@ Summon an army of undead minions to aid you in battle, with their power and loya
 ## Related Content
 
 - **Granted By:** [Necromancer](../../classes/channeler/mage/necromancer/)
-- **See Also:** [Summoning Spells](../index.md), [Army of Dead Tactics](../../systems/magic/necromancy-summoning.md), [Creature Control](../../systems/combat/creature-control.md)
+- **See Also:** [Summoning Spells](../index.md), [Army of Dead Tactics](../../systems/magic/necromancy-summoning/index.md), [Creature Control](../../systems/combat/creature-control/index.md)

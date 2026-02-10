@@ -8,7 +8,7 @@ summary: 'Small but clever inventors who build intricate warrens and venerate dr
 
 # Kobolds
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ Traditional warrens of the high peaks, representing classical kobold culture at 
 
 **Key Features:** +20% cold resistance, ore expertise, traditional warrens
 
-**[Learn More →](mountain.md)**
+**[Learn More →](mountain/index.md)**
 
 ### Forest Kobold
 
@@ -28,7 +28,7 @@ Surface-adapted kobolds who build shallower warrens in wooded hills. They ventur
 
 **Key Features:** Wood trap mastery, camouflage training, less sunlight sensitive
 
-**[Learn More →](forest.md)**
+**[Learn More →](forest/index.md)**
 
 ### Urban Kobold
 
@@ -36,7 +36,7 @@ City-dwelling kobolds who maintain sewers and utility systems beneath settlement
 
 **Key Features:** +Social skills, engineering focus, minimal sunlight penalty
 
-**[Learn More →](urban.md)**
+**[Learn More →](urban/index.md)**
 
 ### Dragonsworn
 
@@ -44,7 +44,7 @@ Rare kobolds who serve actual dragons or maintain abandoned dragon lairs. They d
 
 **Key Features:** Stronger fire resistance, dragon affinity, draconic magic bonus
 
-**[Learn More →](dragonsworn.md)**
+**[Learn More →](dragonsworn/index.md)**
 
 ---
 
@@ -122,7 +122,7 @@ Kobolds have **unrestricted access to all classes** with strong affinity to craf
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
-- **[Humans](../humans.md)**: Common trading partners
-- **[Dwarves](../dwarves/base.md)**: Respected rival crafters
-- **[Race Comparison](../../races-and-tribes.md)**: How kobolds compare to other races
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Humans](../humans/index.md)**: Common trading partners
+- **[Dwarves](../dwarves/base/index.md)**: Respected rival crafters
+- **[Race Comparison](../../races-and-tribes/index.md)**: How kobolds compare to other races

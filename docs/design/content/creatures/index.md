@@ -48,7 +48,7 @@ All creatures provide:
 
 ## Full Documentation
 
-See [Creature System](creature-system.md) for the complete reference including:
+See [Creature System](creature-system/index.md) for the complete reference including:
 
 - Spawning rules
 - Behavior AI

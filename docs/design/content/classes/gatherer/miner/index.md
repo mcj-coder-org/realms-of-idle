@@ -163,27 +163,27 @@ Actions that grant XP to the Miner class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                             | Requirements                                    | Result Class      | Tier |
-| ---------------------------------------------- | ----------------------------------------------- | ----------------- | ---- |
-| [Prospector](../consolidation/index.md)        | Miner + [Explorer](../combat/index.md)          | Prospector        | 1    |
-| [Smith-Miner](../consolidation/index.md)       | Miner + [Blacksmith](../crafting/blacksmith.md) | Smith-Miner       | 1    |
-| [Gem Merchant](../consolidation/index.md)      | Miner + [Merchant](../trade/index.md)           | Gem Merchant      | 1    |
-| [Dungeon Delver](../consolidation/index.md)    | Miner + [Adventurer](../combat/index.md)        | Dungeon Delver    | 1    |
-| [Master Prospector](../consolidation/index.md) | Multiple gathering classes                      | Master Prospector | 2    |
+| Consolidation Path                             | Requirements                                          | Result Class      | Tier |
+| ---------------------------------------------- | ----------------------------------------------------- | ----------------- | ---- |
+| [Prospector](../consolidation/index.md)        | Miner + [Explorer](../combat/index.md)                | Prospector        | 1    |
+| [Smith-Miner](../consolidation/index.md)       | Miner + [Blacksmith](../crafting/blacksmith/index.md) | Smith-Miner       | 1    |
+| [Gem Merchant](../consolidation/index.md)      | Miner + [Merchant](../trade/index.md)                 | Gem Merchant      | 1    |
+| [Dungeon Delver](../consolidation/index.md)    | Miner + [Adventurer](../combat/index.md)              | Dungeon Delver    | 1    |
+| [Master Prospector](../consolidation/index.md) | Multiple gathering classes                            | Master Prospector | 2    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                                                       |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary mining class; provides ore and gems for crafting                                          |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Essential supplier for [Blacksmith](../crafting/blacksmith.md), [Jeweler](../crafting/jeweler.md) |
-| [Economy](../../../systems/economy/index.md)                  | Mining operations generate significant wealth                                                     |
-| [Exploration](../../../systems/world/exploration.md)          | Discovers underground areas and cave systems                                                      |
-| [Settlement](../../../systems/world/settlements.md)           | Mining towns provide valuable resources                                                           |
-| [Combat](../../../systems/combat/index.md)                    | Can use pickaxe as improvised weapon                                                              |
-| [Environment](../../../systems/world/environment-hazards.md)  | Must manage underground hazards                                                                   |
+| System                                                              | Interaction                                                                                                   |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary mining class; provides ore and gems for crafting                                                      |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Essential supplier for [Blacksmith](../crafting/blacksmith/index.md), [Jeweler](../crafting/jeweler/index.md) |
+| [Economy](../../../systems/economy/index.md)                        | Mining operations generate significant wealth                                                                 |
+| [Exploration](../../../systems/world/exploration/index.md)          | Discovers underground areas and cave systems                                                                  |
+| [Settlement](../../../systems/world/settlements/index.md)           | Mining towns provide valuable resources                                                                       |
+| [Combat](../../../systems/combat/index.md)                          | Can use pickaxe as improvised weapon                                                                          |
+| [Environment](../../../systems/world/environment-hazards/index.md)  | Must manage underground hazards                                                                               |
 
 ---
 
@@ -196,4 +196,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
   - [Metals](../../material/metal/) - [Copper](../../material/metal/copper/), [Iron](../../material/metal/iron/)
 - **Supplies:** [Blacksmith](../crafter/blacksmith/), [Jeweler](../crafter/jeweler/), [Alchemist](../crafter/alchemist/)
 - **Synergy Classes:** [Blacksmith](../crafter/blacksmith/), [Jeweler](../crafter/jeweler/), [Merchant](../trader/merchant/)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Smelting Recipes](../../recipe/smelting/)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Smelting Recipes](../../recipe/smelting/)

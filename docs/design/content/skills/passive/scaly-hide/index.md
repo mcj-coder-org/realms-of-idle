@@ -64,7 +64,7 @@ Your body is covered in tough reptilian scales that serve as natural armor. Thes
 **Stacks with:**
 
 - Worn armor (additive AC bonus)
-- [Thick Skin](thick-skin.md) - Use highest AC bonus if both present
+- [Thick Skin](thick-skin/index.md) - Use highest AC bonus if both present
 - Armor-boosting enchantments
 - Class defensive bonuses
 
@@ -99,7 +99,7 @@ Your body is covered in tough reptilian scales that serve as natural armor. Thes
 
 ## Related Content
 
-- [Thick Skin](thick-skin.md) - Natural armor (Troll/Ogre)
-- [Hold Breath](hold-breath.md) - Extended underwater breathing (Lizardfolk)
-- [Bite Attack](../mechanic-unlock/bite-attack.md) - Natural weapon (Lizardfolk)
-- [Armor Expert](../tiered/armor-expert.md) - Worn armor mastery
+- [Thick Skin](thick-skin/index.md) - Natural armor (Troll/Ogre)
+- [Hold Breath](hold-breath/index.md) - Extended underwater breathing (Lizardfolk)
+- [Bite Attack](../mechanic-unlock/bite-attack/index.md) - Natural weapon (Lizardfolk)
+- [Armor Expert](../tiered/armor-expert/index.md) - Worn armor mastery

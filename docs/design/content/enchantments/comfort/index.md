@@ -10,12 +10,12 @@ Enchantments focused on making daily life more comfortable - perfect fit clothin
 
 ## Available Enchantments
 
-| Enchantment                   | Tier       | Summary                                      | Cost Range |
-| ----------------------------- | ---------- | -------------------------------------------- | ---------- |
-| [Comfort](comfort.md)         | Apprentice | Perfect fit, pressure relief, breathability  | 20-8000c   |
-| [Warmth](warmth.md)           | Apprentice | Magical heating without bulk                 | 25-10000c  |
-| [Cooling](cooling.md)         | Apprentice | Magical climate control for hot environments | 25-10000c  |
-| [Cleanliness](cleanliness.md) | Apprentice | Self-cleaning, stain/odor repellent          | 15-5000c   |
+| Enchantment                         | Tier       | Summary                                      | Cost Range |
+| ----------------------------------- | ---------- | -------------------------------------------- | ---------- |
+| [Comfort](comfort/index.md)         | Apprentice | Perfect fit, pressure relief, breathability  | 20-8000c   |
+| [Warmth](warmth/index.md)           | Apprentice | Magical heating without bulk                 | 25-10000c  |
+| [Cooling](cooling/index.md)         | Apprentice | Magical climate control for hot environments | 25-10000c  |
+| [Cleanliness](cleanliness/index.md) | Apprentice | Self-cleaning, stain/odor repellent          | 15-5000c   |
 
 ## Category Overview
 

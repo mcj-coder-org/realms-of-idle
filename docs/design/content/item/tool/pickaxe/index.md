@@ -49,9 +49,9 @@ Pickaxes wear down. The head dulls, the handle loosens, the metal bends. Miners 
 
 ## Interactions
 
-| System                                              | Interaction                      |
-| --------------------------------------------------- | -------------------------------- |
-| [Mining](../../../../systems/crafting/gathering.md) | Required tool for ore extraction |
+| System                                                    | Interaction                      |
+| --------------------------------------------------------- | -------------------------------- |
+| [Mining](../../../../systems/crafting/gathering/index.md) | Required tool for ore extraction |
 
 ---
 

@@ -20,11 +20,11 @@ Destruction magic focuses on dealing damage through elemental and arcane forces.
 
 ## Spells
 
-| Spell                               | Element   | Tier | Effect               |
-| ----------------------------------- | --------- | ---- | -------------------- |
-| [Fireball](fireball.md)             | Fire      | All  | Area fire damage     |
-| [Lightning Bolt](lightning-bolt.md) | Lightning | All  | Chain lightning      |
-| [Ice Shard](ice-shard.md)           | Ice       | All  | Piercing cold damage |
+| Spell                                     | Element   | Tier | Effect               |
+| ----------------------------------------- | --------- | ---- | -------------------- |
+| [Fireball](fireball/index.md)             | Fire      | All  | Area fire damage     |
+| [Lightning Bolt](lightning-bolt/index.md) | Lightning | All  | Chain lightning      |
+| [Ice Shard](ice-shard/index.md)           | Ice       | All  | Piercing cold damage |
 
 ## Specialization
 

@@ -22,15 +22,15 @@ Skills focused on animal handling, taming, training, and communication. These sk
 
 ### Tiered Skills
 
-- [Taming](taming.md) - Domesticate wild animals
-- [Pack Leader](pack-leader.md) - Command multiple animals effectively
+- [Taming](taming/index.md) - Domesticate wild animals
+- [Pack Leader](pack-leader/index.md) - Command multiple animals effectively
 
 ### Mechanic Unlocks
 
-- [Beast Tongue](beast-tongue.md) - Communicate with animals
-- [Creature Lore](creature-lore.md) - Knowledge of animal behavior and needs
-- [Hunting Companion](hunting-companion.md) - Train hunting partners
-- [Scent Mastery](scent-mastery.md) - Track and mask scents
+- [Beast Tongue](beast-tongue/index.md) - Communicate with animals
+- [Creature Lore](creature-lore/index.md) - Knowledge of animal behavior and needs
+- [Hunting Companion](hunting-companion/index.md) - Train hunting partners
+- [Scent Mastery](scent-mastery/index.md) - Track and mask scents
 
 ## Acquisition
 
@@ -40,4 +40,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

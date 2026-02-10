@@ -67,4 +67,4 @@ Surround yourself with a shield of healing water that absorbs damage and gradual
 
 - **Granted By:** [Hydromancer](../../classes/channeler/mage/hydromancer/)
 - **School:** [Abjuration](../index.md)
-- **See Also:** [Flame Shield](flame-shield.md), [Shield](shield.md), [Stone Wall](stone-wall.md)
+- **See Also:** [Flame Shield](flame-shield/index.md), [Shield](shield/index.md), [Stone Wall](stone-wall/index.md)

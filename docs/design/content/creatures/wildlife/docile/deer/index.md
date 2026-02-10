@@ -63,17 +63,17 @@ Every autumn, when bucks grow their antlers, crafters scour the forests for shed
 
 ### Harvestables
 
-| Resource      | Uses                               | Yield         | Skill Required                                                    |
-| ------------- | ---------------------------------- | ------------- | ----------------------------------------------------------------- |
-| Venison       | Food (premium meat)                | 8-12 portions | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Deer Hide     | Leather (armor, clothing)          | 1 large hide  | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Deer Fur      | Insulation (premium winter wear)   | 1 bundle      | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Antlers       | Crafting (handles, toggles, décor) | 1 set (bucks) | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Antler Velvet | Alchemy (healing, vitality)        | 1 (spring)    | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Deer Bones    | Crafting (tools, weapon parts)     | 1 large set   | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Deer Heart    | Alchemy (endurance potions)        | 1             | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Deer Sinew    | Crafting (bowstrings, stitching)   | 2-4 lengths   | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Deer Fat      | Cooking (tallow for preserves)     | 2-3 pounds    | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
+| Resource      | Uses                               | Yield         | Skill Required                                                          |
+| ------------- | ---------------------------------- | ------------- | ----------------------------------------------------------------------- |
+| Venison       | Food (premium meat)                | 8-12 portions | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Deer Hide     | Leather (armor, clothing)          | 1 large hide  | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Deer Fur      | Insulation (premium winter wear)   | 1 bundle      | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Antlers       | Crafting (handles, toggles, décor) | 1 set (bucks) | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Antler Velvet | Alchemy (healing, vitality)        | 1 (spring)    | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Deer Bones    | Crafting (tools, weapon parts)     | 1 large set   | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Deer Heart    | Alchemy (endurance potions)        | 1             | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Deer Sinew    | Crafting (bowstrings, stitching)   | 2-4 lengths   | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Deer Fat      | Cooking (tallow for preserves)     | 2-3 pounds    | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
 
 ### Taming
 
@@ -115,7 +115,7 @@ Every autumn, when bucks grow their antlers, crafters scour the forests for shed
 ## Related Content
 
 - **Habitat:** Forests, Meadows, Hills
-- **Predators:** [Wolf](../predators/wolf.md), [Bear](../predators/bear.md), [Mountain Lion](../predators/mountain-lion.md)
+- **Predators:** [Wolf](../predators/wolf/index.md), [Bear](../predators/bear/index.md), [Mountain Lion](../predators/mountain-lion/index.md)
 - **Materials:** [Deer Hide](../../../materials/creature/pelts/deer-hide/index.md), [Deer Heart](../../../materials/creature/organs/hearts/index.md), [Venison](../../../materials/creature/meats/venison/index.md)
-- **Used By:** [Roasted Venison](../../../recipes/cooking/game-meat/roasted-venison/index.md), [Endurance Tonic](../../../recipes/alchemy/creature-reagents/endurance-tonic/index.md), [Fur-Lined Boots](../../../recipes/leatherworking/creature-gear.md)
-- **See Also:** [Rabbit](rabbit.md)
+- **Used By:** [Roasted Venison](../../../recipes/cooking/game-meat/roasted-venison/index.md), [Endurance Tonic](../../../recipes/alchemy/creature-reagents/endurance-tonic/index.md), [Fur-Lined Boots](../../../recipes/leatherworking/creature-gear/index.md)
+- **See Also:** [Rabbit](rabbit/index.md)

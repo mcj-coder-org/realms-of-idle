@@ -9,7 +9,7 @@ summary: 'Volcanic dwarves with heat resistance, masters of exotic metals and ex
 
 # Forge Dwarf
 
-> **Parent Race:** [Dwarves](base.md)
+> **Parent Race:** [Dwarves](base/index.md)
 
 ## Variant Overview
 
@@ -46,7 +46,7 @@ The volcanic environment demands constant vigilance. Holds must monitor magma fl
 
 **With Other Dwarves:** Forge Dwarves maintain complex relationships with other variants. Mountain Dwarves respect their weapon quality while resenting their pride. Hill Dwarves appreciate their trade goods but find them exhausting to deal with. Deep Dwarves share some common ground - both work in extreme environments with rare materials - leading to occasional productive exchanges. All dwarves want forge dwarf metalwork, but few want to visit forge holds or deal with forge dwarf personalities.
 
-**With Other Races:** Surface races view forge dwarves as the ultimate smiths. Wealthy [humans](../humans.md) commission forge dwarf weapons as status symbols and practical tools. [Elves](../elves.md) sometimes collaborate with forge dwarves on items combining masterwork metallurgy with enchantment. But forge dwarves' pride and the difficulty of reaching volcanic holds limit these interactions.
+**With Other Races:** Surface races view forge dwarves as the ultimate smiths. Wealthy [humans](../humans/index.md) commission forge dwarf weapons as status symbols and practical tools. [Elves](../elves/index.md) sometimes collaborate with forge dwarves on items combining masterwork metallurgy with enchantment. But forge dwarves' pride and the difficulty of reaching volcanic holds limit these interactions.
 
 **With Players:** Forge Dwarf characters bring exceptional crafting capabilities and heat resistance. They're at their best when the party needs masterwork equipment or faces fire-based challenges. Their pride can create interesting roleplay dynamics - they're not arrogant without cause, but they do think very highly of their skills.
 

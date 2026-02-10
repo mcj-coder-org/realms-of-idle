@@ -9,7 +9,7 @@ summary: 'Surface-adapted kobolds who build shallower warrens in wooded hills an
 
 # Forest Kobold
 
-> **Parent Race:** [Kobolds](base.md)
+> **Parent Race:** [Kobolds](base/index.md)
 
 ## Variant Overview
 
@@ -64,7 +64,7 @@ This specialization makes forest kobolds valuable to frontier settlements, range
 
 **With Other Kobolds:** Forest Kobolds occupy an odd position in kobold society. Mountain Kobolds consider them compromised by surface adaptation, less "pure" in their kobold identity. Urban Kobolds see them as country cousins - useful but unsophisticated. Dragonsworn view them with mild pity for being so far from dragon proximity. Yet forest kobolds are often the most successful at securing valuable trade deals and surface resources that benefit all kobold variants.
 
-**With Other Races:** Forest Kobolds maintain the friendliest relationships with surface races of any kobold variant. [Humans](../humans.md) appreciate their wilderness expertise and trap-making services. [Elves](../elves/base.md) respect their forest knowledge while questioning their tunneling instincts. [Tribal races](../../monstrous/index.md) often establish mutual territories with forest kobold warrens, trading rather than fighting. Their adaptability and reduced sunlight sensitivity make them valuable allies in mixed expeditions.
+**With Other Races:** Forest Kobolds maintain the friendliest relationships with surface races of any kobold variant. [Humans](../humans/index.md) appreciate their wilderness expertise and trap-making services. [Elves](../elves/base/index.md) respect their forest knowledge while questioning their tunneling instincts. [Tribal races](../../monstrous/index.md) often establish mutual territories with forest kobold warrens, trading rather than fighting. Their adaptability and reduced sunlight sensitivity make them valuable allies in mixed expeditions.
 
 ## Recommended Classes
 

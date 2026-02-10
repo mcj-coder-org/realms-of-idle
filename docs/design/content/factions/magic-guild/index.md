@@ -74,4 +74,4 @@ The Guild maintains specialized councils for major magical disciplines:
 ## Related Content
 
 - **Classes:** [Mage](../../content/classes/channeler/mage/)
-- **System:** [Magic System](../../systems/magic/magic-system.md)
+- **System:** [Magic System](../../systems/magic/magic-system/index.md)

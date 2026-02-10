@@ -169,8 +169,8 @@ Sprites are sentient beings. Most cultures consider hunting them deeply wrong, a
 ## Related Content
 
 - **Habitat:** [Ancient Forests](../../../../systems/world/index.md), [Wild Meadows](../../../../systems/world/index.md), [Sacred Groves](../../../../systems/world/index.md)
-- **Related Creatures:** [Pixie](pixie.md), [Dryad](dryad.md), [Fairy](index.md), [Elemental](../elementals/index.md)
+- **Related Creatures:** [Pixie](pixie/index.md), [Dryad](dryad/index.md), [Fairy](index.md), [Elemental](../elementals/index.md)
 - **Associated NPCs:** [Druids](../../../classes/index.md), [Rangers](../../../classes/index.md), [Wild Mages](../../../classes/index.md)
 - **Items:** [Sprite Dust](../../../items/index.md), [Fey Wine](../../../items/index.md), [Nature's Blessing](../../../items/index.md)
 - **Systems:** [Reputation with Fey](../../../../systems/index.md), [Environmental Health](../../../../systems/index.md), [Magic System](../../../../systems/index.md)
-- **See Also:** [Fey Creatures](index.md), [Elemental Creatures](../elementals/index.md), [Creature System](../../creature-system.md)
+- **See Also:** [Fey Creatures](index.md), [Elemental Creatures](../elementals/index.md), [Creature System](../../creature-system/index.md)

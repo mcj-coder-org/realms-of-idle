@@ -47,5 +47,5 @@ Consolidation classes gain **dual tag path access**:
 ## Related Content
 
 - **Class System:** [Classes Overview](../index.md)
-- **Skill System:** [Skill Tags & Progression](../../systems/progression/skill-tags.md)
-- **Crafting System:** [Recipe Tag System](../../systems/crafting/recipe-tag-system.md)
+- **Skill System:** [Skill Tags & Progression](../../systems/progression/skill-tags/index.md)
+- **Crafting System:** [Recipe Tag System](../../systems/crafting/recipe-tag-system/index.md)

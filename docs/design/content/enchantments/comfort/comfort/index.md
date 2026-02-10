@@ -182,6 +182,6 @@ The enchantment has unexpected social benefits. Comfort-enchanted school uniform
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Down feathers](../../materials/reagents/index.md), [Silk essence](../../materials/reagents/index.md), [Lavender oil](../../materials/reagents/index.md)
 - **Applied To:** All [Clothing](../../items/clothing/index.md), [Footwear](../../items/clothing/index.md), [Accessories](../../items/index.md) (see Applicable Items table)
-- **See Also:** [Warmth](warmth.md), [Cooling](cooling.md), [Cleanliness](cleanliness.md)
+- **See Also:** [Warmth](warmth/index.md), [Cooling](cooling/index.md), [Cleanliness](cleanliness/index.md)
 - **Enchantment Type:** Comfort (wearability enhancement)
 - **Accessibility Note:** Particularly beneficial for elderly, disabled, or those with sensory sensitivities

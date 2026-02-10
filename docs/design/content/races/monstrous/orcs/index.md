@@ -8,7 +8,7 @@ summary: 'Honor-bound warriors whose strength and ferocity mask a rigid code of 
 
 # Orcs
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ Mounted warriors of the grasslands, representing the classic raider image. Maste
 
 **Key Features:** Mounted warfare mastery, +15% riding skill, cavalry tactics
 
-**[Learn More →](plains.md)**
+**[Learn More →](plains/index.md)**
 
 ### Mountain Orc
 
@@ -28,7 +28,7 @@ Highland fortress defenders who occupy high strongholds and caves, defending ter
 
 **Key Features:** Fortress defense, +20% cold resistance, defensive tactics
 
-**[Learn More →](mountain.md)**
+**[Learn More →](mountain/index.md)**
 
 ### Desert Orc
 
@@ -36,7 +36,7 @@ Lean, tough raiders adapted to harsh arid lands. Expert survivors who strike fro
 
 **Key Features:** Desert raiding, +20% heat resistance, survival expertise
 
-**[Learn More →](desert.md)**
+**[Learn More →](desert/index.md)**
 
 ### Swamp Orc
 
@@ -44,7 +44,7 @@ Guerrilla warfare specialists who developed cunning tactics in wetland environme
 
 **Key Features:** Guerrilla tactics, +15% stealth in swamps, ambush mastery
 
-**[Learn More →](swamp.md)**
+**[Learn More →](swamp/index.md)**
 
 ---
 
@@ -127,7 +127,7 @@ Orcs have **unrestricted access to all classes** with strong affinity to warrior
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
 - **[Gnolls](../gnolls/)**: Fellow tribal warriors with different cultural approaches
 - **[Goblins](../goblins/)**: Common allies and scouts for orc tribes
-- **[Race Comparison](../../races-and-tribes.md)**: How orcs compare to other races
+- **[Race Comparison](../../races-and-tribes/index.md)**: How orcs compare to other races

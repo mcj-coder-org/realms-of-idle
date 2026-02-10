@@ -111,5 +111,5 @@ In hot climates, frost-enchanted items serve double duty. Desert traders carry f
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Ice essence](../../materials/reagents/index.md), [Frost lotus](../../materials/reagents/index.md)
 - **Applied To:** Weapons, gauntlets, boots, shields, rings, gloves (see Applicable Items table)
-- **See Also:** [Flaming](flaming.md), [Lightning](lightning.md), [Glacial](glacial.md)
+- **See Also:** [Flaming](flaming/index.md), [Lightning](lightning/index.md), [Glacial](glacial/index.md)
 - **Enchantment Type:** Combat (elemental damage - cold)

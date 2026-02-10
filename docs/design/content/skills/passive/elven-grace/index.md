@@ -72,8 +72,8 @@ Elves move with supernatural elegance - fluid, precise, and seemingly effortless
 
 **Synergizes with:**
 
-- [Evasion Expert](../tiered/evasion-expert.md) - Enhanced dodging
-- [Shadow Step](../tiered/shadow-step.md) - Stealth movement
+- [Evasion Expert](../tiered/evasion-expert/index.md) - Enhanced dodging
+- [Shadow Step](../tiered/shadow-step/index.md) - Stealth movement
 - Rogue, Ranger, Assassin classes
 - Light armor builds (full mobility)
 
@@ -92,7 +92,7 @@ Elves move with supernatural elegance - fluid, precise, and seemingly effortless
 
 ## Related Content
 
-- [Fleet of Foot](fleet-of-foot.md) - Enhanced running speed (Wood Elf)
-- [Arcane Sensitivity](arcane-sensitivity.md) - Magical awareness (High Elf)
-- [Evasion Expert](../tiered/evasion-expert.md) - Dodge mastery
-- [Sure-Footed](sure-footed.md) - Terrain navigation (Wood Elf)
+- [Fleet of Foot](fleet-of-foot/index.md) - Enhanced running speed (Wood Elf)
+- [Arcane Sensitivity](arcane-sensitivity/index.md) - Magical awareness (High Elf)
+- [Evasion Expert](../tiered/evasion-expert/index.md) - Dodge mastery
+- [Sure-Footed](sure-footed/index.md) - Terrain navigation (Wood Elf)

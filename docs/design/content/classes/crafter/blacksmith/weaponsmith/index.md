@@ -69,17 +69,17 @@ The profession demands obsessive attention to detail. Weaponsmiths test every bl
 
 ### Starting Skills
 
-| Skill              | Tier     | Link                                                            | Description                         |
-| ------------------ | -------- | --------------------------------------------------------------- | ----------------------------------- |
-| Weapon Enhancement | Greater  | [See Skill](../../skills/mechanic-unlock/weapon-enhancement.md) | Apply special properties to weapons |
-| Perfect Balance    | Mechanic | [See Skill](../../../skills/mechanic-unlock/perfect-balance.md) | Create perfectly balanced weapons   |
+| Skill              | Tier     | Link                                                                  | Description                         |
+| ------------------ | -------- | --------------------------------------------------------------------- | ----------------------------------- |
+| Weapon Enhancement | Greater  | [See Skill](../../skills/mechanic-unlock/weapon-enhancement/index.md) | Apply special properties to weapons |
+| Perfect Balance    | Mechanic | [See Skill](../../../skills/mechanic-unlock/perfect-balance/index.md) | Create perfectly balanced weapons   |
 
 ### Synergy Skills
 
 Skills with strong synergies for Weaponsmith:
 
 - All [Blacksmith](../../blacksmith/index.md) synergy skills
-- [Weapon Enhancement](../../skills/mechanic-unlock/weapon-enhancement.md) - Apply combat bonuses during forging
+- [Weapon Enhancement](../../skills/mechanic-unlock/weapon-enhancement/index.md) - Apply combat bonuses during forging
 - [Balance Perfection](../../skills/index.md) - Create weapons with optimal weight distribution
 - [Edge Retention](../../skills/index.md) - Forge edges that maintain sharpness longer
 - [Material Mastery](../../skills/index.md) - Work with exotic weapon materials
@@ -119,8 +119,8 @@ As a Tier 3 class, Weaponsmith has full tag depth access:
 
 - **Requires:** Master forge, specialized weapon tools, quality materials
 - **Creates:** [Weapons](../../items/index.md) of exceptional quality
-- **Synergy Classes:** [Blacksmith](../../blacksmith/index.md), [Warrior](../combat/warrior.md), [Enchanter](../magic/enchanter.md)
-- **See Also:** [Class Tiers](../../../systems/character/class-tiers.md), [Crafting Progression](../../../systems/crafting/crafting-progression.md)
+- **Synergy Classes:** [Blacksmith](../../blacksmith/index.md), [Warrior](../combat/warrior/index.md), [Enchanter](../magic/enchanter/index.md)
+- **See Also:** [Class Tiers](../../../systems/character/class-tiers/index.md), [Crafting Progression](../../../systems/crafting/crafting-progression/index.md)
 
 ## Tags
 

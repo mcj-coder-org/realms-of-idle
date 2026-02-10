@@ -215,6 +215,6 @@ Initial use requires:
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), Organizational magic, [Mind crystal](../../materials/reagents/index.md), [Order essence](../../materials/reagents/index.md)
 - **Applied To:** [Toolboxes](../../items/tools/index.md), [Component pouches](../../items/containers/index.md), [Wardrobes](../../items/index.md), [Bookshelves](../../items/index.md), all containers (see Applicable Items table)
-- **See Also:** [Holding](holding.md), [Finding](finding.md), [Inventory](inventory.md)
+- **See Also:** [Holding](holding/index.md), [Finding](finding/index.md), [Inventory](inventory/index.md)
 - **Enchantment Type:** Utility (intelligent organization)
 - **Note:** Requires brief learning period to adapt to owner's preferences

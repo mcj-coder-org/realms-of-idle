@@ -81,10 +81,10 @@ The workshop smells of neat's-foot oil, saddle soap, and curing leather. Tools h
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                                  |
-| ------------------ | ------ | --------------------------------------------------------------- | ---------------------------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding hide quality is essential for leatherworking |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Precision stitching and cutting requires concentration     |
+| Skill              | Tier   | Link                                                                  | Reasoning                                                  |
+| ------------------ | ------ | --------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding hide quality is essential for leatherworking |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Precision stitching and cutting requires concentration     |
 
 #### Synergy Skills
 
@@ -92,18 +92,18 @@ Skills with strong synergies for Leatherworker:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert repair capabilities
-- [Tool Bond](../../skills/mechanic-unlock/tool-bond.md) - Lesser/Greater/Enhanced - Enhanced effectiveness with favored tools
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert repair capabilities
+- [Tool Bond](../../skills/mechanic-unlock/tool-bond/index.md) - Lesser/Greater/Enhanced - Enhanced effectiveness with favored tools
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
 
 **Smithing Skills** (for armor fitting):
 
-- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting.md) - Lesser/Greater/Enhanced - Custom-fit armor for maximum protection
+- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting/index.md) - Lesser/Greater/Enhanced - Custom-fit armor for maximum protection
 
 **Leatherworking Skills** (specialized skills to be defined):
 
@@ -176,27 +176,27 @@ Actions that grant XP to the Leatherworker class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                          | Requirements                                    | Result Class   | Tier |
-| ------------------------------------------- | ----------------------------------------------- | -------------- | ---- |
-| [Artisan](../consolidation/index.md)        | Leatherworker + any Crafter class               | Artisan        | 1    |
-| [Outfitter](../consolidation/index.md)      | Leatherworker + [Tailor](./tailor.md)           | Outfitter      | 1    |
-| [Hunter-Crafter](../consolidation/index.md) | Leatherworker + [Hunter](../gathering/index.md) | Hunter-Crafter | 1    |
-| [Armorsmith](../consolidation/index.md)     | Leatherworker + [Blacksmith](./blacksmith.md)   | Armorsmith     | 1    |
-| [Artificer](../consolidation/index.md)      | Master in 3+ crafting classes                   | Artificer      | 3    |
+| Consolidation Path                          | Requirements                                        | Result Class   | Tier |
+| ------------------------------------------- | --------------------------------------------------- | -------------- | ---- |
+| [Artisan](../consolidation/index.md)        | Leatherworker + any Crafter class                   | Artisan        | 1    |
+| [Outfitter](../consolidation/index.md)      | Leatherworker + [Tailor](./tailor/index.md)         | Outfitter      | 1    |
+| [Hunter-Crafter](../consolidation/index.md) | Leatherworker + [Hunter](../gathering/index.md)     | Hunter-Crafter | 1    |
+| [Armorsmith](../consolidation/index.md)     | Leatherworker + [Blacksmith](./blacksmith/index.md) | Armorsmith     | 1    |
+| [Artificer](../consolidation/index.md)      | Master in 3+ crafting classes                       | Artificer      | 3    |
 
 ### Interactions
 
-| System                                                           | Interaction                                                                     |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Primary leather crafting class; unlocks leather recipes                         |
-| [Economy](../../../systems/economy/index.md)                     | Can establish leatherworking shop; steady demand                                |
-| [Combat](../../../systems/combat/index.md)                       | Can craft medium armor that balances protection and mobility                    |
-| [Gathering](../../../systems/crafting/gathering.md)              | Synergy: [Hunter](../gathering/index.md) + Leatherworker = efficient production |
-| [Settlement](../../../systems/world/settlements.md)              | Leatherworking shops provide armor and utility goods                            |
-| [Enchanting](../../../systems/crafting/enchantment-mechanics.md) | Leather armor accepts enchantments well                                         |
-| [Social](../../../systems/social/index.md)                       | Quality leather goods improve appearance and status                             |
+| System                                                                 | Interaction                                                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Primary leather crafting class; unlocks leather recipes                         |
+| [Economy](../../../systems/economy/index.md)                           | Can establish leatherworking shop; steady demand                                |
+| [Combat](../../../systems/combat/index.md)                             | Can craft medium armor that balances protection and mobility                    |
+| [Gathering](../../../systems/crafting/gathering/index.md)              | Synergy: [Hunter](../gathering/index.md) + Leatherworker = efficient production |
+| [Settlement](../../../systems/world/settlements/index.md)              | Leatherworking shops provide armor and utility goods                            |
+| [Enchanting](../../../systems/crafting/enchantment-mechanics/index.md) | Leather armor accepts enchantments well                                         |
+| [Social](../../../systems/social/index.md)                             | Quality leather goods improve appearance and status                             |
 
 ---
 
@@ -206,8 +206,8 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Materials Used:** [Leather](../../materials/index.md), [Hides](../../materials/index.md), [Tanning Agents](../../materials/index.md), [Dyes](../../materials/index.md)
 - **Creates:** [Leather Armor](../../items/index.md), [Boots](../../items/index.md), [Belts](../../items/index.md), [Bags](../../items/index.md)
 - **Recipes:** [Leatherworking Recipes](../../../systems/crafting/index.md)
-- **Synergy Classes:** [Hunter](../gathering/index.md), [Tailor](./tailor.md), [Blacksmith](./blacksmith.md), [Merchant](../trade/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Armor System](../../../systems/combat/weapons-and-armor.md)
+- **Synergy Classes:** [Hunter](../gathering/index.md), [Tailor](./tailor/index.md), [Blacksmith](./blacksmith/index.md), [Merchant](../trade/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Armor System](../../../systems/combat/weapons-and-armor/index.md)
 
 ## Tags
 

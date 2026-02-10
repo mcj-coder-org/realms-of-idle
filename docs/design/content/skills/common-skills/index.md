@@ -125,7 +125,7 @@ Most common skills are truly universal with no synergies. However, some common s
 2. **Upgrade Path**: Having Lesser makes Greater +40% easier, Greater makes Enhanced +40% easier
 3. **Level-Up Influence**: Excess contributing actions improve tier award chances
 
-See [class-progression.md](../../systems/character/class-progression.md#5-skill-tiers) for full tier mechanics.
+See [class-progression.md](../../systems/character/class-progression/index.md#5-skill-tiers) for full tier mechanics.
 
 ### Universal Accessibility
 
@@ -204,101 +204,101 @@ The sections below have been preserved for reference, but **individual skill fil
 
 Individual files in [common/](common/):
 
-- [second-wind.md](common/second-wind.md) - Emergency stamina recovery when exhausted
-- [hearty-constitution.md](common/hearty-constitution.md) - Increased health pool
-- [deep-reserves.md](common/deep-reserves.md) - Increased stamina pool
-- [quick-recovery.md](common/quick-recovery.md) - Faster rest effectiveness
-- [fortitude.md](common/fortitude.md) - Resistance to poison and disease
-- [iron-stomach.md](common/iron-stomach.md) - Resistance to food-based ailments
-- [climate-tolerance.md](common/climate-tolerance.md) - Reduced penalties from temperature extremes
-- [light-sleeper.md](common/light-sleeper.md) - Improved awareness while resting
-- [survivor.md](common/survivor.md) - General hardiness in adverse conditions
+- [second-wind.md](common/second-wind/index.md) - Emergency stamina recovery when exhausted
+- [hearty-constitution.md](common/hearty-constitution/index.md) - Increased health pool
+- [deep-reserves.md](common/deep-reserves/index.md) - Increased stamina pool
+- [quick-recovery.md](common/quick-recovery/index.md) - Faster rest effectiveness
+- [fortitude.md](common/fortitude/index.md) - Resistance to poison and disease
+- [iron-stomach.md](common/iron-stomach/index.md) - Resistance to food-based ailments
+- [climate-tolerance.md](common/climate-tolerance/index.md) - Reduced penalties from temperature extremes
+- [light-sleeper.md](common/light-sleeper/index.md) - Improved awareness while resting
+- [survivor.md](common/survivor/index.md) - General hardiness in adverse conditions
 
 ### Combat Skills
 
 Individual files in [common/](common/):
 
-- [power-strike.md](common/power-strike.md) - Increased melee damage on demand
-- [steady-aim.md](common/steady-aim.md) - Improved ranged accuracy
-- [defensive-stance.md](common/defensive-stance.md) - Reduced damage taken at cost of offense
-- [quick-reflexes.md](common/quick-reflexes.md) - Improved dodge chance
-- [thick-skin.md](common/thick-skin.md) - Natural damage resistance
-- [adrenaline-surge.md](common/adrenaline-surge.md) - Combat stamina recovery when threatened
-- [combat-awareness.md](common/combat-awareness.md) - Improved reaction in battle
-- [brawler.md](common/brawler.md) - Improved unarmed combat
-- [last-stand.md](common/last-stand.md) - Improved performance when near death
+- [power-strike.md](common/power-strike/index.md) - Increased melee damage on demand
+- [steady-aim.md](common/steady-aim/index.md) - Improved ranged accuracy
+- [defensive-stance.md](common/defensive-stance/index.md) - Reduced damage taken at cost of offense
+- [quick-reflexes.md](common/quick-reflexes/index.md) - Improved dodge chance
+- [thick-skin.md](common/thick-skin/index.md) - Natural damage resistance
+- [adrenaline-surge.md](common/adrenaline-surge/index.md) - Combat stamina recovery when threatened
+- [combat-awareness.md](common/combat-awareness/index.md) - Improved reaction in battle
+- [brawler.md](common/brawler/index.md) - Improved unarmed combat
+- [last-stand.md](common/last-stand/index.md) - Improved performance when near death
 
 ### Awareness & Detection Skills
 
 Individual files in [common/](common/):
 
-- [keen-senses.md](common/keen-senses.md) - Improved detection of hidden things
-- [danger-sense.md](common/danger-sense.md) - Intuitive threat awareness
-- [tracker.md](common/tracker.md) - Ability to follow trails
-- [appraiser.md](common/appraiser.md) - Assess item value accurately
-- [insight.md](common/insight.md) - Read people and detect deception
-- [environmental-reading.md](common/environmental-reading.md) - Notice changes in surroundings
-- [treasure-sense.md](common/treasure-sense.md) - Improved ability to find valuables
+- [keen-senses.md](common/keen-senses/index.md) - Improved detection of hidden things
+- [danger-sense.md](common/danger-sense/index.md) - Intuitive threat awareness
+- [tracker.md](common/tracker/index.md) - Ability to follow trails
+- [appraiser.md](common/appraiser/index.md) - Assess item value accurately
+- [insight.md](common/insight/index.md) - Read people and detect deception
+- [environmental-reading.md](common/environmental-reading/index.md) - Notice changes in surroundings
+- [treasure-sense.md](common/treasure-sense/index.md) - Improved ability to find valuables
 
 ### Social Skills
 
 Individual files in [common/](common/):
 
-- [haggler.md](common/haggler.md) - Better prices when trading
-- [persuasive.md](common/persuasive.md) - Improved ability to convince others
-- [intimidating-presence.md](common/intimidating-presence.md) - Use fear to influence others
-- [silver-tongue.md](common/silver-tongue.md) - Improved deception ability
-- [likeable.md](common/likeable.md) - Naturally pleasant demeanor
-- [reputation-builder.md](common/reputation-builder.md) - Gain standing faster with factions
-- [diplomat.md](common/diplomat.md) - Navigate social conflicts
+- [haggler.md](common/haggler/index.md) - Better prices when trading
+- [persuasive.md](common/persuasive/index.md) - Improved ability to convince others
+- [intimidating-presence.md](common/intimidating-presence/index.md) - Use fear to influence others
+- [silver-tongue.md](common/silver-tongue/index.md) - Improved deception ability
+- [likeable.md](common/likeable/index.md) - Naturally pleasant demeanor
+- [reputation-builder.md](common/reputation-builder/index.md) - Gain standing faster with factions
+- [diplomat.md](common/diplomat/index.md) - Navigate social conflicts
 
 ### Movement & Exploration Skills
 
 Individual files in [common/](common/):
 
-- [swift.md](common/swift.md) - Improved movement speed
-- [sure-footed.md](common/sure-footed.md) - Reduced terrain penalties
-- [climber.md](common/climber.md) - Improved climbing ability
-- [swimmer.md](common/swimmer.md) - Improved water movement
-- [pathfinder.md](common/pathfinder.md) - Navigate efficiently through wilderness
-- [explorers-instinct.md](common/explorers-instinct.md) - Drawn to discoveries
-- [night-eyes.md](common/night-eyes.md) - Improved vision in darkness
-- [sprinter.md](common/sprinter.md) - Improved burst movement
+- [swift.md](common/swift/index.md) - Improved movement speed
+- [sure-footed.md](common/sure-footed/index.md) - Reduced terrain penalties
+- [climber.md](common/climber/index.md) - Improved climbing ability
+- [swimmer.md](common/swimmer/index.md) - Improved water movement
+- [pathfinder.md](common/pathfinder/index.md) - Navigate efficiently through wilderness
+- [explorers-instinct.md](common/explorers-instinct/index.md) - Drawn to discoveries
+- [night-eyes.md](common/night-eyes/index.md) - Improved vision in darkness
+- [sprinter.md](common/sprinter/index.md) - Improved burst movement
 
 ### Crafting & Gathering Skills
 
 Individual files in [common/](common/):
 
-- [careful-hands.md](common/careful-hands.md) - Improved crafting quality
-- [efficient-worker.md](common/efficient-worker.md) - Reduced stamina cost for labor
-- [lucky-find.md](common/lucky-find.md) - Improved chance of rare results
-- [gatherers-eye.md](common/gatherers-eye.md) - Improved resource detection
-- [salvager.md](common/salvager.md) - Extract more from breakdowns
-- [improviser.md](common/improviser.md) - Work with suboptimal conditions
-- [quick-learner.md](common/quick-learner.md) - Faster skill and recipe acquisition
-- [material-knowledge.md](common/material-knowledge.md) - Better understanding of components
+- [careful-hands.md](common/careful-hands/index.md) - Improved crafting quality
+- [efficient-worker.md](common/efficient-worker/index.md) - Reduced stamina cost for labor
+- [lucky-find.md](common/lucky-find/index.md) - Improved chance of rare results
+- [gatherers-eye.md](common/gatherers-eye/index.md) - Improved resource detection
+- [salvager.md](common/salvager/index.md) - Extract more from breakdowns
+- [improviser.md](common/improviser/index.md) - Work with suboptimal conditions
+- [quick-learner.md](common/quick-learner/index.md) - Faster skill and recipe acquisition
+- [material-knowledge.md](common/material-knowledge/index.md) - Better understanding of components
 
 ### Utility Skills
 
 Individual files in [common/](common/):
 
-- [pack-mule.md](common/pack-mule.md) - Increased carrying capacity
-- [quick-hands.md](common/quick-hands.md) - Faster item manipulation
-- [organized.md](common/organized.md) - Better inventory management
-- [maintenance.md](common/maintenance.md) - Keep equipment in good condition
-- [focused-mind.md](common/focused-mind.md) - Resist mental disruption
-- [resilient-spirit.md](common/resilient-spirit.md) - Recover from setbacks
-- [jack-of-all-trades.md](common/jack-of-all-trades.md) - Competence in unfamiliar tasks
-- [opportunist.md](common/opportunist.md) - Capitalize on favorable circumstances
+- [pack-mule.md](common/pack-mule/index.md) - Increased carrying capacity
+- [quick-hands.md](common/quick-hands/index.md) - Faster item manipulation
+- [organized.md](common/organized/index.md) - Better inventory management
+- [maintenance.md](common/maintenance/index.md) - Keep equipment in good condition
+- [focused-mind.md](common/focused-mind/index.md) - Resist mental disruption
+- [resilient-spirit.md](common/resilient-spirit/index.md) - Recover from setbacks
+- [jack-of-all-trades.md](common/jack-of-all-trades/index.md) - Competence in unfamiliar tasks
+- [opportunist.md](common/opportunist/index.md) - Capitalize on favorable circumstances
 
 ### Leadership Skills (Common Pool)
 
 Individual files in [common/](common/):
 
-- [inspiring-presence.md](common/inspiring-presence.md) - Passive benefit to nearby allies
-- [clear-orders.md](common/clear-orders.md) - Improved command effectiveness
-- [shared-wisdom.md](common/shared-wisdom.md) - Party learning bonus
-- [group-fortitude.md](common/group-fortitude.md) - Party defensive bonus
+- [inspiring-presence.md](common/inspiring-presence/index.md) - Passive benefit to nearby allies
+- [clear-orders.md](common/clear-orders/index.md) - Improved command effectiveness
+- [shared-wisdom.md](common/shared-wisdom/index.md) - Party learning bonus
+- [group-fortitude.md](common/group-fortitude/index.md) - Party defensive bonus
 
 ---
 

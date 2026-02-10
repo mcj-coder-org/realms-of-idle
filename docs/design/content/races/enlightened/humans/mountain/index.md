@@ -9,7 +9,7 @@ summary: 'High-altitude humans adapted to thin air and steep terrain with enhanc
 
 # Mountain Human
 
-> **See [Base Traits](base.md)** for shared human characteristics.
+> **See [Base Traits](base/index.md)** for shared human characteristics.
 
 ## Overview
 
@@ -155,10 +155,10 @@ Tends livestock in high meadows, moving seasonally between altitudes. Brings pra
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Core human characteristics and cultural notes
+- **[Base Traits](base/index.md)**: Core human characteristics and cultural notes
 - **[Humans Index](index.md)**: All human variants and selection guidance
-- **[Heartland Human](heartland.md)**: Baseline variant
-- **[Northern Human](northern.md)**: Cold-adapted variant
-- **[Desert Human](desert.md)**: Heat-adapted variant
-- **[Coastal Human](coastal.md)**: Maritime variant
+- **[Heartland Human](heartland/index.md)**: Baseline variant
+- **[Northern Human](northern/index.md)**: Cold-adapted variant
+- **[Desert Human](desert/index.md)**: Heat-adapted variant
+- **[Coastal Human](coastal/index.md)**: Maritime variant
 - **[Dwarves](../dwarves/index.md)**: Mountain-dwelling crafters with cultural similarities

@@ -109,6 +109,6 @@ The alchemists of the Herbalist Guild pay fair coin for rabbit organs, particula
 ## Related Content
 
 - **Habitat:** [Fields and Meadows](../../../../systems/world/index.md), [Forest Edges](../../../../systems/world/index.md)
-- **Predators:** [Wolf](../predators/wolf.md), [Bear](../predators/bear.md), [Eagle](../exotic/index.md)
+- **Predators:** [Wolf](../predators/wolf/index.md), [Bear](../predators/bear/index.md), [Eagle](../exotic/index.md)
 - **Used By:** [Rabbit Stew](../../../systems/crafting/index.md), [Leather Armor](../../items/index.md), [Stamina Potion](../../../systems/crafting/index.md)
-- **See Also:** [Deer](deer.md), [Squirrel](index.md), [Hunting System](../../../../systems/crafting/gathering.md)
+- **See Also:** [Deer](deer/index.md), [Squirrel](index.md), [Hunting System](../../../../systems/crafting/gathering/index.md)

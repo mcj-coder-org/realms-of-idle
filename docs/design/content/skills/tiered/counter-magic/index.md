@@ -45,4 +45,4 @@ Disrupt enemy spells.
 ## Related Content
 
 - **Strong Synergy:** [Mage](../../classes/channeler/mage/), [Enchanter](../../classes/consolidation/enchanter/)
-- **See Also:** [Spell Focus](spell-focus.md), [Magic Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Spell Focus](spell-focus/index.md), [Magic Skills](../index.md), [Combat System](../../systems/combat/index.md)

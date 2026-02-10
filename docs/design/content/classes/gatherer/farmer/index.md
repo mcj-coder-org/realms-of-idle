@@ -89,7 +89,7 @@ Skills that have strong synergies with Farmer. These skills can be learned by an
 
 **Gathering Skills**:
 
-- [Green Thumb](../../skills/tiered/green-thumb.md) - Lesser/Greater/Enhanced - Crops grow faster
+- [Green Thumb](../../skills/tiered/green-thumb/index.md) - Lesser/Greater/Enhanced - Crops grow faster
 - [Soil Sense](../../skills/index.md) - Lesser/Greater/Enhanced - Judge soil quality
 - [Efficient Planting](../../skills/index.md) - Lesser/Greater/Enhanced - Chance to save seeds when planting
 - [Crop Rotation](../../skills/index.md) - Lesser/Greater/Enhanced - Rotated fields yield more
@@ -105,7 +105,7 @@ Skills that have strong synergies with Farmer. These skills can be learned by an
 
 **Animal Skills**:
 
-- [Animal Husbandry](../../skills/tiered/animal-husbandry.md) - Lesser/Greater/Enhanced - Livestock production increased
+- [Animal Husbandry](../../skills/tiered/animal-husbandry/index.md) - Lesser/Greater/Enhanced - Livestock production increased
 - [Hardy Breeds](../../skills/index.md) - Lesser/Greater/Enhanced - Livestock resist disease better
 
 **Note**: All skills listed have strong synergies because they are core farming skills. Characters without Farmer class can still learn these skills but progress at base rate (1x XP) without effectiveness bonuses.
@@ -166,27 +166,27 @@ Actions that grant XP to the Farmer class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                             | Requirements                                                            | Result Class      | Tier |
-| ---------------------------------------------- | ----------------------------------------------------------------------- | ----------------- | ---- |
-| [Homesteader](../consolidation/index.md)       | Farmer + [Carpenter](../crafting/carpenter.md)                          | Homesteader       | 1    |
-| [Artisan Farmer](../consolidation/index.md)    | Farmer + [Cook](../crafting/cook.md) or [Tailor](../crafting/tailor.md) | Artisan Farmer    | 1    |
-| [Rancher](../consolidation/index.md)           | Farmer + animal husbandry focus                                         | Rancher           | 1    |
-| [Naturalist](../consolidation/index.md)        | Farmer + [Forager](./forager.md)                                        | Naturalist        | 1    |
-| [Master Cultivator](../consolidation/index.md) | Multiple farming specializations                                        | Master Cultivator | 2    |
+| Consolidation Path                             | Requirements                                                                        | Result Class      | Tier |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------- | ---- |
+| [Homesteader](../consolidation/index.md)       | Farmer + [Carpenter](../crafting/carpenter/index.md)                                | Homesteader       | 1    |
+| [Artisan Farmer](../consolidation/index.md)    | Farmer + [Cook](../crafting/cook/index.md) or [Tailor](../crafting/tailor/index.md) | Artisan Farmer    | 1    |
+| [Rancher](../consolidation/index.md)           | Farmer + animal husbandry focus                                                     | Rancher           | 1    |
+| [Naturalist](../consolidation/index.md)        | Farmer + [Forager](./forager/index.md)                                              | Naturalist        | 1    |
+| [Master Cultivator](../consolidation/index.md) | Multiple farming specializations                                                    | Master Cultivator | 2    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                                              |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary crop and livestock production class                                              |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Provides food for [Cook](../crafting/cook.md), fiber for [Tailor](../crafting/tailor.md) |
-| [Economy](../../../systems/economy/index.md)                  | Foundation of food economy; steady income from produce                                   |
-| [Settlement](../../../systems/world/settlements.md)           | Essential for settlement food production and growth                                      |
-| [Social](../../../systems/social/index.md)                    | Farmers are respected community pillars                                                  |
-| [Time](../../../systems/core/time-and-rest.md)                | Work follows seasonal cycles and daily rhythms                                           |
-| [Weather](../../../systems/world/index.md)                    | Weather significantly affects farming success                                            |
+| System                                                              | Interaction                                                                                          |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary crop and livestock production class                                                          |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Provides food for [Cook](../crafting/cook/index.md), fiber for [Tailor](../crafting/tailor/index.md) |
+| [Economy](../../../systems/economy/index.md)                        | Foundation of food economy; steady income from produce                                               |
+| [Settlement](../../../systems/world/settlements/index.md)           | Essential for settlement food production and growth                                                  |
+| [Social](../../../systems/social/index.md)                          | Farmers are respected community pillars                                                              |
+| [Time](../../../systems/core/time-and-rest/index.md)                | Work follows seasonal cycles and daily rhythms                                                       |
+| [Weather](../../../systems/world/index.md)                          | Weather significantly affects farming success                                                        |
 
 ---
 
@@ -194,6 +194,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Farmland, basic tools, seeds or livestock
 - **Gathers:** [Crops](../../materials/index.md), [Vegetables](../../materials/index.md), [Fruits](../../materials/index.md), [Animal Products](../../materials/index.md)
-- **Supplies:** [Cook](../crafting/cook.md), [Tailor](../crafting/tailor.md), [Alchemist](../crafting/alchemist.md)
-- **Synergy Classes:** [Cook](../crafting/cook.md), [Tailor](../crafting/tailor.md), [Carpenter](../crafting/carpenter.md)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Settlement Food](../../../systems/world/settlements.md), [Seasonal System](../../../systems/core/time-and-rest.md)
+- **Supplies:** [Cook](../crafting/cook/index.md), [Tailor](../crafting/tailor/index.md), [Alchemist](../crafting/alchemist/index.md)
+- **Synergy Classes:** [Cook](../crafting/cook/index.md), [Tailor](../crafting/tailor/index.md), [Carpenter](../crafting/carpenter/index.md)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Settlement Food](../../../systems/world/settlements/index.md), [Seasonal System](../../../systems/core/time-and-rest/index.md)

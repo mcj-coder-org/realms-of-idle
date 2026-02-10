@@ -175,6 +175,6 @@ Fake "Unbreaking" items are common scams. Always buy from licensed enchanters or
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Diamond dust](../../materials/reagents/index.md), [Obsidian shards](../../materials/index.md), [Binding agent](../../materials/reagents/index.md)
 - **Applied To:** Nearly all items with durability - tools, weapons, armor, clothing, containers (see Applicable Items table)
-- **See Also:** [Auto-repair](../restoration/auto-repair.md), [Efficiency](efficiency.md), [Fortune](fortune.md), [Mending](../restoration/mending.md)
+- **See Also:** [Auto-repair](../restoration/auto-repair/index.md), [Efficiency](efficiency/index.md), [Fortune](fortune/index.md), [Mending](../restoration/mending/index.md)
 - **Enchantment Type:** Enhancement (durability)
 - **Investment Note:** One of the best long-term value enchantments available

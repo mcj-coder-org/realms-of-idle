@@ -41,4 +41,4 @@ Skills improve continuously with accumulated XP. More XP = better effectiveness,
 ## Related Content
 
 - **Strong Synergy:** [Shaman](../../classes/channeler/shaman/), [War Painter](../../classes/channeler/shaman/war-painter/)
-- **See Also:** [Shamanic Magic](../../systems/magic/shamanic.md), [War Paint System](../../systems/shamanic/war-paint.md), [Shamanic Skills](../index.md)
+- **See Also:** [Shamanic Magic](../../systems/magic/shamanic/index.md), [War Paint System](../../systems/shamanic/war-paint/index.md), [Shamanic Skills](../index.md)

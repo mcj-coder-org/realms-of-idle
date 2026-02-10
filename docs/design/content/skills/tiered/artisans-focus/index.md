@@ -35,4 +35,4 @@ tags: [Crafting]
 ## Related Content
 
 - **Strong Synergy:** All [Crafter Classes](../../classes/crafter/) (Blacksmith, Carpenter, Tailor, Alchemist, Cook, Jeweler, Leatherworker, Glassblower, Weaver)
-- **See Also:** [Crafting Skills](../index.md), [Crafting Progression](../../systems/crafting/crafting-progression.md)
+- **See Also:** [Crafting Skills](../index.md), [Crafting Progression](../../systems/crafting/crafting-progression/index.md)

@@ -67,4 +67,4 @@ Classes with strong synergies: Thief, Assassin
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/)
-- **See Also:** [Stealth](stealth.md), [Assassination](assassination.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Stealth](stealth/index.md), [Assassination](assassination/index.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)

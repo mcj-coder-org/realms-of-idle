@@ -16,14 +16,14 @@ Enchantments are magical enhancements applied to items that grant special abilit
 
 Defensive enchantments that reduce damage or prevent harm.
 
-| Enchantment                                                | Tier       | Primary Use              | Cost Range |
-| ---------------------------------------------------------- | ---------- | ------------------------ | ---------- |
-| [Protection](protection/protection.md)                     | Apprentice | General damage reduction | 20-8000c   |
-| [Fire Resistance](protection/resistance.md#fire)           | Journeyman | Fire damage immunity     | 150-20000c |
-| [Cold Resistance](protection/resistance.md#cold)           | Journeyman | Cold damage immunity     | 150-20000c |
-| [Lightning Resistance](protection/resistance.md#lightning) | Journeyman | Electric damage immunity | 150-20000c |
-| [Poison Resistance](protection/resistance.md#poison)       | Journeyman | Poison/toxin immunity    | 150-20000c |
-| [Thorns](protection/thorns.md)                             | Journeyman | Reflect melee damage     | 250-25000c |
+| Enchantment                                                      | Tier       | Primary Use              | Cost Range |
+| ---------------------------------------------------------------- | ---------- | ------------------------ | ---------- |
+| [Protection](protection/protection/index.md)                     | Apprentice | General damage reduction | 20-8000c   |
+| [Fire Resistance](protection/resistance/index.md#fire)           | Journeyman | Fire damage immunity     | 150-20000c |
+| [Cold Resistance](protection/resistance/index.md#cold)           | Journeyman | Cold damage immunity     | 150-20000c |
+| [Lightning Resistance](protection/resistance/index.md#lightning) | Journeyman | Electric damage immunity | 150-20000c |
+| [Poison Resistance](protection/resistance/index.md#poison)       | Journeyman | Poison/toxin immunity    | 150-20000c |
+| [Thorns](protection/thorns/index.md)                             | Journeyman | Reflect melee damage     | 250-25000c |
 
 **Best For:** Adventurers, guards, soldiers, dangerous profession workers
 
@@ -31,13 +31,13 @@ Defensive enchantments that reduce damage or prevent harm.
 
 Enchantments that improve item performance and efficiency.
 
-| Enchantment                             | Tier       | Primary Use                 | Cost Range |
-| --------------------------------------- | ---------- | --------------------------- | ---------- |
-| [Sharpness](enhancement/sharpness.md)   | Apprentice | Never dulls, cuts better    | 30-12000c  |
-| [Efficiency](enhancement/efficiency.md) | Apprentice | Faster work, less fatigue   | 25-10000c  |
-| [Fortune](enhancement/fortune.md)       | Journeyman | Increased yields            | 200-30000c |
-| [Unbreaking](enhancement/unbreaking.md) | Apprentice | Extended durability         | 20-8000c   |
-| [Durability](enhancement/durability.md) | Apprentice | Fabric longevity (clothing) | 10-2500c   |
+| Enchantment                                   | Tier       | Primary Use                 | Cost Range |
+| --------------------------------------------- | ---------- | --------------------------- | ---------- |
+| [Sharpness](enhancement/sharpness/index.md)   | Apprentice | Never dulls, cuts better    | 30-12000c  |
+| [Efficiency](enhancement/efficiency/index.md) | Apprentice | Faster work, less fatigue   | 25-10000c  |
+| [Fortune](enhancement/fortune/index.md)       | Journeyman | Increased yields            | 200-30000c |
+| [Unbreaking](enhancement/unbreaking/index.md) | Apprentice | Extended durability         | 20-8000c   |
+| [Durability](enhancement/durability/index.md) | Apprentice | Fabric longevity (clothing) | 10-2500c   |
 
 **Best For:** Craftspeople, laborers, gatherers, everyday use
 
@@ -45,13 +45,13 @@ Enchantments that improve item performance and efficiency.
 
 Offensive enchantments that add damage or combat effects.
 
-| Enchantment                      | Tier       | Primary Use             | Cost Range  |
-| -------------------------------- | ---------- | ----------------------- | ----------- |
-| [Flaming](combat/flaming.md)     | Journeyman | Fire damage + utility   | 150-20000c  |
-| [Frost](combat/frost.md)         | Journeyman | Cold damage + slowing   | 150-20000c  |
-| [Lightning](combat/lightning.md) | Journeyman | Electric damage + chain | 150-20000c  |
-| [Holy](combat/holy.md)           | Master     | Divine damage vs evil   | 500-100000c |
-| [Vampiric](combat/vampiric.md)   | Master     | Life drain healing      | 400-80000c  |
+| Enchantment                            | Tier       | Primary Use             | Cost Range  |
+| -------------------------------------- | ---------- | ----------------------- | ----------- |
+| [Flaming](combat/flaming/index.md)     | Journeyman | Fire damage + utility   | 150-20000c  |
+| [Frost](combat/frost/index.md)         | Journeyman | Cold damage + slowing   | 150-20000c  |
+| [Lightning](combat/lightning/index.md) | Journeyman | Electric damage + chain | 150-20000c  |
+| [Holy](combat/holy/index.md)           | Master     | Divine damage vs evil   | 500-100000c |
+| [Vampiric](combat/vampiric/index.md)   | Master     | Life drain healing      | 400-80000c  |
 
 **Best For:** Adventurers, guards, soldiers (also utility applications for non-combat users)
 
@@ -59,15 +59,15 @@ Offensive enchantments that add damage or combat effects.
 
 Enchantments providing convenience, storage, or mobility benefits.
 
-| Enchantment                             | Tier       | Primary Use                   | Cost Range  |
-| --------------------------------------- | ---------- | ----------------------------- | ----------- |
-| [Featherfall](utility/featherfall.md)   | Apprentice | Weight reduction, fall safety | 30-12000c   |
-| [Holding](utility/holding.md)           | Journeyman | Dimensional storage           | 200-50000c  |
-| [Preservation](utility/preservation.md) | Journeyman | Time slowdown for contents    | 250-35000c  |
-| [Weightless](utility/weightless.md)     | Journeyman | Gravity reduction             | 300-40000c  |
-| [Sorting](utility/sorting.md)           | Master     | Auto-organization             | 800-120000c |
-| [Swift Step](utility/swift-step.md)     | Apprentice | Movement speed increase       | 25-6000c    |
-| [Deep Pockets](utility/deep-pockets.md) | Journeyman | Pocket dimension expansion    | 200-40000c  |
+| Enchantment                                   | Tier       | Primary Use                   | Cost Range  |
+| --------------------------------------------- | ---------- | ----------------------------- | ----------- |
+| [Featherfall](utility/featherfall/index.md)   | Apprentice | Weight reduction, fall safety | 30-12000c   |
+| [Holding](utility/holding/index.md)           | Journeyman | Dimensional storage           | 200-50000c  |
+| [Preservation](utility/preservation/index.md) | Journeyman | Time slowdown for contents    | 250-35000c  |
+| [Weightless](utility/weightless/index.md)     | Journeyman | Gravity reduction             | 300-40000c  |
+| [Sorting](utility/sorting/index.md)           | Master     | Auto-organization             | 800-120000c |
+| [Swift Step](utility/swift-step/index.md)     | Apprentice | Movement speed increase       | 25-6000c    |
+| [Deep Pockets](utility/deep-pockets/index.md) | Journeyman | Pocket dimension expansion    | 200-40000c  |
 
 **Best For:** Merchants, travelers, parents, anyone needing storage or mobility
 
@@ -75,10 +75,10 @@ Enchantments providing convenience, storage, or mobility benefits.
 
 Enchantments that repair, heal, or regenerate.
 
-| Enchantment                                 | Tier       | Primary Use          | Cost Range   |
-| ------------------------------------------- | ---------- | -------------------- | ------------ |
-| [Regeneration](restoration/regeneration.md) | Journeyman | HP healing over time | 300-50000c   |
-| [Auto-Repair](restoration/auto-repair.md)   | Master     | Self-restoring items | 3000-200000c |
+| Enchantment                                       | Tier       | Primary Use          | Cost Range   |
+| ------------------------------------------------- | ---------- | -------------------- | ------------ |
+| [Regeneration](restoration/regeneration/index.md) | Journeyman | HP healing over time | 300-50000c   |
+| [Auto-Repair](restoration/auto-repair/index.md)   | Master     | Self-restoring items | 3000-200000c |
 
 **Best For:** Adventurers, soldiers, heirloom items
 
@@ -86,12 +86,12 @@ Enchantments that repair, heal, or regenerate.
 
 Enchantments that improve quality of life and wearability.
 
-| Enchantment                           | Tier       | Primary Use                 | Cost Range |
-| ------------------------------------- | ---------- | --------------------------- | ---------- |
-| [Comfort](comfort/comfort.md)         | Apprentice | Perfect fit, no chafing     | 20-8000c   |
-| [Warmth](comfort/warmth.md)           | Apprentice | Magical heating             | 25-10000c  |
-| [Cooling](comfort/cooling.md)         | Apprentice | Magical cooling             | 25-10000c  |
-| [Cleanliness](comfort/cleanliness.md) | Apprentice | Self-cleaning, odor control | 15-5000c   |
+| Enchantment                                 | Tier       | Primary Use                 | Cost Range |
+| ------------------------------------------- | ---------- | --------------------------- | ---------- |
+| [Comfort](comfort/comfort/index.md)         | Apprentice | Perfect fit, no chafing     | 20-8000c   |
+| [Warmth](comfort/warmth/index.md)           | Apprentice | Magical heating             | 25-10000c  |
+| [Cooling](comfort/cooling/index.md)         | Apprentice | Magical cooling             | 25-10000c  |
+| [Cleanliness](comfort/cleanliness/index.md) | Apprentice | Self-cleaning, odor control | 15-5000c   |
 
 **Best For:** Everyone (universal quality of life improvement)
 
@@ -99,9 +99,9 @@ Enchantments that improve quality of life and wearability.
 
 Enchantments that enhance interpersonal interactions and influence.
 
-| Enchantment                    | Tier       | Primary Use            | Cost Range |
-| ------------------------------ | ---------- | ---------------------- | ---------- |
-| [Presence](social/presence.md) | Journeyman | Charisma amplification | 300-60000c |
+| Enchantment                          | Tier       | Primary Use            | Cost Range |
+| ------------------------------------ | ---------- | ---------------------- | ---------- |
+| [Presence](social/presence/index.md) | Journeyman | Charisma amplification | 300-60000c |
 
 **Best For:** Merchants, diplomats, performers, politicians, leaders
 

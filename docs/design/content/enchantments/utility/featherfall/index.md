@@ -163,6 +163,6 @@ Featherfall can be applied to almost any wearable item, making it one of the mos
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Air essence](../../materials/reagents/index.md), [Feather down](../../materials/reagents/index.md) (from giant eagles or griffins)
 - **Applied To:** Nearly all wearable items - armor, boots, belts, cloaks, rings, clothing (see Applicable Items table)
-- **See Also:** [Levitation](levitation.md), [Air Walk](air-walk.md), [Burden Reduction](burden-reduction.md)
+- **See Also:** [Levitation](levitation/index.md), [Air Walk](air-walk/index.md), [Burden Reduction](burden-reduction/index.md)
 - **Professions:** Essential for [Skyship Crews](../../classes/index.md), [Mountain Guides](../../classes/index.md), [Climbers](../../classes/index.md)
 - **Enchantment Type:** Utility (weight reduction, fall protection)

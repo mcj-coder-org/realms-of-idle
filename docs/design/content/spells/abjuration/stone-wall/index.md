@@ -69,4 +69,4 @@ Raise a wall of solid stone that protects allies from harm, blocks enemy movemen
 
 - **Granted By:** [Geomancer](../../classes/channeler/mage/geomancer/)
 - **School:** [Abjuration](../index.md)
-- **See Also:** [Shield](shield.md), [Flame Shield](flame-shield.md), [Water Shield](water-shield.md)
+- **See Also:** [Shield](shield/index.md), [Flame Shield](flame-shield/index.md), [Water Shield](water-shield/index.md)

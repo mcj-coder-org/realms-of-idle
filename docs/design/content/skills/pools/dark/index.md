@@ -26,16 +26,16 @@ None - Dark skills are primarily unlocks and generators
 
 ### Mechanic Unlocks
 
-- [Extortion](extortion.md) - Extract payment through threats
-- [Contract Killing](contract-killing.md) - Accept assassination jobs
-- [Blackmail](blackmail.md) - Leverage secrets for profit
-- [False Identity](false-identity.md) - Create and maintain fake identities
-- [Evidence Elimination](evidence-elimination.md) - Remove traces of crimes
-- [Money Laundering](money-laundering.md) - Clean illegal profits
+- [Extortion](extortion/index.md) - Extract payment through threats
+- [Contract Killing](contract-killing/index.md) - Accept assassination jobs
+- [Blackmail](blackmail/index.md) - Leverage secrets for profit
+- [False Identity](false-identity/index.md) - Create and maintain fake identities
+- [Evidence Elimination](evidence-elimination/index.md) - Remove traces of crimes
+- [Money Laundering](money-laundering/index.md) - Clean illegal profits
 
 ### Passive Generators
 
-- [Underworld Connections](underworld-connections.md) - Criminal network contacts
+- [Underworld Connections](underworld-connections/index.md) - Criminal network contacts
 
 ## Acquisition
 
@@ -45,4 +45,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

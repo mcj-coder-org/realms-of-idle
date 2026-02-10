@@ -41,7 +41,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Ice` | 3     | Cryomancer, Mage (depth 2 only) |
 | `Magic/Elemental`     | 2     | Cryomancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -87,6 +87,6 @@ Cryomancer is a terminal Tier 3 specialization. No further progression paths ava
 ### Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Ice Mastery](../../skills/tiered/ice-mastery.md), [Freezing Aura](../../skills/tiered/freezing-aura.md)
-- **Spells:** [Blizzard](../../spells/destruction/blizzard.md), [Ice Armor](../../spells/destruction/ice-armor.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Ice Mastery](../../skills/tiered/ice-mastery/index.md), [Freezing Aura](../../skills/tiered/freezing-aura/index.md)
+- **Spells:** [Blizzard](../../spells/destruction/blizzard/index.md), [Ice Armor](../../spells/destruction/ice-armor/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

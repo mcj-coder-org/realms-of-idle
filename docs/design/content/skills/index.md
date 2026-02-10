@@ -26,7 +26,7 @@ Skills use hierarchical tags to organize access and determine synergies:
 - **Multi-Tagging**: Skills can have multiple tags from different categories
 - **16 Tag Categories**: Combat, Crafting, Gathering, Magic, Stealth, Leadership, Knowledge, Trade, Criminal, Agriculture, Nature, Physical, Social, Tribal, Economy, Universal
 
-See [Hierarchical Skill Tag System](../../systems/character/skill-tags.md) for complete tag specifications.
+See [Hierarchical Skill Tag System](../../systems/character/skill-tags/index.md) for complete tag specifications.
 
 ## Acquisition Paths
 
@@ -36,7 +36,7 @@ Skills can be acquired through three methods:
 2. **Training**: Direct skill development (guided or unguided)
 3. **Action-Based**: Performing skill-related actions accumulates progress
 
-See [Class-Specific Skills](class-skills.md#2-skill-progression-mechanics) for detailed mechanics.
+See [Class-Specific Skills](class-skills/index.md#2-skill-progression-mechanics) for detailed mechanics.
 
 ## Synergy Model
 
@@ -50,7 +50,7 @@ Any character can learn any skill - tags enhance learning speed but don't restri
 
 ## Common Skills
 
-Universal skills available to all classes - see [Common Skills Overview](common-skills.md) for mechanics.
+Universal skills available to all classes - see [Common Skills Overview](common-skills/index.md) for mechanics.
 
 ### Common Skill Categories
 
@@ -71,7 +71,7 @@ Individual skill files organized by category in `/common/` directory:
 
 ## Class-Specific Skills by Type
 
-Synergy-based skills organized by mechanical type - see [Class-Specific Skills Overview](class-skills.md) for mechanics.
+Synergy-based skills organized by mechanical type - see [Class-Specific Skills Overview](class-skills/index.md) for mechanics.
 
 ### Skill Types
 
@@ -95,7 +95,7 @@ Skills are organized in type-specific directories:
 
 ### Skills by Tag Category
 
-See [Hierarchical Skill Tag System](../../systems/character/skill-tags.md) for complete listings by tag:
+See [Hierarchical Skill Tag System](../../systems/character/skill-tags/index.md) for complete listings by tag:
 
 | Tag Category | Skill Count | Primary Classes               | Notable Skills                                         |
 | ------------ | ----------- | ----------------------------- | ------------------------------------------------------ |
@@ -120,14 +120,14 @@ See [Hierarchical Skill Tag System](../../systems/character/skill-tags.md) for c
 
 Classes receive specific hierarchical tags that determine which skills they have synergies with:
 
-- [Class Tag Associations](../../systems/character/class-tag-associations.md) - Complete mapping of classes to tags
-- [Racial Synergies](../../systems/character/racial-synergies.md) - Racial affinity system and bonus tags
+- [Class Tag Associations](../../systems/character/class-tag-associations/index.md) - Complete mapping of classes to tags
+- [Racial Synergies](../../systems/character/racial-synergies/index.md) - Racial affinity system and bonus tags
 
 **Example**: A Blacksmith receives `Crafting/Smithing`, `Crafting`, and `Physical/Strength` tags, granting strong synergies with all smithing skills and moderate synergies with general crafting skills.
 
 ## Skill Mechanics Reference
 
-See [Skills Overview](../../systems/character/skills-overview.md) for:
+See [Skills Overview](../../systems/character/skills-overview/index.md) for:
 
 - Skill types (Passive, Cooldown, Toggle, etc.)
 - Tier progression (Lesser → Greater → Enhanced)
@@ -137,7 +137,7 @@ See [Skills Overview](../../systems/character/skills-overview.md) for:
 
 ## System Documentation
 
-- [Hierarchical Skill Tag System](../../systems/character/skill-tags.md) - Complete tag specifications
-- [REFACTOR-AUDIT.md](REFACTOR-AUDIT.md) - Original audit and migration documentation
-- [Class-Specific Skills](class-skills.md) - Mechanics and progression
-- [Common Skills](common-skills.md) - Universal skill overview
+- [Hierarchical Skill Tag System](../../systems/character/skill-tags/index.md) - Complete tag specifications
+- [REFACTOR-AUDIT.md](REFACTOR-AUDIT/index.md) - Original audit and migration documentation
+- [Class-Specific Skills](class-skills/index.md) - Mechanics and progression
+- [Common Skills](common-skills/index.md) - Universal skill overview

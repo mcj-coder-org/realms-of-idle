@@ -56,4 +56,4 @@ Grant a target enhanced healing over time, slowly restoring health.
 
 - **Granted By:** [Healer](../../classes/consolidation/healer/), [Mage](../../classes/channeler/mage/)
 - **School:** [Restoration](../index.md)
-- **See Also:** [Heal](heal.md)
+- **See Also:** [Heal](heal/index.md)

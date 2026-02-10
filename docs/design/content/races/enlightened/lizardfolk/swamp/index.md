@@ -9,7 +9,7 @@ summary: 'Classical temple-building lizardfolk who maintain ancient traditions i
 
 # Swamp Lizardfolk
 
-> **Parent Race:** [Lizardfolk](base.md)
+> **Parent Race:** [Lizardfolk](base/index.md)
 
 ## Variant Overview
 
@@ -37,7 +37,7 @@ Swamp Lizardfolk excel at magic that works with wetland environments - controlli
 | Positive (○)  | Combat, Gathering, Physical/Endurance | Faster than baseline      |
 | Negative (×)  | Social, Knowledge/Academic            | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -49,18 +49,18 @@ Swamp Lizardfolk receive **3 random skills** from their racial skill pool at cha
 
 **Example Racial Skills:**
 
-| Skill                                               | Tags                         | Effect                                           |
-| --------------------------------------------------- | ---------------------------- | ------------------------------------------------ |
-| [Scaly Hide](../../../skills/passive/scaly-hide.md) | Physical/Endurance, Nature   | +3 AC natural armor, 5% damage reduction         |
-| [Thick Skin](../../../skills/passive/thick-skin.md) | Physical/Endurance, Physical | +2 AC natural armor, stacks with worn armor      |
-| [Hold Breath](../../../skills/racial/index.md)      | Nature, Physical/Endurance   | Hold breath 10x longer, extended underwater time |
-| [Amphibious](../../../skills/racial/index.md)       | Nature, Physical             | Breathe underwater, +50% swim speed              |
-| [Bite Attack](../../../skills/index.md)             | Combat, Physical/Strength    | Natural weapon dealing 1d6 piercing damage       |
-| [Swamp Strider](../../../skills/common/index.md)    | Nature, Gathering/Fishing    | No movement penalty in swamps, find resources    |
+| Skill                                                     | Tags                         | Effect                                           |
+| --------------------------------------------------------- | ---------------------------- | ------------------------------------------------ |
+| [Scaly Hide](../../../skills/passive/scaly-hide/index.md) | Physical/Endurance, Nature   | +3 AC natural armor, 5% damage reduction         |
+| [Thick Skin](../../../skills/passive/thick-skin/index.md) | Physical/Endurance, Physical | +2 AC natural armor, stacks with worn armor      |
+| [Hold Breath](../../../skills/racial/index.md)            | Nature, Physical/Endurance   | Hold breath 10x longer, extended underwater time |
+| [Amphibious](../../../skills/racial/index.md)             | Nature, Physical             | Breathe underwater, +50% swim speed              |
+| [Bite Attack](../../../skills/index.md)                   | Combat, Physical/Strength    | Natural weapon dealing 1d6 piercing damage       |
+| [Swamp Strider](../../../skills/common/index.md)          | Nature, Gathering/Fishing    | No movement penalty in swamps, find resources    |
 
-**[Scaly Hide](../../../skills/passive/scaly-hide.md)**: Reptilian scales provide real protection. Swamp lizardfolk have +3 AC natural armor and 5% physical damage reduction. This is lightweight, flexible, and stacks with worn [armor](../../../systems/combat/weapons-and-armor.md), making armored swamp lizardfolk exceptionally tough.
+**[Scaly Hide](../../../skills/passive/scaly-hide/index.md)**: Reptilian scales provide real protection. Swamp lizardfolk have +3 AC natural armor and 5% physical damage reduction. This is lightweight, flexible, and stacks with worn [armor](../../../systems/combat/weapons-and-armor/index.md), making armored swamp lizardfolk exceptionally tough.
 
-**[Thick Skin](../../../skills/passive/thick-skin.md)**: Some swamp lizardfolk develop especially tough hides, providing +2 additional AC. Combined with Scaly Hide, heavily-scaled specimens can have +5 AC before wearing any equipment.
+**[Thick Skin](../../../skills/passive/thick-skin/index.md)**: Some swamp lizardfolk develop especially tough hides, providing +2 additional AC. Combined with Scaly Hide, heavily-scaled specimens can have +5 AC before wearing any equipment.
 
 **[Hold Breath](../../../skills/racial/index.md)**: Evolved for life in and around water, swamp lizardfolk can hold breath for extended periods - measured in hours, not minutes. This makes them exceptional divers and allows patient underwater ambushes or extended fishing expeditions.
 
@@ -89,13 +89,13 @@ Their daily life follows rhythms unchanged for centuries. Morning sun warms scal
 
 Temple complexes dominate swamp lizardfolk cities. These aren't just places of worship but centers of learning, astronomical observation, and communal decision-making. The pyramids that rise from still waters serve as tombs, observatories, and repositories of accumulated wisdom. Mummified ancestors rest within, consulted through careful ritual when important questions arise.
 
-Swamp lizardfolk craftsmanship emphasizes permanence. They build to last millennia, using techniques that produce structures virtually immune to time's erosion. Their stonework rivals [dwarven](../dwarves/base.md) quality, though achieved through patience rather than technological innovation. Why develop new methods when the old ones have worked for thousands of years?
+Swamp lizardfolk craftsmanship emphasizes permanence. They build to last millennia, using techniques that produce structures virtually immune to time's erosion. Their stonework rivals [dwarven](../dwarves/base/index.md) quality, though achieved through patience rather than technological innovation. Why develop new methods when the old ones have worked for thousands of years?
 
 ## Relations
 
 **With Other Variants:** Swamp Lizardfolk view themselves as the cultural heart of lizardfolk civilization. Coastal variants are respected but seen as somewhat too influenced by warm-blooded trading partners. Desert variants are admired for their extreme patience but their environment seems inhospitable. Jungle variants puzzle swamp lizardfolk - why choose dense forest over open wetland?
 
-**With Other Races:** Swamp Lizardfolk interact with other races primarily through carefully controlled trade. [Humans](../humans.md) are useful trading partners but exhaustingly hurried. [Elves](../elves/base.md) at least understand long-term thinking, making them easier to work with. [Dwarves](../dwarves/base.md) appreciate quality stonework, creating mutual respect despite vast cultural differences. Tribal races are generally avoided unless they control needed resources.
+**With Other Races:** Swamp Lizardfolk interact with other races primarily through carefully controlled trade. [Humans](../humans/index.md) are useful trading partners but exhaustingly hurried. [Elves](../elves/base/index.md) at least understand long-term thinking, making them easier to work with. [Dwarves](../dwarves/base/index.md) appreciate quality stonework, creating mutual respect despite vast cultural differences. Tribal races are generally avoided unless they control needed resources.
 
 ## Recommended Classes
 

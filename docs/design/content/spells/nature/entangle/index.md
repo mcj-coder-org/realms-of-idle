@@ -45,11 +45,11 @@ Cause plants to grow rapidly and ensnare targets, restricting movement.
 
 ## Innate Users
 
-| Creature                                      | Notes            |
-| --------------------------------------------- | ---------------- |
-| [Dryad](../../creatures/magical/fey/dryad.md) | Grove defense    |
-| Treant                                        | Powerful version |
-| Forest Spirit                                 | Lesser version   |
+| Creature                                            | Notes            |
+| --------------------------------------------------- | ---------------- |
+| [Dryad](../../creatures/magical/fey/dryad/index.md) | Grove defense    |
+| Treant                                              | Powerful version |
+| Forest Spirit                                       | Lesser version   |
 
 ## Acquisition
 
@@ -63,7 +63,7 @@ Cause plants to grow rapidly and ensnare targets, restricting movement.
 
 - **Granted By:** [Shaman](../../classes/spiritcaller/shaman/), [Ranger](../../classes/gatherer/hunter/ranger/)
 - **School:** [Nature](../index.md)
-- **See Also:** [Barkskin](barkskin.md), [Earth Blessing](earth-blessing.md)
+- **See Also:** [Barkskin](barkskin/index.md), [Earth Blessing](earth-blessing/index.md)
 
 ## Notes
 

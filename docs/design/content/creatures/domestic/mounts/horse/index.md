@@ -153,9 +153,9 @@ Rangers speak of wild horse herds that roam the open grasslands, never tamed but
 
 ## Related Content
 
-- **Habitat:** [Farms](../../../../systems/world/settlements.md), [Stables](../../../../systems/world/settlements.md), [Grasslands](../../../../systems/world/index.md)
-- **Related Animals:** [Donkey](donkey.md), [Mule](mule.md), [Pony](index.md)
+- **Habitat:** [Farms](../../../../systems/world/settlements/index.md), [Stables](../../../../systems/world/settlements/index.md), [Grasslands](../../../../systems/world/index.md)
+- **Related Animals:** [Donkey](donkey/index.md), [Mule](mule/index.md), [Pony](index.md)
 - **Professions:** [Farrier](../../../classes/index.md), [Stable Hand](../../../classes/index.md), [Horse Trader](../../../classes/index.md)
 - **Equipment:** [Saddle](../../items/index.md), [Bridle](../../items/index.md), [Horseshoes](../../items/index.md)
 - **Systems:** [Transportation](../../../../systems/world/index.md), [Agriculture](../../../../systems/index.md), [Cavalry Combat](../../../../systems/combat/index.md)
-- **See Also:** [Cattle](../livestock/cattle.md), [Creature System](../../creature-system.md)
+- **See Also:** [Cattle](../livestock/cattle/index.md), [Creature System](../../creature-system/index.md)

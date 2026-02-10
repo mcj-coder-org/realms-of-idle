@@ -67,4 +67,4 @@ Classes with strong synergies: Thief, Assassin, Scout, Adventurer
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/), [Scout](../../classes/fighter/scout/), [Adventurer](../../classes/fighter/adventurer/)
-- **See Also:** [Combat Defense](defense.md), [Dodge Training](dodge-training.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Combat Defense](defense/index.md), [Dodge Training](dodge-training/index.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)

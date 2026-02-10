@@ -48,4 +48,4 @@ Enhanced spell effectiveness.
 
 - **Strong Synergy:** [Mage](../../classes/channeler/mage/), [Battlemage](../../classes/channeler/mage/battlemage/), [Pyromancer](../../classes/channeler/mage/pyromancer/), [Cryomancer](../../classes/channeler/mage/cryomancer/), [Geomancer](../../classes/channeler/mage/geomancer/), [Electromancer](../../classes/channeler/mage/electromancer/), [Hydromancer](../../classes/channeler/mage/hydromancer/), [Summoner](../../classes/channeler/mage/summoner/), [Illusionist](../../classes/channeler/mage/illusionist/)
 - **Applies to:** All Magic pool classes
-- **See Also:** [Spell Casting](../../systems/magic/index.md), [Mana Management](../../systems/magic/mana.md), [Mage Progression](../../systems/magic/mage-progression.md)
+- **See Also:** [Spell Casting](../../systems/magic/index.md), [Mana Management](../../systems/magic/mana/index.md), [Mage Progression](../../systems/magic/mage-progression/index.md)

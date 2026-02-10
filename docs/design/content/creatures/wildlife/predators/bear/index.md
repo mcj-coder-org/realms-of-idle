@@ -77,18 +77,18 @@ Alchemists prize bear components above almost all others. Bear bile aids digesti
 
 ### Harvestables
 
-| Resource   | Uses                              | Yield          | Skill Required                                                    |
-| ---------- | --------------------------------- | -------------- | ----------------------------------------------------------------- |
-| Bear Meat  | Food (rich, slow-cooked)          | 50-80 portions | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Bear Pelt  | Leather (premium warmth)          | 1 huge hide    | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Bear Fur   | Insulation (best winter material) | 3-5 bundles    | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Bear Claws | Crafting (weapons, trophies)      | 20 claws       | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Bear Teeth | Crafting (jewelry, weapons)       | 42 teeth       | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Bear Bones | Crafting (large handles, tools)   | 1 massive set  | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Bear Heart | Alchemy (vitality, strength)      | 1              | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Bear Bile  | Alchemy (clarity, digestion)      | 1 sac          | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Bear Gall  | Alchemy (premium reagent)         | 1              | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Bear Fat   | Cooking (tallow, waterproofing)   | 20-40 pounds   | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
+| Resource   | Uses                              | Yield          | Skill Required                                                          |
+| ---------- | --------------------------------- | -------------- | ----------------------------------------------------------------------- |
+| Bear Meat  | Food (rich, slow-cooked)          | 50-80 portions | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Bear Pelt  | Leather (premium warmth)          | 1 huge hide    | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Bear Fur   | Insulation (best winter material) | 3-5 bundles    | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Bear Claws | Crafting (weapons, trophies)      | 20 claws       | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Bear Teeth | Crafting (jewelry, weapons)       | 42 teeth       | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Bear Bones | Crafting (large handles, tools)   | 1 massive set  | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Bear Heart | Alchemy (vitality, strength)      | 1              | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Bear Bile  | Alchemy (clarity, digestion)      | 1 sac          | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Bear Gall  | Alchemy (premium reagent)         | 1              | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Bear Fat   | Cooking (tallow, waterproofing)   | 20-40 pounds   | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
 
 ### Taming
 
@@ -146,7 +146,7 @@ Alchemists prize bear components above almost all others. Bear bile aids digesti
 ## Related Content
 
 - **Habitat:** Forests, Mountains, Caves
-- **Prey:** [Deer](../docile/deer.md), Salmon, Berries, Honey
+- **Prey:** [Deer](../docile/deer/index.md), Salmon, Berries, Honey
 - **Materials:** [Bear Pelt](../../../materials/creature/pelts/bear-pelt/index.md), [Bear Heart](../../../materials/creature/organs/hearts/index.md), [Bear Claws](../../../materials/creature/parts/claws/index.md)
-- **Used By:** [Bear Cloak](../../../recipes/leatherworking/creature-gear.md), [Strength Elixir](../../../recipes/alchemy/creature-reagents/strength-elixir/index.md), [Claw Pendant](../../../recipes/crafting/creature-trophies/claw-pendant/)
-- **See Also:** [Wolf](wolf.md), [Mountain Lion](mountain-lion.md)
+- **Used By:** [Bear Cloak](../../../recipes/leatherworking/creature-gear/index.md), [Strength Elixir](../../../recipes/alchemy/creature-reagents/strength-elixir/index.md), [Claw Pendant](../../../recipes/crafting/creature-trophies/claw-pendant/)
+- **See Also:** [Wolf](wolf/index.md), [Mountain Lion](mountain-lion/index.md)

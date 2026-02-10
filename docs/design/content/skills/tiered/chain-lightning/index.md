@@ -68,5 +68,5 @@ Actions that contribute to Chain Lightning:
 ## Related Content
 
 - **Class:** [Electromancer](../../classes/channeler/mage/electromancer/)
-- **Skills:** [Storm Mastery](./storm-mastery.md)
-- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm.md)
+- **Skills:** [Storm Mastery](./storm-mastery/index.md)
+- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm/index.md)

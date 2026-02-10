@@ -48,6 +48,6 @@ Beast Speaker is a terminal Tier 3 specialization. No further progression paths 
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Beast Spirit Bond](../../skills/tiered/beast-spirit-bond.md), [Pack Leader](../../skills/tiered/pack-leader.md)
-- **Spells:** [Spirit Beast](../../spells/nature/spirit-beast.md), [Animal Blessing](../../spells/nature/animal-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Beast Spirit Bond](../../skills/tiered/beast-spirit-bond/index.md), [Pack Leader](../../skills/tiered/pack-leader/index.md)
+- **Spells:** [Spirit Beast](../../spells/nature/spirit-beast/index.md), [Animal Blessing](../../spells/nature/animal-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

@@ -152,10 +152,10 @@ docs/design/content/skills/
 
 ## Related Documentation
 
-- [Tag System Documentation](../../systems/content/tag-system.md)
+- [Tag System Documentation](../../systems/content/tag-system/index.md)
 - [Classes Index](classes-index.md)
 - [Tags Index](tags-index.md)
-- [Content Template](../_templates/content-template.md)
+- [Content Template](../_templates/content-template/index.md)
 
 ---
 

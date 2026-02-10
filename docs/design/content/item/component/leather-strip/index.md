@@ -50,9 +50,9 @@ Leather strips wear out and must be replaced. Warriors learn to rewrap their own
 
 ## Interactions
 
-| System                                                           | Interaction                               |
-| ---------------------------------------------------------------- | ----------------------------------------- |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Required component for weapons with grips |
+| System                                                                 | Interaction                               |
+| ---------------------------------------------------------------------- | ----------------------------------------- |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Required component for weapons with grips |
 
 ---
 

@@ -42,4 +42,4 @@ tags: [Crafting/Alchemy/Technique]
 ## Related Content
 
 - **Strong Synergy:** [Alchemist](../../classes/crafter/alchemist/), [Cook](../../classes/crafter/cook/)
-- **See Also:** [Alchemy Crafting](../../systems/crafting/alchemy-crafting.md), [Potion Brewing](../../systems/crafting/potion-brewing.md)
+- **See Also:** [Alchemy Crafting](../../systems/crafting/alchemy-crafting/index.md), [Potion Brewing](../../systems/crafting/potion-brewing/index.md)

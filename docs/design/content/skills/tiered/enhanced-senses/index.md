@@ -46,4 +46,4 @@ tags: [Gathering/Scouting]
 ## Related Content
 
 - **Strong Synergy:** [Scout](../../classes/fighter/scout/), [Ranger](../../classes/gatherer/hunter/ranger/), [Hunter](../../classes/gatherer/hunter/)
-- **See Also:** [Stealth](stealth.md), [Tracking](tracking.md), [Scouting Skills](../index.md)
+- **See Also:** [Stealth](stealth/index.md), [Tracking](tracking/index.md), [Scouting Skills](../index.md)

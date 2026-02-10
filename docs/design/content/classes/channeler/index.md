@@ -42,7 +42,7 @@ This foundation class provides the following tags for access/synergy:
 | `Channeling` | 1     | Channeler, Mage, specialist classes    |
 | `Magic/*`    | 2+    | Channeler (limited access to sub-tags) |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -61,4 +61,4 @@ Channeler unlocks access to all magic-based classes and provides bonuses to magi
 
 ## Related Content
 
-- **See Also:** [Mage](mage/), [Spell Schools](../../../systems/magic/), [Magic System](../../../systems/character/magic-system.md), [Consolidation Classes](../../../systems/character/class-consolidation.md)
+- **See Also:** [Mage](mage/), [Spell Schools](../../../systems/magic/), [Magic System](../../../systems/character/magic-system/index.md), [Consolidation Classes](../../../systems/character/class-consolidation/index.md)

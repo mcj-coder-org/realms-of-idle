@@ -9,7 +9,7 @@ summary: 'Surface-adapted dwarves of the foothills, masters of brewing and farmi
 
 # Hill Dwarf
 
-> **Parent Race:** [Dwarves](base.md)
+> **Parent Race:** [Dwarves](base/index.md)
 
 ## Variant Overview
 
@@ -45,7 +45,7 @@ This adaptation comes with social costs. Mountain Dwarves sometimes dismiss hill
 
 **With Other Dwarves:** Hill Dwarves maintain good relations with all dwarven variants, serving as diplomatic bridges between more isolated groups. Mountain Dwarves respect their craftsmanship while questioning their cultural compromises. Deep Dwarves find them too gregarious. Forge Dwarves appreciate their practical innovations.
 
-**With Other Races:** Hill Dwarves form the warmest relationships of any dwarven variant with non-dwarves. They're regular fixtures in [human](../humans.md) towns, welcome at halfling festivals, and maintain productive trade relationships with most civilized races. They understand surface social customs, remember to smile occasionally, and generally come across as "the friendly dwarf" to non-dwarven communities.
+**With Other Races:** Hill Dwarves form the warmest relationships of any dwarven variant with non-dwarves. They're regular fixtures in [human](../humans/index.md) towns, welcome at halfling festivals, and maintain productive trade relationships with most civilized races. They understand surface social customs, remember to smile occasionally, and generally come across as "the friendly dwarf" to non-dwarven communities.
 
 **With Players:** Hill Dwarves make excellent party members due to their enhanced charisma and diplomatic skills. They can serve as the party face while still bringing dwarven toughness and crafting expertise to bear.
 

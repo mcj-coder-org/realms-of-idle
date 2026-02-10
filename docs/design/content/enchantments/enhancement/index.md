@@ -10,13 +10,13 @@ Enchantments focused on improving how items perform their primary functions - ma
 
 ## Available Enchantments
 
-| Enchantment                 | Tier       | Summary                                               | Cost Range |
-| --------------------------- | ---------- | ----------------------------------------------------- | ---------- |
-| [Sharpness](sharpness.md)   | Apprentice | Maintains supernatural edge, increased cutting damage | 30-12000c  |
-| [Efficiency](efficiency.md) | Apprentice | Faster work speed, reduced stamina cost               | 25-10000c  |
-| [Fortune](fortune.md)       | Journeyman | Increased resource yields and rare item discovery     | 200-30000c |
-| [Unbreaking](unbreaking.md) | Apprentice | Extended durability for tools and weapons             | 20-8000c   |
-| [Durability](durability.md) | Apprentice | Fabric longevity enhancement (clothing-specific)      | 10-2500c   |
+| Enchantment                       | Tier       | Summary                                               | Cost Range |
+| --------------------------------- | ---------- | ----------------------------------------------------- | ---------- |
+| [Sharpness](sharpness/index.md)   | Apprentice | Maintains supernatural edge, increased cutting damage | 30-12000c  |
+| [Efficiency](efficiency/index.md) | Apprentice | Faster work speed, reduced stamina cost               | 25-10000c  |
+| [Fortune](fortune/index.md)       | Journeyman | Increased resource yields and rare item discovery     | 200-30000c |
+| [Unbreaking](unbreaking/index.md) | Apprentice | Extended durability for tools and weapons             | 20-8000c   |
+| [Durability](durability/index.md) | Apprentice | Fabric longevity enhancement (clothing-specific)      | 10-2500c   |
 
 ## Category Overview
 

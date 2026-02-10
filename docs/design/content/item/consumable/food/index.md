@@ -43,4 +43,4 @@ Food takes many forms: dried meat, hard bread, fresh fruit, cooked meals. Travel
 
 - **Produced By:** [Cook](../../../../classes/crafter/cook/)
 - **Gathered By:** [Forager](../../../../classes/gatherer/forager/), [Hunter](../../../../classes/gatherer/hunter/)
-- **Restores:** [Stamina](../../../../systems/character/attributes.md)
+- **Restores:** [Stamina](../../../../systems/character/attributes/index.md)

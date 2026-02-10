@@ -140,6 +140,6 @@ The enchantment has an unexpected social benefit: it reduces bullying and street
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Bramble essence](../../materials/reagents/index.md), [Spike iron](../../materials/index.md)
 - **Applied To:** Armor, shields, gauntlets, rings, bracers (see Applicable Items table)
-- **See Also:** [Retribution](retribution.md), [Counter Strike](counter-strike.md), [Vengeance](vengeance.md)
+- **See Also:** [Retribution](retribution/index.md), [Counter Strike](counter-strike/index.md), [Vengeance](vengeance/index.md)
 - **Legal Notes:** Banned in most sporting events; restricted in some jurisdictions for civilian use
 - **Enchantment Type:** Protection (retaliatory)

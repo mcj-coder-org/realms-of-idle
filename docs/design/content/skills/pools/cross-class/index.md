@@ -26,11 +26,11 @@ None - Cross-class skills are primarily rare unlocks
 
 ### Mechanic Unlocks
 
-- [Ambidexterity](ambidexterity.md) - Use either hand equally well in all activities
-- [Night Vision](night-vision.md) - See clearly in darkness
-- [Water Breathing](water-breathing.md) - Breathe underwater indefinitely
-- [Iron Will](iron-will.md) - Resistance to mental effects and fear
-- [Danger Sense (Enhanced)](danger-sense-enhanced.md) - Heightened awareness of threats
+- [Ambidexterity](ambidexterity/index.md) - Use either hand equally well in all activities
+- [Night Vision](night-vision/index.md) - See clearly in darkness
+- [Water Breathing](water-breathing/index.md) - Breathe underwater indefinitely
+- [Iron Will](iron-will/index.md) - Resistance to mental effects and fear
+- [Danger Sense (Enhanced)](danger-sense-enhanced/index.md) - Heightened awareness of threats
 
 ## Acquisition
 
@@ -41,4 +41,4 @@ Skills in this pool can be acquired through:
 3. Action-based unlocks (~50 actions ±20%)
 4. Special conditions or rare opportunities
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

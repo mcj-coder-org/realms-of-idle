@@ -14,11 +14,11 @@ summary: 'Cunning coordinators with shared tribal memory who thrive as intermedi
 
 Goblins occupy the most paradoxical position of any race - simultaneously the most coordinated and the most outcast. Their shared memory ability, allowing instant information sharing within tribes, should make them invaluable allies. Instead, it makes them terrifying to outsiders who can't fathom a group where individual privacy doesn't exist and where witnessing one goblin means alerting an entire tribe.
 
-Nobody remembers when goblins first appeared, though legends suggest they were created by ancient [magic](../../../../../systems/character/magic-system.md) rather than evolving naturally. What's certain is that their shared memory is biological, not learned - young goblins instinctively connect to their tribe's collective consciousness. This connection shapes everything about goblin society, from their perfect coordination to their complete inability to keep secrets from each other.
+Nobody remembers when goblins first appeared, though legends suggest they were created by ancient [magic](../../../../../systems/character/magic-system/index.md) rather than evolving naturally. What's certain is that their shared memory is biological, not learned - young goblins instinctively connect to their tribe's collective consciousness. This connection shapes everything about goblin society, from their perfect coordination to their complete inability to keep secrets from each other.
 
 Standing barely four feet tall with gray-green skin, pointed ears, and sharp features, goblins look mischievous even when behaving honorably. Their large eyes adapted for darkvision and their nimble fingers suited for delicate work make them excellent scouts and crafters. But these positive traits get overshadowed by the reputation: goblins are thieves, spies, smugglers, and troublemakers.
 
-The cruel irony is that this reputation creates itself. [Settlements](../../../../../systems/world/settlements.md) exclude goblins, pushing them to margins and criminal activities. Goblin shared memory makes them extraordinarily effective at these activities - a goblin thief caught instantly shares guard positions with the whole tribe, goblin smugglers coordinate perfectly without verbal communication. Success at crime reinforces prejudice, which increases exclusion, which pushes more goblins into crime. The cycle perpetuates.
+The cruel irony is that this reputation creates itself. [Settlements](../../../../../systems/world/settlements/index.md) exclude goblins, pushing them to margins and criminal activities. Goblin shared memory makes them extraordinarily effective at these activities - a goblin thief caught instantly shares guard positions with the whole tribe, goblin smugglers coordinate perfectly without verbal communication. Success at crime reinforces prejudice, which increases exclusion, which pushes more goblins into crime. The cycle perpetuates.
 
 ### In the World
 
@@ -71,7 +71,7 @@ Goblins have natural affinities and aversions that affect skill learning speed a
 | Positive (○)  | Crafting/Tinkering, Criminal, Gathering, Physical/Agility | Faster than baseline      |
 | Negative (×)  | Physical/Strength, Combat/Melee, Leadership               | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -81,14 +81,14 @@ Goblins receive **3 random skills** from their racial skill pool at character cr
 
 **Example Racial Skills:**
 
-| Skill                                                                | Tags                                   | Effect                                  |
-| -------------------------------------------------------------------- | -------------------------------------- | --------------------------------------- |
-| [Nimble Escape](../../../../content/skills/passive/nimble-escape.md) | Physical/Agility, Stealth              | Disengage/Hide as bonus action          |
-| [Pack Tactics](../../../../content/skills/passive/pack-tactics.md)   | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies        |
-| [Darkvision](../../../../content/skills/passive/darkvision.md)       | Physical, Universal/Physical           | Perfect vision in complete darkness     |
-| [Scavenger](../../../../content/skills/common/index.md)              | Gathering, Criminal                    | Find useful items others miss           |
-| [Trap Sense](../../../../content/skills/tiered/index.md)             | Crafting, Criminal                     | +10% trap crafting/detection            |
-| [Small Frame](../../../../content/skills/racial/index.md)            | Physical/Agility                       | Harder to hit, fit through small spaces |
+| Skill                                                                      | Tags                                   | Effect                                  |
+| -------------------------------------------------------------------------- | -------------------------------------- | --------------------------------------- |
+| [Nimble Escape](../../../../content/skills/passive/nimble-escape/index.md) | Physical/Agility, Stealth              | Disengage/Hide as bonus action          |
+| [Pack Tactics](../../../../content/skills/passive/pack-tactics/index.md)   | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies        |
+| [Darkvision](../../../../content/skills/passive/darkvision/index.md)       | Physical, Universal/Physical           | Perfect vision in complete darkness     |
+| [Scavenger](../../../../content/skills/common/index.md)                    | Gathering, Criminal                    | Find useful items others miss           |
+| [Trap Sense](../../../../content/skills/tiered/index.md)                   | Crafting, Criminal                     | +10% trap crafting/detection            |
+| [Small Frame](../../../../content/skills/racial/index.md)                  | Physical/Agility                       | Harder to hit, fit through small spaces |
 
 ### Core Racial Abilities
 
@@ -96,11 +96,11 @@ Goblins receive **3 random skills** from their racial skill pool at character cr
 
 All goblin variants possess this ability, though environmental adaptations may affect its range or clarity in specific conditions.
 
-**[Nimble Escape](../../../../content/skills/passive/nimble-escape.md)**: Goblins can Disengage or Hide as a bonus action instead of a full action. Combined with their small size and natural agility, this makes them incredibly difficult to pin down in [combat](../../../../../systems/combat/index.md). They dodge rather than tank damage, weaving through larger opponents.
+**[Nimble Escape](../../../../content/skills/passive/nimble-escape/index.md)**: Goblins can Disengage or Hide as a bonus action instead of a full action. Combined with their small size and natural agility, this makes them incredibly difficult to pin down in [combat](../../../../../systems/combat/index.md). They dodge rather than tank damage, weaving through larger opponents.
 
-**[Pack Tactics](../../../../content/skills/passive/pack-tactics.md)**: When a goblin has an ally within 5 feet of a target, they gain +15% accuracy on attacks. This reflects goblins' collective combat style - they fight as coordinated units, using shared memory to perfectly time attacks.
+**[Pack Tactics](../../../../content/skills/passive/pack-tactics/index.md)**: When a goblin has an ally within 5 feet of a target, they gain +15% accuracy on attacks. This reflects goblins' collective combat style - they fight as coordinated units, using shared memory to perfectly time attacks.
 
-**[Darkvision](../../../../content/skills/passive/darkvision.md)**: Goblins see perfectly in absolute darkness, adapted for life in caves, ruins, and sewers. Bright daylight doesn't blind them but they prefer dimness, working most actively at dawn and dusk.
+**[Darkvision](../../../../content/skills/passive/darkvision/index.md)**: Goblins see perfectly in absolute darkness, adapted for life in caves, ruins, and sewers. Bright daylight doesn't blind them but they prefer dimness, working most actively at dawn and dusk.
 
 **[Scavenger](../../../../content/skills/common/index.md)**: Goblins possess intuitive understanding of value and utility. They find useful items others overlook, recognize salvageable materials, and maximize resource efficiency. This isn't genius - it's practical cleverness applied constantly to survival.
 
@@ -110,7 +110,7 @@ All goblin variants possess this ability, though environmental adaptations may a
 
 **Shamanic Heritage:** Goblins have full access to [shamanic magic](../../../../../systems/character/index.md) through tribal spirit pools. Combined with shared memory, shamanic crafting becomes a collective effort - one goblin crafts while others feed knowledge and guidance through the link.
 
-**Outcast:** Most [settlements](../../../../../systems/world/settlements.md) treat goblins as unwelcome at best, hostile at worst. [Faction](../../../../../systems/social/factions-reputation.md) standings start significantly negative, requiring exceptional effort to overcome. This isn't just prejudice - it's active social exclusion backed by laws and customs.
+**Outcast:** Most [settlements](../../../../../systems/world/settlements/index.md) treat goblins as unwelcome at best, hostile at worst. [Faction](../../../../../systems/social/factions-reputation/index.md) standings start significantly negative, requiring exceptional effort to overcome. This isn't just prejudice - it's active social exclusion backed by laws and customs.
 
 ### Interactions
 
@@ -139,9 +139,9 @@ All goblin variants possess this ability, though environmental adaptations may a
 
 - **Classes**: [Rogue](../../../../../classes/combat/index.md), [Scout](../../../../../classes/combat/index.md), [Shaman](../../../../../classes/magic/index.md)
 - **Magic**: [Shamanic Magic](../../../../../systems/character/index.md), [Shared Memory Mechanics](../../../../../systems/character/index.md)
-- **Social**: [Factions and Reputation](../../../../../systems/social/factions-reputation.md)
-- **Attributes**: [Character Attributes](../../../../../systems/character/attributes.md)
-- **See Also**: [Gnolls](../gnolls/), [Orcs](../orcs/), [Tribal Mechanics](../../races-and-tribes.md)
+- **Social**: [Factions and Reputation](../../../../../systems/social/factions-reputation/index.md)
+- **Attributes**: [Character Attributes](../../../../../systems/character/attributes/index.md)
+- **See Also**: [Gnolls](../gnolls/), [Orcs](../orcs/), [Tribal Mechanics](../../races-and-tribes/index.md)
 
 ---
 

@@ -151,7 +151,7 @@ Synergy bonuses depend on logical relationship between class and skill:
 2. **Upgrade Path**: Having Lesser makes Greater +40% easier, Greater makes Enhanced +40% easier
 3. **Level-Up Influence**: Excess contributing actions improve tier award chances
 
-See [class-progression.md](../../systems/character/class-progression.md#5-skill-tiers) for full tier mechanics.
+See [class-progression.md](../../systems/character/class-progression/index.md#5-skill-tiers) for full tier mechanics.
 
 ---
 
@@ -265,7 +265,7 @@ Skills can have multiple tags for cross-domain synergies:
 ### Tag Mappings
 
 For complete tag mappings from previous pools to new tag-based organization, see:
-**[REFACTOR-AUDIT.md](REFACTOR-AUDIT.md)**
+**[REFACTOR-AUDIT.md](REFACTOR-AUDIT/index.md)**
 
 This document tracks the transformation from pool-based to tag-based organization with detailed mappings.
 

@@ -110,5 +110,5 @@ Still, certain situations demand Lightning's unique properties. Metal-armored fo
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Storm essence](../../materials/reagents/index.md), [Fulgurite](../../materials/reagents/index.md)
 - **Applied To:** Weapons, gauntlets, boots, shields, rings, staves (see Applicable Items table)
-- **See Also:** [Flaming](flaming.md), [Frost](frost.md), [Thundering](thundering.md)
+- **See Also:** [Flaming](flaming/index.md), [Frost](frost/index.md), [Thundering](thundering/index.md)
 - **Enchantment Type:** Combat (elemental damage - electric)

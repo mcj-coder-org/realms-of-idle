@@ -22,15 +22,15 @@ Cold-blooded physiology shapes lizardfolk culture profoundly. They think slowly 
 
 ### In the World
 
-Lizardfolk city-states maintain independence through isolation and self-sufficiency. They trade with other races - exotic swamp resources, ancient knowledge, exceptional stonework - but don't need outside goods to survive. This gives them negotiating power; they can simply wait decades for better terms, outlasting impatient [human](../humans.md) merchants who need deals _now_.
+Lizardfolk city-states maintain independence through isolation and self-sufficiency. They trade with other races - exotic swamp resources, ancient knowledge, exceptional stonework - but don't need outside goods to survive. This gives them negotiating power; they can simply wait decades for better terms, outlasting impatient [human](../humans/index.md) merchants who need deals _now_.
 
-Daily life in a lizardfolk [settlement](../../../systems/world/settlements.md) follows rhythms set centuries ago. The morning sun warms scales; work begins. Midday heat brings rest and meditation. Evening coolness resumes activity. Night belongs to study, contemplation, and observation of the stars. This schedule never varies; a lizardfolk knows exactly what they'll do on any given day for years ahead, and finds this predictability comforting rather than boring.
+Daily life in a lizardfolk [settlement](../../../systems/world/settlements/index.md) follows rhythms set centuries ago. The morning sun warms scales; work begins. Midday heat brings rest and meditation. Evening coolness resumes activity. Night belongs to study, contemplation, and observation of the stars. This schedule never varies; a lizardfolk knows exactly what they'll do on any given day for years ahead, and finds this predictability comforting rather than boring.
 
 Other races find lizardfolk unsettling. Those unblinking stares feel judgmental (they're not; lizardfolk don't blink as much). That measured, emotionless speech pattern seems cold (it's just how they talk). The patient silences feel awkward (lizardfolk are thinking; why interrupt thought with unnecessary sound?). Yet those who learn to read subtle lizardfolk cues discover surprising warmth and even humor beneath the scaled exterior.
 
-Lizardfolk integrate poorly into warm-blooded [settlements](../../../systems/world/settlements.md). The temperature preferences alone cause problems - lizardfolk need warmth that makes [humans](../humans.md) sweat. The pace of business exhausts them; why must humans decide everything _today_? The emotional displays confuse and overwhelm. Lizardfolk visiting human cities usually stay briefly, conduct business efficiently, and return home gratefully.
+Lizardfolk integrate poorly into warm-blooded [settlements](../../../systems/world/settlements/index.md). The temperature preferences alone cause problems - lizardfolk need warmth that makes [humans](../humans/index.md) sweat. The pace of business exhausts them; why must humans decide everything _today_? The emotional displays confuse and overwhelm. Lizardfolk visiting human cities usually stay briefly, conduct business efficiently, and return home gratefully.
 
-However, [humans](../humans.md) who adapt to lizardfolk pace find valuable partners. A lizardfolk [merchant](../../../classes/trade/index.md) might take months to agree on terms but then honor those terms absolutely for decades. A lizardfolk scholar might ponder your question for weeks before delivering a comprehensive, thoroughly-considered answer. A lizardfolk craftsperson works slowly but produces flawless results. The key is accepting that lizardfolk simply operate on a different timescale.
+However, [humans](../humans/index.md) who adapt to lizardfolk pace find valuable partners. A lizardfolk [merchant](../../../classes/trade/index.md) might take months to agree on terms but then honor those terms absolutely for decades. A lizardfolk scholar might ponder your question for weeks before delivering a comprehensive, thoroughly-considered answer. A lizardfolk craftsperson works slowly but produces flawless results. The key is accepting that lizardfolk simply operate on a different timescale.
 
 The greatest misunderstanding about lizardfolk is assuming their calm means they don't care. They care tremendously - about legacy, about proper order, about their ancestors' judgment. They simply express care through patient action rather than passionate outcry. A lizardfolk won't shout about injustice; they'll spend twenty years methodically building a case and implementing solutions. To them, this is obviously more effective than yelling.
 
@@ -74,7 +74,7 @@ Lizardfolk have natural affinities and aversions that affect skill learning spee
 | Positive (○)  | Combat, Gathering, Physical/Endurance | Faster than baseline      |
 | Negative (×)  | Social, Knowledge/Academic            | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Common Lizardfolk Traits
 
@@ -158,6 +158,6 @@ Lizardfolk philosophers explore questions of time, permanence, change, and legac
 ## Related Content
 
 - **Classes**: [Mage](../../../classes/magic/index.md), [Priest](../../../classes/magic/index.md), [Scholar](../../../classes/index.md)
-- **Magic**: [Magic System](../../../systems/character/magic-system.md), [Conjuration](../../../systems/character/index.md), [Transmutation](../../../systems/character/index.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Humans](../humans.md), [Elves](../elves/base.md), [Dwarves](../dwarves/base.md), [Kobolds](../kobolds.md), [Race Comparison](../../races-and-tribes.md)
+- **Magic**: [Magic System](../../../systems/character/magic-system/index.md), [Conjuration](../../../systems/character/index.md), [Transmutation](../../../systems/character/index.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Humans](../humans/index.md), [Elves](../elves/base/index.md), [Dwarves](../dwarves/base/index.md), [Kobolds](../kobolds/index.md), [Race Comparison](../../races-and-tribes/index.md)

@@ -46,4 +46,4 @@ Know prices and opportunities.
 ## Related Content
 
 - **Strong Synergy:** [Trader](../../classes/economic/trader/), [Merchant](../../classes/economic/merchant/), [Caravaner](../../classes/economic/caravaner/)
-- **See Also:** [Silver Tongue](silver-tongue.md), [Trading System](../../systems/economy/trading.md), [Economic Skills](../index.md)
+- **See Also:** [Silver Tongue](silver-tongue/index.md), [Trading System](../../systems/economy/trading/index.md), [Economic Skills](../index.md)

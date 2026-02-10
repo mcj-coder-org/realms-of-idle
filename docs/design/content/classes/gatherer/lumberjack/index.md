@@ -163,27 +163,27 @@ Actions that grant XP to the Lumberjack class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                            | Requirements                                       | Result Class     | Tier |
-| --------------------------------------------- | -------------------------------------------------- | ---------------- | ---- |
-| [Woodsman](../consolidation/index.md)         | Lumberjack + [Carpenter](../crafting/carpenter.md) | Woodsman         | 1    |
-| [Forest Ranger](../consolidation/index.md)    | Lumberjack + [Hunter](./hunter.md)                 | Forest Ranger    | 1    |
-| [Wilderness Guide](../consolidation/index.md) | Lumberjack + [Explorer](../combat/index.md)        | Wilderness Guide | 1    |
-| [Master Forester](../consolidation/index.md)  | Lumberjack + forestry focus                        | Master Forester  | 1    |
-| [Woodmaster](../consolidation/index.md)       | Multiple wood-related classes                      | Woodmaster       | 2    |
+| Consolidation Path                            | Requirements                                             | Result Class     | Tier |
+| --------------------------------------------- | -------------------------------------------------------- | ---------------- | ---- |
+| [Woodsman](../consolidation/index.md)         | Lumberjack + [Carpenter](../crafting/carpenter/index.md) | Woodsman         | 1    |
+| [Forest Ranger](../consolidation/index.md)    | Lumberjack + [Hunter](./hunter/index.md)                 | Forest Ranger    | 1    |
+| [Wilderness Guide](../consolidation/index.md) | Lumberjack + [Explorer](../combat/index.md)              | Wilderness Guide | 1    |
+| [Master Forester](../consolidation/index.md)  | Lumberjack + forestry focus                              | Master Forester  | 1    |
+| [Woodmaster](../consolidation/index.md)       | Multiple wood-related classes                            | Woodmaster       | 2    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                                |
-| ------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary wood gathering class; essential resource supplier                  |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Provides lumber for [Carpenter](../crafting/carpenter.md), fuel for forges |
-| [Economy](../../../systems/economy/index.md)                  | Timber is valuable trade good; steady demand                               |
-| [Settlement](../../../systems/world/settlements.md)           | Construction requires constant lumber supply                               |
-| [Exploration](../../../systems/world/exploration.md)          | Clears paths, builds camps in wilderness                                   |
-| [Environment](../../../systems/world/environment-hazards.md)  | Must manage forest hazards safely                                          |
-| [Combat](../../../systems/combat/index.md)                    | Axes are effective weapons; high strength                                  |
+| System                                                              | Interaction                                                                      |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary wood gathering class; essential resource supplier                        |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Provides lumber for [Carpenter](../crafting/carpenter/index.md), fuel for forges |
+| [Economy](../../../systems/economy/index.md)                        | Timber is valuable trade good; steady demand                                     |
+| [Settlement](../../../systems/world/settlements/index.md)           | Construction requires constant lumber supply                                     |
+| [Exploration](../../../systems/world/exploration/index.md)          | Clears paths, builds camps in wilderness                                         |
+| [Environment](../../../systems/world/environment-hazards/index.md)  | Must manage forest hazards safely                                                |
+| [Combat](../../../systems/combat/index.md)                          | Axes are effective weapons; high strength                                        |
 
 ---
 
@@ -195,4 +195,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
   - [Wood Handle](../../item/component/wood-handle/) - Processed tool shafts
 - **Supplies:** [Carpenter](../crafter/carpenter/), [Blacksmith](../crafter/blacksmith/) (fuel), settlements (building materials)
 - **Synergy Classes:** [Carpenter](../crafter/carpenter/), [Hunter](./hunter/), [Miner](./miner/)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Wood Handle Recipe](../../recipe/processing/wood-handle/)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Wood Handle Recipe](../../recipe/processing/wood-handle/)

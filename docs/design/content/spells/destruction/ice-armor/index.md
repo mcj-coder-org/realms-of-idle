@@ -64,4 +64,4 @@ Encase yourself or a target in protective crystalline ice that absorbs damage an
 
 - **Granted By:** [Cryomancer](../../classes/channeler/mage/cryomancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Blizzard](blizzard.md), [Flame Shield](../abjuration/flame-shield.md)
+- **See Also:** [Blizzard](blizzard/index.md), [Flame Shield](../abjuration/flame-shield/index.md)

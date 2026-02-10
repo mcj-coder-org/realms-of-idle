@@ -141,7 +141,7 @@ Feathers shed by giant eagles are treasured beyond gold. A single primary feathe
 ## Related Content
 
 - **Habitat:** [High Mountains](../../../../systems/world/index.md), [Cliff Faces](../../../../systems/world/index.md), [Remote Peaks](../../../../systems/world/index.md)
-- **Prey:** [Deer](../docile/deer.md), [Mountain Goats](../docile/index.md), [Rabbits](../docile/rabbit.md)
+- **Prey:** [Deer](../docile/deer/index.md), [Mountain Goats](../docile/index.md), [Rabbits](../docile/rabbit/index.md)
 - **Cultural:** [Mountain Peoples](../../../../systems/world/index.md), [Sacred Animals](../../../../systems/social/index.md)
 - **Used By:** [Eagle Feather Banner](../../items/index.md), [Supreme Arrows](../../items/index.md), [Perception Potion](../../../systems/crafting/index.md)
-- **See Also:** [Forest Spirit](forest-spirit.md), [Creature System](../../creature-system.md), [Hunting System](../../../../systems/crafting/gathering.md)
+- **See Also:** [Forest Spirit](forest-spirit/index.md), [Creature System](../../creature-system/index.md), [Hunting System](../../../../systems/crafting/gathering/index.md)

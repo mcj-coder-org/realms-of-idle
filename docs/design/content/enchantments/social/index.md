@@ -10,9 +10,9 @@ Enchantments focused on improving social interactions, amplifying charisma, and 
 
 ## Available Enchantments
 
-| Enchantment             | Tier       | Summary                                                  | Cost Range |
-| ----------------------- | ---------- | -------------------------------------------------------- | ---------- |
-| [Presence](presence.md) | Journeyman | Charisma amplification and memorable positive impression | 300-60000c |
+| Enchantment                   | Tier       | Summary                                                  | Cost Range |
+| ----------------------------- | ---------- | -------------------------------------------------------- | ---------- |
+| [Presence](presence/index.md) | Journeyman | Charisma amplification and memorable positive impression | 300-60000c |
 
 ## Category Overview
 

@@ -84,4 +84,4 @@ The Spirit Lodge respects tribal independence:
 ## Related Content
 
 - **Classes:** [Shaman](../../content/classes/spiritcaller/shaman/)
-- **System:** [Shamanic Magic](../../systems/magic/shamanic-magic.md)
+- **System:** [Shamanic Magic](../../systems/magic/shamanic-magic/index.md)

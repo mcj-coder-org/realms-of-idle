@@ -93,24 +93,24 @@ Skills that have strong synergies with Thief. These skills can be learned by any
 
 **Stealth Skills**:
 
-- [Shadow Step](../../skills/tiered/shadow-step.md) - Lesser/Greater/Enhanced - Blend into shadows and move unseen
-- [Lockmaster](../../skills/tiered/lockmaster.md) - Lesser/Greater/Enhanced - Pick locks with exceptional skill
-- [Backstab](../../skills/tiered/backstab.md) - Lesser/Greater/Enhanced - Strike from hiding for massive damage
-- [Vanish](../../skills/cooldown/vanish.md) - Lesser/Greater/Enhanced - Disappear from sight instantly
-- [Evasion Expert](../../skills/tiered/evasion-expert.md) - Lesser/Greater/Enhanced - Avoid attacks with supernatural agility
-- [Misdirection](../../skills/tiered/misdirection.md) - Lesser/Greater/Enhanced - Deceive and mislead targets
+- [Shadow Step](../../skills/tiered/shadow-step/index.md) - Lesser/Greater/Enhanced - Blend into shadows and move unseen
+- [Lockmaster](../../skills/tiered/lockmaster/index.md) - Lesser/Greater/Enhanced - Pick locks with exceptional skill
+- [Backstab](../../skills/tiered/backstab/index.md) - Lesser/Greater/Enhanced - Strike from hiding for massive damage
+- [Vanish](../../skills/cooldown/vanish/index.md) - Lesser/Greater/Enhanced - Disappear from sight instantly
+- [Evasion Expert](../../skills/tiered/evasion-expert/index.md) - Lesser/Greater/Enhanced - Avoid attacks with supernatural agility
+- [Misdirection](../../skills/tiered/misdirection/index.md) - Lesser/Greater/Enhanced - Deceive and mislead targets
 
 **Dark Path Skills**:
 
-- [Underworld Connections](../../skills/passive-generator/underworld-connections.md) - Passive Generator - Criminal network contacts
-- [False Identity](../../skills/mechanic-unlock/false-identity.md) - Lesser/Greater/Enhanced - Create and maintain fake identities
-- [Evidence Elimination](../../skills/tiered/evidence-elimination.md) - Lesser/Greater/Enhanced - Remove traces of crimes
+- [Underworld Connections](../../skills/passive-generator/underworld-connections/index.md) - Passive Generator - Criminal network contacts
+- [False Identity](../../skills/mechanic-unlock/false-identity/index.md) - Lesser/Greater/Enhanced - Create and maintain fake identities
+- [Evidence Elimination](../../skills/tiered/evidence-elimination/index.md) - Lesser/Greater/Enhanced - Remove traces of crimes
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know prices and opportunities
-- [Fencing](../../skills/mechanic-unlock/fencing.md) - Lesser/Greater/Enhanced - Sell stolen goods efficiently
-- [Trade Contacts](../../skills/passive-generator/trade-contacts.md) - Passive Generator - Network of buyers and sellers
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know prices and opportunities
+- [Fencing](../../skills/mechanic-unlock/fencing/index.md) - Lesser/Greater/Enhanced - Sell stolen goods efficiently
+- [Trade Contacts](../../skills/passive-generator/trade-contacts/index.md) - Passive Generator - Network of buyers and sellers
 
 #### Synergy Bonuses
 
@@ -196,25 +196,25 @@ Actions that grant XP to the Thief class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                           | Requirements                                  | Result Class    | Tier |
-| -------------------------------------------- | --------------------------------------------- | --------------- | ---- |
-| [Master Thief](../consolidation/index.md)    | Thief + extensive successful thefts           | Master Thief    | 1    |
-| [Infiltrator](../consolidation/index.md)     | Thief + [Scout](../combat/scout.md)           | Infiltrator     | 1    |
-| [Treasure Hunter](../consolidation/index.md) | Thief + [Adventurer](../combat/adventurer.md) | Treasure Hunter | 1    |
-| [Guild Master](../consolidation/index.md)    | Thief + thieves guild leadership              | Guild Master    | 2    |
+| Consolidation Path                           | Requirements                                        | Result Class    | Tier |
+| -------------------------------------------- | --------------------------------------------------- | --------------- | ---- |
+| [Master Thief](../consolidation/index.md)    | Thief + extensive successful thefts                 | Master Thief    | 1    |
+| [Infiltrator](../consolidation/index.md)     | Thief + [Scout](../combat/scout/index.md)           | Infiltrator     | 1    |
+| [Treasure Hunter](../consolidation/index.md) | Thief + [Adventurer](../combat/adventurer/index.md) | Treasure Hunter | 1    |
+| [Guild Master](../consolidation/index.md)    | Thief + thieves guild leadership                    | Guild Master    | 2    |
 
 ### Interactions
 
-| System                                                       | Interaction                                        |
-| ------------------------------------------------------------ | -------------------------------------------------- |
-| [Crime](../../../systems/social/index.md)                    | Primary criminal class; severe penalties if caught |
-| [Stealth](../../../systems/combat/index.md)                  | Master of remaining undetected                     |
-| [Reputation](../../../systems/social/factions-reputation.md) | Separate public and underground reputations        |
-| [Black Market](../../../systems/economy/black-market.md)     | Primary source of stolen goods                     |
-| [Security](../../../systems/world/index.md)                  | Bypasses locks, traps, guards                      |
-| [Law Enforcement](../../../systems/social/index.md)          | Major target of guard attention                    |
+| System                                                             | Interaction                                        |
+| ------------------------------------------------------------------ | -------------------------------------------------- |
+| [Crime](../../../systems/social/index.md)                          | Primary criminal class; severe penalties if caught |
+| [Stealth](../../../systems/combat/index.md)                        | Master of remaining undetected                     |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Separate public and underground reputations        |
+| [Black Market](../../../systems/economy/black-market/index.md)     | Primary source of stolen goods                     |
+| [Security](../../../systems/world/index.md)                        | Bypasses locks, traps, guards                      |
+| [Law Enforcement](../../../systems/social/index.md)                | Major target of guard attention                    |
 
 ---
 
@@ -222,6 +222,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Lockpicks, dark clothing, stealth tools, fence contacts
 - **Equipment:** [Lockpicks](../../items/index.md), [Dark Cloak](../../items/index.md), [Climbing Gear](../../items/index.md)
-- **Synergy Classes:** [Fence](./fence.md), [Scout](../combat/scout.md), [Assassin](../combat/assassin.md)
+- **Synergy Classes:** [Fence](./fence/index.md), [Scout](../combat/scout/index.md), [Assassin](../combat/assassin/index.md)
 - **Consolidates To:** [Master Thief](../consolidation/index.md), [Infiltrator](../consolidation/index.md), [Treasure Hunter](../consolidation/index.md)
-- **See Also:** [Crime System](../../../systems/social/index.md), [Black Market](../../../systems/economy/black-market.md), [Stealth Mechanics](../../../systems/combat/index.md)
+- **See Also:** [Crime System](../../../systems/social/index.md), [Black Market](../../../systems/economy/black-market/index.md), [Stealth Mechanics](../../../systems/combat/index.md)

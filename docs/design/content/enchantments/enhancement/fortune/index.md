@@ -172,6 +172,6 @@ Fortune enchantments cost 3-5x more than comparable Enhancement enchantments bec
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Luck essence](../../materials/reagents/index.md), [Gold dust](../../materials/metals/index.md), [Four-leaf clover](../../materials/reagents/index.md)
 - **Applied To:** [Mining tools](../../items/tools/index.md), [Harvesting tools](../../items/tools/index.md), [Fishing rods](../../items/tools/index.md), [Weapons](../../items/weapons/index.md), [Rings](../../items/index.md) (see Applicable Items table)
-- **See Also:** [Efficiency](efficiency.md), [Unbreaking](unbreaking.md), [Prospecting](prospecting.md)
+- **See Also:** [Efficiency](efficiency/index.md), [Unbreaking](unbreaking/index.md), [Prospecting](prospecting/index.md)
 - **Enchantment Type:** Enhancement (yield increase, luck)
 - **Legal Note:** Banned in some competitive/regulated contexts; check local laws

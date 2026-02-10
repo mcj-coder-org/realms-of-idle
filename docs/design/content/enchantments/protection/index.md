@@ -10,14 +10,14 @@ Defensive enchantments focused on reducing incoming damage, providing resistance
 
 ## Available Enchantments
 
-| Enchantment                                     | Tier       | Summary                                     | Cost Range |
-| ----------------------------------------------- | ---------- | ------------------------------------------- | ---------- |
-| [Protection](protection.md)                     | Apprentice | General damage reduction across all sources | 20-8000c   |
-| [Fire Resistance](resistance.md#fire)           | Journeyman | Immunity to fire damage and heat            | 150-20000c |
-| [Cold Resistance](resistance.md#cold)           | Journeyman | Immunity to cold damage and freezing        | 150-20000c |
-| [Lightning Resistance](resistance.md#lightning) | Journeyman | Immunity to electrical damage               | 150-20000c |
-| [Poison Resistance](resistance.md#poison)       | Journeyman | Immunity to poison and toxins               | 150-20000c |
-| [Thorns](thorns.md)                             | Journeyman | Reflects melee damage back to attackers     | 250-25000c |
+| Enchantment                                           | Tier       | Summary                                     | Cost Range |
+| ----------------------------------------------------- | ---------- | ------------------------------------------- | ---------- |
+| [Protection](protection/index.md)                     | Apprentice | General damage reduction across all sources | 20-8000c   |
+| [Fire Resistance](resistance/index.md#fire)           | Journeyman | Immunity to fire damage and heat            | 150-20000c |
+| [Cold Resistance](resistance/index.md#cold)           | Journeyman | Immunity to cold damage and freezing        | 150-20000c |
+| [Lightning Resistance](resistance/index.md#lightning) | Journeyman | Immunity to electrical damage               | 150-20000c |
+| [Poison Resistance](resistance/index.md#poison)       | Journeyman | Immunity to poison and toxins               | 150-20000c |
+| [Thorns](thorns/index.md)                             | Journeyman | Reflects melee damage back to attackers     | 250-25000c |
 
 ## Category Overview
 

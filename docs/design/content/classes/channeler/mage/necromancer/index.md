@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Conjuration/Undead` | 3     | Necromancer, Mage (depth 2 only) |
 | `Magic/Necromancy`         | 2     | Necromancer, Mage, Channeler     |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Necromancer class:
 
 ### Interactions
 
-| System                                                 | Interaction                            |
-| ------------------------------------------------------ | -------------------------------------- |
-| [Magic System](../../../systems/magic/magic-system.md) | Death element specialization           |
-| [Combat](../../../systems/combat/combat-resolution.md) | Minion control and life force drain    |
-| [Party](../../../systems/combat/party-mechanics.md)    | Minion controller, tactical specialist |
-| [Equipment](../../../systems/character/index.md)       | Death-attuned magical items            |
+| System                                                       | Interaction                            |
+| ------------------------------------------------------------ | -------------------------------------- |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Death element specialization           |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Minion control and life force drain    |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Minion controller, tactical specialist |
+| [Equipment](../../../systems/character/index.md)             | Death-attuned magical items            |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Undead Mastery](../../skills/tiered/undead-mastery.md), [Life Drain](../../skills/tiered/life-drain.md)
-- **Spells:** [Army of Dead](../../spells/necromancy/army-of-dead.md), [Death Shroud](../../spells/transmutation/death-shroud.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Undead Mastery](../../skills/tiered/undead-mastery/index.md), [Life Drain](../../skills/tiered/life-drain/index.md)
+- **Spells:** [Army of Dead](../../spells/necromancy/army-of-dead/index.md), [Death Shroud](../../spells/transmutation/death-shroud/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

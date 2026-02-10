@@ -69,4 +69,4 @@ Enhance movement speed using air magic, enabling swift travel, rapid repositioni
 ## Related Content
 
 - **Granted By:** [Aeromancer](../../classes/channeler/mage/aeromancer/)
-- **See Also:** [Transmutation Spells](../index.md), [Air Magic](../../systems/magic/air-magic.md), [Movement Spells](../../systems/magic/movement-spells.md)
+- **See Also:** [Transmutation Spells](../index.md), [Air Magic](../../systems/magic/air-magic/index.md), [Movement Spells](../../systems/magic/movement-spells/index.md)

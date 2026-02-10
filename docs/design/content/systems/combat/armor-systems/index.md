@@ -177,5 +177,5 @@ Societies that field heavy armor warriors demonstrate serious military commitmen
 
 - [Item Armor Overview](../../content/items/armor/index.md)
 - [Armor Recipes](../../content/recipes/leatherworking/)
-- [Combat Mechanics](./combat-mechanics.md)
-- [Equipment Economics](./equipment-economics.md)
+- [Combat Mechanics](./combat-mechanics/index.md)
+- [Equipment Economics](./equipment-economics/index.md)

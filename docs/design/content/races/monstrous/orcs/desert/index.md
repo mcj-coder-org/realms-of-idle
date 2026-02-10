@@ -9,11 +9,11 @@ summary: 'Lean, tough raiders adapted to harsh arid lands, masters of survival w
 
 # Desert Orc
 
-> **Parent Race:** [Orcs](base.md)
+> **Parent Race:** [Orcs](base/index.md)
 
 ## Variant Overview
 
-Desert Orcs are what happens when orc warrior culture meets the harshest environments. They're leaner than other orc variants, with gray-green skin weathered to toughness by sun and sand. Where [plains orcs](plains.md) rely on mounted charges and [mountain orcs](mountain.md) on fortresses, desert orcs survive through ruthless efficiency and environmental mastery.
+Desert Orcs are what happens when orc warrior culture meets the harshest environments. They're leaner than other orc variants, with gray-green skin weathered to toughness by sun and sand. Where [plains orcs](plains/index.md) rely on mounted charges and [mountain orcs](mountain/index.md) on fortresses, desert orcs survive through ruthless efficiency and environmental mastery.
 
 They've adapted to lands that kill unprepared travelers within days. Desert orcs can survive on minimal water, endure temperature extremes that would prostrate other races, and navigate trackless wastes by reading signs invisible to outsiders. This makes them terrifying raiders - they strike from territories no one else can cross, take what they need, and vanish into desert depths where pursuit dies of thirst.
 
@@ -21,7 +21,7 @@ Desert orc culture is the most independent and opportunistic. Tribal bonds remai
 
 ## Region
 
-Arid deserts, badlands, and wasteland territories where water is scarce and temperatures swing between extremes. Desert orc camps occupy oases, canyon systems, and cave networks that provide shade and water access. Unlike permanent [mountain orc](mountain.md) fortresses, these camps are semi-permanent - used for years but abandoned if resources deplete or enemies discover them.
+Arid deserts, badlands, and wasteland territories where water is scarce and temperatures swing between extremes. Desert orc camps occupy oases, canyon systems, and cave networks that provide shade and water access. Unlike permanent [mountain orc](mountain/index.md) fortresses, these camps are semi-permanent - used for years but abandoned if resources deplete or enemies discover them.
 
 Their territory selection emphasizes strategic value over comfort. A miserable camp that controls water sources along trade routes is worth more than a comfortable one that lacks tactical advantage. Desert orcs are comfortable being uncomfortable - luxury is for races that don't understand true hardship.
 
@@ -61,7 +61,7 @@ Desert orcs excel at opportunistic hit-and-run tactics that leverage environment
 
 **Additional Bonus:** +20% heat resistance (environmental)
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -73,14 +73,14 @@ Desert Orcs receive **3 random skills** from their racial skill pool at characte
 
 **Example Racial Skills:**
 
-| Skill                                                                   | Tags                            | Effect                                               |
-| ----------------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------- |
-| [Relentless Endurance](../../../skills/passive/relentless-endurance.md) | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day           |
-| [Savage Attacks](../../../skills/passive/savage-attacks.md)             | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits             |
-| [Desert Born](../../../skills/index.md)                                 | Physical/Endurance, Survival    | +20% heat resistance, minimal water requirements     |
-| [Sandstorm Sense](../../../skills/index.md)                             | Survival, Physical              | Navigate and fight effectively during sandstorms     |
-| [Resource Raider](../../../skills/index.md)                             | Combat, Survival, Tribal        | Enhanced at capturing and preserving supplies        |
-| [Endurance March](../../../skills/index.md)                             | Physical/Endurance, Survival    | Travel vast distances with minimal rest and supplies |
+| Skill                                                                         | Tags                            | Effect                                               |
+| ----------------------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------- |
+| [Relentless Endurance](../../../skills/passive/relentless-endurance/index.md) | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day           |
+| [Savage Attacks](../../../skills/passive/savage-attacks/index.md)             | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits             |
+| [Desert Born](../../../skills/index.md)                                       | Physical/Endurance, Survival    | +20% heat resistance, minimal water requirements     |
+| [Sandstorm Sense](../../../skills/index.md)                                   | Survival, Physical              | Navigate and fight effectively during sandstorms     |
+| [Resource Raider](../../../skills/index.md)                                   | Combat, Survival, Tribal        | Enhanced at capturing and preserving supplies        |
+| [Endurance March](../../../skills/index.md)                                   | Physical/Endurance, Survival    | Travel vast distances with minimal rest and supplies |
 
 ## Special Traits
 
@@ -97,7 +97,7 @@ Desert Orcs receive **3 random skills** from their racial skill pool at characte
 
 Desert orc culture strips away non-essentials. When carrying extra weight costs water, when tradition can mean death, pragmatism becomes virtue. This creates orc variant least bound by conventional orc cultural expectations.
 
-**Survival First**: Desert orcs value results over methods. If sneaking past enemies preserves resources for necessary fights, they sneak. If retreating means survival, they retreat without shame. This pragmatism would scandalize [plains orcs](plains.md) but desert orcs don't care - survivors don't need validation from corpses.
+**Survival First**: Desert orcs value results over methods. If sneaking past enemies preserves resources for necessary fights, they sneak. If retreating means survival, they retreat without shame. This pragmatism would scandalize [plains orcs](plains/index.md) but desert orcs don't care - survivors don't need validation from corpses.
 
 **Water Law**: Desert orc culture revolves around water. Wasting water is serious crime. Poisoning water sources earns death penalty. Water theft between tribe members is unthinkable betrayal. During raids, water containers are captured first, guarded fiercely, and distributed carefully.
 
@@ -111,11 +111,11 @@ Desert orc culture strips away non-essentials. When carrying extra weight costs 
 
 ## Relations
 
-**With Other Orc Variants:** Desert orcs are viewed as strange by other variants. [Plains orcs](plains.md) think desert orcs have abandoned proper orc values, focusing on survival over glory. [Mountain orcs](mountain.md) consider them rootless and untrustworthy. [Swamp orcs](swamp.md) respect their tactical flexibility but find their environment too harsh. Desert orcs largely ignore these opinions - they're too busy surviving.
+**With Other Orc Variants:** Desert orcs are viewed as strange by other variants. [Plains orcs](plains/index.md) think desert orcs have abandoned proper orc values, focusing on survival over glory. [Mountain orcs](mountain/index.md) consider them rootless and untrustworthy. [Swamp orcs](swamp/index.md) respect their tactical flexibility but find their environment too harsh. Desert orcs largely ignore these opinions - they're too busy surviving.
 
-**With Other Races:** Desert orcs have complicated relationships with desert-dwelling peoples. [Nomadic humans](../../enlightened/humans.md) sometimes trade with desert orc tribes during truces, exchanging goods and information. These temporary alliances end when raiding season begins, but neither side takes it personally - everyone's just trying to survive.
+**With Other Races:** Desert orcs have complicated relationships with desert-dwelling peoples. [Nomadic humans](../../enlightened/humans/index.md) sometimes trade with desert orc tribes during truces, exchanging goods and information. These temporary alliances end when raiding season begins, but neither side takes it personally - everyone's just trying to survive.
 
-Settled races near deserts fear desert orcs for unpredictability. [Plains orcs](plains.md) announce their raids; desert orcs just appear, strike, and vanish. Some settlements pay protection tribute to nearby desert orc tribes, essentially buying raiding schedules so they can prepare.
+Settled races near deserts fear desert orcs for unpredictability. [Plains orcs](plains/index.md) announce their raids; desert orcs just appear, strike, and vanish. Some settlements pay protection tribute to nearby desert orc tribes, essentially buying raiding schedules so they can prepare.
 
 **The Desert Code**: Despite brutal reputation, desert orcs maintain their own honor system. They don't kill unnecessarily - corpses don't yield information or ransom. They respect capable enemies. And they never, ever poison water sources. That would make them monsters, and desert orcs distinguish between necessary violence and pointless cruelty.
 

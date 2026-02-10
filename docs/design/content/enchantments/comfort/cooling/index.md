@@ -223,6 +223,6 @@ The enchantment transformed industries reliant on heat. Forge workers, bakers, g
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Ice essence](../../materials/reagents/index.md), [Linen](../../materials/cloth/index.md), [Mint extract](../../materials/reagents/index.md)
 - **Applied To:** All [Clothing](../../items/clothing/index.md), especially light, breathable garments (see Applicable Items table)
-- **See Also:** [Warmth](warmth.md), [Comfort](comfort.md), [Cold Resistance](../protection/resistance.md)
+- **See Also:** [Warmth](warmth/index.md), [Comfort](comfort/index.md), [Cold Resistance](../protection/resistance/index.md)
 - **Enchantment Type:** Comfort (temperature regulation - cooling)
 - **Safety Note:** Essential for hot climates and heat-exposure professions; always maintain hydration regardless of reduced sweat

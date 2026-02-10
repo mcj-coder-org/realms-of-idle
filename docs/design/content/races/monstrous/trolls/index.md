@@ -24,7 +24,7 @@ Calling trolls "barely sentient" seems cruel but it's accurate. Trolls think, co
 
 Trolls occupy the most isolated territories - deep wilderness where even other tribal races don't venture. They don't build, don't farm, don't maintain territories in any organized sense. They hunt, eat, sleep, and reproduce, following patterns that barely qualify as culture. "Troll territory" means "places where trolls have been seen" rather than claimed domains they defend.
 
-The relationship between trolls and everyone else is simple: mutual avoidance punctuated by violence. [Settlements](../../../systems/world/settlements.md) hire adventurers to eliminate trolls that wander too close. Trolls attack anything that looks edible or threatens them. There's no diplomacy, no negotiation, no peaceful coexistence - trolls lack the mental capacity for diplomatic relationships.
+The relationship between trolls and everyone else is simple: mutual avoidance punctuated by violence. [Settlements](../../../systems/world/settlements/index.md) hire adventurers to eliminate trolls that wander too close. Trolls attack anything that looks edible or threatens them. There's no diplomacy, no negotiation, no peaceful coexistence - trolls lack the mental capacity for diplomatic relationships.
 
 Other races view trolls as monsters, not people. [Humans](../../enlightened/humans/) fear them as embodiments of unkillable hunger. [Dwarves](../../enlightened/dwarves/) seal mines when trolls move in, considering it cheaper than elimination. [Elves](../../enlightened/elves/) maintain barriers around forests to keep trolls out. Even [orcs](../orcs/) and [ogres](../ogres/) avoid trolls when possible - fighting regenerating giants is expensive in lives and resources.
 
@@ -71,7 +71,7 @@ Trolls have natural affinities and aversions that affect skill learning speed an
 | Positive (○)  | Nature, Physical/Endurance | Faster than baseline      |
 | Negative (×)  | Magic, Knowledge, Social   | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -81,20 +81,20 @@ Trolls receive **3 random skills** from their racial skill pool at character cre
 
 **Example Racial Skills:**
 
-| Skill                                                                           | Tags                         | Effect                                            |
-| ------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------- |
-| [Rapid Regeneration](../../../content/skills/passive/rapid-regeneration.md)     | Physical/Endurance, Nature   | Heal 5%/2% max HP per minute (out/in combat)      |
-| [Thick Skin](../../../content/skills/passive/thick-skin.md)                     | Physical/Endurance, Physical | +2 AC natural armor, 5% damage reduction          |
-| [Relentless Endurance](../../../content/skills/passive/relentless-endurance.md) | Physical/Endurance, Combat   | Survive lethal damage at 1 HP once per day        |
-| [Massive Frame](../../../content/skills/racial/index.md)                        | Physical/Strength, Physical  | +40% HP, +75% carry capacity, Large size benefits |
-| [Powerful Build](../../../content/skills/racial/index.md)                       | Physical/Strength            | +25% melee damage, enhanced strength checks       |
-| [Keen Smell](../../../content/skills/index.md)                                  | Nature, Physical             | Track by scent, detect hidden creatures           |
+| Skill                                                                                 | Tags                         | Effect                                            |
+| ------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------- |
+| [Rapid Regeneration](../../../content/skills/passive/rapid-regeneration/index.md)     | Physical/Endurance, Nature   | Heal 5%/2% max HP per minute (out/in combat)      |
+| [Thick Skin](../../../content/skills/passive/thick-skin/index.md)                     | Physical/Endurance, Physical | +2 AC natural armor, 5% damage reduction          |
+| [Relentless Endurance](../../../content/skills/passive/relentless-endurance/index.md) | Physical/Endurance, Combat   | Survive lethal damage at 1 HP once per day        |
+| [Massive Frame](../../../content/skills/racial/index.md)                              | Physical/Strength, Physical  | +40% HP, +75% carry capacity, Large size benefits |
+| [Powerful Build](../../../content/skills/racial/index.md)                             | Physical/Strength            | +25% melee damage, enhanced strength checks       |
+| [Keen Smell](../../../content/skills/index.md)                                        | Nature, Physical             | Track by scent, detect hidden creatures           |
 
-**[Rapid Regeneration](../../../content/skills/passive/rapid-regeneration.md)**: Trolls heal constantly and rapidly. They regenerate 5% max HP per minute out of combat and 2% per minute even during battle. Minor wounds close within minutes, major injuries within hours. This makes trolls incredibly difficult to kill through conventional [combat](../../../systems/combat/index.md). Fire and acid damage prevent regeneration - trolls instinctively fear both.
+**[Rapid Regeneration](../../../content/skills/passive/rapid-regeneration/index.md)**: Trolls heal constantly and rapidly. They regenerate 5% max HP per minute out of combat and 2% per minute even during battle. Minor wounds close within minutes, major injuries within hours. This makes trolls incredibly difficult to kill through conventional [combat](../../../systems/combat/index.md). Fire and acid damage prevent regeneration - trolls instinctively fear both.
 
-**[Thick Skin](../../../content/skills/passive/thick-skin.md)**: Troll hide is tough as leather armor, providing +2 AC natural protection and 5% physical damage reduction. Even without worn armor (which trolls rarely understand), they shrug off blows that would devastate other races.
+**[Thick Skin](../../../content/skills/passive/thick-skin/index.md)**: Troll hide is tough as leather armor, providing +2 AC natural protection and 5% physical damage reduction. Even without worn armor (which trolls rarely understand), they shrug off blows that would devastate other races.
 
-**[Relentless Endurance](../../../content/skills/passive/relentless-endurance.md)**: Combined with regeneration, this makes trolls nearly unkillable. Once per long rest, when reduced to 0 HP, a troll survives with 1 HP and immediately begins regenerating. The only reliable way to kill a troll is fire or acid.
+**[Relentless Endurance](../../../content/skills/passive/relentless-endurance/index.md)**: Combined with regeneration, this makes trolls nearly unkillable. Once per long rest, when reduced to 0 HP, a troll survives with 1 HP and immediately begins regenerating. The only reliable way to kill a troll is fire or acid.
 
 **[Massive Frame](../../../content/skills/racial/index.md)**: Being huge (Large size category) gives trolls massive health pools (+40% HP) and reach advantages in [combat](../../../systems/combat/index.md). They carry extraordinary loads (+75% capacity). But their size makes them easy targets and prevents them from using structures designed for smaller races. Trolls simply don't fit in normal buildings.
 
@@ -105,8 +105,8 @@ Trolls receive **3 random skills** from their racial skill pool at character cre
 **Limitations:**
 
 - **Fire & Acid Vulnerability:** +50% damage from fire/acid, stops regeneration completely for 1 minute
-- **Simple Mind:** Trolls cannot learn [magic](../../../systems/character/magic-system.md) meaningfully. Cognitive limitations prevent understanding magical concepts. Even [shamanic](../../../systems/character/index.md) abilities remain rudimentary.
-- **Very Monstrous:** [Faction](../../../systems/social/factions-reputation.md) standings start at "kill on sight" in virtually all settlements. Overcoming this is nearly impossible; trolls lack intelligence to demonstrate trustworthiness consistently.
+- **Simple Mind:** Trolls cannot learn [magic](../../../systems/character/magic-system/index.md) meaningfully. Cognitive limitations prevent understanding magical concepts. Even [shamanic](../../../systems/character/index.md) abilities remain rudimentary.
+- **Very Monstrous:** [Faction](../../../systems/social/factions-reputation/index.md) standings start at "kill on sight" in virtually all settlements. Overcoming this is nearly impossible; trolls lack intelligence to demonstrate trustworthiness consistently.
 
 ### Regional Variants
 
@@ -172,8 +172,8 @@ Trolls technically have access to all character classes, but their extreme cogni
 ## Related Content
 
 - **Combat**: [Combat System](../../../systems/combat/index.md), [Regeneration Mechanics](../../../systems/character/index.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Ogres](../ogres/), [Creatures](../../../creatures/index.md), [Tribal Mechanics](../../races-and-tribes.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Ogres](../ogres/), [Creatures](../../../creatures/index.md), [Tribal Mechanics](../../races-and-tribes/index.md)
 
 ---
 
@@ -201,7 +201,7 @@ These bonds aren't sophisticated - trolls don't express love verbally or demonst
 
 All trolls fear fire instinctively. Show a troll open flame and it retreats. Set a troll ablaze and it panics, fleeing rather than fighting. This fear is biological, not learned - even young trolls never exposed to fire react with terror when first encountering it.
 
-This vulnerability makes fire the primary anti-troll weapon. Settlements troubled by trolls hire adventurers with fire [magic](../../../systems/character/magic-system.md) or alchemical incendiaries. Farmers maintain signal fires to warn of troll approach. Foresters carry fire-starting kits as standard equipment. Fire keeps trolls at bay better than any fortification.
+This vulnerability makes fire the primary anti-troll weapon. Settlements troubled by trolls hire adventurers with fire [magic](../../../systems/character/magic-system/index.md) or alchemical incendiaries. Farmers maintain signal fires to warn of troll approach. Foresters carry fire-starting kits as standard equipment. Fire keeps trolls at bay better than any fortification.
 
 ### Longevity Without Progress
 
@@ -219,7 +219,7 @@ The cruelest attempts involve keeping trolls as exhibits or experimental subject
 
 What do you do about trolls? They're strong enough to threaten settlements, regenerating enough to survive elimination attempts, simple enough to be unpredictable, and long-lived enough to be persistent threats. Yet they're intelligent enough to communicate, form families, and remember grudges. Are they people deserving protection or monsters requiring elimination?
 
-[Settlements](../../../systems/world/settlements.md) typically treat trolls as dangerous wildlife - avoid when possible, eliminate when necessary, don't lose sleep over moral implications. A few philosophers argue for troll rights, pointing to their undeniable sapience. Most people, especially those who've seen troll attacks, consider this absurd philosophy that ignores reality.
+[Settlements](../../../systems/world/settlements/index.md) typically treat trolls as dangerous wildlife - avoid when possible, eliminate when necessary, don't lose sleep over moral implications. A few philosophers argue for troll rights, pointing to their undeniable sapience. Most people, especially those who've seen troll attacks, consider this absurd philosophy that ignores reality.
 
 ### Ecological Role
 

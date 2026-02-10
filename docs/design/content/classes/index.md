@@ -8,7 +8,7 @@ summary: Complete class hierarchy organized by specialization tree
 
 Classes are organized in a specialization tree. Each Foundation class branches into specialized paths, which may further specialize into master-level classes.
 
-See [Class Tiers](../../systems/character/class-tiers.md) for tier mechanics and XP requirements.
+See [Class Tiers](../../systems/character/class-tiers/index.md) for tier mechanics and XP requirements.
 
 ## Class Trees
 
@@ -99,9 +99,9 @@ Multi-discipline classes combining two foundation classes:
 
 ## See Also
 
-- [Class Tiers](../../systems/character/class-tiers.md) - Tier mechanics and XP requirements
-- [Class Progression](../../systems/character/class-progression.md) - Leveling and skill acquisition
-- [Tag-Class-Skill Matrix](./tag-class-skill-matrix.md) - Complete mapping tables
+- [Class Tiers](../../systems/character/class-tiers/index.md) - Tier mechanics and XP requirements
+- [Class Progression](../../systems/character/class-progression/index.md) - Leveling and skill acquisition
+- [Tag-Class-Skill Matrix](./tag-class-skill-matrix/index.md) - Complete mapping tables
 
 ## Related Content
 

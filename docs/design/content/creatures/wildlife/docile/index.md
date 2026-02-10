@@ -11,11 +11,11 @@ Small, peaceful creatures that pose no threat and flee when approached. Primary 
 
 ## Creatures
 
-| Creature                | Level | Habitat          | Primary Resource  | Difficulty |
-| ----------------------- | ----- | ---------------- | ----------------- | ---------- |
-| [Rabbit](rabbit.md)     | 1-2   | Fields, forests  | Meat, fur, organs | Trivial    |
-| [Deer](deer.md)         | 3-5   | Forests, meadows | Venison, leather  | Easy       |
-| [Songbird](songbird.md) | 0-1   | Everywhere       | Feathers, down    | Trivial    |
+| Creature                      | Level | Habitat          | Primary Resource  | Difficulty |
+| ----------------------------- | ----- | ---------------- | ----------------- | ---------- |
+| [Rabbit](rabbit/index.md)     | 1-2   | Fields, forests  | Meat, fur, organs | Trivial    |
+| [Deer](deer/index.md)         | 3-5   | Forests, meadows | Venison, leather  | Easy       |
+| [Songbird](songbird/index.md) | 0-1   | Everywhere       | Feathers, down    | Trivial    |
 
 ## Behavior Patterns
 
@@ -92,8 +92,8 @@ All docile wildlife share common traits:
 
 ## Related Systems
 
-- **[Hunting/Gathering System](../../../../systems/crafting/gathering.md)** - Tracking, trapping, field dressing
-- **[Ecology System](../../../../systems/crafting/gathering.md)** - Population dynamics, food chains
+- **[Hunting/Gathering System](../../../../systems/crafting/gathering/index.md)** - Tracking, trapping, field dressing
+- **[Ecology System](../../../../systems/crafting/gathering/index.md)** - Population dynamics, food chains
 - **[Cooking System](../../../../systems/index.md)** - Meat preparation and recipes
 - **[Leatherworking](../../../../systems/crafting/index.md)** - Hide processing
 - **[Alchemy](../../../../systems/index.md)** - Organ components for potions
@@ -103,4 +103,4 @@ All docile wildlife share common traits:
 - **[Predator Wildlife](../predators/)** - Natural predators of these species
 - **[Exotic Wildlife](../exotic/)** - Rare and unusual creatures
 - **[Farm Animals](../../domestic/)** - Domesticated livestock
-- **[Creature System](../../creature-system.md)** - Complete creature mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete creature mechanics

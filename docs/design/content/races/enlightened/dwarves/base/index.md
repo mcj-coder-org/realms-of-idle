@@ -22,13 +22,13 @@ This practical focus made dwarves master crafters. A dwarven-forged blade holds 
 
 ### In the World
 
-Dwarven holds function as independent city-states, each governed by a council of clan elders or a hereditary king. They trade extensively with surface [settlements](../../../systems/world/settlements.md) - dwarven metalwork commands premium prices - but maintain fierce independence. A hold might ally with [human](../humans.md) kingdoms against mutual threats, but no dwarf bows to a surface-dwelling monarch.
+Dwarven holds function as independent city-states, each governed by a council of clan elders or a hereditary king. They trade extensively with surface [settlements](../../../systems/world/settlements/index.md) - dwarven metalwork commands premium prices - but maintain fierce independence. A hold might ally with [human](../humans/index.md) kingdoms against mutual threats, but no dwarf bows to a surface-dwelling monarch.
 
-Daily life in a hold follows patterns laid down generations ago. The morning shift descends to the [mines](../../../systems/crafting/gathering.md) while the evening shift ascends. Forges burn around the clock, their rhythm marking time better than any bell. Family workshops pass from parent to child, with apprentices spending decades mastering techniques their great-grandparents used. Change happens slowly, deliberately, and only when absolutely necessary.
+Daily life in a hold follows patterns laid down generations ago. The morning shift descends to the [mines](../../../systems/crafting/gathering/index.md) while the evening shift ascends. Forges burn around the clock, their rhythm marking time better than any bell. Family workshops pass from parent to child, with apprentices spending decades mastering techniques their great-grandparents used. Change happens slowly, deliberately, and only when absolutely necessary.
 
 Dwarves value reliability above all else. A dwarf's word is their bond - breaking an oath brings profound shame. Contracts get negotiated down to minute details, then honored absolutely. This makes dwarves trustworthy business partners but maddeningly inflexible. "The agreement says..." begins many a dwarven refusal to accommodate reasonable adjustments.
 
-Other races respect dwarves while finding them exhausting. [Humans](../humans.md) admire dwarven [craftsmanship](../../../systems/crafting/index.md) but bridle at dwarven stubbornness. [Elves](../elves.md) respect dwarven longevity while considering them artistically primitive. [Tribal races](../../monstrous/index.md) see dwarves as both trading opportunity - all those metal goods - and territorial threat, as expanding holds sometimes clash with tribal ranges. Yet almost everyone wants dwarven-made equipment when they can afford it.
+Other races respect dwarves while finding them exhausting. [Humans](../humans/index.md) admire dwarven [craftsmanship](../../../systems/crafting/index.md) but bridle at dwarven stubbornness. [Elves](../elves/index.md) respect dwarven longevity while considering them artistically primitive. [Tribal races](../../monstrous/index.md) see dwarves as both trading opportunity - all those metal goods - and territorial threat, as expanding holds sometimes clash with tribal ranges. Yet almost everyone wants dwarven-made equipment when they can afford it.
 
 Surface dwarves are less common than humans or elves but not rare. Young dwarves might spend decades traveling the surface, learning other cultures, plying their crafts in foreign cities, or simply experiencing sunlight before returning home to settle into traditional roles. Some never return, founding surface smithies and becoming integral parts of human communities while maintaining distinct dwarven identity.
 
@@ -74,7 +74,7 @@ Dwarves have natural affinities and aversions that affect skill learning speed a
 | Positive (○)  | Combat/Melee, Gathering/Mining | Faster than baseline      |
 | Negative (×)  | Magic, Stealth                 | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -84,26 +84,26 @@ Dwarves receive **3 random skills** from their racial skill pool at character cr
 
 **Example Racial Skills:**
 
-| Skill                                                            | Tags                                  | Effect                                        |
-| ---------------------------------------------------------------- | ------------------------------------- | --------------------------------------------- |
-| [Stout Constitution](../../skills/passive/stout-constitution.md) | Physical/Endurance                    | +15% HP, +20% poison/disease resistance       |
-| [Darkvision](../../skills/passive/darkvision.md)                 | Physical, Universal/Physical          | Perfect vision in complete darkness           |
-| [Stone Sense](../../skills/passive/stone-sense.md)               | Gathering/Mining, Physical, Knowledge | Detect ore, structural weaknesses, navigation |
-| [Magic Resistance](../../skills/passive/magic-resistance.md)     | Universal/Mental, Magic               | +20% resistance to hostile magic              |
-| [Steady Stance](../../skills/passive/steady-stance.md)           | Physical/Endurance, Combat/Defense    | +70% knockback resistance, stability          |
-| [Dense Build](../../skills/passive/dense-build.md)               | Physical/Strength                     | 1.5x weight, +10% strength checks             |
+| Skill                                                                  | Tags                                  | Effect                                        |
+| ---------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------- |
+| [Stout Constitution](../../skills/passive/stout-constitution/index.md) | Physical/Endurance                    | +15% HP, +20% poison/disease resistance       |
+| [Darkvision](../../skills/passive/darkvision/index.md)                 | Physical, Universal/Physical          | Perfect vision in complete darkness           |
+| [Stone Sense](../../skills/passive/stone-sense/index.md)               | Gathering/Mining, Physical, Knowledge | Detect ore, structural weaknesses, navigation |
+| [Magic Resistance](../../skills/passive/magic-resistance/index.md)     | Universal/Mental, Magic               | +20% resistance to hostile magic              |
+| [Steady Stance](../../skills/passive/steady-stance/index.md)           | Physical/Endurance, Combat/Defense    | +70% knockback resistance, stability          |
+| [Dense Build](../../skills/passive/dense-build/index.md)               | Physical/Strength                     | 1.5x weight, +10% strength checks             |
 
-**[Stout Constitution](../../skills/passive/stout-constitution.md)**: Dwarves are built like boulders - dense, solid, and hard to damage. Their naturally robust constitution makes them excellent [warriors](../../../classes/combat/index.md) and allows them to shrug off poisons and diseases that would fell [humans](../humans.md).
+**[Stout Constitution](../../skills/passive/stout-constitution/index.md)**: Dwarves are built like boulders - dense, solid, and hard to damage. Their naturally robust constitution makes them excellent [warriors](../../../classes/combat/index.md) and allows them to shrug off poisons and diseases that would fell [humans](../humans/index.md).
 
-**[Darkvision](../../skills/passive/darkvision.md)**: Generations underground bred perfect dark-sight into dwarven eyes. They see in absolute darkness as clearly as [humans](../humans.md) see at noon. Bright light doesn't blind them, but they're equally comfortable in cave blackness or surface daylight.
+**[Darkvision](../../skills/passive/darkvision/index.md)**: Generations underground bred perfect dark-sight into dwarven eyes. They see in absolute darkness as clearly as [humans](../humans/index.md) see at noon. Bright light doesn't blind them, but they're equally comfortable in cave blackness or surface daylight.
 
-**[Stone Sense](../../skills/passive/stone-sense.md)**: Dwarves don't just see stone - they _understand_ it. A dwarf can run their hand along a tunnel wall and know how stable it is, where veins of [ore](../../../systems/crafting/gathering.md) hide, whether the ceiling is safe. This isn't [magic](../../../systems/character/magic-system.md); it's deep intuition from living their entire lives in stone.
+**[Stone Sense](../../skills/passive/stone-sense/index.md)**: Dwarves don't just see stone - they _understand_ it. A dwarf can run their hand along a tunnel wall and know how stable it is, where veins of [ore](../../../systems/crafting/gathering/index.md) hide, whether the ceiling is safe. This isn't [magic](../../../systems/character/magic-system/index.md); it's deep intuition from living their entire lives in stone.
 
-**[Magic Resistance](../../skills/passive/magic-resistance.md)**: The same property that limits dwarven spellcasting also protects them. Hostile [magic](../../../systems/character/magic-system.md) finds less purchase on dwarven targets. This resistance is significant - dwarven [warriors](../../../classes/combat/index.md) advance through magical barrages that would stop [human](../humans.md) charges cold.
+**[Magic Resistance](../../skills/passive/magic-resistance/index.md)**: The same property that limits dwarven spellcasting also protects them. Hostile [magic](../../../systems/character/magic-system/index.md) finds less purchase on dwarven targets. This resistance is significant - dwarven [warriors](../../../classes/combat/index.md) advance through magical barrages that would stop [human](../humans/index.md) charges cold.
 
-**[Steady Stance](../../skills/passive/steady-stance.md)**: Dwarves are hard to move. [Knockback](../../../systems/combat/index.md) effects that send [humans](../humans.md) flying barely budge dwarves. Trips and knockdowns that reliably fell other races meet dwarven balance and mass. In [combat](../../../systems/combat/index.md), this makes dwarves excellent front-line fighters who hold position.
+**[Steady Stance](../../skills/passive/steady-stance/index.md)**: Dwarves are hard to move. [Knockback](../../../systems/combat/index.md) effects that send [humans](../humans/index.md) flying barely budge dwarves. Trips and knockdowns that reliably fell other races meet dwarven balance and mass. In [combat](../../../systems/combat/index.md), this makes dwarves excellent front-line fighters who hold position.
 
-**[Dense Build](../../skills/passive/dense-build.md)**: Dwarven bodies are extraordinarily dense - solid muscle and heavy bone. This extra mass provides strength advantages and exceptional stability, though it affects mobility in certain situations like swimming or climbing.
+**[Dense Build](../../skills/passive/dense-build/index.md)**: Dwarven bodies are extraordinarily dense - solid muscle and heavy bone. This extra mass provides strength advantages and exceptional stability, though it affects mobility in certain situations like swimming or climbing.
 
 **Note on Magic:** Dwarves' magic resistance comes at a cost - they have reduced mana pools (-35%) and slower mana regeneration (-25%). Most dwarves embrace this trade-off, preferring steel and stone over spell and sorcery.
 
@@ -133,9 +133,9 @@ Dwarves receive **3 random skills** from their racial skill pool at character cr
 ## Related Content
 
 - **Classes**: [Warrior](../../../classes/combat/index.md), [Knight](../../../classes/combat/index.md), [Blacksmith](../../../classes/crafting/index.md)
-- **Crafting**: [Crafting System](../../../systems/crafting/index.md), [Gathering](../../../systems/crafting/gathering.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Humans](../humans.md), [Elves](../elves.md), [Lizardfolk](../lizardfolk.md), [Kobolds](../kobolds.md), [Race Comparison](../../races-and-tribes.md)
+- **Crafting**: [Crafting System](../../../systems/crafting/index.md), [Gathering](../../../systems/crafting/gathering/index.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Humans](../humans/index.md), [Elves](../elves/index.md), [Lizardfolk](../lizardfolk/index.md), [Kobolds](../kobolds/index.md), [Race Comparison](../../races-and-tribes/index.md)
 
 ---
 

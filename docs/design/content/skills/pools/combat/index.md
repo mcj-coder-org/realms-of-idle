@@ -22,23 +22,23 @@ Skills focused on martial prowess, weapon mastery, and battlefield tactics. Thes
 
 ### Tiered Skills
 
-- [Weapon Mastery](weapon-mastery.md) - Specialized proficiency with weapon category
-- [Shield Wall](shield-wall.md) - Enhanced shield defensive capability
-- [Battle Rage](battle-rage.md) - Controlled fury in combat
-- [Commander's Voice](commanders-voice.md) - Combat orders affect more allies at greater range
-- [Armor Expert](armor-expert.md) - Improved heavy armor usage
-- [Dual Wield](dual-wield.md) - Fight with two weapons effectively
+- [Weapon Mastery](weapon-mastery/index.md) - Specialized proficiency with weapon category
+- [Shield Wall](shield-wall/index.md) - Enhanced shield defensive capability
+- [Battle Rage](battle-rage/index.md) - Controlled fury in combat
+- [Commander's Voice](commanders-voice/index.md) - Combat orders affect more allies at greater range
+- [Armor Expert](armor-expert/index.md) - Improved heavy armor usage
+- [Dual Wield](dual-wield/index.md) - Fight with two weapons effectively
 
 ### Mechanic Unlocks
 
-- [Tactical Assessment](tactical-assessment.md) - Analyze enemy capabilities
-- [Killing Blow](killing-blow.md) - Execute wounded enemies instantly
-- [Sentinel's Watch](sentinels-watch.md) - Cannot be ambushed while awake
-- [Mounted Combat](mounted-combat.md) - Fight effectively from mount
+- [Tactical Assessment](tactical-assessment/index.md) - Analyze enemy capabilities
+- [Killing Blow](killing-blow/index.md) - Execute wounded enemies instantly
+- [Sentinel's Watch](sentinels-watch/index.md) - Cannot be ambushed while awake
+- [Mounted Combat](mounted-combat/index.md) - Fight effectively from mount
 
 ### Passive Generators
 
-- [Battle Hardened](battle-hardened.md) - Experience generates combat readiness
+- [Battle Hardened](battle-hardened/index.md) - Experience generates combat readiness
 
 ## Acquisition
 
@@ -48,4 +48,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

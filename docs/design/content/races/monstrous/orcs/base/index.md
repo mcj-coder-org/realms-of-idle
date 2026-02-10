@@ -12,7 +12,7 @@ summary: 'Honor-bound warriors whose strength and ferocity mask a rigid code of 
 
 ### Origin
 
-Orcs are strength made flesh - towering, muscular figures with gray-green skin, pronounced tusks, and eyes that burn with inner fire. They look every inch the savage warriors [settlements](../../../../../systems/world/settlements.md) fear them to be. And yes, orcs are warriors, bred for battle and raised in cultures that prize martial prowess above all else. But the word "savage" misses crucial truth: orc ferocity operates within rigid honor codes that govern every aspect of their lives.
+Orcs are strength made flesh - towering, muscular figures with gray-green skin, pronounced tusks, and eyes that burn with inner fire. They look every inch the savage warriors [settlements](../../../../../systems/world/settlements/index.md) fear them to be. And yes, orcs are warriors, bred for battle and raised in cultures that prize martial prowess above all else. But the word "savage" misses crucial truth: orc ferocity operates within rigid honor codes that govern every aspect of their lives.
 
 Orc legends claim they were forged by ancient war gods to serve as perfect warriors. Whether literal or metaphorical, this origin story shapes orc identity profoundly. They see themselves as living weapons - tools of violence that must be aimed carefully, wielded skillfully, and respected properly. An orc without purpose is dangerous, like an unsheathed blade left lying around. An orc with clear purpose and worthy opponents thrives.
 
@@ -22,11 +22,11 @@ Orc reproduction follows a warrior culture pattern - females bear children but a
 
 ### In the World
 
-Orc tribes occupy borderlands, wastelands, and contested territories - places where strength matters more than civilization. They don't farm extensively, preferring raiding, hunting, and taking what they need through force. This brings them into conflict with [settlements](../../../../../systems/world/settlements.md), creating cycles of violence that reinforce mutual hatred.
+Orc tribes occupy borderlands, wastelands, and contested territories - places where strength matters more than civilization. They don't farm extensively, preferring raiding, hunting, and taking what they need through force. This brings them into conflict with [settlements](../../../../../systems/world/settlements/index.md), creating cycles of violence that reinforce mutual hatred.
 
 But orc raiding isn't random savagery - it follows rules. Honorable opponents get warnings before attacks. Defeated foes who surrender receive mercy (usually enslavement, but alive). Sacred sites and children remain off-limits. These rules mean little to victims, but they matter intensely to orcs. Breaking them brings shame that can haunt an orc for life.
 
-Other races view orcs with fear and hostility. [Humans](../../enlightened/humans/) see them as barbaric raiders threatening civilization. [Dwarves](../../enlightened/dwarves/) remember ancient wars with orcs invading underground holds. [Elves](../../enlightened/elves/base.md) maintain eternal grudges against orc tribes that destroyed elven settlements centuries ago. [Gnolls](../gnolls/) respect orc martial prowess while avoiding territorial conflicts. [Goblins](../goblins/) sometimes ally with orc tribes, serving as scouts and intermediaries.
+Other races view orcs with fear and hostility. [Humans](../../enlightened/humans/) see them as barbaric raiders threatening civilization. [Dwarves](../../enlightened/dwarves/) remember ancient wars with orcs invading underground holds. [Elves](../../enlightened/elves/base/index.md) maintain eternal grudges against orc tribes that destroyed elven settlements centuries ago. [Gnolls](../gnolls/) respect orc martial prowess while avoiding territorial conflicts. [Goblins](../goblins/) sometimes ally with orc tribes, serving as scouts and intermediaries.
 
 Orc tribal structure is militaristic but meritocratic. The strongest warrior becomes chief - but "strongest" means more than physical power. It means tactical ability, leadership skills, and maintaining honor codes. A physically weak but brilliant tactician can lead orcs if they prove their worth through victories. Challenges to leadership happen through ritual combat, ensuring chiefs maintain respect through demonstrated capability.
 
@@ -71,7 +71,7 @@ Orcs have natural affinities and aversions that affect skill learning speed and 
 | Positive (○)  | Gathering/Hunting, Leadership/Command | Faster than baseline      |
 | Negative (×)  | Magic, Crafting/Fine, Knowledge       | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -81,28 +81,28 @@ Orcs receive **3 random skills** from their racial skill pool at character creat
 
 **Example Racial Skills:**
 
-| Skill                                                                               | Tags                            | Effect                                            |
-| ----------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------- |
-| [Relentless Endurance](../../../../content/skills/passive/relentless-endurance.md)  | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day        |
-| [Savage Attacks](../../../../content/skills/passive/savage-attacks.md)              | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits          |
-| [Powerful Build](../../../../content/skills/racial/index.md)                        | Physical/Strength               | +25% carry capacity, enhanced strength checks     |
-| [Battle Fury](../../../../content/skills/index.md)                                  | Combat, Tribal                  | Temporary damage boost when wounded               |
-| [Intimidating Presence](../../../../content/skills/common/intimidating-presence.md) | Social, Physical/Strength       | +25% intimidation effectiveness                   |
-| [Pain Tolerance](../../../../content/skills/racial/index.md)                        | Physical/Endurance              | Reduced pain penalties, fight longer when wounded |
+| Skill                                                                                     | Tags                            | Effect                                            |
+| ----------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------- |
+| [Relentless Endurance](../../../../content/skills/passive/relentless-endurance/index.md)  | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day        |
+| [Savage Attacks](../../../../content/skills/passive/savage-attacks/index.md)              | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits          |
+| [Powerful Build](../../../../content/skills/racial/index.md)                              | Physical/Strength               | +25% carry capacity, enhanced strength checks     |
+| [Battle Fury](../../../../content/skills/index.md)                                        | Combat, Tribal                  | Temporary damage boost when wounded               |
+| [Intimidating Presence](../../../../content/skills/common/intimidating-presence/index.md) | Social, Physical/Strength       | +25% intimidation effectiveness                   |
+| [Pain Tolerance](../../../../content/skills/racial/index.md)                              | Physical/Endurance              | Reduced pain penalties, fight longer when wounded |
 
-**[Relentless Endurance](../../../../content/skills/passive/relentless-endurance.md)**: Orcs refuse to fall. Once per long rest, when reduced to 0 HP, an orc instead survives with 1 HP. This legendary toughness makes orcs terrifying opponents - you can't assume they're down until they're truly dead.
+**[Relentless Endurance](../../../../content/skills/passive/relentless-endurance/index.md)**: Orcs refuse to fall. Once per long rest, when reduced to 0 HP, an orc instead survives with 1 HP. This legendary toughness makes orcs terrifying opponents - you can't assume they're down until they're truly dead.
 
-**[Savage Attacks](../../../../content/skills/passive/savage-attacks.md)**: When orcs land critical hits with melee weapons, they roll an additional weapon damage die. This makes their critical strikes devastatingly brutal - a greatsword that normally crits for 4d6 becomes 6d6 in orcish hands.
+**[Savage Attacks](../../../../content/skills/passive/savage-attacks/index.md)**: When orcs land critical hits with melee weapons, they roll an additional weapon damage die. This makes their critical strikes devastatingly brutal - a greatsword that normally crits for 4d6 becomes 6d6 in orcish hands.
 
 **[Powerful Build](../../../../content/skills/racial/index.md)**: Orcs are simply stronger than most races - able to carry more, hit harder, and overpower opponents through brute force. Their enhanced strength gives significant advantage in physical contests and allows them to wield larger weapons effectively.
 
 **[Battle Fury](../../../../content/skills/index.md)**: Orcs fight harder when injured. As their HP drops, battle fury overrides pain and caution, channeling damage into increased offensive output. This makes wounded orcs more dangerous, not less - finishing an orc quickly matters more than wearing them down.
 
-**[Intimidating Presence](../../../../content/skills/common/intimidating-presence.md)**: Orc presence naturally intimidates others. Their size, tusks, scars, and aggressive posture make intimidation attempts highly effective. Even peaceful orcs project threat simply by existing.
+**[Intimidating Presence](../../../../content/skills/common/intimidating-presence/index.md)**: Orc presence naturally intimidates others. Their size, tusks, scars, and aggressive posture make intimidation attempts highly effective. Even peaceful orcs project threat simply by existing.
 
 **[Pain Tolerance](../../../../content/skills/racial/index.md)**: Orcs shrug off injuries that would incapacitate others. Reduced penalties from wounds, status effects, and environmental hazards allow orcs to keep fighting effectively longer than other races.
 
-**Note on Reputation:** Centuries of raiding and warfare left orcs with terrible reputation in settled lands. [Faction](../../../../../systems/social/factions-reputation.md) standings start actively hostile in most [settlements](../../../../../systems/world/settlements.md), requiring exceptional effort and concrete demonstrations of trustworthiness to overcome.
+**Note on Reputation:** Centuries of raiding and warfare left orcs with terrible reputation in settled lands. [Faction](../../../../../systems/social/factions-reputation/index.md) standings start actively hostile in most [settlements](../../../../../systems/world/settlements/index.md), requiring exceptional effort and concrete demonstrations of trustworthiness to overcome.
 
 **Shamanic Heritage:** Orcs have full access to [shamanic magic](../../../../../systems/character/index.md) through tribal spirit pools. Orc shamanism emphasizes war spirits, ancestor warriors, and battle blessings - practical magic for warrior culture.
 
@@ -133,9 +133,9 @@ Orcs receive **3 random skills** from their racial skill pool at character creat
 
 - **Classes**: [Warrior](../../../../../classes/combat/index.md), [Berserker](../../../../../classes/combat/index.md), [Shaman](../../../../../classes/magic/index.md)
 - **Magic**: [Shamanic Magic](../../../../../systems/character/index.md), [War Spirits](../../../../../systems/character/index.md)
-- **Combat**: [Combat System](../../../../../systems/combat/index.md), [Morale](../../../../../systems/combat/morale-and-surrender.md)
-- **Attributes**: [Character Attributes](../../../../../systems/character/attributes.md)
-- **See Also**: [Gnolls](../gnolls/), [Ogres](../ogres/), [Tribal Mechanics](../../races-and-tribes.md)
+- **Combat**: [Combat System](../../../../../systems/combat/index.md), [Morale](../../../../../systems/combat/morale-and-surrender/index.md)
+- **Attributes**: [Character Attributes](../../../../../systems/character/attributes/index.md)
+- **See Also**: [Gnolls](../gnolls/), [Ogres](../ogres/), [Tribal Mechanics](../../races-and-tribes/index.md)
 
 ---
 

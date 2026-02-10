@@ -12,7 +12,7 @@ summary: 'Spirits of the dead unable or unwilling to pass on, bound by unfinishe
 
 ### Origin
 
-Unlike [Skeletons](skeleton.md) and [Zombies](zombie.md) which are animated corpses, ghosts are actual spirits - the consciousness of the deceased persisting after death without physical form. They arise not through [Necromancy](../../../systems/magic/index.md) but through tragedy: dying with overwhelming unfinished business, suffering violent unexpected death, being bound by curse or oath, or simply refusing to accept mortality. A ghost is a person who couldn't let go, trapped between life and the afterlife.
+Unlike [Skeletons](skeleton/index.md) and [Zombies](zombie/index.md) which are animated corpses, ghosts are actual spirits - the consciousness of the deceased persisting after death without physical form. They arise not through [Necromancy](../../../systems/magic/index.md) but through tragedy: dying with overwhelming unfinished business, suffering violent unexpected death, being bound by curse or oath, or simply refusing to accept mortality. A ghost is a person who couldn't let go, trapped between life and the afterlife.
 
 The psychology of ghosts is complex and tragic. Most don't realize they're dead, at least initially. They wake from death confused, trying to complete whatever they were doing when killed. A merchant ghost might attempt to finish a business deal. A mother ghost searches eternally for her lost child. A murdered ghost seeks justice or revenge. Some eventually accept their state and fade peacefully. Others become increasingly desperate, paranoid, and dangerous as years of failure drive them toward madness.
 
@@ -270,9 +270,9 @@ Most [Clerics](../../classes/index.md) and good-aligned adventurers prefer helpi
 ## Related Content
 
 - **Habitat:** [Haunted Houses](../../../../systems/world/index.md), [Graveyards](../../../../systems/world/index.md), [Murder Sites](../../../../systems/world/index.md), [Battlefields](../../../../systems/world/index.md)
-- **Related Creatures:** [Skeleton](skeleton.md), [Zombie](zombie.md), [Banshee](index.md), [Wraith](index.md), [Specter](index.md)
+- **Related Creatures:** [Skeleton](skeleton/index.md), [Zombie](zombie/index.md), [Banshee](index.md), [Wraith](index.md), [Specter](index.md)
 - **Associated NPCs:** [Cleric](../../classes/index.md), [Medium](../../classes/index.md), [Exorcist](../../classes/index.md), [Ghost Hunter](../../classes/index.md)
 - **Items:** [Holy Water](../../../items/index.md), [Silver Weapon](../../../items/index.md), [Spirit Board](../../../items/index.md), [Ectoplasm](../../../items/index.md)
 - **Quests:** [Put the Ghost to Rest](../../../../systems/world/index.md), [Haunted Manor](../../../../systems/world/index.md), [The Murder Mystery](../../../../systems/world/index.md), [Family Curse](../../../../systems/world/index.md)
 - **Systems:** [Spirit Magic](../../../../systems/magic/index.md), [Holy Magic](../../../../systems/magic/index.md), [Investigation](../../../../systems/index.md)
-- **See Also:** [Undead Creatures](index.md), [Death and Afterlife](../../../../systems/index.md), [Creature System](../../creature-system.md)
+- **See Also:** [Undead Creatures](index.md), [Death and Afterlife](../../../../systems/index.md), [Creature System](../../creature-system/index.md)

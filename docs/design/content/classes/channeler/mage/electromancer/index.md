@@ -41,7 +41,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Lightning` | 3     | Electromancer, Mage (depth 2 only) |
 | `Magic/Elemental`           | 2     | Electromancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -110,11 +110,11 @@ Advanced Electromancers develop combat awareness around electrical chains. They 
 
 #### Starting Skills
 
-| Skill                                                              | Type    | Effect                                     |
-| ------------------------------------------------------------------ | ------- | ------------------------------------------ |
-| Lightning Affinity                                                 | Passive | Natural connection to electrical magic     |
-| [Storm Mastery](../../skills/tiered/storm-mastery.md) (Lesser)     | Tiered  | Lightning spell power and chain efficiency |
-| [Chain Lightning](../../skills/tiered/chain-lightning.md) (Lesser) | Tiered  | Electricity chains between foes            |
+| Skill                                                                    | Type    | Effect                                     |
+| ------------------------------------------------------------------------ | ------- | ------------------------------------------ |
+| Lightning Affinity                                                       | Passive | Natural connection to electrical magic     |
+| [Storm Mastery](../../skills/tiered/storm-mastery/index.md) (Lesser)     | Tiered  | Lightning spell power and chain efficiency |
+| [Chain Lightning](../../skills/tiered/chain-lightning/index.md) (Lesser) | Tiered  | Electricity chains between foes            |
 
 #### Synergy Skills
 
@@ -122,8 +122,8 @@ Skills that have strong synergies with Electromancer. These skills can be learne
 
 **Core Lightning Skills**:
 
-- [Storm Mastery](../../skills/tiered/storm-mastery.md) - Lesser/Greater/Enhanced - Increased lightning spell power
-- [Chain Lightning](../../skills/tiered/chain-lightning.md) - Lesser/Greater/Enhanced - Bounce electricity between enemies
+- [Storm Mastery](../../skills/tiered/storm-mastery/index.md) - Lesser/Greater/Enhanced - Increased lightning spell power
+- [Chain Lightning](../../skills/tiered/chain-lightning/index.md) - Lesser/Greater/Enhanced - Bounce electricity between enemies
 - Electrical Expertise - Lesser/Greater/Enhanced - Deepen understanding of electrical forces
 - Overload - Lesser/Greater/Enhanced - Build electrical charge for devastating release
 - Static Field - Lesser/Greater/Enhanced - Create electrical aura around caster
@@ -151,13 +151,13 @@ Actions that grant XP to the Electromancer class:
 
 ### Interactions
 
-| System                                                     | Interaction                                      |
-| ---------------------------------------------------------- | ------------------------------------------------ |
-| [Combat](../../../systems/combat/combat-resolution.md)     | Electrical devastation; area effects with chains |
-| [Magic System](../../../systems/character/magic-system.md) | Specializes in lightning and chain effects       |
-| [Party](../../../systems/combat/party-mechanics.md)        | Ranged damage dealer; area control specialist    |
-| [Equipment](../../../systems/character/index.md)           | Uses spell focus and magical items               |
-| [Tactics](../../../systems/combat/index.md)                | Chain reaction combat style                      |
+| System                                                           | Interaction                                      |
+| ---------------------------------------------------------------- | ------------------------------------------------ |
+| [Combat](../../../systems/combat/combat-resolution/index.md)     | Electrical devastation; area effects with chains |
+| [Magic System](../../../systems/character/magic-system/index.md) | Specializes in lightning and chain effects       |
+| [Party](../../../systems/combat/party-mechanics/index.md)        | Ranged damage dealer; area control specialist    |
+| [Equipment](../../../systems/character/index.md)                 | Uses spell focus and magical items               |
+| [Tactics](../../../systems/combat/index.md)                      | Chain reaction combat style                      |
 
 ---
 
@@ -165,7 +165,7 @@ Actions that grant XP to the Electromancer class:
 
 - **Requires:** Spell focus, mana pool, electrical training
 - **Prerequisites:** Consolidates from [Mage](../)
-- **Starting Skills:** [Storm Mastery](../../skills/tiered/storm-mastery.md), [Chain Lightning](../../skills/tiered/chain-lightning.md)
-- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm.md), [Lightning Shield](../../spells/destruction/lightning-shield.md)
-- **System:** [Magic System](../../../systems/character/magic-system.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md)
+- **Starting Skills:** [Storm Mastery](../../skills/tiered/storm-mastery/index.md), [Chain Lightning](../../skills/tiered/chain-lightning/index.md)
+- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm/index.md), [Lightning Shield](../../spells/destruction/lightning-shield/index.md)
+- **System:** [Magic System](../../../systems/character/magic-system/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md)

@@ -79,16 +79,16 @@ Experienced Archers develop specialties. Some focus on rapid shooting, launching
 
 Skills automatically awarded when accepting this class:
 
-| Skill      | Tier   | Link                                           | Reasoning                                    |
-| ---------- | ------ | ---------------------------------------------- | -------------------------------------------- |
-| Steady Aim | Lesser | [See Skill](../../skills/common/steady-aim.md) | Essential for archery accuracy and precision |
-| Rapid Shot | Lesser | [See Skill List](../../skills/tiered/index.md) | Core archer technique for effective combat   |
+| Skill      | Tier   | Link                                                 | Reasoning                                    |
+| ---------- | ------ | ---------------------------------------------------- | -------------------------------------------- |
+| Steady Aim | Lesser | [See Skill](../../skills/common/steady-aim/index.md) | Essential for archery accuracy and precision |
+| Rapid Shot | Lesser | [See Skill List](../../skills/tiered/index.md)       | Core archer technique for effective combat   |
 
 #### Synergy Skills
 
 Skills with strong synergies for Archer:
 
-- [Steady Aim](../../skills/common/steady-aim.md) - Lesser/Greater/Enhanced - Increased accuracy with ranged weapons
+- [Steady Aim](../../skills/common/steady-aim/index.md) - Lesser/Greater/Enhanced - Increased accuracy with ranged weapons
 - [Rapid Shot](../../skills/tiered/index.md) - Lesser/Greater/Enhanced - Reduced time between shots
 - [Power Draw](../../skills/index.md) - Lesser/Greater/Enhanced - Increased ranged damage
 - [Precise Shot](../../skills/index.md) - Lesser/Greater/Enhanced - Increased critical hit chance
@@ -157,25 +157,25 @@ Actions that grant XP to the Archer class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                          | Requirements                                                     | Result Class   | Tier |
-| ------------------------------------------- | ---------------------------------------------------------------- | -------------- | ---- |
-| [Ranger](../consolidation/index.md)         | Archer + [Scout](./scout.md) or [Hunter](../gathering/hunter.md) | Ranger         | 1    |
-| [Sniper](../consolidation/index.md)         | Archer + precision specialization                                | Sniper         | 1    |
-| [Mounted Archer](../consolidation/index.md) | Archer + mounted combat                                          | Mounted Archer | 1    |
-| [Master Bowyer](../consolidation/index.md)  | Archer + [Carpenter](../crafting/carpenter.md)                   | Master Bowyer  | 1    |
+| Consolidation Path                          | Requirements                                                                 | Result Class   | Tier |
+| ------------------------------------------- | ---------------------------------------------------------------------------- | -------------- | ---- |
+| [Ranger](../consolidation/index.md)         | Archer + [Scout](./scout/index.md) or [Hunter](../gathering/hunter/index.md) | Ranger         | 1    |
+| [Sniper](../consolidation/index.md)         | Archer + precision specialization                                            | Sniper         | 1    |
+| [Mounted Archer](../consolidation/index.md) | Archer + mounted combat                                                      | Mounted Archer | 1    |
+| [Master Bowyer](../consolidation/index.md)  | Archer + [Carpenter](../crafting/carpenter/index.md)                         | Master Bowyer  | 1    |
 
 ### Interactions
 
-| System                                                        | Interaction                                           |
-| ------------------------------------------------------------- | ----------------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md)        | Ranged DPS; strikes before enemies close              |
-| [Party](../../../systems/combat/party-mechanics.md)           | Backline damage dealer; requires protection           |
-| [Hunting](../../../systems/crafting/gathering.md)             | Crossover with [Hunter](../gathering/hunter.md) class |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Can craft arrows and maintain bows                    |
-| [Tactics](../../../systems/combat/index.md)                   | Positioning and range management critical             |
-| [Economy](../../../systems/economy/index.md)                  | Arrow costs are ongoing expense                       |
+| System                                                              | Interaction                                                 |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md)        | Ranged DPS; strikes before enemies close                    |
+| [Party](../../../systems/combat/party-mechanics/index.md)           | Backline damage dealer; requires protection                 |
+| [Hunting](../../../systems/crafting/gathering/index.md)             | Crossover with [Hunter](../gathering/hunter/index.md) class |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Can craft arrows and maintain bows                          |
+| [Tactics](../../../systems/combat/index.md)                         | Positioning and range management critical                   |
+| [Economy](../../../systems/economy/index.md)                        | Arrow costs are ongoing expense                             |
 
 ---
 
@@ -183,6 +183,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Bow or crossbow, arrows or bolts
 - **Equipment:** [Bows](../../items/index.md), [Crossbows](../../items/index.md), [Arrows](../../items/index.md), [Quivers](../../items/index.md)
-- **Synergy Classes:** [Hunter](../gathering/hunter.md), [Scout](./scout.md), [Carpenter](../crafting/carpenter.md)
+- **Synergy Classes:** [Hunter](../gathering/hunter/index.md), [Scout](./scout/index.md), [Carpenter](../crafting/carpenter/index.md)
 - **Consolidates To:** [Ranger](../consolidation/index.md), [Sniper](../consolidation/index.md), [Master Bowyer](../consolidation/index.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md), [Ranged Combat](../../../systems/combat/index.md), [Bow Crafting](../../../systems/crafting/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md), [Ranged Combat](../../../systems/combat/index.md), [Bow Crafting](../../../systems/crafting/index.md)

@@ -163,27 +163,27 @@ Actions that grant XP to the Forager class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                            | Requirements                                    | Result Class     | Tier |
-| --------------------------------------------- | ----------------------------------------------- | ---------------- | ---- |
-| [Herbalist](../consolidation/index.md)        | Forager + medicinal focus                       | Herbalist        | 1    |
-| [Survivalist](../consolidation/index.md)      | Forager + [Explorer](../combat/index.md)        | Survivalist      | 1    |
-| [Herbalist-Brewer](../consolidation/index.md) | Forager + [Alchemist](../crafting/alchemist.md) | Herbalist-Brewer | 1    |
-| [Ranger](../consolidation/index.md)           | Forager + [Hunter](./hunter.md)                 | Ranger           | 1    |
-| [Naturalist](../consolidation/index.md)       | Multiple gathering classes                      | Naturalist       | 2    |
+| Consolidation Path                            | Requirements                                          | Result Class     | Tier |
+| --------------------------------------------- | ----------------------------------------------------- | ---------------- | ---- |
+| [Herbalist](../consolidation/index.md)        | Forager + medicinal focus                             | Herbalist        | 1    |
+| [Survivalist](../consolidation/index.md)      | Forager + [Explorer](../combat/index.md)              | Survivalist      | 1    |
+| [Herbalist-Brewer](../consolidation/index.md) | Forager + [Alchemist](../crafting/alchemist/index.md) | Herbalist-Brewer | 1    |
+| [Ranger](../consolidation/index.md)           | Forager + [Hunter](./hunter/index.md)                 | Ranger           | 1    |
+| [Naturalist](../consolidation/index.md)       | Multiple gathering classes                            | Naturalist       | 2    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                                               |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary plant gathering class; provides herbs and reagents                                |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Essential supplier for [Alchemist](../crafting/alchemist.md), [Cook](../crafting/cook.md) |
-| [Economy](../../../systems/economy/index.md)                  | Can sell herbs, reagents, and specialty plants                                            |
-| [Exploration](../../../systems/world/exploration.md)          | Discovers plant resources while exploring                                                 |
-| [Survival](../../../systems/world/index.md)                   | Provides food and medicine in wilderness                                                  |
-| [Social](../../../systems/social/index.md)                    | Village foragers are valued community members                                             |
-| [Magic](../../../systems/character/magic-system.md)           | Supplies components for spell reagents                                                    |
+| System                                                              | Interaction                                                                                           |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary plant gathering class; provides herbs and reagents                                            |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Essential supplier for [Alchemist](../crafting/alchemist/index.md), [Cook](../crafting/cook/index.md) |
+| [Economy](../../../systems/economy/index.md)                        | Can sell herbs, reagents, and specialty plants                                                        |
+| [Exploration](../../../systems/world/exploration/index.md)          | Discovers plant resources while exploring                                                             |
+| [Survival](../../../systems/world/index.md)                         | Provides food and medicine in wilderness                                                              |
+| [Social](../../../systems/social/index.md)                          | Village foragers are valued community members                                                         |
+| [Magic](../../../systems/character/magic-system/index.md)           | Supplies components for spell reagents                                                                |
 
 ---
 
@@ -191,6 +191,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Basket or gathering bag, basic tools
 - **Gathers:** [Herbs](../../materials/index.md), [Berries](../../materials/index.md), [Mushrooms](../../materials/index.md), [Flowers](../../materials/index.md)
-- **Supplies:** [Alchemist](../crafting/alchemist.md), [Cook](../crafting/cook.md), [Healer](../magic/index.md)
-- **Synergy Classes:** [Alchemist](../crafting/alchemist.md), [Cook](../crafting/cook.md), [Hunter](./hunter.md)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Plant Resources](../../materials/index.md), [Seasonal Cycles](../../../systems/core/time-and-rest.md)
+- **Supplies:** [Alchemist](../crafting/alchemist/index.md), [Cook](../crafting/cook/index.md), [Healer](../magic/index.md)
+- **Synergy Classes:** [Alchemist](../crafting/alchemist/index.md), [Cook](../crafting/cook/index.md), [Hunter](./hunter/index.md)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Plant Resources](../../materials/index.md), [Seasonal Cycles](../../../systems/core/time-and-rest/index.md)

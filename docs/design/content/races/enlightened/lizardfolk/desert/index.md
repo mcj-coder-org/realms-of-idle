@@ -9,7 +9,7 @@ summary: 'Arid-adapted lizardfolk who thrive in extreme heat and have mastered e
 
 # Desert Lizardfolk
 
-> **Parent Race:** [Lizardfolk](base.md)
+> **Parent Race:** [Lizardfolk](base/index.md)
 
 ## Variant Overview
 
@@ -37,7 +37,7 @@ Desert Lizardfolk excel at magic that harnesses heat and light - channeling inte
 | Positive (○)  | Combat, Gathering, Physical/Endurance, Survival | Faster than baseline      |
 | Negative (×)  | Social, Knowledge/Academic                      | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -49,19 +49,19 @@ Desert Lizardfolk receive **3 random skills** from their racial skill pool at ch
 
 **Example Racial Skills:**
 
-| Skill                                               | Tags                           | Effect                                                |
-| --------------------------------------------------- | ------------------------------ | ----------------------------------------------------- |
-| [Scaly Hide](../../../skills/passive/scaly-hide.md) | Physical/Endurance, Nature     | +3 AC natural armor, 5% damage reduction              |
-| [Thick Skin](../../../skills/passive/thick-skin.md) | Physical/Endurance, Physical   | +2 AC natural armor, stacks with worn armor           |
-| [Heat Mastery](../../../skills/index.md)            | Physical/Endurance, Survival   | +40% heat tolerance, thrive in extreme temperatures   |
-| [Estivation](../../../skills/index.md)              | Nature, Physical/Endurance     | Enter dormant state, survive without water for months |
-| [Sun Basking](../../../skills/racial/index.md)      | Nature, Physical/Endurance     | Heal while basking in direct sunlight                 |
-| [Desert Strider](../../../skills/index.md)          | Nature, Survival               | No movement penalty in desert, find water sources     |
-| [Fire Resistance](../../../skills/index.md)         | Physical/Endurance, Magic/Fire | Resistance to fire damage and heat-based attacks      |
+| Skill                                                     | Tags                           | Effect                                                |
+| --------------------------------------------------------- | ------------------------------ | ----------------------------------------------------- |
+| [Scaly Hide](../../../skills/passive/scaly-hide/index.md) | Physical/Endurance, Nature     | +3 AC natural armor, 5% damage reduction              |
+| [Thick Skin](../../../skills/passive/thick-skin/index.md) | Physical/Endurance, Physical   | +2 AC natural armor, stacks with worn armor           |
+| [Heat Mastery](../../../skills/index.md)                  | Physical/Endurance, Survival   | +40% heat tolerance, thrive in extreme temperatures   |
+| [Estivation](../../../skills/index.md)                    | Nature, Physical/Endurance     | Enter dormant state, survive without water for months |
+| [Sun Basking](../../../skills/racial/index.md)            | Nature, Physical/Endurance     | Heal while basking in direct sunlight                 |
+| [Desert Strider](../../../skills/index.md)                | Nature, Survival               | No movement penalty in desert, find water sources     |
+| [Fire Resistance](../../../skills/index.md)               | Physical/Endurance, Magic/Fire | Resistance to fire damage and heat-based attacks      |
 
-**[Scaly Hide](../../../skills/passive/scaly-hide.md)**: Desert variant scales are particularly tough and reflective, providing +3 AC natural armor and 5% physical damage reduction. Their specialized scales also reflect intense sunlight, preventing overheating even in brutal desert conditions.
+**[Scaly Hide](../../../skills/passive/scaly-hide/index.md)**: Desert variant scales are particularly tough and reflective, providing +3 AC natural armor and 5% physical damage reduction. Their specialized scales also reflect intense sunlight, preventing overheating even in brutal desert conditions.
 
-**[Thick Skin](../../../skills/passive/thick-skin.md)**: Many desert lizardfolk develop especially heavy scaling as protection against sand, wind, and temperature extremes. This provides +2 additional AC, creating exceptionally well-armored individuals.
+**[Thick Skin](../../../skills/passive/thick-skin/index.md)**: Many desert lizardfolk develop especially heavy scaling as protection against sand, wind, and temperature extremes. This provides +2 additional AC, creating exceptionally well-armored individuals.
 
 **[Heat Mastery](../../../skills/index.md)**: Desert lizardfolk possess extreme heat tolerance (+40% beyond baseline lizardfolk), allowing them to function comfortably in temperatures that would incapacitate other races. They thrive where others merely survive, gaining energy from heat that kills warm-blooded creatures.
 
@@ -98,7 +98,7 @@ Desert lizardfolk maintain the astronomical traditions and ancestor worship of t
 
 **With Other Variants:** Desert Lizardfolk view swamp cousins as too dependent on abundant water - what happens when wetlands dry? Coastal variants seem practical but vulnerable to water availability. Jungle variants are barely comprehensible; why live where water falls from the sky so readily you barely value it?
 
-**With Other Races:** Desert Lizardfolk interact minimally with other races, finding even [humans](../humans.md) too hasty and [elves](../elves/base.md) insufficiently patient. Those who do travel to other regions find the abundant water almost disturbing - why do warm-blooded folk waste so much? Trade focuses on rare desert resources and fire-forged metalwork that only their extreme heat tolerance allows them to produce.
+**With Other Races:** Desert Lizardfolk interact minimally with other races, finding even [humans](../humans/index.md) too hasty and [elves](../elves/base/index.md) insufficiently patient. Those who do travel to other regions find the abundant water almost disturbing - why do warm-blooded folk waste so much? Trade focuses on rare desert resources and fire-forged metalwork that only their extreme heat tolerance allows them to produce.
 
 ## Recommended Classes
 

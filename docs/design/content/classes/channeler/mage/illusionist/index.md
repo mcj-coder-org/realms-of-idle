@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Illusion/Mind` | 3     | Illusionist, Mage (depth 2 only)       |
 | `Magic/Illusion`      | 2     | Illusionist, Mage, Illusion specialist |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Illusionist class:
 
 ### Interactions
 
-| System                                                 | Interaction                         |
-| ------------------------------------------------------ | ----------------------------------- |
-| [Magic System](../../../systems/magic/magic-system.md) | Illusion element specialization     |
-| [Combat](../../../systems/combat/combat-resolution.md) | Tactical deception and control      |
-| [Party](../../../systems/combat/party-mechanics.md)    | Deception specialist, scout support |
-| [Equipment](../../../systems/character/index.md)       | Mind-attuned magical items          |
+| System                                                       | Interaction                         |
+| ------------------------------------------------------------ | ----------------------------------- |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Illusion element specialization     |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Tactical deception and control      |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Deception specialist, scout support |
+| [Equipment](../../../systems/character/index.md)             | Mind-attuned magical items          |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Illusion Mastery](../../skills/tiered/illusion-mastery.md), [Mind Shield](../../skills/tiered/mind-shield.md)
-- **Spells:** [Mass Invisibility](../../spells/illusion/mass-invisibility.md), [Nightmare](../../spells/illusion/nightmare.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Illusion Mastery](../../skills/tiered/illusion-mastery/index.md), [Mind Shield](../../skills/tiered/mind-shield/index.md)
+- **Spells:** [Mass Invisibility](../../spells/illusion/mass-invisibility/index.md), [Nightmare](../../spells/illusion/nightmare/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

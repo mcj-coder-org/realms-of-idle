@@ -44,10 +44,10 @@ Coal is heavy and dirty, but essential. Without coal, smelting stops. Without sm
 
 ## Interactions
 
-| System                                                           | Interaction                      |
-| ---------------------------------------------------------------- | -------------------------------- |
-| [Smelting](../../../../systems/crafting/crafting-progression.md) | Required fuel for ore processing |
-| [Forging](../../../../systems/crafting/crafting-progression.md)  | Required heat source             |
+| System                                                                 | Interaction                      |
+| ---------------------------------------------------------------------- | -------------------------------- |
+| [Smelting](../../../../systems/crafting/crafting-progression/index.md) | Required fuel for ore processing |
+| [Forging](../../../../systems/crafting/crafting-progression/index.md)  | Required heat source             |
 
 ---
 

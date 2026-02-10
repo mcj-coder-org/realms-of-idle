@@ -63,8 +63,8 @@ Your body is extraordinarily dense - more muscle, heavier bones, and compact mas
 
 **Stacks with:**
 
-- [Steady Stance](steady-stance.md) - Combined stability effects
-- [Stout Constitution](stout-constitution.md) - Physical resilience synergy
+- [Steady Stance](steady-stance/index.md) - Combined stability effects
+- [Stout Constitution](stout-constitution/index.md) - Physical resilience synergy
 - Strength-based class bonuses
 
 **Trade-offs:**
@@ -75,6 +75,6 @@ Your body is extraordinarily dense - more muscle, heavier bones, and compact mas
 
 ## Related Content
 
-- [Steady Stance](steady-stance.md) - Knockback/knockdown resistance
-- [Stout Constitution](stout-constitution.md) - Health and resilience
-- [Massive Frame](massive-frame.md) - Larger size variation (Ogre/Troll)
+- [Steady Stance](steady-stance/index.md) - Knockback/knockdown resistance
+- [Stout Constitution](stout-constitution/index.md) - Health and resilience
+- [Massive Frame](massive-frame/index.md) - Larger size variation (Ogre/Troll)

@@ -41,7 +41,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Conjuration`           | 2     | Summoner, Mage, Conjuration specialist |
 | `Planes/Access`               | 2     | Summoner, Planar specialists           |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -135,18 +135,18 @@ Actions that grant XP to the Summoner class:
 
 ### Interactions
 
-| System                                                 | Interaction                           |
-| ------------------------------------------------------ | ------------------------------------- |
-| [Magic System](../../../systems/magic/magic-system.md) | Conjuration element specialization    |
-| [Combat](../../../systems/combat/combat-resolution.md) | Minion superiority and planar control |
-| [Party](../../../systems/combat/party-mechanics.md)    | Minion controller, ally supporter     |
-| [Equipment](../../../systems/character/index.md)       | Planar-attuned magical items          |
+| System                                                       | Interaction                           |
+| ------------------------------------------------------------ | ------------------------------------- |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Conjuration element specialization    |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Minion superiority and planar control |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Minion controller, ally supporter     |
+| [Equipment](../../../systems/character/index.md)             | Planar-attuned magical items          |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Summon Mastery](../../skills/tiered/summon-mastery.md), [Planar Binding](../../skills/tiered/planar-binding.md)
-- **Spells:** [Greater Summon](../../spells/conjuration/greater-summon.md), [Elemental Lord](../../spells/conjuration/elemental-lord.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Summon Mastery](../../skills/tiered/summon-mastery/index.md), [Planar Binding](../../skills/tiered/planar-binding/index.md)
+- **Spells:** [Greater Summon](../../spells/conjuration/greater-summon/index.md), [Elemental Lord](../../spells/conjuration/elemental-lord/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

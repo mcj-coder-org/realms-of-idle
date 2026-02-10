@@ -111,5 +111,5 @@ The enchantment has become so popular that "sharp as magic" has entered common p
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Whetstone dust](../../materials/reagents/index.md), [Air essence](../../materials/reagents/index.md)
 - **Applied To:** All bladed items - weapons, tools, implements (see Applicable Items table)
-- **See Also:** [Unbreaking](unbreaking.md), [Vorpal](vorpal.md), [Keen](keen.md)
+- **See Also:** [Unbreaking](unbreaking/index.md), [Vorpal](vorpal/index.md), [Keen](keen/index.md)
 - **Enchantment Type:** Enhancement (edge maintenance)

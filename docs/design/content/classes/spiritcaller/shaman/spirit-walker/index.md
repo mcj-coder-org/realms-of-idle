@@ -48,6 +48,6 @@ Spirit Walker is a terminal Tier 3 specialization. No further progression paths 
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Dream Bond](../../skills/tiered/dream-bond.md), [Vision Quest](../../skills/tiered/vision-quest.md)
-- **Spells:** [Dream Walk](../../spells/nature/dream-walk.md), [Spirit Journey](../../spells/nature/spirit-journey.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Dream Bond](../../skills/tiered/dream-bond/index.md), [Vision Quest](../../skills/tiered/vision-quest/index.md)
+- **Spells:** [Dream Walk](../../spells/nature/dream-walk/index.md), [Spirit Journey](../../spells/nature/spirit-journey/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

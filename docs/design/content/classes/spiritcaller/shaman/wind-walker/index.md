@@ -48,6 +48,6 @@ Wind Walker is a terminal Tier 3 specialization. No further progression paths av
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Wind Spirit Bond](../../skills/tiered/wind-spirit-bond.md), [Sky Step](../../skills/tiered/sky-step.md)
-- **Spells:** [Spirit Wind](../../spells/nature/spirit-wind.md), [Air Blessing](../../spells/nature/air-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Wind Spirit Bond](../../skills/tiered/wind-spirit-bond/index.md), [Sky Step](../../skills/tiered/sky-step/index.md)
+- **Spells:** [Spirit Wind](../../spells/nature/spirit-wind/index.md), [Air Blessing](../../spells/nature/air-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

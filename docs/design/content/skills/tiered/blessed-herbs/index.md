@@ -38,4 +38,4 @@ classes:
 ## Related Content
 
 - **Class:** [Healer](../../classes/consolidation/healer/)
-- **See Also:** [Herbalism](./herbalism.md)
+- **See Also:** [Herbalism](./herbalism/index.md)

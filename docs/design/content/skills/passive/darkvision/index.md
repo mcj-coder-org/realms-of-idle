@@ -60,6 +60,6 @@ Your eyes have adapted to see in darkness as clearly as others see in daylight. 
 
 ## Related Content
 
-- [Night Vision](../common/night-vision.md) - Lesser ability (low-light vision, not darkness)
-- [Keen Senses](../common/keen-senses.md) - Enhanced sensory perception
-- [Stone Sense](stone-sense.md) - Underground feature detection (Dwarven)
+- [Night Vision](../common/night-vision/index.md) - Lesser ability (low-light vision, not darkness)
+- [Keen Senses](../common/keen-senses/index.md) - Enhanced sensory perception
+- [Stone Sense](stone-sense/index.md) - Underground feature detection (Dwarven)

@@ -9,7 +9,7 @@ summary: 'Wetland-adapted goblins with poison resistance, masters of toxins and 
 
 # Swamp Goblin
 
-> **Parent Race:** [Goblins](base.md)
+> **Parent Race:** [Goblins](base/index.md)
 
 ## Variant Overview
 
@@ -68,7 +68,7 @@ They operate boats through channels too narrow and twisted for larger vessels, u
 
 **With Other Goblins:** Swamp Goblins respect Cave Goblins as fellow wilderness survivors but consider their purely defensive approach too passive. They view Urban Goblins with curiosity - impressed by their social skills but questioning whether integration is worth the compromises. Mountain Goblins earn respect for maintaining territorial positions, though Swamp Goblins consider mountains less defensible than wetlands.
 
-**With Other Races:** Swamp Goblins maintain cautious distance from most races. They trade with [humans](../../enlightened/humans.md) at settlement edges, offering rare swamp resources and anti-toxin expertise in exchange for metal goods and information. They avoid [dwarves](../../enlightened/dwarves.md) entirely - dwarves hate swamps and goblins equally. They treat [lizardfolk](../../enlightened/lizardfolk.md) as rivals for wetland territory, maintaining tense territorial boundaries.
+**With Other Races:** Swamp Goblins maintain cautious distance from most races. They trade with [humans](../../enlightened/humans/index.md) at settlement edges, offering rare swamp resources and anti-toxin expertise in exchange for metal goods and information. They avoid [dwarves](../../enlightened/dwarves/index.md) entirely - dwarves hate swamps and goblins equally. They treat [lizardfolk](../../enlightened/lizardfolk/index.md) as rivals for wetland territory, maintaining tense territorial boundaries.
 
 ## Shared Memory in the Swamp
 

@@ -9,7 +9,7 @@ summary: 'Dragon-serving kobolds who develop enhanced draconic affinities and fi
 
 # Dragonsworn Kobold
 
-> **Parent Race:** [Kobolds](base.md)
+> **Parent Race:** [Kobolds](base/index.md)
 
 ## Variant Overview
 
@@ -51,7 +51,7 @@ This enhancement proves invaluable in volcanic environments, fire-heavy combat, 
 
 ## Dragon Affinity
 
-Dragonsworn kobolds gain +15% effectiveness bonus to draconic and fire [magic](../../../systems/character/magic-system.md). Their proximity to dragons attunes their magical capabilities to draconic frequencies. This makes them surprisingly effective fire mages and enhances any magic with draconic themes - transformation magic, destructive spells, and enchantments that channel draconic power.
+Dragonsworn kobolds gain +15% effectiveness bonus to draconic and fire [magic](../../../systems/character/magic-system/index.md). Their proximity to dragons attunes their magical capabilities to draconic frequencies. This makes them surprisingly effective fire mages and enhances any magic with draconic themes - transformation magic, destructive spells, and enchantments that channel draconic power.
 
 Dragons also recognize dragonsworn kobolds as different from ordinary kobolds. Not quite equals - dragons rarely view anyone as equals - but as something slightly more interesting than common vermin. This recognition doesn't guarantee positive treatment, but it means dragons are more likely to actually notice and remember individual dragonsworn kobolds.
 
@@ -65,7 +65,7 @@ This produces extraordinary results but torments the creators. Dragonsworn kobol
 
 **With Other Kobolds:** Dragonsworn Kobolds occupy a position of respect, envy, and discomfort in kobold society. Every kobold dreams of dragon proximity, making dragonsworn both admired (they achieved it!) and pitied (look what it cost them). Mountain Kobolds view them as having achieved the ultimate kobold aspiration. Forest Kobolds find them unbearably intense. Urban Kobolds appreciate their expertise while finding their dragon obsession exhausting. Most kobolds are willing to consult dragonsworn on important matters but unwilling to spend extended time with them.
 
-**With Other Races:** Dragonsworn Kobolds maintain minimal relationships with non-kobolds unless those relationships somehow relate to dragons. [Humans](../humans.md) who've seen dragons, [dwarves](../dwarves/base.md) who've fought dragons, [elves](../elves/base.md) who remember ancient dragon treaties - these get dragonsworn attention. Others are mostly ignored unless they can provide dragon-related information or resources. This makes dragonsworn both valuable consultants on draconic matters and frustrating companions for anything else.
+**With Other Races:** Dragonsworn Kobolds maintain minimal relationships with non-kobolds unless those relationships somehow relate to dragons. [Humans](../humans/index.md) who've seen dragons, [dwarves](../dwarves/base/index.md) who've fought dragons, [elves](../elves/base/index.md) who remember ancient dragon treaties - these get dragonsworn attention. Others are mostly ignored unless they can provide dragon-related information or resources. This makes dragonsworn both valuable consultants on draconic matters and frustrating companions for anything else.
 
 ## Finding Dragons
 

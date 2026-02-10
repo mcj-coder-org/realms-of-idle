@@ -162,9 +162,9 @@ Not all cattle are domestic. In some remote regions, feral cattle herds roam, de
 
 ## Related Content
 
-- **Habitat:** [Farms](../../../../systems/world/settlements.md), [Pastures](../../../../systems/world/index.md), [Ranches](../../../../systems/world/index.md)
-- **Related Animals:** [Sheep](sheep.md), [Goat](goat.md), [Pig](pig.md)
+- **Habitat:** [Farms](../../../../systems/world/settlements/index.md), [Pastures](../../../../systems/world/index.md), [Ranches](../../../../systems/world/index.md)
+- **Related Animals:** [Sheep](sheep/index.md), [Goat](goat/index.md), [Pig](pig/index.md)
 - **Professions:** [Farmer](../../../classes/index.md), [Dairy Maid](../../../classes/index.md), [Butcher](../../../classes/index.md), [Tanner](../../../classes/index.md)
 - **Products:** [Cheese](../../items/index.md), [Butter](../../items/index.md), [Leather Armor](../../items/index.md), [Beef](../../items/index.md)
-- **Systems:** [Agriculture](../../../../systems/index.md), [Food Production](../../../../systems/index.md), [Economy](../../../../systems/economy/trade-and-pricing.md)
-- **See Also:** [Horse](../mounts/horse.md), [Chicken](../poultry/chicken.md), [Creature System](../../creature-system.md)
+- **Systems:** [Agriculture](../../../../systems/index.md), [Food Production](../../../../systems/index.md), [Economy](../../../../systems/economy/trade-and-pricing/index.md)
+- **See Also:** [Horse](../mounts/horse/index.md), [Chicken](../poultry/chicken/index.md), [Creature System](../../creature-system/index.md)

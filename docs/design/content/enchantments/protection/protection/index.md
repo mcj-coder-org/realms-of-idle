@@ -94,13 +94,13 @@ Wearing multiple Protection-enchanted items grants additional benefits:
 
 ### Interactions
 
-| System     | Interaction                                                           |
-| ---------- | --------------------------------------------------------------------- |
-| Combat     | Reduces all physical damage by percentage                             |
-| Durability | Items degrade slower with use                                         |
-| Comfort    | Reduces fatigue from wearing protective gear                          |
-| Weight     | Does not reduce weight (see [Featherfall](../utility/featherfall.md)) |
-| Magic      | Compatible with most other enchantments                               |
+| System     | Interaction                                                                 |
+| ---------- | --------------------------------------------------------------------------- |
+| Combat     | Reduces all physical damage by percentage                                   |
+| Durability | Items degrade slower with use                                               |
+| Comfort    | Reduces fatigue from wearing protective gear                                |
+| Weight     | Does not reduce weight (see [Featherfall](../utility/featherfall/index.md)) |
+| Magic      | Compatible with most other enchantments                                     |
 
 ---
 
@@ -108,5 +108,5 @@ Wearing multiple Protection-enchanted items grants additional benefits:
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Iron shavings](../../materials/metals/index.md), [Barrier dust](../../materials/reagents/index.md)
 - **Applied To:** All wearable protective items (see Applicable Items table)
-- **See Also:** [Resistance](resistance.md), [Fortification](fortification.md), [Shielding](shielding.md)
+- **See Also:** [Resistance](resistance/index.md), [Fortification](fortification/index.md), [Shielding](shielding/index.md)
 - **Enchantment Type:** Protection (defensive)

@@ -51,10 +51,10 @@ Different woods serve different purposes. Ash is flexible and resilient - perfec
 
 ## Interactions
 
-| System                                                            | Interaction                     |
-| ----------------------------------------------------------------- | ------------------------------- |
-| [Gathering](../../../../systems/crafting/gathering.md)            | Harvested from forests          |
-| [Carpentry](../../../../systems/crafting/crafting-progression.md) | Primary material for carpenters |
+| System                                                                  | Interaction                     |
+| ----------------------------------------------------------------------- | ------------------------------- |
+| [Gathering](../../../../systems/crafting/gathering/index.md)            | Harvested from forests          |
+| [Carpentry](../../../../systems/crafting/crafting-progression/index.md) | Primary material for carpenters |
 
 ---
 

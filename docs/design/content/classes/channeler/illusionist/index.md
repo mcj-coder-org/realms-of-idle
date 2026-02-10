@@ -41,7 +41,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Illusion/*` | 3     | Illusionist (full access to sub-tags) |
 | `Social/Deception` | 2     | Illusionist, Rogue, Trader            |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -111,11 +111,11 @@ Master Illusionists create illusions indistinguishable from reality through any 
 
 #### Starting Skills
 
-| Skill                                                      | Type    | Effect                                          |
-| ---------------------------------------------------------- | ------- | ----------------------------------------------- |
-| Basic Illusion                                             | Active  | Can create simple visual and auditory illusions |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser) | Passive | Enhanced illusion control and precision         |
-| [Mana Well](../../skills/tiered/mana-well.md) (Lesser)     | Passive | Expanded mana for sustaining illusions          |
+| Skill                                                            | Type    | Effect                                          |
+| ---------------------------------------------------------------- | ------- | ----------------------------------------------- |
+| Basic Illusion                                                   | Active  | Can create simple visual and auditory illusions |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser) | Passive | Enhanced illusion control and precision         |
+| [Mana Well](../../skills/tiered/mana-well/index.md) (Lesser)     | Passive | Expanded mana for sustaining illusions          |
 
 #### Synergy Skills
 
@@ -123,11 +123,11 @@ Skills that have strong synergies with Illusionist. These skills can be learned 
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving.md) - Lesser/Greater/Enhanced - Combine multiple spells
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving/index.md) - Lesser/Greater/Enhanced - Combine multiple spells
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
 
 **Core Illusion Skills**:
 
@@ -209,7 +209,7 @@ Actions that grant XP to the Illusionist class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                            | Requirements                                | Result Class          | Tier |
 | --------------------------------------------- | ------------------------------------------- | --------------------- | ---- |
@@ -220,14 +220,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                     | Interaction                                        |
-| ---------------------------------------------------------- | -------------------------------------------------- |
-| [Magic System](../../../systems/character/magic-system.md) | Uses illusion school of magic                      |
-| [Illusion](../../../systems/magic/index.md)                | Core illusion creation and perception manipulation |
-| [Combat](../../../systems/combat/combat-resolution.md)     | Tactical deception and misdirection                |
-| [Social](../../../systems/social/index.md)                 | Deception, disguise, and performance               |
-| [Stealth](../../../systems/combat/index.md)                | Invisibility and concealment                       |
-| [Economy](../../../systems/economy/index.md)               | Entertainment and illusion services                |
+| System                                                           | Interaction                                        |
+| ---------------------------------------------------------------- | -------------------------------------------------- |
+| [Magic System](../../../systems/character/magic-system/index.md) | Uses illusion school of magic                      |
+| [Illusion](../../../systems/magic/index.md)                      | Core illusion creation and perception manipulation |
+| [Combat](../../../systems/combat/combat-resolution/index.md)     | Tactical deception and misdirection                |
+| [Social](../../../systems/social/index.md)                       | Deception, disguise, and performance               |
+| [Stealth](../../../systems/combat/index.md)                      | Invisibility and concealment                       |
+| [Economy](../../../systems/economy/index.md)                     | Entertainment and illusion services                |
 
 ---
 
@@ -238,4 +238,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Prerequisite:** Often consolidates from [Mage](./mage/index.md) with illusion focus
 - **Synergy Classes:** [Mage](./mage/index.md), [Rogue](../../rogue/), [Enchanter](../enchanter/)
 - **Consolidates To:** [Grand Illusionist](../../consolidation/), [Trickster](../../consolidation/), [Reality Bender](../../consolidation/)
-- **See Also:** [Magic System](../../../systems/character/magic-system.md), [Illusion School](../../../systems/magic/), [Deception Mechanics](../../../systems/social/)
+- **See Also:** [Magic System](../../../systems/character/magic-system/index.md), [Illusion School](../../../systems/magic/), [Deception Mechanics](../../../systems/social/)

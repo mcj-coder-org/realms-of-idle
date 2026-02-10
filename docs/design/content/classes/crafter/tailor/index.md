@@ -81,10 +81,10 @@ The best tailors develop reputations that bring commissions from distant clients
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                                |
-| ------------------ | ------ | --------------------------------------------------------------- | -------------------------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding fabric quality is essential for tailoring  |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Precision sewing and pattern work requires concentration |
+| Skill              | Tier   | Link                                                                  | Reasoning                                                |
+| ------------------ | ------ | --------------------------------------------------------------------- | -------------------------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding fabric quality is essential for tailoring  |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Precision sewing and pattern work requires concentration |
 
 #### Synergy Skills
 
@@ -92,18 +92,18 @@ Skills with strong synergies for Tailor:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert repair capabilities
-- [Recipe Innovator](../../skills/passive-generator/recipe-innovator.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert repair capabilities
+- [Recipe Innovator](../../skills/passive-generator/recipe-innovator/index.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
 
 **Smithing Skills** (for armor):
 
-- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting.md) - Lesser/Greater/Enhanced - Custom-fit armor for maximum protection
+- [Armor Fitting](../../skills/mechanic-unlock/armor-fitting/index.md) - Lesser/Greater/Enhanced - Custom-fit armor for maximum protection
 
 **Tailoring Skills** (specialized skills to be defined):
 
@@ -177,7 +177,7 @@ Actions that grant XP to the Tailor class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                            | Requirements                                        | Result Class | Tier |
 | --------------------------------------------- | --------------------------------------------------- | ------------ | ---- |
@@ -189,15 +189,15 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                           | Interaction                                                                    |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Primary cloth crafting class; unlocks tailoring recipes                        |
-| [Economy](../../../systems/economy/index.md)                     | Can establish tailor shop; steady customer base                                |
-| [Social](../../../systems/social/index.md)                       | Well-dressed characters gain social bonuses                                    |
-| [Combat](../../../systems/combat/index.md)                       | Can craft padded armor and enchantable robes                                   |
-| [Enchanting](../../../systems/crafting/enchantment-mechanics.md) | Prepared garments accept enchantments more easily                              |
-| [Settlement](../../../systems/world/settlements.md)              | Tailor shops provide clothing production                                       |
-| [Gathering](../../../systems/crafting/gathering.md)              | Synergy: [Farmer](../gathering/index.md) + Tailor = efficient cloth production |
+| System                                                                 | Interaction                                                                    |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Primary cloth crafting class; unlocks tailoring recipes                        |
+| [Economy](../../../systems/economy/index.md)                           | Can establish tailor shop; steady customer base                                |
+| [Social](../../../systems/social/index.md)                             | Well-dressed characters gain social bonuses                                    |
+| [Combat](../../../systems/combat/index.md)                             | Can craft padded armor and enchantable robes                                   |
+| [Enchanting](../../../systems/crafting/enchantment-mechanics/index.md) | Prepared garments accept enchantments more easily                              |
+| [Settlement](../../../systems/world/settlements/index.md)              | Tailor shops provide clothing production                                       |
+| [Gathering](../../../systems/crafting/gathering/index.md)              | Synergy: [Farmer](../gathering/index.md) + Tailor = efficient cloth production |
 
 ---
 
@@ -208,7 +208,7 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Creates:** [Everyday Clothing](../../items/index.md), [Work Clothing](../../items/index.md), [Formal Wear](../../items/index.md), [Cloth Armor](../../items/index.md)
 - **Recipes:** [Tailoring Recipes](../../../systems/crafting/index.md)
 - **Synergy Classes:** [Farmer](../gathering/index.md), [Enchanter](../magic/index.md), [Merchant](../trade/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Social Interactions](../../../systems/social/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Social Interactions](../../../systems/social/index.md)
 
 ## Tags
 

@@ -22,18 +22,18 @@ Skills focused on universal crafting techniques applicable across all crafting s
 
 ### Tiered Skills
 
-- [Resource Efficiency](resource-efficiency.md) - Reduce material waste in crafting
-- [Rapid Crafting](rapid-crafting.md) - Faster crafting speed
-- [Masterwork Chance](masterwork-chance.md) - Increased chance to create exceptional items
+- [Resource Efficiency](resource-efficiency/index.md) - Reduce material waste in crafting
+- [Rapid Crafting](rapid-crafting/index.md) - Faster crafting speed
+- [Masterwork Chance](masterwork-chance/index.md) - Increased chance to create exceptional items
 
 ### Mechanic Unlocks
 
-- [Material Intuition](material-intuition.md) - Understand material properties
-- [Recipe Innovator](recipe-innovator.md) - Discover new recipes
-- [Repair Mastery](repair-mastery.md) - Superior item repair abilities
-- [Tool Bond](tool-bond.md) - Enhanced performance with personal tools
-- [Artisan's Focus](artisans-focus.md) - Deep concentration while crafting
-- [Signature Style](signature-style.md) - Develop recognizable crafting signature
+- [Material Intuition](material-intuition/index.md) - Understand material properties
+- [Recipe Innovator](recipe-innovator/index.md) - Discover new recipes
+- [Repair Mastery](repair-mastery/index.md) - Superior item repair abilities
+- [Tool Bond](tool-bond/index.md) - Enhanced performance with personal tools
+- [Artisan's Focus](artisans-focus/index.md) - Deep concentration while crafting
+- [Signature Style](signature-style/index.md) - Develop recognizable crafting signature
 
 ## Acquisition
 
@@ -43,4 +43,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

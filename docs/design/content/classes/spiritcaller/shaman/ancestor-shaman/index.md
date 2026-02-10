@@ -48,6 +48,6 @@ Ancestor Shaman is a terminal Tier 3 specialization. No further progression path
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Ancestor Bond](../../skills/tiered/ancestor-bond.md), [Death Wisdom](../../skills/tiered/death-wisdom.md)
-- **Spells:** [Ancestral Call](../../spells/nature/ancestral-call.md), [Spirit Ward](../../spells/nature/spirit-ward.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Ancestor Bond](../../skills/tiered/ancestor-bond/index.md), [Death Wisdom](../../skills/tiered/death-wisdom/index.md)
+- **Spells:** [Ancestral Call](../../spells/nature/ancestral-call/index.md), [Spirit Ward](../../spells/nature/spirit-ward/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

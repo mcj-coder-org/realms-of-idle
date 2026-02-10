@@ -41,4 +41,4 @@ Binary unlock - returns based on secret value and target's resources. Risks rema
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/), [Spy](../../classes/rogue/spy/)
-- **See Also:** [Misdirection](../tiered/misdirection.md), [Dark Path Classes](../../systems/character/class-progression.md)
+- **See Also:** [Misdirection](../tiered/misdirection/index.md), [Dark Path Classes](../../systems/character/class-progression/index.md)

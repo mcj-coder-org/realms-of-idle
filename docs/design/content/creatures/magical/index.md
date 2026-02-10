@@ -32,4 +32,4 @@ Higher difficulty than wildlife. Often require specific strategies or resistance
 
 ## Full Details
 
-See [Creature System](../creature-system.md) for complete creature mechanics.
+See [Creature System](../creature-system/index.md) for complete creature mechanics.

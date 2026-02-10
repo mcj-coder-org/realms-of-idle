@@ -41,4 +41,4 @@ Skills improve continuously with accumulated XP. More XP = better effectiveness,
 ## Related Content
 
 - **Strong Synergy:** [Leader](../../classes/leader/), [Chieftain](../../classes/leader/chieftain/), [Guildmaster](../../classes/leader/guildmaster/)
-- **See Also:** [Inspiring Leader](inspiring-leader.md), [Leadership System](../../systems/settlement/leadership.md), [Leadership Skills](../index.md)
+- **See Also:** [Inspiring Leader](inspiring-leader/index.md), [Leadership System](../../systems/settlement/leadership/index.md), [Leadership Skills](../index.md)

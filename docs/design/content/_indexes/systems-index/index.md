@@ -31,13 +31,13 @@ This index maps game systems to their documentation and related content.
 
 ### Crafting Systems
 
-| System              | Documentation                                          | Related Content                        | Tags                   |
-| ------------------- | ------------------------------------------------------ | -------------------------------------- | ---------------------- |
-| **Crafting System** | [Crafting](../../systems/crafting/)                    | Recipes, Materials, Stations           | `Crafting/*`           |
-| **Recipe System**   | (TODO: System documentation pending)                   | All recipes                            | `Recipe/*`             |
-| **Quality System**  | (TODO: System documentation pending)                   | Item quality tiers                     | `Crafting/Quality`     |
-| **Station System**  | [Tags Index](tags-index.md#stations)                   | Crafting stations, tag-based access    | `Crafting/*/Stations`  |
-| **Workshop System** | [Tags Index](tags-index.md#workshop-and-station-model) | Workshop buildings, multiclass support | See settlement systems |
+| System              | Documentation                                                | Related Content                        | Tags                   |
+| ------------------- | ------------------------------------------------------------ | -------------------------------------- | ---------------------- |
+| **Crafting System** | [Crafting](../../systems/crafting/)                          | Recipes, Materials, Stations           | `Crafting/*`           |
+| **Recipe System**   | (TODO: System documentation pending)                         | All recipes                            | `Recipe/*`             |
+| **Quality System**  | (TODO: System documentation pending)                         | Item quality tiers                     | `Crafting/Quality`     |
+| **Station System**  | [Tags Index](tags-index/index.md#stations)                   | Crafting stations, tag-based access    | `Crafting/*/Stations`  |
+| **Workshop System** | [Tags Index](tags-index/index.md#workshop-and-station-model) | Workshop buildings, multiclass support | See settlement systems |
 
 ### Economic Systems
 
@@ -64,12 +64,12 @@ This index maps game systems to their documentation and related content.
 
 ### Settlement Systems
 
-| System                | Documentation                                          | Related Content                        | Tags                    |
-| --------------------- | ------------------------------------------------------ | -------------------------------------- | ----------------------- |
-| **Settlement System** | (TODO: System documentation pending)                   | Buildings, Population                  | `Settlement/*`          |
-| **Building System**   | (TODO: System documentation pending)                   | Workshops, Homes                       | `Settlement/Building`   |
-| **Workshop System**   | [Tags Index](tags-index.md#workshop-and-station-model) | Workshop buildings, multiclass support | See settlement systems  |
-| **Population System** | (TODO: System documentation pending)                   | NPCs, Families                         | `Settlement/Population` |
+| System                | Documentation                                                | Related Content                        | Tags                    |
+| --------------------- | ------------------------------------------------------------ | -------------------------------------- | ----------------------- |
+| **Settlement System** | (TODO: System documentation pending)                         | Buildings, Population                  | `Settlement/*`          |
+| **Building System**   | (TODO: System documentation pending)                         | Workshops, Homes                       | `Settlement/Building`   |
+| **Workshop System**   | [Tags Index](tags-index/index.md#workshop-and-station-model) | Workshop buildings, multiclass support | See settlement systems  |
+| **Population System** | (TODO: System documentation pending)                         | NPCs, Families                         | `Settlement/Population` |
 
 ### NPC Systems
 

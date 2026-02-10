@@ -81,25 +81,25 @@ Successful Adventurers develop their own styles. Some focus on dungeon delving, 
 
 Skills automatically awarded when accepting this class:
 
-| Skill          | Tier   | Link                                               | Reasoning                                         |
-| -------------- | ------ | -------------------------------------------------- | ------------------------------------------------- |
-| Quick Reflexes | Lesser | [See Skill](../../skills/common/quick-reflexes.md) | Survival and adaptability in dangerous situations |
+| Skill          | Tier   | Link                                                     | Reasoning                                         |
+| -------------- | ------ | -------------------------------------------------------- | ------------------------------------------------- |
+| Quick Reflexes | Lesser | [See Skill](../../skills/common/quick-reflexes/index.md) | Survival and adaptability in dangerous situations |
 
 #### Synergy Skills
 
 Skills with strong synergies for Adventurer:
 
-- [Danger Sense](../../skills/common/danger-sense.md) - Lesser/Greater/Enhanced - Detect traps and ambushes with increasing awareness
+- [Danger Sense](../../skills/common/danger-sense/index.md) - Lesser/Greater/Enhanced - Detect traps and ambushes with increasing awareness
 - [Versatile Fighter](../../skills/index.md) - Lesser/Greater/Enhanced - Use any weapon with reduced penalty
 - [Wilderness Survival](../../skills/common/index.md) - Lesser/Greater/Enhanced - Survive and thrive in outdoor environments
-- [Quick Reflexes](../../skills/common/quick-reflexes.md) - Lesser/Greater/Enhanced - Increased dodge and initiative
+- [Quick Reflexes](../../skills/common/quick-reflexes/index.md) - Lesser/Greater/Enhanced - Increased dodge and initiative
 - [Improvisation](../../skills/index.md) - Lesser/Greater/Enhanced - Use improvised tools and weapons effectively
 - [Trap Detection](../../skills/index.md) - Lesser/Greater/Enhanced - Spot traps from common to magical
 - [Resource Management](../../skills/index.md) - Lesser/Greater/Enhanced - Make supplies last longer
 - [Monster Lore](../../skills/index.md) - Lesser/Greater/Enhanced - Know creature weaknesses
 - [Lucky](../../skills/index.md) - Lesser/Greater/Enhanced - Chance to avoid death or disaster
-- [Climber](../../skills/common/climber.md) - Lesser/Greater/Enhanced - Climb various surface types
-- [Swimmer](../../skills/common/swimmer.md) - Lesser/Greater/Enhanced - Swim in different water conditions
+- [Climber](../../skills/common/climber/index.md) - Lesser/Greater/Enhanced - Climb various surface types
+- [Swimmer](../../skills/common/swimmer/index.md) - Lesser/Greater/Enhanced - Swim in different water conditions
 - [Party Leader](../../skills/index.md) - Lesser/Greater/Enhanced - Lead party with increased effectiveness
 - [Dungeon Delver](../../skills/index.md) - Lesser/Greater/Enhanced - Enhanced performance in enclosed areas
 - [Adaptable](../../skills/index.md) - Lesser/Greater/Enhanced - Switch combat styles without penalty
@@ -158,26 +158,26 @@ Actions that grant XP to the Adventurer class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                             | Requirements                                                                        | Result Class      | Tier |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------- | ---- |
-| [Ranger](../consolidation/index.md)            | Adventurer + [Hunter](../gathering/hunter.md) or [Forager](../gathering/forager.md) | Ranger            | 1    |
-| [Dungeon Delver](../consolidation/index.md)    | Adventurer + [Miner](../gathering/miner.md)                                         | Dungeon Delver    | 1    |
-| [Monster Hunter](../consolidation/index.md)    | Adventurer + monster focus                                                          | Monster Hunter    | 1    |
-| [Explorer](../consolidation/index.md)          | Adventurer + [Scout](./scout.md)                                                    | Explorer          | 1    |
-| [Expedition Leader](../consolidation/index.md) | Multiple exploration-related classes                                                | Expedition Leader | 2    |
+| Consolidation Path                             | Requirements                                                                                    | Result Class      | Tier |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------- | ---- |
+| [Ranger](../consolidation/index.md)            | Adventurer + [Hunter](../gathering/hunter/index.md) or [Forager](../gathering/forager/index.md) | Ranger            | 1    |
+| [Dungeon Delver](../consolidation/index.md)    | Adventurer + [Miner](../gathering/miner/index.md)                                               | Dungeon Delver    | 1    |
+| [Monster Hunter](../consolidation/index.md)    | Adventurer + monster focus                                                                      | Monster Hunter    | 1    |
+| [Explorer](../consolidation/index.md)          | Adventurer + [Scout](./scout/index.md)                                                          | Explorer          | 1    |
+| [Expedition Leader](../consolidation/index.md) | Multiple exploration-related classes                                                            | Expedition Leader | 2    |
 
 ### Interactions
 
-| System                                                    | Interaction                                    |
-| --------------------------------------------------------- | ---------------------------------------------- |
-| [Exploration](../../../systems/world/exploration.md)      | Primary exploration class; discovers new areas |
-| [Combat](../../../systems/combat/combat-resolution.md)    | Versatile fighter; adapts to situations        |
-| [Survival](../../../systems/world/environment-hazards.md) | Handles environmental challenges effectively   |
-| [Party](../../../systems/combat/party-mechanics.md)       | Flexible role; fills gaps in party composition |
-| [Economy](../../../systems/economy/index.md)              | Earns through treasure, quest rewards          |
-| [Settlement](../../../systems/world/settlements.md)       | Brings news of distant places, unique goods    |
+| System                                                          | Interaction                                    |
+| --------------------------------------------------------------- | ---------------------------------------------- |
+| [Exploration](../../../systems/world/exploration/index.md)      | Primary exploration class; discovers new areas |
+| [Combat](../../../systems/combat/combat-resolution/index.md)    | Versatile fighter; adapts to situations        |
+| [Survival](../../../systems/world/environment-hazards/index.md) | Handles environmental challenges effectively   |
+| [Party](../../../systems/combat/party-mechanics/index.md)       | Flexible role; fills gaps in party composition |
+| [Economy](../../../systems/economy/index.md)                    | Earns through treasure, quest rewards          |
+| [Settlement](../../../systems/world/settlements/index.md)       | Brings news of distant places, unique goods    |
 
 ---
 
@@ -185,6 +185,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Adventuring gear (rope, torches, rations, etc.)
 - **Equipment:** [Adventuring Gear](../../items/index.md), [Weapons](../../items/index.md), [Armor](../../items/index.md)
-- **Synergy Classes:** [Scout](./scout.md), [Hunter](../gathering/hunter.md), [Miner](../gathering/miner.md)
+- **Synergy Classes:** [Scout](./scout/index.md), [Hunter](../gathering/hunter/index.md), [Miner](../gathering/miner/index.md)
 - **Consolidates To:** [Ranger](../consolidation/index.md), [Monster Hunter](../consolidation/index.md), [Explorer](../consolidation/index.md)
-- **See Also:** [Exploration System](../../../systems/world/exploration.md), [Hazards](../../../systems/world/environment-hazards.md), [Dungeon Delving](../../../systems/world/index.md)
+- **See Also:** [Exploration System](../../../systems/world/exploration/index.md), [Hazards](../../../systems/world/environment-hazards/index.md), [Dungeon Delving](../../../systems/world/index.md)

@@ -15,11 +15,11 @@ summary: Channel spirit energy to heal wounds and cure ailments
 
 ## Overview
 
-| Attribute | Value                                      |
-| --------- | ------------------------------------------ |
-| Type      | Tiered (Lesser/Greater/Enhanced)           |
-| Pool      | [Shamanic Pool](../pools/shamanic-pool.md) |
-| Tags      | `Shamanic/Nature`, `Shamanic/Spirit`       |
+| Attribute | Value                                            |
+| --------- | ------------------------------------------------ |
+| Type      | Tiered (Lesser/Greater/Enhanced)                 |
+| Pool      | [Shamanic Pool](../pools/shamanic-pool/index.md) |
+| Tags      | `Shamanic/Nature`, `Shamanic/Spirit`             |
 
 ## Description
 
@@ -45,4 +45,4 @@ Spirit Healing channels the power of nature and ancestral spirits to mend wounds
 
 - **Class:** [Shaman](../../classes/spiritcaller/shaman/)
 - **Class:** [Ancestor Shaman](../../classes/spiritcaller/shaman/ancestor-shaman/)
-- **See Also:** [Heal](../../spells/restoration/heal.md) (mage equivalent)
+- **See Also:** [Heal](../../spells/restoration/heal/index.md) (mage equivalent)

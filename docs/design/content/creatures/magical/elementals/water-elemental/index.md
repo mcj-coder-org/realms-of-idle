@@ -135,8 +135,8 @@ Those who work with water elementals professionally - mages, alchemists, artific
 ## Related Content
 
 - **Habitat:** Rivers, Lakes, Oceans, Sacred Springs
-- **Summoners:** Water Mages, Elementalists, [Healers](../../../classes/magic/healer.md)
-- **Counterparts:** [Fire Elemental](fire-elemental.md), [Earth Elemental](earth-elemental.md), [Air Elemental](air-elemental.md)
-- **Magic:** [Water Magic](../../../../systems/character/magic-system.md), [Restoration Magic](../../../../systems/character/magic-system.md)
+- **Summoners:** Water Mages, Elementalists, [Healers](../../../classes/magic/healer/index.md)
+- **Counterparts:** [Fire Elemental](fire-elemental/index.md), [Earth Elemental](earth-elemental/index.md), [Air Elemental](air-elemental/index.md)
+- **Magic:** [Water Magic](../../../../systems/character/magic-system/index.md), [Restoration Magic](../../../../systems/character/magic-system/index.md)
 - **Used By:** Water of Life, Healing Potion, Purification Draught
-- **See Also:** Elemental Plane, [Summoning Magic](../../../../systems/character/magic-system.md), [Creature System](../../creature-system.md)
+- **See Also:** Elemental Plane, [Summoning Magic](../../../../systems/character/magic-system/index.md), [Creature System](../../creature-system/index.md)

@@ -57,4 +57,4 @@ Create a magical barrier around yourself that absorbs incoming damage.
 
 - **Granted By:** [Mage](../../classes/channeler/mage/), [Battlemage](../../classes/channeler/mage/battlemage/)
 - **School:** [Abjuration](../index.md)
-- **See Also:** [Flame Shield](flame-shield.md), [Water Shield](water-shield.md), [Stone Wall](stone-wall.md)
+- **See Also:** [Flame Shield](flame-shield/index.md), [Water Shield](water-shield/index.md), [Stone Wall](stone-wall/index.md)

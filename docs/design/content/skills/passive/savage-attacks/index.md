@@ -100,7 +100,7 @@ Savage Attacks: 3d8 + STR modifier
 
 - High critical hit chance abilities
 - Two-handed weapon mastery
-- [Weapon Mastery](../tiered/weapon-mastery.md) - Improved crit range
+- [Weapon Mastery](../tiered/weapon-mastery/index.md) - Improved crit range
 - Berserker/Barbarian rage effects
 
 **Stacks with:**
@@ -115,7 +115,7 @@ Savage Attacks: 3d8 + STR modifier
 
 ## Related Content
 
-- [Power Attack](../common/power-attack.md) - Trade accuracy for damage
-- [Weapon Mastery](../tiered/weapon-mastery.md) - Weapon proficiency
-- [Relentless Endurance](relentless-endurance.md) - Survive to keep fighting (Orc)
-- [Battle Rage](../cooldown/battle-rage.md) - Temporary combat boost
+- [Power Attack](../common/power-attack/index.md) - Trade accuracy for damage
+- [Weapon Mastery](../tiered/weapon-mastery/index.md) - Weapon proficiency
+- [Relentless Endurance](relentless-endurance/index.md) - Survive to keep fighting (Orc)
+- [Battle Rage](../cooldown/battle-rage/index.md) - Temporary combat boost

@@ -41,4 +41,4 @@ Binary unlock - quality of information based on relationship with ancestors.
 ## Related Content
 
 - **Strong Synergy:** [Shaman](../../classes/channeler/shaman/)
-- **See Also:** [Shamanic Magic](../../systems/magic/shamanic.md), [Tribal Knowledge](../../systems/shamanic/tribal-knowledge.md)
+- **See Also:** [Shamanic Magic](../../systems/magic/shamanic/index.md), [Tribal Knowledge](../../systems/shamanic/tribal-knowledge/index.md)

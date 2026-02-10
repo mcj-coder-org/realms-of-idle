@@ -20,13 +20,13 @@ Abjuration magic creates shields, wards areas, and counters hostile magic.
 
 ## Spells
 
-| Spell               | Category   | Tier | Effect                     |
-| ------------------- | ---------- | ---- | -------------------------- |
-| [Shield](shield.md) | Shielding  | All  | Personal damage barrier    |
-| Ward                | Warding    | All  | Protect an area            |
-| Dispel              | Dispelling | All  | Remove magical effects     |
-| Resist Elements     | Resistance | All  | Elemental damage reduction |
-| Magic Barrier       | Shielding  | All  | Block spells               |
+| Spell                     | Category   | Tier | Effect                     |
+| ------------------------- | ---------- | ---- | -------------------------- |
+| [Shield](shield/index.md) | Shielding  | All  | Personal damage barrier    |
+| Ward                      | Warding    | All  | Protect an area            |
+| Dispel                    | Dispelling | All  | Remove magical effects     |
+| Resist Elements           | Resistance | All  | Elemental damage reduction |
+| Magic Barrier             | Shielding  | All  | Block spells               |
 
 ## Specialization
 

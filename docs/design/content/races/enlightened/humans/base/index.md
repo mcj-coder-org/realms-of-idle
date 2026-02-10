@@ -24,9 +24,9 @@ Walk through any market town and you'll see humanity's diversity on full display
 
 Humans form the backbone of most settlements, from tiny farming hamlets to sprawling cities. They're the farmers whose fields feed nations, the merchants whose caravans connect cultures, the soldiers who garrison walls, the crafters who supply daily needs. Not always the best at any particular skill - an elf will outshoot most human archers, a dwarf will outforge most human smiths - but humans make up for specialization with sheer determination and numbers.
 
-Other races often find humans simultaneously frustrating and fascinating. "They rush everywhere," complains an [elven](../elves.md) sage, "never stopping to truly understand." "But they get things done," admits a [dwarven](../dwarves.md) smith, "and some of their 'crazy ideas' actually work." To [tribal races](../../monstrous/index.md), humans represent both opportunity and threat - potential trading partners or encroaching settlers, depending on the tribe's experience.
+Other races often find humans simultaneously frustrating and fascinating. "They rush everywhere," complains an [elven](../elves/index.md) sage, "never stopping to truly understand." "But they get things done," admits a [dwarven](../dwarves/index.md) smith, "and some of their 'crazy ideas' actually work." To [tribal races](../../monstrous/index.md), humans represent both opportunity and threat - potential trading partners or encroaching settlers, depending on the tribe's experience.
 
-Human settlements welcome most races (well, the enlightened ones at least), making them natural hubs for cross-cultural interaction. The same human town might host a [dwarven](../dwarves.md) smith, an [elven](../elves.md) [mage](../../../classes/magic/index.md) advisor, a [gnoll](../../monstrous/index.md) trading party, and a [kobold](../../kobolds.md) tinker - all doing business in the market square. This openness comes partly from pragmatism - humans need allies - and partly from curiosity. Humans want to know how things work, including people different from themselves.
+Human settlements welcome most races (well, the enlightened ones at least), making them natural hubs for cross-cultural interaction. The same human town might host a [dwarven](../dwarves/index.md) smith, an [elven](../elves/index.md) [mage](../../../classes/magic/index.md) advisor, a [gnoll](../../monstrous/index.md) trading party, and a [kobold](../../kobolds/index.md) tinker - all doing business in the market square. This openness comes partly from pragmatism - humans need allies - and partly from curiosity. Humans want to know how things work, including people different from themselves.
 
 ---
 
@@ -66,7 +66,7 @@ Humans have universal adaptability with no racial affinities or aversions:
 | ------------- | ---------------- | ------------------------------------- |
 | Universal     | None (adaptable) | No bonuses or penalties to any skills |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -76,22 +76,22 @@ Humans receive **3 random skills** from the entire skill library at character cr
 
 **Example Racial Skills:**
 
-| Skill                                                             | Tags                 | Effect                                    |
-| ----------------------------------------------------------------- | -------------------- | ----------------------------------------- |
-| [Ambidexterity](../../../skills/mechanic-unlock/ambidexterity.md) | Physical, Combat     | Use both hands equally well               |
-| [Iron Will](../../../skills/mechanic-unlock/iron-will.md)         | Universal/Mental     | Enhanced resistance to mental effects     |
-| [Danger Sense](../../../skills/common/danger-sense.md)            | Physical, Universal  | Intuitive warning of threats              |
-| [Quick Learner](../../../skills/common/quick-learner.md)          | Universal, Knowledge | +10% XP gain for new skills               |
-| [Inspiring Leader](../../../skills/tiered/inspiring-leader.md)    | Leadership, Social   | Boost ally morale and effectiveness       |
-| [Adaptable](../../../skills/index.md)                             | Universal, Physical  | +50% faster environmental acclimatization |
+| Skill                                                                   | Tags                 | Effect                                    |
+| ----------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
+| [Ambidexterity](../../../skills/mechanic-unlock/ambidexterity/index.md) | Physical, Combat     | Use both hands equally well               |
+| [Iron Will](../../../skills/mechanic-unlock/iron-will/index.md)         | Universal/Mental     | Enhanced resistance to mental effects     |
+| [Danger Sense](../../../skills/common/danger-sense/index.md)            | Physical, Universal  | Intuitive warning of threats              |
+| [Quick Learner](../../../skills/common/quick-learner/index.md)          | Universal, Knowledge | +10% XP gain for new skills               |
+| [Inspiring Leader](../../../skills/tiered/inspiring-leader/index.md)    | Leadership, Social   | Boost ally morale and effectiveness       |
+| [Adaptable](../../../skills/index.md)                                   | Universal, Physical  | +50% faster environmental acclimatization |
 
-**Versatile**: Humans can learn any [class](../../../classes/index.md), any [skill](../../../content/skills/index.md), any technique without penalty. Where an [elf](../elves.md) struggles with brutish melee or a [dwarf](../dwarves.md) wrestles with complex spellcasting, humans simply... do it. This doesn't make them instantly great, but it means no path is closed to them.
+**Versatile**: Humans can learn any [class](../../../classes/index.md), any [skill](../../../content/skills/index.md), any technique without penalty. Where an [elf](../elves/index.md) struggles with brutish melee or a [dwarf](../dwarves/index.md) wrestles with complex spellcasting, humans simply... do it. This doesn't make them instantly great, but it means no path is closed to them.
 
 **Universal Skill Access**: Unlike other races with restricted racial skill pools, humans draw their 3 starting racial skills from the entire skill library. This reflects human adaptability - one human might get physical combat skills, another magical abilities, a third social talents. No two humans start identically.
 
 **Ambitious**: The same drive that pushes humans to explore and innovate translates to faster learning. They gain [experience](../../../systems/character/index.md) 5% faster than baseline, compounding over a lifetime into significant growth.
 
-**Diplomatic**: Humans have a knack for getting along - or at least, for finding common ground. They start with slightly better [relations](../../../systems/social/factions-reputation.md) (+5%) with all races, making that crucial first impression just a bit easier.
+**Diplomatic**: Humans have a knack for getting along - or at least, for finding common ground. They start with slightly better [relations](../../../systems/social/factions-reputation/index.md) (+5%) with all races, making that crucial first impression just a bit easier.
 
 ### Interactions
 
@@ -120,10 +120,10 @@ Humans receive **3 random skills** from the entire skill library at character cr
 ## Related Content
 
 - **Classes**: [All classes](../../../classes/index.md) available without restriction
-- **Magic**: [Magic System](../../../systems/character/magic-system.md)
-- **Settlement**: [Settlements](../../../systems/world/settlements.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Elves](../elves.md), [Dwarves](../dwarves.md), [Lizardfolk](../lizardfolk.md), [Kobolds](../kobolds.md), [Race Comparison](../../races-and-tribes.md)
+- **Magic**: [Magic System](../../../systems/character/magic-system/index.md)
+- **Settlement**: [Settlements](../../../systems/world/settlements/index.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Elves](../elves/index.md), [Dwarves](../dwarves/index.md), [Lizardfolk](../lizardfolk/index.md), [Kobolds](../kobolds/index.md), [Race Comparison](../../races-and-tribes/index.md)
 
 ---
 
@@ -145,4 +145,4 @@ Human settlements balance innovation and tradition awkwardly. Grandmothers insis
 
 Other races define themselves partly in relation to humans. "Humans are impatient, we are patient." "Humans are brief, we are eternal." "Humans are adaptable, we are specialized." Being the reference point gives humans a strange position - simultaneously ordinary (no special powers) and special (the universal standard).
 
-This makes humans natural diplomats and mediators. When an [elf](../elves.md) and a [dwarf](../dwarves.md) can't agree, they'll both accept a human arbitrator. When a [gnoll](../../monstrous/index.md) tribe negotiates with a [settlement](../../../systems/world/settlements.md), a human representative bridges the gap. Not because humans are wiser or fairer, but because they're neutral ground.
+This makes humans natural diplomats and mediators. When an [elf](../elves/index.md) and a [dwarf](../dwarves/index.md) can't agree, they'll both accept a human arbitrator. When a [gnoll](../../monstrous/index.md) tribe negotiates with a [settlement](../../../systems/world/settlements/index.md), a human representative bridges the gap. Not because humans are wiser or fairer, but because they're neutral ground.

@@ -12,7 +12,7 @@ summary: 'Shambling corpses animated by necromancy, slower but more resilient th
 
 ### Origin
 
-Zombies represent necromancy's most visceral horror - not clean bones but rotting flesh, lurching corpses still bearing the faces they wore in life. Created through [Necromancy](../../../systems/magic/index.md) similar to [Skeletons](skeleton.md), zombies use more recently deceased bodies, animated before decomposition reduces them to bones. This makes them both more disturbing and, paradoxically, more durable than their skeletal counterparts.
+Zombies represent necromancy's most visceral horror - not clean bones but rotting flesh, lurching corpses still bearing the faces they wore in life. Created through [Necromancy](../../../systems/magic/index.md) similar to [Skeletons](skeleton/index.md), zombies use more recently deceased bodies, animated before decomposition reduces them to bones. This makes them both more disturbing and, paradoxically, more durable than their skeletal counterparts.
 
 The desecration inherent in zombie creation multiplies the ethical horror of skeleton animation. These were people who died recently, perhaps still mourned by loved ones. Their features remain recognizable - a farmer's weathered hands, a merchant's distinctive nose, a soldier's battle scars. Worse, some viewers report seeing recognition in zombie eyes, suggesting fragments of consciousness trapped within animated flesh. Whether this is true or psychological projection remains debated, but encountering a zombified friend or relative ranks among adventuring's worst experiences.
 
@@ -259,9 +259,9 @@ Small groups (3-5 zombies) are manageable. Hordes (10+) become exponentially mor
 ## Related Content
 
 - **Habitat:** [Crypts](../../../../systems/world/index.md), [Plague Sites](../../../../systems/world/index.md), [Swamps](../../../../systems/world/index.md), [Cursed Villages](../../../../systems/world/index.md)
-- **Related Creatures:** [Skeleton](skeleton.md), [Ghost](ghost.md), [Ghoul](index.md), [Plague Rat](index.md)
+- **Related Creatures:** [Skeleton](skeleton/index.md), [Ghost](ghost/index.md), [Ghoul](index.md), [Plague Rat](index.md)
 - **Associated NPCs:** [Necromancer](../../classes/index.md), [Cleric](../../classes/index.md), [Plague Doctor](../../classes/index.md)
 - **Items:** [Holy Water](../../../items/index.md), [Cure Disease](../../../items/index.md), [Fire Oil](../../../items/index.md)
 - **Quests:** [Zombie Outbreak](../../../../systems/world/index.md), [Find the Cure](../../../../systems/world/index.md), [Cleanse the Graveyard](../../../../systems/world/index.md)
 - **Systems:** [Necromancy Magic](../../../../systems/magic/index.md), [Disease System](../../../../systems/index.md), [Mass Combat](../../../../systems/index.md)
-- **See Also:** [Undead Creatures](index.md), [Skeleton](skeleton.md), [Creature System](../../creature-system.md)
+- **See Also:** [Undead Creatures](index.md), [Skeleton](skeleton/index.md), [Creature System](../../creature-system/index.md)

@@ -36,4 +36,4 @@ Lead trade expeditions.
 ## Related Content
 
 - **Strong Synergy:** [Caravaner](../../classes/trader/caravaner/)
-- **See Also:** [Trade System](../../systems/economy/trade-system.md), [Travel Mechanics](../../systems/world/travel.md)
+- **See Also:** [Trade System](../../systems/economy/trade-system/index.md), [Travel Mechanics](../../systems/world/travel/index.md)

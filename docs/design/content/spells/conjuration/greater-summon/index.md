@@ -71,4 +71,4 @@ Summon powerful planar entities from other dimensions to aid you in battle with 
 
 - **Granted By:** [Summoner](../../classes/channeler/summoner/)
 - **School:** [Conjuration](../index.md)
-- **See Also:** [Elemental Lord](elemental-lord.md)
+- **See Also:** [Elemental Lord](elemental-lord/index.md)

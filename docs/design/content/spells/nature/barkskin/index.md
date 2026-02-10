@@ -45,11 +45,11 @@ Transform skin into tough bark-like material, providing natural armor.
 
 ## Innate Users
 
-| Creature                                      | Notes           |
-| --------------------------------------------- | --------------- |
-| [Dryad](../../creatures/magical/fey/dryad.md) | Natural defense |
-| Treant                                        | Very high armor |
-| Spriggan                                      | Moderate armor  |
+| Creature                                            | Notes           |
+| --------------------------------------------------- | --------------- |
+| [Dryad](../../creatures/magical/fey/dryad/index.md) | Natural defense |
+| Treant                                              | Very high armor |
+| Spriggan                                            | Moderate armor  |
 
 ## Acquisition
 
@@ -63,7 +63,7 @@ Transform skin into tough bark-like material, providing natural armor.
 
 - **Granted By:** [Shaman](../../classes/spiritcaller/shaman/)
 - **School:** [Nature](../index.md)
-- **See Also:** [Entangle](entangle.md), [Earth Blessing](earth-blessing.md)
+- **See Also:** [Entangle](entangle/index.md), [Earth Blessing](earth-blessing/index.md)
 
 ## Notes
 

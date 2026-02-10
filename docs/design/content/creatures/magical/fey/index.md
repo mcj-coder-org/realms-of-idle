@@ -47,11 +47,11 @@ All fey share certain fundamental traits:
 
 ## Fey Categories
 
-| Creature            | Level | Nature          | Danger Level | Interaction   |
-| ------------------- | ----- | --------------- | ------------ | ------------- |
-| [Sprite](sprite.md) | 2-5   | Nature's joy    | Low          | Shy, helpful  |
-| [Pixie](pixie.md)   | 4-8   | Chaos incarnate | Moderate     | Unpredictable |
-| [Dryad](dryad.md)   | 15-25 | Tree guardians  | High         | Test worthy   |
+| Creature                  | Level | Nature          | Danger Level | Interaction   |
+| ------------------------- | ----- | --------------- | ------------ | ------------- |
+| [Sprite](sprite/index.md) | 2-5   | Nature's joy    | Low          | Shy, helpful  |
+| [Pixie](pixie/index.md)   | 4-8   | Chaos incarnate | Moderate     | Unpredictable |
+| [Dryad](dryad/index.md)   | 15-25 | Tree guardians  | High         | Test worthy   |
 
 ## Fey Courts and Hierarchies
 
@@ -374,5 +374,5 @@ Yes, fey-mortal relationships exist:
 
 - **[Elemental Creatures](../elementals/index.md)** - Other magical beings
 - **[Wildlife](../../wildlife/index.md)** - Natural creatures
-- **[Creature System](../../creature-system.md)** - Complete mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete mechanics
 - **[Magic System](../../../systems/magic/index.md)** - Magical rules

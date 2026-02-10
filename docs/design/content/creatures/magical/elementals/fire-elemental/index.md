@@ -58,15 +58,15 @@ Alchemists and enchanters prize components harvested from dissipated fire elemen
 
 ### Combat
 
-| Property       | Value                                                                               |
-| -------------- | ----------------------------------------------------------------------------------- |
-| Damage         | High (fire damage, ignites targets)                                                 |
-| Defense        | Moderate (immune to fire, weak to water/ice)                                        |
-| Primary Attack | [Fire Touch](../../../spells/destruction/fire-touch.md) (melee, sets things ablaze) |
-| Ranged Attack  | Flame bolt (medium range)                                                           |
-| Area Effect    | Aura of heat (damages nearby enemies)                                               |
-| Ignition       | Non-magical objects may catch fire                                                  |
-| Retreat        | Dissipates when health drops to 20%                                                 |
+| Property       | Value                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| Damage         | High (fire damage, ignites targets)                                                       |
+| Defense        | Moderate (immune to fire, weak to water/ice)                                              |
+| Primary Attack | [Fire Touch](../../../spells/destruction/fire-touch/index.md) (melee, sets things ablaze) |
+| Ranged Attack  | Flame bolt (medium range)                                                                 |
+| Area Effect    | Aura of heat (damages nearby enemies)                                                     |
+| Ignition       | Non-magical objects may catch fire                                                        |
+| Retreat        | Dissipates when health drops to 20%                                                       |
 
 ### Elemental Properties
 
@@ -134,7 +134,7 @@ Alchemists and enchanters prize components harvested from dissipated fire elemen
 ## Related Content
 
 - **Habitat:** Volcanic Regions, Hot Springs, Ancient Forges
-- **Counterparts:** [Water Elemental](water-elemental.md), [Earth Elemental](earth-elemental.md), [Air Elemental](air-elemental.md)
-- **Innate Abilities:** [Fire Touch](../../../spells/destruction/fire-touch.md)
+- **Counterparts:** [Water Elemental](water-elemental/index.md), [Earth Elemental](earth-elemental/index.md), [Air Elemental](air-elemental/index.md)
+- **Innate Abilities:** [Fire Touch](../../../spells/destruction/fire-touch/index.md)
 - **Materials:** [Elemental Essence](../../../materials/creature/magical/elemental-essence/index.md)
-- **See Also:** [Fireball](../../../spells/destruction/fireball.md)
+- **See Also:** [Fireball](../../../spells/destruction/fireball/index.md)

@@ -67,4 +67,4 @@ Classes with strong synergies: Thief, Assassin, Smuggler
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/), [Smuggler](../../classes/rogue/smuggler/)
-- **See Also:** [Stealth](stealth.md), [Deception](deception.md), [Stealth Skills](../index.md)
+- **See Also:** [Stealth](stealth/index.md), [Deception](deception/index.md), [Stealth Skills](../index.md)

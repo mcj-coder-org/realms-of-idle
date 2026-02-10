@@ -101,7 +101,7 @@ The same biological trait that limits spellcasting ability also provides protect
 
 ## Related Content
 
-- [Iron Will](../mechanic-unlock/iron-will.md) - Mental fortitude and resistance
-- [Counter Magic](../tiered/counter-magic.md) - Active spell disruption
-- [Spell Focus](../tiered/spell-focus.md) - Overcome target resistances
-- [Magic System](../../../systems/character/magic-system.md) - Spellcasting mechanics
+- [Iron Will](../mechanic-unlock/iron-will/index.md) - Mental fortitude and resistance
+- [Counter Magic](../tiered/counter-magic/index.md) - Active spell disruption
+- [Spell Focus](../tiered/spell-focus/index.md) - Overcome target resistances
+- [Magic System](../../../systems/character/magic-system/index.md) - Spellcasting mechanics

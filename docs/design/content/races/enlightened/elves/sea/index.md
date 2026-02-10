@@ -9,7 +9,7 @@ summary: 'Coastal and oceanic elves who adapted to life on and beneath the waves
 
 # Sea Elf
 
-> **Parent Race:** [Elves](base.md)
+> **Parent Race:** [Elves](base/index.md)
 
 ## Variant Overview
 
@@ -35,7 +35,7 @@ Sea Elves excel at water manipulation and conjuration magic that summons or tran
 | Positive (○)  | Physical/Agility, Social/Persuasion, Gathering/Fishing | Faster than baseline      |
 | Negative (×)  | Physical/Endurance, Crafting/Smithing                  | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -47,14 +47,14 @@ Sea Elves receive **3 random skills** from their racial skill pool at character 
 
 **Example Racial Skills:**
 
-| Skill                                                 | Tags                     | Effect                                               |
-| ----------------------------------------------------- | ------------------------ | ---------------------------------------------------- |
-| [Aquatic Adaptation](../../../skills/index.md)        | Nature/Water, Physical   | Water breathing, enhanced swimming speed             |
-| [Elven Grace](../../../skills/passive/elven-grace.md) | Physical/Agility, Social | +10% movement, enhanced agility on land and in water |
-| [Hydromancy Affinity](../../../skills/index.md)       | Magic, Nature/Water      | +15% water magic effectiveness and control           |
-| [Pressure Resistance](../../../skills/index.md)       | Physical, Nature/Water   | Resist deep water pressure, dive to extreme depths   |
-| [Keen Senses](../../../skills/common/keen-senses.md)  | Physical, Knowledge      | Enhanced perception underwater and in mist           |
-| [Sailor's Intuition](../../../skills/index.md)        | Nature/Water, Knowledge  | Predict weather, navigate by stars, read currents    |
+| Skill                                                       | Tags                     | Effect                                               |
+| ----------------------------------------------------------- | ------------------------ | ---------------------------------------------------- |
+| [Aquatic Adaptation](../../../skills/index.md)              | Nature/Water, Physical   | Water breathing, enhanced swimming speed             |
+| [Elven Grace](../../../skills/passive/elven-grace/index.md) | Physical/Agility, Social | +10% movement, enhanced agility on land and in water |
+| [Hydromancy Affinity](../../../skills/index.md)             | Magic, Nature/Water      | +15% water magic effectiveness and control           |
+| [Pressure Resistance](../../../skills/index.md)             | Physical, Nature/Water   | Resist deep water pressure, dive to extreme depths   |
+| [Keen Senses](../../../skills/common/keen-senses/index.md)  | Physical, Knowledge      | Enhanced perception underwater and in mist           |
+| [Sailor's Intuition](../../../skills/index.md)              | Nature/Water, Knowledge  | Predict weather, navigate by stars, read currents    |
 
 ## Special Traits
 
@@ -79,7 +79,7 @@ Sea elves are legendary navigators, maintaining charts that track not just curre
 
 **With Other Elves:** Sea Elves maintain friendly but distant relationships with other elven variants. High elves view them with mild puzzlement - all that time in water seems wasteful - but respect their magical achievements. Wood elves see sea elves as kindred spirits, both adapted to specific environments. Dusk elves and sea elves rarely interact but share the experience of being considered "different" by mainstream elven society.
 
-**With Other Races:** Sea Elves work extensively with coastal [humans](../humans.md), forming trading partnerships and teaching maritime skills. Island-dwelling [humans](../humans.md) often have multi-generational relationships with sea elf families. [Dwarves](../dwarves/base.md) rarely interact with sea elves - dwarven discomfort with open water and sea elven aquatic nature don't mix well. Coastal [tribal races](../../monstrous/index.md) are sometimes trading partners, sometimes territorial competitors for fishing grounds.
+**With Other Races:** Sea Elves work extensively with coastal [humans](../humans/index.md), forming trading partnerships and teaching maritime skills. Island-dwelling [humans](../humans/index.md) often have multi-generational relationships with sea elf families. [Dwarves](../dwarves/base/index.md) rarely interact with sea elves - dwarven discomfort with open water and sea elven aquatic nature don't mix well. Coastal [tribal races](../../monstrous/index.md) are sometimes trading partners, sometimes territorial competitors for fishing grounds.
 
 ## Recommended Classes
 

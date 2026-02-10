@@ -58,10 +58,10 @@ The Gatherers' Guild teaches the fundamentals that all resource collection share
 
 Skills automatically awarded when accepting this class:
 
-| Skill        | Type            | Link                                                       | Description                       |
-| ------------ | --------------- | ---------------------------------------------------------- | --------------------------------- |
-| Basic Tools  | Mechanic Unlock | [Basic Tools](../../skills/mechanic-unlock/basic-tools.md) | Access to basic gathering tools   |
-| Resource Eye | Passive         | [Gatherer's Eye](../../skills/common/gatherers-eye.md)     | +5% chance to spot resource nodes |
+| Skill        | Type            | Link                                                             | Description                       |
+| ------------ | --------------- | ---------------------------------------------------------------- | --------------------------------- |
+| Basic Tools  | Mechanic Unlock | [Basic Tools](../../skills/mechanic-unlock/basic-tools/index.md) | Access to basic gathering tools   |
+| Resource Eye | Passive         | [Gatherer's Eye](../../skills/common/gatherers-eye/index.md)     | +5% chance to spot resource nodes |
 
 ### XP Progression
 
@@ -87,15 +87,15 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 Gatherer can transition to the following Tier 2 classes upon reaching 5,000 XP:
 
-| Tier 2 Class | Focus                       | Link                                     |
-| ------------ | --------------------------- | ---------------------------------------- |
-| Miner        | Ore and mineral extraction  | [Miner](../gathering/miner.md)           |
-| Forager      | Wild plant gathering        | [Forager](../gathering/forager.md)       |
-| Hunter       | Animal tracking and hunting | [Hunter](../gathering/hunter.md)         |
-| Lumberjack   | Tree harvesting             | [Lumberjack](../gathering/lumberjack.md) |
-| Fisher       | Aquatic resources           | [Fisher](../gathering/fisher.md)         |
-| Farmer       | Crop cultivation            | [Farmer](../gathering/farmer.md)         |
-| Herbalist    | Medicinal plants            | [Herbalist](../gathering/herbalist.md)   |
+| Tier 2 Class | Focus                       | Link                                           |
+| ------------ | --------------------------- | ---------------------------------------------- |
+| Miner        | Ore and mineral extraction  | [Miner](../gathering/miner/index.md)           |
+| Forager      | Wild plant gathering        | [Forager](../gathering/forager/index.md)       |
+| Hunter       | Animal tracking and hunting | [Hunter](../gathering/hunter/index.md)         |
+| Lumberjack   | Tree harvesting             | [Lumberjack](../gathering/lumberjack/index.md) |
+| Fisher       | Aquatic resources           | [Fisher](../gathering/fisher/index.md)         |
+| Farmer       | Crop cultivation            | [Farmer](../gathering/farmer/index.md)         |
+| Herbalist    | Medicinal plants            | [Herbalist](../gathering/herbalist/index.md)   |
 
 ### Tag Access
 
@@ -121,6 +121,6 @@ As a Tier 1 class, Gatherer has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers.md)
-- **Gathering System:** [Resource Gathering](../../../systems/world/resource-gathering.md)
+- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
+- **Gathering System:** [Resource Gathering](../../../systems/world/resource-gathering/index.md)
 - **See Also:** [Gathering Classes Index](../gathering/index.md)

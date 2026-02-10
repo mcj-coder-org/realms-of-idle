@@ -64,4 +64,4 @@ Summon a devastating storm of lightning that strikes all targets within the area
 
 - **Granted By:** [Electromancer](../../classes/channeler/mage/electromancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Lightning Bolt](lightning-bolt.md), [Lightning Shield](lightning-shield.md), [Fireball](fireball.md), [Blizzard](blizzard.md)
+- **See Also:** [Lightning Bolt](lightning-bolt/index.md), [Lightning Shield](lightning-shield/index.md), [Fireball](fireball/index.md), [Blizzard](blizzard/index.md)

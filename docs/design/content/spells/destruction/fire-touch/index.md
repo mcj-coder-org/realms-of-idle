@@ -30,10 +30,10 @@ Ignite targets through physical contact, dealing fire damage.
 
 ## Innate Users
 
-| Creature                                                               | Notes          |
-| ---------------------------------------------------------------------- | -------------- |
-| [Fire Elemental](../../creatures/magical/elementals/fire-elemental.md) | Primary attack |
-| Flame Sprite                                                           | Lesser damage  |
+| Creature                                                                     | Notes          |
+| ---------------------------------------------------------------------------- | -------------- |
+| [Fire Elemental](../../creatures/magical/elementals/fire-elemental/index.md) | Primary attack |
+| Flame Sprite                                                                 | Lesser damage  |
 
 ## Notes
 
@@ -44,5 +44,5 @@ Ignite targets through physical contact, dealing fire damage.
 
 ## Related Content
 
-- **Innate To:** [Fire Elemental](../../creatures/magical/elementals/fire-elemental.md), Flame Sprite
-- **See Also:** [Destruction Spells](../index.md), [Fire Magic](../../systems/magic/fire-magic.md), [Creature Abilities](../../systems/creatures/abilities.md)
+- **Innate To:** [Fire Elemental](../../creatures/magical/elementals/fire-elemental/index.md), Flame Sprite
+- **See Also:** [Destruction Spells](../index.md), [Fire Magic](../../systems/magic/fire-magic/index.md), [Creature Abilities](../../systems/creatures/abilities/index.md)

@@ -54,10 +54,10 @@ The Fighter's Guild accepts all who seek to learn the art of combat. They don't 
 
 Skills automatically awarded when accepting this class:
 
-| Skill         | Type            | Link                                                           | Description                                    |
-| ------------- | --------------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| Combat Stance | Mechanic Unlock | [Combat Stance](../../skills/mechanic-unlock/combat-stance.md) | Access to basic combat stances and positioning |
-| Basic Strike  | Passive         | [Power Strike](../../skills/common/power-strike.md)            | +5% damage with all weapons                    |
+| Skill         | Type            | Link                                                                 | Description                                    |
+| ------------- | --------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
+| Combat Stance | Mechanic Unlock | [Combat Stance](../../skills/mechanic-unlock/combat-stance/index.md) | Access to basic combat stances and positioning |
+| Basic Strike  | Passive         | [Power Strike](../../skills/common/power-strike/index.md)            | +5% damage with all weapons                    |
 
 ### XP Progression
 
@@ -83,13 +83,13 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 Fighter can transition to the following Tier 2 classes upon reaching 5,000 XP:
 
-| Tier 2 Class | Focus                           | Link                                  |
-| ------------ | ------------------------------- | ------------------------------------- |
-| Warrior      | Melee combat and weapon mastery | [Warrior](../combat/warrior.md)       |
-| Archer       | Ranged combat and precision     | [Archer](../combat/archer.md)         |
-| Scout        | Reconnaissance and skirmishing  | [Scout](../combat/scout.md)           |
-| Guard        | Defense and protection          | [Guard](../combat/guard.md)           |
-| Adventurer   | Generalist combat and survival  | [Adventurer](../combat/adventurer.md) |
+| Tier 2 Class | Focus                           | Link                                        |
+| ------------ | ------------------------------- | ------------------------------------------- |
+| Warrior      | Melee combat and weapon mastery | [Warrior](../combat/warrior/index.md)       |
+| Archer       | Ranged combat and precision     | [Archer](../combat/archer/index.md)         |
+| Scout        | Reconnaissance and skirmishing  | [Scout](../combat/scout/index.md)           |
+| Guard        | Defense and protection          | [Guard](../combat/guard/index.md)           |
+| Adventurer   | Generalist combat and survival  | [Adventurer](../combat/adventurer/index.md) |
 
 ### Tag Access
 
@@ -113,6 +113,6 @@ As a Tier 1 class, Fighter has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers.md)
-- **Combat System:** [Combat Resolution](../../../systems/combat/combat-resolution.md)
+- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
+- **Combat System:** [Combat Resolution](../../../systems/combat/combat-resolution/index.md)
 - **See Also:** [Combat Classes Index](../combat/index.md)

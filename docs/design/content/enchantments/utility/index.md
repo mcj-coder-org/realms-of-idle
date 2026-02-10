@@ -10,15 +10,15 @@ Enchantments focused on quality-of-life improvements - expanding storage, reduci
 
 ## Available Enchantments
 
-| Enchantment                     | Tier       | Summary                                             | Cost Range  |
-| ------------------------------- | ---------- | --------------------------------------------------- | ----------- |
-| [Featherfall](featherfall.md)   | Apprentice | Weight reduction and fall damage protection         | 30-12000c   |
-| [Holding](holding.md)           | Journeyman | Dimensional storage expansion (3x-500x capacity)    | 200-50000c  |
-| [Preservation](preservation.md) | Journeyman | Time slowdown for container contents                | 250-35000c  |
-| [Weightless](weightless.md)     | Journeyman | Gravity reduction for carried items                 | 300-40000c  |
-| [Sorting](sorting.md)           | Master     | Intelligent auto-organization with mental retrieval | 800-120000c |
-| [Swift Step](swift-step.md)     | Apprentice | Movement speed increase and fatigue reduction       | 25-6000c    |
-| [Deep Pockets](deep-pockets.md) | Journeyman | Pocket dimension expansion in clothing              | 200-40000c  |
+| Enchantment                           | Tier       | Summary                                             | Cost Range  |
+| ------------------------------------- | ---------- | --------------------------------------------------- | ----------- |
+| [Featherfall](featherfall/index.md)   | Apprentice | Weight reduction and fall damage protection         | 30-12000c   |
+| [Holding](holding/index.md)           | Journeyman | Dimensional storage expansion (3x-500x capacity)    | 200-50000c  |
+| [Preservation](preservation/index.md) | Journeyman | Time slowdown for container contents                | 250-35000c  |
+| [Weightless](weightless/index.md)     | Journeyman | Gravity reduction for carried items                 | 300-40000c  |
+| [Sorting](sorting/index.md)           | Master     | Intelligent auto-organization with mental retrieval | 800-120000c |
+| [Swift Step](swift-step/index.md)     | Apprentice | Movement speed increase and fatigue reduction       | 25-6000c    |
+| [Deep Pockets](deep-pockets/index.md) | Journeyman | Pocket dimension expansion in clothing              | 200-40000c  |
 
 ## Category Overview
 

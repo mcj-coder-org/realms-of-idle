@@ -48,6 +48,6 @@ Flame Keeper is a terminal Tier 3 specialization. No further progression paths a
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Fire Spirit Bond](../../skills/tiered/fire-spirit-bond.md), [Sacred Flame](../../skills/tiered/sacred-flame.md)
-- **Spells:** [Spirit Fire](../../spells/nature/spirit-fire.md), [Flame Blessing](../../spells/nature/flame-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Fire Spirit Bond](../../skills/tiered/fire-spirit-bond/index.md), [Sacred Flame](../../skills/tiered/sacred-flame/index.md)
+- **Spells:** [Spirit Fire](../../spells/nature/spirit-fire/index.md), [Flame Blessing](../../spells/nature/flame-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

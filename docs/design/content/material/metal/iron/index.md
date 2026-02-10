@@ -51,11 +51,11 @@ Iron requires higher temperatures than copper to smelt and forge, meaning coal f
 
 ## Interactions
 
-| System                                                           | Interaction                                    |
-| ---------------------------------------------------------------- | ---------------------------------------------- |
-| [Gathering](../../../../systems/crafting/gathering.md)           | Mined from deep nodes by experienced miners    |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Primary material for apprentice-level crafting |
-| [Economy](../../../../systems/economy/index.md)                  | Standard value, most common trade metal        |
+| System                                                                 | Interaction                                    |
+| ---------------------------------------------------------------------- | ---------------------------------------------- |
+| [Gathering](../../../../systems/crafting/gathering/index.md)           | Mined from deep nodes by experienced miners    |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Primary material for apprentice-level crafting |
+| [Economy](../../../../systems/economy/index.md)                        | Standard value, most common trade metal        |
 
 ---
 

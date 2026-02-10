@@ -8,7 +8,7 @@ summary: 'Cunning coordinators with shared tribal memory who thrive as intermedi
 
 # Goblins
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ Traditional goblins living in abandoned mines and cave systems, representing the
 
 **Key Features:** Enhanced darkvision, mining specialization, traditional lifestyle
 
-**[Learn More →](cave.md)**
+**[Learn More →](cave/index.md)**
 
 ### Swamp Goblin
 
@@ -28,7 +28,7 @@ Wetland-adapted goblins who excel at poison-making and ambush tactics. They use 
 
 **Key Features:** +20% poison resistance, poison-making expertise, ambush tactics
 
-**[Learn More →](swamp.md)**
+**[Learn More →](swamp/index.md)**
 
 ### Urban Goblin
 
@@ -36,7 +36,7 @@ City-dwelling goblins who've most successfully integrated with settled society, 
 
 **Key Features:** +15% social skills, information brokering, urban adaptation
 
-**[Learn More →](urban.md)**
+**[Learn More →](urban/index.md)**
 
 ### Mountain Goblin
 
@@ -44,7 +44,7 @@ High-altitude specialists who serve as guides and scouts, maintaining surprising
 
 **Key Features:** +15% climbing, mountain navigation, guide services
 
-**[Learn More →](mountain.md)**
+**[Learn More →](mountain/index.md)**
 
 ---
 
@@ -153,8 +153,8 @@ Goblins have **unrestricted access to all classes** with affinity to rogue and t
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
 - **[Gnolls](../gnolls/)**: Fellow outcast tribal race
 - **[Orcs](../orcs/)**: Another marginalized tribal society
 - **[Kobolds](../../enlightened/kobolds/)**: Small race with different adaptation strategies
-- **[Race Comparison](../../races-and-tribes.md)**: How goblins compare to other races
+- **[Race Comparison](../../races-and-tribes/index.md)**: How goblins compare to other races

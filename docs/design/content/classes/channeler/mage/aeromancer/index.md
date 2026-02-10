@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Air` | 3     | Aeromancer, Mage (depth 2 only) |
 | `Magic/Elemental`     | 2     | Aeromancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Aeromancer class:
 
 ### Interactions
 
-| System                                                 | Interaction                           |
-| ------------------------------------------------------ | ------------------------------------- |
-| [Magic System](../../../systems/magic/magic-system.md) | Air element specialization            |
-| [Combat](../../../systems/combat/combat-resolution.md) | Ranged damage and mobility control    |
-| [Party](../../../systems/combat/party-mechanics.md)    | Striker specialist, mobility provider |
-| [Equipment](../../../systems/character/index.md)       | Air-attuned magical items             |
+| System                                                       | Interaction                           |
+| ------------------------------------------------------------ | ------------------------------------- |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Air element specialization            |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Ranged damage and mobility control    |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Striker specialist, mobility provider |
+| [Equipment](../../../systems/character/index.md)             | Air-attuned magical items             |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Wind Mastery](../../skills/tiered/wind-mastery.md), [Levitation](../../skills/tiered/levitation.md)
-- **Spells:** [Hurricane](../../spells/transmutation/hurricane.md), [Wind Walk](../../spells/transmutation/wind-walk.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Wind Mastery](../../skills/tiered/wind-mastery/index.md), [Levitation](../../skills/tiered/levitation/index.md)
+- **Spells:** [Hurricane](../../spells/transmutation/hurricane/index.md), [Wind Walk](../../spells/transmutation/wind-walk/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

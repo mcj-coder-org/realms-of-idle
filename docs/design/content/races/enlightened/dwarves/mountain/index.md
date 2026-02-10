@@ -9,7 +9,7 @@ summary: 'Traditional dwarves of the high peaks, masters of weapons and armor, a
 
 # Mountain Dwarf
 
-> **Parent Race:** [Dwarves](base.md)
+> **Parent Race:** [Dwarves](base/index.md)
 
 ## Variant Overview
 
@@ -45,7 +45,7 @@ They're the least likely dwarves to venture to the surface, and when they do, th
 
 **With Other Dwarves:** Mountain Dwarves see themselves as the standard by which all dwarves should be measured. They respect Hill Dwarves but consider them "softened" by surface contact. Deep Dwarves puzzle them - too isolated and strange. Forge Dwarves earn grudging respect for their smithing prowess, though mountain dwarves question some of their innovative techniques.
 
-**With Other Races:** Mountain Dwarves maintain the most formal and distant relationships with non-dwarves. They trade extensively - everyone wants mountain dwarf weapons - but keep surface folk at arm's length. They respect [humans](../humans.md) who honor contracts and show martial skill, tolerate [elves](../elves.md) while finding their magic-focus distasteful, and remain wary of [tribal races](../../monstrous/index.md) as potential threats to their holds.
+**With Other Races:** Mountain Dwarves maintain the most formal and distant relationships with non-dwarves. They trade extensively - everyone wants mountain dwarf weapons - but keep surface folk at arm's length. They respect [humans](../humans/index.md) who honor contracts and show martial skill, tolerate [elves](../elves/index.md) while finding their magic-focus distasteful, and remain wary of [tribal races](../../monstrous/index.md) as potential threats to their holds.
 
 ## Recommended Classes
 

@@ -57,4 +57,4 @@ Each tier typically provides:
 
 ## Related Content
 
-- **See Also:** [Spells Index](./index.md), [Spell Schools](./), [Magic System](../systems/magic/index.md), [Character Progression](../systems/character/class-progression.md)
+- **See Also:** [Spells Index](./index.md), [Spell Schools](./), [Magic System](../systems/magic/index.md), [Character Progression](../systems/character/class-progression/index.md)

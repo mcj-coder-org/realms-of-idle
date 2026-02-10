@@ -74,17 +74,17 @@ Wolf pelts command high prices in town markets. The thick winter coat makes supe
 
 ### Harvestables
 
-| Resource   | Uses                             | Yield         | Skill Required                                                    |
-| ---------- | -------------------------------- | ------------- | ----------------------------------------------------------------- |
-| Wolf Meat  | Food (tough, needs slow cooking) | 6-10 portions | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Wolf Pelt  | Leather (warm cloaks, trim)      | 1 large hide  | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Wolf Fur   | Insulation (premium winter wear) | 1-2 bundles   | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
-| Wolf Claws | Crafting (weapon decoration)     | 20 claws      | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Wolf Teeth | Crafting (jewelry, trophies)     | 42 teeth      | [Field Harvest](../../../skills/mechanic-unlock/field-harvest.md) |
-| Wolf Bones | Crafting (weapon handles, tools) | 1 large set   | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Wolf Heart | Alchemy (courage potions)        | 1             | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Wolf Eyes  | Alchemy (night vision draughts)  | 2             | [Butchering](../../../skills/mechanic-unlock/butchering.md)       |
-| Alpha Pelt | Premium (alpha only, +50% value) | 1 superior    | [Skinning](../../../skills/mechanic-unlock/skinning.md)           |
+| Resource   | Uses                             | Yield         | Skill Required                                                          |
+| ---------- | -------------------------------- | ------------- | ----------------------------------------------------------------------- |
+| Wolf Meat  | Food (tough, needs slow cooking) | 6-10 portions | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Wolf Pelt  | Leather (warm cloaks, trim)      | 1 large hide  | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Wolf Fur   | Insulation (premium winter wear) | 1-2 bundles   | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
+| Wolf Claws | Crafting (weapon decoration)     | 20 claws      | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Wolf Teeth | Crafting (jewelry, trophies)     | 42 teeth      | [Field Harvest](../../../skills/mechanic-unlock/field-harvest/index.md) |
+| Wolf Bones | Crafting (weapon handles, tools) | 1 large set   | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Wolf Heart | Alchemy (courage potions)        | 1             | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Wolf Eyes  | Alchemy (night vision draughts)  | 2             | [Butchering](../../../skills/mechanic-unlock/butchering/index.md)       |
+| Alpha Pelt | Premium (alpha only, +50% value) | 1 superior    | [Skinning](../../../skills/mechanic-unlock/skinning/index.md)           |
 
 ### Taming
 
@@ -139,7 +139,7 @@ Wolf pelts command high prices in town markets. The thick winter coat makes supe
 ## Related Content
 
 - **Habitat:** Forests, Mountains, Tundra
-- **Prey:** [Rabbit](../docile/rabbit.md), [Deer](../docile/deer.md)
+- **Prey:** [Rabbit](../docile/rabbit/index.md), [Deer](../docile/deer/index.md)
 - **Materials:** [Wolf Pelt](../../../materials/creature/pelts/wolf-pelt/index.md), [Wolf Heart](../../../materials/creature/organs/hearts/index.md), [Wolf Fangs](../../../materials/creature/parts/fangs-and-teeth/index.md)
-- **Used By:** [Wolf Cloak](../../../recipes/leatherworking/creature-gear.md), [Courage Potion](../../../recipes/alchemy/creature-reagents/courage-potion/index.md), [Wolf Tooth Necklace](../../../recipes/crafting/creature-trophies/wolf-tooth-necklace/)
-- **See Also:** [Bear](bear.md), [Mountain Lion](mountain-lion.md)
+- **Used By:** [Wolf Cloak](../../../recipes/leatherworking/creature-gear/index.md), [Courage Potion](../../../recipes/alchemy/creature-reagents/courage-potion/index.md), [Wolf Tooth Necklace](../../../recipes/crafting/creature-trophies/wolf-tooth-necklace/)
+- **See Also:** [Bear](bear/index.md), [Mountain Lion](mountain-lion/index.md)

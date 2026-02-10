@@ -22,20 +22,20 @@ Skills focused on resource collection, node detection, and sustainable harvestin
 
 ### Tiered Skills
 
-- [Resource Sense](resource-sense.md) - Detect gathering nodes at distance
-- [Bountiful Harvest](bountiful-harvest.md) - Increased yield from gathering
-- [Efficiency Expert](efficiency-expert.md) - Reduced stamina and time for gathering
+- [Resource Sense](resource-sense/index.md) - Detect gathering nodes at distance
+- [Bountiful Harvest](bountiful-harvest/index.md) - Increased yield from gathering
+- [Efficiency Expert](efficiency-expert/index.md) - Reduced stamina and time for gathering
 
 ### Mechanic Unlocks
 
-- [Gentle Harvest](gentle-harvest.md) - Gather without depleting
-- [Prospector](prospector.md) - Discover new resource nodes
-- [Deep Vein](deep-vein.md) - Access difficult resource deposits
-- [Weather Worker](weather-worker.md) - Gather in adverse conditions
+- [Gentle Harvest](gentle-harvest/index.md) - Gather without depleting
+- [Prospector](prospector/index.md) - Discover new resource nodes
+- [Deep Vein](deep-vein/index.md) - Access difficult resource deposits
+- [Weather Worker](weather-worker/index.md) - Gather in adverse conditions
 
 ### Passive Generators
 
-- [Master Forager](master-forager.md) - Daily passive resource discovery
+- [Master Forager](master-forager/index.md) - Daily passive resource discovery
 
 ## Acquisition
 
@@ -45,4 +45,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

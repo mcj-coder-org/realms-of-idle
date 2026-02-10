@@ -36,4 +36,4 @@ tags: [Crafting]
 
 - **Strong Synergy:** All [Crafting Specialties](../../classes/crafter/) (Blacksmith, Carpenter, Tailor, Alchemist, Cook, Jeweler, Leatherworker, Glassblower, Weaver)
 - **Specialty-Based:** Applied by each craft master to their specialty materials
-- **See Also:** [Artisan's Focus](artisans-focus.md), [Crafting Skills](../index.md), [Item Durability](../../systems/crafting/item-durability.md)
+- **See Also:** [Artisan's Focus](artisans-focus/index.md), [Crafting Skills](../index.md), [Item Durability](../../systems/crafting/item-durability/index.md)

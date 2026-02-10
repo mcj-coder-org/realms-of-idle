@@ -72,4 +72,4 @@ Classes with strong synergies get faster learning, better effectiveness, and low
 
 - **Strong Synergy:** [Warrior](../../classes/fighter/warrior/), [Adventurer](../../classes/fighter/adventurer/), [Knight](../../classes/fighter/guard/), [Guard](../../classes/fighter/guard/), [Mercenary](../../classes/fighter/mercenary/)
 - **Weapon Categories:** Swords, Axes, Maces, Spears, Bows, Crossbows, Daggers, Unarmed
-- **See Also:** [Dual Wield](dual-wield.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Dual Wield](dual-wield/index.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)

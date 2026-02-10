@@ -84,19 +84,19 @@ The moral weight accumulates. Each kill becomes easier mechanically but harder e
 
 Skills automatically awarded when accepting this class:
 
-| Skill        | Tier   | Link                                            | Reasoning                                          |
-| ------------ | ------ | ----------------------------------------------- | -------------------------------------------------- |
-| Vital Strike | Lesser | [See Skill List](../../skills/tiered/index.md)  | Signature assassin technique for lethal strikes    |
-| Shadow Step  | Lesser | [See Skill](../../skills/tiered/shadow-step.md) | Stealth movement essential for approach and escape |
+| Skill        | Tier   | Link                                                  | Reasoning                                          |
+| ------------ | ------ | ----------------------------------------------------- | -------------------------------------------------- |
+| Vital Strike | Lesser | [See Skill List](../../skills/tiered/index.md)        | Signature assassin technique for lethal strikes    |
+| Shadow Step  | Lesser | [See Skill](../../skills/tiered/shadow-step/index.md) | Stealth movement essential for approach and escape |
 
 #### Synergy Skills
 
 Skills with strong synergies for Assassin:
 
-- [Silent Kill](../../skills/mechanic-unlock/silent-kill.md) - Lesser/Greater/Enhanced - Eliminate targets without detection
+- [Silent Kill](../../skills/mechanic-unlock/silent-kill/index.md) - Lesser/Greater/Enhanced - Eliminate targets without detection
 - [Poison Master](../../skills/index.md) - Lesser/Greater/Enhanced - Increased poison effectiveness
 - [Vital Strike](../../skills/tiered/index.md) - Lesser/Greater/Enhanced - Massive damage to vital spots on unaware targets
-- [Shadow Step](../../skills/tiered/shadow-step.md) - Lesser/Greater/Enhanced - Enhanced stealth movement
+- [Shadow Step](../../skills/tiered/shadow-step/index.md) - Lesser/Greater/Enhanced - Enhanced stealth movement
 - [Disguise](../../skills/index.md) - Lesser/Greater/Enhanced - Impersonate others convincingly
 - [Anatomy Knowledge](../../skills/index.md) - Lesser/Greater/Enhanced - Identify weak points for critical hits
 - [Escape Artist](../../skills/index.md) - Lesser/Greater/Enhanced - Escape from restraints and pursuit
@@ -162,25 +162,25 @@ Actions that grant XP to the Assassin class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                           | Requirements                                     | Result Class    | Tier |
-| -------------------------------------------- | ------------------------------------------------ | --------------- | ---- |
-| [Shadow Blade](../consolidation/index.md)    | Assassin + [Scout](./scout.md)                   | Shadow Blade    | 1    |
-| [Poisoner](../consolidation/index.md)        | Assassin + [Alchemist](../crafting/alchemist.md) | Poisoner        | 1    |
-| [Master Assassin](../consolidation/index.md) | Assassin + extensive contracts                   | Master Assassin | 1    |
-| [Spymaster](../consolidation/index.md)       | Assassin + [Spy](../consolidation/index.md)      | Spymaster       | 2    |
+| Consolidation Path                           | Requirements                                           | Result Class    | Tier |
+| -------------------------------------------- | ------------------------------------------------------ | --------------- | ---- |
+| [Shadow Blade](../consolidation/index.md)    | Assassin + [Scout](./scout/index.md)                   | Shadow Blade    | 1    |
+| [Poisoner](../consolidation/index.md)        | Assassin + [Alchemist](../crafting/alchemist/index.md) | Poisoner        | 1    |
+| [Master Assassin](../consolidation/index.md) | Assassin + extensive contracts                         | Master Assassin | 1    |
+| [Spymaster](../consolidation/index.md)       | Assassin + [Spy](../consolidation/index.md)            | Spymaster       | 2    |
 
 ### Interactions
 
-| System                                                       | Interaction                                    |
-| ------------------------------------------------------------ | ---------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md)       | Extreme burst damage against single targets    |
-| [Stealth](../../../systems/combat/index.md)                  | Master of remaining undetected                 |
-| [Reputation](../../../systems/social/factions-reputation.md) | Separate public and underground reputations    |
-| [Crime](../../../systems/social/index.md)                    | Illegal activities; severe penalties if caught |
-| [Economy](../../../systems/economy/index.md)                 | Highly paid but irregular income               |
-| [Social](../../../systems/social/index.md)                   | Must maintain cover identity                   |
+| System                                                             | Interaction                                    |
+| ------------------------------------------------------------------ | ---------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md)       | Extreme burst damage against single targets    |
+| [Stealth](../../../systems/combat/index.md)                        | Master of remaining undetected                 |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Separate public and underground reputations    |
+| [Crime](../../../systems/social/index.md)                          | Illegal activities; severe penalties if caught |
+| [Economy](../../../systems/economy/index.md)                       | Highly paid but irregular income               |
+| [Social](../../../systems/social/index.md)                         | Must maintain cover identity                   |
 
 ---
 
@@ -188,6 +188,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Concealed weapons, poisons, disguises, cover identity
 - **Equipment:** [Daggers](../../items/index.md), [Poisons](../../items/index.md), [Disguises](../../items/index.md), [Lockpicks](../../items/index.md)
-- **Synergy Classes:** [Scout](./scout.md), [Alchemist](../crafting/alchemist.md), [Thief](../trade/index.md)
+- **Synergy Classes:** [Scout](./scout/index.md), [Alchemist](../crafting/alchemist/index.md), [Thief](../trade/index.md)
 - **Consolidates To:** [Shadow Blade](../consolidation/index.md), [Poisoner](../consolidation/index.md), [Master Assassin](../consolidation/index.md)
 - **See Also:** [Stealth System](../../../systems/combat/index.md), [Crime & Punishment](../../../systems/social/index.md), [Underground Economy](../../../systems/economy/index.md)

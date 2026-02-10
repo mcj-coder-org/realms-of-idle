@@ -257,9 +257,9 @@ grep -r "GrantedTags" src/CozyFantasyRpg/Content/Classes/
 
 ## Related Documentation
 
-- [Tag System Documentation](../../systems/content/tag-system.md)
-- [Content Template](../_templates/content-template.md)
-- [Content Curator Persona](../../../standards/content-curator-persona.md)
+- [Tag System Documentation](../../systems/content/tag-system/index.md)
+- [Content Template](../_templates/content-template/index.md)
+- [Content Curator Persona](../../../standards/content-curator-persona/index.md)
 - [SkillTags.cs](../../../../src/CozyFantasyRpg/Shared/SkillTags.cs)
 
 ---

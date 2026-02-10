@@ -41,7 +41,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Enchantment/*` | 3     | Enchanter (full access to sub-tags) |
 | `Crafting/Enchanting` | 2     | Enchanter, Crafter                  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -111,11 +111,11 @@ Master Enchanters create legendary items - weapons that reshape battlefields, ar
 
 #### Starting Skills
 
-| Skill                                                                       | Type    | Effect                                              |
-| --------------------------------------------------------------------------- | ------- | --------------------------------------------------- |
-| Basic Enchanting                                                            | Passive | Can enchant items with minor permanent effects      |
-| [Enchant Object](../../skills/mechanic-unlock/enchant-object.md) (Mechanic) | Active  | Core ability to imbue items with magical properties |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser)                  | Passive | Enhanced magical control for precise enchanting     |
+| Skill                                                                             | Type    | Effect                                              |
+| --------------------------------------------------------------------------------- | ------- | --------------------------------------------------- |
+| Basic Enchanting                                                                  | Passive | Can enchant items with minor permanent effects      |
+| [Enchant Object](../../skills/mechanic-unlock/enchant-object/index.md) (Mechanic) | Active  | Core ability to imbue items with magical properties |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser)                  | Passive | Enhanced magical control for precise enchanting     |
 
 #### Synergy Skills
 
@@ -123,24 +123,24 @@ Skills that have strong synergies with Enchanter. These skills can be learned by
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Enchant Object](../../skills/mechanic-unlock/enchant-object.md) - Lesser/Greater/Enhanced - Imbue items with magic
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Enchant Object](../../skills/mechanic-unlock/enchant-object/index.md) - Lesser/Greater/Enhanced - Imbue items with magic
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Create superior quality items
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Understand material properties
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Recipe Innovator](../../skills/passive-generator/recipe-innovator.md) - Lesser/Greater/Enhanced - Develop new techniques
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert item repair
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Minimize material waste
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Unique recognizable work
-- [Tool Bond](../../skills/mechanic-unlock/tool-bond.md) - Lesser/Greater/Enhanced - Mastery with specific tools
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Create superior quality items
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Understand material properties
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Recipe Innovator](../../skills/passive-generator/recipe-innovator/index.md) - Lesser/Greater/Enhanced - Develop new techniques
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert item repair
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Minimize material waste
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Unique recognizable work
+- [Tool Bond](../../skills/mechanic-unlock/tool-bond/index.md) - Lesser/Greater/Enhanced - Mastery with specific tools
 
 **Core Enchanting Skills**:
 
@@ -220,7 +220,7 @@ Actions that grant XP to the Enchanter class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                                 | Requirements                                        | Result Class      | Tier |
 | -------------------------------------------------- | --------------------------------------------------- | ----------------- | ---- |
@@ -231,14 +231,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                        | Interaction                                    |
-| ------------------------------------------------------------- | ---------------------------------------------- |
-| [Enchantment System](../../../systems/enchantment/)           | Core enchanting mechanics                      |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Requires quality base items to enchant         |
-| [Magic](../../../systems/character/magic-system.md)           | Uses magical energy for enchantments           |
-| [Item Quality](../../../systems/crafting/)                    | Base item quality affects enchantment strength |
-| [Economy](../../../systems/economy/)                          | Enchanted items command premium prices         |
-| [Materials](../../material/)                                  | Requires magical reagents and rare materials   |
+| System                                                              | Interaction                                    |
+| ------------------------------------------------------------------- | ---------------------------------------------- |
+| [Enchantment System](../../../systems/enchantment/)                 | Core enchanting mechanics                      |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Requires quality base items to enchant         |
+| [Magic](../../../systems/character/magic-system/index.md)           | Uses magical energy for enchantments           |
+| [Item Quality](../../../systems/crafting/)                          | Base item quality affects enchantment strength |
+| [Economy](../../../systems/economy/)                                | Enchanted items command premium prices         |
+| [Materials](../../material/)                                        | Requires magical reagents and rare materials   |
 
 ---
 

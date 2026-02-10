@@ -18,53 +18,53 @@ Passive generator skills provide ongoing benefits without active player input. T
 
 ### Agriculture
 
-- [Surplus Generator](surplus-generator.md) - `Agriculture`
+- [Surplus Generator](surplus-generator/index.md) - `Agriculture`
   - **Generation**: Weekly agricultural yields
   - **Benefit**: Extra crops/animal products beyond normal production
 
 ### Alchemy
 
-- [Reagent Cultivation](reagent-cultivation.md) - `Crafting/Alchemy`
+- [Reagent Cultivation](reagent-cultivation/index.md) - `Crafting/Alchemy`
   - **Generation**: Weekly alchemical reagents
   - **Benefit**: Free crafting materials for potions and compounds
 
 ### Combat
 
-- [Battle Hardened](battle-hardened.md) - `Combat, Physical/Endurance`
+- [Battle Hardened](battle-hardened/index.md) - `Combat, Physical/Endurance`
   - **Generation**: Scars and combat experience accumulation
   - **Benefit**: Passive damage resistance and intimidation bonuses
 
 ### Crafting
 
-- [Recipe Innovator](recipe-innovator.md) - `Crafting`
+- [Recipe Innovator](recipe-innovator/index.md) - `Crafting`
   - **Generation**: Monthly/weekly/weekly by tier
   - **Benefit**: Discover new crafting recipes automatically
 
 ### Dark/Criminal
 
-- [Underworld Connections](underworld-connections.md) - `Criminal, Dark`
+- [Underworld Connections](underworld-connections/index.md) - `Criminal, Dark`
   - **Generation**: Weekly criminal opportunities
   - **Benefit**: Access to illicit jobs, fences, and black market deals
 
 ### Gathering
 
-- [Master Forager](master-forager.md) - `Gathering, Gathering/Herbalism`
+- [Master Forager](master-forager/index.md) - `Gathering, Gathering/Herbalism`
   - **Generation**: Daily rare finds
   - **Benefit**: Automatically locate valuable herbs and materials
 
 ### Scholar
 
-- [Ancient Knowledge](ancient-knowledge.md) - `Knowledge`
+- [Ancient Knowledge](ancient-knowledge/index.md) - `Knowledge`
   - **Generation**: Monthly forgotten lore
   - **Benefit**: Unlock historical knowledge and ancient secrets
 
 ### Trade
 
-- [Trade Contacts](trade-contacts.md) - `Trade`
+- [Trade Contacts](trade-contacts/index.md) - `Trade`
   - **Generation**: Monthly new contacts
   - **Benefit**: Expand trading network with merchants and suppliers
 
-- [Trade Network](trade-network.md) - `Trade`
+- [Trade Network](trade-network/index.md) - `Trade`
   - **Generation**: Weekly trading opportunities
   - **Benefit**: Special deals, bulk orders, and profitable ventures
 

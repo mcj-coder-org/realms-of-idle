@@ -222,6 +222,6 @@ The enchantment transformed urban planning. Cities spread outward as Swift Step 
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Wind essence](../../materials/reagents/index.md), [Quicksilver](../../materials/reagents/index.md), [Ginger](../../materials/reagents/index.md)
 - **Applied To:** [Boots/Shoes](../../items/clothing/index.md), [Leg armor](../../items/armor/index.md), [Leg wraps](../../items/clothing/index.md) (see Applicable Items table)
-- **See Also:** [Featherfall](featherfall.md), [Haste](haste.md), [Swiftness](swiftness.md)
+- **See Also:** [Featherfall](featherfall/index.md), [Haste](haste/index.md), [Swiftness](swiftness/index.md)
 - **Enchantment Type:** Utility (movement enhancement)
 - **Safety Note:** Practice in safe area before high-speed travel; adjust to new pace gradually

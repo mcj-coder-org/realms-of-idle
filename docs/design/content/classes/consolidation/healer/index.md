@@ -73,7 +73,7 @@ Healer is a terminal Tier 3 consolidation class. No further progression paths av
 ### Related Content
 
 - **Required Classes:** [Mage](../../channeler/mage/), [Herbalist](../../gatherer/herbalist/)
-- **Skills:** [Blessed Herbs](../../skills/tiered/blessed-herbs.md),
-  [Restoration Mastery](../../skills/tiered/restoration-mastery.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
-- **System:** [Herbalism System](../../../systems/crafting/herbalism-system.md)
+- **Skills:** [Blessed Herbs](../../skills/tiered/blessed-herbs/index.md),
+  [Restoration Mastery](../../skills/tiered/restoration-mastery/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)
+- **System:** [Herbalism System](../../../systems/crafting/herbalism-system/index.md)

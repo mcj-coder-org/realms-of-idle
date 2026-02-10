@@ -26,11 +26,11 @@ Kobold warrens function as independent city-states, each with its own council an
 
 Daily life in a warren revolves around work. Kobolds wake, check their assignments, labor through their shifts, and rest before repeating the cycle. This sounds grim, but kobolds genuinely enjoy productive work. A well-designed trap mechanism brings them joy. A perfectly-dug tunnel satisfies deeply. They're not driven by external pressure but by internal standards that demand excellence.
 
-Other races have complicated relationships with kobolds. [Dwarves](../dwarves/base.md) respect their engineering while considering them annoyingly small and talkative. [Humans](../humans.md) appreciate kobold-made goods while finding the warren environment claustrophobic. [Elves](../elves/base.md) acknowledge kobold magical aptitude while questioning their obsession with dragons. Most everyone agrees kobolds are useful neighbors - unless you accidentally stumble into their territorial range.
+Other races have complicated relationships with kobolds. [Dwarves](../dwarves/base/index.md) respect their engineering while considering them annoyingly small and talkative. [Humans](../humans/index.md) appreciate kobold-made goods while finding the warren environment claustrophobic. [Elves](../elves/base/index.md) acknowledge kobold magical aptitude while questioning their obsession with dragons. Most everyone agrees kobolds are useful neighbors - unless you accidentally stumble into their territorial range.
 
 Kobolds struggle on the surface. Bright daylight hurts their dark-adapted eyes. The open sky feels oppressively vast. Surface structures seem impossibly vulnerable - where are the fallback positions, the trapped corridors, the escape tunnels? Yet some kobolds venture topside, driven by curiosity or assigned to trade missions. They work better at night or in covered markets, squinting through sunny days.
 
-Surface [settlements](../../../systems/world/settlements.md) with nearby kobold warrens often develop mutually beneficial relationships. The warren provides exceptional mechanisms, traps for defense, and [mining](../../../systems/crafting/gathering.md) expertise. The settlement offers surface goods, agricultural products, and trade connections. Problems arise when surface expansion encroaches on warren territory or when kobolds' territorial instincts clash with [human](../humans.md) concepts of property.
+Surface [settlements](../../../systems/world/settlements/index.md) with nearby kobold warrens often develop mutually beneficial relationships. The warren provides exceptional mechanisms, traps for defense, and [mining](../../../systems/crafting/gathering/index.md) expertise. The settlement offers surface goods, agricultural products, and trade connections. Problems arise when surface expansion encroaches on warren territory or when kobolds' territorial instincts clash with [human](../humans/index.md) concepts of property.
 
 The greatest challenge for kobolds is their own drive for perfection. A project always has room for improvement. That mechanism could be tighter. This trap could be cleverer. That tunnel alignment is slightly off. This endless refinement produces exceptional results but also causes kobolds to rarely feel truly satisfied. There's always more to do, always better to be.
 
@@ -74,7 +74,7 @@ Kobolds have natural affinities and aversions that affect skill learning speed a
 | Positive (○)  | Gathering/Mining, Physical/Agility, Knowledge | Faster than baseline      |
 | Negative (×)  | Physical/Strength, Combat/Melee               | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -86,22 +86,22 @@ Kobolds receive **3 random skills** from their racial skill pool at character cr
 
 | Skill                                                            | Tags                                   | Effect                                     |
 | ---------------------------------------------------------------- | -------------------------------------- | ------------------------------------------ |
-| [Darkvision](../../../skills/passive/darkvision.md)              | Physical, Universal/Physical           | Perfect vision in complete darkness        |
-| [Pack Tactics](../../../skills/passive/pack-tactics.md)          | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies           |
-| [Nimble Escape](../../../skills/passive/nimble-escape.md)        | Physical/Agility, Stealth              | Disengage/Hide as bonus action             |
+| [Darkvision](../../../skills/passive/darkvision/index.md)        | Physical, Universal/Physical           | Perfect vision in complete darkness        |
+| [Pack Tactics](../../../skills/passive/pack-tactics/index.md)    | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies           |
+| [Nimble Escape](../../../skills/passive/nimble-escape/index.md)  | Physical/Agility, Stealth              | Disengage/Hide as bonus action             |
 | [Trap Master](../../../skills/tiered/index.md)                   | Crafting, Knowledge                    | +25% trap quality, +20% trap detection     |
 | [Tunnel Sense](../../../skills/racial/index.md)                  | Gathering/Mining, Knowledge            | Detect structural issues, hidden passages  |
 | [Tinkerer's Intuition](../../../skills/mechanic-unlock/index.md) | Crafting, Knowledge                    | +10% crafting speed, understand mechanisms |
 
-**[Darkvision](../../../skills/passive/darkvision.md)**: Generations underground bred perfect dark-sight into kobold eyes. They see in absolute blackness as clearly as [humans](../humans.md) see in daylight. This makes warrens navigable without torches - kobolds save lighting for important areas or when hosting surface visitors.
+**[Darkvision](../../../skills/passive/darkvision/index.md)**: Generations underground bred perfect dark-sight into kobold eyes. They see in absolute blackness as clearly as [humans](../humans/index.md) see in daylight. This makes warrens navigable without torches - kobolds save lighting for important areas or when hosting surface visitors.
 
-**[Pack Tactics](../../../skills/passive/pack-tactics.md)**: Kobolds evolved as cooperative hunters and defenders. When working together (ally within 5 feet), they gain +15% accuracy on attacks. They instinctively coordinate - flanking, distracting, striking from multiple angles. They're more dangerous in groups than individually.
+**[Pack Tactics](../../../skills/passive/pack-tactics/index.md)**: Kobolds evolved as cooperative hunters and defenders. When working together (ally within 5 feet), they gain +15% accuracy on attacks. They instinctively coordinate - flanking, distracting, striking from multiple angles. They're more dangerous in groups than individually.
 
-**[Nimble Escape](../../../skills/passive/nimble-escape.md)**: Kobolds can Disengage or Hide as a bonus action instead of a full action. Combined with their small size, this makes them incredibly difficult to pin down in [combat](../../../systems/combat/index.md). They escape, reposition, and strike from unexpected angles.
+**[Nimble Escape](../../../skills/passive/nimble-escape/index.md)**: Kobolds can Disengage or Hide as a bonus action instead of a full action. Combined with their small size, this makes them incredibly difficult to pin down in [combat](../../../systems/combat/index.md). They escape, reposition, and strike from unexpected angles.
 
 **[Trap Master](../../../skills/tiered/index.md)**: Kobolds possess intuitive understanding of mechanisms and triggers. They craft better traps (+25% quality) faster than other races, and when encountering traps, they spot them more readily (+20% detection). This isn't just mechanical skill - it's an instinct for how systems work.
 
-**[Tunnel Sense](../../../skills/racial/index.md)**: Like [dwarves](../dwarves/base.md) but more focused, kobolds sense structural issues in tunnels and underground spaces. They know when a ceiling is unsafe, where hidden passages might run, and how to read stone for weakness. This keeps warrens stable despite their complexity.
+**[Tunnel Sense](../../../skills/racial/index.md)**: Like [dwarves](../dwarves/base/index.md) but more focused, kobolds sense structural issues in tunnels and underground spaces. They know when a ceiling is unsafe, where hidden passages might run, and how to read stone for weakness. This keeps warrens stable despite their complexity.
 
 **[Tinkerer's Intuition](../../../skills/mechanic-unlock/index.md)**: Kobolds work faster at [crafting](../../../systems/crafting/index.md) tasks (+10% speed). Not from rushing, but from practiced efficiency. They understand how devices work intuitively, eliminating wasted motion and unnecessary steps.
 
@@ -112,7 +112,7 @@ Kobolds receive **3 random skills** from their racial skill pool at character cr
 
 **Other Traits:**
 
-- **Dragon Blood:** +15% fire resistance, bonus to draconic/fire [magic](../../../systems/character/magic-system.md). Dragons recognize something kindred in kobolds.
+- **Dragon Blood:** +15% fire resistance, bonus to draconic/fire [magic](../../../systems/character/magic-system/index.md). Dragons recognize something kindred in kobolds.
 
 ### Interactions
 
@@ -140,9 +140,9 @@ Kobolds receive **3 random skills** from their racial skill pool at character cr
 ## Related Content
 
 - **Classes**: [Artificer](../../../classes/crafting/index.md), [Trapsmith](../../../classes/crafting/index.md), [Mage](../../../classes/magic/index.md)
-- **Crafting**: [Crafting System](../../../systems/crafting/index.md), [Enchantment](../../../systems/crafting/enchantment-mechanics.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Humans](../humans.md), [Elves](../elves/base.md), [Dwarves](../dwarves/base.md), [Lizardfolk](../lizardfolk.md), [Race Comparison](../../races-and-tribes.md)
+- **Crafting**: [Crafting System](../../../systems/crafting/index.md), [Enchantment](../../../systems/crafting/enchantment-mechanics/index.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Humans](../humans/index.md), [Elves](../elves/base/index.md), [Dwarves](../dwarves/base/index.md), [Lizardfolk](../lizardfolk/index.md), [Race Comparison](../../races-and-tribes/index.md)
 
 ---
 

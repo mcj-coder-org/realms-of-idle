@@ -34,7 +34,7 @@ Races that form tribes and use shamanic magic.
 
 ## Full Details
 
-See [Races & Tribes System](../races-and-tribes.md) for complete racial definitions.
+See [Races & Tribes System](../races-and-tribes/index.md) for complete racial definitions.
 
 ## Related Content
 

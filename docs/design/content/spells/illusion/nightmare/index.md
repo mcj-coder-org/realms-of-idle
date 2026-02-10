@@ -69,4 +69,4 @@ Assault the minds of enemies with horrifying illusions that damage their psyche 
 
 - **Granted By:** [Illusionist](../../classes/channeler/illusionist/)
 - **School:** [Illusion](../index.md)
-- **See Also:** [Mass Invisibility](mass-invisibility.md)
+- **See Also:** [Mass Invisibility](mass-invisibility/index.md)

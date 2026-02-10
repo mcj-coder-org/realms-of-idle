@@ -84,8 +84,8 @@ Your small size and natural agility let you slip away from danger with practiced
 
 **Synergizes with:**
 
-- [Shadow Step](../tiered/shadow-step.md) - Teleport between shadows
-- [Pack Tactics](pack-tactics.md) - Strike with allies, escape when isolated
+- [Shadow Step](../tiered/shadow-step/index.md) - Teleport between shadows
+- [Pack Tactics](pack-tactics/index.md) - Strike with allies, escape when isolated
 - Stealth-based combat styles
 - Scout and skirmisher roles
 
@@ -98,6 +98,6 @@ Your small size and natural agility let you slip away from danger with practiced
 
 ## Related Content
 
-- [Shadow Step](../tiered/shadow-step.md) - Stealth movement
-- [Evasion Expert](../tiered/evasion-expert.md) - Dodge and avoid damage
-- [Pack Tactics](pack-tactics.md) - Fight with allies (Kobold/Goblin)
+- [Shadow Step](../tiered/shadow-step/index.md) - Stealth movement
+- [Evasion Expert](../tiered/evasion-expert/index.md) - Dodge and avoid damage
+- [Pack Tactics](pack-tactics/index.md) - Fight with allies (Kobold/Goblin)

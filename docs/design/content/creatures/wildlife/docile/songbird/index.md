@@ -114,7 +114,7 @@ Crafters value songbird feathers for their beauty and lightness. A cloak trimmed
 
 ## Related Content
 
-- **Habitat:** [Gardens](../../../../systems/world/index.md), [Forests](../../../../systems/world/index.md), [Towns](../../../../systems/world/settlements.md)
+- **Habitat:** [Gardens](../../../../systems/world/index.md), [Forests](../../../../systems/world/index.md), [Towns](../../../../systems/world/settlements/index.md)
 - **Predators:** [House Cat](../../domestic/index.md), [Hawks](../predators/index.md), [Snakes](../predators/index.md)
 - **Used By:** [Arrows](../../items/index.md), [Quills](../../items/index.md), [Decorative Cloaks](../../items/index.md)
-- **See Also:** [Raven](index.md), [Dove](index.md), [Ecology System](../../../../systems/crafting/gathering.md)
+- **See Also:** [Raven](index.md), [Dove](index.md), [Ecology System](../../../../systems/crafting/gathering/index.md)

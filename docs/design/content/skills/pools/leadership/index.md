@@ -22,16 +22,16 @@ Skills focused on command, authority, delegation, and inspiring others. These sk
 
 ### Tiered Skills
 
-- [Authority](authority.md) - Command respect and obedience
-- [Inspiring Leader](inspiring-leader.md) - Motivate and encourage followers
+- [Authority](authority/index.md) - Command respect and obedience
+- [Inspiring Leader](inspiring-leader/index.md) - Motivate and encourage followers
 
 ### Mechanic Unlocks
 
-- [Delegation](delegation.md) - Effectively assign tasks to others
-- [Loyalty Cultivation](loyalty-cultivation.md) - Build lasting follower loyalty
-- [Crisis Leadership](crisis-leadership.md) - Lead effectively during emergencies
-- [Policy Implementation](policy-implementation.md) - Enact and enforce rules
-- [Succession Planning](succession-planning.md) - Prepare for leadership transition
+- [Delegation](delegation/index.md) - Effectively assign tasks to others
+- [Loyalty Cultivation](loyalty-cultivation/index.md) - Build lasting follower loyalty
+- [Crisis Leadership](crisis-leadership/index.md) - Lead effectively during emergencies
+- [Policy Implementation](policy-implementation/index.md) - Enact and enforce rules
+- [Succession Planning](succession-planning/index.md) - Prepare for leadership transition
 
 ## Acquisition
 
@@ -41,4 +41,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

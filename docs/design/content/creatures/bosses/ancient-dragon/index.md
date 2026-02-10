@@ -285,4 +285,4 @@ Dragons' lairs exhibit magical effects:
 - **Items:** [Dragon Scale Armor](../../../items/index.md), [Dragon Slaying Sword](../../../items/index.md), [Dragon Blood Potion](../../../items/index.md)
 - **Quests:** [Slay the Dragon](../../../../systems/world/index.md), [Negotiate Dragon Treaty](../../../../systems/world/index.md), [Recover Hoard Item](../../../../systems/world/index.md), [Dragon Cultists](../../../../systems/world/index.md)
 - **Systems:** [Boss Combat](../../../../systems/index.md), [Flight](../../../../systems/index.md), [Legendary Creatures](../../../../systems/index.md)
-- **See Also:** [Boss Creatures](index.md), [Creature System](../creature-system.md), [Epic Encounters](../../../../systems/index.md)
+- **See Also:** [Boss Creatures](index.md), [Creature System](../creature-system/index.md), [Epic Encounters](../../../../systems/index.md)

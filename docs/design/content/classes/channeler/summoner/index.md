@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Conjuration/Summoning` | 3     | Summoner (full access to summoning) |
 | `Planes/Access`               | 2     | Summoner, Planar specialists        |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -109,11 +109,11 @@ Master Summoners command impressive forces. They summon powerful elementals, maj
 
 #### Starting Skills
 
-| Skill                                                      | Type    | Effect                                           |
-| ---------------------------------------------------------- | ------- | ------------------------------------------------ |
-| Basic Summoning                                            | Active  | Can summon weak creatures temporarily            |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser) | Passive | Enhanced summoning control and binding precision |
-| [Mana Well](../../skills/tiered/mana-well.md) (Lesser)     | Passive | Expanded mana for sustaining summoned creatures  |
+| Skill                                                            | Type    | Effect                                           |
+| ---------------------------------------------------------------- | ------- | ------------------------------------------------ |
+| Basic Summoning                                                  | Active  | Can summon weak creatures temporarily            |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser) | Passive | Enhanced summoning control and binding precision |
+| [Mana Well](../../skills/tiered/mana-well/index.md) (Lesser)     | Passive | Expanded mana for sustaining summoned creatures  |
 
 #### Synergy Skills
 
@@ -121,11 +121,11 @@ Skills that have strong synergies with Summoner. These skills can be learned by 
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Summoning Skills**:
 
@@ -207,7 +207,7 @@ Actions that grant XP to the Summoner class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                    | Requirements                                | Result Class  | Tier |
 | ------------------------------------- | ------------------------------------------- | ------------- | ---- |
@@ -218,14 +218,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                     | Interaction                                 |
-| ---------------------------------------------------------- | ------------------------------------------- |
-| [Magic System](../../../systems/character/magic-system.md) | Uses conjuration school of magic            |
-| [Summoning](../../../systems/magic/index.md)               | Core summoning and binding mechanics        |
-| [Planes](../../../systems/world/index.md)                  | Accesses other planes and dimensions        |
-| [Combat](../../../systems/combat/combat-resolution.md)     | Summons fight on Summoner's behalf          |
-| [Party](../../../systems/combat/party-mechanics.md)        | Summons count as additional party members   |
-| [Mana](../../../systems/magic/index.md)                    | Summoning costs mana; maintenance over time |
+| System                                                           | Interaction                                 |
+| ---------------------------------------------------------------- | ------------------------------------------- |
+| [Magic System](../../../systems/character/magic-system/index.md) | Uses conjuration school of magic            |
+| [Summoning](../../../systems/magic/index.md)                     | Core summoning and binding mechanics        |
+| [Planes](../../../systems/world/index.md)                        | Accesses other planes and dimensions        |
+| [Combat](../../../systems/combat/combat-resolution/index.md)     | Summons fight on Summoner's behalf          |
+| [Party](../../../systems/combat/party-mechanics/index.md)        | Summons count as additional party members   |
+| [Mana](../../../systems/magic/index.md)                          | Summoning costs mana; maintenance over time |
 
 ---
 
@@ -236,4 +236,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Prerequisite:** Often consolidates from [Mage](./mage/index.md) with conjuration focus
 - **Synergy Classes:** [Mage](./mage/index.md), [Hunter](../../gatherer/hunter/), [Enchanter](../enchanter/)
 - **Consolidates To:** [Planar Master](../../consolidation/), [Elementalist](../../consolidation/), [Beastmaster](../../consolidation/)
-- **See Also:** [Magic System](../../../systems/character/magic-system.md), [Summoning Mechanics](../../../systems/magic/index.md), [Planar Travel](../../../systems/world/index.md)
+- **See Also:** [Magic System](../../../systems/character/magic-system/index.md), [Summoning Mechanics](../../../systems/magic/index.md), [Planar Travel](../../../systems/world/index.md)

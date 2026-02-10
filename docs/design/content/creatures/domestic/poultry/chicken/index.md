@@ -173,9 +173,9 @@ Not all chickens are domestic. In some regions, feral chickens descended from es
 
 ## Related Content
 
-- **Habitat:** [Farms](../../../../systems/world/settlements.md), [Villages](../../../../systems/world/settlements.md), [Coops](../../../../systems/world/index.md)
-- **Related Animals:** [Duck](duck.md), [Goose](goose.md), [Turkey](index.md)
+- **Habitat:** [Farms](../../../../systems/world/settlements/index.md), [Villages](../../../../systems/world/settlements/index.md), [Coops](../../../../systems/world/index.md)
+- **Related Animals:** [Duck](duck/index.md), [Goose](goose/index.md), [Turkey](index.md)
 - **Predators:** [Fox](../../wildlife/index.md), [Weasel](../../wildlife/index.md), [Hawk](../../wildlife/index.md), [Raccoon](../../wildlife/index.md)
 - **Products:** [Eggs](../../items/index.md), [Chicken Meat](../../items/index.md), [Feather Pillow](../../items/index.md)
-- **Systems:** [Food Production](../../../../systems/index.md), [Economy](../../../../systems/economy/trade-and-pricing.md), [Agriculture](../../../../systems/index.md)
-- **See Also:** [Cattle](../livestock/cattle.md), [Dog](../companions/dog.md), [Creature System](../../creature-system.md)
+- **Systems:** [Food Production](../../../../systems/index.md), [Economy](../../../../systems/economy/trade-and-pricing/index.md), [Agriculture](../../../../systems/index.md)
+- **See Also:** [Cattle](../livestock/cattle/index.md), [Dog](../companions/dog/index.md), [Creature System](../../creature-system/index.md)

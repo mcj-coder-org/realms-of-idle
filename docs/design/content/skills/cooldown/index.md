@@ -19,7 +19,7 @@ Cooldown skills are powerful active abilities that can be triggered by the playe
 
 ### Combat
 
-- [Battle Rage](battle-rage.md) - `Combat/Melee, Physical`
+- [Battle Rage](battle-rage/index.md) - `Combat/Melee, Physical`
   - **Effect**: Massive offensive bonuses with scaling defensive trade-offs
   - **Duration**: 30-60 seconds (scales with tier and class level)
   - **Cooldown**: 5 minutes
@@ -30,7 +30,7 @@ Cooldown skills are powerful active abilities that can be triggered by the playe
 
 ### Stealth
 
-- [Vanish](vanish.md) - `Stealth`
+- [Vanish](vanish/index.md) - `Stealth`
   - **Effect**: Instant stealth, even in plain sight
   - **Duration**: Until broken or player acts
   - **Cooldown**: 10 minutes

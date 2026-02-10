@@ -81,10 +81,10 @@ The workshop smells of fresh sawdust and wood oils. Shavings curl on the floor l
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                             |
-| ------------------ | ------ | --------------------------------------------------------------- | ----------------------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding wood quality is essential for carpentry |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Precision work requires concentration                 |
+| Skill              | Tier   | Link                                                                  | Reasoning                                             |
+| ------------------ | ------ | --------------------------------------------------------------------- | ----------------------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding wood quality is essential for carpentry |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Precision work requires concentration                 |
 
 #### Synergy Skills
 
@@ -92,15 +92,15 @@ Skills with strong synergies for Carpenter:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert repair capabilities
-- [Recipe Innovator](../../skills/passive-generator/recipe-innovator.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
-- [Tool Bond](../../skills/mechanic-unlock/tool-bond.md) - Lesser/Greater/Enhanced - Enhanced effectiveness with favored tools
-- [Signature Style](../../skills/mechanic-unlock/signature-style.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert repair capabilities
+- [Recipe Innovator](../../skills/passive-generator/recipe-innovator/index.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
+- [Tool Bond](../../skills/mechanic-unlock/tool-bond/index.md) - Lesser/Greater/Enhanced - Enhanced effectiveness with favored tools
+- [Signature Style](../../skills/mechanic-unlock/signature-style/index.md) - Lesser/Greater/Enhanced - Develop recognizable craft signature
 
 **Carpentry Skills** (specialized skills to be defined):
 
@@ -172,7 +172,7 @@ Actions that grant XP to the Carpenter class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                       | Requirements                                                   | Result Class | Tier |
 | ---------------------------------------- | -------------------------------------------------------------- | ------------ | ---- |
@@ -185,15 +185,15 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                        | Interaction                                                                     |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Primary wood crafting class; unlocks carpentry recipes                          |
-| [Economy](../../../systems/economy/index.md)                  | Can establish workshop; essential for settlement growth                         |
-| [Settlement](../../../systems/world/settlements.md)           | Builds structures, furniture; critical for expansion                            |
-| [Combat](../../../systems/combat/index.md)                    | Crafts bows, staves, wooden shields, siege equipment                            |
-| [Gathering](../../../systems/crafting/gathering.md)           | Synergy: [Lumberjack](../gathering/index.md) + Carpenter = efficient production |
-| [Housing](../../../systems/world/housing-and-storage.md)      | Builds and upgrades player housing                                              |
-| [Social](../../../systems/social/index.md)                    | Quality furniture improves home comfort and status                              |
+| System                                                              | Interaction                                                                     |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Primary wood crafting class; unlocks carpentry recipes                          |
+| [Economy](../../../systems/economy/index.md)                        | Can establish workshop; essential for settlement growth                         |
+| [Settlement](../../../systems/world/settlements/index.md)           | Builds structures, furniture; critical for expansion                            |
+| [Combat](../../../systems/combat/index.md)                          | Crafts bows, staves, wooden shields, siege equipment                            |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Synergy: [Lumberjack](../gathering/index.md) + Carpenter = efficient production |
+| [Housing](../../../systems/world/housing-and-storage/index.md)      | Builds and upgrades player housing                                              |
+| [Social](../../../systems/social/index.md)                          | Quality furniture improves home comfort and status                              |
 
 ---
 
@@ -203,8 +203,8 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Materials Used:** [Wood](../../materials/index.md), [Nails](../../materials/index.md), [Wood Glue](../../materials/index.md), [Finishes](../../materials/index.md)
 - **Creates:** [Furniture](../../items/index.md), [Doors](../../items/index.md), [Bows](../../items/index.md), [Staves](../../items/index.md), [Tools](../../items/index.md)
 - **Recipes:** [Carpentry Recipes](../../../systems/crafting/index.md)
-- **Synergy Classes:** [Lumberjack](../gathering/index.md), [Blacksmith](./blacksmith.md), [Merchant](../trade/index.md), [Farmer](../gathering/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Housing System](../../../systems/world/housing-and-storage.md), [Settlement Building](../../../systems/world/settlements.md)
+- **Synergy Classes:** [Lumberjack](../gathering/index.md), [Blacksmith](./blacksmith/index.md), [Merchant](../trade/index.md), [Farmer](../gathering/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Housing System](../../../systems/world/housing-and-storage/index.md), [Settlement Building](../../../systems/world/settlements/index.md)
 
 ## Tags
 

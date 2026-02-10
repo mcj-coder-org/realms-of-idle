@@ -67,4 +67,4 @@ Shake the earth violently, causing tremors and ruptures that damage all enemies 
 
 - **Granted By:** [Geomancer](../../classes/channeler/mage/geomancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Tidal Wave](tidal-wave.md)
+- **See Also:** [Tidal Wave](tidal-wave/index.md)

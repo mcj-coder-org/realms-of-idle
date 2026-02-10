@@ -22,16 +22,16 @@ Skills focused on commerce, negotiation, market analysis, and trade networks. Th
 
 ### Tiered Skills
 
-- [Silver Tongue](silver-tongue.md) - Enhanced negotiation and persuasion
-- [Market Sense](market-sense.md) - Understand market trends and pricing
+- [Silver Tongue](silver-tongue/index.md) - Enhanced negotiation and persuasion
+- [Market Sense](market-sense/index.md) - Understand market trends and pricing
 
 ### Mechanic Unlocks
 
-- [Trade Contacts](trade-contacts.md) - Build commercial network
-- [Trade Network](trade-network.md) - Access to regional trade routes
-- [Commodity Speculation](commodity-speculation.md) - Predict market price changes
-- [Caravan Master](caravan-master.md) - Organize and manage trade caravans
-- [Fencing](fencing.md) - Sell stolen or illegal goods
+- [Trade Contacts](trade-contacts/index.md) - Build commercial network
+- [Trade Network](trade-network/index.md) - Access to regional trade routes
+- [Commodity Speculation](commodity-speculation/index.md) - Predict market price changes
+- [Caravan Master](caravan-master/index.md) - Organize and manage trade caravans
+- [Fencing](fencing/index.md) - Sell stolen or illegal goods
 
 ## Acquisition
 
@@ -41,4 +41,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

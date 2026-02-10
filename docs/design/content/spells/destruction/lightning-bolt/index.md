@@ -56,4 +56,4 @@ Hurl a bolt of lightning that can chain to nearby enemies.
 
 - **Granted By:** [Mage](../../classes/channeler/mage/), [Battlemage](../../classes/channeler/mage/battlemage/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Fireball](fireball.md), [Thunderstorm](thunderstorm.md), [Lightning Shield](lightning-shield.md)
+- **See Also:** [Fireball](fireball/index.md), [Thunderstorm](thunderstorm/index.md), [Lightning Shield](lightning-shield/index.md)

@@ -90,7 +90,7 @@ Skills that have strong synergies with Hunter. These skills can be learned by an
 **Gathering Skills**:
 
 - [Tracking](../../skills/index.md) - Lesser/Greater/Enhanced - Follow trails of varying ages
-- [Keen Senses](../../skills/common/keen-senses.md) - Lesser/Greater/Enhanced - Increased detection range for animals
+- [Keen Senses](../../skills/common/keen-senses/index.md) - Lesser/Greater/Enhanced - Increased detection range for animals
 - [Clean Kill](../../skills/index.md) - Lesser/Greater/Enhanced - Chance for instant kill with higher material quality
 - [Field Dressing](../../skills/index.md) - Lesser/Greater/Enhanced - Process carcasses faster with better yield
 - [Trap Setting](../../skills/tiered/index.md) - Lesser/Greater/Enhanced - Set traps that catch various game sizes
@@ -106,7 +106,7 @@ Skills that have strong synergies with Hunter. These skills can be learned by an
 - [Bow Mastery](../../skills/index.md) - Lesser/Greater/Enhanced - Increased bow damage and accuracy
 - [Camouflage](../../skills/index.md) - Lesser/Greater/Enhanced - Hide from animals effectively
 - [Shot Precision](../../skills/index.md) - Lesser/Greater/Enhanced - Increased critical hit chance on hunted targets
-- [Pack Tactics](../../skills/passive/pack-tactics.md) - Lesser/Greater/Enhanced - Increased group hunting effectiveness
+- [Pack Tactics](../../skills/passive/pack-tactics/index.md) - Lesser/Greater/Enhanced - Increased group hunting effectiveness
 
 **Note**: All skills listed have strong synergies because they are core hunting skills. Characters without Hunter class can still learn these skills but progress at base rate (1x XP) without effectiveness bonuses.
 
@@ -166,27 +166,27 @@ Actions that grant XP to the Hunter class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                          | Requirements                                           | Result Class   | Tier |
-| ------------------------------------------- | ------------------------------------------------------ | -------------- | ---- |
-| [Ranger](../consolidation/index.md)         | Hunter + [Explorer](../combat/index.md)                | Ranger         | 1    |
-| [Hunter-Crafter](../consolidation/index.md) | Hunter + [Leatherworker](../crafting/leatherworker.md) | Hunter-Crafter | 1    |
-| [Tracker](../consolidation/index.md)        | Hunter + [Scout](../combat/index.md)                   | Tracker        | 1    |
-| [Beastmaster](../consolidation/index.md)    | Hunter + animal handling focus                         | Beastmaster    | 1    |
-| [Monster Hunter](../consolidation/index.md) | Hunter + [Adventurer](../combat/index.md)              | Monster Hunter | 1    |
+| Consolidation Path                          | Requirements                                                 | Result Class   | Tier |
+| ------------------------------------------- | ------------------------------------------------------------ | -------------- | ---- |
+| [Ranger](../consolidation/index.md)         | Hunter + [Explorer](../combat/index.md)                      | Ranger         | 1    |
+| [Hunter-Crafter](../consolidation/index.md) | Hunter + [Leatherworker](../crafting/leatherworker/index.md) | Hunter-Crafter | 1    |
+| [Tracker](../consolidation/index.md)        | Hunter + [Scout](../combat/index.md)                         | Tracker        | 1    |
+| [Beastmaster](../consolidation/index.md)    | Hunter + animal handling focus                               | Beastmaster    | 1    |
+| [Monster Hunter](../consolidation/index.md) | Hunter + [Adventurer](../combat/index.md)                    | Monster Hunter | 1    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary animal material gathering class                                                                      |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Provides leather, meat, bones for [Leatherworker](../crafting/leatherworker.md), [Cook](../crafting/cook.md) |
-| [Combat](../../../systems/combat/index.md)                    | Combat-capable gathering class; hunts dangerous game                                                         |
-| [Economy](../../../systems/economy/index.md)                  | Can sell meat, hides, and specialty animal materials                                                         |
-| [Exploration](../../../systems/world/exploration.md)          | Tracking skills aid exploration and survival                                                                 |
-| [Settlement](../../../systems/world/settlements.md)           | Provides meat and controls dangerous wildlife                                                                |
-| [Social](../../../systems/social/index.md)                    | Respected in frontier communities                                                                            |
+| System                                                              | Interaction                                                                                                              |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary animal material gathering class                                                                                  |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Provides leather, meat, bones for [Leatherworker](../crafting/leatherworker/index.md), [Cook](../crafting/cook/index.md) |
+| [Combat](../../../systems/combat/index.md)                          | Combat-capable gathering class; hunts dangerous game                                                                     |
+| [Economy](../../../systems/economy/index.md)                        | Can sell meat, hides, and specialty animal materials                                                                     |
+| [Exploration](../../../systems/world/exploration/index.md)          | Tracking skills aid exploration and survival                                                                             |
+| [Settlement](../../../systems/world/settlements/index.md)           | Provides meat and controls dangerous wildlife                                                                            |
+| [Social](../../../systems/social/index.md)                          | Respected in frontier communities                                                                                        |
 
 ---
 
@@ -207,4 +207,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
   - [Meat](../../item/consumable/food/) - For sustenance
 - **Supplies:** [Leatherworker](../crafter/leatherworker/), [Cook](../crafter/cook/), [Alchemist](../crafter/alchemist/)
 - **Synergy Classes:** [Leatherworker](../crafter/leatherworker/), [Forager](./forager/), [Ranger](./ranger/)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Leather Strip Recipe](../../recipe/processing/leather-strip/)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Leather Strip Recipe](../../recipe/processing/leather-strip/)

@@ -92,8 +92,8 @@ Dwarves are hard to move. Your low center of gravity, dense musculature, and nat
 
 **Stacks with:**
 
-- [Shield Wall](../tiered/shield-wall.md) - Combined knockback immunity
-- [Armor Expert](../tiered/armor-expert.md) - Heavy armor stability bonus
+- [Shield Wall](../tiered/shield-wall/index.md) - Combined knockback immunity
+- [Armor Expert](../tiered/armor-expert/index.md) - Heavy armor stability bonus
 - Combat stance abilities (multiplicative bonuses)
 
 **Synergizes with:**
@@ -112,7 +112,7 @@ Dwarves are hard to move. Your low center of gravity, dense musculature, and nat
 
 ## Related Content
 
-- [Dense Build](dense-build.md) - Physical mass and weight (Dwarf)
-- [Stout Constitution](stout-constitution.md) - Health and resilience
-- [Shield Wall](../tiered/shield-wall.md) - Formation defense skill
-- [Mounted Combat](../mechanic-unlock/mounted-combat.md) - Opposite philosophy (mobility)
+- [Dense Build](dense-build/index.md) - Physical mass and weight (Dwarf)
+- [Stout Constitution](stout-constitution/index.md) - Health and resilience
+- [Shield Wall](../tiered/shield-wall/index.md) - Formation defense skill
+- [Mounted Combat](../mechanic-unlock/mounted-combat/index.md) - Opposite philosophy (mobility)

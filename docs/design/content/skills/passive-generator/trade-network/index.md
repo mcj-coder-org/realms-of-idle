@@ -40,4 +40,4 @@ Generate trade opportunities.
 ## Related Content
 
 - **Strong Synergy:** [Trader](../../classes/trader/trader/), [Merchant](../../classes/trader/merchant/), [Caravaner](../../classes/trader/caravaner/)
-- **See Also:** [Trade Contacts](trade-contacts.md), [Market Sense](../tiered/market-sense.md), [Trade System](../../systems/economy/trade-system.md)
+- **See Also:** [Trade Contacts](trade-contacts/index.md), [Market Sense](../tiered/market-sense/index.md), [Trade System](../../systems/economy/trade-system/index.md)

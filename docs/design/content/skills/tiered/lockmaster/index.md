@@ -66,4 +66,4 @@ Classes with strong synergies: Thief, Scout
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Scout](../../classes/fighter/scout/)
-- **See Also:** [Stealth](stealth.md), [Infiltration Skills](../index.md), [Gathering & Stealth System](../../systems/gathering-stealth/index.md)
+- **See Also:** [Stealth](stealth/index.md), [Infiltration Skills](../index.md), [Gathering & Stealth System](../../systems/gathering-stealth/index.md)

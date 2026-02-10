@@ -91,11 +91,11 @@ Skills that have strong synergies with Appraiser. These skills can be learned by
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know accurate market values
-- [Silver Tongue](../../skills/tiered/silver-tongue.md) - Lesser/Greater/Enhanced - Explain valuations convincingly
-- [Trade Network](../../skills/passive-generator/trade-network.md) - Passive Generator - Contacts for rare item sales
-- [Trade Contacts](../../skills/passive-generator/trade-contacts.md) - Passive Generator - Specialized collectors and dealers
-- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation.md) - Lesser/Greater/Enhanced - Predict value trends
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know accurate market values
+- [Silver Tongue](../../skills/tiered/silver-tongue/index.md) - Lesser/Greater/Enhanced - Explain valuations convincingly
+- [Trade Network](../../skills/passive-generator/trade-network/index.md) - Passive Generator - Contacts for rare item sales
+- [Trade Contacts](../../skills/passive-generator/trade-contacts/index.md) - Passive Generator - Specialized collectors and dealers
+- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation/index.md) - Lesser/Greater/Enhanced - Predict value trends
 
 #### Synergy Bonuses
 
@@ -157,25 +157,25 @@ Actions that grant XP to the Appraiser class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                             | Requirements                          | Result Class      | Tier |
-| ---------------------------------------------- | ------------------------------------- | ----------------- | ---- |
-| [Master Appraiser](../consolidation/index.md)  | Appraiser + multiple specializations  | Master Appraiser  | 1    |
-| [Auction Master](../consolidation/index.md)    | Appraiser + [Merchant](./merchant.md) | Auction Master    | 1    |
-| [Antiquarian](../consolidation/index.md)       | Appraiser + historical focus          | Antiquarian       | 1    |
-| [Gemologist Master](../consolidation/index.md) | Appraiser + exclusive gem focus       | Gemologist Master | 1    |
+| Consolidation Path                             | Requirements                                | Result Class      | Tier |
+| ---------------------------------------------- | ------------------------------------------- | ----------------- | ---- |
+| [Master Appraiser](../consolidation/index.md)  | Appraiser + multiple specializations        | Master Appraiser  | 1    |
+| [Auction Master](../consolidation/index.md)    | Appraiser + [Merchant](./merchant/index.md) | Auction Master    | 1    |
+| [Antiquarian](../consolidation/index.md)       | Appraiser + historical focus                | Antiquarian       | 1    |
+| [Gemologist Master](../consolidation/index.md) | Appraiser + exclusive gem focus             | Gemologist Master | 1    |
 
 ### Interactions
 
-| System                                                           | Interaction                              |
-| ---------------------------------------------------------------- | ---------------------------------------- |
-| [Economy](../../../systems/economy/index.md)                     | Establishes accurate market values       |
-| [Trade & Pricing](../../../systems/economy/trade-and-pricing.md) | Prevents fraud and overpricing           |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Evaluates crafted item quality           |
-| [Enchantment](../../../systems/crafting/index.md)                | Assesses magical item properties         |
-| [Social](../../../systems/social/index.md)                       | Expert authority in trade disputes       |
-| [Reputation](../../../systems/social/factions-reputation.md)     | Expertise builds professional reputation |
+| System                                                                 | Interaction                              |
+| ---------------------------------------------------------------------- | ---------------------------------------- |
+| [Economy](../../../systems/economy/index.md)                           | Establishes accurate market values       |
+| [Trade & Pricing](../../../systems/economy/trade-and-pricing/index.md) | Prevents fraud and overpricing           |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Evaluates crafted item quality           |
+| [Enchantment](../../../systems/crafting/index.md)                      | Assesses magical item properties         |
+| [Social](../../../systems/social/index.md)                             | Expert authority in trade disputes       |
+| [Reputation](../../../systems/social/factions-reputation/index.md)     | Expertise builds professional reputation |
 
 ---
 
@@ -184,6 +184,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Requires:** Examination tools (magnifiers, scales, reagents), reference materials
 - **Equipment:** [Magnifying Glass](../../items/index.md), [Scales](../../items/index.md), [Reference Books](../../items/index.md)
 - **Prerequisite:** Often consolidates from [Trader](../trader/) with specialization
-- **Synergy Classes:** [Trader](../trader/), [Merchant](./merchant/), [Jeweler](../crafting/jeweler.md)
+- **Synergy Classes:** [Trader](../trader/), [Merchant](./merchant/), [Jeweler](../crafting/jeweler/index.md)
 - **Consolidates To:** [Master Appraiser](../consolidation/index.md), [Auction Master](../consolidation/index.md), [Antiquarian](../consolidation/index.md)
 - **See Also:** [Economy System](../../../systems/economy/index.md), [Item Quality](../../../systems/crafting/index.md), [Fraud Prevention](../../../systems/economy/index.md)

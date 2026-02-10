@@ -223,6 +223,6 @@ The enchantment has become everyday infrastructure in cold regions. Northern [Gu
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Fire essence](../../materials/reagents/index.md), [Wool](../../materials/cloth/index.md), [Cinnamon](../../materials/reagents/index.md)
 - **Applied To:** All [Clothing](../../items/clothing/index.md), [Blankets](../../items/index.md), [Sleeping gear](../../items/index.md) (see Applicable Items table)
-- **See Also:** [Cooling](cooling.md), [Comfort](comfort.md), [Fire Resistance](../protection/resistance.md)
+- **See Also:** [Cooling](cooling/index.md), [Comfort](comfort/index.md), [Fire Resistance](../protection/resistance/index.md)
 - **Enchantment Type:** Comfort (temperature regulation - heating)
 - **Safety Note:** Essential survival gear for cold climates; always carry backup insulation

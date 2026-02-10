@@ -79,10 +79,10 @@ Master weavers create fabrics that seem impossible. Double-weave blankets with d
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Tier   | Link                                                            | Reasoning                                |
-| ------------------ | ------ | --------------------------------------------------------------- | ---------------------------------------- |
-| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition.md) | Understanding fiber quality is essential |
-| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus.md)              | Weaving requires sustained concentration |
+| Skill              | Tier   | Link                                                                  | Reasoning                                |
+| ------------------ | ------ | --------------------------------------------------------------------- | ---------------------------------------- |
+| Material Intuition | Lesser | [See Skill](../../skills/mechanic-unlock/material-intuition/index.md) | Understanding fiber quality is essential |
+| Artisan's Focus    | Lesser | [See Skill](../../skills/tiered/artisans-focus/index.md)              | Weaving requires sustained concentration |
 
 #### Synergy Skills
 
@@ -90,11 +90,11 @@ Skills with strong synergies for Weaver:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
 
 **Weaving Skills** (specialized skills):
 
@@ -121,34 +121,34 @@ Actions that grant XP to the Weaver class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                     | Requirements                  | Result Class | Tier |
-| -------------------------------------- | ----------------------------- | ------------ | ---- |
-| [Artisan](../consolidation/index.md)   | Weaver + any Crafter class    | Artisan      | 1    |
-| [Clothier](../consolidation/index.md)  | Weaver + [Tailor](tailor.md)  | Clothier     | 1    |
-| [Artificer](../consolidation/index.md) | Master in 3+ crafting classes | Artificer    | 3    |
+| Consolidation Path                     | Requirements                       | Result Class | Tier |
+| -------------------------------------- | ---------------------------------- | ------------ | ---- |
+| [Artisan](../consolidation/index.md)   | Weaver + any Crafter class         | Artisan      | 1    |
+| [Clothier](../consolidation/index.md)  | Weaver + [Tailor](tailor/index.md) | Clothier     | 1    |
+| [Artificer](../consolidation/index.md) | Master in 3+ crafting classes      | Artificer    | 3    |
 
 ### Interactions
 
-| System                                                           | Interaction                                                  |
-| ---------------------------------------------------------------- | ------------------------------------------------------------ |
-| [Crafting](../../../systems/crafting/crafting-progression.md)    | Primary cloth production class; supplies Tailors             |
-| [Economy](../../../systems/economy/index.md)                     | Can establish weaving shop; bulk cloth production            |
-| [Gathering](../../../systems/crafting/gathering.md)              | Synergy: [Farmer](../gathering/farmer.md) provides raw fiber |
-| [Enchanting](../../../systems/crafting/enchantment-mechanics.md) | Enchanted weaving creates magical fabric                     |
-| [Settlement](../../../systems/world/settlements.md)              | Weaving workshops provide cloth supply                       |
+| System                                                                 | Interaction                                                        |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)    | Primary cloth production class; supplies Tailors                   |
+| [Economy](../../../systems/economy/index.md)                           | Can establish weaving shop; bulk cloth production                  |
+| [Gathering](../../../systems/crafting/gathering/index.md)              | Synergy: [Farmer](../gathering/farmer/index.md) provides raw fiber |
+| [Enchanting](../../../systems/crafting/enchantment-mechanics/index.md) | Enchanted weaving creates magical fabric                           |
+| [Settlement](../../../systems/world/settlements/index.md)              | Weaving workshops provide cloth supply                             |
 
 ---
 
 ## Related Content
 
 - **Requires:** Loom, spindle, raw fiber (wool, cotton, flax, silk)
-- **Materials Used:** [Wool](../../materials/cloth/wool.md), [Cotton](../../materials/cloth/cotton.md), [Linen](../../materials/cloth/linen.md), [Silk](../../materials/cloth/silk.md)
+- **Materials Used:** [Wool](../../materials/cloth/wool/index.md), [Cotton](../../materials/cloth/cotton/index.md), [Linen](../../materials/cloth/linen/index.md), [Silk](../../materials/cloth/silk/index.md)
 - **Creates:** Bolts of cloth, fabric, thread, yarn
 - **Recipes:** Weaving Recipes
-- **Synergy Classes:** [Farmer](../gathering/farmer.md), [Tailor](tailor.md), [Enchanter](../magic/enchanter.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md)
+- **Synergy Classes:** [Farmer](../gathering/farmer/index.md), [Tailor](tailor/index.md), [Enchanter](../magic/enchanter/index.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md)
 
 ## Tags
 

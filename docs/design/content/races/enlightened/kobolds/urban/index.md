@@ -9,7 +9,7 @@ summary: 'City-dwelling kobolds who maintain urban infrastructure and develop ex
 
 # Urban Kobold
 
-> **Parent Race:** [Kobolds](base.md)
+> **Parent Race:** [Kobolds](base/index.md)
 
 ## Variant Overview
 
@@ -17,7 +17,7 @@ Urban Kobolds live in or beneath cities, often maintaining the sewer and utility
 
 ## Region
 
-Beneath and within cities, particularly large [human](../humans.md) settlements with extensive underground infrastructure. Urban kobolds build their communities in sewer systems, utility tunnels, and abandoned cellars, creating comfortable spaces within the city's hidden depths. Unlike traditional warrens, urban kobold settlements must accommodate constant interaction with surface dwellers, shaping their entire culture.
+Beneath and within cities, particularly large [human](../humans/index.md) settlements with extensive underground infrastructure. Urban kobolds build their communities in sewer systems, utility tunnels, and abandoned cellars, creating comfortable spaces within the city's hidden depths. Unlike traditional warrens, urban kobold settlements must accommodate constant interaction with surface dwellers, shaping their entire culture.
 
 ## Craft Focus
 
@@ -36,7 +36,7 @@ Engineering and practical mechanism design. Urban kobolds specialize in systems 
 
 ## Cultural Distinctions
 
-Urban Kobolds are the most socially adapted and diplomatically skilled of all kobold variants. Constant surface interaction taught them to read [human](../humans.md) expressions, moderate their directness, and navigate complex social situations. They're still kobolds - blunt, work-focused, size-sensitive - but they've learned to code-switch between kobold and surface communication styles.
+Urban Kobolds are the most socially adapted and diplomatically skilled of all kobold variants. Constant surface interaction taught them to read [human](../humans/index.md) expressions, moderate their directness, and navigate complex social situations. They're still kobolds - blunt, work-focused, size-sensitive - but they've learned to code-switch between kobold and surface communication styles.
 
 Their communities organize around practical work rather than theoretical perfection. An urban kobold measures success by steady employment and satisfied clients more than technical mastery. This doesn't mean they're less skilled - urban kobold work must function reliably or cities grind to a halt - but they've embraced "good enough to work perfectly" over "perfect in every theoretical dimension."
 
@@ -44,7 +44,7 @@ Urban kobolds spend most of their time on the surface or in spaces with regular 
 
 ## Social Adaptation
 
-Urban kobolds receive +1 Charisma, reflecting generations of surface social interaction. This doesn't make them charming by [elf](../elves/base.md) standards, but they understand surface social rules and can navigate them competently. They know when to be diplomatic, how to negotiate without giving offense, and which social niceties actually matter to surface races.
+Urban kobolds receive +1 Charisma, reflecting generations of surface social interaction. This doesn't make them charming by [elf](../elves/base/index.md) standards, but they understand surface social rules and can navigate them competently. They know when to be diplomatic, how to negotiate without giving offense, and which social niceties actually matter to surface races.
 
 This social skill makes urban kobolds excellent merchants, diplomats, and service providers. They're the kobolds who can explain technical issues to non-technical clients, negotiate fair contracts without creating grudges, and maintain positive long-term business relationships.
 
@@ -62,9 +62,9 @@ This philosophy produces less impressive but more valuable work. A urban kobold'
 
 ## Relations
 
-**With Other Kobolds:** Urban Kobolds occupy a complicated position in kobold society. Mountain Kobolds consider them corrupted by surface culture, having lost touch with true kobold values. Forest Kobolds see them as too focused on [human](../humans.md) approval. Dragonsworn pity them for being so far removed from dragon veneration. Yet urban kobolds often have the most stable income, best living conditions, and strongest political connections of any variant - success that's hard to dismiss.
+**With Other Kobolds:** Urban Kobolds occupy a complicated position in kobold society. Mountain Kobolds consider them corrupted by surface culture, having lost touch with true kobold values. Forest Kobolds see them as too focused on [human](../humans/index.md) approval. Dragonsworn pity them for being so far removed from dragon veneration. Yet urban kobolds often have the most stable income, best living conditions, and strongest political connections of any variant - success that's hard to dismiss.
 
-**With Other Races:** Urban Kobolds maintain the closest and most positive relationships with surface races. [Humans](../humans.md) view them as valuable specialists and reliable workers. [Dwarves](../dwarves/base.md) respect their engineering skills while finding them insufficiently traditional. [Elves](../elves/base.md) appreciate their adaptability while questioning their aesthetic standards. City governments often employ urban kobolds officially for infrastructure maintenance, giving them legal status and protection unusual for kobolds.
+**With Other Races:** Urban Kobolds maintain the closest and most positive relationships with surface races. [Humans](../humans/index.md) view them as valuable specialists and reliable workers. [Dwarves](../dwarves/base/index.md) respect their engineering skills while finding them insufficiently traditional. [Elves](../elves/base/index.md) appreciate their adaptability while questioning their aesthetic standards. City governments often employ urban kobolds officially for infrastructure maintenance, giving them legal status and protection unusual for kobolds.
 
 ## Recommended Classes
 

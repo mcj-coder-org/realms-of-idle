@@ -11,10 +11,10 @@ Extraordinary creatures that transcend ordinary animal classification. These bei
 
 ## Creatures
 
-| Creature                          | Level | Habitat         | Rarity    | Nature            |
-| --------------------------------- | ----- | --------------- | --------- | ----------------- |
-| [Giant Eagle](giant-eagle.md)     | 15-20 | High mountains  | Rare      | Exceptional beast |
-| [Forest Spirit](forest-spirit.md) | 20-30 | Ancient forests | Very Rare | Nature incarnate  |
+| Creature                                | Level | Habitat         | Rarity    | Nature            |
+| --------------------------------------- | ----- | --------------- | --------- | ----------------- |
+| [Giant Eagle](giant-eagle/index.md)     | 15-20 | High mountains  | Rare      | Exceptional beast |
+| [Forest Spirit](forest-spirit/index.md) | 20-30 | Ancient forests | Very Rare | Nature incarnate  |
 
 ## Defining Characteristics
 
@@ -201,15 +201,15 @@ Extraordinary creatures that transcend ordinary animal classification. These bei
 
 ## Related Systems
 
-- **[Hunting/Gathering System](../../../../systems/crafting/gathering.md)** - Resource collection ethics
-- **[Nature Magic](../../../../systems/character/magic-system.md)** - Druidic communion
+- **[Hunting/Gathering System](../../../../systems/crafting/gathering/index.md)** - Resource collection ethics
+- **[Nature Magic](../../../../systems/character/magic-system/index.md)** - Druidic communion
 - **[Cultural Systems](../../../../systems/social/index.md)** - Sacred animals, taboos
-- **[Ecology](../../../../systems/crafting/gathering.md)** - Role in ecosystems
-- **[Reputation](../../../../systems/social/factions-reputation.md)** - Hunting consequences
+- **[Ecology](../../../../systems/crafting/gathering/index.md)** - Role in ecosystems
+- **[Reputation](../../../../systems/social/factions-reputation/index.md)** - Hunting consequences
 
 ## See Also
 
 - **[Docile Wildlife](../docile/)** - Natural prey species
 - **[Predator Wildlife](../predators/)** - Ordinary hunters
 - **[Magical Creatures](../../magical/)** - True magical beings
-- **[Creature System](../../creature-system.md)** - Complete creature mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete creature mechanics

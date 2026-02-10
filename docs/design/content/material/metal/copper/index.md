@@ -49,11 +49,11 @@ Every apprentice blacksmith begins with copper. It's forgiving - mistakes can be
 
 ## Interactions
 
-| System                                                           | Interaction                             |
-| ---------------------------------------------------------------- | --------------------------------------- |
-| [Gathering](../../../../systems/crafting/gathering.md)           | Mined from surface nodes by beginners   |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Used for basic weapon and tool training |
-| [Economy](../../../../systems/economy/index.md)                  | Low value, common trade good            |
+| System                                                                 | Interaction                             |
+| ---------------------------------------------------------------------- | --------------------------------------- |
+| [Gathering](../../../../systems/crafting/gathering/index.md)           | Mined from surface nodes by beginners   |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Used for basic weapon and tool training |
+| [Economy](../../../../systems/economy/index.md)                        | Low value, common trade good            |
 
 ---
 

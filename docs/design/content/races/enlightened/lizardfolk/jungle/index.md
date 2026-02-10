@@ -9,7 +9,7 @@ summary: 'Forest-adapted lizardfolk with camouflage scales and climbing abilitie
 
 # Jungle Lizardfolk
 
-> **Parent Race:** [Lizardfolk](base.md)
+> **Parent Race:** [Lizardfolk](base/index.md)
 
 ## Variant Overview
 
@@ -37,7 +37,7 @@ Jungle Lizardfolk excel at magic that works with forest ecology - encouraging pl
 | Positive (○)  | Combat, Gathering, Physical/Endurance, Crafting/Alchemy | Faster than baseline      |
 | Negative (×)  | Social, Knowledge/Academic                              | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -49,17 +49,17 @@ Jungle Lizardfolk receive **3 random skills** from their racial skill pool at ch
 
 **Example Racial Skills:**
 
-| Skill                                                | Tags                       | Effect                                          |
-| ---------------------------------------------------- | -------------------------- | ----------------------------------------------- |
-| [Scaly Hide](../../../skills/passive/scaly-hide.md)  | Physical/Endurance, Nature | +3 AC natural armor, 5% damage reduction        |
-| [Camouflage Scales](../../../skills/index.md)        | Nature, Stealth            | +30% stealth, scales adapt to surroundings      |
-| [Climbing Mastery](../../../skills/index.md)         | Physical/Strength, Nature  | Climb at full movement speed, enhanced grip     |
-| [Jungle Strider](../../../skills/index.md)           | Nature, Physical/Endurance | No movement penalty in jungle, navigate canopy  |
-| [Poison Resistance](../../../skills/racial/index.md) | Physical/Endurance, Nature | High resistance to toxins and venoms            |
-| [Venomous Bite](../../../skills/racial/index.md)     | Combat, Nature             | Bite attack with paralytic venom                |
-| [Jungle Sense](../../../skills/index.md)             | Nature, Gathering          | Detect threats, find resources in dense forests |
+| Skill                                                     | Tags                       | Effect                                          |
+| --------------------------------------------------------- | -------------------------- | ----------------------------------------------- |
+| [Scaly Hide](../../../skills/passive/scaly-hide/index.md) | Physical/Endurance, Nature | +3 AC natural armor, 5% damage reduction        |
+| [Camouflage Scales](../../../skills/index.md)             | Nature, Stealth            | +30% stealth, scales adapt to surroundings      |
+| [Climbing Mastery](../../../skills/index.md)              | Physical/Strength, Nature  | Climb at full movement speed, enhanced grip     |
+| [Jungle Strider](../../../skills/index.md)                | Nature, Physical/Endurance | No movement penalty in jungle, navigate canopy  |
+| [Poison Resistance](../../../skills/racial/index.md)      | Physical/Endurance, Nature | High resistance to toxins and venoms            |
+| [Venomous Bite](../../../skills/racial/index.md)          | Combat, Nature             | Bite attack with paralytic venom                |
+| [Jungle Sense](../../../skills/index.md)                  | Nature, Gathering          | Detect threats, find resources in dense forests |
 
-**[Scaly Hide](../../../skills/passive/scaly-hide.md)**: Jungle variant scales are particularly flexible and adaptive, providing +3 AC natural armor and 5% physical damage reduction. Their scales also help them grip bark and branches during climbing.
+**[Scaly Hide](../../../skills/passive/scaly-hide/index.md)**: Jungle variant scales are particularly flexible and adaptive, providing +3 AC natural armor and 5% physical damage reduction. Their scales also help them grip bark and branches during climbing.
 
 **[Camouflage Scales](../../../skills/index.md)**: Jungle lizardfolk scales unconsciously adapt to match their surroundings, providing exceptional stealth bonuses (+30%) in natural environments. This isn't magical invisibility but highly effective natural camouflage. When remaining still, they become nearly impossible to spot visually.
 
@@ -90,7 +90,7 @@ Jungle Lizardfolk maintain lizardfolk patience but express it through observatio
 
 Their settlements exist primarily in the canopy, with structures built hundreds of feet above ground. These aren't just homes but three-dimensional cities connected by branch paths, vine bridges, and rope networks. Ground level is rarely visited; the real jungle exists in the canopy where light, food, and safety coexist. Temples and important buildings grow from the largest trees, shaped over centuries into organic architecture.
 
-Navigation in jungle lizardfolk cities requires understanding three-dimensional space in ways ground-dwelling races struggle with. What looks like impenetrable forest from below reveals itself as organized community from within the canopy. Only jungle lizardfolk (and occasionally [wood elves](../elves/wood.md)) can reliably find their way through these settlements.
+Navigation in jungle lizardfolk cities requires understanding three-dimensional space in ways ground-dwelling races struggle with. What looks like impenetrable forest from below reveals itself as organized community from within the canopy. Only jungle lizardfolk (and occasionally [wood elves](../elves/wood/index.md)) can reliably find their way through these settlements.
 
 Jungle lizardfolk culture emphasizes herbalism and toxicology. Every child learns to identify hundreds of plants - which heal, which kill, which paralyze, which provide nutrition. This knowledge isn't academic but survival-critical; the jungle offers both medicine and death, and only careful study reveals which is which. Their pharmaceutical knowledge rivals any civilization's, though they rarely share it with outsiders.
 
@@ -100,7 +100,7 @@ Ancestor consultation continues but takes unique forms. Rather than stone pyrami
 
 **With Other Variants:** Jungle Lizardfolk view swamp cousins as too exposed - why build visible pyramids when you can hide your entire city? Coastal variants seem dangerously social, interacting with far too many outsiders. Desert variants are barely understood; how does one survive without abundant water and vegetation?
 
-**With Other Races:** Jungle Lizardfolk interact minimally with other races, preferring observation from concealment. [Wood Elves](../elves/wood.md) are occasionally encountered and cautiously respected as fellow forest dwellers. [Humans](../humans.md) are studied from hiding but rarely contacted directly. Most other races are simply unaware jungle lizardfolk cities exist nearby. Trade happens on jungle lizardfolk terms - when they choose to reveal themselves, conduct business efficiently, and disappear back into the canopy before partners can follow.
+**With Other Races:** Jungle Lizardfolk interact minimally with other races, preferring observation from concealment. [Wood Elves](../elves/wood/index.md) are occasionally encountered and cautiously respected as fellow forest dwellers. [Humans](../humans/index.md) are studied from hiding but rarely contacted directly. Most other races are simply unaware jungle lizardfolk cities exist nearby. Trade happens on jungle lizardfolk terms - when they choose to reveal themselves, conduct business efficiently, and disappear back into the canopy before partners can follow.
 
 ## Recommended Classes
 

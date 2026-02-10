@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Necromancy`    | 2     | Necromancer, Mage, Channeler        |
 | `Magic/Conjuration/*` | 3     | Necromancer (full access to undead) |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -111,11 +111,11 @@ Master Necromancers command vast undead armies, achieve functional immortality t
 
 #### Starting Skills
 
-| Skill                                                                       | Type    | Effect                                        |
-| --------------------------------------------------------------------------- | ------- | --------------------------------------------- |
-| Raise Dead                                                                  | Active  | Can reanimate corpses as weak undead servants |
-| [Undead Binding](../../skills/mechanic-unlock/undead-binding.md) (Mechanic) | Passive | Core ability to control and command undead    |
-| [Mana Well](../../skills/tiered/mana-well.md) (Lesser)                      | Passive | Expanded mana for sustaining undead servants  |
+| Skill                                                                             | Type    | Effect                                        |
+| --------------------------------------------------------------------------------- | ------- | --------------------------------------------- |
+| Raise Dead                                                                        | Active  | Can reanimate corpses as weak undead servants |
+| [Undead Binding](../../skills/mechanic-unlock/undead-binding/index.md) (Mechanic) | Passive | Core ability to control and command undead    |
+| [Mana Well](../../skills/tiered/mana-well/index.md) (Lesser)                      | Passive | Expanded mana for sustaining undead servants  |
 
 #### Synergy Skills
 
@@ -123,12 +123,12 @@ Skills that have strong synergies with Necromancer. These skills can be learned 
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Undead Binding](../../skills/mechanic-unlock/undead-binding.md) - Lesser/Greater/Enhanced - Control undead creatures
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Undead Binding](../../skills/mechanic-unlock/undead-binding/index.md) - Lesser/Greater/Enhanced - Control undead creatures
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Necromancy Skills**:
 
@@ -210,7 +210,7 @@ Actions that grant XP to the Necromancer class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                   | Requirements                                    | Result Class | Tier |
 | ------------------------------------ | ----------------------------------------------- | ------------ | ---- |
@@ -221,14 +221,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                       | Interaction                                                |
-| ------------------------------------------------------------ | ---------------------------------------------------------- |
-| [Magic System](../../../systems/character/magic-system.md)   | Uses forbidden death magic school                          |
-| [Undead](../../../systems/social/death-and-undead.md)        | Creates and commands undead creatures                      |
-| [Crime](../../../systems/social/index.md)                    | Forbidden magic; execution if discovered                   |
-| [Reputation](../../../systems/social/factions-reputation.md) | Separate underground reputation; public persona impossible |
-| [Corruption](../../../systems/world/index.md)                | Necromancy corrupts surrounding lands                      |
-| [Combat](../../../systems/combat/combat-resolution.md)       | Commands undead armies in battle                           |
+| System                                                             | Interaction                                                |
+| ------------------------------------------------------------------ | ---------------------------------------------------------- |
+| [Magic System](../../../systems/character/magic-system/index.md)   | Uses forbidden death magic school                          |
+| [Undead](../../../systems/social/death-and-undead/index.md)        | Creates and commands undead creatures                      |
+| [Crime](../../../systems/social/index.md)                          | Forbidden magic; execution if discovered                   |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Separate underground reputation; public persona impossible |
+| [Corruption](../../../systems/world/index.md)                      | Necromancy corrupts surrounding lands                      |
+| [Combat](../../../systems/combat/combat-resolution/index.md)       | Commands undead armies in battle                           |
 
 ---
 
@@ -239,4 +239,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Equipment:** [Necromantic Staff](../../../item/), [Dark Grimoire](../../../item/), [Soul Gems](../../../item/)
 - **Synergy Classes:** [Mage](./mage/index.md), [Summoner](./summoner/), [Warrior](../../fighter/warrior/)
 - **Consolidates To:** [Lich](../../consolidation/), [Death Knight](../../consolidation/), [Archlich](../../consolidation/)
-- **See Also:** [Death & Undead System](../../../systems/social/death-and-undead.md), [Forbidden Magic](../../../systems/magic/index.md), [Corruption](../../../systems/world/index.md)
+- **See Also:** [Death & Undead System](../../../systems/social/death-and-undead/index.md), [Forbidden Magic](../../../systems/magic/index.md), [Corruption](../../../systems/world/index.md)

@@ -57,7 +57,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Conjuration` | 2     | Mage (basic, specialists get depth 3+)  |
 | `Magic/Illusion`    | 2     | Mage (basic, Illusionist gets depth 3+) |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -139,11 +139,11 @@ Master Mages accumulate vast knowledge across multiple magical disciplines. They
 
 #### Starting Skills
 
-| Skill                                                      | Type    | Effect                                                |
-| ---------------------------------------------------------- | ------- | ----------------------------------------------------- |
-| Basic Spellcasting                                         | Passive | Can cast cantrips and basic spells from known schools |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser) | Passive | Enhanced spellcasting effectiveness and control       |
-| [Mana Well](../../skills/tiered/mana-well.md) (Lesser)     | Passive | Expanded mana pool for sustained casting              |
+| Skill                                                            | Type    | Effect                                                |
+| ---------------------------------------------------------------- | ------- | ----------------------------------------------------- |
+| Basic Spellcasting                                               | Passive | Can cast cantrips and basic spells from known schools |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser) | Passive | Enhanced spellcasting effectiveness and control       |
+| [Mana Well](../../skills/tiered/mana-well/index.md) (Lesser)     | Passive | Expanded mana pool for sustained casting              |
 
 #### Synergy Skills
 
@@ -151,13 +151,13 @@ Skills that have strong synergies with Mage. These skills can be learned by any 
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Counter Magic](../../skills/tiered/counter-magic.md) - Lesser/Greater/Enhanced - Dispel and resist hostile magic
-- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving.md) - Lesser/Greater/Enhanced - Combine multiple spells
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Counter Magic](../../skills/tiered/counter-magic/index.md) - Lesser/Greater/Enhanced - Dispel and resist hostile magic
+- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving/index.md) - Lesser/Greater/Enhanced - Combine multiple spells
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Spellcasting Skills**:
 
@@ -236,7 +236,7 @@ Actions that grant XP to the Mage class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path               | Requirements                                                 | Result Class | Tier |
 | -------------------------------- | ------------------------------------------------------------ | ------------ | ---- |
@@ -247,14 +247,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                        | Interaction                                   |
-| ------------------------------------------------------------- | --------------------------------------------- |
-| [Magic System](../../../systems/character/magic-system.md)    | Core spellcasting mechanics                   |
-| [Spell Schools](../../../systems/magic/index.md)              | Learns and casts spells from multiple schools |
-| [Mana](../../../systems/magic/index.md)                       | Manages mana pool for spellcasting            |
-| [Combat](../../../systems/combat/combat-resolution.md)        | Versatile magical damage and utility          |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Can craft magical items with proper skills    |
-| [Economy](../../../systems/economy/index.md)                  | Provides magical services for income          |
+| System                                                              | Interaction                                   |
+| ------------------------------------------------------------------- | --------------------------------------------- |
+| [Magic System](../../../systems/character/magic-system/index.md)    | Core spellcasting mechanics                   |
+| [Spell Schools](../../../systems/magic/index.md)                    | Learns and casts spells from multiple schools |
+| [Mana](../../../systems/magic/index.md)                             | Manages mana pool for spellcasting            |
+| [Combat](../../../systems/combat/combat-resolution/index.md)        | Versatile magical damage and utility          |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Can craft magical items with proper skills    |
+| [Economy](../../../systems/economy/index.md)                        | Provides magical services for income          |
 
 ---
 
@@ -294,4 +294,4 @@ Mage can specialize into Tier 3 classes upon reaching 50,000 XP:
 - **Equipment:** [Spell Book](../../../item/), [Staff](../../../item/tool/), [Wand](../../../item/tool/), [Robes](../../../item/)
 - **Synergy Classes:** [Enchanter](../enchanter/), [Healer](../healer/), [Battlemage](./battlemage/)
 - **Consolidates To:** [Battlemage](./battlemage/), [Enchanter](../enchanter/), [Archmage](../../consolidation/)
-- **See Also:** [Magic System](../../../systems/character/magic-system.md), [Spell Schools](../../../systems/magic/), [Mana Management](../../../systems/magic/)
+- **See Also:** [Magic System](../../../systems/character/magic-system/index.md), [Spell Schools](../../../systems/magic/), [Mana Management](../../../systems/magic/)

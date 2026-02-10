@@ -67,6 +67,6 @@ War Shaman is a terminal Tier 3 consolidation class. No further progression path
 ### Related Content
 
 - **Required Classes:** [Shaman](../), [Warrior](../../../fighter/warrior/)
-- **Skills:** [War Paint Mastery](../../skills/tiered/war-paint-mastery.md), [Battle Spirit Bond](../../skills/tiered/battle-spirit-bond.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
-- **System:** [Combat System](../../../systems/combat/combat-resolution.md)
+- **Skills:** [War Paint Mastery](../../skills/tiered/war-paint-mastery/index.md), [Battle Spirit Bond](../../skills/tiered/battle-spirit-bond/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)
+- **System:** [Combat System](../../../systems/combat/combat-resolution/index.md)

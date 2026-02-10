@@ -61,4 +61,4 @@ Launch a devastating winter storm that engulfs an area with freezing ice and win
 
 - **Granted By:** [Cryomancer](../../classes/channeler/mage/cryomancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Ice Armor](ice-armor.md), [Tidal Wave](tidal-wave.md)
+- **See Also:** [Ice Armor](ice-armor/index.md), [Tidal Wave](tidal-wave/index.md)

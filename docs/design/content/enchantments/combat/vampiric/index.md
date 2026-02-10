@@ -137,7 +137,7 @@ Prolonged use may cause:
 
 - **Requires:** [Enchanting](../../skills/index.md) (Master), [Necromancy](../../skills/index.md) knowledge, [Blood ruby](../../materials/reagents/index.md), [Shadow essence](../../materials/reagents/index.md), proper licensing
 - **Applied To:** Weapons, gauntlets, rings, claws (see Applicable Items table)
-- **See Also:** [Life Steal](life-steal.md), [Soul Drinker](soul-drinker.md), [Wounding](wounding.md)
+- **See Also:** [Life Steal](life-steal/index.md), [Soul Drinker](soul-drinker/index.md), [Wounding](wounding/index.md)
 - **Legal Notes:** Banned in holy kingdoms; requires guild license in most regions; prohibited in arenas and duels
 - **Enchantment Type:** Combat (life drain - necromantic)
 - **Ethical Concerns:** Borderline necromancy; social stigma

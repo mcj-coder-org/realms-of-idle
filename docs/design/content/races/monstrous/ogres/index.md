@@ -22,9 +22,9 @@ Ogres reproduce slowly despite their size - females bear young rarely, perhaps o
 
 ### In the World
 
-Ogres occupy wastelands and wilderness areas too harsh for most races - deep forests, mountain caves, desolate badlands. They don't farm, craft extensively, or build permanent structures beyond crude shelters. They hunt, gather, and take what they need through force when opportunity presents. This brings them into conflict with everyone - [settlements](../../../systems/world/settlements.md), tribal races, even each other.
+Ogres occupy wastelands and wilderness areas too harsh for most races - deep forests, mountain caves, desolate badlands. They don't farm, craft extensively, or build permanent structures beyond crude shelters. They hunt, gather, and take what they need through force when opportunity presents. This brings them into conflict with everyone - [settlements](../../../systems/world/settlements/index.md), tribal races, even each other.
 
-The relationship between ogres and civilization is simple: mutual fear and hostility. [Settlements](../../../systems/world/settlements.md) see ogres as dangerous beasts that happen to speak. Ogres see settlements as places with food and shiny things guarded by weak creatures with sharp sticks. Peaceful coexistence rarely happens. More often, settlements hire adventurers to drive ogres away, or ogres raid and retreat before armed response arrives.
+The relationship between ogres and civilization is simple: mutual fear and hostility. [Settlements](../../../systems/world/settlements/index.md) see ogres as dangerous beasts that happen to speak. Ogres see settlements as places with food and shiny things guarded by weak creatures with sharp sticks. Peaceful coexistence rarely happens. More often, settlements hire adventurers to drive ogres away, or ogres raid and retreat before armed response arrives.
 
 Other races view ogres with fear and contempt. [Humans](../../enlightened/humans/) consider them little better than beasts. [Dwarves](../../enlightened/dwarves/) defend holds against ogre incursions but rarely pursue them afterward - not worth the effort. [Elves](../../enlightened/elves/) avoid ogre territories entirely. [Orcs](orcs/) sometimes ally with ogres, using them as shock troops in battles, but even orcs find ogre simplicity frustrating. [Goblins](../goblins/) manipulate ogres occasionally, offering food and treasure in exchange for muscle.
 
@@ -71,7 +71,7 @@ Ogres have natural affinities and aversions that affect skill learning speed and
 | Positive (○)  | Physical/Strength, Physical/Endurance | Faster than baseline      |
 | Negative (×)  | Magic, Knowledge, Social, Stealth     | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -81,18 +81,18 @@ Ogres receive **3 random skills** from their racial skill pool at character crea
 
 **Example Racial Skills:**
 
-| Skill                                                                            | Tags                            | Effect                                    |
-| -------------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
-| [Thick Skin](../../../content/skills/passive/thick-skin.md)                      | Physical/Endurance, Physical    | +2 AC natural armor, 5% damage reduction  |
-| [Stout Constitution](../../../content/skills/passive/stout-constitution.md)      | Physical/Endurance              | +15% HP, +20% poison/disease resistance   |
-| [Massive Strength](../../../content/skills/racial/index.md)                      | Physical/Strength               | +50% carry capacity, +20% melee damage    |
-| [Crushing Blows](../../../content/skills/index.md)                               | Combat/Melee, Physical/Strength | Bonus damage against structures and armor |
-| [Giant's Endurance](../../../content/skills/index.md)                            | Physical/Endurance              | +25% HP, enhanced stamina recovery        |
-| [Intimidating Presence](../../../content/skills/common/intimidating-presence.md) | Physical, Combat                | Fear effect on smaller creatures          |
+| Skill                                                                                  | Tags                            | Effect                                    |
+| -------------------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
+| [Thick Skin](../../../content/skills/passive/thick-skin/index.md)                      | Physical/Endurance, Physical    | +2 AC natural armor, 5% damage reduction  |
+| [Stout Constitution](../../../content/skills/passive/stout-constitution/index.md)      | Physical/Endurance              | +15% HP, +20% poison/disease resistance   |
+| [Massive Strength](../../../content/skills/racial/index.md)                            | Physical/Strength               | +50% carry capacity, +20% melee damage    |
+| [Crushing Blows](../../../content/skills/index.md)                                     | Combat/Melee, Physical/Strength | Bonus damage against structures and armor |
+| [Giant's Endurance](../../../content/skills/index.md)                                  | Physical/Endurance              | +25% HP, enhanced stamina recovery        |
+| [Intimidating Presence](../../../content/skills/common/intimidating-presence/index.md) | Physical, Combat                | Fear effect on smaller creatures          |
 
-**[Thick Skin](../../../content/skills/passive/thick-skin.md)**: Ogre hide is tough enough to turn aside casual blows. Even unarmored, ogres have +2 AC and 5% damage reduction - better protection than armored [humans](../enlightened/humans.md). Combined with worn armor, they become incredibly difficult to injure.
+**[Thick Skin](../../../content/skills/passive/thick-skin/index.md)**: Ogre hide is tough enough to turn aside casual blows. Even unarmored, ogres have +2 AC and 5% damage reduction - better protection than armored [humans](../enlightened/humans/index.md). Combined with worn armor, they become incredibly difficult to injure.
 
-**[Stout Constitution](../../../content/skills/passive/stout-constitution.md)**: Ogres have phenomenal health (+15% HP) and resistance to poisons and diseases (+20%). Their massive bodies shrug off toxins that would kill smaller races.
+**[Stout Constitution](../../../content/skills/passive/stout-constitution/index.md)**: Ogres have phenomenal health (+15% HP) and resistance to poisons and diseases (+20%). Their massive bodies shrug off toxins that would kill smaller races.
 
 **[Massive Strength](../../../content/skills/racial/index.md)**: Ogres are phenomenally strong. They carry 50% more than other large creatures, hit significantly harder in melee [combat](../../../systems/combat/index.md) (+20% damage), and break things others can't budge. This raw power makes them terrifying opponents despite their simplicity.
 
@@ -100,13 +100,13 @@ Ogres receive **3 random skills** from their racial skill pool at character crea
 
 **[Giant's Endurance](../../../content/skills/index.md)**: Being huge (Large size category) gives ogres massive health pools (+25% HP) and exceptional stamina. They can fight longer, travel farther, and endure hardships that would kill smaller races.
 
-**[Intimidating Presence](../../../content/skills/common/intimidating-presence.md)**: Ogres naturally inspire fear. Their size, smell, scars, and casual violence create automatic [intimidation](../../../systems/character/index.md) effects. Most sentient beings instinctively want to flee from approaching ogres.
+**[Intimidating Presence](../../../content/skills/common/intimidating-presence/index.md)**: Ogres naturally inspire fear. Their size, smell, scars, and casual violence create automatic [intimidation](../../../systems/character/index.md) effects. Most sentient beings instinctively want to flee from approaching ogres.
 
 **Limitations:**
 
-- **Simple Mind:** Ogres struggle with [magic](../../../systems/character/magic-system.md) (-30% effectiveness, -40% mana pool). Their mental capacity limits spellcasting ability. They can learn basic [shamanic magic](../../../systems/character/index.md) but rarely advance beyond fundamental techniques.
+- **Simple Mind:** Ogres struggle with [magic](../../../systems/character/magic-system/index.md) (-30% effectiveness, -40% mana pool). Their mental capacity limits spellcasting ability. They can learn basic [shamanic magic](../../../systems/character/index.md) but rarely advance beyond fundamental techniques.
 - **Large Frame:** +10% easier to hit, can't fit through standard doorways, struggle with precision tasks requiring fine motor control.
-- **Monstrous:** [Faction](../../../systems/social/factions-reputation.md) standings start actively Hostile in virtually all [settlements](../../../systems/world/settlements.md). Overcoming this requires exceptional, sustained effort.
+- **Monstrous:** [Faction](../../../systems/social/factions-reputation/index.md) standings start actively Hostile in virtually all [settlements](../../../systems/world/settlements/index.md). Overcoming this requires exceptional, sustained effort.
 
 ### Regional Variants
 
@@ -174,8 +174,8 @@ Ogres have access to all character classes without restriction, though their lim
 - **Classes**: [Warrior](../../../classes/combat/index.md), [Brute](../../../classes/combat/index.md)
 - **Magic**: [Shamanic Magic](../../../systems/character/index.md) (limited access)
 - **Combat**: [Combat System](../../../systems/combat/index.md), [Size Categories](../../../systems/combat/index.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Orcs](orcs/), [Trolls](trolls/), [Tribal Mechanics](../races-and-tribes.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Orcs](orcs/), [Trolls](trolls/), [Tribal Mechanics](../races-and-tribes/index.md)
 
 ---
 

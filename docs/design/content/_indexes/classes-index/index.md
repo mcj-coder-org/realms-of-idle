@@ -258,10 +258,10 @@ grep -A 5 "GrantedTags" src/CozyFantasyRpg/Content/Classes/*.cs
 
 ## Related Documentation
 
-- [Tag System Documentation](../../systems/content/tag-system.md)
+- [Tag System Documentation](../../systems/content/tag-system/index.md)
 - [Tags Index](tags-index.md)
-- [Content Template](../_templates/content-template.md)
-- [Class Progression System](../../systems/character/class-progression.md)
+- [Content Template](../_templates/content-template/index.md)
+- [Class Progression System](../../systems/character/class-progression/index.md)
 
 ---
 

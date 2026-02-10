@@ -299,4 +299,4 @@ Extremely difficult but possible:
 - **Items:** [Core Gem](../../../items/index.md), [Command Word Scroll](../../../items/index.md), [Runic Plates](../../../items/index.md), [Force Weapon](../../../items/index.md)
 - **Quests:** [Infiltrate the Vault](../../../../systems/world/index.md), [Recover Ancient Artifact](../../../../systems/world/index.md), [Deactivate the Guardian](../../../../systems/world/index.md), [Temple of the Ancients](../../../../systems/world/index.md)
 - **Systems:** [Boss Combat](../../../../systems/index.md), [Construct Crafting](../../../../systems/index.md), [Ancient Magic](../../../../systems/magic/index.md)
-- **See Also:** [Boss Creatures](index.md), [Ancient Dragon](ancient-dragon.md), [Creature System](../creature-system.md)
+- **See Also:** [Boss Creatures](index.md), [Ancient Dragon](ancient-dragon/index.md), [Creature System](../creature-system/index.md)

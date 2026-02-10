@@ -44,4 +44,4 @@ Grow alchemical ingredients.
 ## Related Content
 
 - **Strong Synergy:** [Alchemist](../../classes/crafter/alchemist/), [Herbalist](../../classes/gatherer/herbalist/)
-- **See Also:** [Green Thumb](../tiered/green-thumb.md), [Alchemy Crafting](../../systems/crafting/alchemy-crafting.md)
+- **See Also:** [Green Thumb](../tiered/green-thumb/index.md), [Alchemy Crafting](../../systems/crafting/alchemy-crafting/index.md)

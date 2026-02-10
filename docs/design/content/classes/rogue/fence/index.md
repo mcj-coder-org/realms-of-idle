@@ -94,19 +94,19 @@ Skills that have strong synergies with Fence. These skills can be learned by any
 
 **Dark Path Skills**:
 
-- [Underworld Connections](../../skills/passive-generator/underworld-connections.md) - Passive Generator - Criminal network contacts
-- [Money Laundering](../../skills/mechanic-unlock/money-laundering.md) - Lesser/Greater/Enhanced - Clean criminal proceeds
-- [False Identity](../../skills/mechanic-unlock/false-identity.md) - Lesser/Greater/Enhanced - Maintain legitimate cover operations
-- [Extortion](../../skills/mechanic-unlock/extortion.md) - Lesser/Greater/Enhanced - Leverage threats for profit
-- [Blackmail](../../skills/mechanic-unlock/blackmail.md) - Lesser/Greater/Enhanced - Use compromising information
+- [Underworld Connections](../../skills/passive-generator/underworld-connections/index.md) - Passive Generator - Criminal network contacts
+- [Money Laundering](../../skills/mechanic-unlock/money-laundering/index.md) - Lesser/Greater/Enhanced - Clean criminal proceeds
+- [False Identity](../../skills/mechanic-unlock/false-identity/index.md) - Lesser/Greater/Enhanced - Maintain legitimate cover operations
+- [Extortion](../../skills/mechanic-unlock/extortion/index.md) - Lesser/Greater/Enhanced - Leverage threats for profit
+- [Blackmail](../../skills/mechanic-unlock/blackmail/index.md) - Lesser/Greater/Enhanced - Use compromising information
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know prices and opportunities
-- [Silver Tongue](../../skills/tiered/silver-tongue.md) - Lesser/Greater/Enhanced - Persuade and negotiate
-- [Trade Network](../../skills/passive-generator/trade-network.md) - Passive Generator - Network of buyers and sellers
-- [Fencing](../../skills/mechanic-unlock/fencing.md) - Lesser/Greater/Enhanced - Sell stolen goods efficiently
-- [Trade Contacts](../../skills/passive-generator/trade-contacts.md) - Passive Generator - Specialized buyer contacts
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know prices and opportunities
+- [Silver Tongue](../../skills/tiered/silver-tongue/index.md) - Lesser/Greater/Enhanced - Persuade and negotiate
+- [Trade Network](../../skills/passive-generator/trade-network/index.md) - Passive Generator - Network of buyers and sellers
+- [Fencing](../../skills/mechanic-unlock/fencing/index.md) - Lesser/Greater/Enhanced - Sell stolen goods efficiently
+- [Trade Contacts](../../skills/passive-generator/trade-contacts/index.md) - Passive Generator - Specialized buyer contacts
 
 #### Synergy Bonuses
 
@@ -177,25 +177,25 @@ Actions that grant XP to the Fence class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                                   | Requirements                             | Result Class       | Tier |
-| ---------------------------------------------------- | ---------------------------------------- | ------------------ | ---- |
-| [Criminal Syndicate Boss](../consolidation/index.md) | Fence + extensive criminal network       | Syndicate Boss     | 1    |
-| [Information Broker](../consolidation/index.md)      | Fence + intelligence gathering focus     | Information Broker | 1    |
-| [Smuggler](./smuggler.md)                            | Fence + [Caravaner](./caravaner.md)      | Smuggler           | 1    |
-| [Black Market Lord](../consolidation/index.md)       | Multiple criminal classes + vast network | Black Market Lord  | 2    |
+| Consolidation Path                                   | Requirements                              | Result Class       | Tier |
+| ---------------------------------------------------- | ----------------------------------------- | ------------------ | ---- |
+| [Criminal Syndicate Boss](../consolidation/index.md) | Fence + extensive criminal network        | Syndicate Boss     | 1    |
+| [Information Broker](../consolidation/index.md)      | Fence + intelligence gathering focus      | Information Broker | 1    |
+| [Smuggler](./smuggler/index.md)                      | Fence + [Caravaner](./caravaner/index.md) | Smuggler           | 1    |
+| [Black Market Lord](../consolidation/index.md)       | Multiple criminal classes + vast network  | Black Market Lord  | 2    |
 
 ### Interactions
 
-| System                                                       | Interaction                                           |
-| ------------------------------------------------------------ | ----------------------------------------------------- |
-| [Black Market](../../../systems/economy/black-market.md)     | Central actor in underground economy                  |
-| [Crime](../../../systems/social/index.md)                    | Major criminal operation; severe penalties            |
-| [Reputation](../../../systems/social/factions-reputation.md) | Dual reputations: public and underground              |
-| [Economy](../../../systems/economy/index.md)                 | Parallel illegal market affecting legitimate commerce |
-| [Law Enforcement](../../../systems/social/index.md)          | Primary target of authorities                         |
-| [Criminal Networks](../../../systems/social/index.md)        | Core node connecting thieves and buyers               |
+| System                                                             | Interaction                                           |
+| ------------------------------------------------------------------ | ----------------------------------------------------- |
+| [Black Market](../../../systems/economy/black-market/index.md)     | Central actor in underground economy                  |
+| [Crime](../../../systems/social/index.md)                          | Major criminal operation; severe penalties            |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Dual reputations: public and underground              |
+| [Economy](../../../systems/economy/index.md)                       | Parallel illegal market affecting legitimate commerce |
+| [Law Enforcement](../../../systems/social/index.md)                | Primary target of authorities                         |
+| [Criminal Networks](../../../systems/social/index.md)              | Core node connecting thieves and buyers               |
 
 ---
 
@@ -204,6 +204,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Requires:** Front business, capital, criminal contacts, buyers for stolen goods
 - **Equipment:** [Shop Front](../../items/index.md), [Hidden Storage](../../items/index.md), [Ledgers (coded)](../../items/index.md)
 - **Prerequisite:** Often consolidates from [Trader](../trader/) into illegal commerce
-- **Synergy Classes:** [Thief](./thief.md), [Smuggler](./smuggler.md), [Appraiser](./appraiser.md)
+- **Synergy Classes:** [Thief](./thief/index.md), [Smuggler](./smuggler/index.md), [Appraiser](./appraiser/index.md)
 - **Consolidates To:** [Syndicate Boss](../consolidation/index.md), [Information Broker](../consolidation/index.md), [Black Market Lord](../consolidation/index.md)
-- **See Also:** [Black Market System](../../../systems/economy/black-market.md), [Crime & Punishment](../../../systems/social/index.md), [Corruption](../../../systems/social/index.md)
+- **See Also:** [Black Market System](../../../systems/economy/black-market/index.md), [Crime & Punishment](../../../systems/social/index.md), [Corruption](../../../systems/social/index.md)

@@ -200,6 +200,6 @@ Often appears in family heirlooms and noble estates. Auto-Repair + Unbreaking it
 
 - **Requires:** [Enchanting](../../skills/index.md) (Master), [Phoenix ash](../../materials/reagents/index.md), [Troll blood](../../materials/reagents/index.md), [Memory crystal](../../materials/reagents/index.md)
 - **Applied To:** Weapons, armor, tools, instruments, clothing, most items with durability (see Applicable Items table)
-- **See Also:** [Unbreaking](../enhancement/unbreaking.md), [Mending](mending.md), [Regeneration](regeneration.md)
+- **See Also:** [Unbreaking](../enhancement/unbreaking/index.md), [Mending](mending/index.md), [Regeneration](regeneration/index.md)
 - **Enchantment Type:** Restoration (self-repair)
 - **Investment Note:** Most expensive enchantment but eliminates all repair costs forever

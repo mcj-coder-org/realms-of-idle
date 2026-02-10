@@ -94,9 +94,9 @@ Trollish regeneration is legendary - wounds close before your eyes, severed limb
 
 **Synergizes with:**
 
-- [Relentless Endurance](relentless-endurance.md) - Survive to 1 HP, then regenerate
-- [Thick Skin](thick-skin.md) - Reduce damage taken, maximize regeneration
-- [Stout Constitution](stout-constitution.md) - Higher HP pool = more total regeneration
+- [Relentless Endurance](relentless-endurance/index.md) - Survive to 1 HP, then regenerate
+- [Thick Skin](thick-skin/index.md) - Reduce damage taken, maximize regeneration
+- [Stout Constitution](stout-constitution/index.md) - Higher HP pool = more total regeneration
 - High-endurance builds
 
 **Countered by:**
@@ -114,7 +114,7 @@ Trollish regeneration is legendary - wounds close before your eyes, severed limb
 
 ## Related Content
 
-- [Relentless Endurance](relentless-endurance.md) - Survive lethal damage (Orc/Troll)
-- [Thick Skin](thick-skin.md) - Damage reduction (Troll)
-- [Battle Hardened](../passive/battle-hardened.md) - Combat resilience
-- [Second Wind](../common/second-wind.md) - Active HP recovery
+- [Relentless Endurance](relentless-endurance/index.md) - Survive lethal damage (Orc/Troll)
+- [Thick Skin](thick-skin/index.md) - Damage reduction (Troll)
+- [Battle Hardened](../passive/battle-hardened/index.md) - Combat resilience
+- [Second Wind](../common/second-wind/index.md) - Active HP recovery

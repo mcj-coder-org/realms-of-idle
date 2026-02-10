@@ -91,11 +91,11 @@ Skills that have strong synergies with Merchant. These skills can be learned by 
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know prices and forecast demand
-- [Silver Tongue](../../skills/tiered/silver-tongue.md) - Lesser/Greater/Enhanced - Build customer loyalty and close sales
-- [Trade Network](../../skills/passive-generator/trade-network.md) - Passive Generator - Supplier and customer relationships
-- [Trade Contacts](../../skills/passive-generator/trade-contacts.md) - Passive Generator - Specialized wholesale contacts
-- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation.md) - Lesser/Greater/Enhanced - Stock profitable inventory
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know prices and forecast demand
+- [Silver Tongue](../../skills/tiered/silver-tongue/index.md) - Lesser/Greater/Enhanced - Build customer loyalty and close sales
+- [Trade Network](../../skills/passive-generator/trade-network/index.md) - Passive Generator - Supplier and customer relationships
+- [Trade Contacts](../../skills/passive-generator/trade-contacts/index.md) - Passive Generator - Specialized wholesale contacts
+- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation/index.md) - Lesser/Greater/Enhanced - Stock profitable inventory
 
 #### Synergy Bonuses
 
@@ -157,7 +157,7 @@ Actions that grant XP to the Merchant class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                                 | Requirements                                   | Result Class          | Tier |
 | -------------------------------------------------- | ---------------------------------------------- | --------------------- | ---- |
@@ -168,14 +168,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                       | Interaction                                    |
-| ------------------------------------------------------------ | ---------------------------------------------- |
-| [Economy](../../../systems/economy/index.md)                 | Major economic actor; stabilizes local markets |
-| [Merchants](../../../systems/economy/merchants.md)           | Core merchant mechanics; shop operations       |
-| [Settlement](../../../systems/world/settlements.md)          | Essential service provider for communities     |
-| [Reputation](../../../systems/social/factions-reputation.md) | High reputation increases business             |
-| [Guilds](../../../systems/social/index.md)                   | Often guild members with benefits              |
-| [Employment](../../../systems/social/index.md)               | Employs workers; creates livelihoods           |
+| System                                                             | Interaction                                    |
+| ------------------------------------------------------------------ | ---------------------------------------------- |
+| [Economy](../../../systems/economy/index.md)                       | Major economic actor; stabilizes local markets |
+| [Merchants](../../../systems/economy/merchants/index.md)           | Core merchant mechanics; shop operations       |
+| [Settlement](../../../systems/world/settlements/index.md)          | Essential service provider for communities     |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | High reputation increases business             |
+| [Guilds](../../../systems/social/index.md)                         | Often guild members with benefits              |
+| [Employment](../../../systems/social/index.md)                     | Employs workers; creates livelihoods           |
 
 ---
 
@@ -186,4 +186,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Prerequisite:** Often consolidates from [Trader](../trader/) with shop establishment
 - **Synergy Classes:** [Trader](../trader/), [Appraiser](./appraiser/), [Caravaner](./caravaner/)
 - **Consolidates To:** [Guild Master](../consolidation/index.md), [Trading Company Owner](../consolidation/index.md), [Trade Baron](../consolidation/index.md)
-- **See Also:** [Economy System](../../../systems/economy/index.md), [Merchant System](../../../systems/economy/merchants.md), [Guild System](../../../systems/social/index.md)
+- **See Also:** [Economy System](../../../systems/economy/index.md), [Merchant System](../../../systems/economy/merchants/index.md), [Guild System](../../../systems/social/index.md)

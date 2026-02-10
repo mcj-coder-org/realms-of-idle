@@ -41,4 +41,4 @@ Binary unlock - either you have the penalty or you don't. No tiers or scaling.
 ## Related Content
 
 - **Strong Synergy:** [Warrior](../../classes/fighter/warrior/), [Thief](../../classes/rogue/thief/), [Crafter specialties](../../classes/crafter/)
-- **See Also:** [Dual Wield](../tiered/dual-wield.md), [Combat Skills](../index.md)
+- **See Also:** [Dual Wield](../tiered/dual-wield/index.md), [Combat Skills](../index.md)

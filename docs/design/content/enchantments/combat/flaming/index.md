@@ -109,5 +109,5 @@ Beyond combat, Flaming items serve practical purposes. Explorers use them as rel
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Fire essence](../../materials/reagents/index.md), [Phoenix down](../../materials/reagents/index.md)
 - **Applied To:** Weapons, gauntlets, boots, shields, rings, cloaks (see Applicable Items table)
-- **See Also:** [Frost](frost.md), [Lightning](lightning.md), [Holy](holy.md)
+- **See Also:** [Frost](frost/index.md), [Lightning](lightning/index.md), [Holy](holy/index.md)
 - **Enchantment Type:** Combat (elemental damage - fire)

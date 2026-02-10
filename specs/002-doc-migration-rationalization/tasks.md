@@ -23,10 +23,10 @@ This feature migrates and rationalizes 679 design documents from the previous pr
 | A: GDD Corrections            | US1, US2     | 12         | 3              | Sonnet | 3-4       |
 | B: Structure Reorganization   | US4          | 8          | 5              | Mixed  | 2-3       |
 | C: Frontmatter & Cross-Refs   | US4, US5     | 10         | 6              | Haiku  | 2         |
-| D: Content Updates            | US5          | 6          | 4              | Haiku  | 2-3       |
+| D: Content Updates + Actions  | US5          | 10         | 7              | Mixed  | 2.5-3.5   |
 | E: Source Migration           | US3, US6     | 8          | 3              | Sonnet | 2-3       |
 | F: Validation & Documentation | US7          | 7          | 4              | Mixed  | 1         |
-| **Total**                     | **7**        | **57**     | **30**         | -      | **12-16** |
+| **Total**                     | **7**        | **61**     | **33**         | -      | **14-18** |
 
 ---
 
@@ -182,9 +182,9 @@ This feature migrates and rationalizes 679 design documents from the previous pr
 
 ---
 
-## Phase D: Content Updates (User Story 5)
+## Phase D: Content Updates & Actions (User Story 5)
 
-**Goal**: Apply terminology and language changes to all 626 migrated content files.
+**Goal**: Apply terminology changes to all 626 migrated content files AND create 37 generic action pages.
 
 **User Story Mapping**:
 
@@ -199,10 +199,19 @@ This feature migrates and rationalizes 679 design documents from the previous pr
 
 **Model**: T041 (Haiku - sed/awk logic), T042 (Haiku - bulk replacement), T043-T044 (Sonnet - manual review and content generation)
 
-### D2: Validation & Fixes
+### D2: Action Page Creation (NEW - from R5 research)
 
-- [ ] T045 [P] [US5] Run `validate-terminology.sh` on all content, fix any remaining conflicts
-- [ ] T046 [P] [US5] Run `validate-all.sh`, address any validation failures
+- [ ] T045 [P] [US5] Create 37 generic action pages in `docs/design/content/actions/` organized by domain (combat: 5, crafting: 8, gathering: 9, service: 6, trade: 4, knowledge: 4, social: 1)
+- [ ] T046 [P] [US5] For each action page: define context requirements, tag resolution rules, skill modifiers, prerequisites, failure conditions
+- [ ] T047 [US5] Update 4 new class files (Host, Innkeeper, Server, Housekeeper) to remove class-based bonuses and reference action pages
+- [ ] T048 [P] [US5] Validate all action pages have valid frontmatter (domain, ui_trigger, base_duration, required_context, tag_resolution)
+
+**Model**: T045-T046 (Sonnet - action specs require domain knowledge), T047-T048 (Haiku - structured updates)
+
+### D3: Validation & Fixes
+
+- [ ] T049 [P] [US5] Run `validate-terminology.sh` on all content, fix any remaining conflicts
+- [ ] T050 [P] [US5] Run `validate-all.sh`, address any validation failures
 
 **Model**: All Haiku (validation and fixes)
 
@@ -211,7 +220,10 @@ This feature migrates and rationalizes 679 design documents from the previous pr
 - Zero occurrences of "dormant classes", "XP split configuration", "3 active slots"
 - All "tier" references properly qualified (class rank, tree tier, or skill tier)
 - All class progression language uses "unlocks eligibility for" not "transitions to"
+- **37 action pages created** with complete context/tag resolution documentation
+- 4 new class files corrected (no class-based bonuses, action references added)
 - Validation: `validate-terminology.sh` passes with 0 conflicts detected
+- Validation: All action pages have valid frontmatter schema
 
 ---
 

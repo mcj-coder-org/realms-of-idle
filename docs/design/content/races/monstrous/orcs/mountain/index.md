@@ -9,21 +9,21 @@ summary: 'Highland fortress defenders who occupy high strongholds, representing 
 
 # Mountain Orc
 
-> **Parent Race:** [Orcs](base.md)
+> **Parent Race:** [Orcs](base/index.md)
 
 ## Variant Overview
 
-Mountain Orcs defy the raider stereotype. They occupy high fortresses and cave systems, defending territory rather than attacking others. Where [plains orcs](plains.md) strike and vanish, mountain orcs dig in and hold ground. They've adapted to cold, harsh environments that would break other tribes, building permanent structures and maintaining defensive positions that can withstand sieges lasting months.
+Mountain Orcs defy the raider stereotype. They occupy high fortresses and cave systems, defending territory rather than attacking others. Where [plains orcs](plains/index.md) strike and vanish, mountain orcs dig in and hold ground. They've adapted to cold, harsh environments that would break other tribes, building permanent structures and maintaining defensive positions that can withstand sieges lasting months.
 
 This settled lifestyle creates the most "civilized" orc culture - though "civilized" is relative. Mountain orcs still solve disputes through combat, still value martial prowess above all else, and still maintain rigid honor codes. But they also build stone fortifications, establish trade relationships (carefully), and plan in terms of generations rather than seasons.
 
-Their relationship with nearby [dwarven](../../enlightened/dwarves.md) holds is complicated. Centuries of warfare left deep scars and mutual resentment. But pragmatism occasionally overcomes grudges - mountain orcs and dwarves sometimes trade goods, share intelligence about common threats, and maintain tense truces. Neither side admits it publicly, but some mountain orc fortresses use dwarven engineering principles, while some dwarven holds employ mountain orc mercenaries.
+Their relationship with nearby [dwarven](../../enlightened/dwarves/index.md) holds is complicated. Centuries of warfare left deep scars and mutual resentment. But pragmatism occasionally overcomes grudges - mountain orcs and dwarves sometimes trade goods, share intelligence about common threats, and maintain tense truces. Neither side admits it publicly, but some mountain orc fortresses use dwarven engineering principles, while some dwarven holds employ mountain orc mercenaries.
 
 ## Region
 
 High mountain ranges, steep valleys, and cave systems where altitude and terrain provide natural defense. Mountain orc fortresses occupy strategic positions - mountain passes, valley entrances, cave mouths - that force attackers into disadvantageous approaches.
 
-Their settlements are permanent stone structures built to last. Unlike [plains orc](plains.md) temporary camps, mountain orc fortresses feature:
+Their settlements are permanent stone structures built to last. Unlike [plains orc](plains/index.md) temporary camps, mountain orc fortresses feature:
 
 - **Stone walls and towers**: Multi-layered defenses built to withstand siege
 - **Underground chambers**: Cave complexes providing shelter, storage, and fallback positions
@@ -59,7 +59,7 @@ Mountain orcs excel at defensive warfare that leverages terrain and preparation:
 
 **Additional Bonus:** +20% cold resistance (environmental)
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -71,14 +71,14 @@ Mountain Orcs receive **3 random skills** from their racial skill pool at charac
 
 **Example Racial Skills:**
 
-| Skill                                                                   | Tags                             | Effect                                         |
-| ----------------------------------------------------------------------- | -------------------------------- | ---------------------------------------------- |
-| [Relentless Endurance](../../../skills/passive/relentless-endurance.md) | Physical/Endurance, Combat       | Survive lethal damage at 1 HP once per day     |
-| [Savage Attacks](../../../skills/passive/savage-attacks.md)             | Combat/Melee, Physical/Strength  | Extra weapon damage die on critical hits       |
-| [Mountain Born](../../../skills/index.md)                               | Physical/Endurance, Universal    | +20% cold resistance, altitude adaptation      |
-| [Defensive Stance](../../../skills/common/defensive-stance.md)          | Combat, Physical/Endurance       | +25% defense when holding position             |
-| [Siege Mentality](../../../skills/index.md)                             | Combat, Tribal, Universal/Mental | Enhanced endurance during extended defense     |
-| [Stone Shaping](../../../skills/index.md)                               | Crafting/Stone, Physical         | Basic stonework and fortification construction |
+| Skill                                                                         | Tags                             | Effect                                         |
+| ----------------------------------------------------------------------------- | -------------------------------- | ---------------------------------------------- |
+| [Relentless Endurance](../../../skills/passive/relentless-endurance/index.md) | Physical/Endurance, Combat       | Survive lethal damage at 1 HP once per day     |
+| [Savage Attacks](../../../skills/passive/savage-attacks/index.md)             | Combat/Melee, Physical/Strength  | Extra weapon damage die on critical hits       |
+| [Mountain Born](../../../skills/index.md)                                     | Physical/Endurance, Universal    | +20% cold resistance, altitude adaptation      |
+| [Defensive Stance](../../../skills/common/defensive-stance/index.md)          | Combat, Physical/Endurance       | +25% defense when holding position             |
+| [Siege Mentality](../../../skills/index.md)                                   | Combat, Tribal, Universal/Mental | Enhanced endurance during extended defense     |
+| [Stone Shaping](../../../skills/index.md)                                     | Crafting/Stone, Physical         | Basic stonework and fortification construction |
 
 ## Special Traits
 
@@ -97,7 +97,7 @@ Mountain orc culture balances traditional warrior values with practical adaptati
 
 **Fortress Pride**: Each mountain orc hold takes immense pride in their fortress. Elders recite its construction history, major battles defended, and improvements made over generations. Suggesting a fortress has weak defenses is grave insult requiring formal combat challenge.
 
-**Generational Thinking**: Unlike [plains orcs](plains.md) who plan in seasons, mountain orcs think in generations. They plant orchards knowing their children will harvest fruit. They quarry stone for walls their grandchildren will defend. This long-term perspective creates stable but change-resistant culture.
+**Generational Thinking**: Unlike [plains orcs](plains/index.md) who plan in seasons, mountain orcs think in generations. They plant orchards knowing their children will harvest fruit. They quarry stone for walls their grandchildren will defend. This long-term perspective creates stable but change-resistant culture.
 
 **The Dwarven Question**: Relations with nearby dwarven holds dominate mountain orc politics. Hawks advocate taking dwarven territory through force. Doves counsel cautious cooperation and trade. Most orcs fall somewhere between - willing to trade but prepared for war, maintaining truces but remembering grievances.
 
@@ -109,7 +109,7 @@ Mountain orc culture balances traditional warrior values with practical adaptati
 
 ## Relations
 
-**With Other Orc Variants:** Mountain orcs are viewed with suspicion by other variants. [Plains orcs](plains.md) think they've gone soft, trading warrior mobility for stone walls. [Desert orcs](desert.md) consider them too stationary and vulnerable. [Swamp orcs](swamp.md) respect their tactical thinking but question their rigid defensive focus. Mountain orcs counter that they're the only orc variant building something lasting.
+**With Other Orc Variants:** Mountain orcs are viewed with suspicion by other variants. [Plains orcs](plains/index.md) think they've gone soft, trading warrior mobility for stone walls. [Desert orcs](desert/index.md) consider them too stationary and vulnerable. [Swamp orcs](swamp/index.md) respect their tactical thinking but question their rigid defensive focus. Mountain orcs counter that they're the only orc variant building something lasting.
 
 **With Other Races:** Mountain orcs have the least hostile reputation among settled races - they defend territory but rarely raid beyond their mountain domains. This doesn't mean acceptance; centuries of warfare aren't forgotten because orcs stopped initiating conflict. But merchants occasionally trade with mountain orc holds, and some military leaders grudgingly respect their defensive capabilities.
 

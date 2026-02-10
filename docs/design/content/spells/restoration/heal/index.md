@@ -57,4 +57,4 @@ Channel restorative energy to heal a single target's wounds instantly.
 
 - **Granted By:** [Healer](../../classes/consolidation/healer/), [Mage](../../classes/channeler/mage/)
 - **School:** [Restoration](../index.md)
-- **See Also:** [Regenerate](regenerate.md)
+- **See Also:** [Regenerate](regenerate/index.md)

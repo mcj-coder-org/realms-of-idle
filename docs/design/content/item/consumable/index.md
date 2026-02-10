@@ -30,5 +30,5 @@ Consumables are items that are used up and provide temporary or one-time effects
 
 ## Related Systems
 
-- **[Survival](../../../systems/world/environment-hazards.md)** - Food required for long expeditions
-- **[Stamina](../../../systems/character/attributes.md)** - Food restores stamina
+- **[Survival](../../../systems/world/environment-hazards/index.md)** - Food required for long expeditions
+- **[Stamina](../../../systems/character/attributes/index.md)** - Food restores stamina

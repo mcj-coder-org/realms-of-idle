@@ -41,4 +41,4 @@ tags: [Nature/Animals]
 ## Related Content
 
 - **Strong Synergy:** [Beastmaster](../../classes/gatherer/beastmaster/), [Animal Trainer](../../classes/trainer/animal-trainer/), [Rancher](../../classes/gatherer/rancher/)
-- **See Also:** [Animal Communication](../../systems/creatures/communication.md), [Beast Handling](../../systems/creatures/handling.md)
+- **See Also:** [Animal Communication](../../systems/creatures/communication/index.md), [Beast Handling](../../systems/creatures/handling/index.md)

@@ -48,9 +48,9 @@ A hunter's knife is a personal tool. Many craft their own or pay smiths for cust
 
 ## Interactions
 
-| System                                                | Interaction                       |
-| ----------------------------------------------------- | --------------------------------- |
-| [Skinning](../../../../systems/crafting/gathering.md) | Required tool for hide extraction |
+| System                                                      | Interaction                       |
+| ----------------------------------------------------------- | --------------------------------- |
+| [Skinning](../../../../systems/crafting/gathering/index.md) | Required tool for hide extraction |
 
 ---
 

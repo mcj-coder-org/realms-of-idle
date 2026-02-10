@@ -13,11 +13,11 @@ summary: Unlocks connection to the tribal spirit pool for shamanic magic
 
 ## Overview
 
-| Attribute | Value                                      |
-| --------- | ------------------------------------------ |
-| Type      | Mechanic Unlock                            |
-| Pool      | [Shamanic Pool](../pools/shamanic-pool.md) |
-| Tags      | `Shamanic`                                 |
+| Attribute | Value                                            |
+| --------- | ------------------------------------------------ |
+| Type      | Mechanic Unlock                                  |
+| Pool      | [Shamanic Pool](../pools/shamanic-pool/index.md) |
+| Tags      | `Shamanic`                                       |
 
 ## Description
 
@@ -41,5 +41,5 @@ Spirit Pool Access grants the character connection to their tribe's shared spiri
 ## Related Content
 
 - **Class:** [Spiritcaller](../../classes/spiritcaller/)
-- **System:** [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic.md#2-spirit-pool-mechanics)
-- **See Also:** [Mana Pool Access](./mana-pool-access.md) (mage equivalent)
+- **System:** [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics)
+- **See Also:** [Mana Pool Access](./mana-pool-access/index.md) (mage equivalent)

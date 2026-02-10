@@ -90,12 +90,12 @@ Skills that have strong synergies with Caravaner. These skills can be learned by
 
 **Trade Skills**:
 
-- [Market Sense](../../skills/tiered/market-sense.md) - Lesser/Greater/Enhanced - Know regional price differences
-- [Silver Tongue](../../skills/tiered/silver-tongue.md) - Lesser/Greater/Enhanced - Negotiate passage and deals
-- [Trade Network](../../skills/passive-generator/trade-network.md) - Passive Generator - Contacts along trade routes
-- [Trade Contacts](../../skills/passive-generator/trade-contacts.md) - Passive Generator - Route-specific suppliers and buyers
-- [Caravan Master](../../skills/mechanic-unlock/caravan-master.md) - Lesser/Greater/Enhanced - Lead and manage caravans efficiently
-- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation.md) - Lesser/Greater/Enhanced - Profit from regional arbitrage
+- [Market Sense](../../skills/tiered/market-sense/index.md) - Lesser/Greater/Enhanced - Know regional price differences
+- [Silver Tongue](../../skills/tiered/silver-tongue/index.md) - Lesser/Greater/Enhanced - Negotiate passage and deals
+- [Trade Network](../../skills/passive-generator/trade-network/index.md) - Passive Generator - Contacts along trade routes
+- [Trade Contacts](../../skills/passive-generator/trade-contacts/index.md) - Passive Generator - Route-specific suppliers and buyers
+- [Caravan Master](../../skills/mechanic-unlock/caravan-master/index.md) - Lesser/Greater/Enhanced - Lead and manage caravans efficiently
+- [Commodity Speculation](../../skills/mechanic-unlock/commodity-speculation/index.md) - Lesser/Greater/Enhanced - Profit from regional arbitrage
 
 #### Synergy Bonuses
 
@@ -157,25 +157,25 @@ Actions that grant XP to the Caravaner class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                                 | Requirements                            | Result Class      | Tier |
-| -------------------------------------------------- | --------------------------------------- | ----------------- | ---- |
-| [Caravan Master](../consolidation/index.md)        | Caravaner + lead large caravans         | Caravan Master    | 1    |
-| [Route Specialist](../consolidation/index.md)      | Caravaner + master specific route       | Route Specialist  | 1    |
-| [Explorer-Merchant](../consolidation/index.md)     | Caravaner + [Scout](../combat/scout.md) | Explorer-Merchant | 1    |
-| [Trade Consortium Head](../consolidation/index.md) | Caravaner + multiple trade operations   | Trade Consortium  | 2    |
+| Consolidation Path                                 | Requirements                                  | Result Class      | Tier |
+| -------------------------------------------------- | --------------------------------------------- | ----------------- | ---- |
+| [Caravan Master](../consolidation/index.md)        | Caravaner + lead large caravans               | Caravan Master    | 1    |
+| [Route Specialist](../consolidation/index.md)      | Caravaner + master specific route             | Route Specialist  | 1    |
+| [Explorer-Merchant](../consolidation/index.md)     | Caravaner + [Scout](../combat/scout/index.md) | Explorer-Merchant | 1    |
+| [Trade Consortium Head](../consolidation/index.md) | Caravaner + multiple trade operations         | Trade Consortium  | 2    |
 
 ### Interactions
 
-| System                                                    | Interaction                               |
-| --------------------------------------------------------- | ----------------------------------------- |
-| [Trade Routes](../../../systems/economy/index.md)         | Defines and travels long-distance routes  |
-| [Travel](../../../systems/world/travel.md)                | Extended travel mechanics; route planning |
-| [Survival](../../../systems/world/environment-hazards.md) | Must survive environmental challenges     |
-| [Combat](../../../systems/combat/combat-resolution.md)    | Defends against bandits and monsters      |
-| [Economy](../../../systems/economy/index.md)              | Connects distant markets economically     |
-| [Settlements](../../../systems/world/settlements.md)      | Links settlements through trade           |
+| System                                                          | Interaction                               |
+| --------------------------------------------------------------- | ----------------------------------------- |
+| [Trade Routes](../../../systems/economy/index.md)               | Defines and travels long-distance routes  |
+| [Travel](../../../systems/world/travel/index.md)                | Extended travel mechanics; route planning |
+| [Survival](../../../systems/world/environment-hazards/index.md) | Must survive environmental challenges     |
+| [Combat](../../../systems/combat/combat-resolution/index.md)    | Defends against bandits and monsters      |
+| [Economy](../../../systems/economy/index.md)                    | Connects distant markets economically     |
+| [Settlements](../../../systems/world/settlements/index.md)      | Links settlements through trade           |
 
 ---
 
@@ -183,6 +183,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Wagon or pack animals, trade goods, route knowledge, supplies
 - **Equipment:** [Wagons](../../items/index.md), [Pack Animals](../../creatures/index.md), [Camping Gear](../../items/index.md)
-- **Synergy Classes:** [Trader](../trader/), [Scout](../combat/scout.md), [Adventurer](../combat/adventurer.md)
+- **Synergy Classes:** [Trader](../trader/), [Scout](../combat/scout/index.md), [Adventurer](../combat/adventurer/index.md)
 - **Consolidates To:** [Caravan Master](../consolidation/index.md), [Explorer-Merchant](../consolidation/index.md), [Trade Consortium](../consolidation/index.md)
-- **See Also:** [Travel System](../../../systems/world/travel.md), [Trade Routes](../../../systems/economy/index.md), [Environment Hazards](../../../systems/world/environment-hazards.md)
+- **See Also:** [Travel System](../../../systems/world/travel/index.md), [Trade Routes](../../../systems/economy/index.md), [Environment Hazards](../../../systems/world/environment-hazards/index.md)

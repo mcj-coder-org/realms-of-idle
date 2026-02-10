@@ -9,7 +9,7 @@ summary: 'Heat-adapted humans from arid regions with enhanced endurance, heat re
 
 # Desert Human
 
-> **See [Base Traits](base.md)** for shared human characteristics.
+> **See [Base Traits](base/index.md)** for shared human characteristics.
 
 ## Overview
 
@@ -141,8 +141,8 @@ A guardian from a desert city-state, trained in efficient, devastating combat th
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Core human characteristics and cultural notes
+- **[Base Traits](base/index.md)**: Core human characteristics and cultural notes
 - **[Humans Index](index.md)**: All human variants and selection guidance
-- **[Heartland Human](heartland.md)**: Baseline variant
-- **[Northern Human](northern.md)**: Cold-adapted variant
-- **[Mountain Human](mountain.md)**: Altitude-adapted variant
+- **[Heartland Human](heartland/index.md)**: Baseline variant
+- **[Northern Human](northern/index.md)**: Cold-adapted variant
+- **[Mountain Human](mountain/index.md)**: Altitude-adapted variant

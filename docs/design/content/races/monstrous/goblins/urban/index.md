@@ -9,7 +9,7 @@ summary: 'City-adapted goblins with enhanced social skills, masters of informati
 
 # Urban Goblin
 
-> **Parent Race:** [Goblins](base.md)
+> **Parent Race:** [Goblins](base/index.md)
 
 ## Variant Overview
 
@@ -70,7 +70,7 @@ This reputation for reliability makes Urban Goblins trusted in paradoxical ways.
 
 **With Other Goblins:** Urban Goblins occupy an ambiguous position among goblin variants. Cave and Swamp Goblins consider them compromised by excessive surface contact. Mountain Goblins respect their success but question the cost. Urban Goblins view themselves as pragmatists making the best of outcast status - if you can't escape prejudice, you might as well profit from it.
 
-**With Other Races:** Urban Goblins maintain complex relationships with [humans](../../enlightened/humans.md) - simultaneously customers, employers, threats, and sources of constant low-level prejudice. They avoid [dwarves](../../enlightened/dwarves.md) who universally distrust them. They respect [kobolds](../../enlightened/kobolds.md) as fellow small folk surviving through cleverness. They treat criminal [humans](../../enlightened/humans.md) as business partners while remaining wary of betrayal.
+**With Other Races:** Urban Goblins maintain complex relationships with [humans](../../enlightened/humans/index.md) - simultaneously customers, employers, threats, and sources of constant low-level prejudice. They avoid [dwarves](../../enlightened/dwarves/index.md) who universally distrust them. They respect [kobolds](../../enlightened/kobolds/index.md) as fellow small folk surviving through cleverness. They treat criminal [humans](../../enlightened/humans/index.md) as business partners while remaining wary of betrayal.
 
 ## Shared Memory in Cities
 

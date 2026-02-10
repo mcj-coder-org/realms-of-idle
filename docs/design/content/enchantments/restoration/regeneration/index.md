@@ -152,6 +152,6 @@ Regeneration works best on items worn close to the body for extended periods.
 
 - **Requires:** [Enchanting](../../skills/index.md) (Master), [Healing](../../skills/index.md) knowledge, [Life essence](../../materials/reagents/index.md), [Troll blood](../../materials/reagents/index.md), [Phoenix tear](../../materials/reagents/index.md)
 - **Applied To:** Armor, rings, amulets, belts, any body-contact items (see Applicable Items table)
-- **See Also:** [Vitality](vitality.md), [Life Ward](life-ward.md), [Vigor](vigor.md)
+- **See Also:** [Vitality](vitality/index.md), [Life Ward](life-ward/index.md), [Vigor](vigor/index.md)
 - **Alternatives:** [Healing Potions](../../../systems/crafting/index.md), [Healing Magic](../../magic/index.md)
 - **Enchantment Type:** Restoration (continuous healing)

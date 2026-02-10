@@ -88,12 +88,12 @@ Shamanic practice varies widely across different regions and tribes. Some focus 
 
 ### Starting Skills
 
-| Skill                                                                       | Type            | Effect                                                      |
-| --------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------- |
-| Spirit Communion                                                            | Passive         | Enhanced ability to sense and communicate with spirits      |
-| [Herbalism](../../skills/mechanic-unlock/herbalism.md) (Built-in)           | Mechanic Unlock | Native ability to identify, harvest, and prepare herbs      |
-| [Charm Creation](../../skills/mechanic-unlock/charm-creation.md) (Built-in) | Mechanic Unlock | Native ability to create charms and fetishes from materials |
-| [Spirit Healing](../../skills/mechanic-unlock/spirit-healing.md)            | Mechanic Unlock | Heal wounds through spiritual power and herbal knowledge    |
+| Skill                                                                             | Type            | Effect                                                      |
+| --------------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------- |
+| Spirit Communion                                                                  | Passive         | Enhanced ability to sense and communicate with spirits      |
+| [Herbalism](../../skills/mechanic-unlock/herbalism/index.md) (Built-in)           | Mechanic Unlock | Native ability to identify, harvest, and prepare herbs      |
+| [Charm Creation](../../skills/mechanic-unlock/charm-creation/index.md) (Built-in) | Mechanic Unlock | Native ability to create charms and fetishes from materials |
+| [Spirit Healing](../../skills/mechanic-unlock/spirit-healing/index.md)            | Mechanic Unlock | Heal wounds through spiritual power and herbal knowledge    |
 
 ### Synergy Skills
 
@@ -101,23 +101,23 @@ Skills that have strong synergies with Shaman. These skills can be learned by an
 
 **Core Shamanic Skills**:
 
-- [Spirit Communion](../../skills/tiered/spirit-communion.md) - Lesser/Greater/Enhanced - Enhanced spirit connection and negotiation
-- [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access.md) - Mechanic - Direct draw from tribal spirit reserves
-- [Ancestor Guidance](../../skills/mechanic-unlock/ancestor-guidance.md) - Lesser/Greater/Enhanced - Consult ancestral wisdom
-- [Spirit Binding](../../skills/mechanic-unlock/spirit-binding.md) - Lesser/Greater/Enhanced - Bind spirits into charms and fetishes
-- [Tribal Rites](../../skills/mechanic-unlock/tribal-rites.md) - Lesser/Greater/Enhanced - Perform powerful tribal rituals
-- [Nature Sense](../../skills/tiered/nature-sense.md) - Lesser/Greater/Enhanced - Attune to natural environments
-- [Spirit Negotiation](../../skills/mechanic-unlock/spirit-negotiation.md) - Lesser/Greater/Enhanced - Trade fairly with spirits
+- [Spirit Communion](../../skills/tiered/spirit-communion/index.md) - Lesser/Greater/Enhanced - Enhanced spirit connection and negotiation
+- [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access/index.md) - Mechanic - Direct draw from tribal spirit reserves
+- [Ancestor Guidance](../../skills/mechanic-unlock/ancestor-guidance/index.md) - Lesser/Greater/Enhanced - Consult ancestral wisdom
+- [Spirit Binding](../../skills/mechanic-unlock/spirit-binding/index.md) - Lesser/Greater/Enhanced - Bind spirits into charms and fetishes
+- [Tribal Rites](../../skills/mechanic-unlock/tribal-rites/index.md) - Lesser/Greater/Enhanced - Perform powerful tribal rituals
+- [Nature Sense](../../skills/tiered/nature-sense/index.md) - Lesser/Greater/Enhanced - Attune to natural environments
+- [Spirit Negotiation](../../skills/mechanic-unlock/spirit-negotiation/index.md) - Lesser/Greater/Enhanced - Trade fairly with spirits
 
 **Core Nature Skills**:
 
-- [Herbalism](../../skills/mechanic-unlock/herbalism.md) - Lesser/Greater/Enhanced - Identify and prepare herbs for medicine and magic
-- [Charm Creation](../../skills/mechanic-unlock/charm-creation.md) - Lesser/Greater/Enhanced - Craft effective charms and protective tokens
-- [Spirit Healing](../../skills/mechanic-unlock/spirit-healing.md) - Lesser/Greater/Enhanced - Heal through spiritual and herbal means
-- [Poultice Craft](../../skills/mechanic-unlock/poultice-craft.md) - Lesser/Greater/Enhanced - Create healing and utility potions
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate shamanic rituals
-- [Spirit Ward](../../skills/mechanic-unlock/spirit-ward.md) - Lesser/Greater/Enhanced - Create protective wards against spiritual harm
-- [Totem Carving](../../skills/mechanic-unlock/totem-carving.md) - Lesser/Greater/Enhanced - Craft meaningful totems tied to spirit guides
+- [Herbalism](../../skills/mechanic-unlock/herbalism/index.md) - Lesser/Greater/Enhanced - Identify and prepare herbs for medicine and magic
+- [Charm Creation](../../skills/mechanic-unlock/charm-creation/index.md) - Lesser/Greater/Enhanced - Craft effective charms and protective tokens
+- [Spirit Healing](../../skills/mechanic-unlock/spirit-healing/index.md) - Lesser/Greater/Enhanced - Heal through spiritual and herbal means
+- [Poultice Craft](../../skills/mechanic-unlock/poultice-craft/index.md) - Lesser/Greater/Enhanced - Create healing and utility potions
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate shamanic rituals
+- [Spirit Ward](../../skills/mechanic-unlock/spirit-ward/index.md) - Lesser/Greater/Enhanced - Create protective wards against spiritual harm
+- [Totem Carving](../../skills/mechanic-unlock/totem-carving/index.md) - Lesser/Greater/Enhanced - Craft meaningful totems tied to spirit guides
 
 **Note**: All skills listed have strong synergies with Shaman practice. Characters without Shaman class can still learn these skills but progress at base rate (1x XP) without effectiveness bonuses.
 
@@ -142,26 +142,26 @@ Skills that have strong synergies with Shaman. These skills can be learned by an
 
 Shaman offers nine specialization paths, each focusing on different aspects of shamanic practice:
 
-| Specialization                          | Focus                                    | Tag Path            | Unlock XP |
-| --------------------------------------- | ---------------------------------------- | ------------------- | --------- |
-| [Flame Keeper](./flame-keeper.md)       | Elemental fire spirits and warmth magic  | `Shamanic/Fire`     | 15,000    |
-| [Frost Shaman](./frost-shaman.md)       | Elemental ice spirits and cold magic     | `Shamanic/Ice`      | 15,000    |
-| [Storm Caller](./storm-caller.md)       | Elemental storm spirits and weather      | `Shamanic/Storm`    | 15,000    |
-| [Earth Shaman](./earth-shaman.md)       | Elemental earth spirits and nature       | `Shamanic/Earth`    | 15,000    |
-| [Wind Walker](./wind-walker.md)         | Elemental wind spirits and freedom       | `Shamanic/Air`      | 15,000    |
-| [Tide Caller](./tide-caller.md)         | Elemental water spirits and tides        | `Shamanic/Water`    | 15,000    |
-| [Ancestor Shaman](./ancestor-shaman.md) | Ancestral spirits and past communion     | `Shamanic/Ancestor` | 15,000    |
-| [Beast Speaker](./beast-speaker.md)     | Animal spirits and primal connection     | `Shamanic/Beast`    | 15,000    |
-| [Spirit Walker](./spirit-walker.md)     | Full spirit realm travel and negotiation | `Shamanic/Spirit`   | 15,000    |
+| Specialization                                | Focus                                    | Tag Path            | Unlock XP |
+| --------------------------------------------- | ---------------------------------------- | ------------------- | --------- |
+| [Flame Keeper](./flame-keeper/index.md)       | Elemental fire spirits and warmth magic  | `Shamanic/Fire`     | 15,000    |
+| [Frost Shaman](./frost-shaman/index.md)       | Elemental ice spirits and cold magic     | `Shamanic/Ice`      | 15,000    |
+| [Storm Caller](./storm-caller/index.md)       | Elemental storm spirits and weather      | `Shamanic/Storm`    | 15,000    |
+| [Earth Shaman](./earth-shaman/index.md)       | Elemental earth spirits and nature       | `Shamanic/Earth`    | 15,000    |
+| [Wind Walker](./wind-walker/index.md)         | Elemental wind spirits and freedom       | `Shamanic/Air`      | 15,000    |
+| [Tide Caller](./tide-caller/index.md)         | Elemental water spirits and tides        | `Shamanic/Water`    | 15,000    |
+| [Ancestor Shaman](./ancestor-shaman/index.md) | Ancestral spirits and past communion     | `Shamanic/Ancestor` | 15,000    |
+| [Beast Speaker](./beast-speaker/index.md)     | Animal spirits and primal connection     | `Shamanic/Beast`    | 15,000    |
+| [Spirit Walker](./spirit-walker/index.md)     | Full spirit realm travel and negotiation | `Shamanic/Spirit`   | 15,000    |
 
 #### Consolidations
 
 Shamans can consolidate with other classes or specializations to create powerful synergy classes:
 
-| Consolidation Path                | Requirements                                                         | Result Class | Tier   |
-| --------------------------------- | -------------------------------------------------------------------- | ------------ | ------ |
-| [War Shaman](./war-shaman.md)     | Shaman + combat focus or [Warrior](../../fighter/)                   | War Shaman   | Tier 2 |
-| [Totem Carver](./totem-carver.md) | Shaman + [Blacksmith](../../crafter/blacksmith.md) or crafting focus | Totem Carver | Tier 2 |
+| Consolidation Path                      | Requirements                                                               | Result Class | Tier   |
+| --------------------------------------- | -------------------------------------------------------------------------- | ------------ | ------ |
+| [War Shaman](./war-shaman/index.md)     | Shaman + combat focus or [Warrior](../../fighter/)                         | War Shaman   | Tier 2 |
+| [Totem Carver](./totem-carver/index.md) | Shaman + [Blacksmith](../../crafter/blacksmith/index.md) or crafting focus | Totem Carver | Tier 2 |
 
 ### Tag Access
 
@@ -180,16 +180,16 @@ As a Tier 2 class, Shaman has access to depth 2 tags:
 
 ### Interactions
 
-| System                                                                          | Interaction                                                 |
-| ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| [Shamanic Magic](../../../systems/magic/shamanic-magic.md)                      | Core shamanic spell casting and ritual mechanics            |
-| [Spirit Pool](../../../systems/magic/shamanic-magic.md#2-spirit-pool-mechanics) | Draws from tribal spirit reserves rather than personal mana |
-| [Herbalism](../../../systems/crafting/herbalism.md)                             | Built-in herbalism for medicinal and magical purposes       |
-| [Charm System](../../../systems/crafting/charm-making.md)                       | Native ability to create charms and protective tokens       |
-| [Combat](../../../systems/combat/combat-resolution.md)                          | Healing and support through spirit magic                    |
-| [Crafting](../../../systems/crafting/crafting-progression.md)                   | Creates charm and potion components through herbalism       |
-| [NPC Relations](../../../systems/npc/npc-relationships.md)                      | Tribal leadership role affects NPC interactions             |
-| [Settlement](../../../systems/settlement/settlement-systems.md)                 | Advises on tribal decisions and settlement health           |
+| System                                                                                | Interaction                                                 |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)                      | Core shamanic spell casting and ritual mechanics            |
+| [Spirit Pool](../../../systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics) | Draws from tribal spirit reserves rather than personal mana |
+| [Herbalism](../../../systems/crafting/herbalism/index.md)                             | Built-in herbalism for medicinal and magical purposes       |
+| [Charm System](../../../systems/crafting/charm-making/index.md)                       | Native ability to create charms and protective tokens       |
+| [Combat](../../../systems/combat/combat-resolution/index.md)                          | Healing and support through spirit magic                    |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md)                   | Creates charm and potion components through herbalism       |
+| [NPC Relations](../../../systems/npc/npc-relationships/index.md)                      | Tribal leadership role affects NPC interactions             |
+| [Settlement](../../../systems/settlement/settlement-systems/index.md)                 | Advises on tribal decisions and settlement health           |
 
 ---
 
@@ -213,6 +213,6 @@ Spirit Lodges accumulate spiritual power over time. Shamans who regularly perfor
 
 - **Requires:** [Spiritcaller](../index.md) (foundation class)
 - **Equipment:** Spirit focus, herbal components, charm-making materials, tribal tokens, spirit lodge
-- **Synergy Classes:** [War Shaman](./war-shaman.md), [Totem Carver](./totem-carver.md)
+- **Synergy Classes:** [War Shaman](./war-shaman/index.md), [Totem Carver](./totem-carver/index.md)
 - **Specializations:** Flame Keeper, Frost Shaman, Storm Caller, Earth Shaman, Wind Walker, Tide Caller, Ancestor Shaman, Beast Speaker, Spirit Walker
-- **See Also:** [Shamanic Magic System](../../../systems/magic/shamanic-magic.md), [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic.md#2-spirit-pool-mechanics), [Herbalism System](../../../systems/crafting/herbalism.md), [Charm Making](../../../systems/crafting/charm-making.md), [Class Consolidation](../../../systems/character/class-consolidation.md)
+- **See Also:** [Shamanic Magic System](../../../systems/magic/shamanic-magic/index.md), [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics), [Herbalism System](../../../systems/crafting/herbalism/index.md), [Charm Making](../../../systems/crafting/charm-making/index.md), [Class Consolidation](../../../systems/character/class-consolidation/index.md)

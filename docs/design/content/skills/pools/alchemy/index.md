@@ -22,15 +22,15 @@ Skills focused on potion brewing, compound creation, transmutation, and reagent 
 
 ### Tiered Skills
 
-- [Potent Brews](potent-brews.md) - Increased potion effectiveness
-- [Stable Solutions](stable-solutions.md) - Reduce failure chance and increase shelf life
+- [Potent Brews](potent-brews/index.md) - Increased potion effectiveness
+- [Stable Solutions](stable-solutions/index.md) - Reduce failure chance and increase shelf life
 
 ### Mechanic Unlocks
 
-- [Potion Identification](potion-identification.md) - Identify unknown potions and compounds
-- [Reagent Cultivation](reagent-cultivation.md) - Grow and harvest alchemical ingredients
-- [Transmutation Basics](transmutation-basics.md) - Transform basic materials
-- [Explosive Compounds](explosive-compounds.md) - Create explosive alchemical mixtures
+- [Potion Identification](potion-identification/index.md) - Identify unknown potions and compounds
+- [Reagent Cultivation](reagent-cultivation/index.md) - Grow and harvest alchemical ingredients
+- [Transmutation Basics](transmutation-basics/index.md) - Transform basic materials
+- [Explosive Compounds](explosive-compounds/index.md) - Create explosive alchemical mixtures
 
 ## Acquisition
 
@@ -40,4 +40,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

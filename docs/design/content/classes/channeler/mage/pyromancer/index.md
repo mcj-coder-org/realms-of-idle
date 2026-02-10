@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Fire` | 3     | Pyromancer, Mage (depth 2 only) |
 | `Magic/Elemental`      | 2     | Pyromancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Pyromancer class:
 
 ### Interactions
 
-| System                                                 | Interaction                          |
-| ------------------------------------------------------ | ------------------------------------ |
-| [Magic System](../../../systems/magic/magic-system.md) | Fire element specialization          |
-| [Combat](../../../systems/combat/combat-resolution.md) | Area denial and burning DoT damage   |
-| [Party](../../../systems/combat/party-mechanics.md)    | Area damage dealer, crowd controller |
-| [Equipment](../../../systems/character/index.md)       | Fire-attuned magical items           |
+| System                                                       | Interaction                          |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Fire element specialization          |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Area denial and burning DoT damage   |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Area damage dealer, crowd controller |
+| [Equipment](../../../systems/character/index.md)             | Fire-attuned magical items           |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Flame Mastery](../../skills/tiered/flame-mastery.md), [Burning Aura](../../skills/tiered/burning-aura.md)
-- **Spells:** [Inferno](../../spells/destruction/inferno.md), [Flame Shield](../../spells/abjuration/flame-shield.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Flame Mastery](../../skills/tiered/flame-mastery/index.md), [Burning Aura](../../skills/tiered/burning-aura/index.md)
+- **Spells:** [Inferno](../../spells/destruction/inferno/index.md), [Flame Shield](../../spells/abjuration/flame-shield/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

@@ -9,7 +9,7 @@ summary: 'Forest-dwelling elves who blend seamlessly with nature, masters of ste
 
 # Wood Elf
 
-> **Parent Race:** [Elves](base.md)
+> **Parent Race:** [Elves](base/index.md)
 
 ## Variant Overview
 
@@ -35,7 +35,7 @@ Wood Elves excel at nature magic that works with rather than against the natural
 | Positive (○)  | Gathering, Stealth, Crafting/Woodworking, Physical/Agility | Faster than baseline      |
 | Negative (×)  | Combat/Melee, Crafting/Smithing                            | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -47,14 +47,14 @@ Wood Elves receive **3 random skills** from their racial skill pool at character
 
 **Example Racial Skills:**
 
-| Skill                                                 | Tags                     | Effect                                              |
-| ----------------------------------------------------- | ------------------------ | --------------------------------------------------- |
-| [Elven Grace](../../../skills/passive/elven-grace.md) | Physical/Agility, Social | +10% movement, enhanced balance and agility         |
-| [Forest Stride](../../../skills/index.md)             | Nature, Physical/Agility | No movement penalty in forests, enhanced navigation |
-| [Beast Empathy](../../../skills/index.md)             | Nature, Social           | Communicate with and calm animals                   |
-| [Natural Camouflage](../../../skills/index.md)        | Nature, Stealth          | +20% stealth in natural environments                |
-| [Sure-Footed](../../../skills/common/sure-footed.md)  | Physical/Agility, Nature | Ignore difficult terrain, enhanced balance          |
-| [Woodland Sense](../../../skills/index.md)            | Nature, Gathering        | Detect threats, find resources in forests           |
+| Skill                                                       | Tags                     | Effect                                              |
+| ----------------------------------------------------------- | ------------------------ | --------------------------------------------------- |
+| [Elven Grace](../../../skills/passive/elven-grace/index.md) | Physical/Agility, Social | +10% movement, enhanced balance and agility         |
+| [Forest Stride](../../../skills/index.md)                   | Nature, Physical/Agility | No movement penalty in forests, enhanced navigation |
+| [Beast Empathy](../../../skills/index.md)                   | Nature, Social           | Communicate with and calm animals                   |
+| [Natural Camouflage](../../../skills/index.md)              | Nature, Stealth          | +20% stealth in natural environments                |
+| [Sure-Footed](../../../skills/common/sure-footed/index.md)  | Physical/Agility, Nature | Ignore difficult terrain, enhanced balance          |
+| [Woodland Sense](../../../skills/index.md)                  | Nature, Gathering        | Detect threats, find resources in forests           |
 
 ## Special Traits
 
@@ -79,7 +79,7 @@ Wood elves are skilled hunters and trackers, moving through dense woodland with 
 
 **With Other Elves:** Wood Elves have complicated feelings about high elves - respect for their knowledge mixed with frustration at their impracticality. High elves sometimes patronize wood elves as "rustic," which wood elves find hilarious given that high elves couldn't survive a week in actual wilderness. Sea Elves are viewed as kindred spirits - also adapted to specific environments, also practical. Dusk Elves puzzle wood elves; choosing underground darkness over forest glory seems incomprehensible.
 
-**With Other Races:** Wood Elves work well with [humans](../humans.md), especially rangers and druids who understand forest life. They respect [dwarves](../dwarves/base.md) for their craftsmanship while finding them too focused on stone and metal over living wood. Tribal races, particularly forest-dwelling ones, are often viewed as neighbors - sometimes allies, sometimes competitors for territory, but always respected as fellow forest dwellers.
+**With Other Races:** Wood Elves work well with [humans](../humans/index.md), especially rangers and druids who understand forest life. They respect [dwarves](../dwarves/base/index.md) for their craftsmanship while finding them too focused on stone and metal over living wood. Tribal races, particularly forest-dwelling ones, are often viewed as neighbors - sometimes allies, sometimes competitors for territory, but always respected as fellow forest dwellers.
 
 ## Recommended Classes
 

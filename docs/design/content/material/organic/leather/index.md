@@ -52,10 +52,10 @@ Hunters process kills immediately, learning to skin and tan as part of their tra
 
 ## Interactions
 
-| System                                                                 | Interaction                           |
-| ---------------------------------------------------------------------- | ------------------------------------- |
-| [Gathering](../../../../systems/crafting/gathering.md)                 | Obtained from creature processing     |
-| [Leatherworking](../../../../systems/crafting/crafting-progression.md) | Primary material for leather crafters |
+| System                                                                       | Interaction                           |
+| ---------------------------------------------------------------------------- | ------------------------------------- |
+| [Gathering](../../../../systems/crafting/gathering/index.md)                 | Obtained from creature processing     |
+| [Leatherworking](../../../../systems/crafting/crafting-progression/index.md) | Primary material for leather crafters |
 
 ---
 

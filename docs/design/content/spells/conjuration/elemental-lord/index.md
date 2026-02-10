@@ -71,4 +71,4 @@ Summon a mighty elemental lord from the planes to aid you in battle with devasta
 
 - **Granted By:** [Summoner](../../classes/channeler/summoner/)
 - **School:** [Conjuration](../index.md)
-- **See Also:** [Greater Summon](greater-summon.md)
+- **See Also:** [Greater Summon](greater-summon/index.md)

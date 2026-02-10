@@ -68,4 +68,4 @@ Classes with strong synergies: Forager, Herbalist
 ## Related Content
 
 - **Strong Synergy:** [Forager](../../classes/gatherer/forager/), [Herbalist](../../classes/gatherer/herbalist/)
-- **See Also:** [Resource Sense](../tiered/resource-sense.md), [Bountiful Harvest](../tiered/bountiful-harvest.md), [Gathering System](../../systems/gathering/index.md)
+- **See Also:** [Resource Sense](../tiered/resource-sense/index.md), [Bountiful Harvest](../tiered/bountiful-harvest/index.md), [Gathering System](../../systems/gathering/index.md)

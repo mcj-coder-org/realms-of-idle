@@ -67,4 +67,4 @@ Classes with strong synergies: Farmer
 
 - **Strong Synergy:** [Farmer](../../classes/gatherer/farmer/)
 - **Moderate Synergy:** [Herbalist](../../classes/gatherer/herbalist/)
-- **See Also:** [Bountiful Harvest](bountiful-harvest.md), [Agriculture System](../../systems/gathering/agriculture.md)
+- **See Also:** [Bountiful Harvest](bountiful-harvest/index.md), [Agriculture System](../../systems/gathering/agriculture/index.md)

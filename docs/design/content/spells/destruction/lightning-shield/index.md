@@ -64,4 +64,4 @@ Create a protective barrier of electrical energy around the target, shielding th
 
 - **Granted By:** [Electromancer](../../classes/channeler/mage/electromancer/)
 - **School:** [Protection](../../systems/magic/schools/protection/) (Protection school, Destruction element)
-- **See Also:** [Thunderstorm](thunderstorm.md), [Lightning Bolt](lightning-bolt.md), [Flame Shield](../abjuration/flame-shield.md)
+- **See Also:** [Thunderstorm](thunderstorm/index.md), [Lightning Bolt](lightning-bolt/index.md), [Flame Shield](../abjuration/flame-shield/index.md)

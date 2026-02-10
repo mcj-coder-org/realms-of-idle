@@ -22,18 +22,18 @@ Skills focused on mana manipulation, spellcasting, enchantment, and arcane maste
 
 ### Tiered Skills
 
-- [Spell Focus](spell-focus.md) - Enhanced spell effectiveness
-- [Mana Well](mana-well.md) - Expanded magical reserves
-- [School Mastery](school-mastery.md) - Deep specialization in magic school
+- [Spell Focus](spell-focus/index.md) - Enhanced spell effectiveness
+- [Mana Well](mana-well/index.md) - Expanded magical reserves
+- [School Mastery](school-mastery/index.md) - Deep specialization in magic school
 
 ### Mechanic Unlocks
 
-- [Spell Weaving](spell-weaving.md) - Combine spell effects
-- [Ritual Casting](ritual-casting.md) - Perform powerful ritual magic
-- [Enchant Object](enchant-object.md) - Imbue items with magical properties
-- [Mana Transfer](mana-transfer.md) - Share mana with others
-- [Counter Magic](counter-magic.md) - Dispel and counter enemy spells
-- [Undead Binding](undead-binding.md) - Command and control undead
+- [Spell Weaving](spell-weaving/index.md) - Combine spell effects
+- [Ritual Casting](ritual-casting/index.md) - Perform powerful ritual magic
+- [Enchant Object](enchant-object/index.md) - Imbue items with magical properties
+- [Mana Transfer](mana-transfer/index.md) - Share mana with others
+- [Counter Magic](counter-magic/index.md) - Dispel and counter enemy spells
+- [Undead Binding](undead-binding/index.md) - Command and control undead
 
 ## Acquisition
 
@@ -43,4 +43,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

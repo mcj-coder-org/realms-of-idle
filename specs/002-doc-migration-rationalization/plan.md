@@ -378,7 +378,101 @@ After Phase 1 design, update CLAUDE.md with:
 - Create quickstart guide for future contributors
 - Final cross-reference validation
 
-**Total Estimate**: 12-16 days
+---
+
+### Phase Dependencies
+
+**Dependency Graph**:
+
+```
+Phase 1 (Design) ────────────────┬──→ Phase A (GDD Corrections)
+                                 └──→ Phase B (Structure)
+
+Phase A (GDD Corrections) ───────┬──→ Phase C (Frontmatter) [needs corrected gdd_ref targets]
+                                 └──→ Phase D (Content Updates) [needs corrected terminology]
+
+Phase B (Structure) ─────────────┬──→ Phase C (Frontmatter) [needs <name>/index.md paths]
+                                 └──→ Phase D (Content Updates) [needs new file locations]
+
+Phase C (Frontmatter) ───────────┬──→ Phase D (Content Updates) [needs validation scripts]
+                                 └──→ Phase E (Source Migration) [needs templates working]
+
+Phase D (Content Updates) ───────────→ Phase E (Source Migration) [needs validation passing]
+
+Phases A+B+C+D ──────────────────────→ Phase E (Source Migration) [all prerequisites]
+
+Phase E (Source Migration) ──────────→ Phase F (Validation) [final checks]
+```
+
+**Parallelization Opportunities**:
+
+| Phases | Can Run in Parallel? | Rationale                                                                            |
+| ------ | -------------------- | ------------------------------------------------------------------------------------ |
+| A + B  | ✅ **Yes**           | Independent - GDD corrections don't affect folder restructuring                      |
+| A + C  | ❌ **No**            | C needs corrected GDD files from A (gdd_ref targets must exist)                      |
+| B + C  | ⚠️ **Partial**       | Can prepare frontmatter, but can't validate until B completes (paths change)         |
+| C + D  | ❌ **No**            | D needs validation scripts from C (validate-frontmatter.sh, validate-terminology.sh) |
+| D + E  | ❌ **No**            | E requires D validation passing (can't migrate if existing content broken)           |
+
+**Critical Path** (longest dependency chain):
+
+```
+Phase 1 → Phase A → Phase C → Phase D → Phase E → Phase F
+[1-2d]    [3-4d]    [2d]       [2-3d]    [2-3d]    [1d]
+                              = 11-15 days minimum
+```
+
+**Optimization** (parallel A+B):
+
+```
+Phase 1 → [Phase A + Phase B in parallel] → Phase C → Phase D → Phase E → Phase F
+[1-2d]    [max(3-4d, 2-3d) = 3-4d]          [2d]      [2-3d]    [2-3d]    [1d]
+                              = 11-15 days (no time savings due to serial C→D→E)
+```
+
+**Blocking Relationships**:
+
+- **Phase C blocked by**: Phase A (needs corrected GDD refs), Phase B (needs final file paths)
+- **Phase D blocked by**: Phase A (needs corrected terminology), Phase B (needs file locations), Phase C (needs validation scripts)
+- **Phase E blocked by**: All of A+B+C+D (requires validated, corrected, structured content)
+- **Phase F blocked by**: Phase E (final migration must complete)
+
+**Sequential Constraints**:
+
+1. **Cannot start Phase C until**: Both Phase A AND Phase B complete
+2. **Cannot start Phase D until**: All of Phase A, B, C complete
+3. **Cannot start Phase E until**: All of Phase A, B, C, D complete
+4. **Cannot start Phase F until**: Phase E completes
+
+**Prerequisite Checklist**:
+
+**Before Phase A**: Phase 1 design artifacts complete (quickstart.md, frontmatter-schema.md, index-template.md)
+
+**Before Phase C**:
+
+- ✅ Phase A: All GDD corrections committed (corrected refs exist)
+- ✅ Phase B: All folders restructured (final paths known)
+
+**Before Phase D**:
+
+- ✅ Phase A: Terminology corrections defined
+- ✅ Phase B: File locations finalized
+- ✅ Phase C: Validation scripts created and tested
+
+**Before Phase E**:
+
+- ✅ Phase A: GDD is authoritative source of truth
+- ✅ Phase B: Structure is stable (no more moves)
+- ✅ Phase C: Cross-references working
+- ✅ Phase D: Existing content validates successfully (zero errors)
+
+**Before Phase F**:
+
+- ✅ Phase E: All migration decisions documented, files processed
+
+---
+
+**Total Estimate**: 12-16 days (with A+B parallelization = 11-15 days)
 
 ## Constitution Re-Check (Post-Design)
 

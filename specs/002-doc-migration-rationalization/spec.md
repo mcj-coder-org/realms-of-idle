@@ -215,15 +215,340 @@ NEW (unambiguous):
 **Must Have**:
 
 - Categorization of all 679 source files (Keep/Adapt/Discard)
-- Rationale for each decision
+- Rationale for each decision using measurable criteria below
 - Stakeholder approval before migration proceeds
 
-**Audit Dimensions**:
+**Categorization Decision Matrix**:
 
-- **Relevance**: Does it align with v2 game vision?
-- **Quality**: Is it well-specified or needs work?
-- **Scope**: Is it needed for MVP or future feature?
-- **Conflicts**: Does it contradict current GDD?
+Each file is evaluated on 4 dimensions, then categorized based on the scoring:
+
+#### 1. Relevance (Alignment with v2 Game Vision)
+
+**PASS** - File references mechanics in current GDD or future roadmap:
+
+- References systems in `docs/design/systems/`
+- Uses current terminology (class rank, class tree tier, skill tier)
+- References future roadmap features (tribes, guilds, crafting, combat classes)
+- No deprecated concepts (dormant classes, XP split, active slots)
+
+**FAIL** - File references deprecated mechanics only:
+
+- References "dormant classes", "active class slots", "XP splitting" without correction path
+- Contradicts current GDD mechanics (multi-class slots model, player-configured XP split)
+- Uses deprecated terminology exclusively with no salvageable content
+
+**Note**: Files referencing future roadmap features (tribes, guilds, crafting, combat) should PASS Relevance but may score as "Future" in Scope dimension.
+
+#### 2. Quality (Specification Completeness)
+
+**High Quality**:
+
+- Has complete YAML frontmatter (title, type, etc.)
+- Uses consistent terminology throughout
+- <5% broken internal links
+- Formatting valid (passes markdownlint)
+
+**Medium Quality**:
+
+- Missing frontmatter OR has terminology conflicts OR has broken links
+- Correctable with automated scripts + manual review
+
+**Low Quality**:
+
+- Missing frontmatter AND terminology conflicts AND broken links
+- Would require complete rewrite (>50% content changes)
+
+#### 3. Scope (MVP vs Future)
+
+**MVP-Required** - File documents mechanics needed for 001-minimal-possession-demo:
+
+**Core Possession Mechanics**:
+
+- Possession system (player possesses NPCs to control them directly)
+- Observer mode (autonomous simulation when not possessing)
+- Context-aware actions (different actions based on class + building location)
+- Release control (return to observer mode, NPC continues autonomously)
+
+**Core Class/Progression Systems** (NPCs use these systems):
+
+- Class system (NPCs ARE classes, not just roles)
+- XP distribution (hierarchical automatic split - NPCs gain XP from actions)
+- Multi-class mechanics (all classes active, primary class selection)
+- Skill system (classes have skills that enable their actions)
+- Character progression (NPCs level up, though MVP may start with pre-leveled NPCs)
+
+**MVP-Required Classes** (DOCUMENTATION GAP IDENTIFIED):
+
+**Tier 1 Foundation Class**:
+
+- ❌ **Host** - **GAP**: No current GDD documentation
+  - Foundation class for Service/Hospitality tree
+  - Tag: `Service` (depth 1)
+  - Unlocks: Innkeeper, Server, Housekeeper (Tier 2 specializations)
+  - **BLOCKER**: Must document before 001 implementation
+
+**Tier 2 Specialization Classes** (Inn Scenario):
+
+- ❌ **Innkeeper** (Mara's class - player-controlled, generalist manager) - **GAP**: No current GDD documentation
+  - Tags: `Service`, `Service/Hospitality` (depth 2)
+  - Skills (Basic/Generalist): Basic Cooking, Basic Housekeeping, Customer Service, Staff Management, Business Operations
+  - Actions: Serve customers (basic), prepare rooms (basic), hire/manage staff, track finances
+  - XP source: Management tasks, customer relations, backup service
+  - **BLOCKER**: Must document before 001 implementation
+- ❌ **Server** (hireable NPC - food service specialist) - **GAP**: No current GDD documentation
+  - Tags: `Service`, `Service/Hospitality`, `Service/Hospitality/Food` (depth 3)
+  - Skills (Specialist): Efficient Service (+50% speed), Menu Knowledge, Customer Reading, Upselling
+  - Actions: Take orders, deliver food, manage multiple tables simultaneously
+  - XP source: Table service, customer satisfaction, upselling
+  - **BLOCKER**: Must document before 001 implementation
+- ❌ **Housekeeper** (hireable NPC - room service specialist) - **GAP**: No current GDD documentation
+  - Tags: `Service`, `Service/Hospitality`, `Service/Hospitality/Lodging` (depth 3)
+  - Skills (Specialist): Efficient Cleaning (+100% speed), Stain Mastery, Comfort Arrangement
+  - Actions: Prepare rooms, manage linens, maintenance, deep cleaning
+  - XP source: Room preparation, quality cleaning, proactive maintenance
+  - **BLOCKER**: Must document before 001 implementation
+- ✅ **Cook** (hireable NPC - kitchen specialist) - **EXISTS**: Full documentation at `crafter/cook/index.md`
+  - Tags: `Crafting`, `Crafting/Cooking` (depth 2)
+  - Skills: Food preparation, recipe knowledge, ingredient management
+  - Actions: Prepare meals, manage kitchen, create food items
+  - XP source: Cooking actions, recipe mastery
+  - **STATUS**: Documentation complete, accessible from both Crafter and Host trees
+
+**Actions as Content Pages** (NEW REQUIREMENT - MAJOR SCOPE EXPANSION):
+
+Actions are first-class content requiring dedicated documentation pages. This applies to **ALL classes**, not just new MVP classes.
+
+**Architectural Clarification**:
+
+- ❌ **INCORRECT**: Classes provide bonuses (speed, efficiency, quality modifiers)
+- ✅ **CORRECT**: Skills provide bonuses; classes only track actions and grant XP
+- ❌ **INCORRECT**: Class level 10 gives +25% speed bonus
+- ✅ **CORRECT**: Class level 10 unlocks skills; skills give speed bonuses
+
+**Implications**:
+
+1. All class files currently have "Tracked Actions" sections with inline action definitions
+2. These must be extracted into separate action content pages
+3. Class files must be updated to remove inline definitions, reference action pages instead
+4. Action pages become single source of truth for action mechanics
+5. Skills (not classes) provide all performance modifiers
+
+**Scope**:
+
+- ❌ **Actions** (NEW content category) - **GAP**: No action documentation exists
+  - Structure: `docs/design/content/actions/` organized by tag hierarchy
+  - Example: `actions/service/hospitality/food/serve-customer.md`
+  - Properties: Tag (most specific), duration_base, resources, xp_base, modified_by_skills, tracked_by
+  - Estimate: **200-500 unique actions** across all classes (after deduplication)
+  - **Extraction source**: ALL class files (679 source + 4 new) contain tracked actions
+  - **BLOCKER**: Must extract and create action pages during 002 implementation
+
+**Action Extraction Process**:
+
+For each class file:
+
+1. Read "Tracked Actions for XP" section
+2. Extract action details (name, category, XP value, tag)
+3. Check if action already exists (deduplication)
+4. Create/update action page with this class in `tracked_by` list
+5. Update class file to reference action page instead of defining inline
+
+**MVP-Required Actions** (Initial Set for 001):
+
+Service/Hospitality Actions:
+
+- `serve-customer.md` - Deliver meal to customer (tracked by: Innkeeper, Server, Cook)
+- `prepare-room.md` - Clean and prepare guest room (tracked by: Innkeeper, Housekeeper)
+- `greet-guest.md` - Welcome new arrival (tracked by: Innkeeper, Server, Housekeeper)
+- `manage-staff.md` - Assign tasks to employees (tracked by: Innkeeper)
+- `check-income.md` - Review financial status (tracked by: Innkeeper)
+
+**Full Action Set** (across all classes):
+
+- Estimated 200-500 unique actions across all tag branches
+- Service, Crafting, Combat, Gathering, Social, etc.
+- Will be extracted during Phase 2 implementation
+
+**NEW Class Files Created** (Expanded Scope):
+
+During 002 specification phase, 4 new class files were created in source repository (`cozy-fantasy-rpg`) to unblock MVP:
+
+- ⚠️ **Host (Tier 1 Foundation)** - Created at `classes/host/index.md`
+  - Foundation class for Service/Hospitality tree
+  - 113 lines, complete specification
+  - **STATUS**: Needs correction (contains incorrect class-based bonus tables)
+  - **Migration**: Correct architecture, extract actions, then copy to `realms-of-idle`
+
+- ⚠️ **Innkeeper (Tier 2 Generalist)** - Created at `classes/host/innkeeper/index.md`
+  - Hospitality manager, player-controlled in MVP
+  - 259 lines, complete specification with MVP integration section
+  - **STATUS**: Needs correction (contains incorrect "Service Bonuses" table, "Class Bonuses" sections)
+  - **Migration**: Remove bonus tables, extract tracked actions, update MVP integration, then copy
+
+- ⚠️ **Server (Tier 2 Food Specialist)** - Created at `classes/host/server/index.md`
+  - Food service specialist, hireable NPC in MVP
+  - 233 lines, complete specification with MVP integration section
+  - **STATUS**: Needs correction (contains incorrect "Service Bonuses" table, "Synergy Bonuses" scaling)
+  - **Migration**: Remove bonus tables, extract tracked actions, update MVP integration, then copy
+
+- ⚠️ **Housekeeper (Tier 2 Lodging Specialist)** - Created at `classes/host/housekeeper/index.md`
+  - Lodging service specialist, hireable NPC in MVP
+  - 248 lines, complete specification with MVP integration section
+  - **STATUS**: Needs correction (contains incorrect "Service Bonuses" table, "Class Bonuses" in actions)
+  - **Migration**: Remove bonus tables, extract tracked actions, update MVP integration, then copy
+
+**Corrections Required** (before migration):
+
+All 4 files have architectural errors discovered after creation:
+
+- ❌ Remove: "Service Bonuses" tables showing class-level speed/efficiency bonuses
+- ❌ Remove: "Class Bonuses" sections in MVP integration showing class-specific modifiers
+- ❌ Remove: "Synergy Bonuses" sections showing class level affecting skill effectiveness
+- ✅ Keep: Tracked Actions sections (but extract to action pages)
+- ✅ Keep: Starting Skills lists (skills provide bonuses, not classes)
+- ✅ Revise: Emphasize "skills provide bonuses, class provides XP tracking"
+
+**Expanded Scope Justification**: These files are MVP blockers and were created during 002 planning to clarify requirements. Rather than treating them as a separate feature, include them in 002 migration with categorization as "Created (needs correction before migration)" in the audit report.
+
+**Note on Customers**: Customers are NOT a class. Any NPC can be a customer when they purchase services (lodging, meals). Customer interactions grant XP to service providers (Innkeeper, Server, etc.) but don't require a dedicated class.
+
+**Note on Crafting Classes**: Blacksmith and other crafting classes (Carpenter, etc.) are **removed from Inn scenario**. These belong to a separate **Workshop scenario** to be implemented later. MVP Inn initializes with required tools already present (no crafting mechanics needed).
+
+**Economic Systems**:
+
+- Resource production/consumption (Food only for Inn scenario)
+- Building treasuries (gold per building, not settlement-wide)
+- NPC hiring (contract costs, daily wages for Server, Housekeeper, Cook)
+- Building upgrades (Inn Level 1→3, storage/capacity/speed improvements)
+- Service transactions (customers pay gold for meals and lodging)
+
+**Simulation Systems**:
+
+- Game loop (10 ticks/second, autonomous NPC actions)
+- Offline progress calculation (time-based catch-up when tab hidden)
+- Activity log (last 20 NPC actions)
+- Favorites system (bookmark NPCs for quick access)
+- Priority management (adjust NPC behavior, persists after release)
+
+**World Setup**:
+
+- 10x10 grid settlement
+- 1 building (Rusty Tankard Inn - Level 1, upgradeable to Level 3)
+- Town Square (hiring location for unemployed NPCs)
+- Pre-initialized tools (no crafting required for MVP)
+
+---
+
+**Future** - File documents mechanics not in MVP but in roadmap:
+
+**Combat & Advanced Classes** (post-MVP content):
+
+- Combat class trees (Fighter → Warrior → Knight, etc.)
+- Gathering class trees (Gatherer → Hunter → Ranger, etc.)
+- Advanced crafting specializations (Blacksmith → Weaponsmith/Armorsmith)
+- Class tree tiers (Foundation/Specialization/Advanced progression)
+
+**Content Expansion**:
+
+- **Actions Content**: Beyond MVP's 5 initial actions, hundreds of additional action specifications for combat, crafting, gathering, social interactions
+- **Social Systems**: Tribes, guilds, faction mechanics
+- **Combat Classes**: Fighter, Warrior, Blade Dancer, Knight, Berserker, etc.
+- **Combat Actions**: Attack, defend, dodge, special abilities, combo moves
+- **Crafting Classes**: Blacksmith, Carpenter, and specializations (Weaponsmith, Armorsmith)
+- **Crafting Actions**: Forge, smelt, repair, enhance, craft recipes
+- **Workshop Scenario**: Separate building (Forge, Workshop) with crafting mechanics, resource chains (Iron Ore → Iron Tools), tool/weapon creation
+- **Gathering Classes**: Hunter, Herbalist, Ranger
+- **Gathering Actions**: Mine, harvest, hunt, forage, track
+- **Additional NPCs**: Beyond starter inn settlement
+- **World Locations**: Multiple settlements, travel systems
+- **Items & Creatures**: Combat items, enemies, loot tables
+
+**Advanced Systems**:
+
+- Recipe discovery and crafting progression
+- Tag-based class mechanics (tag depth access)
+- Synergy bonuses between classes/skills
+- Complex resource chains
+- Seasonal events, dynamic world mechanics
+
+---
+
+**Out of Scope** - File documents mechanics not planned or deprecated:
+
+- **Deprecated Features**: Dormant classes, active class slots (3-slot limit), player-configured XP split
+- **Removed Mechanics**: Any mechanics contradicting current GDD (e.g., XP split instead of hierarchical automatic distribution, slot-based multi-class instead of all-active model)
+
+#### 4. Conflicts (GDD Contradiction)
+
+**No Conflict** - File aligns with current GDD or has no GDD overlap
+
+**Minor Conflict** - File uses old terminology but mechanics align:
+
+- Can be fixed with find/replace (tier → class rank/tree tier/skill tier)
+- Structural changes only (no mechanics changes)
+
+**Major Conflict** - File contradicts current GDD mechanics:
+
+- Describes different multi-class system (slots vs all-active)
+- Different XP distribution (split vs hierarchical automatic)
+- Different progression model (transitions vs eligibility unlocks)
+
+#### Categorization Rules
+
+**Keep** - File passes all 4 dimensions:
+
+```
+Relevance: PASS
+Quality: High or Medium
+Scope: MVP-Required or Future
+Conflicts: No Conflict
+```
+
+**Adapt** - File fails 1-2 dimensions but is salvageable:
+
+```
+Relevance: PASS
+Quality: High or Medium or Low
+Scope: MVP-Required or Future
+Conflicts: Minor Conflict (fixable with updates)
+```
+
+OR:
+
+```
+Relevance: FAIL (but mechanics adaptable to v2)
+Quality: High or Medium
+Scope: MVP-Required
+Conflicts: Minor Conflict
+```
+
+**Discard** - File fails 3+ dimensions or has major conflicts:
+
+```
+Relevance: FAIL
+Quality: Low
+Scope: Out of Scope
+Conflicts: Major Conflict
+```
+
+OR any file with:
+
+```
+Conflicts: Major Conflict
+Scope: Out of Scope
+```
+
+**Rationale Format** (required for each decision):
+
+```
+File: path/to/file.md
+Decision: Keep | Adapt | Discard
+Relevance: PASS/FAIL - [reason]
+Quality: High/Medium/Low - [metrics: frontmatter yes/no, conflicts count, broken links count]
+Scope: MVP-Required/Future/Out of Scope - [which MVP feature needs this]
+Conflicts: None/Minor/Major - [describe conflict if present]
+Rationale: [1-2 sentence justification for Keep/Adapt/Discard decision]
+```
 
 ### FR-004: Content Templates
 
@@ -307,7 +632,67 @@ docs/design/
 └── content-gdd-inconsistencies.md  # EXISTING: Analysis document
 ```
 
-### TR-002: Validation Rules
+### TR-002: Cross-Reference System & Validation
+
+#### Cross-Reference System Design
+
+**Chosen Approach**: Generated Maps + Frontmatter Links (Hybrid)
+
+**Rationale**:
+
+This approach combines manual frontmatter references with automated map generation to provide bidirectional navigation while maintaining validation integrity.
+
+**Alternatives Considered**:
+
+| Option                              | Approach                                            | Pros                                                | Cons                                                        | Verdict                                   |
+| ----------------------------------- | --------------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------- |
+| **A: Frontmatter Only**             | Every content file has `gdd_ref` in frontmatter     | Simple, self-contained, easy to validate            | One-way only (Content → GDD), no reverse lookup             | ❌ Rejected - No bidirectional navigation |
+| **B: Dedicated Xref Files**         | Separate `gdd-to-content.md` mapping files          | Bidirectional, centralized                          | Requires manual maintenance, can go stale, extra file reads | ❌ Rejected - Staleness risk too high     |
+| **C: Generated Maps + Frontmatter** | Frontmatter `gdd_ref` + auto-generated reverse maps | Bidirectional, validated, auto-updated, never stale | Requires generation script                                  | ✅ **Selected** - Best tradeoffs          |
+
+**Implementation Details**:
+
+**Manual Component** (Content frontmatter):
+
+```yaml
+---
+title: Warrior
+gdd_ref: systems/class-system/index.md#specialization-classes
+---
+```
+
+**Automated Component** (Generated map):
+
+```markdown
+# GDD to Content Cross-Reference
+
+## systems/class-system/index.md
+
+### § specialization-classes
+
+Referenced by:
+
+- [Warrior](../../content/classes/fighter/warrior/index.md)
+- [Blade Dancer](../../content/classes/fighter/blade-dancer/index.md)
+
+[Generated: 2026-02-10 14:30:00]
+```
+
+**Auto-Regeneration Triggers**:
+
+- Pre-commit hook: If `docs/design/content/**/*.md` modified
+- CI pipeline: On every push to main
+- Manual: `.specify/scripts/generate-xref-report.sh`
+
+**Staleness Prevention**:
+
+- Generated maps include timestamp
+- Validation script compares map timestamp vs newest content file
+- Stale map triggers warning + auto-regeneration
+
+---
+
+#### Validation Rules
 
 **Terminology Validation**:
 
@@ -320,6 +705,7 @@ docs/design/
 - Detect dangling links (reference to non-existent file)
 - Detect undefined mechanics (content refers to missing GDD section)
 - Verify GDD status frontmatter (authoritative vs draft)
+- Check map freshness (generated timestamp vs content modification)
 
 ### TR-003: Automation Scripts
 

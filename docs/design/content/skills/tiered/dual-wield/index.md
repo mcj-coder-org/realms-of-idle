@@ -78,4 +78,4 @@ Classes with strong synergies get faster learning, better effectiveness, and low
 ## Related Content
 
 - **Strong Synergy:** [Warrior](../../classes/fighter/warrior/), [Adventurer](../../classes/fighter/adventurer/), [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/)
-- **See Also:** [Single Weapon Mastery](single-weapon-mastery.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)
+- **See Also:** [Single Weapon Mastery](single-weapon-mastery/index.md), [Combat Skills](../index.md), [Combat System](../../systems/combat/index.md)

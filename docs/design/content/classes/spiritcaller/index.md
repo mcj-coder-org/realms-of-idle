@@ -57,10 +57,10 @@ A Spiritcaller's development determines their future path. Some will become gene
 
 Skills automatically awarded when accepting this class:
 
-| Skill              | Type            | Link                                                                     | Description                                   |
-| ------------------ | --------------- | ------------------------------------------------------------------------ | --------------------------------------------- |
-| Spirit Pool Access | Mechanic Unlock | [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access.md) | Unlocks connection to tribal spirit pool      |
-| Spirit Sense       | Passive         | [Spirit Sense](../../skills/passive/spirit-sense.md)                     | Can detect spirit presence within short range |
+| Skill              | Type            | Link                                                                           | Description                                   |
+| ------------------ | --------------- | ------------------------------------------------------------------------------ | --------------------------------------------- |
+| Spirit Pool Access | Mechanic Unlock | [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access/index.md) | Unlocks connection to tribal spirit pool      |
+| Spirit Sense       | Passive         | [Spirit Sense](../../skills/passive/spirit-sense/index.md)                     | Can detect spirit presence within short range |
 
 ### XP Progression
 
@@ -104,7 +104,7 @@ As a Tier 1 class, Spiritcaller has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers.md)
-- **Shamanic Magic:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
-- **Spirit Pool:** [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic.md#2-spirit-pool-mechanics)
-- **Skills:** [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access.md), [Spirit Sense](../../skills/passive/spirit-sense.md)
+- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
+- **Shamanic Magic:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)
+- **Spirit Pool:** [Spirit Pool Mechanics](../../../systems/magic/shamanic-magic/index.md#2-spirit-pool-mechanics)
+- **Skills:** [Spirit Pool Access](../../skills/mechanic-unlock/spirit-pool-access/index.md), [Spirit Sense](../../skills/passive/spirit-sense/index.md)

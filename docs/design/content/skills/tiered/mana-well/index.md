@@ -46,5 +46,5 @@ Expanded magical reserves.
 ## Related Content
 
 - **Strong Synergy:** All [Mage Specializations](../../classes/channeler/mage/) and [Magic Pool](../../classes/channeler/) classes
-- **Complements:** [Spell Focus](spell-focus.md), [Mana Imbue](mana-imbue.md)
-- **See Also:** [Mana Management](../../systems/magic/mana.md), [Magic Skills](../index.md)
+- **Complements:** [Spell Focus](spell-focus/index.md), [Mana Imbue](mana-imbue/index.md)
+- **See Also:** [Mana Management](../../systems/magic/mana/index.md), [Magic Skills](../index.md)

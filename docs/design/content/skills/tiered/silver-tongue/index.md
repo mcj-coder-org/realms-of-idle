@@ -45,4 +45,4 @@ Superior negotiation in trade.
 ## Related Content
 
 - **Strong Synergy:** [Trader](../../classes/economic/trader/), [Merchant](../../classes/economic/merchant/)
-- **See Also:** [Market Sense](market-sense.md), [Trading System](../../systems/economy/trading.md), [Economic Skills](../index.md)
+- **See Also:** [Market Sense](market-sense/index.md), [Trading System](../../systems/economy/trading/index.md), [Economic Skills](../index.md)

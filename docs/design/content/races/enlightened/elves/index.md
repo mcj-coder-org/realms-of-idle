@@ -8,7 +8,7 @@ summary: 'Long-lived magical beings who blend ancient wisdom with natural grace 
 
 # Elves
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ Elves of the ancient cities, representing elven culture at its most refined and 
 
 **Key Features:** Magic/Knowledge mastery, Arcane/Abjuration magic, scholarly excellence
 
-**[Learn More →](high.md)**
+**[Learn More →](high/index.md)**
 
 ### Wood Elf
 
@@ -28,7 +28,7 @@ Forest-dwelling elves who blend seamlessly with the natural world. Masters of st
 
 **Key Features:** Nature magic, forest mastery, enhanced stealth, tracking excellence
 
-**[Learn More →](wood.md)**
+**[Learn More →](wood/index.md)**
 
 ### Sea Elf
 
@@ -36,7 +36,7 @@ Coastal and oceanic elves who adapted to life on and beneath the waves. Master s
 
 **Key Features:** Water breathing, enhanced swimming, Water/Conjuration magic, maritime mastery
 
-**[Learn More →](sea.md)**
+**[Learn More →](sea/index.md)**
 
 ### Dusk Elf
 
@@ -44,7 +44,7 @@ Underground-dwelling elves who embraced shadow magic and nocturnal existence. Th
 
 **Key Features:** Perfect darkvision, Shadow/Necromancy magic, underground adaptation
 
-**[Learn More →](dusk.md)**
+**[Learn More →](dusk/index.md)**
 
 ---
 
@@ -124,7 +124,7 @@ Elves have **unrestricted access to all classes** with magical affinity bonuses 
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
-- **[Humans](../humans.md)**: Shorter-lived but dynamic allies and friends
-- **[Dwarves](../dwarves/base.md)**: Respected craftsmen with different values
-- **[Race Comparison](../../races-and-tribes.md)**: How elves compare to other races
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Humans](../humans/index.md)**: Shorter-lived but dynamic allies and friends
+- **[Dwarves](../dwarves/base/index.md)**: Respected craftsmen with different values
+- **[Race Comparison](../../races-and-tribes/index.md)**: How elves compare to other races

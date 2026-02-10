@@ -9,7 +9,7 @@ summary: 'Traditional kobolds of the high peaks, masters of mining and metals, a
 
 # Mountain Kobold
 
-> **Parent Race:** [Kobolds](base.md)
+> **Parent Race:** [Kobolds](base/index.md)
 
 ## Variant Overview
 
@@ -58,7 +58,7 @@ This expertise makes mountain kobolds highly sought after as mining consultants 
 
 **With Other Kobolds:** Mountain Kobolds see themselves as the standard by which all kobolds should be measured. They respect Forest Kobolds but consider them "diluted" by surface adaptation. Urban Kobolds puzzle them - too socially flexible and insufficiently paranoid. Dragonsworn earn profound respect and envy, having achieved proximity to dragons that mountain kobolds dream of.
 
-**With Other Races:** Mountain Kobolds maintain formal and cautious relationships with non-kobolds. They trade their mining expertise and rare ores - everyone needs what mountain kobolds find - but keep surface folk at careful distance. They respect [dwarves](../dwarves/base.md) as fellow master crafters while resenting being compared to them, tolerate [humans](../humans.md) as useful trading partners, and remain deeply suspicious of anyone who approaches their warrens without invitation.
+**With Other Races:** Mountain Kobolds maintain formal and cautious relationships with non-kobolds. They trade their mining expertise and rare ores - everyone needs what mountain kobolds find - but keep surface folk at careful distance. They respect [dwarves](../dwarves/base/index.md) as fellow master crafters while resenting being compared to them, tolerate [humans](../humans/index.md) as useful trading partners, and remain deeply suspicious of anyone who approaches their warrens without invitation.
 
 ## Recommended Classes
 

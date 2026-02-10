@@ -68,4 +68,4 @@ Classes with strong synergies: Beekeeper
 ## Related Content
 
 - **Strong Synergy:** [Beekeeper](../../classes/gatherer/beekeeper/)
-- **See Also:** [Animal Husbandry](../tiered/animal-husbandry.md), [Agriculture System](../../systems/gathering/agriculture.md)
+- **See Also:** [Animal Husbandry](../tiered/animal-husbandry/index.md), [Agriculture System](../../systems/gathering/agriculture/index.md)

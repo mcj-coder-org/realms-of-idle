@@ -13,11 +13,11 @@ summary: Ability to create protective and enhancing spirit charms
 
 ## Overview
 
-| Attribute | Value                                      |
-| --------- | ------------------------------------------ |
-| Type      | Mechanic Unlock                            |
-| Pool      | [Shamanic Pool](../pools/shamanic-pool.md) |
-| Tags      | `Shamanic/Nature`                          |
+| Attribute | Value                                            |
+| --------- | ------------------------------------------------ |
+| Type      | Mechanic Unlock                                  |
+| Pool      | [Shamanic Pool](../pools/shamanic-pool/index.md) |
+| Tags      | `Shamanic/Nature`                                |
 
 ## Description
 
@@ -51,4 +51,4 @@ Charm Creation allows the shaman to craft small spirit-blessed objects that prov
 ## Related Content
 
 - **Class:** [Shaman](../../classes/spiritcaller/shaman/)
-- **See Also:** [Charms](../../../systems/magic/shamanic-magic.md#5-charms)
+- **See Also:** [Charms](../../../systems/magic/shamanic-magic/index.md#5-charms)

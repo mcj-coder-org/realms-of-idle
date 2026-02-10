@@ -41,4 +41,4 @@ Skills improve continuously with accumulated XP. More XP = better effectiveness,
 ## Related Content
 
 - **Strong Synergy:** [Shaman](../../classes/channeler/shaman/)
-- **See Also:** [Shamanic Magic](../../systems/magic/shamanic.md), [Tribal Benefits System](../../systems/shamanic/tribal-benefits.md), [Shamanic Skills](../index.md)
+- **See Also:** [Shamanic Magic](../../systems/magic/shamanic/index.md), [Tribal Benefits System](../../systems/shamanic/tribal-benefits/index.md), [Shamanic Skills](../index.md)

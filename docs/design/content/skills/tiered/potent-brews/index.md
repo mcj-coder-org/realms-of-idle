@@ -46,4 +46,4 @@ Stronger alchemical creations.
 ## Related Content
 
 - **Strong Synergy:** [Alchemist](../../classes/crafter/alchemist/)
-- **See Also:** [Stable Solutions](stable-solutions.md), [Alchemy Recipes](../../systems/crafting/alchemy-recipes.md), [Crafting Skills](../index.md)
+- **See Also:** [Stable Solutions](stable-solutions/index.md), [Alchemy Recipes](../../systems/crafting/alchemy-recipes/index.md), [Crafting Skills](../index.md)

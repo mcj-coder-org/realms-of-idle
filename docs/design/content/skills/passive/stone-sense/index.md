@@ -79,9 +79,9 @@ Dwarves don't just see stone - they _understand_ it. Through generations of livi
 
 **Synergizes with:**
 
-- [Deep Vein](../mechanic-unlock/deep-vein.md) - Locate rich ore deposits
-- [Prospector](../mechanic-unlock/prospector.md) - Survey areas for resources
-- [Resource Sense](../tiered/resource-sense.md) - Ore detection at range
+- [Deep Vein](../mechanic-unlock/deep-vein/index.md) - Locate rich ore deposits
+- [Prospector](../mechanic-unlock/prospector/index.md) - Survey areas for resources
+- [Resource Sense](../tiered/resource-sense/index.md) - Ore detection at range
 - Miner class - Enhanced mining efficiency and yield
 
 **Practical Applications:**
@@ -93,7 +93,7 @@ Dwarves don't just see stone - they _understand_ it. Through generations of livi
 
 ## Related Content
 
-- [Darkvision](darkvision.md) - See in complete darkness
-- [Master Crafter's Eye](master-crafters-eye.md) - Assess material quality
-- [Deep Vein](../mechanic-unlock/deep-vein.md) - Advanced resource location
-- [Gathering System](../../../systems/economy/gathering-system.md) - Resource collection mechanics
+- [Darkvision](darkvision/index.md) - See in complete darkness
+- [Master Crafter's Eye](master-crafters-eye/index.md) - Assess material quality
+- [Deep Vein](../mechanic-unlock/deep-vein/index.md) - Advanced resource location
+- [Gathering System](../../../systems/economy/gathering-system/index.md) - Resource collection mechanics

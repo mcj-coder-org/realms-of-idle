@@ -40,7 +40,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Healing/*`     | 3     | Healer (full access to sub-tags) |
 | `Gathering/Herbalism` | 2     | Healer, Herbalist, Gatherer      |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -109,11 +109,11 @@ Master Healers perform miraculous recoveries. They reattach severed limbs, cure 
 
 #### Starting Skills
 
-| Skill                                                      | Type    | Effect                                   |
-| ---------------------------------------------------------- | ------- | ---------------------------------------- |
-| Basic Healing                                              | Active  | Can heal minor injuries and ease pain    |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser) | Passive | Enhanced healing spell effectiveness     |
-| [Mana Well](../../skills/tiered/mana-well.md) (Lesser)     | Passive | Expanded mana for sustained healing work |
+| Skill                                                            | Type    | Effect                                   |
+| ---------------------------------------------------------------- | ------- | ---------------------------------------- |
+| Basic Healing                                                    | Active  | Can heal minor injuries and ease pain    |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser) | Passive | Enhanced healing spell effectiveness     |
+| [Mana Well](../../skills/tiered/mana-well/index.md) (Lesser)     | Passive | Expanded mana for sustained healing work |
 
 #### Synergy Skills
 
@@ -121,11 +121,11 @@ Skills that have strong synergies with Healer. These skills can be learned by an
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Restoration Skills**:
 
@@ -207,7 +207,7 @@ Actions that grant XP to the Healer class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                         | Requirements                                     | Result Class | Tier |
 | ------------------------------------------ | ------------------------------------------------ | ------------ | ---- |
@@ -218,14 +218,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                     | Interaction                         |
-| ---------------------------------------------------------- | ----------------------------------- |
-| [Magic System](../../../systems/character/magic-system.md) | Uses restoration school of magic    |
-| [Health](../../../../../systems/character/)                | Restores HP and cures conditions    |
-| [Disease](../../../systems/world/)                         | Cures and prevents diseases         |
-| [Poison](../../../systems/combat/)                         | Neutralizes toxins and poisons      |
-| [Party](../../../systems/combat/)                          | Essential support role in groups    |
-| [Settlement](../../../systems/world/settlements.md)        | Critical community service provider |
+| System                                                           | Interaction                         |
+| ---------------------------------------------------------------- | ----------------------------------- |
+| [Magic System](../../../systems/character/magic-system/index.md) | Uses restoration school of magic    |
+| [Health](../../../../../systems/character/)                      | Restores HP and cures conditions    |
+| [Disease](../../../systems/world/)                               | Cures and prevents diseases         |
+| [Poison](../../../systems/combat/)                               | Neutralizes toxins and poisons      |
+| [Party](../../../systems/combat/)                                | Essential support role in groups    |
+| [Settlement](../../../systems/world/settlements/index.md)        | Critical community service provider |
 
 ---
 
@@ -235,4 +235,4 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Equipment:** [Medical Supplies](../../item/), [Holy Symbol](../../item/), [Healing Herbs](../../material/)
 - **Synergy Classes:** [Mage](./mage/index.md), [Cook](../../crafter/cook/), [Alchemist](../../crafter/alchemist/)
 - **Consolidates To:** [Paladin](../../consolidation/), [Cleric](../../consolidation/), [Combat Medic](../../consolidation/)
-- **See Also:** [Magic System](../../../systems/character/magic-system.md), [Restoration School](../../../systems/magic/), [Health & Injury](../../../../../systems/character/)
+- **See Also:** [Magic System](../../../systems/character/magic-system/index.md), [Restoration School](../../../systems/magic/), [Health & Injury](../../../../../systems/character/)

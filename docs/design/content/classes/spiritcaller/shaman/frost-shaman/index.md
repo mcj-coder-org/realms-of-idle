@@ -48,6 +48,6 @@ Frost Shaman is a terminal Tier 3 specialization. No further progression paths a
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Ice Spirit Bond](../../skills/tiered/ice-spirit-bond.md), [Winter's Touch](../../skills/tiered/winters-touch.md)
-- **Spells:** [Spirit Frost](../../spells/nature/spirit-frost.md), [Cold Blessing](../../spells/nature/cold-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Ice Spirit Bond](../../skills/tiered/ice-spirit-bond/index.md), [Winter's Touch](../../skills/tiered/winters-touch/index.md)
+- **Spells:** [Spirit Frost](../../spells/nature/spirit-frost/index.md), [Cold Blessing](../../spells/nature/cold-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

@@ -81,10 +81,10 @@ Preparation is half the art. Some herbs work fresh, others must be dried. Some n
 
 Skills automatically awarded when accepting this class:
 
-| Skill          | Tier   | Link                                                        | Reasoning                                   |
-| -------------- | ------ | ----------------------------------------------------------- | ------------------------------------------- |
-| Gatherer's Eye | Lesser | [See Skill](../../skills/common/gatherers-eye.md)           | Spotting plants is fundamental to herbalism |
-| Gentle Harvest | Lesser | [See Skill](../../skills/mechanic-unlock/gentle-harvest.md) | Proper harvesting preserves plant and yield |
+| Skill          | Tier   | Link                                                              | Reasoning                                   |
+| -------------- | ------ | ----------------------------------------------------------------- | ------------------------------------------- |
+| Gatherer's Eye | Lesser | [See Skill](../../skills/common/gatherers-eye/index.md)           | Spotting plants is fundamental to herbalism |
+| Gentle Harvest | Lesser | [See Skill](../../skills/mechanic-unlock/gentle-harvest/index.md) | Proper harvesting preserves plant and yield |
 
 #### Synergy Skills
 
@@ -92,10 +92,10 @@ Skills with strong synergies for Herbalist:
 
 **Gathering Skills**:
 
-- [Gatherer's Eye](../../skills/common/gatherers-eye.md) - Spot resources more easily
-- [Gentle Harvest](../../skills/mechanic-unlock/gentle-harvest.md) - Preserve plants while harvesting
-- [Resource Sense](../../skills/tiered/resource-sense.md) - Locate resources at a distance
-- [Environmental Reading](../../skills/common/environmental-reading.md) - Understand habitat conditions
+- [Gatherer's Eye](../../skills/common/gatherers-eye/index.md) - Spot resources more easily
+- [Gentle Harvest](../../skills/mechanic-unlock/gentle-harvest/index.md) - Preserve plants while harvesting
+- [Resource Sense](../../skills/tiered/resource-sense/index.md) - Locate resources at a distance
+- [Environmental Reading](../../skills/common/environmental-reading/index.md) - Understand habitat conditions
 
 **Herbalism Skills** (specialized):
 
@@ -123,24 +123,24 @@ Actions that grant XP to the Herbalist class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                      | Requirements                                      | Result Class  | Tier |
-| --------------------------------------- | ------------------------------------------------- | ------------- | ---- |
-| [Artisan](../consolidation/index.md)    | Herbalist + [Forager](forager.md)                 | Nature Expert | 1    |
-| [Apothecary](../consolidation/index.md) | Herbalist + [Alchemist](../crafting/alchemist.md) | Apothecary    | 1    |
-| [Healer](../consolidation/index.md)     | Herbalist + healing focus                         | Hedge Healer  | 1    |
+| Consolidation Path                      | Requirements                                            | Result Class  | Tier |
+| --------------------------------------- | ------------------------------------------------------- | ------------- | ---- |
+| [Artisan](../consolidation/index.md)    | Herbalist + [Forager](forager/index.md)                 | Nature Expert | 1    |
+| [Apothecary](../consolidation/index.md) | Herbalist + [Alchemist](../crafting/alchemist/index.md) | Apothecary    | 1    |
+| [Healer](../consolidation/index.md)     | Herbalist + healing focus                               | Hedge Healer  | 1    |
 
 ### Interactions
 
-| System                                                        | Interaction                                              |
-| ------------------------------------------------------------- | -------------------------------------------------------- |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Supplies raw materials for Alchemy and Medicine          |
-| [Economy](../../../systems/economy/index.md)                  | Can establish herb shop; supplies healers and alchemists |
-| [Medicine](../../../systems/character/health.md)              | Prepared herbs provide healing and treatments            |
-| [Alchemy](../crafting/alchemist.md)                           | Primary supplier of alchemical reagents                  |
-| [Cooking](../crafting/cook.md)                                | Provides culinary herbs and spices                       |
-| [Settlement](../../../systems/world/settlements.md)           | Herb gardens and gathering grounds support health        |
+| System                                                              | Interaction                                              |
+| ------------------------------------------------------------------- | -------------------------------------------------------- |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Supplies raw materials for Alchemy and Medicine          |
+| [Economy](../../../systems/economy/index.md)                        | Can establish herb shop; supplies healers and alchemists |
+| [Medicine](../../../systems/character/health/index.md)              | Prepared herbs provide healing and treatments            |
+| [Alchemy](../crafting/alchemist/index.md)                           | Primary supplier of alchemical reagents                  |
+| [Cooking](../crafting/cook/index.md)                                | Provides culinary herbs and spices                       |
+| [Settlement](../../../systems/world/settlements/index.md)           | Herb gardens and gathering grounds support health        |
 
 ---
 
@@ -148,7 +148,7 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Gathering tools, knowledge of local flora, drying/processing equipment
 - **Materials Gathered:** Herbs, roots, bark, flowers, fungi, seeds
-- **Prepares For:** [Alchemist](../crafting/alchemist.md), [Cook](../crafting/cook.md), [Healer](../magic/healer.md)
+- **Prepares For:** [Alchemist](../crafting/alchemist/index.md), [Cook](../crafting/cook/index.md), [Healer](../magic/healer/index.md)
 - **Recipes:** Herb Processing, Tinctures, Dried Herbs
-- **Synergy Classes:** [Forager](forager.md), [Alchemist](../crafting/alchemist.md), [Healer](../magic/healer.md)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Alchemy Recipes](../../recipes/alchemy/index.md)
+- **Synergy Classes:** [Forager](forager/index.md), [Alchemist](../crafting/alchemist/index.md), [Healer](../magic/healer/index.md)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Alchemy Recipes](../../recipes/alchemy/index.md)

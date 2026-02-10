@@ -51,9 +51,9 @@ Handles break and must be replaced. Every woodsman carries spare handles for the
 
 ## Interactions
 
-| System                                                           | Interaction                                     |
-| ---------------------------------------------------------------- | ----------------------------------------------- |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Required component for hafted weapons and tools |
+| System                                                                 | Interaction                                     |
+| ---------------------------------------------------------------------- | ----------------------------------------------- |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Required component for hafted weapons and tools |
 
 ---
 

@@ -67,6 +67,6 @@ Totem Carver is a terminal Tier 3 consolidation class. No further progression pa
 ### Related Content
 
 - **Required Classes:** [Shaman](../), [Carpenter](../../../crafter/carpenter/)
-- **Skills:** [Spirit Carving](../../skills/tiered/spirit-carving.md), [Totem Binding](../../skills/tiered/totem-binding.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
-- **System:** [Crafting System](../../../systems/crafting/crafting-progression.md)
+- **Skills:** [Spirit Carving](../../skills/tiered/spirit-carving/index.md), [Totem Binding](../../skills/tiered/totem-binding/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)
+- **System:** [Crafting System](../../../systems/crafting/crafting-progression/index.md)

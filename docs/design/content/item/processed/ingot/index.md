@@ -49,9 +49,9 @@ Ingots stack neatly, store indefinitely, and trade easily. Merchants price goods
 
 ## Interactions
 
-| System                                                           | Interaction                              |
-| ---------------------------------------------------------------- | ---------------------------------------- |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Primary material for all forging recipes |
+| System                                                                 | Interaction                              |
+| ---------------------------------------------------------------------- | ---------------------------------------- |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Primary material for all forging recipes |
 
 ---
 

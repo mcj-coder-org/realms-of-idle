@@ -38,11 +38,11 @@ Knighthood's romance attracts many aspirants; its reality breaks most. The dutie
 
 ### Prerequisites
 
-| Requirement            | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| XP Threshold           | 50,000 XP from honorable combat and leadership tracked actions |
-| Related Tier 2 Classes | [Warrior](./warrior.md), [Guard](./guard.md) (provide bonuses) |
-| Tag Depth Access       | 3+ levels (e.g., `Combat/Melee`, `Leadership/Command`)         |
+| Requirement            | Value                                                                      |
+| ---------------------- | -------------------------------------------------------------------------- |
+| XP Threshold           | 50,000 XP from honorable combat and leadership tracked actions             |
+| Related Tier 2 Classes | [Warrior](./warrior/index.md), [Guard](./guard/index.md) (provide bonuses) |
+| Tag Depth Access       | 3+ levels (e.g., `Combat/Melee`, `Leadership/Command`)                     |
 
 ### Requirements
 
@@ -77,20 +77,20 @@ Knighthood's romance attracts many aspirants; its reality breaks most. The dutie
 
 Skills automatically awarded when accepting this class:
 
-| Skill          | Tier     | Link                                                             | Reasoning                                         |
-| -------------- | -------- | ---------------------------------------------------------------- | ------------------------------------------------- |
-| Shield Wall    | Lesser   | [Shield Wall](../../skills/tiered/shield-wall.md)                | Defensive specialty essential for knightly combat |
-| Mounted Combat | Mechanic | [Mounted Combat](../../skills/mechanic-unlock/mounted-combat.md) | Defining knightly ability and core cavalry skill  |
+| Skill          | Tier     | Link                                                                   | Reasoning                                         |
+| -------------- | -------- | ---------------------------------------------------------------------- | ------------------------------------------------- |
+| Shield Wall    | Lesser   | [Shield Wall](../../skills/tiered/shield-wall/index.md)                | Defensive specialty essential for knightly combat |
+| Mounted Combat | Mechanic | [Mounted Combat](../../skills/mechanic-unlock/mounted-combat/index.md) | Defining knightly ability and core cavalry skill  |
 
 #### Synergy Skills
 
 Skills with strong synergies for Knight:
 
-- [Mounted Combat](../../skills/mechanic-unlock/mounted-combat.md) - Lesser/Greater/Enhanced - Enhanced effectiveness when fighting mounted
+- [Mounted Combat](../../skills/mechanic-unlock/mounted-combat/index.md) - Lesser/Greater/Enhanced - Enhanced effectiveness when fighting mounted
 - [Lance Mastery](../../skills/index.md) - Lesser/Greater/Enhanced - Increased lance damage on mounted charge
-- [Heavy Armor Expert](../../skills/tiered/armor-expert.md) - Lesser/Greater/Enhanced - Reduced heavy armor penalties
+- [Heavy Armor Expert](../../skills/tiered/armor-expert/index.md) - Lesser/Greater/Enhanced - Reduced heavy armor penalties
 - [Shield Bearer](../../skills/index.md) - Lesser/Greater/Enhanced - Increased shield effectiveness
-- [Inspiring Presence](../../skills/tiered/commanders-voice.md) - Lesser/Greater/Enhanced - Boost ally morale and effectiveness
+- [Inspiring Presence](../../skills/tiered/commanders-voice/index.md) - Lesser/Greater/Enhanced - Boost ally morale and effectiveness
 - [Challenge](../../skills/index.md) - Lesser/Greater/Enhanced - Force enemy to attack you
 - [Defensive Formation](../../skills/index.md) - Lesser/Greater/Enhanced - Reduce damage allies take
 - [Righteous Strike](../../skills/index.md) - Lesser/Greater/Enhanced - Bonus damage against dishonorable foes
@@ -98,7 +98,7 @@ Skills with strong synergies for Knight:
 - [Cavalry Tactics](../../skills/index.md) - Lesser/Greater/Enhanced - Lead mounted units effectively
 - [Noble Bearing](../../skills/index.md) - Lesser/Greater/Enhanced - Enhanced social interactions
 - [Judgment](../../skills/index.md) - Lesser/Greater/Enhanced - Assess character and intentions
-- [Last Stand](../../skills/common/last-stand.md) - Lesser/Greater/Enhanced - Boosted stats when severely injured
+- [Last Stand](../../skills/common/last-stand/index.md) - Lesser/Greater/Enhanced - Boosted stats when severely injured
 - [Mercy](../../skills/index.md) - Lesser/Greater/Enhanced - Non-lethal takedowns and sparing enemies
 - [Oath Power](../../skills/index.md) - No tiers - Supernatural benefits from following code
 
@@ -155,7 +155,7 @@ Actions that grant XP to the Knight class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                           | Requirements                                         | Result Class    | Tier |
 | -------------------------------------------- | ---------------------------------------------------- | --------------- | ---- |
@@ -166,14 +166,14 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                       | Interaction                                       |
-| ------------------------------------------------------------ | ------------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md)       | Elite frontline fighter; excels in mounted combat |
-| [Party](../../../systems/combat/party-mechanics.md)          | Tank and leader; protects and inspires allies     |
-| [Social](../../../systems/social/index.md)                   | High social standing; authority in settlements    |
-| [Reputation](../../../systems/social/factions-reputation.md) | Knightly deeds build exceptional reputation       |
-| [Morale](../../../systems/combat/morale-and-surrender.md)    | Inspiring presence boosts ally morale             |
-| [Settlement](../../../systems/world/settlements.md)          | Can hold positions of authority and command       |
+| System                                                             | Interaction                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md)       | Elite frontline fighter; excels in mounted combat |
+| [Party](../../../systems/combat/party-mechanics/index.md)          | Tank and leader; protects and inspires allies     |
+| [Social](../../../systems/social/index.md)                         | High social standing; authority in settlements    |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Knightly deeds build exceptional reputation       |
+| [Morale](../../../systems/combat/morale-and-surrender/index.md)    | Inspiring presence boosts ally morale             |
+| [Settlement](../../../systems/world/settlements/index.md)          | Can hold positions of authority and command       |
 
 ---
 
@@ -181,6 +181,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Heavy armor, quality weapons, mount, oath of service
 - **Equipment:** [Heavy Armor](../../items/index.md), [Lances](../../items/index.md), [Shields](../../items/index.md), [Warhorses](../../creatures/index.md)
-- **Prerequisite:** Often consolidates from [Warrior](./warrior.md) through service
-- **Synergy Classes:** [Warrior](./warrior.md), [Guard](./guard.md), [Healer](../magic/index.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md), [Mounted Combat](../../../systems/combat/index.md), [Honor Codes](../../../systems/social/index.md)
+- **Prerequisite:** Often consolidates from [Warrior](./warrior/index.md) through service
+- **Synergy Classes:** [Warrior](./warrior/index.md), [Guard](./guard/index.md), [Healer](../magic/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md), [Mounted Combat](../../../systems/combat/index.md), [Honor Codes](../../../systems/social/index.md)

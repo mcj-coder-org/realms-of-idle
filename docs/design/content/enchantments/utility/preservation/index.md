@@ -196,6 +196,6 @@ Some Preservation containers can be "reversed" - speeding time instead of slowin
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Amber resin](../../materials/reagents/index.md), [Time sand](../../materials/reagents/index.md), [Salt crystals](../../materials/reagents/index.md)
 - **Applied To:** All [Containers](../../items/containers/index.md) - boxes, jars, pouches, barrels, bags (see Applicable Items table)
-- **See Also:** [Holding](holding.md), [Weightless](weightless.md), [Cold](cold.md)
+- **See Also:** [Holding](holding/index.md), [Weightless](weightless/index.md), [Cold](cold/index.md)
 - **Enchantment Type:** Utility (time slowdown, preservation)
 - **Popular Variants:** Cold-Preservation (refrigeration), Warm-Preservation (hot food), Aging-Acceleration (fermentation)

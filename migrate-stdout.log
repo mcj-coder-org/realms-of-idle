@@ -1,0 +1,7 @@
+[0;34m=== Documentation Structure Migration ===[0m
+Restructuring from <name>.md to <name>/index.md
+
+Phase 1: Scanning files for migration...
+
+[0;32mMIGRATE:[0m enchantments/utility/weightless.md
+      → enchantments/utility/weightless/index.md

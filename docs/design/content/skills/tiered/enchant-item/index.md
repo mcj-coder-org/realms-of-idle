@@ -39,4 +39,4 @@ summary: Bind magical effects into crafted items for permanent enchantments
 ## Related Content
 
 - **Class:** [Enchanter](../../classes/consolidation/enchanter/)
-- **See Also:** [Crafting System](../../../systems/crafting/crafting-progression.md)
+- **See Also:** [Crafting System](../../../systems/crafting/crafting-progression/index.md)

@@ -39,4 +39,4 @@ tags: [Crafting/Smithing/Armor]
 ## Related Content
 
 - **Strong Synergy:** [Armorer](../../classes/crafter/armorer/)
-- **See Also:** [Armor Crafting](../../systems/crafting/armor-crafting.md), [Armor Expert](../tiered/armor-expert.md)
+- **See Also:** [Armor Crafting](../../systems/crafting/armor-crafting/index.md), [Armor Expert](../tiered/armor-expert/index.md)

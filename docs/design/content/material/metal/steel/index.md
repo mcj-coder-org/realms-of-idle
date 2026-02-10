@@ -50,10 +50,10 @@ Creating steel requires precise temperature control, careful carbon addition, an
 
 ## Interactions
 
-| System                                                           | Interaction                    |
-| ---------------------------------------------------------------- | ------------------------------ |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Journeyman-level material      |
-| [Economy](../../../../systems/economy/index.md)                  | High value, premium trade good |
+| System                                                                 | Interaction                    |
+| ---------------------------------------------------------------------- | ------------------------------ |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Journeyman-level material      |
+| [Economy](../../../../systems/economy/index.md)                        | High value, premium trade good |
 
 ---
 

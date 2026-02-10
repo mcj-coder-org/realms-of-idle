@@ -9,11 +9,11 @@ summary: 'High-altitude goblins with enhanced climbing, masters of mountain navi
 
 # Mountain Goblin
 
-> **Parent Race:** [Goblins](base.md)
+> **Parent Race:** [Goblins](base/index.md)
 
 ## Variant Overview
 
-Mountain Goblins occupy the high country - steep slopes, narrow passes, and treacherous peaks where sure footing and route knowledge mean the difference between safe passage and fatal falls. They've carved out an unusual niche among goblin variants: providing essential services valuable enough that mountain settlements and even [dwarven](../../enlightened/dwarves.md) holds grudgingly tolerate their presence. Through demonstrated reliability and expertise that larger races struggle to match in extreme terrain, Mountain Goblins have achieved the closest thing to acceptance any goblin variant knows.
+Mountain Goblins occupy the high country - steep slopes, narrow passes, and treacherous peaks where sure footing and route knowledge mean the difference between safe passage and fatal falls. They've carved out an unusual niche among goblin variants: providing essential services valuable enough that mountain settlements and even [dwarven](../../enlightened/dwarves/index.md) holds grudgingly tolerate their presence. Through demonstrated reliability and expertise that larger races struggle to match in extreme terrain, Mountain Goblins have achieved the closest thing to acceptance any goblin variant knows.
 
 ## Region
 
@@ -52,7 +52,7 @@ Their small size provides genuine advantages on vertical terrain. Lower centers 
 
 ### Guide Services
 
-Mountain Goblins have turned their environmental expertise into their primary trade. Merchants hiring goblin guides to lead caravans through mountain passes pay premium rates for guaranteed safe passage. Adventurers employ goblins to navigate routes to remote locations. Even [dwarven](../../enlightened/dwarves.md) expeditions occasionally hire Mountain Goblins as scouts when exploring new territories.
+Mountain Goblins have turned their environmental expertise into their primary trade. Merchants hiring goblin guides to lead caravans through mountain passes pay premium rates for guaranteed safe passage. Adventurers employ goblins to navigate routes to remote locations. Even [dwarven](../../enlightened/dwarves/index.md) expeditions occasionally hire Mountain Goblins as scouts when exploring new territories.
 
 The shared memory advantage makes goblin guides extraordinarily reliable. If any tribe member has traveled a route, every goblin can guide it perfectly. Current conditions update constantly - a goblin scouting ahead shares what they see in real-time with the goblin leading the main party. This allows instant route adjustment when conditions change, avoiding dangers that would catch conventional guides by surprise.
 
@@ -76,7 +76,7 @@ They navigate a careful balance - demonstrating expertise without seeming threat
 
 **With Other Goblins:** Mountain Goblins occupy a respected but somewhat separate position among goblin variants. Other goblins admire their relative acceptance while questioning whether serving surface folk so directly compromises goblin dignity. Mountain Goblins respond pragmatically - they're still outcast by any absolute measure, just less excluded than alternatives. They maintain good relations with all variants, serving as occasional intermediaries.
 
-**With Other Races:** Mountain Goblins have the best inter-racial relationships of any goblin variant. [Dwarves](../../enlightened/dwarves.md) grudgingly respect their mountain expertise while maintaining overall goblin prejudice. [Humans](../../enlightened/humans.md) hire them regularly for guide services while still not welcoming them socially. Mountain [settlements](../../../systems/world/settlements.md) tolerate their presence as useful locals rather than threatening outsiders. It's not acceptance, but it's dramatically better than most goblins experience.
+**With Other Races:** Mountain Goblins have the best inter-racial relationships of any goblin variant. [Dwarves](../../enlightened/dwarves/index.md) grudgingly respect their mountain expertise while maintaining overall goblin prejudice. [Humans](../../enlightened/humans/index.md) hire them regularly for guide services while still not welcoming them socially. Mountain [settlements](../../../systems/world/settlements/index.md) tolerate their presence as useful locals rather than threatening outsiders. It's not acceptance, but it's dramatically better than most goblins experience.
 
 ## Shared Memory in Mountains
 

@@ -58,4 +58,4 @@ Launch a ball of fire that explodes on impact, dealing fire damage to all target
 
 - **Granted By:** [Mage](../../classes/channeler/mage/), [Battlemage](../../classes/channeler/mage/battlemage/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Lightning Bolt](lightning-bolt.md), [Fire Touch](fire-touch.md), [Inferno](inferno.md)
+- **See Also:** [Lightning Bolt](lightning-bolt/index.md), [Fire Touch](fire-touch/index.md), [Inferno](inferno/index.md)

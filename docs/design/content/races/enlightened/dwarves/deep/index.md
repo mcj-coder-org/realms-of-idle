@@ -9,7 +9,7 @@ summary: 'Mysterious dwarves of the deepest depths, masters of gems and rare met
 
 # Deep Dwarf
 
-> **Parent Race:** [Dwarves](base.md)
+> **Parent Race:** [Dwarves](base/index.md)
 
 ## Variant Overview
 

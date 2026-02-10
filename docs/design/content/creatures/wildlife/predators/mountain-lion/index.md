@@ -145,6 +145,6 @@ For hunters skilled enough to track and take a mountain lion, the rewards justif
 ## Related Content
 
 - **Habitat:** [Mountains](../../../../systems/world/index.md), [Rocky Terrain](../../../../systems/world/index.md), [Forest Edges](../../../../systems/world/index.md)
-- **Prey:** [Deer](../docile/deer.md), [Elk](../docile/index.md), [Rabbit](../docile/rabbit.md)
+- **Prey:** [Deer](../docile/deer/index.md), [Elk](../docile/index.md), [Rabbit](../docile/rabbit/index.md)
 - **Used By:** [Mountain Lion Cloak](../../items/index.md), [Agility Potion](../../../systems/crafting/index.md), [Cat Claw Dagger](../../items/index.md)
-- **See Also:** [Wolf](wolf.md), [Bear](bear.md), [Lynx](index.md), [Hunting System](../../../../systems/crafting/gathering.md)
+- **See Also:** [Wolf](wolf/index.md), [Bear](bear/index.md), [Lynx](index.md), [Hunting System](../../../../systems/crafting/gathering/index.md)

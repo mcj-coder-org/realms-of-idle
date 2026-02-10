@@ -9,7 +9,7 @@ summary: 'Maritime humans from shorelines and islands with enhanced finesse, swi
 
 # Coastal Human
 
-> **See [Base Traits](base.md)** for shared human characteristics.
+> **See [Base Traits](base/index.md)** for shared human characteristics.
 
 ## Overview
 
@@ -151,9 +151,9 @@ Left a fishing village seeking fortune, bringing practical maritime skills and c
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Core human characteristics and cultural notes
+- **[Base Traits](base/index.md)**: Core human characteristics and cultural notes
 - **[Humans Index](index.md)**: All human variants and selection guidance
-- **[Heartland Human](heartland.md)**: Baseline variant
-- **[Northern Human](northern.md)**: Cold-adapted variant
-- **[Desert Human](desert.md)**: Heat-adapted variant
-- **[Mountain Human](mountain.md)**: Altitude-adapted variant
+- **[Heartland Human](heartland/index.md)**: Baseline variant
+- **[Northern Human](northern/index.md)**: Cold-adapted variant
+- **[Desert Human](desert/index.md)**: Heat-adapted variant
+- **[Mountain Human](mountain/index.md)**: Altitude-adapted variant

@@ -14,11 +14,11 @@ summary: Ability to detect spirit presence and activity nearby
 
 ## Overview
 
-| Attribute | Value                                      |
-| --------- | ------------------------------------------ |
-| Type      | Passive                                    |
-| Pool      | [Shamanic Pool](../pools/shamanic-pool.md) |
-| Tags      | `Shamanic`                                 |
+| Attribute | Value                                            |
+| --------- | ------------------------------------------------ |
+| Type      | Passive                                          |
+| Pool      | [Shamanic Pool](../pools/shamanic-pool/index.md) |
+| Tags      | `Shamanic`                                       |
 
 ## Description
 
@@ -50,4 +50,4 @@ Spirit Sense grants the character awareness of spirits in their vicinity. They c
 ## Related Content
 
 - **Class:** [Spiritcaller](../../classes/spiritcaller/)
-- **See Also:** [Mana Sense](./mana-sense.md) (mage equivalent)
+- **See Also:** [Mana Sense](./mana-sense/index.md) (mage equivalent)

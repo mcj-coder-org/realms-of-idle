@@ -236,6 +236,6 @@ The enchantment has unexpected economic impacts. Laundry servants shifted from w
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Soap essence](../../materials/reagents/index.md), [Silver dust](../../materials/metals/index.md), [Lemon oil](../../materials/reagents/index.md)
 - **Applied To:** All [Clothing](../../items/clothing/index.md), [Linens](../../items/index.md), [Textiles](../../items/index.md) (see Applicable Items table)
-- **See Also:** [Comfort](comfort.md), [Durability](../enhancement/durability.md), [Preservation](../utility/preservation.md)
+- **See Also:** [Comfort](comfort/index.md), [Durability](../enhancement/durability/index.md), [Preservation](../utility/preservation/index.md)
 - **Enchantment Type:** Comfort (self-cleaning maintenance)
 - **Public Health Note:** Level III+ recommended for medical, food service, and childcare settings

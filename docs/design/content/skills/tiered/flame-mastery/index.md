@@ -53,4 +53,4 @@ Master the fundamentals of fire magic to increase spell power, reduce casting co
 
 - **Granted By:** [Pyromancer](../../classes/channeler/mage/pyromancer/)
 - **Also Used By:** Battlemage (partial access via consolidation)
-- **See Also:** [Burning Aura](burning-aura.md), [Fire Magic](../../systems/magic/index.md)
+- **See Also:** [Burning Aura](burning-aura/index.md), [Fire Magic](../../systems/magic/index.md)

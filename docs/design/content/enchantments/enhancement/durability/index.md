@@ -12,7 +12,7 @@ summary: 'Extends clothing lifespan through fabric reinforcement magic'
 
 ### Origin
 
-Durability enchantments for clothing emerged from the same principles as [Unbreaking](unbreaking.md) enchantments for tools, but adapted for flexible fabrics. A [Tailor](../../classes/index.md) named Marta Threadstrong grew frustrated watching beautiful garments destroyed by daily wear. She modified tool-durability patterns to work with cloth, creating garments that lasted years instead of months despite constant use. Her breakthrough democratized quality clothing - even modest families could own garments lasting generations.
+Durability enchantments for clothing emerged from the same principles as [Unbreaking](unbreaking/index.md) enchantments for tools, but adapted for flexible fabrics. A [Tailor](../../classes/index.md) named Marta Threadstrong grew frustrated watching beautiful garments destroyed by daily wear. She modified tool-durability patterns to work with cloth, creating garments that lasted years instead of months despite constant use. Her breakthrough democratized quality clothing - even modest families could own garments lasting generations.
 
 The enchantment reinforces fabric at the molecular level without adding stiffness or weight. Fibers resist breaking, seams hold under stress, and overall structure maintains integrity through countless wash cycles and years of use. Unlike Unbreaking which prevents catastrophic failure, Durability focuses on resisting gradual wear - the fraying, thinning, and degradation that makes clothing look shabby before it actually breaks. Master enchanters describe Durability as "teaching fabric to remember being new."
 
@@ -231,6 +231,6 @@ The enchantment had unexpected environmental benefits. Less clothing waste means
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Spider silk](../../materials/cloth/index.md), [Iron shavings](../../materials/metals/index.md), [Oak resin](../../materials/reagents/index.md)
 - **Applied To:** All [Clothing](../../items/clothing/index.md), [Shoes](../../items/clothing/index.md), [Fabric items](../../items/index.md) (see Applicable Items table)
-- **See Also:** [Unbreaking](unbreaking.md), [Auto-Repair](../restoration/auto-repair.md), [Cleanliness](../comfort/cleanliness.md)
+- **See Also:** [Unbreaking](unbreaking/index.md), [Auto-Repair](../restoration/auto-repair/index.md), [Cleanliness](../comfort/cleanliness/index.md)
 - **Enchantment Type:** Enhancement (fabric longevity)
 - **Sustainability Note:** One of the most environmentally beneficial enchantments available

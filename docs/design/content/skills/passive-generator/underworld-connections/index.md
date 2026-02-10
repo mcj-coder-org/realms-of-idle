@@ -41,4 +41,4 @@ Generation rate is fixed per tier - provides consistent criminal opportunities b
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/), [Smuggler](../../classes/rogue/smuggler/), [Fence](../../classes/rogue/fence/)
-- **See Also:** [Evidence Elimination](../tiered/evidence-elimination.md), [Dark Path Classes](../../systems/character/class-progression.md)
+- **See Also:** [Evidence Elimination](../tiered/evidence-elimination/index.md), [Dark Path Classes](../../systems/character/class-progression/index.md)

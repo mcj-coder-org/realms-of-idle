@@ -22,16 +22,16 @@ Skills focused on knowledge, research, teaching, and learning. These skills exce
 
 ### Tiered Skills
 
-- [Rapid Learning](rapid-learning.md) - Learn new skills faster
-- [Perfect Memory](perfect-memory.md) - Enhanced recall of information
+- [Rapid Learning](rapid-learning/index.md) - Learn new skills faster
+- [Perfect Memory](perfect-memory/index.md) - Enhanced recall of information
 
 ### Mechanic Unlocks
 
-- [Research](research.md) - Conduct systematic investigation
-- [Teaching](teaching.md) - Train others effectively
-- [Linguistic Mastery](linguistic-mastery.md) - Learn languages quickly
-- [Ancient Knowledge](ancient-knowledge.md) - Access forgotten lore
-- [Skill Transference](skill-transference.md) - Pass knowledge to students
+- [Research](research/index.md) - Conduct systematic investigation
+- [Teaching](teaching/index.md) - Train others effectively
+- [Linguistic Mastery](linguistic-mastery/index.md) - Learn languages quickly
+- [Ancient Knowledge](ancient-knowledge/index.md) - Access forgotten lore
+- [Skill Transference](skill-transference/index.md) - Pass knowledge to students
 
 ## Acquisition
 
@@ -41,4 +41,4 @@ Skills in this pool can be acquired through:
 2. Training (guided or unguided)
 3. Action-based unlocks (~50 actions ±20%)
 
-See [Class Progression](../../../systems/character/class-progression.md) for details.
+See [Class Progression](../../../systems/character/class-progression/index.md) for details.

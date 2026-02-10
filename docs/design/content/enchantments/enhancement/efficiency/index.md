@@ -142,6 +142,6 @@ The enchantment has transformed industries. Logging camps clear forests in half 
 
 - **Requires:** [Enchanting](../../skills/index.md) (Apprentice), [Quicksilver](../../materials/reagents/index.md), [Motion dust](../../materials/reagents/index.md)
 - **Applied To:** All [Tools](../../items/tools/index.md) - mining, woodworking, farming, crafting (see Applicable Items table)
-- **See Also:** [Fortune](fortune.md), [Unbreaking](unbreaking.md), [Sharpness](sharpness.md)
+- **See Also:** [Fortune](fortune/index.md), [Unbreaking](unbreaking/index.md), [Sharpness](sharpness/index.md)
 - **Enchantment Type:** Enhancement (speed/efficiency)
 - **Economic Note:** One of the most cost-effective enchantments for working professionals

@@ -48,6 +48,6 @@ Tide Caller is a terminal Tier 3 specialization. No further progression paths av
 ### Related Content
 
 - **Prerequisite Class:** [Shaman](../)
-- **Skills:** [Water Spirit Bond](../../skills/tiered/water-spirit-bond.md), [Tide Sense](../../skills/tiered/tide-sense.md)
-- **Spells:** [Spirit Water](../../spells/nature/spirit-water.md), [Water Blessing](../../spells/nature/water-blessing.md)
-- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic.md)
+- **Skills:** [Water Spirit Bond](../../skills/tiered/water-spirit-bond/index.md), [Tide Sense](../../skills/tiered/tide-sense/index.md)
+- **Spells:** [Spirit Water](../../spells/nature/spirit-water/index.md), [Water Blessing](../../spells/nature/water-blessing/index.md)
+- **System:** [Shamanic Magic](../../../systems/magic/shamanic-magic/index.md)

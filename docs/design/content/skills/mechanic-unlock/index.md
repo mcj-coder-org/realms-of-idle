@@ -18,149 +18,149 @@ Mechanic unlock skills provide entirely new capabilities rather than incremental
 
 ### Agriculture
 
-- [Beekeeper's Bond](beekeepers-bond.md) - `Agriculture/Livestock, Nature/Insects`
-- [Pest Resistance](pest-resistance.md) - `Agriculture`
-- [Season Sense](season-sense.md) - `Agriculture, Nature`
+- [Beekeeper's Bond](beekeepers-bond/index.md) - `Agriculture/Livestock, Nature/Insects`
+- [Pest Resistance](pest-resistance/index.md) - `Agriculture`
+- [Season Sense](season-sense/index.md) - `Agriculture, Nature`
 
 ### Alchemy
 
-- [Brewing](brewing.md) - `Crafting/Alchemy/Technique`
-- [Explosive Compounds](explosive-compounds.md) - `Crafting/Alchemy/Poison`
-- [Potion Identification](potion-identification.md) - `Crafting/Alchemy/Potion`
-- [Transmutation Basics](transmutation-basics.md) - `Crafting/Alchemy`
+- [Brewing](brewing/index.md) - `Crafting/Alchemy/Technique`
+- [Explosive Compounds](explosive-compounds/index.md) - `Crafting/Alchemy/Poison`
+- [Potion Identification](potion-identification/index.md) - `Crafting/Alchemy/Potion`
+- [Transmutation Basics](transmutation-basics/index.md) - `Crafting/Alchemy`
 
 ### Animal
 
-- [Beast Tongue](beast-tongue.md) - `Nature/Animals`
-- [Butchering](butchering.md) - `Gathering/Animals, Crafting/Food`
-- [Creature Lore](creature-lore.md) - `Nature/Animals, Knowledge`
-- [Hunting Companion](hunting-companion.md) - `Nature/Animals, Gathering/Hunting`
-- [Skinning](skinning.md) - `Gathering/Animals, Crafting/Leather`
-- [Taming](taming.md) - `Nature/Animals`
+- [Beast Tongue](beast-tongue/index.md) - `Nature/Animals`
+- [Butchering](butchering/index.md) - `Gathering/Animals, Crafting/Food`
+- [Creature Lore](creature-lore/index.md) - `Nature/Animals, Knowledge`
+- [Hunting Companion](hunting-companion/index.md) - `Nature/Animals, Gathering/Hunting`
+- [Skinning](skinning/index.md) - `Gathering/Animals, Crafting/Leather`
+- [Taming](taming/index.md) - `Nature/Animals`
 
 ### Combat
 
-- [Killing Blow](killing-blow.md) - `Combat/Melee, Combat/Assassination`
-- [Mounted Combat](mounted-combat.md) - `Combat/Mounted`
-- [Sentinel's Watch](sentinels-watch.md) - `Combat/Tactics, Combat/Defense`
-- [Tactical Assessment](tactical-assessment.md) - `Combat/Tactics, Knowledge`
+- [Killing Blow](killing-blow/index.md) - `Combat/Melee, Combat/Assassination`
+- [Mounted Combat](mounted-combat/index.md) - `Combat/Mounted`
+- [Sentinel's Watch](sentinels-watch/index.md) - `Combat/Tactics, Combat/Defense`
+- [Tactical Assessment](tactical-assessment/index.md) - `Combat/Tactics, Knowledge`
 
 ### Crafting (General)
 
-- [Beadwork](beadwork.md) - `Crafting/Jewelry/Beads`
-- [Heraldry](heraldry.md) - `Crafting/General/Decoration`
-- [Masonry](masonry.md) - `Crafting/Building/Stone`
-- [Material Intuition](material-intuition.md) - `Crafting`
-- [Pottery](pottery.md) - `Crafting/General/Ceramics`
-- [Signature Style](signature-style.md) - `Crafting, Social`
-- [Tool Bond](tool-bond.md) - `Crafting`
-- [Weatherproofing](weatherproofing.md) - `Crafting/General/Treatment`
+- [Beadwork](beadwork/index.md) - `Crafting/Jewelry/Beads`
+- [Heraldry](heraldry/index.md) - `Crafting/General/Decoration`
+- [Masonry](masonry/index.md) - `Crafting/Building/Stone`
+- [Material Intuition](material-intuition/index.md) - `Crafting`
+- [Pottery](pottery/index.md) - `Crafting/General/Ceramics`
+- [Signature Style](signature-style/index.md) - `Crafting, Social`
+- [Tool Bond](tool-bond/index.md) - `Crafting`
+- [Weatherproofing](weatherproofing/index.md) - `Crafting/General/Treatment`
 
 ### Leatherworking
 
-- [Tanning](tanning.md) - `Crafting/Leather/Processing`
-- [Tooling](tooling.md) - `Crafting/Leather/Decoration`
+- [Tanning](tanning/index.md) - `Crafting/Leather/Processing`
+- [Tooling](tooling/index.md) - `Crafting/Leather/Decoration`
 
 ### Textile
 
-- [Dyeing](dyeing.md) - `Crafting/Textile/Coloring`
-- [Embroidery](embroidery.md) - `Crafting/Textile/Decoration`
-- [Lacemaking](lacemaking.md) - `Crafting/Textile/Specialty`
-- [Rope Making](rope-making.md) - `Crafting/Textile/Cordage`
-- [Silk Weaving](silk-weaving.md) - `Crafting/Textile/Specialty`
-- [Spinning](spinning.md) - `Crafting/Textile/Processing`
+- [Dyeing](dyeing/index.md) - `Crafting/Textile/Coloring`
+- [Embroidery](embroidery/index.md) - `Crafting/Textile/Decoration`
+- [Lacemaking](lacemaking/index.md) - `Crafting/Textile/Specialty`
+- [Rope Making](rope-making/index.md) - `Crafting/Textile/Cordage`
+- [Silk Weaving](silk-weaving/index.md) - `Crafting/Textile/Specialty`
+- [Spinning](spinning/index.md) - `Crafting/Textile/Processing`
 
 ### Woodworking
 
-- [Joinery](joinery.md) - `Crafting/Woodworking/Technique`
-- [Woodcarving](woodcarving.md) - `Crafting/Woodworking/Decoration`
+- [Joinery](joinery/index.md) - `Crafting/Woodworking/Technique`
+- [Woodcarving](woodcarving/index.md) - `Crafting/Woodworking/Decoration`
 
 ### Cross-Class/Universal
 
-- [Ambidexterity](ambidexterity.md) - `Universal/Physical`
-- [Danger Sense Enhanced](danger-sense-enhanced.md) - `Universal/Mental`
-- [Iron Will](iron-will.md) - `Universal/Mental`
-- [Night Vision](night-vision.md) - `Universal/Physical`
-- [Water Breathing](water-breathing.md) - `Universal/Physical`
+- [Ambidexterity](ambidexterity/index.md) - `Universal/Physical`
+- [Danger Sense Enhanced](danger-sense-enhanced/index.md) - `Universal/Mental`
+- [Iron Will](iron-will/index.md) - `Universal/Mental`
+- [Night Vision](night-vision/index.md) - `Universal/Physical`
+- [Water Breathing](water-breathing/index.md) - `Universal/Physical`
 
 ### Dark/Criminal
 
-- [Blackmail](blackmail.md) - `Criminal/Extortion, Dark`
-- [Contract Killing](contract-killing.md) - `Criminal/Assassination, Dark`
-- [Extortion](extortion.md) - `Criminal/Extortion, Dark` (Multi-tier)
-- [False Identity](false-identity.md) - `Criminal, Social/Deception, Dark` (Multi-tier)
-- [Money Laundering](money-laundering.md) - `Criminal/Finance, Economy, Dark` (Multi-tier)
+- [Blackmail](blackmail/index.md) - `Criminal/Extortion, Dark`
+- [Contract Killing](contract-killing/index.md) - `Criminal/Assassination, Dark`
+- [Extortion](extortion/index.md) - `Criminal/Extortion, Dark` (Multi-tier)
+- [False Identity](false-identity/index.md) - `Criminal, Social/Deception, Dark` (Multi-tier)
+- [Money Laundering](money-laundering/index.md) - `Criminal/Finance, Economy, Dark` (Multi-tier)
 
 ### Gathering
 
-- [Deep Vein](deep-vein.md) - `Gathering/Mining`
-- [Field Harvest](field-harvest.md) - `Gathering/Animals, Crafting/Parts`
-- [Gentle Harvest](gentle-harvest.md) - `Gathering/Herbalism`
-- [Prospector](prospector.md) - `Gathering/Mining`
-- [Weather Worker](weather-worker.md) - `Gathering`
+- [Deep Vein](deep-vein/index.md) - `Gathering/Mining`
+- [Field Harvest](field-harvest/index.md) - `Gathering/Animals, Crafting/Parts`
+- [Gentle Harvest](gentle-harvest/index.md) - `Gathering/Herbalism`
+- [Prospector](prospector/index.md) - `Gathering/Mining`
+- [Weather Worker](weather-worker/index.md) - `Gathering`
 
 ### Leadership
 
-- [Crisis Leadership](crisis-leadership.md) - `Leadership/Command`
-- [Delegation](delegation.md) - `Leadership/Management` (Multi-tier)
-- [Policy Implementation](policy-implementation.md) - `Leadership/Management`
-- [Succession Planning](succession-planning.md) - `Leadership/Management`
+- [Crisis Leadership](crisis-leadership/index.md) - `Leadership/Command`
+- [Delegation](delegation/index.md) - `Leadership/Management` (Multi-tier)
+- [Policy Implementation](policy-implementation/index.md) - `Leadership/Management`
+- [Succession Planning](succession-planning/index.md) - `Leadership/Management`
 
 ### Magic
 
-- [Enchant Object](enchant-object.md) - `Magic/Enchantment`
-- [Magical Weaving](magical-weaving.md) - `Magic/Enchanting/Textile`
-- [Mana Transfer](mana-transfer.md) - `Magic`
-- [Ritual Casting](ritual-casting.md) - `Magic`
-- [Runecrafting](runecrafting.md) - `Magic/Enchanting/Runes`
-- [School Mastery](school-mastery.md) - `Magic` (school-specific)
-- [Spell Weaving](spell-weaving.md) - `Magic/Arcane`
-- [Undead Binding](undead-binding.md) - `Magic/Necromancy`
+- [Enchant Object](enchant-object/index.md) - `Magic/Enchantment`
+- [Magical Weaving](magical-weaving/index.md) - `Magic/Enchanting/Textile`
+- [Mana Transfer](mana-transfer/index.md) - `Magic`
+- [Ritual Casting](ritual-casting/index.md) - `Magic`
+- [Runecrafting](runecrafting/index.md) - `Magic/Enchanting/Runes`
+- [School Mastery](school-mastery/index.md) - `Magic` (school-specific)
+- [Spell Weaving](spell-weaving/index.md) - `Magic/Arcane`
+- [Undead Binding](undead-binding/index.md) - `Magic/Necromancy`
 
 ### Scholar
 
-- [Linguistic Mastery](linguistic-mastery.md) - `Knowledge/Languages`
-- [Perfect Memory](perfect-memory.md) - `Knowledge/Memory`
-- [Research](research.md) - `Knowledge`
-- [Skill Transference](skill-transference.md) - `Knowledge/Teaching`
+- [Linguistic Mastery](linguistic-mastery/index.md) - `Knowledge/Languages`
+- [Perfect Memory](perfect-memory/index.md) - `Knowledge/Memory`
+- [Research](research/index.md) - `Knowledge`
+- [Skill Transference](skill-transference/index.md) - `Knowledge/Teaching`
 
 ### Shamanic
 
-- [Ancestral Memory](ancestral-memory.md) - `Magic/Shamanic, Tribal/Spirits`
-- [Fetish Creation](fetish-creation.md) - `Magic/Shamanic, Tribal/Spirits`
-- [Spirit Binding](spirit-binding.md) - `Magic/Shamanic, Tribal/Spirits`
-- [Spirit Communion](spirit-communion.md) - `Magic/Shamanic, Tribal/Spirits`
-- [Spirit Walk](spirit-walk.md) - `Magic/Shamanic, Tribal/Spirits` (Multi-tier)
-- [Totem Crafting](totem-crafting.md) - `Magic/Shamanic, Tribal/Spirits`
+- [Ancestral Memory](ancestral-memory/index.md) - `Magic/Shamanic, Tribal/Spirits`
+- [Fetish Creation](fetish-creation/index.md) - `Magic/Shamanic, Tribal/Spirits`
+- [Spirit Binding](spirit-binding/index.md) - `Magic/Shamanic, Tribal/Spirits`
+- [Spirit Communion](spirit-communion/index.md) - `Magic/Shamanic, Tribal/Spirits`
+- [Spirit Walk](spirit-walk/index.md) - `Magic/Shamanic, Tribal/Spirits` (Multi-tier)
+- [Totem Crafting](totem-crafting/index.md) - `Magic/Shamanic, Tribal/Spirits`
 
 ### Smithing
 
-- [Armor Fitting](armor-fitting.md) - `Crafting/Smithing/Armor`
-- [Damascus Forging](damascus-forging.md) - `Crafting/Smithing/Advanced`
-- [Differential Hardening](differential-hardening.md) - `Crafting/Smithing/Advanced`
-- [Etching](etching.md) - `Crafting/Smithing/Decoration`
-- [Fine Metalwork](fine-metalwork.md) - `Crafting/Smithing/Detail`
-- [Forge Fire](forge-fire.md) - `Crafting/Smithing`
-- [Heat Treatment](heat-treatment.md) - `Crafting/Smithing/Technique`
-- [Metal Sense](metal-sense.md) - `Crafting/Smithing`
-- [Mithril Working](mithril-working.md) - `Crafting/Smithing/Exotic`
-- [Pattern Welding](pattern-welding.md) - `Crafting/Smithing/Advanced`
-- [Smelting](smelting.md) - `Crafting/Smithing/Processing`
-- [Tempering](tempering.md) - `Crafting/Smithing/Technique`
-- [Weapon Enhancement](weapon-enhancement.md) - `Crafting/Smithing/Weapon`
+- [Armor Fitting](armor-fitting/index.md) - `Crafting/Smithing/Armor`
+- [Damascus Forging](damascus-forging/index.md) - `Crafting/Smithing/Advanced`
+- [Differential Hardening](differential-hardening/index.md) - `Crafting/Smithing/Advanced`
+- [Etching](etching/index.md) - `Crafting/Smithing/Decoration`
+- [Fine Metalwork](fine-metalwork/index.md) - `Crafting/Smithing/Detail`
+- [Forge Fire](forge-fire/index.md) - `Crafting/Smithing`
+- [Heat Treatment](heat-treatment/index.md) - `Crafting/Smithing/Technique`
+- [Metal Sense](metal-sense/index.md) - `Crafting/Smithing`
+- [Mithril Working](mithril-working/index.md) - `Crafting/Smithing/Exotic`
+- [Pattern Welding](pattern-welding/index.md) - `Crafting/Smithing/Advanced`
+- [Smelting](smelting/index.md) - `Crafting/Smithing/Processing`
+- [Tempering](tempering/index.md) - `Crafting/Smithing/Technique`
+- [Weapon Enhancement](weapon-enhancement/index.md) - `Crafting/Smithing/Weapon`
 
 ### Stealth
 
-- [Poison Craft](poison-craft.md) - `Stealth/Assassination, Crafting/Alchemy/Poison, Criminal/Assassination`
-- [Silent Kill](silent-kill.md) - `Stealth/Assassination, Combat/Assassination, Criminal/Assassination`
-- [Smuggler's Instinct](smugglers-instinct.md) - `Stealth/Infiltration`
-- [Thieves' Cant](thieves-cant.md) - `Stealth/Deception, Criminal/Theft`
+- [Poison Craft](poison-craft/index.md) - `Stealth/Assassination, Crafting/Alchemy/Poison, Criminal/Assassination`
+- [Silent Kill](silent-kill/index.md) - `Stealth/Assassination, Combat/Assassination, Criminal/Assassination`
+- [Smuggler's Instinct](smugglers-instinct/index.md) - `Stealth/Infiltration`
+- [Thieves' Cant](thieves-cant/index.md) - `Stealth/Deception, Criminal/Theft`
 
 ### Trade
 
-- [Caravan Master](caravan-master.md) - `Trade/Caravan`
-- [Commodity Speculation](commodity-speculation.md) - `Trade/Speculation, Economy/Speculation`
-- [Fencing](fencing.md) - `Trade/Illegal, Criminal/Finance`
+- [Caravan Master](caravan-master/index.md) - `Trade/Caravan`
+- [Commodity Speculation](commodity-speculation/index.md) - `Trade/Speculation, Economy/Speculation`
+- [Fencing](fencing/index.md) - `Trade/Illegal, Criminal/Finance`
 
 ## Acquisition
 

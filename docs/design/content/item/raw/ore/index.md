@@ -49,9 +49,9 @@ Ore itself is useless for forging. It must be smelted - heated until the metal s
 
 ## Interactions
 
-| System                                                           | Interaction                                                            |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [Smelting](../../../../systems/crafting/crafting-progression.md) | Required input for [Smelt Ore](../../../../recipe/smelting/smelt-ore/) |
+| System                                                                 | Interaction                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Smelting](../../../../systems/crafting/crafting-progression/index.md) | Required input for [Smelt Ore](../../../../recipe/smelting/smelt-ore/) |
 
 ---
 

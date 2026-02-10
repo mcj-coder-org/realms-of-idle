@@ -13,7 +13,7 @@ Spells are learned through training, study, or level-up awards. All spells belon
 Spells are organized by school with tier-based progression:
 
 - **School Organization**: Spells in directories by school (`/destruction/`, `/restoration/`, etc.)
-- **Tier Progression**: Lesser → Greater → Enhanced (see [Spell Tiers](spell-tiers.md))
+- **Tier Progression**: Lesser → Greater → Enhanced (see [Spell Tiers](spell-tiers/index.md))
 - **Learning Methods**: Spellbook study, trainer, or level-up award
 
 ## Spell Schools
@@ -38,6 +38,6 @@ Spells are organized by school with tier-based progression:
 
 ## Related Documentation
 
-- [Magic System](../../systems/character/magic-system.md) - Training progression, mana pools
-- [Shamanic Magic](../../systems/magic/shamanic-magic.md) - Nature school access for tribal races
+- [Magic System](../../systems/character/magic-system/index.md) - Training progression, mana pools
+- [Shamanic Magic](../../systems/magic/shamanic-magic/index.md) - Nature school access for tribal races
 - [Skills Library](../skills/index.md) - Comparable skill organization

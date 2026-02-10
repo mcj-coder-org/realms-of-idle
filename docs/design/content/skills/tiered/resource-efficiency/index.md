@@ -35,4 +35,4 @@ tags: [Crafting]
 ## Related Content
 
 - **Strong Synergy:** All [Crafting Specialties](../../classes/crafter/) (Blacksmith, Carpenter, Tailor, Alchemist, Cook, Jeweler, Leatherworker, Glassblower, Weaver)
-- **See Also:** [Resource Efficiency](../index.md), [Rapid Crafting](rapid-crafting.md), [Crafting Economy](../../systems/crafting/crafting-progression.md)
+- **See Also:** [Resource Efficiency](../index.md), [Rapid Crafting](rapid-crafting/index.md), [Crafting Economy](../../systems/crafting/crafting-progression/index.md)

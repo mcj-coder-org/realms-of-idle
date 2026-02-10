@@ -74,4 +74,4 @@ Cloak multiple creatures in illusions of invisibility, allowing them to move uns
 
 - **Granted By:** [Illusionist](../../classes/channeler/illusionist/)
 - **School:** [Illusion](../index.md)
-- **See Also:** [Nightmare](nightmare.md)
+- **See Also:** [Nightmare](nightmare/index.md)

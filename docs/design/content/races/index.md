@@ -51,7 +51,7 @@ Trolls ─ Ogres ─ Orcs ─ Goblins ─ Gnolls ─ Kobolds ─ Lizardfolk ─ 
 
 ## Full Documentation
 
-See [Races & Tribes System](races-and-tribes.md) for:
+See [Races & Tribes System](races-and-tribes/index.md) for:
 
 - Full racial abilities
 - Tribal mechanics (for monstrous races)
@@ -63,4 +63,4 @@ See [Races & Tribes System](races-and-tribes.md) for:
 
 - **Enlightened Races:** [Humans](enlightened/humans/), [Elves](enlightened/elves/), [Dwarves](enlightened/dwarves/), [Lizardfolk](enlightened/lizardfolk/), [Kobolds](enlightened/kobolds/)
 - **Monstrous Races:** [Gnolls](monstrous/gnolls/), [Goblins](monstrous/goblins/), [Orcs](monstrous/orcs/), [Ogres](monstrous/ogres/), [Trolls](monstrous/trolls/)
-- **See Also:** [Character Creation](../systems/character/index.md), [Class System](../systems/character/class-progression.md)
+- **See Also:** [Character Creation](../systems/character/index.md), [Class System](../systems/character/class-progression/index.md)

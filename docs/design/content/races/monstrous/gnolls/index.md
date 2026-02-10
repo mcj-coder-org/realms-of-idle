@@ -12,17 +12,17 @@ summary: 'Pack-hunting nomads who combine tribal shamanic traditions with honora
 
 ### Origin
 
-Gnolls walk the line between civilization and wilderness with practiced ease. Neither fully settled nor truly savage, they've carved out a niche as the realm's most reliable tribal traders and guides. Their hyena-like features - powerful jaws, spotted fur, hunched posture - initially unsettle [settlement](../../../systems/world/settlements.md) dwellers, but those who do business with gnoll tribes quickly learn to value their straightforward honesty.
+Gnolls walk the line between civilization and wilderness with practiced ease. Neither fully settled nor truly savage, they've carved out a niche as the realm's most reliable tribal traders and guides. Their hyena-like features - powerful jaws, spotted fur, hunched posture - initially unsettle [settlement](../../../systems/world/settlements/index.md) dwellers, but those who do business with gnoll tribes quickly learn to value their straightforward honesty.
 
 Gnoll origin stories vary by tribe, but most trace their lineage to the great plains where prey animals still migrate in vast herds. They claim they were shaped by the hunt itself - given endurance to run down prey, strength to bring it down, and pack instincts to coordinate the kill. Whether literal truth or cultural metaphor, gnolls embody these traits perfectly.
 
 [Shamanic magic](../../../systems/character/index.md) runs strong in gnoll bloodlines. Every tribe maintains at least one [shaman](../../../classes/magic/index.md) who tends the tribal spirit pool, performs rituals, and guides the pack. These shamans don't rule - gnoll leadership belongs to the strongest and wisest together - but their spiritual counsel carries weight. A tribe that ignores its shaman's warnings usually regrets it.
 
-Gnoll tribes migrate with the seasons, following game herds and trading routes. They don't build permanent structures beyond seasonal camps and sacred sites. This nomadic lifestyle keeps them from accumulating the material wealth [settlements](../../../systems/world/settlements.md) prize, but gnolls measure riches differently - in strong pack bonds, successful hunts, and honorable dealings that ensure future trade.
+Gnoll tribes migrate with the seasons, following game herds and trading routes. They don't build permanent structures beyond seasonal camps and sacred sites. This nomadic lifestyle keeps them from accumulating the material wealth [settlements](../../../systems/world/settlements/index.md) prize, but gnolls measure riches differently - in strong pack bonds, successful hunts, and honorable dealings that ensure future trade.
 
 ### In the World
 
-Gnoll tribes occupy the spaces between [settlements](../../../systems/world/settlements.md) - the grasslands, savannas, and open forests where agriculture doesn't reach but game remains plentiful. They're territorial but reasonable, marking ranges and defending them from interlopers while negotiating peacefully with neighbors who respect boundaries. Most [settlements](../../../systems/world/settlements.md) with nearby gnoll tribes establish formal agreements: the tribe gets hunting rights, the settlement gets first refusal on furs and meat.
+Gnoll tribes occupy the spaces between [settlements](../../../systems/world/settlements/index.md) - the grasslands, savannas, and open forests where agriculture doesn't reach but game remains plentiful. They're territorial but reasonable, marking ranges and defending them from interlopers while negotiating peacefully with neighbors who respect boundaries. Most [settlements](../../../systems/world/settlements/index.md) with nearby gnoll tribes establish formal agreements: the tribe gets hunting rights, the settlement gets first refusal on furs and meat.
 
 A gnoll's word is their honor, and honor matters intensely. Break a deal with a gnoll and you've made an enemy for life - not just of that individual but of their entire pack. Honor it, even when inconvenient, and you've earned trust that spans generations. This reputation for reliability makes gnolls valuable trading partners despite their fearsome appearance.
 
@@ -30,7 +30,7 @@ Other races have mixed feelings about gnolls. [Humans](../../enlightened/humans/
 
 Gnoll packs range from a dozen to fifty individuals, organized around extended family units. Leadership passes to those who prove themselves through strength, wisdom, and successful leadership - not through birth. A chief's offspring have advantages from their upbringing, but they must still earn respect. Unsuccessful leaders face challenges from ambitious pack members, with disputes settled through ritual combat or hunting contests.
 
-The greatest challenge for gnolls is maintaining their way of life as [settlements](../../../systems/world/settlements.md) expand. Hunting grounds shrink as farmland spreads. Traditional migration routes get blocked by roads and borders. Some tribes adapt, integrating more with settled communities. Others retreat to marginal lands. A few resist, leading to conflict that gnolls usually lose - arrows can't compete with organized military forces and [magic](../../../systems/character/magic-system.md).
+The greatest challenge for gnolls is maintaining their way of life as [settlements](../../../systems/world/settlements/index.md) expand. Hunting grounds shrink as farmland spreads. Traditional migration routes get blocked by roads and borders. Some tribes adapt, integrating more with settled communities. Others retreat to marginal lands. A few resist, leading to conflict that gnolls usually lose - arrows can't compete with organized military forces and [magic](../../../systems/character/magic-system/index.md).
 
 ---
 
@@ -71,7 +71,7 @@ Gnolls have natural affinities and aversions that affect skill learning speed an
 | Positive (○)  | Nature/Animals, Gathering/Hunting, Tribal | Faster than baseline      |
 | Negative (×)  | Magic, Knowledge, Social/Persuasion       | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ### Racial Skills
 
@@ -81,16 +81,16 @@ Gnolls receive **3 random skills** from their racial skill pool at character cre
 
 **Example Racial Skills:**
 
-| Skill                                                           | Tags                                   | Effect                                           |
-| --------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ |
-| [Pack Tactics](../../../content/skills/passive/pack-tactics.md) | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies                 |
-| [Scent Tracking](../../../content/skills/racial/index.md)       | Nature/Animals, Gathering/Hunting      | Track by smell, detect hidden creatures          |
-| [Endurance Hunter](../../../content/skills/index.md)            | Physical/Endurance, Gathering/Hunting  | -25% stamina drain while traveling               |
-| [Savage Bite](../../../content/skills/racial/index.md)          | Combat/Melee, Physical/Strength        | Natural bite weapon, always available            |
-| [Hyena Heritage](../../../content/skills/index.md)              | Nature/Animals, Tribal                 | Intimidating presence, pack communication        |
-| [Rampage](../../../content/skills/racial/index.md)              | Combat, Tribal                         | Bonus action attack after reducing enemy to 0 HP |
+| Skill                                                                 | Tags                                   | Effect                                           |
+| --------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ |
+| [Pack Tactics](../../../content/skills/passive/pack-tactics/index.md) | Combat/Tactics, Tribal, Nature/Animals | +15% accuracy with nearby allies                 |
+| [Scent Tracking](../../../content/skills/racial/index.md)             | Nature/Animals, Gathering/Hunting      | Track by smell, detect hidden creatures          |
+| [Endurance Hunter](../../../content/skills/index.md)                  | Physical/Endurance, Gathering/Hunting  | -25% stamina drain while traveling               |
+| [Savage Bite](../../../content/skills/racial/index.md)                | Combat/Melee, Physical/Strength        | Natural bite weapon, always available            |
+| [Hyena Heritage](../../../content/skills/index.md)                    | Nature/Animals, Tribal                 | Intimidating presence, pack communication        |
+| [Rampage](../../../content/skills/racial/index.md)                    | Combat, Tribal                         | Bonus action attack after reducing enemy to 0 HP |
 
-**[Pack Tactics](../../../content/skills/passive/pack-tactics.md)**: Gnolls instinctively coordinate when fighting alongside allies. When a gnoll has an ally within 5 feet of a target, they gain +15% accuracy on attacks. This bonus applies when working with any allies, not just other gnolls, reflecting gnoll adaptability to any pack structure.
+**[Pack Tactics](../../../content/skills/passive/pack-tactics/index.md)**: Gnolls instinctively coordinate when fighting alongside allies. When a gnoll has an ally within 5 feet of a target, they gain +15% accuracy on attacks. This bonus applies when working with any allies, not just other gnolls, reflecting gnoll adaptability to any pack structure.
 
 **[Scent Tracking](../../../content/skills/racial/index.md)**: Gnolls possess extraordinary olfactory senses. They can follow trails days old by scent alone, detect hidden creatures by smell, and identify individuals by their unique scent signature. Rain and water reduce but don't eliminate this ability.
 
@@ -113,13 +113,13 @@ Gnolls receive **3 random skills** from their racial skill pool at character cre
 | Desert Gnoll   | Arid regions | Ancestor spirits | +20% heat resistance     |
 | Mountain Gnoll | High country | Wind spirits     | +15% altitude adaptation |
 
-**Savanna Gnolls** represent the classic gnoll culture - following great herds across open plains, trading with multiple [settlements](../../../systems/world/settlements.md), and maintaining large, prosperous tribes.
+**Savanna Gnolls** represent the classic gnoll culture - following great herds across open plains, trading with multiple [settlements](../../../systems/world/settlements/index.md), and maintaining large, prosperous tribes.
 
-**Forest Gnolls** adapted to life in woodlands, becoming more stealthy and less nomadic. They maintain longer-term camps and integrate more with forest [settlements](../../../systems/world/settlements.md), often serving as guides and rangers.
+**Forest Gnolls** adapted to life in woodlands, becoming more stealthy and less nomadic. They maintain longer-term camps and integrate more with forest [settlements](../../../systems/world/settlements/index.md), often serving as guides and rangers.
 
 **Desert Gnolls** inhabit arid lands where survival demands careful water management and extreme heat tolerance. They're leaner, tougher, and more isolated than their cousins, with strong ancestor veneration traditions.
 
-**Mountain Gnolls** dwell in high country, hunting mountain goats and trading with [dwarven](../enlightened/dwarves.md) holds. They're the most settled of gnoll variants, maintaining semi-permanent camps near trade routes.
+**Mountain Gnolls** dwell in high country, hunting mountain goats and trading with [dwarven](../enlightened/dwarves/index.md) holds. They're the most settled of gnoll variants, maintaining semi-permanent camps near trade routes.
 
 ### Interactions
 
@@ -169,8 +169,8 @@ Gnolls have universal access to all character classes without restriction, thoug
 - **Classes**: [Ranger](../../../classes/combat/index.md), [Shaman](../../../classes/magic/index.md), [Hunter](../../../classes/gathering/index.md)
 - **Magic**: [Shamanic Magic](../../../systems/character/index.md), [Tribal Spirit Pools](../../../systems/character/index.md)
 - **Crafting**: [Shamanic Crafting](../../../systems/crafting/index.md)
-- **Attributes**: [Character Attributes](../../../systems/character/attributes.md)
-- **See Also**: [Goblins](../goblins/), [Orcs](../orcs/), [Tribal Mechanics](../races-and-tribes.md)
+- **Attributes**: [Character Attributes](../../../systems/character/attributes/index.md)
+- **See Also**: [Goblins](../goblins/), [Orcs](../orcs/), [Tribal Mechanics](../races-and-tribes/index.md)
 
 ---
 
@@ -220,6 +220,6 @@ Some gnolls adapt, learning to soften their speech and find new purposes in sett
 
 ### The Territorial Question
 
-As [settlements](../../../systems/world/settlements.md) expand, gnoll hunting territories shrink. What was once open grassland becomes farmland. Migration routes become roads. This forces difficult choices: adapt and settle, retreat to marginal lands, or resist and fight.
+As [settlements](../../../systems/world/settlements/index.md) expand, gnoll hunting territories shrink. What was once open grassland becomes farmland. Migration routes become roads. This forces difficult choices: adapt and settle, retreat to marginal lands, or resist and fight.
 
 Most gnolls choose adaptation, negotiating new arrangements with settlements. Some tribes become semi-settled, maintaining camps near cities and serving as guides, scouts, and trade intermediaries. A few resist, leading to conflicts that gnolls usually lose - but that memory of resistance, even failed, remains important to gnoll cultural identity.

@@ -64,4 +64,4 @@ Unleash a devastating explosion of flame in a wide area, consuming everything in
 
 - **Granted By:** [Pyromancer](../../classes/channeler/mage/pyromancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Fireball](fireball.md), [Flame Mastery](../../skills/tiered/flame-mastery.md)
+- **See Also:** [Fireball](fireball/index.md), [Flame Mastery](../../skills/tiered/flame-mastery/index.md)

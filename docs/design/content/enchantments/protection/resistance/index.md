@@ -151,6 +151,6 @@ Each type requires different reagents and provides protection against specific d
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), element-specific [Reagents](../../materials/reagents/index.md)
 - **Applied To:** All wearable items (see Applicable Items table)
-- **See Also:** [Protection](protection.md), [Absorption](absorption.md), [Immunity](immunity.md)
+- **See Also:** [Protection](protection/index.md), [Absorption](absorption/index.md), [Immunity](immunity/index.md)
 - **Profession Use:** [Blacksmiths](../../classes/index.md), [Alchemists](../../classes/index.md), [Explorers](../../classes/index.md)
 - **Enchantment Type:** Protection (elemental defense)

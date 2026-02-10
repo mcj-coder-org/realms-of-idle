@@ -42,4 +42,4 @@ Build useful contacts over time.
 ## Related Content
 
 - **Strong Synergy:** [Trader](../../classes/trader/trader/), [Merchant](../../classes/trader/merchant/), [Caravaner](../../classes/trader/caravaner/)
-- **See Also:** [Trade Network](trade-network.md), [Silver Tongue](../tiered/silver-tongue.md), [Trade System](../../systems/economy/trade-system.md)
+- **See Also:** [Trade Network](trade-network/index.md), [Silver Tongue](../tiered/silver-tongue/index.md), [Trade System](../../systems/economy/trade-system/index.md)

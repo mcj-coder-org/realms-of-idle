@@ -217,6 +217,6 @@ Presence V regalia: Historical elections won, movements inspired, speeches remem
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), Social magic understanding, [Charm essence](../../materials/reagents/index.md), [Gold thread](../../materials/index.md), [Rose attar](../../materials/reagents/index.md)
 - **Applied To:** [Formal wear](../../items/clothing/index.md), [Jewelry](../../items/index.md), [Accessories](../../items/index.md), [Professional attire](../../items/clothing/index.md) (see Applicable Items table)
-- **See Also:** [Eloquence](eloquence.md), [Charm](charm.md), [Leadership](leadership.md)
+- **See Also:** [Eloquence](eloquence/index.md), [Charm](charm/index.md), [Leadership](leadership/index.md)
 - **Enchantment Type:** Social (charisma enhancement)
 - **Legal Note:** Restrictions vary by jurisdiction; declare in formal contracts; banned in courtrooms

@@ -8,7 +8,7 @@ summary: 'Cold-blooded philosopher-priests from ancient civilizations who value 
 
 # Lizardfolk
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ The classical lizardfolk civilization - temple builders, careful astronomers, an
 
 **Key Features:** Water/Nature magic, temple complexes, baseline adaptation
 
-**[Learn More →](swamp.md)**
+**[Learn More →](swamp/index.md)**
 
 ### Coastal Lizardfolk
 
@@ -28,7 +28,7 @@ Maritime-adapted lizardfolk who took to the open ocean, becoming accomplished sa
 
 **Key Features:** Enhanced swimming, maritime trade, Water/Weather magic
 
-**[Learn More →](coastal.md)**
+**[Learn More →](coastal/index.md)**
 
 ### Desert Lizardfolk
 
@@ -36,7 +36,7 @@ Arid-dwelling lizardfolk who thrive in heat that kills other races. They've mast
 
 **Key Features:** Extreme heat adaptation, estivation ability, Sun/Fire magic
 
-**[Learn More →](desert.md)**
+**[Learn More →](desert/index.md)**
 
 ### Jungle Lizardfolk
 
@@ -44,7 +44,7 @@ Forest-adapted lizardfolk who developed camouflage scales and climbing ability. 
 
 **Key Features:** Camouflage scales, climbing ability, Nature/Poison magic
 
-**[Learn More →](jungle.md)**
+**[Learn More →](jungle/index.md)**
 
 ---
 
@@ -125,8 +125,8 @@ Lizardfolk have universal access to all character classes without restriction. T
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
-- **[Humans](../humans.md)**: Impatient but adaptable trading partners
-- **[Elves](../elves/base.md)**: Fellow long-lived civilization builders
-- **[Kobolds](../kobolds.md)**: Distant draconic cousins
-- **[Race Comparison](../../races-and-tribes.md)**: How lizardfolk compare to other races
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Humans](../humans/index.md)**: Impatient but adaptable trading partners
+- **[Elves](../elves/base/index.md)**: Fellow long-lived civilization builders
+- **[Kobolds](../kobolds/index.md)**: Distant draconic cousins
+- **[Race Comparison](../../races-and-tribes/index.md)**: How lizardfolk compare to other races

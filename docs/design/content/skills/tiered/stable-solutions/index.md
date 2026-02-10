@@ -45,4 +45,4 @@ Long-lasting alchemical products.
 ## Related Content
 
 - **Strong Synergy:** [Alchemist](../../classes/crafter/alchemist/)
-- **See Also:** [Potent Brews](potent-brews.md), [Alchemy Skills](../index.md), [Crafting System](../../systems/crafting/index.md)
+- **See Also:** [Potent Brews](potent-brews/index.md), [Alchemy Skills](../index.md), [Crafting System](../../systems/crafting/index.md)

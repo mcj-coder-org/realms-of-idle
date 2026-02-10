@@ -36,4 +36,4 @@ This is a Tier 3 consolidation class. No further specializations available.
 ## Related Content
 
 - **Prerequisites:** [Hunter](../), [Scout](../../../fighter/scout/)
-- **See Also:** [Class Tiers](../../../../systems/character/class-tiers.md)
+- **See Also:** [Class Tiers](../../../../systems/character/class-tiers/index.md)

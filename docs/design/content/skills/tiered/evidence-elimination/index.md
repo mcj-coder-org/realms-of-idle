@@ -41,4 +41,4 @@ Skills improve continuously with accumulated XP. More XP = better effectiveness,
 ## Related Content
 
 - **Strong Synergy:** [Thief](../../classes/rogue/thief/), [Assassin](../../classes/rogue/assassin/), [Fence](../../classes/rogue/fence/), [Smuggler](../../classes/rogue/smuggler/)
-- **See Also:** [Misdirection](misdirection.md), [Stealth](stealth.md), [Criminal Skills](../index.md), [Dark Path Classes](../../systems/character/class-progression.md)
+- **See Also:** [Misdirection](misdirection/index.md), [Stealth](stealth/index.md), [Criminal Skills](../index.md), [Dark Path Classes](../../systems/character/class-progression/index.md)

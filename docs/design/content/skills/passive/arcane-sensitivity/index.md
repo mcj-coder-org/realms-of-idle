@@ -72,9 +72,9 @@ Centuries of magical study have attuned your senses to the flow of mana. You per
 
 **Synergizes with:**
 
-- [Mana Well](../tiered/mana-well.md) - Larger mana pool
-- [Spell Focus](../tiered/spell-focus.md) - Enhanced spellcasting
-- [School Mastery](../mechanic-unlock/school-mastery.md) - Specialized magic
+- [Mana Well](../tiered/mana-well/index.md) - Larger mana pool
+- [Spell Focus](../tiered/spell-focus/index.md) - Enhanced spellcasting
+- [School Mastery](../mechanic-unlock/school-mastery/index.md) - Specialized magic
 - Mage, Enchanter, and other magic classes
 
 **Provides Non-Combat Utility:**
@@ -92,7 +92,7 @@ Centuries of magical study have attuned your senses to the flow of mana. You per
 
 ## Related Content
 
-- [Mana Well](../tiered/mana-well.md) - Increased mana pool
-- [Timeless Wisdom](timeless-wisdom.md) - Knowledge accumulation (Elf)
-- [Spell Weaving](../mechanic-unlock/spell-weaving.md) - Complex spellcasting
-- [Counter Magic](../tiered/counter-magic.md) - Magical defense
+- [Mana Well](../tiered/mana-well/index.md) - Increased mana pool
+- [Timeless Wisdom](timeless-wisdom/index.md) - Knowledge accumulation (Elf)
+- [Spell Weaving](../mechanic-unlock/spell-weaving/index.md) - Complex spellcasting
+- [Counter Magic](../tiered/counter-magic/index.md) - Magical defense

@@ -56,7 +56,7 @@ Your hands are naturally quick and precise. Your fingers work with practiced gra
 
 **Works well with:**
 
-- [Shadow Sense](../mechanic-unlock/shadow-sense.md) - Identify theft opportunities
+- [Shadow Sense](../mechanic-unlock/shadow-sense/index.md) - Identify theft opportunities
 - Stealth movement (avoid detection)
 - Crowded areas (use cover effectively)
 - High-value targets (maximize gain)
@@ -85,6 +85,6 @@ Your hands are naturally quick and precise. Your fingers work with practiced gra
 
 ## Related Content
 
-- [Shadow Sense](../mechanic-unlock/shadow-sense.md) - Identify hiding spots
-- [Pickpocketing System](../../../systems/crime/pickpocketing.md) - Game mechanics
+- [Shadow Sense](../mechanic-unlock/shadow-sense/index.md) - Identify hiding spots
+- [Pickpocketing System](../../../systems/crime/pickpocketing/index.md) - Game mechanics
 - [Rogue Class](../../classes/rogue/index.md) - Rogue specialization

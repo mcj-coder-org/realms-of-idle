@@ -93,8 +93,8 @@ Orcs don't die easily. When an attack would reduce you to 0 HP, your sheer tough
 
 **Synergizes with:**
 
-- [Rapid Regeneration](rapid-regeneration.md) - Heal back from 1 HP quickly (Troll)
-- [Stout Constitution](stout-constitution.md) - Higher HP pool delays trigger
+- [Rapid Regeneration](rapid-regeneration/index.md) - Heal back from 1 HP quickly (Troll)
+- [Stout Constitution](stout-constitution/index.md) - Higher HP pool delays trigger
 - Healing abilities - Restore HP after surviving
 
 **Limited by:**
@@ -106,7 +106,7 @@ Orcs don't die easily. When an attack would reduce you to 0 HP, your sheer tough
 
 ## Related Content
 
-- [Battle Hardened](../passive/battle-hardened.md) - Combat resilience
-- [Rapid Regeneration](rapid-regeneration.md) - Healing over time (Troll)
-- [Stout Constitution](stout-constitution.md) - Increased HP pool
-- [Second Wind](../common/second-wind.md) - Emergency HP recovery
+- [Battle Hardened](../passive/battle-hardened/index.md) - Combat resilience
+- [Rapid Regeneration](rapid-regeneration/index.md) - Healing over time (Troll)
+- [Stout Constitution](stout-constitution/index.md) - Increased HP pool
+- [Second Wind](../common/second-wind/index.md) - Emergency HP recovery

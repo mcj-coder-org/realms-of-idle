@@ -39,4 +39,4 @@ tags: [Gathering/Animals, Crafting/Food]
 ## Related Content
 
 - **Strong Synergy:** [Hunter](../../classes/gatherer/hunter/), [Cook](../../classes/crafter/cook/), [Alchemist](../../classes/crafter/alchemist/)
-- **See Also:** [Gathering System](../../systems/gathering/index.md), [Skinning](skinning.md), [Cooking Recipes](../../systems/crafting/cooking-crafting.md)
+- **See Also:** [Gathering System](../../systems/gathering/index.md), [Skinning](skinning/index.md), [Cooking Recipes](../../systems/crafting/cooking-crafting/index.md)

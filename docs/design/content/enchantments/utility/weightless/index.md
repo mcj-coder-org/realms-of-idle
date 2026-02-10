@@ -183,6 +183,6 @@ The enchantment has unexpected social impacts. Weightless moving boxes let famil
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), [Feather essence](../../materials/reagents/index.md), [Antigravity dust](../../materials/reagents/index.md), [Cloud cotton](../../materials/reagents/index.md)
 - **Applied To:** All [Containers](../../items/containers/index.md) - bags, backpacks, chests, carts, barrels, boxes (see Applicable Items table)
-- **See Also:** [Holding](holding.md), [Featherfall](featherfall.md), [Burden Reduction](burden-reduction.md)
+- **See Also:** [Holding](holding/index.md), [Featherfall](featherfall/index.md), [Burden Reduction](burden-reduction/index.md)
 - **Enchantment Type:** Utility (gravity manipulation)
 - **Accessibility Note:** Particularly beneficial for elderly, disabled, or strength-limited individuals

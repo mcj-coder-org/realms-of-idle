@@ -163,27 +163,27 @@ Actions that grant XP to the Fisher class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                          | Requirements                            | Result Class   | Tier |
 | ------------------------------------------- | --------------------------------------- | -------------- | ---- |
 | [Sailor](../consolidation/index.md)         | Fisher + seafaring focus                | Sailor         | 1    |
 | [Coastal Trader](../consolidation/index.md) | Fisher + [Merchant](../trade/index.md)  | Coastal Trader | 1    |
-| [Aquatic Hunter](../consolidation/index.md) | Fisher + [Hunter](./hunter.md)          | Aquatic Hunter | 1    |
+| [Aquatic Hunter](../consolidation/index.md) | Fisher + [Hunter](./hunter/index.md)    | Aquatic Hunter | 1    |
 | [Waterway Scout](../consolidation/index.md) | Fisher + [Explorer](../combat/index.md) | Waterway Scout | 1    |
 | [Master Angler](../consolidation/index.md)  | Multiple fishing specializations        | Master Angler  | 2    |
 
 ### Interactions
 
-| System                                                        | Interaction                                                         |
-| ------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Gathering](../../../systems/crafting/gathering.md)           | Primary aquatic resource gathering class                            |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Provides fish and aquatic materials for [Cook](../crafting/cook.md) |
-| [Economy](../../../systems/economy/index.md)                  | Can sell fresh fish, salted fish, and specialty catches             |
-| [Settlement](../../../systems/world/settlements.md)           | Coastal/river settlements depend on Fishers for food                |
-| [Exploration](../../../systems/world/exploration.md)          | Discovers aquatic locations and underwater features                 |
-| [Social](../../../systems/social/index.md)                    | Fishing communities have distinct cultures                          |
-| [Weather](../../../systems/world/index.md)                    | Weather critically affects fishing success                          |
+| System                                                              | Interaction                                                               |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Primary aquatic resource gathering class                                  |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Provides fish and aquatic materials for [Cook](../crafting/cook/index.md) |
+| [Economy](../../../systems/economy/index.md)                        | Can sell fresh fish, salted fish, and specialty catches                   |
+| [Settlement](../../../systems/world/settlements/index.md)           | Coastal/river settlements depend on Fishers for food                      |
+| [Exploration](../../../systems/world/exploration/index.md)          | Discovers aquatic locations and underwater features                       |
+| [Social](../../../systems/social/index.md)                          | Fishing communities have distinct cultures                                |
+| [Weather](../../../systems/world/index.md)                          | Weather critically affects fishing success                                |
 
 ---
 
@@ -191,6 +191,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Fishing equipment, access to water
 - **Gathers:** [Fish](../../materials/index.md), [Shellfish](../../materials/index.md), [Aquatic Plants](../../materials/index.md), [Pearls](../../materials/index.md)
-- **Supplies:** [Cook](../crafting/cook.md), [Alchemist](../crafting/alchemist.md), [Merchant](../trade/index.md)
-- **Synergy Classes:** [Cook](../crafting/cook.md), [Hunter](./hunter.md), [Merchant](../trade/index.md)
-- **See Also:** [Gathering System](../../../systems/crafting/gathering.md), [Water Resources](../../materials/index.md), [Coastal Settlements](../../../systems/world/settlements.md)
+- **Supplies:** [Cook](../crafting/cook/index.md), [Alchemist](../crafting/alchemist/index.md), [Merchant](../trade/index.md)
+- **Synergy Classes:** [Cook](../crafting/cook/index.md), [Hunter](./hunter/index.md), [Merchant](../trade/index.md)
+- **See Also:** [Gathering System](../../../systems/crafting/gathering/index.md), [Water Resources](../../materials/index.md), [Coastal Settlements](../../../systems/world/settlements/index.md)

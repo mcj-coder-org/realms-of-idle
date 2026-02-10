@@ -187,6 +187,6 @@ Many cities offer Holding container rentals for travelers and temporary needs.
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), Dimensional magic knowledge, [Void essence](../../materials/reagents/index.md), [Spatial crystal](../../materials/reagents/index.md)
 - **Applied To:** All [Containers](../../items/containers/index.md) - bags, backpacks, chests, pouches, barrels (see Applicable Items table)
-- **See Also:** [Weightless](weightless.md), [Preservation](preservation.md), [Sorting](sorting.md)
+- **See Also:** [Weightless](weightless/index.md), [Preservation](preservation/index.md), [Sorting](sorting/index.md)
 - **Enchantment Type:** Utility (dimensional expansion)
 - **Legal Note:** High-level Holding may require licenses; check local regulations

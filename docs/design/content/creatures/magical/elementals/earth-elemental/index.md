@@ -137,7 +137,7 @@ Artificers and enchanters prize earth elemental essence above almost all other m
 
 - **Habitat:** [Mountains](../../../../systems/world/index.md), [Deep Caves](../../../../systems/world/index.md), [Quarries](../../../../systems/world/index.md), [Badlands](../../../../systems/world/index.md)
 - **Summoners:** [Earth Mages](../../../classes/index.md), [Elementalists](../../../classes/index.md), [Artificers](../../../classes/index.md)
-- **Counterparts:** [Fire Elemental](fire-elemental.md), [Water Elemental](water-elemental.md), [Air Elemental](air-elemental.md)
-- **Magic:** [Earth Magic](../../../../systems/character/magic-system.md), [Geomancy](../../../../systems/character/magic-system.md)
+- **Counterparts:** [Fire Elemental](fire-elemental/index.md), [Water Elemental](water-elemental/index.md), [Air Elemental](air-elemental/index.md)
+- **Magic:** [Earth Magic](../../../../systems/character/magic-system/index.md), [Geomancy](../../../../systems/character/magic-system/index.md)
 - **Used By:** [Unbreakable Blade](../../items/index.md), [Eternal Foundation](../../items/index.md), [Strength Potion](../../../systems/crafting/index.md)
-- **See Also:** [Golems](../index.md), [Elemental Plane](../../../../systems/world/index.md), [Creature System](../../creature-system.md)
+- **See Also:** [Golems](../index.md), [Elemental Plane](../../../../systems/world/index.md), [Creature System](../../creature-system/index.md)

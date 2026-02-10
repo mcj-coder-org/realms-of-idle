@@ -8,7 +8,7 @@ summary: 'Stout and steadfast artisans who forge legendary works and endure wher
 
 # Dwarves
 
-> **See [Base Traits](base.md)** for shared racial characteristics, lore, and cultural notes.
+> **See [Base Traits](base/index.md)** for shared racial characteristics, lore, and cultural notes.
 
 ## Variants
 
@@ -20,7 +20,7 @@ Traditional dwarves of the high peaks, representing classical dwarven culture at
 
 **Key Features:** +1 STR, superior weapons and armor, martial excellence
 
-**[Learn More →](mountain.md)**
+**[Learn More →](mountain/index.md)**
 
 ### Hill Dwarf
 
@@ -28,7 +28,7 @@ Surface-adapted dwarves who bridge the gap between underground holds and surface
 
 **Key Features:** +1 CHA, legendary brewing, surface integration, diplomatic skills
 
-**[Learn More →](hill.md)**
+**[Learn More →](hill/index.md)**
 
 ### Deep Dwarf
 
@@ -36,7 +36,7 @@ Mysterious dwarves of the deepest depths, delving miles below where other dwarve
 
 **Key Features:** Enhanced darkvision, rare gems and metals, extreme depth specialization
 
-**[Learn More →](deep.md)**
+**[Learn More →](deep/index.md)**
 
 ### Forge Dwarf
 
@@ -44,7 +44,7 @@ Volcanic dwarves who harness natural heat to achieve smithing temperatures impos
 
 **Key Features:** +25% heat resistance, exotic metals, adamantine/mithril mastery
 
-**[Learn More →](forge.md)**
+**[Learn More →](forge/index.md)**
 
 ---
 
@@ -119,7 +119,7 @@ Dwarves have **unrestricted access to all classes** with strong affinity to craf
 
 ## Related Content
 
-- **[Base Traits](base.md)**: Shared racial characteristics, lore, and cultural notes
-- **[Humans](../humans.md)**: Common trading partners and allies
-- **[Elves](../elves.md)**: Respected but philosophically different
-- **[Race Comparison](../../races-and-tribes.md)**: How dwarves compare to other races
+- **[Base Traits](base/index.md)**: Shared racial characteristics, lore, and cultural notes
+- **[Humans](../humans/index.md)**: Common trading partners and allies
+- **[Elves](../elves/index.md)**: Respected but philosophically different
+- **[Race Comparison](../../races-and-tribes/index.md)**: How dwarves compare to other races

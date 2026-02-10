@@ -65,5 +65,5 @@ Actions that contribute to Storm Mastery:
 ## Related Content
 
 - **Class:** [Electromancer](../../classes/channeler/mage/electromancer/)
-- **Skills:** [Chain Lightning](./chain-lightning.md)
-- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm.md), [Lightning Shield](../../spells/destruction/lightning-shield.md)
+- **Skills:** [Chain Lightning](./chain-lightning/index.md)
+- **Spells:** [Thunderstorm](../../spells/destruction/thunderstorm/index.md), [Lightning Shield](../../spells/destruction/lightning-shield/index.md)

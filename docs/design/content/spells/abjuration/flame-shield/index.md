@@ -65,4 +65,4 @@ Surround yourself with a shield of protective flame that absorbs damage and refl
 
 - **Granted By:** [Pyromancer](../../classes/channeler/mage/pyromancer/)
 - **School:** [Abjuration](../index.md)
-- **See Also:** [Lightning Shield](../destruction/lightning-shield.md), [Water Shield](water-shield.md)
+- **See Also:** [Lightning Shield](../destruction/lightning-shield/index.md), [Water Shield](water-shield/index.md)

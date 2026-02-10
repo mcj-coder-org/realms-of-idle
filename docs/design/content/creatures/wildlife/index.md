@@ -28,4 +28,4 @@ All wildlife provides:
 
 ## Taming
 
-See [Creature System](../creature-system.md) for taming mechanics.
+See [Creature System](../creature-system/index.md) for taming mechanics.

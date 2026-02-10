@@ -9,7 +9,7 @@ summary: 'Underground-dwelling elves who embraced shadow magic and nocturnal exi
 
 # Dusk Elf
 
-> **Parent Race:** [Elves](base.md)
+> **Parent Race:** [Elves](base/index.md)
 
 ## Variant Overview
 
@@ -35,7 +35,7 @@ Dusk Elves excel at shadow manipulation that bends darkness itself and necromanc
 | Positive (○)  | Stealth, Knowledge, Gathering/Mining | Faster than baseline      |
 | Negative (×)  | Nature, Social/Persuasion            | Slower, higher XP cost    |
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -47,14 +47,14 @@ Dusk Elves receive **3 random skills** from their racial skill pool at character
 
 **Example Racial Skills:**
 
-| Skill                                                 | Tags                         | Effect                                            |
-| ----------------------------------------------------- | ---------------------------- | ------------------------------------------------- |
-| [Darkvision](../../../skills/passive/darkvision.md)   | Physical, Universal/Physical | Perfect vision in complete darkness               |
-| [Shadow Step](../../../skills/tiered/shadow-step.md)  | Magic/Shadow, Physical       | Teleport short distances through shadows          |
-| [Death Sense](../../../skills/index.md)               | Magic/Necromancy, Knowledge  | Detect undead, sense recent deaths, read corpses  |
-| [Shadow Cloak](../../../skills/index.md)              | Magic/Shadow, Stealth        | Blend into shadows, +30% stealth in darkness      |
-| [Elven Grace](../../../skills/passive/elven-grace.md) | Physical/Agility, Social     | +10% movement, enhanced agility in darkness       |
-| [Life Drain Resistance](../../../skills/index.md)     | Magic/Necromancy, Universal  | +25% resistance to necromantic effects and drains |
+| Skill                                                       | Tags                         | Effect                                            |
+| ----------------------------------------------------------- | ---------------------------- | ------------------------------------------------- |
+| [Darkvision](../../../skills/passive/darkvision/index.md)   | Physical, Universal/Physical | Perfect vision in complete darkness               |
+| [Shadow Step](../../../skills/tiered/shadow-step/index.md)  | Magic/Shadow, Physical       | Teleport short distances through shadows          |
+| [Death Sense](../../../skills/index.md)                     | Magic/Necromancy, Knowledge  | Detect undead, sense recent deaths, read corpses  |
+| [Shadow Cloak](../../../skills/index.md)                    | Magic/Shadow, Stealth        | Blend into shadows, +30% stealth in darkness      |
+| [Elven Grace](../../../skills/passive/elven-grace/index.md) | Physical/Agility, Social     | +10% movement, enhanced agility in darkness       |
+| [Life Drain Resistance](../../../skills/index.md)           | Magic/Necromancy, Universal  | +25% resistance to necromantic effects and drains |
 
 ## Special Traits
 
@@ -79,7 +79,7 @@ Dusk elf society is meritocratic and somewhat anarchic by surface standards. Res
 
 **With Other Elves:** Dusk Elves maintain minimal contact with other elven variants, primarily because other elves prefer it that way. High elves view them as tragic failures who abandoned elven grace for dark magic. Wood elves find them incomprehensible - choosing underground darkness over forest beauty seems insane. Sea elves, least judgmental of surface elves, occasionally trade with dusk elves for unique magical components. The feeling is somewhat mutual; dusk elves view other elves as hypocritical cowards afraid to study uncomfortable truths.
 
-**With Other Races:** Dusk Elves have surprisingly good relationships with [dwarves](../dwarves/base.md), who respect their pragmatic approach and underground lifestyle. Both races understand living beneath the earth, though dwarven discomfort with magic creates some friction. [Humans](../humans.md) vary wildly - some fear dusk elves as "dark elves," others value them as teachers of shadow magic and necromancy. Scholarly humans often find dusk elves more approachable than high elves; dusk elves answer questions directly rather than through layers of condescension.
+**With Other Races:** Dusk Elves have surprisingly good relationships with [dwarves](../dwarves/base/index.md), who respect their pragmatic approach and underground lifestyle. Both races understand living beneath the earth, though dwarven discomfort with magic creates some friction. [Humans](../humans/index.md) vary wildly - some fear dusk elves as "dark elves," others value them as teachers of shadow magic and necromancy. Scholarly humans often find dusk elves more approachable than high elves; dusk elves answer questions directly rather than through layers of condescension.
 
 ## Recommended Classes
 

@@ -67,6 +67,6 @@ Enchanter is a terminal Tier 3 consolidation class. No further progression paths
 ### Related Content
 
 - **Required Classes:** [Mage](../../channeler/mage/), [Crafter](../../crafter/)
-- **Skills:** [Enchant Item](../../skills/tiered/enchant-item.md), [Mana Imbue](../../skills/tiered/mana-imbue.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
-- **System:** [Crafting System](../../../systems/crafting/crafting-progression.md)
+- **Skills:** [Enchant Item](../../skills/tiered/enchant-item/index.md), [Mana Imbue](../../skills/tiered/mana-imbue/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)
+- **System:** [Crafting System](../../../systems/crafting/crafting-progression/index.md)

@@ -49,9 +49,9 @@ Hammers are heavy tools. A day of swinging hammers builds forearm strength like 
 
 ## Interactions
 
-| System                                                           | Interaction               |
-| ---------------------------------------------------------------- | ------------------------- |
-| [Smithing](../../../../systems/crafting/crafting-progression.md) | Required tool for forging |
+| System                                                                 | Interaction               |
+| ---------------------------------------------------------------------- | ------------------------- |
+| [Smithing](../../../../systems/crafting/crafting-progression/index.md) | Required tool for forging |
 
 ---
 

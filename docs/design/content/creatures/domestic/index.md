@@ -20,12 +20,12 @@ Animals that have lived alongside humanity for so long that neither species reme
 
 ## Primary Domestic Animals
 
-| Animal                        | Level | Primary Use         | Cost Range      | Maintenance |
-| ----------------------------- | ----- | ------------------- | --------------- | ----------- |
-| [Horse](mounts/horse.md)      | 3-8   | Transportation      | 200-1500 copper | High        |
-| [Cattle](livestock/cattle.md) | 4-7   | Milk, meat, labor   | 300-1500 copper | High        |
-| [Chicken](poultry/chicken.md) | 0-1   | Eggs, meat          | 1-20 copper     | Very Low    |
-| [Dog](companions/dog.md)      | 2-8   | Companionship, work | 5-1000 copper   | Moderate    |
+| Animal                              | Level | Primary Use         | Cost Range      | Maintenance |
+| ----------------------------------- | ----- | ------------------- | --------------- | ----------- |
+| [Horse](mounts/horse/index.md)      | 3-8   | Transportation      | 200-1500 copper | High        |
+| [Cattle](livestock/cattle/index.md) | 4-7   | Milk, meat, labor   | 300-1500 copper | High        |
+| [Chicken](poultry/chicken/index.md) | 0-1   | Eggs, meat          | 1-20 copper     | Very Low    |
+| [Dog](companions/dog/index.md)      | 2-8   | Companionship, work | 5-1000 copper   | Moderate    |
 
 ## Importance to Settlement Life
 
@@ -224,8 +224,8 @@ Domestic animals represent the primary form of wealth for most rural communities
 ## Related Systems
 
 - **[Agriculture](../../../systems/index.md)** - Farming and animal husbandry
-- **[Economy](../../../systems/economy/trade-and-pricing.md)** - Animal trade and markets
-- **[Settlements](../../../systems/world/settlements.md)** - Infrastructure needs
+- **[Economy](../../../systems/economy/trade-and-pricing/index.md)** - Animal trade and markets
+- **[Settlements](../../../systems/world/settlements/index.md)** - Infrastructure needs
 - **[Food Production](../../../systems/index.md)** - Processing animal products
 - **[Crafting](../../../systems/crafting/)** - Using animal materials
 
@@ -233,4 +233,4 @@ Domestic animals represent the primary form of wealth for most rural communities
 
 - **[Wildlife](../wildlife/)** - Natural animals
 - **[Magical Creatures](../magical/)** - Magical beings
-- **[Creature System](../creature-system.md)** - Complete creature mechanics
+- **[Creature System](../creature-system/index.md)** - Complete creature mechanics

@@ -43,4 +43,4 @@ tags: [Gathering]
 ## Related Content
 
 - **Strong Synergy:** [Gatherer specialties](../../classes/gatherer/), [Miner](../../classes/gatherer/miner/), [Herbalist](../../classes/gatherer/herbalist/)
-- **See Also:** [Gathering Tools](../../systems/gathering/tools.md), [Efficiency Expert](../tiered/efficiency-expert.md)
+- **See Also:** [Gathering Tools](../../systems/gathering/tools/index.md), [Efficiency Expert](../tiered/efficiency-expert/index.md)

@@ -42,4 +42,4 @@ tags: [Crafting/Jewelry/Beads, Crafting/Textile/Decoration]
 ## Related Content
 
 - **Strong Synergy:** [Jeweler](../../classes/crafter/jeweler/), [Tailor](../../classes/crafter/tailor/)
-- **See Also:** [Jewelry Crafting](../../systems/crafting/jewelry-crafting.md), [Textile Crafting](../../systems/crafting/textile-crafting.md)
+- **See Also:** [Jewelry Crafting](../../systems/crafting/jewelry-crafting/index.md), [Textile Crafting](../../systems/crafting/textile-crafting/index.md)

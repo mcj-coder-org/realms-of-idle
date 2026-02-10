@@ -67,4 +67,4 @@ Summon a massive wave of water that crashes down on enemies, dealing damage and 
 
 - **Granted By:** [Hydromancer](../../classes/channeler/mage/hydromancer/)
 - **School:** [Destruction](../index.md)
-- **See Also:** [Blizzard](blizzard.md), [Earthquake](earthquake.md)
+- **See Also:** [Blizzard](blizzard/index.md), [Earthquake](earthquake/index.md)

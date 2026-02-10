@@ -35,4 +35,4 @@ tags: [Nature/Animals, Gathering/Hunting]
 ## Related Content
 
 - **Strong Synergy:** [Hunter](../../classes/gatherer/hunter/), [Trapper](../../classes/gatherer/trapper/), [Beastmaster](../../classes/gatherer/hunter/beastmaster/)
-- **See Also:** [Tracking](tracking.md), [Enhanced Senses](enhanced-senses.md), [Animal Skills](../index.md)
+- **See Also:** [Tracking](tracking/index.md), [Enhanced Senses](enhanced-senses/index.md), [Animal Skills](../index.md)

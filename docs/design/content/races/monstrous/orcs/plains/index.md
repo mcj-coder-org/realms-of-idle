@@ -9,7 +9,7 @@ summary: 'Mounted warriors who strike from the grasslands with terrifying cavalr
 
 # Plains Orc
 
-> **Parent Race:** [Orcs](base.md)
+> **Parent Race:** [Orcs](base/index.md)
 
 ## Variant Overview
 
@@ -17,7 +17,7 @@ Plains Orcs represent the classic raider image that most settlements fear - moun
 
 Plains orc culture revolves around the mounted raid. Young orcs learn to ride before they can properly wield weapons. War mounts are treated as battle companions, not mere animals - fed before warriors eat, protected fiercely in combat, and honored in death. The bond between plains orc and mount is deep; many orcs claim to understand their mounts' thoughts, and the feeling might be mutual.
 
-They maintain the traditional orc honor code with particular emphasis on open combat. Plains orcs consider striking from hiding cowardly (unlike their [swamp](swamp.md) cousins). They announce their presence with war cries and horn calls, giving opponents moments to prepare. This isn't mercy - it's honor. A victory against unprepared foes brings less glory than defeating those who fought back.
+They maintain the traditional orc honor code with particular emphasis on open combat. Plains orcs consider striking from hiding cowardly (unlike their [swamp](swamp/index.md) cousins). They announce their presence with war cries and horn calls, giving opponents moments to prepare. This isn't mercy - it's honor. A victory against unprepared foes brings less glory than defeating those who fought back.
 
 ## Region
 
@@ -25,7 +25,7 @@ Open grasslands, prairies, and steppes where mobility matters more than fortific
 
 They claim vast territories but occupy them lightly, leaving few permanent structures. This mobility makes plains orcs difficult to pin down or eliminate - destroy one camp and the tribe has already moved. Settlements trying to defend against plains orcs face frustrating asymmetry: the orcs can strike anywhere, anytime, while defenders must guard everything always.
 
-Some plains orc tribes maintain seasonal fortresses - defensible positions they return to during harsh winters or when resting between campaign seasons. These are pragmatic structures, not homes: earthworks, wooden palisades, and communal longhouses. They lack the permanence of [mountain orc](mountain.md) fortresses.
+Some plains orc tribes maintain seasonal fortresses - defensible positions they return to during harsh winters or when resting between campaign seasons. These are pragmatic structures, not homes: earthworks, wooden palisades, and communal longhouses. They lack the permanence of [mountain orc](mountain/index.md) fortresses.
 
 ## Tactical Specialization
 
@@ -53,7 +53,7 @@ Plains orcs excel at cavalry tactics that leverage speed and shock impact:
 
 **Additional Bonus:** +15% to Animal Handling (Riding) skills specifically
 
-See [Racial Synergies](../../../systems/character/racial-synergies.md) for detailed mechanics.
+See [Racial Synergies](../../../systems/character/racial-synergies/index.md) for detailed mechanics.
 
 ## Skill Pool Tags
 
@@ -65,14 +65,14 @@ Plains Orcs receive **3 random skills** from their racial skill pool at characte
 
 **Example Racial Skills:**
 
-| Skill                                                                   | Tags                            | Effect                                              |
-| ----------------------------------------------------------------------- | ------------------------------- | --------------------------------------------------- |
-| [Relentless Endurance](../../../skills/passive/relentless-endurance.md) | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day          |
-| [Savage Attacks](../../../skills/passive/savage-attacks.md)             | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits            |
-| [Mounted Combat](../../../skills/mechanic-unlock/mounted-combat.md)     | Combat, Animals                 | +25% effectiveness when fighting mounted            |
-| [Cavalry Charge](../../../skills/index.md)                              | Combat, Animals, Physical       | Devastating charge attacks on mounted targets       |
-| [Beast Bond](../../../skills/index.md)                                  | Animals, Tribal                 | Enhanced communication and coordination with mounts |
-| [War Cry](../../../skills/index.md)                                     | Combat, Tribal, Social          | Intimidate enemies and rally allies before charges  |
+| Skill                                                                         | Tags                            | Effect                                              |
+| ----------------------------------------------------------------------------- | ------------------------------- | --------------------------------------------------- |
+| [Relentless Endurance](../../../skills/passive/relentless-endurance/index.md) | Physical/Endurance, Combat      | Survive lethal damage at 1 HP once per day          |
+| [Savage Attacks](../../../skills/passive/savage-attacks/index.md)             | Combat/Melee, Physical/Strength | Extra weapon damage die on critical hits            |
+| [Mounted Combat](../../../skills/mechanic-unlock/mounted-combat/index.md)     | Combat, Animals                 | +25% effectiveness when fighting mounted            |
+| [Cavalry Charge](../../../skills/index.md)                                    | Combat, Animals, Physical       | Devastating charge attacks on mounted targets       |
+| [Beast Bond](../../../skills/index.md)                                        | Animals, Tribal                 | Enhanced communication and coordination with mounts |
+| [War Cry](../../../skills/index.md)                                           | Combat, Tribal, Social          | Intimidate enemies and rally allies before charges  |
 
 ## Special Traits
 
@@ -99,9 +99,9 @@ Plains orcs maintain the most traditional orc culture. They preserve ancient rai
 
 ## Relations
 
-**With Other Orc Variants:** Plains orcs view themselves as traditional "true" orcs. They respect [mountain orcs](mountain.md) but consider them too settled, losing touch with mobile warrior culture. [Desert orcs](desert.md) earn respect as fellow raiders, though plains orcs think desert tactics lack honor. [Swamp orcs](swamp.md) are viewed with suspicion - all that sneaking and ambushing seems dishonorable.
+**With Other Orc Variants:** Plains orcs view themselves as traditional "true" orcs. They respect [mountain orcs](mountain/index.md) but consider them too settled, losing touch with mobile warrior culture. [Desert orcs](desert/index.md) earn respect as fellow raiders, though plains orcs think desert tactics lack honor. [Swamp orcs](swamp/index.md) are viewed with suspicion - all that sneaking and ambushing seems dishonorable.
 
-**With Other Races:** Plains orcs have the worst reputation among settled races - they're the ones who attack farms, burn villages, and disappear into grasslands. [Human](../../enlightened/humans.md) and [dwarf](../../enlightened/dwarves.md) military forces organize specifically to counter plains orc raids. [Nomadic humans](../../enlightened/humans.md) sometimes negotiate temporary truces, but settled folk see plains orcs as existential threat.
+**With Other Races:** Plains orcs have the worst reputation among settled races - they're the ones who attack farms, burn villages, and disappear into grasslands. [Human](../../enlightened/humans/index.md) and [dwarf](../../enlightened/dwarves/index.md) military forces organize specifically to counter plains orc raids. [Nomadic humans](../../enlightened/humans/index.md) sometimes negotiate temporary truces, but settled folk see plains orcs as existential threat.
 
 **Mount Trading**: Ironically, plains orcs' feared war mounts create odd trade opportunities. Wealthy warriors from other races pay fortunes for plains orc war wolves or boars. Some plains orc tribes engage in carefully managed mount trading - providing animals without training, ensuring buyers never master true plains orc cavalry techniques.
 

@@ -10,13 +10,13 @@ Offensive enchantments that add elemental damage, divine power, or life-stealing
 
 ## Available Enchantments
 
-| Enchantment               | Tier       | Summary                                                 | Cost Range  |
-| ------------------------- | ---------- | ------------------------------------------------------- | ----------- |
-| [Flaming](flaming.md)     | Journeyman | Fire damage + utility (cooking, light, warmth)          | 150-20000c  |
-| [Frost](frost.md)         | Journeyman | Cold damage + slowing + utility (preservation, cooling) | 150-20000c  |
-| [Lightning](lightning.md) | Journeyman | Electric damage + chain effect + utility (signaling)    | 150-20000c  |
-| [Holy](holy.md)           | Master     | Divine radiant damage vs evil/undead (restricted)       | 500-100000c |
-| [Vampiric](vampiric.md)   | Master     | Life drain healing (licensed, regulated)                | 400-80000c  |
+| Enchantment                     | Tier       | Summary                                                 | Cost Range  |
+| ------------------------------- | ---------- | ------------------------------------------------------- | ----------- |
+| [Flaming](flaming/index.md)     | Journeyman | Fire damage + utility (cooking, light, warmth)          | 150-20000c  |
+| [Frost](frost/index.md)         | Journeyman | Cold damage + slowing + utility (preservation, cooling) | 150-20000c  |
+| [Lightning](lightning/index.md) | Journeyman | Electric damage + chain effect + utility (signaling)    | 150-20000c  |
+| [Holy](holy/index.md)           | Master     | Divine radiant damage vs evil/undead (restricted)       | 500-100000c |
+| [Vampiric](vampiric/index.md)   | Master     | Life drain healing (licensed, regulated)                | 400-80000c  |
 
 ## Category Overview
 

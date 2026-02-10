@@ -79,29 +79,29 @@ Experienced Warriors develop personal fighting styles reflecting body type, pref
 
 Skills automatically awarded when accepting this class:
 
-| Skill          | Tier   | Link                                               | Reasoning                                     |
-| -------------- | ------ | -------------------------------------------------- | --------------------------------------------- |
-| Weapon Mastery | Lesser | [See Skill](../../skills/tiered/weapon-mastery.md) | Basic weapon proficiency essential for combat |
-| Power Strike   | Lesser | [See Skill](../../skills/common/power-strike.md)   | Core offensive ability                        |
+| Skill          | Tier   | Link                                                     | Reasoning                                     |
+| -------------- | ------ | -------------------------------------------------------- | --------------------------------------------- |
+| Weapon Mastery | Lesser | [See Skill](../../skills/tiered/weapon-mastery/index.md) | Basic weapon proficiency essential for combat |
+| Power Strike   | Lesser | [See Skill](../../skills/common/power-strike/index.md)   | Core offensive ability                        |
 
 #### Synergy Skills
 
 Skills with strong synergies for Warrior:
 
-- [Weapon Mastery](../../skills/tiered/weapon-mastery.md) - Lesser/Greater/Enhanced - Increased damage with chosen weapon type
+- [Weapon Mastery](../../skills/tiered/weapon-mastery/index.md) - Lesser/Greater/Enhanced - Increased damage with chosen weapon type
 - [Shield Block](../../skills/index.md) - Lesser/Greater/Enhanced - Increased block chance and damage reduction
-- [Power Strike](../../skills/common/power-strike.md) - Lesser/Greater/Enhanced - Cooldown attack with massive damage
+- [Power Strike](../../skills/common/power-strike/index.md) - Lesser/Greater/Enhanced - Cooldown attack with massive damage
 - [Combat Reflexes](../../skills/index.md) - Lesser/Greater/Enhanced - Increased dodge and parry chance
 - [Armor Proficiency](../../skills/index.md) - Lesser/Greater/Enhanced - Reduced armor penalties
 - [Battle Cry](../../skills/index.md) - Lesser/Greater/Enhanced - Boost ally damage temporarily
 - [Cleave](../../skills/index.md) - Lesser/Greater/Enhanced - Hit multiple adjacent enemies
-- [Second Wind](../../skills/common/second-wind.md) - Lesser/Greater/Enhanced - Recover stamina once per battle
-- [Defensive Stance](../../skills/common/defensive-stance.md) - Lesser/Greater/Enhanced - Toggle increased defense for reduced damage
+- [Second Wind](../../skills/common/second-wind/index.md) - Lesser/Greater/Enhanced - Recover stamina once per battle
+- [Defensive Stance](../../skills/common/defensive-stance/index.md) - Lesser/Greater/Enhanced - Toggle increased defense for reduced damage
 - [Weapon Versatility](../../skills/index.md) - Lesser/Greater/Enhanced - Reduced penalties with non-specialty weapons
-- [Berserker Rage](../../skills/cooldown/battle-rage.md) - Lesser/Greater/Enhanced - Temporary damage boost with defense penalty
+- [Berserker Rage](../../skills/cooldown/battle-rage/index.md) - Lesser/Greater/Enhanced - Temporary damage boost with defense penalty
 - [Disarm](../../skills/index.md) - Lesser/Greater/Enhanced - Chance to disarm enemy on hit
 - [Counter Attack](../../skills/index.md) - Lesser/Greater/Enhanced - Attack after successful block or parry
-- [Intimidating Presence](../../skills/common/intimidating-presence.md) - Lesser/Greater/Enhanced - Cause weaker enemies to flee
+- [Intimidating Presence](../../skills/common/intimidating-presence/index.md) - Lesser/Greater/Enhanced - Cause weaker enemies to flee
 - [Master of Arms](../../skills/index.md) - No tiers - Proficient with all weapon types
 
 **Note**: All skills listed have strong synergies because they are core warrior combat skills. Characters without Warrior class can still learn these skills but progress at base rate (1x XP) without effectiveness bonuses.
@@ -157,26 +157,26 @@ Actions that grant XP to the Warrior class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                         | Requirements                                      | Result Class  | Tier |
-| ------------------------------------------ | ------------------------------------------------- | ------------- | ---- |
-| [Knight](./knight.md)                      | Warrior + honor/service focus                     | Knight        | 1    |
-| [Berserker](../consolidation/index.md)     | Warrior + rage/aggression focus                   | Berserker     | 1    |
-| [Weapon Master](../consolidation/index.md) | Warrior + weapon specialization                   | Weapon Master | 1    |
-| [Warden](../consolidation/index.md)        | Warrior + [Blacksmith](../crafting/blacksmith.md) | Warden        | 1    |
-| [Battlemage](../magic/index.md)            | Warrior + [Mage](../magic/index.md)               | Battlemage    | 1    |
+| Consolidation Path                         | Requirements                                            | Result Class  | Tier |
+| ------------------------------------------ | ------------------------------------------------------- | ------------- | ---- |
+| [Knight](./knight/index.md)                | Warrior + honor/service focus                           | Knight        | 1    |
+| [Berserker](../consolidation/index.md)     | Warrior + rage/aggression focus                         | Berserker     | 1    |
+| [Weapon Master](../consolidation/index.md) | Warrior + weapon specialization                         | Weapon Master | 1    |
+| [Warden](../consolidation/index.md)        | Warrior + [Blacksmith](../crafting/blacksmith/index.md) | Warden        | 1    |
+| [Battlemage](../magic/index.md)            | Warrior + [Mage](../magic/index.md)                     | Battlemage    | 1    |
 
 ### Interactions
 
-| System                                                       | Interaction                                           |
-| ------------------------------------------------------------ | ----------------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md)       | Primary melee combat class; frontline fighter         |
-| [Equipment](../../../systems/combat/weapons-and-armor.md)    | Benefits significantly from quality weapons and armor |
-| [Party](../../../systems/combat/party-mechanics.md)          | Tank or DPS role; protects weaker party members       |
-| [Reputation](../../../systems/social/factions-reputation.md) | Military service and victories build reputation       |
-| [Settlement](../../../systems/world/settlements.md)          | Guards, soldiers, and trainers in communities         |
-| [Economy](../../../systems/economy/index.md)                 | Earns through mercenary work, guard contracts         |
+| System                                                             | Interaction                                           |
+| ------------------------------------------------------------------ | ----------------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md)       | Primary melee combat class; frontline fighter         |
+| [Equipment](../../../systems/combat/weapons-and-armor/index.md)    | Benefits significantly from quality weapons and armor |
+| [Party](../../../systems/combat/party-mechanics/index.md)          | Tank or DPS role; protects weaker party members       |
+| [Reputation](../../../systems/social/factions-reputation/index.md) | Military service and victories build reputation       |
+| [Settlement](../../../systems/world/settlements/index.md)          | Guards, soldiers, and trainers in communities         |
+| [Economy](../../../systems/economy/index.md)                       | Earns through mercenary work, guard contracts         |
 
 ---
 
@@ -196,6 +196,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Melee weapon, armor (optional but recommended)
 - **Equipment:** [Weapons](../../items/index.md), [Armor](../../items/index.md), [Shields](../../items/index.md)
-- **Synergy Classes:** [Blacksmith](../crafting/blacksmith.md), [Knight](./knight.md), [Guard](./guard.md)
-- **Consolidates To:** [Knight](./knight.md), [Berserker](../consolidation/index.md), [Weapon Master](../consolidation/index.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md), [Weapons & Armor](../../../systems/combat/weapons-and-armor.md), [Party Roles](../../../systems/combat/party-mechanics.md)
+- **Synergy Classes:** [Blacksmith](../crafting/blacksmith/index.md), [Knight](./knight/index.md), [Guard](./guard/index.md)
+- **Consolidates To:** [Knight](./knight/index.md), [Berserker](../consolidation/index.md), [Weapon Master](../consolidation/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md), [Weapons & Armor](../../../systems/combat/weapons-and-armor/index.md), [Party Roles](../../../systems/combat/party-mechanics/index.md)

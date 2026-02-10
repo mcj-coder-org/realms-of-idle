@@ -41,4 +41,4 @@ Generation rate is fixed per tier - not affected by scaling. Quality and relevan
 ## Related Content
 
 - **Strong Synergy:** [Scholar](../../classes/trainer/scholar/)
-- **See Also:** [Learning System](../../systems/character/learning.md), [Knowledge Management](../../systems/knowledge/index.md)
+- **See Also:** [Learning System](../../systems/character/learning/index.md), [Knowledge Management](../../systems/knowledge/index.md)

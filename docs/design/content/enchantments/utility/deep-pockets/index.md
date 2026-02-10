@@ -228,6 +228,6 @@ The enchantment created new fashion possibilities. Formal wear can be functional
 
 - **Requires:** [Enchanting](../../skills/index.md) (Journeyman), Spatial magic knowledge, [Void essence](../../materials/reagents/index.md), [Silk threads](../../materials/cloth/index.md), [Folding stone](../../materials/reagents/index.md)
 - **Applied To:** [Clothing with pockets](../../items/clothing/index.md) - coats, pants, vests, cloaks, aprons (see Applicable Items table)
-- **See Also:** [Holding](holding.md), [Weightless](weightless.md), [Sorting](sorting.md)
+- **See Also:** [Holding](holding/index.md), [Weightless](weightless/index.md), [Sorting](sorting/index.md)
 - **Enchantment Type:** Utility (dimensional pocket expansion)
 - **Legal Note:** May require declaration at checkpoints; capacity limits in some jurisdictions

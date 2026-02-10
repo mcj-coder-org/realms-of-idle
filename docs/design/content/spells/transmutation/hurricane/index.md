@@ -66,4 +66,4 @@ Summon a devastating hurricane of wind that strikes enemies from multiple direct
 ## Related Content
 
 - **Granted By:** [Aeromancer](../../classes/channeler/mage/aeromancer/)
-- **See Also:** [Transmutation Spells](../index.md), [Air Magic](../../systems/magic/air-magic.md), [Area Damage Spells](../../systems/magic/area-damage.md)
+- **See Also:** [Transmutation Spells](../index.md), [Air Magic](../../systems/magic/air-magic/index.md), [Area Damage Spells](../../systems/magic/area-damage/index.md)

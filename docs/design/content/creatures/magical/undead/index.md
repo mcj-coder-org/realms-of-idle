@@ -45,23 +45,23 @@ All undead share fundamental traits:
 
 Animated corpses requiring physical remains:
 
-| Creature                | Level | Body State    | Intelligence | Creation                                      |
-| ----------------------- | ----- | ------------- | ------------ | --------------------------------------------- |
-| [Skeleton](skeleton.md) | 2-6   | Bones only    | None         | [Necromancy](../../../systems/magic/index.md) |
-| [Zombie](zombie.md)     | 3-7   | Rotting flesh | None         | [Necromancy](../../../systems/magic/index.md) |
-| [Ghoul](index.md)       | 4-8   | Preserved     | Low          | Curse/feeding                                 |
-| [Mummy](index.md)       | 8-12  | Preserved     | High         | Ritual                                        |
+| Creature                      | Level | Body State    | Intelligence | Creation                                      |
+| ----------------------------- | ----- | ------------- | ------------ | --------------------------------------------- |
+| [Skeleton](skeleton/index.md) | 2-6   | Bones only    | None         | [Necromancy](../../../systems/magic/index.md) |
+| [Zombie](zombie/index.md)     | 3-7   | Rotting flesh | None         | [Necromancy](../../../systems/magic/index.md) |
+| [Ghoul](index.md)             | 4-8   | Preserved     | Low          | Curse/feeding                                 |
+| [Mummy](index.md)             | 8-12  | Preserved     | High         | Ritual                                        |
 
 ### Incorporeal Undead
 
 Spiritual beings without physical form:
 
-| Creature            | Level | Nature          | Intelligence | Origin        |
-| ------------------- | ----- | --------------- | ------------ | ------------- |
-| [Ghost](ghost.md)   | 5-12  | Spirit          | Full         | Tragedy       |
-| [Wraith](index.md)  | 8-14  | Hateful spirit  | Moderate     | Violent death |
-| [Specter](index.md) | 7-13  | Betrayed spirit | Moderate     | Injustice     |
-| [Banshee](index.md) | 10-15 | Wailing spirit  | High         | Protection    |
+| Creature                | Level | Nature          | Intelligence | Origin        |
+| ----------------------- | ----- | --------------- | ------------ | ------------- |
+| [Ghost](ghost/index.md) | 5-12  | Spirit          | Full         | Tragedy       |
+| [Wraith](index.md)      | 8-14  | Hateful spirit  | Moderate     | Violent death |
+| [Specter](index.md)     | 7-13  | Betrayed spirit | Moderate     | Injustice     |
+| [Banshee](index.md)     | 10-15 | Wailing spirit  | High         | Protection    |
 
 ### Greater Undead
 
@@ -430,5 +430,5 @@ Some disagree:
 
 - **[Fey Creatures](../fey/index.md)** - Other magical beings
 - **[Elemental Creatures](../elementals/index.md)** - Different magical category
-- **[Creature System](../../creature-system.md)** - Complete mechanics
+- **[Creature System](../../creature-system/index.md)** - Complete mechanics
 - **[Magic System](../../../systems/magic/index.md)** - Magical rules

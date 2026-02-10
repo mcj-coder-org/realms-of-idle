@@ -20,12 +20,12 @@ Restoration magic focuses on healing wounds, curing ailments, and enhancing alli
 
 ## Spells
 
-| Spell                       | Category      | Tier | Effect                |
-| --------------------------- | ------------- | ---- | --------------------- |
-| [Heal](heal.md)             | Healing       | All  | Direct health restore |
-| [Regenerate](regenerate.md) | Regeneration  | All  | Health over time      |
-| Cure Poison                 | Curing        | All  | Remove poison effects |
-| Fortify                     | Fortification | All  | Temporary stat boost  |
+| Spell                             | Category      | Tier | Effect                |
+| --------------------------------- | ------------- | ---- | --------------------- |
+| [Heal](heal/index.md)             | Healing       | All  | Direct health restore |
+| [Regenerate](regenerate/index.md) | Regeneration  | All  | Health over time      |
+| Cure Poison                       | Curing        | All  | Remove poison effects |
+| Fortify                           | Fortification | All  | Temporary stat boost  |
 
 ## Specialization
 

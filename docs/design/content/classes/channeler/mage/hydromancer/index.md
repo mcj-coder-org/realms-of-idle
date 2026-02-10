@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Water` | 3     | Hydromancer, Mage (depth 2 only) |
 | `Magic/Elemental`       | 2     | Hydromancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Hydromancer class:
 
 ### Interactions
 
-| System                                                 | Interaction                          |
-| ------------------------------------------------------ | ------------------------------------ |
-| [Magic System](../../../systems/magic/magic-system.md) | Water element specialization         |
-| [Combat](../../../systems/combat/combat-resolution.md) | Healing and defensive magic support  |
-| [Party](../../../systems/combat/party-mechanics.md)    | Support specialist, healing provider |
-| [Equipment](../../../systems/character/index.md)       | Water-attuned magical items          |
+| System                                                       | Interaction                          |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Water element specialization         |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Healing and defensive magic support  |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Support specialist, healing provider |
+| [Equipment](../../../systems/character/index.md)             | Water-attuned magical items          |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Water Mastery](../../skills/tiered/water-mastery.md), [Aquatic Breathing](../../skills/tiered/aquatic-breathing.md)
-- **Spells:** [Tidal Wave](../../spells/destruction/tidal-wave.md), [Water Shield](../../spells/abjuration/water-shield.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Water Mastery](../../skills/tiered/water-mastery/index.md), [Aquatic Breathing](../../skills/tiered/aquatic-breathing/index.md)
+- **Spells:** [Tidal Wave](../../spells/destruction/tidal-wave/index.md), [Water Shield](../../spells/abjuration/water-shield/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

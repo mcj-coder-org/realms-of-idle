@@ -80,10 +80,10 @@ Veteran Scouts develop almost supernatural awareness of their surroundings. They
 
 Skills automatically awarded when accepting this class:
 
-| Skill           | Tier   | Link                                                   | Reasoning                                             |
-| --------------- | ------ | ------------------------------------------------------ | ----------------------------------------------------- |
-| Track Reader    | Lesser | [See Skill List](../../skills/common/index.md)         | Core scouting ability for tracking and reconnaissance |
-| Enhanced Senses | Lesser | [See Skill](../../../skills/tiered/enhanced-senses.md) | Detection and awareness essential for scouts          |
+| Skill           | Tier   | Link                                                         | Reasoning                                             |
+| --------------- | ------ | ------------------------------------------------------------ | ----------------------------------------------------- |
+| Track Reader    | Lesser | [See Skill List](../../skills/common/index.md)               | Core scouting ability for tracking and reconnaissance |
+| Enhanced Senses | Lesser | [See Skill](../../../skills/tiered/enhanced-senses/index.md) | Detection and awareness essential for scouts          |
 
 #### Synergy Skills
 
@@ -92,15 +92,15 @@ Skills with strong synergies for Scout:
 - [Enhanced Senses](../../skills/index.md) - Lesser/Greater/Enhanced - Extended detection range
 - [Silent Movement](../../skills/index.md) - Lesser/Greater/Enhanced - Move with minimal sound
 - [Camouflage](../../skills/index.md) - Lesser/Greater/Enhanced - Hide effectively in environments
-- [Danger Sense](../../skills/common/danger-sense.md) - Lesser/Greater/Enhanced - Detect ambushes and traps
-- [Pathfinder](../../skills/common/pathfinder.md) - Lesser/Greater/Enhanced - Navigate terrain with increased speed
+- [Danger Sense](../../skills/common/danger-sense/index.md) - Lesser/Greater/Enhanced - Detect ambushes and traps
+- [Pathfinder](../../skills/common/pathfinder/index.md) - Lesser/Greater/Enhanced - Navigate terrain with increased speed
 - [Track Reader](../../skills/common/index.md) - Lesser/Greater/Enhanced - Follow tracks of varying ages
 - [Keen Eyes](../../skills/index.md) - Lesser/Greater/Enhanced - Spot hidden details and objects
 - [Quick Escape](../../skills/index.md) - Lesser/Greater/Enhanced - Disengage from combat successfully
 - [Terrain Mastery](../../skills/index.md) - Lesser/Greater/Enhanced - Reduced penalties in difficult terrain
 - [Intel Gathering](../../skills/index.md) - Lesser/Greater/Enhanced - Remember observed details perfectly
 - [Evasive Maneuvers](../../skills/index.md) - Lesser/Greater/Enhanced - Increased dodge chance
-- [Night Vision](../../skills/mechanic-unlock/night-vision.md) - Lesser/Greater/Enhanced - See in darkness
+- [Night Vision](../../skills/mechanic-unlock/night-vision/index.md) - Lesser/Greater/Enhanced - See in darkness
 - [Wilderness Survival](../../skills/common/index.md) - Lesser/Greater/Enhanced - Survive independently in wilderness
 - [Warning Cry](../../skills/index.md) - Lesser/Greater/Enhanced - Alert allies to danger at range
 - [Ghost](../../skills/index.md) - No tiers - Become completely undetectable temporarily
@@ -158,25 +158,25 @@ Actions that grant XP to the Scout class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                      | Requirements                                                      | Result Class | Tier |
-| --------------------------------------- | ----------------------------------------------------------------- | ------------ | ---- |
-| [Ranger](../consolidation/index.md)     | Scout + [Archer](./archer.md) or [Hunter](../gathering/hunter.md) | Ranger       | 1    |
-| [Pathfinder](../consolidation/index.md) | Scout + [Explorer](../consolidation/index.md)                     | Pathfinder   | 1    |
-| [Tracker](../consolidation/index.md)    | Scout + tracking specialization                                   | Tracker      | 1    |
-| [Spy](../consolidation/index.md)        | Scout + urban/social focus                                        | Spy          | 1    |
+| Consolidation Path                      | Requirements                                                                  | Result Class | Tier |
+| --------------------------------------- | ----------------------------------------------------------------------------- | ------------ | ---- |
+| [Ranger](../consolidation/index.md)     | Scout + [Archer](./archer/index.md) or [Hunter](../gathering/hunter/index.md) | Ranger       | 1    |
+| [Pathfinder](../consolidation/index.md) | Scout + [Explorer](../consolidation/index.md)                                 | Pathfinder   | 1    |
+| [Tracker](../consolidation/index.md)    | Scout + tracking specialization                                               | Tracker      | 1    |
+| [Spy](../consolidation/index.md)        | Scout + urban/social focus                                                    | Spy          | 1    |
 
 ### Interactions
 
-| System                                                    | Interaction                                          |
-| --------------------------------------------------------- | ---------------------------------------------------- |
-| [Exploration](../../../systems/world/exploration.md)      | Primary reconnaissance class; discovers areas safely |
-| [Combat](../../../systems/combat/combat-resolution.md)    | Avoids direct combat; provides tactical intelligence |
-| [Party](../../../systems/combat/party-mechanics.md)       | Advance scout; warns party of dangers                |
-| [Stealth](../../../systems/combat/index.md)               | Expert at remaining undetected                       |
-| [Navigation](../../../systems/world/index.md)             | Finds paths through difficult terrain                |
-| [Survival](../../../systems/world/environment-hazards.md) | Thrives in wilderness independently                  |
+| System                                                          | Interaction                                          |
+| --------------------------------------------------------------- | ---------------------------------------------------- |
+| [Exploration](../../../systems/world/exploration/index.md)      | Primary reconnaissance class; discovers areas safely |
+| [Combat](../../../systems/combat/combat-resolution/index.md)    | Avoids direct combat; provides tactical intelligence |
+| [Party](../../../systems/combat/party-mechanics/index.md)       | Advance scout; warns party of dangers                |
+| [Stealth](../../../systems/combat/index.md)                     | Expert at remaining undetected                       |
+| [Navigation](../../../systems/world/index.md)                   | Finds paths through difficult terrain                |
+| [Survival](../../../systems/world/environment-hazards/index.md) | Thrives in wilderness independently                  |
 
 ---
 
@@ -192,6 +192,6 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 - **Requires:** Light armor or clothing, navigation tools, survival equipment
 - **Equipment:** [Light Armor](../../items/index.md), [Survival Gear](../../items/index.md), [Navigation Tools](../../items/index.md)
-- **Synergy Classes:** [Archer](./archer.md), [Hunter](../gathering/hunter.md), [Adventurer](./adventurer.md)
+- **Synergy Classes:** [Archer](./archer/index.md), [Hunter](../gathering/hunter/index.md), [Adventurer](./adventurer/index.md)
 - **Consolidates To:** [Ranger](../consolidation/index.md), [Pathfinder](../consolidation/index.md), [Tracker](../consolidation/index.md)
-- **See Also:** [Exploration System](../../../systems/world/exploration.md), [Stealth Mechanics](../../../systems/combat/index.md), [Survival](../../../systems/world/environment-hazards.md)
+- **See Also:** [Exploration System](../../../systems/world/exploration/index.md), [Stealth Mechanics](../../../systems/combat/index.md), [Survival](../../../systems/world/environment-hazards/index.md)

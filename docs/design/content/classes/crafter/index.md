@@ -58,10 +58,10 @@ The Crafters' Guild welcomes all who wish to learn the art of making. Basic tool
 
 Skills automatically awarded when accepting this class:
 
-| Skill                 | Type            | Link                                                                           | Description                                      |
-| --------------------- | --------------- | ------------------------------------------------------------------------------ | ------------------------------------------------ |
-| Basic Workshop Access | Mechanic Unlock | [Basic Workshop Access](../../skills/mechanic-unlock/basic-workshop-access.md) | Can use basic crafting workspaces                |
-| Material Sense        | Passive         | [Material Knowledge](../../skills/common/material-knowledge.md)                | +5% success rate when assessing material quality |
+| Skill                 | Type            | Link                                                                                 | Description                                      |
+| --------------------- | --------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| Basic Workshop Access | Mechanic Unlock | [Basic Workshop Access](../../skills/mechanic-unlock/basic-workshop-access/index.md) | Can use basic crafting workspaces                |
+| Material Sense        | Passive         | [Material Knowledge](../../skills/common/material-knowledge/index.md)                | +5% success rate when assessing material quality |
 
 ### XP Progression
 
@@ -87,17 +87,17 @@ Uses Tier 1 formula: `XP = 100 × 1.5^(level - 1)`
 
 Crafter can transition to the following Tier 2 classes upon reaching 5,000 XP:
 
-| Tier 2 Class  | Focus                         | Link                                          |
-| ------------- | ----------------------------- | --------------------------------------------- |
-| Blacksmith    | Metal working and forging     | [Blacksmith](../crafting/blacksmith.md)       |
-| Alchemist     | Potions and chemical crafting | [Alchemist](../crafting/alchemist.md)         |
-| Tailor        | Cloth and clothing            | [Tailor](../crafting/tailor.md)               |
-| Carpenter     | Woodworking                   | [Carpenter](../crafting/carpenter.md)         |
-| Cook          | Food preparation              | [Cook](../crafting/cook.md)                   |
-| Jeweler       | Gems and jewelry              | [Jeweler](../crafting/jeweler.md)             |
-| Leatherworker | Leather goods                 | [Leatherworker](../crafting/leatherworker.md) |
-| Glassblower   | Glass crafting                | [Glassblower](../crafting/glassblower.md)     |
-| Weaver        | Textiles                      | [Weaver](../crafting/weaver.md)               |
+| Tier 2 Class  | Focus                         | Link                                                |
+| ------------- | ----------------------------- | --------------------------------------------------- |
+| Blacksmith    | Metal working and forging     | [Blacksmith](../crafting/blacksmith/index.md)       |
+| Alchemist     | Potions and chemical crafting | [Alchemist](../crafting/alchemist/index.md)         |
+| Tailor        | Cloth and clothing            | [Tailor](../crafting/tailor/index.md)               |
+| Carpenter     | Woodworking                   | [Carpenter](../crafting/carpenter/index.md)         |
+| Cook          | Food preparation              | [Cook](../crafting/cook/index.md)                   |
+| Jeweler       | Gems and jewelry              | [Jeweler](../crafting/jeweler/index.md)             |
+| Leatherworker | Leather goods                 | [Leatherworker](../crafting/leatherworker/index.md) |
+| Glassblower   | Glass crafting                | [Glassblower](../crafting/glassblower/index.md)     |
+| Weaver        | Textiles                      | [Weaver](../crafting/weaver/index.md)               |
 
 ### Tag Access
 
@@ -125,6 +125,6 @@ As a Tier 1 class, Crafter has access to depth 1 tags only:
 
 ## Related Content
 
-- **Tier System:** [Class Tiers](../../../systems/character/class-tiers.md)
-- **Crafting System:** [Crafting Progression](../../../systems/crafting/crafting-progression.md)
+- **Tier System:** [Class Tiers](../../../systems/character/class-tiers/index.md)
+- **Crafting System:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md)
 - **See Also:** [Crafting Classes Index](../crafting/index.md)

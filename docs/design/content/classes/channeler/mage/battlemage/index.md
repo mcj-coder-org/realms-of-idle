@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Combat/Spell`      | 2     | Battlemage, Spell-sword classes          |
 | `Magic/Destruction` | 2     | Battlemage, Mage, Destruction specialist |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -71,11 +71,11 @@ Master Battlemages achieve frightening combat effectiveness. They cast devastati
 
 ### Prerequisites
 
-| Requirement            | Value                                                                |
-| ---------------------- | -------------------------------------------------------------------- |
-| XP Threshold           | 50,000 XP from combat spellcasting tracked actions                   |
-| Related Tier 2 Classes | [Warrior](../combat/warrior.md), [Mage](./mage.md) (provide bonuses) |
-| Tag Depth Access       | 3+ levels (e.g., `Magic/Elemental`, `Combat/Melee`)                  |
+| Requirement            | Value                                                                            |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| XP Threshold           | 50,000 XP from combat spellcasting tracked actions                               |
+| Related Tier 2 Classes | [Warrior](../combat/warrior/index.md), [Mage](./mage/index.md) (provide bonuses) |
+| Tag Depth Access       | 3+ levels (e.g., `Magic/Elemental`, `Combat/Melee`)                              |
 
 ### Requirements
 
@@ -108,11 +108,11 @@ Master Battlemages achieve frightening combat effectiveness. They cast devastati
 
 #### Starting Skills
 
-| Skill                                                                | Type    | Effect                                     |
-| -------------------------------------------------------------------- | ------- | ------------------------------------------ |
-| Combat Casting                                                       | Passive | Can cast spells while armed and armored    |
-| [Spell Focus](../../skills/tiered/spell-focus.md) (Lesser)           | Passive | Enhanced combat spellcasting effectiveness |
-| [Combat Awareness](../../skills/common/combat-awareness.md) (Lesser) | Passive | Maintain awareness while casting in melee  |
+| Skill                                                                      | Type    | Effect                                     |
+| -------------------------------------------------------------------------- | ------- | ------------------------------------------ |
+| Combat Casting                                                             | Passive | Can cast spells while armed and armored    |
+| [Spell Focus](../../skills/tiered/spell-focus/index.md) (Lesser)           | Passive | Enhanced combat spellcasting effectiveness |
+| [Combat Awareness](../../skills/common/combat-awareness/index.md) (Lesser) | Passive | Maintain awareness while casting in melee  |
 
 #### Synergy Skills
 
@@ -120,13 +120,13 @@ Skills that have strong synergies with Battlemage. These skills can be learned b
 
 **Core Magic Skills**:
 
-- [Spell Focus](../../skills/tiered/spell-focus.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
-- [Mana Well](../../skills/tiered/mana-well.md) - Lesser/Greater/Enhanced - Expanded magical reserves
-- [School Mastery](../../skills/mechanic-unlock/school-mastery.md) - Mechanic - Deep expertise in one school
-- [Counter Magic](../../skills/tiered/counter-magic.md) - Lesser/Greater/Enhanced - Dispel and resist hostile magic
-- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving.md) - Lesser/Greater/Enhanced - Combine multiple spells
-- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
-- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer.md) - Lesser/Greater/Enhanced - Share magical energy
+- [Spell Focus](../../skills/tiered/spell-focus/index.md) - Lesser/Greater/Enhanced - Enhanced spell effectiveness
+- [Mana Well](../../skills/tiered/mana-well/index.md) - Lesser/Greater/Enhanced - Expanded magical reserves
+- [School Mastery](../../skills/mechanic-unlock/school-mastery/index.md) - Mechanic - Deep expertise in one school
+- [Counter Magic](../../skills/tiered/counter-magic/index.md) - Lesser/Greater/Enhanced - Dispel and resist hostile magic
+- [Spell Weaving](../../skills/mechanic-unlock/spell-weaving/index.md) - Lesser/Greater/Enhanced - Combine multiple spells
+- [Ritual Casting](../../skills/mechanic-unlock/ritual-casting/index.md) - Lesser/Greater/Enhanced - Perform elaborate magical rituals
+- [Mana Transfer](../../skills/mechanic-unlock/mana-transfer/index.md) - Lesser/Greater/Enhanced - Share magical energy
 
 **Core Combat Skills**:
 
@@ -207,33 +207,33 @@ Actions that grant XP to the Battlemage class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
-| Consolidation Path                           | Requirements                               | Result Class    | Tier |
-| -------------------------------------------- | ------------------------------------------ | --------------- | ---- |
-| [Spellblade](../consolidation/index.md)      | Battlemage + weapon specialization         | Spellblade      | 1    |
-| [War Mage](../consolidation/index.md)        | Battlemage + military leadership           | War Mage        | 1    |
-| [Mystic Warrior](../consolidation/index.md)  | Battlemage + [Knight](../combat/knight.md) | Mystic Warrior  | 1    |
-| [Arcane Champion](../consolidation/index.md) | Battlemage + legendary hybrid mastery      | Arcane Champion | 2    |
+| Consolidation Path                           | Requirements                                     | Result Class    | Tier |
+| -------------------------------------------- | ------------------------------------------------ | --------------- | ---- |
+| [Spellblade](../consolidation/index.md)      | Battlemage + weapon specialization               | Spellblade      | 1    |
+| [War Mage](../consolidation/index.md)        | Battlemage + military leadership                 | War Mage        | 1    |
+| [Mystic Warrior](../consolidation/index.md)  | Battlemage + [Knight](../combat/knight/index.md) | Mystic Warrior  | 1    |
+| [Arcane Champion](../consolidation/index.md) | Battlemage + legendary hybrid mastery            | Arcane Champion | 2    |
 
 ### Interactions
 
-| System                                                     | Interaction                                   |
-| ---------------------------------------------------------- | --------------------------------------------- |
-| [Combat](../../../systems/combat/combat-resolution.md)     | Elite hybrid combatant; melee and magic       |
-| [Magic System](../../../systems/character/magic-system.md) | Specializes in combat-applicable spells       |
-| [Party](../../../systems/combat/party-mechanics.md)        | Versatile frontline fighter and damage dealer |
-| [Equipment](../../../systems/character/index.md)           | Uses both weapons/armor and magical items     |
-| [Tactics](../../../systems/combat/index.md)                | Dynamic combat style switching                |
-| [Military](../../../systems/social/index.md)               | Elite military specialist                     |
+| System                                                           | Interaction                                   |
+| ---------------------------------------------------------------- | --------------------------------------------- |
+| [Combat](../../../systems/combat/combat-resolution/index.md)     | Elite hybrid combatant; melee and magic       |
+| [Magic System](../../../systems/character/magic-system/index.md) | Specializes in combat-applicable spells       |
+| [Party](../../../systems/combat/party-mechanics/index.md)        | Versatile frontline fighter and damage dealer |
+| [Equipment](../../../systems/character/index.md)                 | Uses both weapons/armor and magical items     |
+| [Tactics](../../../systems/combat/index.md)                      | Dynamic combat style switching                |
+| [Military](../../../systems/social/index.md)                     | Elite military specialist                     |
 
 ---
 
 ## Related Content
 
 - **Requires:** Weapon, armor, spell focus, combat training, mana pool
-- **Prerequisites:** Consolidates from [Warrior](../combat/warrior.md) + [Mage](./mage.md)
+- **Prerequisites:** Consolidates from [Warrior](../combat/warrior/index.md) + [Mage](./mage/index.md)
 - **Equipment:** [Weapons](../../items/index.md), [Battle Armor](../../items/index.md), [Combat Staff](../../items/index.md), [Spell Focus](../../items/index.md)
-- **Synergy Classes:** [Warrior](../combat/warrior.md), [Mage](./mage.md), [Knight](../combat/knight.md)
+- **Synergy Classes:** [Warrior](../combat/warrior/index.md), [Mage](./mage/index.md), [Knight](../combat/knight/index.md)
 - **Consolidates To:** [Spellblade](../consolidation/index.md), [War Mage](../consolidation/index.md), [Arcane Champion](../consolidation/index.md)
-- **See Also:** [Combat System](../../../systems/combat/combat-resolution.md), [Magic System](../../../systems/character/magic-system.md), [Hybrid Combat](../../../systems/combat/index.md)
+- **See Also:** [Combat System](../../../systems/combat/combat-resolution/index.md), [Magic System](../../../systems/character/magic-system/index.md), [Hybrid Combat](../../../systems/combat/index.md)

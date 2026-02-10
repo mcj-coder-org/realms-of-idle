@@ -70,4 +70,4 @@ Cloak yourself in a shroud of death that reduces incoming damage and damages ene
 ## Related Content
 
 - **Granted By:** [Necromancer](../../classes/channeler/mage/necromancer/)
-- **See Also:** [Transmutation Spells](../index.md), [Defensive Magic](../../systems/magic/defensive-magic.md), [Undead Magic](../../systems/magic/necromancy.md)
+- **See Also:** [Transmutation Spells](../index.md), [Defensive Magic](../../systems/magic/defensive-magic/index.md), [Undead Magic](../../systems/magic/necromancy/index.md)

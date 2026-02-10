@@ -172,9 +172,9 @@ In practical terms, civilization would struggle without dogs. They guard flocks 
 
 ## Related Content
 
-- **Habitat:** [Farms](../../../../systems/world/settlements.md), [Villages](../../../../systems/world/settlements.md), [Homes](../../../../systems/world/settlements.md)
-- **Related Animals:** [Cat](cat.md), [Wolf](../../wildlife/predators/wolf.md) (distant ancestor)
+- **Habitat:** [Farms](../../../../systems/world/settlements/index.md), [Villages](../../../../systems/world/settlements/index.md), [Homes](../../../../systems/world/settlements/index.md)
+- **Related Animals:** [Cat](cat/index.md), [Wolf](../../wildlife/predators/wolf/index.md) (distant ancestor)
 - **Professions:** [Dog Trainer](../../../classes/index.md), [Hunter](../../../classes/index.md), [Shepherd](../../../classes/index.md), [Guard](../../../classes/index.md)
 - **Equipment:** [Collar](../../items/index.md), [Leash](../../items/index.md), [Dog Armor](../../items/index.md) (war dogs)
-- **Systems:** [Companionship](../../../../systems/social/index.md), [Hunting](../../../../systems/crafting/gathering.md), [Security](../../../../systems/index.md)
-- **See Also:** [Horse](../mounts/horse.md), [Cat](cat.md), [Creature System](../../creature-system.md)
+- **Systems:** [Companionship](../../../../systems/social/index.md), [Hunting](../../../../systems/crafting/gathering/index.md), [Security](../../../../systems/index.md)
+- **See Also:** [Horse](../mounts/horse/index.md), [Cat](cat/index.md), [Creature System](../../creature-system/index.md)

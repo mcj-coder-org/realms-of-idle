@@ -81,10 +81,10 @@ Successful alchemists develop signature formulas - a healing potion that tastes 
 
 Skills automatically awarded when accepting this class:
 
-| Skill                 | Tier     | Link                                                               | Reasoning                                       |
-| --------------------- | -------- | ------------------------------------------------------------------ | ----------------------------------------------- |
-| Potent Brews          | Lesser   | [See Skill](../../skills/tiered/potent-brews.md)                   | Core alchemy capability for effective potions   |
-| Potion Identification | Mechanic | [See Skill](../../skills/mechanic-unlock/potion-identification.md) | Understanding potions is fundamental to alchemy |
+| Skill                 | Tier     | Link                                                                     | Reasoning                                       |
+| --------------------- | -------- | ------------------------------------------------------------------------ | ----------------------------------------------- |
+| Potent Brews          | Lesser   | [See Skill](../../skills/tiered/potent-brews/index.md)                   | Core alchemy capability for effective potions   |
+| Potion Identification | Mechanic | [See Skill](../../skills/mechanic-unlock/potion-identification/index.md) | Understanding potions is fundamental to alchemy |
 
 #### Synergy Skills
 
@@ -92,22 +92,22 @@ Skills with strong synergies for Alchemist:
 
 **General Crafting Skills**:
 
-- [Artisan's Focus](../../skills/tiered/artisans-focus.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
-- [Rapid Crafting](../../skills/tiered/rapid-crafting.md) - Lesser/Greater/Enhanced - Faster creation speed
-- [Material Intuition](../../skills/mechanic-unlock/material-intuition.md) - Lesser/Greater/Enhanced - Assess material quality instantly
-- [Resource Efficiency](../../skills/tiered/resource-efficiency.md) - Lesser/Greater/Enhanced - Chance to save materials
-- [Masterwork Chance](../../skills/tiered/masterwork-chance.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
-- [Repair Mastery](../../skills/tiered/repair-mastery.md) - Lesser/Greater/Enhanced - Expert repair capabilities
-- [Recipe Innovator](../../skills/passive-generator/recipe-innovator.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
+- [Artisan's Focus](../../skills/tiered/artisans-focus/index.md) - Lesser/Greater/Enhanced - Enhanced crafting concentration
+- [Rapid Crafting](../../skills/tiered/rapid-crafting/index.md) - Lesser/Greater/Enhanced - Faster creation speed
+- [Material Intuition](../../skills/mechanic-unlock/material-intuition/index.md) - Lesser/Greater/Enhanced - Assess material quality instantly
+- [Resource Efficiency](../../skills/tiered/resource-efficiency/index.md) - Lesser/Greater/Enhanced - Chance to save materials
+- [Masterwork Chance](../../skills/tiered/masterwork-chance/index.md) - Lesser/Greater/Enhanced - Increased chance for exceptional quality
+- [Repair Mastery](../../skills/tiered/repair-mastery/index.md) - Lesser/Greater/Enhanced - Expert repair capabilities
+- [Recipe Innovator](../../skills/passive-generator/recipe-innovator/index.md) - Lesser/Greater/Enhanced - Discover and adapt recipes
 
 **Alchemy Skills**:
 
-- [Potion Identification](../../skills/mechanic-unlock/potion-identification.md) - Lesser/Greater/Enhanced - Identify potions and reagents
-- [Potent Brews](../../skills/tiered/potent-brews.md) - Lesser/Greater/Enhanced - Increase potion effectiveness
-- [Stable Solutions](../../skills/tiered/stable-solutions.md) - Lesser/Greater/Enhanced - Reduce side effects and improve stability
-- [Reagent Cultivation](../../skills/passive-generator/reagent-cultivation.md) - Lesser/Greater/Enhanced - Grow and cultivate alchemical reagents
-- [Transmutation Basics](../../skills/mechanic-unlock/transmutation-basics.md) - Mechanic - Basic alchemical transmutations
-- [Explosive Compounds](../../skills/mechanic-unlock/explosive-compounds.md) - Lesser/Greater/Enhanced - Create alchemical bombs and explosives
+- [Potion Identification](../../skills/mechanic-unlock/potion-identification/index.md) - Lesser/Greater/Enhanced - Identify potions and reagents
+- [Potent Brews](../../skills/tiered/potent-brews/index.md) - Lesser/Greater/Enhanced - Increase potion effectiveness
+- [Stable Solutions](../../skills/tiered/stable-solutions/index.md) - Lesser/Greater/Enhanced - Reduce side effects and improve stability
+- [Reagent Cultivation](../../skills/passive-generator/reagent-cultivation/index.md) - Lesser/Greater/Enhanced - Grow and cultivate alchemical reagents
+- [Transmutation Basics](../../skills/mechanic-unlock/transmutation-basics/index.md) - Mechanic - Basic alchemical transmutations
+- [Explosive Compounds](../../skills/mechanic-unlock/explosive-compounds/index.md) - Lesser/Greater/Enhanced - Create alchemical bombs and explosives
 
 **Note**: All skills listed have strong synergies because they are core alchemy skills. Characters without Alchemist class can still learn these skills but progress at base rate (1x XP) without effectiveness bonuses.
 
@@ -170,7 +170,7 @@ Actions that grant XP to the Alchemist class:
 
 #### Class Consolidation
 
-See [Class Consolidation System](../../../systems/character/class-consolidation.md) for full mechanics.
+See [Class Consolidation System](../../../systems/character/class-consolidation/index.md) for full mechanics.
 
 | Consolidation Path                            | Requirements                                   | Result Class     | Tier |
 | --------------------------------------------- | ---------------------------------------------- | ---------------- | ---- |
@@ -182,15 +182,15 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 
 ### Interactions
 
-| System                                                        | Interaction                                                                     |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Crafting](../../../systems/crafting/crafting-progression.md) | Primary potion crafting class; unlocks alchemy recipes                          |
-| [Economy](../../../systems/economy/index.md)                  | Can establish alchemy shop; steady demand for consumables                       |
-| [Combat](../../../systems/combat/index.md)                    | Potions provide crucial buffs and healing                                       |
-| [Magic](../../../systems/character/magic-system.md)           | Some potions replicate spell effects without mana cost                          |
-| [Gathering](../../../systems/crafting/gathering.md)           | Synergy: [Herbalist](../gathering/index.md) + Alchemist = powerful combinations |
-| [Settlement](../../../systems/world/settlements.md)           | Alchemy shops provide health and buff services                                  |
-| [Exploration](../../../systems/world/exploration.md)          | Potions enable deeper delves into dangerous areas                               |
+| System                                                              | Interaction                                                                     |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Crafting](../../../systems/crafting/crafting-progression/index.md) | Primary potion crafting class; unlocks alchemy recipes                          |
+| [Economy](../../../systems/economy/index.md)                        | Can establish alchemy shop; steady demand for consumables                       |
+| [Combat](../../../systems/combat/index.md)                          | Potions provide crucial buffs and healing                                       |
+| [Magic](../../../systems/character/magic-system/index.md)           | Some potions replicate spell effects without mana cost                          |
+| [Gathering](../../../systems/crafting/gathering/index.md)           | Synergy: [Herbalist](../gathering/index.md) + Alchemist = powerful combinations |
+| [Settlement](../../../systems/world/settlements/index.md)           | Alchemy shops provide health and buff services                                  |
+| [Exploration](../../../systems/world/exploration/index.md)          | Potions enable deeper delves into dangerous areas                               |
 
 ---
 
@@ -201,7 +201,7 @@ See [Class Consolidation System](../../../systems/character/class-consolidation.
 - **Creates:** Healing potions, buff potions, utility elixirs, transmutation reagents
 - **Recipes:** [Alchemy Recipes](../../../systems/crafting/index.md)
 - **Synergy Classes:** [Herbalist](../gathering/index.md), [Mage](../magic/index.md), [Merchant](../trade/index.md)
-- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression.md), [Magic System](../../../systems/character/magic-system.md)
+- **See Also:** [Crafting Progression](../../../systems/crafting/crafting-progression/index.md), [Magic System](../../../systems/character/magic-system/index.md)
 
 ## Tags
 

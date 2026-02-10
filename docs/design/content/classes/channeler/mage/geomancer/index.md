@@ -39,7 +39,7 @@ This class requires the following tags for access/synergy:
 | `Magic/Elemental/Earth` | 3     | Geomancer, Mage (depth 2 only) |
 | `Magic/Elemental`       | 2     | Geomancer, Mage, Elementalist  |
 
-**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system.md) for details.
+**Note:** Tag depth determines which classes can access this content. See [Tag System](../../../../systems/content/tag-system/index.md) for details.
 
 ---
 
@@ -133,18 +133,18 @@ Actions that grant XP to the Geomancer class:
 
 ### Interactions
 
-| System                                                 | Interaction                          |
-| ------------------------------------------------------ | ------------------------------------ |
-| [Magic System](../../../systems/magic/magic-system.md) | Earth element specialization         |
-| [Combat](../../../systems/combat/combat-resolution.md) | Terrain control and barrier defense  |
-| [Party](../../../systems/combat/party-mechanics.md)    | Defensive specialist, terrain mapper |
-| [Equipment](../../../systems/character/index.md)       | Earth-attuned magical items          |
+| System                                                       | Interaction                          |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [Magic System](../../../systems/magic/magic-system/index.md) | Earth element specialization         |
+| [Combat](../../../systems/combat/combat-resolution/index.md) | Terrain control and barrier defense  |
+| [Party](../../../systems/combat/party-mechanics/index.md)    | Defensive specialist, terrain mapper |
+| [Equipment](../../../systems/character/index.md)             | Earth-attuned magical items          |
 
 ---
 
 ## Related Content
 
 - **Prerequisite Class:** [Mage](../)
-- **Skills:** [Earth Mastery](../../skills/tiered/earth-mastery.md), [Stone Skin](../../skills/tiered/stone-skin.md)
-- **Spells:** [Earthquake](../../spells/destruction/earthquake.md), [Stone Wall](../../spells/abjuration/stone-wall.md)
-- **System:** [Magic System](../../../systems/magic/magic-system.md)
+- **Skills:** [Earth Mastery](../../skills/tiered/earth-mastery/index.md), [Stone Skin](../../skills/tiered/stone-skin/index.md)
+- **Spells:** [Earthquake](../../spells/destruction/earthquake/index.md), [Stone Wall](../../spells/abjuration/stone-wall/index.md)
+- **System:** [Magic System](../../../systems/magic/magic-system/index.md)

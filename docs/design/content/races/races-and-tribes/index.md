@@ -677,11 +677,11 @@ Acceptance is earned per-tribe through actions, not fixed by race.
 
 The following game systems apply to racial mechanics:
 
-| System          | Location                                                                     | Description                                    |
-| --------------- | ---------------------------------------------------------------------------- | ---------------------------------------------- |
-| Tribe Mechanics | [systems/social/tribe-mechanics.md](../../systems/social/tribe-mechanics.md) | Leadership, territory, migration, spirit pools |
-| Shamanic Magic  | [systems/magic/shamanic-magic.md](../../systems/magic/shamanic-magic.md)     | Tribal magic, crafting, ingredients            |
-| Trade Chains    | [systems/economy/trade-chains.md](../../systems/economy/trade-chains.md)     | Multi-hop trade for hostile races              |
+| System          | Location                                                                           | Description                                    |
+| --------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Tribe Mechanics | [systems/social/tribe-mechanics.md](../../systems/social/tribe-mechanics/index.md) | Leadership, territory, migration, spirit pools |
+| Shamanic Magic  | [systems/magic/shamanic-magic.md](../../systems/magic/shamanic-magic/index.md)     | Tribal magic, crafting, ingredients            |
+| Trade Chains    | [systems/economy/trade-chains.md](../../systems/economy/trade-chains/index.md)     | Multi-hop trade for hostile races              |
 
 ---
 
