@@ -1,10 +1,6 @@
 ---
 title: Fetish Creation
-tier: Mechanic Unlock
-classes: Shaman
-type: mechanic-unlock
-summary: Create permanent spirit-bound items equivalent to enchanted equipment
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Fetish Creation

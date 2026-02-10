@@ -1,11 +1,6 @@
 ---
 title: Relentless Endurance
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Combat
-summary: Survive lethal damage once per day with 1 HP remaining
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Relentless Endurance

@@ -1,9 +1,6 @@
 ---
 title: Thunder Voice
-type: tiered
-category: tiered
-summary: Shocking sonic damage with chain lightning effects
-tags: [Shamanic/Elemental/Lightning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Thunder Voice

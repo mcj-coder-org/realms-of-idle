@@ -1,9 +1,6 @@
 ---
-title: 'Leather Strip'
-type: 'item'
-category: 'component'
-tier: 1
-summary: 'Cut leather for weapon wrapping and armor reinforcement'
+title: Leather Strip
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Leather Strip

@@ -1,9 +1,6 @@
 ---
 title: Ice Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to ice spirits with increasing spiritual power
-tags: [Shamanic/Elemental/Ice]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Ice Spirit Bond

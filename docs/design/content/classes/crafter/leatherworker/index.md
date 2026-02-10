@@ -1,11 +1,8 @@
 ---
-title: 'Leatherworker'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: leatherworking
-summary: 'Expert in leather crafting, creating armor, clothing, and utility items from hides'
+title: Leatherworker
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Leatherworker

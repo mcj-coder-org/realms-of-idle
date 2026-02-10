@@ -1,9 +1,6 @@
 ---
 title: Quick Recovery
-tags: [Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Faster stamina recovery from rest and naps
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Quick Recovery

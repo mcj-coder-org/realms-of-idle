@@ -1,9 +1,6 @@
 ---
-title: 'Bear'
-type: 'creature'
-category: 'wildlife/predators'
-tier: 'journeyman'
-summary: 'Massive solitary predator, dangerous when provoked but generally avoids humans'
+title: Bear
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Bear

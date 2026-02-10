@@ -1,9 +1,6 @@
 ---
 title: Chain Lightning
-type: tiered
-category: tiered
-summary: Lightning chains between enemies with increasing bounces and damage
-tags: [Magic/Elemental/Lightning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Chain Lightning

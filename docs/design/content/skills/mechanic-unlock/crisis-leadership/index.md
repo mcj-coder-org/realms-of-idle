@@ -1,10 +1,6 @@
 ---
 title: Crisis Leadership
-tier: Mechanic Unlock
-classes: Leader, Chieftain, Knight, Settlement Leader
-type: mechanic-unlock
-summary: Excel in emergencies with doubled leadership bonuses during genuine crises
-tags: [Leadership/Command]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Crisis Leadership

@@ -1,10 +1,6 @@
 ---
 title: Sentinel's Watch
-type: mechanic-unlock
-tier: mechanic
-rarity: rare
-summary: Cannot be ambushed while awake, always act first in combat
-tags: [Combat/Tactics, Combat/Defense]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Sentinel's Watch

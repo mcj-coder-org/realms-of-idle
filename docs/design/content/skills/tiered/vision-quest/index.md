@@ -1,9 +1,6 @@
 ---
 title: Vision Quest
-type: tiered
-category: tiered
-summary: Seek prophetic visions and spiritual insight
-tags: [Shamanic/Spirit/Dream]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Vision Quest

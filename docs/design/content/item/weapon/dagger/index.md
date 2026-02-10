@@ -1,9 +1,6 @@
 ---
-title: 'Dagger'
-type: 'item'
-category: 'weapon'
-tier: 'variable'
-summary: 'Short blade for close combat and utility'
+title: Dagger
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Dagger

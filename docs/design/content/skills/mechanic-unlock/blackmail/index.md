@@ -1,10 +1,6 @@
 ---
 title: Blackmail
-tier: Mechanic Unlock
-classes: Thief, Assassin, Spy
-type: mechanic-unlock
-summary: Leverage discovered secrets for payments, favors, or information
-tags: [Criminal/Extortion, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Blackmail

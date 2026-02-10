@@ -1,9 +1,6 @@
 ---
 title: Hearty Constitution
-tags: [Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Increased maximum health pool with health regeneration at higher tiers
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Hearty Constitution

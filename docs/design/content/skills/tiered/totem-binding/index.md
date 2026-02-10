@@ -1,12 +1,6 @@
 ---
 title: Totem Binding
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Totem Carver
-tags:
-  - Shamanic
-summary: Bind spirits permanently into carved totems for lasting power
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Totem Binding

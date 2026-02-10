@@ -1,10 +1,6 @@
 ---
 title: Shield Wall
-type: tiered
-tier: tiered
-rarity: uncommon
-summary: Enhanced shield defensive capability
-tags: [Combat/Melee, Combat/Defense]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Shield Wall

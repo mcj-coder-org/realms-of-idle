@@ -1,16 +1,8 @@
 ---
-title: 'Thief'
-type: 'class'
-category: 'trade'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: theft
-summary: 'Stealth-based acquisitioner taking property without permission or payment'
-dark_path: true
-tags:
-  - Criminal
-  - Stealth
-  - Theft
+title: Thief
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/rogue/index.md
+tree_tier: 2
 ---
 
 # Thief

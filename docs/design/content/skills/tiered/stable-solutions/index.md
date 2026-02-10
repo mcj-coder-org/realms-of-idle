@@ -1,9 +1,6 @@
 ---
 title: Stable Solutions
-type: tiered
-category: tiered
-summary: Long-lasting alchemical products
-tags: [Crafting/Alchemy/Potion]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Stable Solutions

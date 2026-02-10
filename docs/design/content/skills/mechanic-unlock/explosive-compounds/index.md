@@ -1,9 +1,6 @@
 ---
 title: Explosive Compounds
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Create alchemical explosives
-tags: [Crafting/Alchemy/Poison]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Explosive Compounds

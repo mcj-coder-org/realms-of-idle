@@ -1,10 +1,6 @@
 ---
 title: Ancestral Memory
-tier: Mechanic Unlock
-classes: Shaman
-type: mechanic-unlock
-summary: Access tribal knowledge by consulting honored ancestors
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Ancestral Memory

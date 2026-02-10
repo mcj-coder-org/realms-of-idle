@@ -1,9 +1,6 @@
 ---
 title: Wind Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to wind spirits with increasing spiritual power
-tags: [Shamanic/Elemental/Air]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Wind Spirit Bond

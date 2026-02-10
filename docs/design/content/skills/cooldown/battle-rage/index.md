@@ -1,10 +1,6 @@
 ---
 title: Battle Rage
-type: cooldown
-tier: tiered
-rarity: uncommon
-summary: Controlled fury in combat providing temporary combat bonuses
-tags: [Combat/Melee, Physical]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Battle Rage

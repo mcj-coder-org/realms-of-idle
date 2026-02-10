@@ -1,7 +1,5 @@
 ---
 title: Character Classes
-type: index
-summary: Complete class hierarchy organized by specialization tree
 ---
 
 # Character Classes

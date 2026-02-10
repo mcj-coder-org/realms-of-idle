@@ -1,9 +1,6 @@
 ---
-title: 'Ore'
-type: 'item'
-category: 'raw'
-tier: 'variable'
-summary: 'Metal-bearing rock from mining nodes'
+title: Ore
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Ore

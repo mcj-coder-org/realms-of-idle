@@ -1,9 +1,6 @@
 ---
 title: Trade Contacts
-type: passive-generator
-category: passive-generator
-summary: Build useful contacts over time
-tags: [Trade]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Trade Contacts

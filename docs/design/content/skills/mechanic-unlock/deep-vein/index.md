@@ -1,9 +1,6 @@
 ---
 title: Deep Vein
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Access difficult resource deposits
-tags: [Gathering/Mining]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Deep Vein

@@ -1,9 +1,6 @@
 ---
 title: Counter Magic
-type: tiered
-category: tiered
-summary: Disrupt enemy spells
-tags: [Magic/Arcane]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Counter Magic

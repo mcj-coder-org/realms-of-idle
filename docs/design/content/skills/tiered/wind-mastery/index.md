@@ -1,9 +1,6 @@
 ---
 title: Wind Mastery
-type: tiered
-category: tiered
-summary: Increased air spell power, efficiency, and movement speed enhancement
-tags: [Magic/Elemental/Air]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Wind Mastery

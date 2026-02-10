@@ -1,10 +1,6 @@
 ---
 title: Mounted Combat
-type: mechanic-unlock
-tier: mechanic
-rarity: rare
-summary: Fight effectively from mount with charges and seamless control
-tags: [Combat/Mounted]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Mounted Combat

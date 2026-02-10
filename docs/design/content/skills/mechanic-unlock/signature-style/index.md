@@ -1,10 +1,6 @@
 ---
 title: Signature Style
-type: mechanic-unlock
-category: Crafting Pool (General)
-skill_type: Mechanic Unlock
-synergy_classes: All Crafting specialties
-tags: [Crafting, Social]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Signature Style

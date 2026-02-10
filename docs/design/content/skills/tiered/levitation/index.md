@@ -1,9 +1,6 @@
 ---
 title: Levitation
-type: tiered
-category: tiered
-summary: Enhanced aerial mobility and flight capability through air magic
-tags: [Magic/Elemental/Air]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Levitation

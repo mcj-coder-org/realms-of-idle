@@ -1,9 +1,6 @@
 ---
-title: 'Tongs'
-type: 'item'
-category: 'tool'
-tier: 2
-summary: 'Forge tool for handling hot metal'
+title: Tongs
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Tongs

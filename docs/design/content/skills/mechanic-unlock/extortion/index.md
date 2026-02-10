@@ -1,10 +1,6 @@
 ---
 title: Extortion
-tier: Mechanic Unlock (Multi-Tier)
-classes: Extortionist, Thief
-type: mechanic-unlock
-summary: Extract regular payments through threats and intimidation
-tags: [Criminal/Extortion, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Extortion

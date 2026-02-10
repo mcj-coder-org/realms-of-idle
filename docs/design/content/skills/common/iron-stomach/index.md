@@ -1,9 +1,6 @@
 ---
 title: Iron Stomach
-tags: [Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Resistance to food-based ailments, eventually eating anything safely
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Iron Stomach

@@ -1,9 +1,6 @@
 ---
 title: Life Drain
-type: tiered
-category: tiered
-summary: Vampiric damage effects that steal life force from enemies
-tags: [Magic/Conjuration/Undead]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Life Drain

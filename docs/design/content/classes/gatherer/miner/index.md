@@ -1,13 +1,8 @@
 ---
-title: 'Miner'
-type: 'class'
-category: 'gathering'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: mining and ore extraction
-summary: 'Expert in extracting ore, gems, and minerals from the earth'
-tags:
-  - Gathering/Mining
+title: Miner
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/gatherer/index.md
+tree_tier: 2
 ---
 
 # Miner

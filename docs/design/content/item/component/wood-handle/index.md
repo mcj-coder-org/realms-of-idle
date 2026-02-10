@@ -1,9 +1,6 @@
 ---
-title: 'Wood Handle'
-type: 'item'
-category: 'component'
-tier: 1
-summary: 'Shaped wood for tool and weapon hafts'
+title: Wood Handle
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Wood Handle

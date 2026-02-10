@@ -1,16 +1,8 @@
 ---
-title: 'Smuggler'
-type: 'class'
-category: 'trade'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: smuggling
-summary: 'Covert transporter specializing in moving illegal goods across borders and past authorities'
-dark_path: true
-tags:
-  - Trade
-  - Criminal
-  - Transportation
+title: Smuggler
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/rogue/index.md
+tree_tier: 2
 ---
 
 # Smuggler

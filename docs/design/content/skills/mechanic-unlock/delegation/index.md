@@ -1,10 +1,6 @@
 ---
 title: Delegation
-tier: Mechanic Unlock (Multi-Tier)
-classes: Leader, Guildmaster, Settlement Leader
-type: mechanic-unlock
-summary: Assign tasks to followers that complete autonomously at high efficiency
-tags: [Leadership/Management]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Delegation

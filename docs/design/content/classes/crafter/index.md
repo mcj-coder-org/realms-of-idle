@@ -1,25 +1,7 @@
 ---
 title: Crafter
-type: class
-tier: 1
-category: foundation
-tags:
-  - Crafting
-tracked_actions:
-  - Craft items
-  - Use workshops
-  - Repair equipment
-  - Process materials
-unlocks:
-  - Blacksmith
-  - Alchemist
-  - Tailor
-  - Carpenter
-  - Cook
-  - Jeweler
-  - Leatherworker
-  - Glassblower
-  - Weaver
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Crafter

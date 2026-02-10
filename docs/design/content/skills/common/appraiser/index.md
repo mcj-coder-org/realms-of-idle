@@ -1,9 +1,6 @@
 ---
 title: Appraiser
-tags: [Trade, Knowledge]
-tier: Tiered
-type: skill
-summary: Assess item value accurately and detect forgeries
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Appraiser

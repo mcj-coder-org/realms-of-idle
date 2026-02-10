@@ -1,7 +1,6 @@
 ---
 title: Crafting (General) Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for all crafting specialties
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Crafting (General) Pool Skills

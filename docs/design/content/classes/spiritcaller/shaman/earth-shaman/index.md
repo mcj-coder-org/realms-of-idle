@@ -1,15 +1,8 @@
 ---
-title: 'Earth Shaman'
-type: 'class'
-category: 'shamanic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: earth spirit mastery through shaman progression
-prerequisite_classes:
-  - Shaman
-summary: 'Earth spirit specialist with mastery over stone, soil, and grounding magic'
-tags:
-  - Shamanic/Elemental/Earth
+title: Earth Shaman
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # Earth Shaman

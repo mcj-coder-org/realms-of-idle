@@ -1,8 +1,6 @@
 ---
-title: 'Elementals'
-type: 'index'
-category: 'magical'
-summary: 'Pure elemental beings from the elemental planes'
+title: Elementals
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Elementals

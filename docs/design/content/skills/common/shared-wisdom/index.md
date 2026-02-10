@@ -1,9 +1,6 @@
 ---
 title: Shared Wisdom
-tags: [Knowledge/Teaching, Social]
-tier: Tiered
-type: skill
-summary: Party members gain learning bonus from your experience
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Shared Wisdom

@@ -1,11 +1,8 @@
 ---
-title: 'Tailor'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: tailoring
-summary: 'Master of cloth and thread, creating garments from simple tunics to enchanted robes'
+title: Tailor
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Tailor

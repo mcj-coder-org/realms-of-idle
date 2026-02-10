@@ -1,3 +1,8 @@
+---
+title: Cooldown Skills
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
+---
+
 # Cooldown Skills
 
 **Type**: Cooldown

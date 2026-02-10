@@ -1,13 +1,8 @@
 ---
-title: 'Necromancer'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: undead and death magic mastery through mage progression
-summary: 'Death magic specialist with mastery over undead, life force, and necromantic power'
-tags:
-  - Magic/Conjuration/Undead
+title: Necromancer
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Necromancer

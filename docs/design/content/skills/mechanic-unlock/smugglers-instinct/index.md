@@ -1,9 +1,6 @@
 ---
 title: Smuggler's Instinct
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Innate sense for hiding contraband
-tags: [Stealth/Infiltration]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Smuggler's Instinct

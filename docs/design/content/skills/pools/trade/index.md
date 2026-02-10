@@ -1,7 +1,6 @@
 ---
 title: Trade Skills
-type: skill-pool-index
-summary: Overview of trade skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Trade Skills

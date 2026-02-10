@@ -1,11 +1,8 @@
 ---
-title: 'Enchanter'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: enchanting
-summary: 'Magical artisan specializing in imbuing items with permanent magical properties'
+title: Enchanter
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Enchanter

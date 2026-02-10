@@ -1,10 +1,6 @@
 ---
 title: Iron Will
-tier: Mechanic Unlock
-classes: Knight, certain Mage schools, Shaman
-type: mechanic-unlock
-summary: Immunity to mental control with enhanced resistance to all mental effects
-tags: [Universal/Mental]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Iron Will

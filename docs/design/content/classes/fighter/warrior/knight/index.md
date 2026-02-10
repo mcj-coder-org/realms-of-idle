@@ -1,11 +1,8 @@
 ---
-title: 'Knight'
-type: 'class'
-category: 'combat'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: honorable combat and service
-summary: 'Elite warrior bound by honor, specializing in heavy armor and mounted combat'
+title: Knight
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/fighter/warrior/index.md
+tree_tier: 3
 ---
 
 # Knight

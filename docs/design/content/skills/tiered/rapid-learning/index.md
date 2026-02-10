@@ -1,10 +1,6 @@
 ---
 title: Rapid Learning
-tier: Tiered
-classes: Scholar, Trainer
-type: tiered
-summary: Accelerated knowledge acquisition from study and training
-tags: [Knowledge/Learning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Rapid Learning

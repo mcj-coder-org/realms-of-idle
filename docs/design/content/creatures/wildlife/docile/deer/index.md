@@ -1,9 +1,6 @@
 ---
-title: 'Deer'
-type: 'creature'
-category: 'wildlife/docile'
-tier: 'basic'
-summary: 'Graceful herbivore providing quality meat and leather'
+title: Deer
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Deer

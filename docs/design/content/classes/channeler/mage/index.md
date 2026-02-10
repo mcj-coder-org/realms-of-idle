@@ -1,25 +1,8 @@
 ---
-title: 'Mage'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: spellcasting and magical study
-summary: 'Generalist spellcaster with broad access to all magical disciplines'
-specializations:
-  - Pyromancer
-  - Cryomancer
-  - Electromancer
-  - Geomancer
-  - Aeromancer
-  - Hydromancer
-  - Necromancer
-  - Summoner
-  - Illusionist
-consolidations:
-  - Battlemage
-  - Enchanter
-  - Healer
+title: Mage
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Mage

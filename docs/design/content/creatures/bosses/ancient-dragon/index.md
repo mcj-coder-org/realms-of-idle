@@ -1,9 +1,6 @@
 ---
-title: 'Ancient Dragon'
-type: 'creature'
-category: 'bosses'
-tier: 'legendary'
-summary: 'Titanic winged apex predator, living natural disaster, and hoarder of ages'
+title: Ancient Dragon
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Ancient Dragon

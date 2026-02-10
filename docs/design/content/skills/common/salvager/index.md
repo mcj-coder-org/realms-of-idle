@@ -1,9 +1,6 @@
 ---
 title: Salvager
-tags: [Crafting, Gathering]
-tier: Tiered
-type: skill
-summary: Extract more materials from item breakdowns
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Salvager

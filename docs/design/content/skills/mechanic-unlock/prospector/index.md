@@ -1,9 +1,6 @@
 ---
 title: Prospector
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Discover new resource nodes
-tags: [Gathering/Mining]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Prospector

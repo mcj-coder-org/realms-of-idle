@@ -1,9 +1,6 @@
 ---
 title: Efficient Worker
-tags: [Crafting, Gathering]
-tier: Tiered
-type: skill
-summary: Reduced stamina cost for crafting and gathering labor
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Efficient Worker

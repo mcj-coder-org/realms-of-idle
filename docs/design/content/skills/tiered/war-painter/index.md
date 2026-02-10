@@ -1,10 +1,6 @@
 ---
 title: War Painter
-tier: Tiered
-classes: Shaman, War Painter
-type: tiered
-summary: Enhanced war paint creation with increased effectiveness and duration
-tags: [Magic/Shamanic, Tribal]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # War Painter

@@ -1,3 +1,8 @@
+---
+title: Tiered Skills
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
+---
+
 # Tiered Skills
 
 **Type**: Tiered

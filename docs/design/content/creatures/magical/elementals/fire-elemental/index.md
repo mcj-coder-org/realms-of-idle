@@ -1,9 +1,6 @@
 ---
-title: 'Fire Elemental'
-type: 'creature'
-category: 'magical/elementals'
-tier: 'journeyman'
-summary: 'Living flame from the elemental plane, embodying pure combustive energy'
+title: Fire Elemental
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Fire Elemental

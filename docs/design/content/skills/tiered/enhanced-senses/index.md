@@ -1,10 +1,6 @@
 ---
 title: Enhanced Senses
-type: tiered
-category: Scouting Pool
-skill_type: Tiered
-synergy_classes: Scout, Ranger, Hunter
-tags: [Gathering/Scouting]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Enhanced Senses

@@ -1,10 +1,6 @@
 ---
 title: Armor Fitting
-type: mechanic-unlock
-category: Smithing Pool
-skill_type: Mechanic Unlock
-synergy_classes: Armorer
-tags: [Crafting/Smithing/Armor]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Armor Fitting

@@ -1,9 +1,6 @@
 ---
 title: Potent Brews
-type: tiered
-category: tiered
-summary: Stronger alchemical creations
-tags: [Crafting/Alchemy/Potion]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Potent Brews

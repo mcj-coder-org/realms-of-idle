@@ -1,8 +1,6 @@
 ---
-title: 'Boss Creatures'
-type: 'index'
-category: 'creatures'
-summary: 'Legendary threats and guardians that define epic encounters'
+title: Boss Creatures
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Boss Creatures

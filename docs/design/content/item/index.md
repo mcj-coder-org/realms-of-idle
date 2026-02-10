@@ -1,8 +1,5 @@
 ---
-title: 'Items'
-type: 'category'
-category: 'item'
-summary: 'Physical objects in the world - tools, weapons, components, and materials'
+title: Items
 ---
 
 # Items

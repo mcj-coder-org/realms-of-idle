@@ -1,12 +1,6 @@
 ---
 title: Charm Creation
-type: mechanic-unlock
-tier: Foundation
-classes:
-  - Shaman
-tags:
-  - Shamanic/Nature
-summary: Ability to create protective and enhancing spirit charms
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Charm Creation

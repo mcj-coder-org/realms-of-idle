@@ -1,13 +1,6 @@
 ---
 title: Spirit Sense
-type: passive
-tier: Foundation
-classes:
-  - Spiritcaller
-  - Shaman
-tags:
-  - Shamanic
-summary: Ability to detect spirit presence and activity nearby
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spirit Sense

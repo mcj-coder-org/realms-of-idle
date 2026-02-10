@@ -1,9 +1,6 @@
 ---
 title: Water Mastery
-type: tiered
-category: tiered
-summary: Increased water spell power, efficiency, and healing potency
-tags: [Magic/Elemental/Water]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Water Mastery

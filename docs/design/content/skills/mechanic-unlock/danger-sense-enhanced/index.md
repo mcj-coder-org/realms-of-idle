@@ -1,10 +1,6 @@
 ---
 title: Danger Sense (Enhanced)
-tier: Mechanic Unlock
-classes: Scout, Assassin, Adventurer, certain Mage paths
-type: mechanic-unlock
-summary: Supernatural awareness of imminent threats before they manifest
-tags: [Universal/Mental]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Danger Sense (Enhanced)

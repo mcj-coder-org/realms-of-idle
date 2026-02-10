@@ -1,9 +1,6 @@
 ---
-title: 'Axe'
-type: 'item'
-category: 'tool'
-tier: 1
-summary: 'Logging tool for wood harvesting'
+title: Axe
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Axe

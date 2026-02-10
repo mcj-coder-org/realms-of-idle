@@ -1,10 +1,6 @@
 ---
 title: Basic Tools
-type: mechanic-unlock
-category: Gathering Pool
-skill_type: Mechanic Unlock
-synergy_classes: Gatherer, Miner, Herbalist
-tags: [Gathering]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Basic Tools

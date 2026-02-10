@@ -1,9 +1,6 @@
 ---
-title: 'Food'
-type: 'item'
-category: 'consumable'
-tier: 0
-summary: 'Basic sustenance for stamina recovery'
+title: Food
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Food

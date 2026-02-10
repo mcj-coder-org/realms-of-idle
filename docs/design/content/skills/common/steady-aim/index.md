@@ -1,9 +1,6 @@
 ---
 title: Steady Aim
-tags: [Combat/Ranged]
-tier: Tiered
-type: skill
-summary: Improved ranged accuracy at cost of speed (toggle)
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Steady Aim

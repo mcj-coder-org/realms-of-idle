@@ -1,10 +1,6 @@
 ---
 title: Armor Expert
-type: tiered
-tier: tiered
-rarity: uncommon
-summary: Improved heavy armor usage with reduced penalties and increased effectiveness
-tags: [Combat/Melee, Combat/Defense, Physical]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Armor Expert

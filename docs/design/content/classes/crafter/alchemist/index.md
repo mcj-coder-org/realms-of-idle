@@ -1,11 +1,8 @@
 ---
-title: 'Alchemist'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: alchemy
-summary: 'Brewer of potions and elixirs, transforming natural reagents into powerful effects'
+title: Alchemist
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Alchemist

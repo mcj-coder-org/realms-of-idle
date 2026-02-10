@@ -1,13 +1,8 @@
 ---
-title: 'Geomancer'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: earth magic mastery through mage progression
-summary: 'Earth magic specialist with mastery over stone, tremors, and terrestrial forces'
-tags:
-  - Magic/Elemental/Earth
+title: Geomancer
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Geomancer

@@ -1,7 +1,6 @@
 ---
 title: Magical Creatures
-type: index
-summary: Magically-enhanced creatures with special abilities
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Magical Creatures

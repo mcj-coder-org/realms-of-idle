@@ -1,10 +1,6 @@
 ---
 title: Smelting
-type: mechanic-unlock
-category: Smithing Technique
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith, Miner
-tags: [Crafting/Smithing/Processing, Gathering/Mining]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Smelting

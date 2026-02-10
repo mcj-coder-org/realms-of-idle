@@ -1,11 +1,8 @@
 ---
-title: 'Healer'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: healing magic
-summary: 'Restoration specialist using magic to heal injuries, cure diseases, and support others'
+title: Healer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Healer

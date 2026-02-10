@@ -1,9 +1,6 @@
 ---
 title: Beast Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to animal spirits with increasing primal power
-tags: [Shamanic/Spirit/Beast]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Beast Spirit Bond

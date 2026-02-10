@@ -1,9 +1,6 @@
 ---
 title: Commodity Speculation
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Invest in future prices
-tags: [Trade/Speculation, Economy/Speculation]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Commodity Speculation

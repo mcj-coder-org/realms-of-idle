@@ -1,10 +1,6 @@
 ---
 title: Tactical Assessment
-type: mechanic-unlock
-tier: mechanic
-rarity: uncommon
-summary: Analyze enemy capabilities and threat levels
-tags: [Combat/Tactics, Knowledge]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Tactical Assessment

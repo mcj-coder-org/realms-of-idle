@@ -1,9 +1,6 @@
 ---
 title: Quick Hands
-tags: [Physical/Agility, Crafting]
-tier: Tiered
-type: skill
-summary: Faster item use and equipment swapping
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Quick Hands

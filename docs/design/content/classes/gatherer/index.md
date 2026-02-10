@@ -1,24 +1,7 @@
 ---
 title: Gatherer
-type: class
-tier: 1
-category: foundation
-tags:
-  - Gathering
-tracked_actions:
-  - Harvest resources
-  - Mine ore
-  - Fish
-  - Hunt animals
-  - Forage plants
-unlocks:
-  - Miner
-  - Forager
-  - Hunter
-  - Lumberjack
-  - Fisher
-  - Farmer
-  - Herbalist
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Gatherer

@@ -1,9 +1,6 @@
 ---
 title: Power Strike
-tags: [Combat/Melee]
-tier: Tiered
-type: skill
-summary: Increased melee damage on demand with cooldown
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Power Strike

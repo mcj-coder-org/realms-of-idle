@@ -1,13 +1,8 @@
 ---
-title: 'Hydromancer'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: water magic mastery through mage progression
-summary: 'Water magic specialist with mastery over tides, currents, and aquatic forces'
-tags:
-  - Magic/Elemental/Water
+title: Hydromancer
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Hydromancer

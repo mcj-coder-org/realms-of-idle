@@ -1,9 +1,6 @@
 ---
 title: Tracker
-tags: [Gathering/Hunting, Nature/Animals]
-tier: Tiered
-type: skill
-summary: Ability to follow trails of creatures and people
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Tracker

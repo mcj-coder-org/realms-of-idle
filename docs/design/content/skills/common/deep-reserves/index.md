@@ -1,9 +1,6 @@
 ---
 title: Deep Reserves
-tags: [Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Increased maximum stamina pool with stamina regeneration at higher tiers
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Deep Reserves

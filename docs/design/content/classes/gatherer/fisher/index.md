@@ -1,13 +1,8 @@
 ---
-title: 'Fisher'
-type: 'class'
-category: 'gathering'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: fishing
-summary: 'Provider of fish and aquatic resources from rivers, lakes, and seas'
-tags:
-  - Gathering/Fishing
+title: Fisher
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/gatherer/index.md
+tree_tier: 2
 ---
 
 # Fisher

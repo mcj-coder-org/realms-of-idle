@@ -1,7 +1,6 @@
 ---
 title: Cross-Class Skills
-type: skill-pool
-summary: Skills with strong synergies across multiple unrelated classes
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Cross-Class Skills

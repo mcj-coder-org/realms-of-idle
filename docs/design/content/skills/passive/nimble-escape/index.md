@@ -1,11 +1,6 @@
 ---
 title: Nimble Escape
-type: skill
-category: racial
-tags:
-  - Physical/Agility
-  - Stealth
-summary: Quickly disengage from combat or hide as bonus action
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Nimble Escape

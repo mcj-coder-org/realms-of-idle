@@ -1,11 +1,6 @@
 ---
 title: Magic Resistance
-type: skill
-category: racial
-tags:
-  - Universal/Mental
-  - Magic
-summary: Natural resistance to hostile magical effects
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Magic Resistance

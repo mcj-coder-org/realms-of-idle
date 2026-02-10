@@ -1,10 +1,6 @@
 ---
 title: Hunting Companion
-type: mechanic-unlock
-category: Animal Pool
-skill_type: Mechanic Unlock
-synergy_classes: Hunter, Trapper, Beastmaster
-tags: [Nature/Animals, Gathering/Hunting]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Hunting Companion

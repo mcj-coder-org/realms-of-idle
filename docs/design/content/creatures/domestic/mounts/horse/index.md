@@ -1,9 +1,6 @@
 ---
-title: 'Horse'
-type: 'creature'
-category: 'domestic/mounts'
-tier: 'basic'
-summary: 'Noble working animal and trusted mount, backbone of transportation and agriculture'
+title: Horse
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Horse

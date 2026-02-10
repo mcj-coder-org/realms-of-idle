@@ -1,12 +1,6 @@
 ---
 title: Freezing Aura
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Cryomancer
-tags:
-  - Magic/Elemental/Ice
-summary: Passive slowing and freezing effect on nearby enemies
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Freezing Aura

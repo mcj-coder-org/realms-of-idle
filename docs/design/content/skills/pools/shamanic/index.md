@@ -1,7 +1,6 @@
 ---
 title: Shamanic Skills
-type: skill-pool-index
-summary: Overview of shamanic skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Shamanic Skills

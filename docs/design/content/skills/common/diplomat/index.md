@@ -1,9 +1,6 @@
 ---
 title: Diplomat
-tags: [Social/Persuasion, Leadership/Social]
-tier: Tiered
-type: skill
-summary: Navigate social conflicts and mediate disputes
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Diplomat

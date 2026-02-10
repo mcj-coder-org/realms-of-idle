@@ -1,10 +1,6 @@
 ---
 title: Shadow Sense
-type: mechanic-unlock
-category: Rogue Pool
-skill_type: Mechanic Unlock
-synergy_classes: Rogue, Assassin, Scout
-tags: [Stealth]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Shadow Sense

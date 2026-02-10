@@ -1,9 +1,6 @@
 ---
 title: Enchant Object
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Permanently enchant items
-tags: [Magic/Enchantment]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Enchant Object

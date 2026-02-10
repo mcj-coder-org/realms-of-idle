@@ -1,7 +1,6 @@
 ---
 title: Scholar Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for knowledge and teaching specialists
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Scholar Pool Skills

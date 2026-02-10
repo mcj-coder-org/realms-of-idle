@@ -1,7 +1,8 @@
 ---
 title: Assassin
-type: class-stub
-authoritative: ../../rogue/assassin/
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Assassin

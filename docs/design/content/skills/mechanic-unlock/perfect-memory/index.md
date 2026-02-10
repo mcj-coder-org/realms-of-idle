@@ -1,10 +1,6 @@
 ---
 title: Perfect Memory
-tier: Mechanic Unlock
-classes: Scholar, Scribe
-type: mechanic-unlock
-summary: Never forget intentionally memorized information with WIT-based capacity
-tags: [Knowledge/Memory]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Perfect Memory

@@ -1,9 +1,6 @@
 ---
 title: Storm Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to storm spirits with increasing spiritual power
-tags: [Shamanic/Elemental/Lightning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Storm Spirit Bond

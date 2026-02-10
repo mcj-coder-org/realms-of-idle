@@ -1,11 +1,6 @@
 ---
 title: Rapid Regeneration
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Nature
-summary: Regenerate health over time, even during combat
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Rapid Regeneration

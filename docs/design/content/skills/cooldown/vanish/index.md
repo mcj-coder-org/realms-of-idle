@@ -1,9 +1,6 @@
 ---
 title: Vanish
-type: cooldown
-tier-type: Mechanic Unlock
-summary: Emergency stealth entry
-tags: [Stealth]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Vanish

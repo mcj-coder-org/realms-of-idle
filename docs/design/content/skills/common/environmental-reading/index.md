@@ -1,9 +1,6 @@
 ---
 title: Environmental Reading
-tags: [Nature, Knowledge]
-tier: Tiered
-type: skill
-summary: Notice changes in surroundings and predict weather
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Environmental Reading

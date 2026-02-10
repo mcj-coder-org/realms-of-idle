@@ -1,9 +1,6 @@
 ---
 title: Quick Reflexes
-tags: [Physical/Agility, Combat]
-tier: Tiered
-type: skill
-summary: Improved dodge chance with bonus against aimed attacks
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Quick Reflexes

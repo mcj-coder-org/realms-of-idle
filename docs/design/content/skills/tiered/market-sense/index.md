@@ -1,9 +1,6 @@
 ---
 title: Market Sense
-type: tiered
-category: tiered
-summary: Know prices and opportunities
-tags: [Trade, Economy]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Market Sense

@@ -1,12 +1,6 @@
 ---
 title: Pack Tactics
-type: skill
-category: racial
-tags:
-  - Combat/Tactics
-  - Tribal
-  - Nature/Animals
-summary: Combat bonuses when fighting alongside allies
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Pack Tactics

@@ -1,9 +1,6 @@
 ---
 title: Second Wind
-tags: [Physical/Endurance, Combat]
-tier: Tiered
-type: skill
-summary: Emergency stamina recovery when exhausted with decreasing cooldown
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Second Wind

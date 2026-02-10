@@ -1,9 +1,6 @@
 ---
-title: 'Wolf'
-type: 'creature'
-category: 'wildlife/predators'
-tier: 'apprentice'
-summary: 'Intelligent pack predator posing significant threat to travelers and livestock'
+title: Wolf
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Wolf

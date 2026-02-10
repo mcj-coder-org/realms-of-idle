@@ -1,9 +1,6 @@
 ---
-title: 'Ingot'
-type: 'item'
-category: 'processed'
-tier: 'variable'
-summary: 'Refined metal ready for forging'
+title: Ingot
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Ingot

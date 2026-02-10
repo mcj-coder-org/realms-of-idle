@@ -1,9 +1,6 @@
 ---
 title: Ritual Casting
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Cast powerful extended spells
-tags: [Magic]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Ritual Casting

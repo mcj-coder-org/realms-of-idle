@@ -1,9 +1,6 @@
 ---
-title: 'Longsword'
-type: 'item'
-category: 'weapon'
-tier: 'variable'
-summary: 'Versatile sword for combat'
+title: Longsword
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Longsword

@@ -1,16 +1,8 @@
 ---
-title: 'Assassin'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: stealth kills and assassination
-summary: 'Stealth killer specializing in targeted elimination through poison and precision strikes'
-dark_path: true
-tags:
-  - Stealth
-  - Assassination
-  - Criminal
+title: Assassin
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/rogue/index.md
+tree_tier: 2
 ---
 
 # Assassin

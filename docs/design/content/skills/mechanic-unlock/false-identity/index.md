@@ -1,10 +1,6 @@
 ---
 title: False Identity
-tier: Mechanic Unlock (Multi-Tier)
-classes: Thief, Assassin, Smuggler, Spy
-type: mechanic-unlock
-summary: Create and maintain alternate personas with separate reputations
-tags: [Criminal, Social/Deception, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # False Identity

@@ -1,9 +1,6 @@
 ---
 title: Fire Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to fire spirits with increasing spiritual power
-tags: [Shamanic/Elemental/Fire]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Fire Spirit Bond

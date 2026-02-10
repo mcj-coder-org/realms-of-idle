@@ -1,10 +1,6 @@
 ---
 title: Combat Stance
-type: mechanic-unlock
-category: Combat Pool
-skill_type: Mechanic Unlock
-synergy_classes: Fighter, Warrior, Guardian
-tags: [Combat]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Combat Stance

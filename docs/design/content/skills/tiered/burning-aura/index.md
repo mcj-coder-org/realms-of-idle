@@ -1,9 +1,6 @@
 ---
 title: Burning Aura
-type: tiered
-category: tiered
-summary: Passive fire damage to nearby enemies with increasing intensity
-tags: [Magic/Elemental/Fire]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Burning Aura

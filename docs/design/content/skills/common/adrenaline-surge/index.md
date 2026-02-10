@@ -1,9 +1,6 @@
 ---
 title: Adrenaline Surge
-tags: [Combat, Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Combat stamina recovery when health drops low
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Adrenaline Surge

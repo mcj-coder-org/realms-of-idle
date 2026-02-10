@@ -1,13 +1,6 @@
 ---
 title: Spirit Carving
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Totem Carver
-tags:
-  - Shamanic
-  - Crafting/Woodworking
-summary: Carve sacred spiritual patterns into wood for totem creation
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Spirit Carving

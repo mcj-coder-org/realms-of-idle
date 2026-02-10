@@ -1,10 +1,6 @@
 ---
 title: Joinery
-type: mechanic-unlock
-category: Woodworking Technique
-skill_type: Mechanic Unlock
-synergy_classes: Carpenter
-tags: [Crafting/Woodworking/Technique]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Joinery

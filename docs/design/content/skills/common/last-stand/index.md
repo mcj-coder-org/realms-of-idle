@@ -1,9 +1,6 @@
 ---
 title: Last Stand
-tags: [Combat, Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Improved combat performance when near death
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Last Stand

@@ -1,10 +1,6 @@
 ---
 title: Water Breathing
-tier: Mechanic Unlock
-classes: Fisher, Sailor, certain Mage schools
-type: mechanic-unlock
-summary: Breathe underwater indefinitely without depth pressure damage
-tags: [Universal/Physical]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Water Breathing

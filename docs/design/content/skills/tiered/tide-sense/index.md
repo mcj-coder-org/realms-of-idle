@@ -1,9 +1,6 @@
 ---
 title: Tide Sense
-type: tiered
-category: tiered
-summary: Enhanced perception of water and liquid flows
-tags: [Shamanic/Elemental/Water]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Tide Sense

@@ -1,10 +1,6 @@
 ---
 title: Authority
-tier: Tiered
-classes: Leader, Chieftain, Guildmaster
-type: tiered
-summary: Commands carry weight with increased compliance and effectiveness
-tags: [Leadership/Command, Social/Persuasion]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Authority

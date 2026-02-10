@@ -1,8 +1,6 @@
 ---
-title: 'Processed Materials'
-type: 'category'
-category: 'item'
-summary: 'Refined materials ready for crafting recipes'
+title: Processed Materials
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Processed Materials

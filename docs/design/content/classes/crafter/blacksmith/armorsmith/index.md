@@ -1,11 +1,8 @@
 ---
-title: 'Armorsmith'
-type: 'class'
-category: 'crafting'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: armor forging and fitting
-summary: 'Master smith specializing in armor creation and custom fitting'
+title: Armorsmith
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/crafter/blacksmith/index.md
+tree_tier: 3
 ---
 
 # Armorsmith

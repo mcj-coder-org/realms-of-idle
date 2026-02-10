@@ -1,9 +1,6 @@
 ---
-title: 'Water Elemental'
-type: 'creature'
-category: 'magical/elementals'
-tier: 'journeyman'
-summary: 'Living water from the elemental plane, embodying fluidity and adaptability'
+title: Water Elemental
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Water Elemental

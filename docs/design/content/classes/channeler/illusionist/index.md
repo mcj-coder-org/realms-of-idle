@@ -1,11 +1,8 @@
 ---
-title: 'Illusionist'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: illusion magic
-summary: 'Deception specialist using illusion magic to manipulate perception and belief'
+title: Illusionist
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Illusionist

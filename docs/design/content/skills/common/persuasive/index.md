@@ -1,9 +1,6 @@
 ---
 title: Persuasive
-tags: [Social/Persuasion]
-tier: Tiered
-type: skill
-summary: Improved ability to convince others through persuasion
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Persuasive

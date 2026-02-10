@@ -1,10 +1,6 @@
 ---
 title: Weapon Mastery
-type: tiered
-tier: tiered
-rarity: common
-summary: Specialized proficiency with weapon category
-tags: [Combat/Melee]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Weapon Mastery

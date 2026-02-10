@@ -1,11 +1,6 @@
 ---
 title: Savage Attacks
-type: skill
-category: racial
-tags:
-  - Combat/Melee
-  - Physical/Strength
-summary: Extra damage die on critical hits with melee weapons
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Savage Attacks

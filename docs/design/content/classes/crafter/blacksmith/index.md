@@ -1,11 +1,8 @@
 ---
-title: 'Blacksmith'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: metal forging and smithing
-summary: 'Master of metal, forging weapons, armor, and tools from raw ore'
+title: Blacksmith
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Blacksmith

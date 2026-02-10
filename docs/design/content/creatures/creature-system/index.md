@@ -1,7 +1,6 @@
 ---
 title: Mobs and Creatures System
-type: creature
-summary: Creature classification, behavior, harvestables, taming, bosses, and spawning
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Mobs & Creatures System

@@ -1,9 +1,6 @@
 ---
 title: Night Eyes
-tags: [Universal/Physical]
-tier: Tiered
-type: skill
-summary: Improved vision in darkness reducing penalties
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Night Eyes

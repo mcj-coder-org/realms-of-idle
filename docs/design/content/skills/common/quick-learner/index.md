@@ -1,9 +1,6 @@
 ---
 title: Quick Learner
-tags: [Knowledge/Learning]
-tier: Tiered
-type: skill
-summary: Faster skill XP and recipe acquisition
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Quick Learner

@@ -1,13 +1,6 @@
 ---
 title: Battle Spirit Bond
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - War Shaman
-tags:
-  - Shamanic
-  - Combat/Melee
-summary: Channel aggressive battle spirits for enhanced combat capabilities
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Battle Spirit Bond

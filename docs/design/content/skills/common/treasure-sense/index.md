@@ -1,9 +1,6 @@
 ---
 title: Treasure Sense
-tags: [Gathering, Knowledge]
-tier: Tiered
-type: skill
-summary: Improved ability to find hidden valuables and secret compartments
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Treasure Sense

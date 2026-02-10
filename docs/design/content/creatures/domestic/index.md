@@ -1,8 +1,6 @@
 ---
-title: 'Domestic Animals'
-type: 'index'
-category: 'creatures'
-summary: 'Farm animals, mounts, and companions essential to settlement life'
+title: Domestic Animals
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Domestic Animals

@@ -1,10 +1,6 @@
 ---
 title: Weapon Enhancement
-type: mechanic-unlock
-category: Smithing Pool
-skill_type: Mechanic Unlock
-synergy_classes: Weaponsmith
-tags: [Crafting/Smithing/Weapon]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Weapon Enhancement

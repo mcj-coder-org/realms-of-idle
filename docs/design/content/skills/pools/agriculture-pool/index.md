@@ -1,7 +1,6 @@
 ---
 title: Agriculture Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for farming and animal husbandry specialists
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Agriculture Pool Skills

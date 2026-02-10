@@ -1,9 +1,6 @@
 ---
 title: Animal Husbandry
-type: tiered
-tier-type: Tiered
-summary: Better livestock management
-tags: [Agriculture/Livestock]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Animal Husbandry

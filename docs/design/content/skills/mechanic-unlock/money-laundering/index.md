@@ -1,10 +1,6 @@
 ---
 title: Money Laundering
-tier: Mechanic Unlock (Multi-Tier)
-classes: Fence, Merchant (dark path)
-type: mechanic-unlock
-summary: Clean suspicious or marked currency for safe use
-tags: [Criminal/Finance, Economy, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Money Laundering

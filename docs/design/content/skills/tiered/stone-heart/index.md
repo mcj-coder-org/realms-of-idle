@@ -1,9 +1,6 @@
 ---
 title: Stone Heart
-type: tiered
-category: tiered
-summary: Physical armor and defense enhancement
-tags: [Shamanic/Elemental/Earth]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Stone Heart

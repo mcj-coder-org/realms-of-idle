@@ -1,7 +1,5 @@
 ---
 title: Skills Library
-type: index
-summary: All skill definitions organized by type with hierarchical tag-based access
 ---
 
 # Skills Library

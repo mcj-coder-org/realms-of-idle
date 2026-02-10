@@ -1,10 +1,6 @@
 ---
 title: Ambidexterity
-tier: Mechanic Unlock
-classes: Warrior, Thief, Crafter specialties
-type: mechanic-unlock
-summary: Use either hand equally well in all activities
-tags: [Universal/Physical]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Ambidexterity

@@ -1,11 +1,8 @@
 ---
-title: 'Glassblower'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: glassblowing
-summary: 'Master of molten glass, creating vessels, lenses, and magical containers from sand and fire'
+title: Glassblower
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Glassblower

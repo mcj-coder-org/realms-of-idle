@@ -1,9 +1,6 @@
 ---
-title: 'Knife'
-type: 'item'
-category: 'tool'
-tier: 1
-summary: 'Skinning tool for hide processing'
+title: Knife
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Knife

@@ -1,9 +1,6 @@
 ---
 title: Gentle Harvest
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Gather without depleting
-tags: [Gathering/Herbalism]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Gentle Harvest

@@ -1,9 +1,6 @@
 ---
-title: 'Dryad'
-type: 'creature'
-category: 'magical/fey'
-tier: 'rare'
-summary: 'Ancient tree-spirits bonded to sacred groves, guardians of the deepest forests'
+title: Dryad
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Dryad

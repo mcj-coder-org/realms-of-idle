@@ -1,9 +1,6 @@
 ---
 title: Silver Tongue
-tags: [Trade/Negotiation, Social/Persuasion]
-tier: Tiered
-type: skill
-summary: Improved deception and lying ability
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Silver Tongue

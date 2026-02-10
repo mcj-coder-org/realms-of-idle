@@ -1,9 +1,6 @@
 ---
 title: School Mastery
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Deep expertise in one school
-tags: [Magic]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # School Mastery

@@ -1,9 +1,6 @@
 ---
 title: Climate Tolerance
-tags: [Physical/Endurance, Nature]
-tier: Tiered
-type: skill
-summary: Reduced stamina drain from temperature extremes
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Climate Tolerance

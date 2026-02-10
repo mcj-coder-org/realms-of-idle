@@ -1,11 +1,6 @@
 ---
 title: Blessed Herbs
-type: tiered
-category: tiered
-summary: Enhance herbal remedies with magical essence for greater potency
-tags: [Magic, Gathering/Herbalism]
-classes:
-  - Healer
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Blessed Herbs

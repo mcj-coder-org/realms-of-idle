@@ -1,7 +1,5 @@
 ---
 title: Creatures Library
-type: index
-summary: Wildlife, monsters, and bosses
 ---
 
 # Creatures Library

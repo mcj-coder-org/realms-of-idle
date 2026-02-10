@@ -1,10 +1,6 @@
 ---
 title: Field Harvest
-type: mechanic-unlock
-category: Gathering Pool
-skill_type: Mechanic Unlock
-synergy_classes: Hunter, Alchemist, Jeweler
-tags: [Gathering/Animals, Crafting/Parts]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Field Harvest

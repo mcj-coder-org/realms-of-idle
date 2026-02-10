@@ -1,10 +1,6 @@
 ---
 title: Skinning
-type: mechanic-unlock
-category: Animal Pool
-skill_type: Mechanic Unlock
-synergy_classes: Hunter, Leatherworker, Trapper
-tags: [Gathering/Animals, Crafting/Leather]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Skinning

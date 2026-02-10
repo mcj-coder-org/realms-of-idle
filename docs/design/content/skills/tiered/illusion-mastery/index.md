@@ -1,9 +1,6 @@
 ---
 title: Illusion Mastery
-type: tiered
-category: tiered
-summary: Increased illusion power, effectiveness, and deception strength
-tags: [Magic/Illusion/Mind]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Illusion Mastery

@@ -1,10 +1,6 @@
 ---
 title: Repair Mastery
-type: tiered
-category: Crafting Pool (General)
-skill_type: Tiered
-synergy_classes: All Crafting specialties (for their specialty)
-tags: [Crafting]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Repair Mastery

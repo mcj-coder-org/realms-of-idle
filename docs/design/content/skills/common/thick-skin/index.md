@@ -1,9 +1,6 @@
 ---
 title: Thick Skin
-tags: [Physical/Endurance, Combat/Defense]
-tier: Tiered
-type: skill
-summary: Natural flat damage resistance against physical attacks
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Thick Skin

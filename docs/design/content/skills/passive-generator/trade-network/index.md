@@ -1,9 +1,6 @@
 ---
 title: Trade Network
-type: passive-generator
-category: passive-generator
-summary: Generate trade opportunities
-tags: [Trade]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Trade Network

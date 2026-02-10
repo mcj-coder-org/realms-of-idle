@@ -1,17 +1,8 @@
 ---
-title: 'Totem Carver'
-type: 'class'
-category: 'consolidation'
-tier: 3
-prerequisite_classes:
-  - Shaman
-  - Carpenter
-prerequisite_xp: 50000
-prerequisite_actions: Totem crafting and spiritual binding mastery
-summary: 'Sacred artisan who carves permanent totems infused with spirit power'
-tags:
-  - Shamanic
-  - Crafting/Woodworking
+title: Totem Carver
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # Totem Carver

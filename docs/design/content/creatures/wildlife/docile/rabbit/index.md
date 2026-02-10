@@ -1,9 +1,6 @@
 ---
-title: 'Rabbit'
-type: 'creature'
-category: 'wildlife/docile'
-tier: 'basic'
-summary: 'Small, timid herbivore found in fields and forests'
+title: Rabbit
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Rabbit

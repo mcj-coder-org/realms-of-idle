@@ -1,15 +1,8 @@
 ---
-title: 'Storm Caller'
-type: 'class'
-category: 'shamanic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: storm spirit mastery through shaman progression
-prerequisite_classes:
-  - Shaman
-summary: 'Lightning spirit specialist with mastery over storms and thunder magic'
-tags:
-  - Shamanic/Elemental/Lightning
+title: Storm Caller
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # Storm Caller

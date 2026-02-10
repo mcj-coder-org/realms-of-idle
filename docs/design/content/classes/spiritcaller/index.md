@@ -1,17 +1,7 @@
 ---
 title: Spiritcaller
-type: class
-tier: 1
-category: foundation
-tags:
-  - Shamanic
-tracked_actions:
-  - Commune with spirits
-  - Perform rituals
-  - Create charms
-  - Channel spirit energy
-unlocks:
-  - Shaman
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Spiritcaller

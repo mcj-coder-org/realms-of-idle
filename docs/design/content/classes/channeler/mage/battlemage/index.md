@@ -1,11 +1,8 @@
 ---
-title: 'Battlemage'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: combat spellcasting
-summary: 'Combat specialist combining martial prowess with destructive magic'
+title: Battlemage
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Battlemage

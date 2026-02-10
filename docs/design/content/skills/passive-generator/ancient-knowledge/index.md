@@ -1,10 +1,6 @@
 ---
 title: Ancient Knowledge
-tier: Passive Generator
-classes: Scholar
-type: passive-generator
-summary: Uncover forgotten lore and lost techniques over time
-tags: [Knowledge]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Ancient Knowledge

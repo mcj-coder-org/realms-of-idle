@@ -1,7 +1,8 @@
 ---
 title: Battlemage
-type: class-stub
-authoritative: ../../channeler/mage/battlemage/
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/fighter/warrior/index.md
+tree_tier: 3
 ---
 
 # Battlemage

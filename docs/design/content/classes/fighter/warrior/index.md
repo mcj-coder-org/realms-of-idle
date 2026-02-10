@@ -1,13 +1,8 @@
 ---
-title: 'Warrior'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: combat
-summary: 'Melee combat specialist skilled in direct confrontation and weapon mastery'
-tags:
-  - Combat/Melee
+title: Warrior
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Warrior

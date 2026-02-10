@@ -1,9 +1,6 @@
 ---
 title: Master Forager
-type: passive-generator
-tier-type: Passive Generator
-summary: Daily passive resource discovery
-tags: [Gathering, Gathering/Herbalism]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Master Forager

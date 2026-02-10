@@ -1,9 +1,6 @@
 ---
 title: Undead Mastery
-type: tiered
-category: tiered
-summary: Enhanced undead summoning, control, and minion effectiveness
-tags: [Magic/Conjuration/Undead]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Undead Mastery

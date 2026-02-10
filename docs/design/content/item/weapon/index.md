@@ -1,8 +1,6 @@
 ---
-title: 'Weapons'
-type: 'category'
-category: 'item'
-summary: 'Arms for combat and hunting'
+title: Weapons
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Weapons

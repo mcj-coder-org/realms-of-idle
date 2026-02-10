@@ -1,10 +1,6 @@
 ---
 title: Totem Crafting
-tier: Mechanic Unlock
-classes: Shaman
-type: mechanic-unlock
-summary: Create tribal totems that provide area benefits to the tribe
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Totem Crafting

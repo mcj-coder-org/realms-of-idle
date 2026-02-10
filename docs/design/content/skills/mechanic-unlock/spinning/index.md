@@ -1,10 +1,6 @@
 ---
 title: Spinning
-type: mechanic-unlock
-category: Textile Technique
-skill_type: Mechanic Unlock
-synergy_classes: Weaver
-tags: [Crafting/Textile/Processing]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spinning

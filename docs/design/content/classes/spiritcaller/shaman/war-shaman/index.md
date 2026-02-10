@@ -1,17 +1,8 @@
 ---
-title: 'War Shaman'
-type: 'class'
-category: 'consolidation'
-tier: 3
-prerequisite_classes:
-  - Shaman
-  - Warrior
-prerequisite_xp: 50000
-prerequisite_actions: Combat rituals and warrior training mastery
-summary: 'Warrior-shaman who channels battle spirits for combat supremacy'
-tags:
-  - Shamanic
-  - Combat/Melee
+title: War Shaman
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # War Shaman

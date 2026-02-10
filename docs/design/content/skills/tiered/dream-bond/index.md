@@ -1,9 +1,6 @@
 ---
 title: Dream Bond
-type: tiered
-category: tiered
-summary: Connection to dream spirits with increasing astral power
-tags: [Shamanic/Spirit/Dream]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Dream Bond

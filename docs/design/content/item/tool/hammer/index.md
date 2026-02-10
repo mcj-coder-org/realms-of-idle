@@ -1,9 +1,6 @@
 ---
-title: 'Hammer'
-type: 'item'
-category: 'tool'
-tier: 2
-summary: 'Forging tool for metalworking'
+title: Hammer
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Hammer

@@ -1,10 +1,6 @@
 ---
 title: Heraldry
-type: mechanic-unlock
-category: Crafting Technique
-skill_type: Mechanic Unlock
-synergy_classes: Tailor, Blacksmith
-tags: [Crafting/General/Decoration, Knowledge]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Heraldry

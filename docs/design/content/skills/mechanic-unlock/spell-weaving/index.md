@@ -1,9 +1,6 @@
 ---
 title: Spell Weaving
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Combine spell effects
-tags: [Magic/Arcane]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spell Weaving

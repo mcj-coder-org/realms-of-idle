@@ -1,10 +1,6 @@
 ---
 title: Killing Blow
-type: mechanic-unlock
-tier: mechanic
-rarity: rare
-summary: Execute wounded enemies instantly with a special attack
-tags: [Combat/Melee, Combat/Assassination]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Killing Blow

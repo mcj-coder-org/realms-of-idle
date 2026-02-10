@@ -1,9 +1,6 @@
 ---
 title: Mana Well
-type: tiered
-category: tiered
-summary: Expanded magical reserves
-tags: [Magic]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Mana Well

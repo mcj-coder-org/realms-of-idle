@@ -1,28 +1,8 @@
 ---
-title: 'Shaman'
-type: 'class'
-category: 'shamanic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: spirit communion and tribal rituals
-summary: 'Tribal spirit magic practitioner with built-in herbalism, healing, and charm-making'
-tags:
-  - Shamanic
-  - Healing
-  - Spirit Magic
-specializations:
-  - Flame Keeper
-  - Frost Shaman
-  - Storm Caller
-  - Earth Shaman
-  - Wind Walker
-  - Tide Caller
-  - Ancestor Shaman
-  - Beast Speaker
-  - Spirit Walker
-consolidations:
-  - War Shaman
-  - Totem Carver
+title: Shaman
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/spiritcaller/index.md
+tree_tier: 2
 ---
 
 # Shaman

@@ -1,8 +1,6 @@
 ---
-title: 'Undead Creatures'
-type: 'index'
-category: 'creatures'
-summary: 'The restless dead that walk between life and the grave'
+title: Undead Creatures
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Undead Creatures

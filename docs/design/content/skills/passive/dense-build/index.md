@@ -1,11 +1,6 @@
 ---
 title: Dense Build
-type: skill
-category: racial
-tags:
-  - Physical/Strength
-  - Physical
-summary: Increased body mass and physical presence
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Dense Build

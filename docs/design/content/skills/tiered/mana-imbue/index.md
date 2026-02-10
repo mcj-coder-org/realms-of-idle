@@ -1,12 +1,6 @@
 ---
 title: Mana Imbue
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Enchanter
-tags:
-  - Magic
-summary: Infuse items with raw mana power for enhanced magical effects
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Mana Imbue

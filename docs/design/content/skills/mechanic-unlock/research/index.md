@@ -1,10 +1,6 @@
 ---
 title: Research
-tier: Mechanic Unlock
-classes: Scholar, Scribe
-type: mechanic-unlock
-summary: Discover information through systematic study in libraries and archives
-tags: [Knowledge]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Research

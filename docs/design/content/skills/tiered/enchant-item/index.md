@@ -1,13 +1,6 @@
 ---
 title: Enchant Item
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Enchanter
-tags:
-  - Magic
-  - Crafting
-summary: Bind magical effects into crafted items for permanent enchantments
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Enchant Item

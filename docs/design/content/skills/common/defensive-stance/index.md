@@ -1,9 +1,6 @@
 ---
 title: Defensive Stance
-tags: [Combat/Defense]
-tier: Tiered
-type: skill
-summary: Reduced damage taken at cost of offense (toggle)
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Defensive Stance

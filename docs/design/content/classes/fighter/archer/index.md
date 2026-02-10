@@ -1,13 +1,8 @@
 ---
-title: 'Archer'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: ranged combat
-summary: 'Ranged combat specialist using bows and crossbows to strike from distance'
-tags:
-  - Combat/Ranged
+title: Archer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Archer

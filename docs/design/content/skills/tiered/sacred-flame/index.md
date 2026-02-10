@@ -1,9 +1,6 @@
 ---
 title: Sacred Flame
-type: tiered
-category: tiered
-summary: Purifying sacred fire damage with blessing effects
-tags: [Shamanic/Elemental/Fire]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Sacred Flame

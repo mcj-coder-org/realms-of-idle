@@ -1,12 +1,6 @@
 ---
 title: Spirit Pool Access
-type: mechanic-unlock
-tier: Foundation
-classes:
-  - Spiritcaller
-tags:
-  - Shamanic
-summary: Unlocks connection to the tribal spirit pool for shamanic magic
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spirit Pool Access

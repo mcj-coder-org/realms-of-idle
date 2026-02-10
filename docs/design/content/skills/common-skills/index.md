@@ -1,7 +1,6 @@
 ---
 title: Common Skills
-type: skill
-summary: Universal skills available to all classes organized in individual files by category
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Common Skills

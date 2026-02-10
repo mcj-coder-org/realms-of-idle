@@ -1,9 +1,6 @@
 ---
 title: Beekeeper's Bond
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Special connection with bees
-tags: [Agriculture/Livestock, Nature/Insects]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Beekeeper's Bond

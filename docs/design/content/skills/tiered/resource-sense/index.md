@@ -1,9 +1,6 @@
 ---
 title: Resource Sense
-type: tiered
-tier-type: Tiered
-summary: Detect gathering nodes at distance
-tags: [Gathering]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Resource Sense

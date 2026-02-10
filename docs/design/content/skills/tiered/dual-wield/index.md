@@ -1,10 +1,6 @@
 ---
 title: Dual Wield
-type: tiered
-tier: tiered
-rarity: uncommon
-summary: Fight with two weapons effectively with reduced penalties and bonuses
-tags: [Combat/Melee]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Dual Wield

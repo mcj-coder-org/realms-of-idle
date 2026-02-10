@@ -1,19 +1,7 @@
 ---
 title: Trader
-type: class
-tier: 1
-category: foundation
-tags:
-  - Trade
-tracked_actions:
-  - Buy goods
-  - Sell goods
-  - Negotiate prices
-  - Travel trade routes
-unlocks:
-  - Merchant
-  - Caravaner
-  - Appraiser
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Trader

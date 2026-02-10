@@ -1,10 +1,6 @@
 ---
 title: Contract Killing
-tier: Mechanic Unlock
-classes: Assassin
-type: mechanic-unlock
-summary: Accept assassination contracts through the guild system
-tags: [Criminal/Assassination, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Contract Killing

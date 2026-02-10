@@ -1,10 +1,6 @@
 ---
 title: Embroidery
-type: mechanic-unlock
-category: Textile Technique
-skill_type: Mechanic Unlock
-synergy_classes: Tailor
-tags: [Crafting/Textile/Decoration]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Embroidery

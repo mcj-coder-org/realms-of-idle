@@ -1,9 +1,6 @@
 ---
 title: Thieves' Cant
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Secret criminal communication
-tags: [Stealth/Deception, Criminal/Theft]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Thieves' Cant

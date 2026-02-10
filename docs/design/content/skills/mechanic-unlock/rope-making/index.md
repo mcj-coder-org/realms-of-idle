@@ -1,10 +1,6 @@
 ---
 title: Rope Making
-type: mechanic-unlock
-category: Crafting Technique
-skill_type: Mechanic Unlock
-synergy_classes: Weaver
-tags: [Crafting/Textile/Cordage]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Rope Making

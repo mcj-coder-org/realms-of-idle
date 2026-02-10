@@ -1,9 +1,6 @@
 ---
 title: Danger Sense
-tags: [Universal/Mental]
-tier: Tiered
-type: skill
-summary: Intuitive threat awareness
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Danger Sense

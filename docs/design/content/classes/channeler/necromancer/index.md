@@ -1,12 +1,8 @@
 ---
-title: 'Necromancer'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: necromancy
-summary: 'Death magic specialist raising undead and manipulating life force'
-dark_path: true
+title: Necromancer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Necromancer

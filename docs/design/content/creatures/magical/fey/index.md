@@ -1,8 +1,6 @@
 ---
-title: 'Fey Creatures'
-type: 'index'
-category: 'creatures'
-summary: 'Magical beings from the twilight realms between nature and magic'
+title: Fey Creatures
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Fey Creatures

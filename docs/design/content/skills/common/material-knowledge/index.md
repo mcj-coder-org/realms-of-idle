@@ -1,9 +1,6 @@
 ---
 title: Material Knowledge
-tags: [Crafting, Knowledge]
-tier: Tiered
-type: skill
-summary: Better understanding of material properties and optimal uses
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Material Knowledge

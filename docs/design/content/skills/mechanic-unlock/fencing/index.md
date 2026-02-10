@@ -1,9 +1,6 @@
 ---
 title: Fencing
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Move stolen goods
-tags: [Trade/Illegal, Criminal/Finance]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Fencing

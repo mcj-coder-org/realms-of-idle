@@ -1,9 +1,6 @@
 ---
 title: Caravan Master
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Lead trade expeditions
-tags: [Trade/Caravan]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Caravan Master

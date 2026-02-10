@@ -1,9 +1,6 @@
 ---
 title: Bountiful Harvest
-type: tiered
-tier-type: Tiered
-summary: Increased yield from gathering
-tags: [Gathering]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Bountiful Harvest

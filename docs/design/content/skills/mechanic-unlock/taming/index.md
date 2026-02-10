@@ -1,10 +1,6 @@
 ---
 title: Taming
-type: mechanic-unlock
-category: Animal Pool
-skill_type: Mechanic Unlock
-synergy_classes: Animal Trainer, Beastmaster
-tags: [Nature/Animals]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Taming

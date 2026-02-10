@@ -1,11 +1,6 @@
 ---
 title: Magical Weaving
-type: mechanic-unlock
-category: Magic Technique
-skill_type: Mechanic Unlock
-synergy_classes: Weaver, Enchanter
-tags: [Magic/Enchanting/Textile, Crafting/Textile/Magic]
-prerequisites: [Basic Weaving]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Magical Weaving

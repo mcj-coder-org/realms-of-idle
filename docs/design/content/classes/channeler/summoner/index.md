@@ -1,11 +1,8 @@
 ---
-title: 'Summoner'
-type: 'class'
-category: 'magic'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: summoning
-summary: 'Conjuration specialist summoning creatures and entities to serve temporarily'
+title: Summoner
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/channeler/index.md
+tree_tier: 2
 ---
 
 # Summoner

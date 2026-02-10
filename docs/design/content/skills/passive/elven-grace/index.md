@@ -1,11 +1,6 @@
 ---
 title: Elven Grace
-type: skill
-category: racial
-tags:
-  - Physical/Agility
-  - Social
-summary: Natural poise, balance, and elegant movement
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Elven Grace

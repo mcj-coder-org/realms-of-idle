@@ -1,9 +1,6 @@
 ---
-title: 'Air Elemental'
-type: 'creature'
-category: 'magical/elementals'
-tier: 'journeyman'
-summary: 'Living wind from the elemental plane, embodying freedom and constant motion'
+title: Air Elemental
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Air Elemental

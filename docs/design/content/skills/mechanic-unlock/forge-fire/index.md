@@ -1,10 +1,6 @@
 ---
 title: Forge Fire
-type: mechanic-unlock
-category: Smithing Pool
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith, Weaponsmith, Armorer
-tags: [Crafting/Smithing]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Forge Fire

@@ -1,10 +1,6 @@
 ---
 title: Spirit Communion
-tier: Mechanic Unlock
-classes: Shaman
-type: mechanic-unlock
-summary: Communicate with tribal spirits to request guidance and learn history
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spirit Communion

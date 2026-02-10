@@ -1,10 +1,6 @@
 ---
 title: Resource Efficiency
-type: tiered
-category: Crafting Pool (General)
-skill_type: Tiered
-synergy_classes: All Crafting specialties
-tags: [Crafting]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Resource Efficiency

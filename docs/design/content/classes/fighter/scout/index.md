@@ -1,14 +1,8 @@
 ---
-title: 'Scout'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: reconnaissance and stealth
-summary: 'Reconnaissance specialist gathering intelligence and spotting dangers'
-tags:
-  - Combat
-  - Stealth
+title: Scout
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Scout

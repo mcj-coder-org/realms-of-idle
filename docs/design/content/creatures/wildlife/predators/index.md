@@ -1,8 +1,6 @@
 ---
-title: 'Predator Wildlife'
-type: 'index'
-category: 'wildlife'
-summary: 'Dangerous hunters requiring skill and preparation to confront'
+title: Predator Wildlife
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Predator Wildlife

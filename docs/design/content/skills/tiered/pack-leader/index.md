@@ -1,9 +1,6 @@
 ---
 title: Pack Leader
-type: tiered
-category: tiered
-summary: Lead animal allies with tactical bonuses
-tags: [Shamanic/Spirit/Beast, Nature/Animals]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Pack Leader

@@ -1,10 +1,6 @@
 ---
 title: Tanning
-type: mechanic-unlock
-category: Leatherworking Technique
-skill_type: Mechanic Unlock
-synergy_classes: Leatherworker
-tags: [Crafting/Leather/Processing]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Tanning

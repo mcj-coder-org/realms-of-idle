@@ -1,11 +1,6 @@
 ---
 title: Mithril Working
-type: mechanic-unlock
-category: Smithing Technique
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith
-tags: [Crafting/Smithing/Exotic]
-prerequisites: [Heat Treatment, Fine Metalwork]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Mithril Working

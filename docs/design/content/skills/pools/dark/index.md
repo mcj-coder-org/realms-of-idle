@@ -1,7 +1,6 @@
 ---
 title: Dark Skills
-type: skill-pool-index
-summary: Overview of dark skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Dark Skills

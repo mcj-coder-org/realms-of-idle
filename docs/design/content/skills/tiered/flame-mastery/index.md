@@ -1,9 +1,6 @@
 ---
 title: Flame Mastery
-type: tiered
-category: tiered
-summary: Increased fire spell power, efficiency, and burning duration
-tags: [Magic/Elemental/Fire]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Flame Mastery

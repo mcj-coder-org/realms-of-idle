@@ -1,10 +1,6 @@
 ---
 title: Inspiring Leader
-tier: Tiered
-classes: Leader, Chieftain, Knight
-type: tiered
-summary: Enhance follower capabilities with stat and morale bonuses at range
-tags: [Leadership/Social, Social]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Inspiring Leader

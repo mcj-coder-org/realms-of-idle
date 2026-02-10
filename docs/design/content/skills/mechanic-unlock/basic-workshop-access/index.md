@@ -1,10 +1,6 @@
 ---
 title: Basic Workshop Access
-type: mechanic-unlock
-category: Crafting Pool (General)
-skill_type: Mechanic Unlock
-synergy_classes: All Crafting classes
-tags: [Crafting]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Basic Workshop Access

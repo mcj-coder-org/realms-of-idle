@@ -1,7 +1,6 @@
 ---
 title: Magic Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for mana-based spellcasters
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Magic Pool Skills

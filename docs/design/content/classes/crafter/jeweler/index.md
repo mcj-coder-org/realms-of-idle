@@ -1,11 +1,8 @@
 ---
-title: 'Jeweler'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: jewelcrafting
-summary: 'Artisan of precious metals and gems, crafting jewelry and enchantment focuses'
+title: Jeweler
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Jeweler

@@ -1,13 +1,8 @@
 ---
-title: 'Aeromancer'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: air magic mastery through mage progression
-summary: 'Air magic specialist with mastery over winds, storms, and aerial forces'
-tags:
-  - Magic/Elemental/Air
+title: Aeromancer
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Aeromancer

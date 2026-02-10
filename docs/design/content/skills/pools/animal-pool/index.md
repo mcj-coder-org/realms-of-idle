@@ -1,7 +1,6 @@
 ---
 title: Animal Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for animal handling and training specialists
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Animal Pool Skills

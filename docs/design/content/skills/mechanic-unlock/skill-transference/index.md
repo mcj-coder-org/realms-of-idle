@@ -1,10 +1,6 @@
 ---
 title: Skill Transference
-tier: Mechanic Unlock
-classes: Trainer
-type: mechanic-unlock
-summary: Teach skills you know directly to eligible students
-tags: [Knowledge/Teaching]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Skill Transference

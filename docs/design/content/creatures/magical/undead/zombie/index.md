@@ -1,9 +1,6 @@
 ---
-title: 'Zombie'
-type: 'creature'
-category: 'magical/undead'
-tier: 'uncommon'
-summary: 'Shambling corpses animated by necromancy, slower but more resilient than skeletons'
+title: Zombie
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Zombie

@@ -1,9 +1,6 @@
 ---
 title: Shadow Step
-type: tiered
-tier-type: Tiered
-summary: Enhanced stealth movement
-tags: [Stealth]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Shadow Step

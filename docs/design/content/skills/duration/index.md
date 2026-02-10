@@ -1,7 +1,6 @@
 ---
 title: Duration Skills
-type: index
-summary: Skills with time-limited effects
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Duration Skills

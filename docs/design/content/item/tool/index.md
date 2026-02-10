@@ -1,8 +1,6 @@
 ---
-title: 'Tools'
-type: 'category'
-category: 'item'
-summary: 'Equipment for gathering and crafting activities'
+title: Tools
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Tools

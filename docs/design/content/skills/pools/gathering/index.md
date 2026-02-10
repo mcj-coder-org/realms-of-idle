@@ -1,7 +1,6 @@
 ---
 title: Gathering Skills
-type: skill-pool-index
-summary: Overview of gathering skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Gathering Skills

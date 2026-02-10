@@ -1,10 +1,6 @@
 ---
 title: Etching
-type: mechanic-unlock
-category: Smithing Technique
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith, Jeweler
-tags: [Crafting/Smithing/Decoration, Crafting/Jewelry]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Etching

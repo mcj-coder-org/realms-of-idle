@@ -1,9 +1,6 @@
 ---
 title: Swimmer
-tags: [Physical/Agility]
-tier: Tiered
-type: skill
-summary: Improved water movement and breath holding
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Swimmer

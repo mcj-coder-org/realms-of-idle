@@ -1,11 +1,6 @@
 ---
 title: Arcane Sensitivity
-type: skill
-category: racial
-tags:
-  - Magic
-  - Knowledge
-summary: Enhanced mana sensitivity and magical awareness
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Arcane Sensitivity

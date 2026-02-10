@@ -1,8 +1,6 @@
 ---
-title: 'Docile Wildlife'
-type: 'index'
-category: 'wildlife'
-summary: 'Passive creatures that flee from threats'
+title: Docile Wildlife
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Docile Wildlife

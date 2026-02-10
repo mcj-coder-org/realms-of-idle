@@ -1,7 +1,6 @@
 ---
 title: Combat Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for combat-focused classes
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Combat Pool Skills

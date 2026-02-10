@@ -1,10 +1,6 @@
 ---
 title: Spirit Binding
-tier: Mechanic Unlock
-classes: Shaman
-type: mechanic-unlock
-summary: Bind new spirits to the tribal pool through ritual combat or negotiation
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spirit Binding

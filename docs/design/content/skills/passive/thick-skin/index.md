@@ -1,11 +1,6 @@
 ---
 title: Thick Skin
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Physical
-summary: Natural armor from exceptionally tough hide
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Thick Skin

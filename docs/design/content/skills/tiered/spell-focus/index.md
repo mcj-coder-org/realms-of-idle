@@ -1,9 +1,6 @@
 ---
 title: Spell Focus
-type: tiered
-category: tiered
-summary: Enhanced spell effectiveness
-tags: [Magic]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Spell Focus

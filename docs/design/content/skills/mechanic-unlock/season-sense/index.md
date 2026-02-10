@@ -1,9 +1,6 @@
 ---
 title: Season Sense
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Perfect agricultural timing
-tags: [Agriculture, Nature]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Season Sense

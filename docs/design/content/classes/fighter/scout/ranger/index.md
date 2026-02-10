@@ -1,7 +1,8 @@
 ---
 title: Ranger
-type: class-stub
-authoritative: ../../gatherer/hunter/ranger/
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/fighter/scout/index.md
+tree_tier: 3
 ---
 
 # Ranger

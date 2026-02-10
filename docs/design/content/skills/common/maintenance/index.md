@@ -1,9 +1,6 @@
 ---
 title: Maintenance
-tags: [Crafting]
-tier: Tiered
-type: skill
-summary: Keep equipment in good condition with field repairs
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Maintenance

@@ -1,9 +1,6 @@
 ---
-title: 'Skeleton'
-type: 'creature'
-category: 'magical/undead'
-tier: 'uncommon'
-summary: 'Animated bones driven by necromantic magic, tragic remnants of the deceased'
+title: Skeleton
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Skeleton

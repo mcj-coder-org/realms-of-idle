@@ -1,10 +1,6 @@
 ---
 title: Brewing
-type: mechanic-unlock
-category: Alchemy Technique
-skill_type: Mechanic Unlock
-synergy_classes: Alchemist, Cook
-tags: [Crafting/Alchemy/Technique]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Brewing

@@ -1,9 +1,6 @@
 ---
-title: 'Ghost'
-type: 'creature'
-category: 'magical/undead'
-tier: 'rare'
-summary: 'Spirits of the dead unable or unwilling to pass on, bound by unfinished business'
+title: Ghost
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Ghost

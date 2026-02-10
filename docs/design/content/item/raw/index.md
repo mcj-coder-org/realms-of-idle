@@ -1,8 +1,6 @@
 ---
-title: 'Raw Materials'
-type: 'category'
-category: 'item'
-summary: 'Unprocessed materials from gathering activities'
+title: Raw Materials
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Raw Materials

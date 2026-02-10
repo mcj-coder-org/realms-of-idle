@@ -1,9 +1,6 @@
 ---
 title: Weather Worker
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Gather in adverse conditions
-tags: [Gathering]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Weather Worker

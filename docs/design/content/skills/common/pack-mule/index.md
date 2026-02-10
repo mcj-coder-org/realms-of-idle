@@ -1,9 +1,6 @@
 ---
 title: Pack Mule
-tags: [Physical/Strength]
-tier: Tiered
-type: skill
-summary: Increased carrying capacity with reduced encumbrance penalties
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Pack Mule

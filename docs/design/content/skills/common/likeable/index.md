@@ -1,9 +1,6 @@
 ---
 title: Likeable
-tags: [Social/Persuasion]
-tier: Tiered
-type: skill
-summary: Naturally pleasant demeanor improving initial disposition
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Likeable

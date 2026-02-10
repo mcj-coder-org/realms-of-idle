@@ -1,21 +1,7 @@
 ---
 title: Fighter
-type: class
-tier: 1
-category: foundation
-tags:
-  - Combat
-tracked_actions:
-  - Attack enemies
-  - Defend allies
-  - Spar with others
-  - Train combat forms
-unlocks:
-  - Warrior
-  - Archer
-  - Scout
-  - Guard
-  - Adventurer
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Fighter

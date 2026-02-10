@@ -1,7 +1,6 @@
 ---
 title: Passive Skills
-type: index
-summary: Always-active skills requiring no activation
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Passive Skills

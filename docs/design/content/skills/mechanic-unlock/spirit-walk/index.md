@@ -1,10 +1,6 @@
 ---
 title: Spirit Walk
-tier: Mechanic Unlock (Multi-Tier)
-classes: Shaman
-type: mechanic-unlock
-summary: Project spirit to observe distant locations within tribal territory
-tags: [Magic/Shamanic, Tribal/Spirits]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Spirit Walk

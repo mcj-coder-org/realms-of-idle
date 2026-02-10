@@ -1,10 +1,6 @@
 ---
 title: Heat Treatment
-type: mechanic-unlock
-category: Smithing Technique
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith
-tags: [Crafting/Smithing/Technique]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Heat Treatment

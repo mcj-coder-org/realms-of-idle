@@ -1,9 +1,6 @@
 ---
 title: Green Thumb
-type: tiered
-tier-type: Tiered
-summary: Improved crop growth
-tags: [Agriculture/Crops]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Green Thumb

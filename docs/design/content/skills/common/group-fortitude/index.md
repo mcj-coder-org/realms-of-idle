@@ -1,9 +1,6 @@
 ---
 title: Group Fortitude
-tags: [Combat/Defense, Leadership]
-tier: Tiered
-type: skill
-summary: Party defensive bonus with shared recovery
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Group Fortitude

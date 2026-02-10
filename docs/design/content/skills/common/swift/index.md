@@ -1,9 +1,6 @@
 ---
 title: Swift
-tags: [Physical/Agility]
-tier: Tiered
-type: skill
-summary: Improved base movement speed and sprint speed
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Swift

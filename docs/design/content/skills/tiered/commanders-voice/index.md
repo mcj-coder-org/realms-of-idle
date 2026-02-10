@@ -1,10 +1,6 @@
 ---
 title: Commander's Voice
-type: tiered
-tier: tiered
-rarity: rare
-summary: Combat orders affect more allies at greater range with improved compliance
-tags: [Combat/Tactics, Leadership/Command]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Commander's Voice

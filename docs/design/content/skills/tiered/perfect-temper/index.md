@@ -1,10 +1,6 @@
 ---
 title: Perfect Temper
-type: tiered
-category: Smithing Pool
-skill_type: Tiered
-synergy_classes: Blacksmith, Weaponsmith, Armorer
-tags: [Crafting/Smithing]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Perfect Temper

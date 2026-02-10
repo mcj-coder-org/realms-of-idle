@@ -1,14 +1,6 @@
 ---
 title: Spirit Healing
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Shaman
-  - Ancestor Shaman
-tags:
-  - Shamanic/Nature
-  - Shamanic/Spirit
-summary: Channel spirit energy to heal wounds and cure ailments
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Spirit Healing

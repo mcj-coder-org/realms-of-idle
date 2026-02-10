@@ -1,10 +1,6 @@
 ---
 title: Underworld Connections
-tier: Passive Generator
-classes: Thief, Assassin, Smuggler, Fence, Extortionist
-type: passive-generator
-summary: Criminal network generates opportunities for illegal activities
-tags: [Criminal, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Underworld Connections

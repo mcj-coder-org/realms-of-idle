@@ -1,15 +1,8 @@
 ---
-title: 'Caravaner'
-type: 'class'
-category: 'trade'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: caravan trading
-summary: 'Long-distance trader specializing in transporting goods between distant markets'
-tags:
-  - Trade
-  - Travel
-  - Transportation
+title: Caravaner
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/trader/index.md
+tree_tier: 2
 ---
 
 # Caravaner

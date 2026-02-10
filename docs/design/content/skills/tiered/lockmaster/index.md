@@ -1,9 +1,6 @@
 ---
 title: Lockmaster
-type: tiered
-tier-type: Tiered
-summary: Superior lockpicking ability
-tags: [Stealth/Infiltration, Criminal/Theft]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Lockmaster

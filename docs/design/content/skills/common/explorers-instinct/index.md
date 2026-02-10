@@ -1,9 +1,6 @@
 ---
 title: Explorer's Instinct
-tags: [Gathering, Knowledge]
-tier: Tiered
-type: skill
-summary: Drawn to discoveries with increased location and POI detection
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Explorer's Instinct

@@ -1,9 +1,6 @@
 ---
-title: 'Dog'
-type: 'creature'
-category: 'domestic/companions'
-tier: 'basic'
-summary: "Loyal companion and working animal, humanity's oldest and truest friend"
+title: Dog
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Dog

@@ -1,9 +1,6 @@
 ---
 title: Keen Senses
-tags: [Universal/Physical]
-tier: Tiered
-type: skill
-summary: Improved detection of hidden things
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Keen Senses

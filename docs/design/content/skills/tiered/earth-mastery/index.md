@@ -1,9 +1,6 @@
 ---
 title: Earth Mastery
-type: tiered
-category: tiered
-summary: Increased earth spell power, efficiency, and stone barrier strength
-tags: [Magic/Elemental/Earth]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Earth Mastery

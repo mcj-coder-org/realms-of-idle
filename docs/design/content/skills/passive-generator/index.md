@@ -1,3 +1,8 @@
+---
+title: Passive Generator Skills
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
+---
+
 # Passive Generator Skills
 
 **Type**: Passive Generator

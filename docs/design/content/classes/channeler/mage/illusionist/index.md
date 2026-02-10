@@ -1,13 +1,8 @@
 ---
-title: 'Illusionist'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: illusion and mind magic mastery through mage progression
-summary: 'Illusion magic specialist with mastery over deception, perception, and mental manipulation'
-tags:
-  - Magic/Illusion/Mind
+title: Illusionist
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Illusionist

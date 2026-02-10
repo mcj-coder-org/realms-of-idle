@@ -1,9 +1,6 @@
 ---
 title: Undead Binding
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Control undead creatures
-tags: [Magic/Necromancy]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Undead Binding

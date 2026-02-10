@@ -1,9 +1,6 @@
 ---
-title: 'Songbird'
-type: 'creature'
-category: 'wildlife/docile'
-tier: 'basic'
-summary: 'Small singing bird bringing cheer to settlements and providing feathers for crafting'
+title: Songbird
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Songbird

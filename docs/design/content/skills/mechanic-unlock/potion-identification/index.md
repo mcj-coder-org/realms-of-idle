@@ -1,9 +1,6 @@
 ---
 title: Potion Identification
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Identify unknown potions
-tags: [Crafting/Alchemy/Potion]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Potion Identification

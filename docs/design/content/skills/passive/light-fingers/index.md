@@ -1,11 +1,6 @@
 ---
 title: Light Fingers
-type: skill
-category: rogue
-tags:
-  - Stealth
-  - Dexterity
-summary: Increased success rate for pickpocketing and theft
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Light Fingers

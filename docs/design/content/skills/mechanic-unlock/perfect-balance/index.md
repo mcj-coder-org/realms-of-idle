@@ -1,10 +1,6 @@
 ---
 title: Perfect Balance
-type: mechanic-unlock
-category: Smithing Pool
-skill_type: Mechanic Unlock
-synergy_classes: Weaponsmith, Warrior
-tags: [Crafting/Smithing]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Perfect Balance

@@ -1,9 +1,6 @@
 ---
 title: Clear Orders
-tags: [Leadership/Command]
-tier: Tiered
-type: skill
-summary: Improved command effectiveness and compliance
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Clear Orders

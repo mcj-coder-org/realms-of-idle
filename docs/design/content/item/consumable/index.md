@@ -1,8 +1,6 @@
 ---
-title: 'Consumables'
-type: 'category'
-category: 'item'
-summary: 'Food, potions, and expendable items'
+title: Consumables
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Consumables

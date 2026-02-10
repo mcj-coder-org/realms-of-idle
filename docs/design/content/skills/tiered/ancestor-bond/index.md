@@ -1,9 +1,6 @@
 ---
 title: Ancestor Bond
-type: tiered
-category: tiered
-summary: Connection to ancestral spirits with increasing wisdom
-tags: [Shamanic/Spirit/Ancestor]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Ancestor Bond

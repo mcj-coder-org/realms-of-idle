@@ -1,9 +1,6 @@
 ---
 title: Fortitude
-tags: [Physical/Endurance]
-tier: Tiered
-type: skill
-summary: Resistance to poison and disease with reduced duration at higher tiers
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Fortitude

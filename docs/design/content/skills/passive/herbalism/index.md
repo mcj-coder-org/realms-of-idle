@@ -1,14 +1,6 @@
 ---
 title: Herbalism
-type: passive
-tier: Foundation
-classes:
-  - Shaman
-  - Herbalist
-tags:
-  - Shamanic/Nature
-  - Gathering/Herbalism
-summary: Knowledge of medicinal herbs and creation of poultices and remedies
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Herbalism

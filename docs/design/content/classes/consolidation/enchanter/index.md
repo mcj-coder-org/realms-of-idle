@@ -1,17 +1,8 @@
 ---
-title: 'Enchanter'
-type: 'class'
-category: 'consolidation'
-tier: 3
-prerequisite_classes:
-  - Mage
-  - Crafter
-prerequisite_xp: 50000
-prerequisite_actions: Item enchantment and magical crafting mastery
-summary: 'Magical item specialist who imbues crafted goods with enchantments'
-tags:
-  - Magic
-  - Crafting
+title: Enchanter
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/consolidation/index.md
+tree_tier: 2
 ---
 
 # Enchanter

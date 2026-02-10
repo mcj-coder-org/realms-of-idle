@@ -1,13 +1,8 @@
 ---
-title: 'Farmer'
-type: 'class'
-category: 'gathering'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: farming
-summary: 'Cultivator of crops and tender of livestock, backbone of civilization'
-tags:
-  - Gathering/Agriculture
+title: Farmer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/gatherer/index.md
+tree_tier: 2
 ---
 
 # Farmer

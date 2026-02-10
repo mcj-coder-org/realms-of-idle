@@ -1,7 +1,6 @@
 ---
 title: Class-Specific Skills
-type: skill
-summary: Synergy-based skills with context-specific bonuses organized by type and tagged hierarchically
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Class-Specific Skills

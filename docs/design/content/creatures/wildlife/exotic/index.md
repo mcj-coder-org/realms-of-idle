@@ -1,8 +1,6 @@
 ---
-title: 'Exotic Wildlife'
-type: 'index'
-category: 'wildlife'
-summary: 'Rare and wondrous creatures that blur the line between natural and magical'
+title: Exotic Wildlife
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Exotic Wildlife

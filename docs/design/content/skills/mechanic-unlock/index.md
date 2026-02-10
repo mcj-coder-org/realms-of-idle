@@ -1,3 +1,8 @@
+---
+title: Mechanic Unlock Skills
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
+---
+
 # Mechanic Unlock Skills
 
 **Type**: Mechanic Unlock

@@ -1,9 +1,6 @@
 ---
 title: Light Sleeper
-tags: [Universal/Physical]
-tier: Tiered
-type: skill
-summary: Improved awareness while resting with chance to wake from threats
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Light Sleeper

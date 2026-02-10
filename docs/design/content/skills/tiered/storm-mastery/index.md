@@ -1,9 +1,6 @@
 ---
 title: Storm Mastery
-type: tiered
-category: tiered
-summary: Increased lightning spell power, efficiency, and chain effectiveness
-tags: [Magic/Elemental/Lightning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Storm Mastery

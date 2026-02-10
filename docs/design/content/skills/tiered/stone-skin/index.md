@@ -1,9 +1,6 @@
 ---
 title: Stone Skin
-type: tiered
-category: tiered
-summary: Passive damage reduction through stone armor and earth protection
-tags: [Magic/Elemental/Earth]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Stone Skin

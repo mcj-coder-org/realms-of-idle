@@ -1,9 +1,6 @@
 ---
 title: Organized
-tags: [Knowledge, Trade]
-tier: Tiered
-type: skill
-summary: Better inventory management with auto-sort and quick-access
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Organized

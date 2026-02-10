@@ -1,10 +1,6 @@
 ---
 title: Battle Hardened
-type: passive-generator
-tier: passive
-rarity: uncommon
-summary: Experience generates daily combat readiness bonuses
-tags: [Combat, Physical/Endurance]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Battle Hardened

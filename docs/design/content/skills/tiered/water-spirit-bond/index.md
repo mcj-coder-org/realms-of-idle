@@ -1,9 +1,6 @@
 ---
 title: Water Spirit Bond
-type: tiered
-category: tiered
-summary: Connection to water spirits with increasing spiritual power
-tags: [Shamanic/Elemental/Water]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Water Spirit Bond

@@ -1,13 +1,8 @@
 ---
-title: 'Summoner'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: summoning and planar magic mastery through mage progression
-summary: 'Summoning specialist with mastery over planar beings, extraplanar entities, and conjured allies'
-tags:
-  - Magic/Conjuration/Summoning
+title: Summoner
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Summoner

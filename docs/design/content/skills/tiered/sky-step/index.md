@@ -1,9 +1,6 @@
 ---
 title: Sky Step
-type: tiered
-category: tiered
-summary: Enhanced movement and mobility through wind magic
-tags: [Shamanic/Elemental/Air]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Sky Step

@@ -1,9 +1,6 @@
 ---
 title: Careful Hands
-tags: [Crafting]
-tier: Tiered
-type: skill
-summary: Improved crafting quality with reduced critical failures
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Careful Hands

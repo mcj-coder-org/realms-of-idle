@@ -1,9 +1,6 @@
 ---
 title: Pest Resistance
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Protect crops and animals from pests
-tags: [Agriculture]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Pest Resistance

@@ -1,9 +1,6 @@
 ---
 title: Brawler
-tags: [Combat/Melee]
-tier: Tiered
-type: skill
-summary: Improved unarmed combat damage and speed
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Brawler

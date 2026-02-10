@@ -1,7 +1,6 @@
 ---
 title: Agriculture Skills
-type: skill-pool-index
-summary: Overview of agriculture skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Agriculture Skills

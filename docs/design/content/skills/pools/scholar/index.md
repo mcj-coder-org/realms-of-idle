@@ -1,7 +1,6 @@
 ---
 title: Scholar Skills
-type: skill-pool-index
-summary: Overview of scholar skills with strong synergies
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Scholar Skills

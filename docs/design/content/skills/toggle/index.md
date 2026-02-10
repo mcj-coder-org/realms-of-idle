@@ -1,7 +1,6 @@
 ---
 title: Toggle Skills
-type: index
-summary: Skills that can be switched on and off
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Toggle Skills

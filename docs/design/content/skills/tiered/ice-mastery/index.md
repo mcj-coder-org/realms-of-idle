@@ -1,12 +1,6 @@
 ---
 title: Ice Mastery
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - Cryomancer
-tags:
-  - Magic/Elemental/Ice
-summary: Increased ice spell power, efficiency, and freeze duration
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Ice Mastery

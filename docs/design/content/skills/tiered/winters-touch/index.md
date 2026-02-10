@@ -1,9 +1,6 @@
 ---
 title: Winter's Touch
-type: tiered
-category: tiered
-summary: Freezing cold damage with slowing effects
-tags: [Shamanic/Elemental/Ice]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Winter's Touch

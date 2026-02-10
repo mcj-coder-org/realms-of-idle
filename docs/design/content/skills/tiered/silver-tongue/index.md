@@ -1,9 +1,6 @@
 ---
 title: Silver Tongue (Trade)
-type: tiered
-category: tiered
-summary: Superior negotiation in trade
-tags: [Trade/Negotiation, Social/Persuasion]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Silver Tongue (Trade)

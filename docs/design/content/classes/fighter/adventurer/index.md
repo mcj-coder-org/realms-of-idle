@@ -1,15 +1,8 @@
 ---
-title: 'Adventurer'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: exploration and survival
-summary: 'Versatile explorer and survivor, jack-of-all-trades in dangerous situations'
-tags:
-  - Combat
-  - Exploration
-  - Survival
+title: Adventurer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Adventurer

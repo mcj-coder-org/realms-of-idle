@@ -1,9 +1,6 @@
 ---
 title: Misdirection
-type: tiered
-tier-type: Tiered
-summary: Create diversions and false trails
-tags: [Stealth/Deception, Social/Deception]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Misdirection

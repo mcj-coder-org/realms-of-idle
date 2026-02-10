@@ -1,10 +1,6 @@
 ---
 title: Creature Lore
-type: mechanic-unlock
-category: Animal Pool
-skill_type: Mechanic Unlock
-synergy_classes: Hunter, Scholar, Beastmaster
-tags: [Nature/Animals, Knowledge]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Creature Lore

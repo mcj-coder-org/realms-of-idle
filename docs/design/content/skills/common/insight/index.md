@@ -1,9 +1,6 @@
 ---
 title: Insight
-tags: [Social, Knowledge]
-tier: Tiered
-type: skill
-summary: Read people and detect deception
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Insight

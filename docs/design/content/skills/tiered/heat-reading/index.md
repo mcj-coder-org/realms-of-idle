@@ -1,10 +1,6 @@
 ---
 title: Heat Reading
-type: tiered
-category: Crafting Pool (Smithing)
-skill_type: Tiered
-synergy_classes: Blacksmith, Weaponsmith, Armorsmith, Miner
-tags: [Crafting/Smithing]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Heat Reading

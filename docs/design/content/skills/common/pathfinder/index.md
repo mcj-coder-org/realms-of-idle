@@ -1,9 +1,6 @@
 ---
 title: Pathfinder
-tags: [Gathering, Nature]
-tier: Tiered
-type: skill
-summary: Navigate efficiently through wilderness, reducing travel time
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Pathfinder

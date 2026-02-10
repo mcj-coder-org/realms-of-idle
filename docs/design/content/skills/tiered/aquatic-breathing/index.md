@@ -1,9 +1,6 @@
 ---
 title: Aquatic Breathing
-type: tiered
-category: tiered
-summary: Underwater survival and exploration capability through water magic
-tags: [Magic/Elemental/Water]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Aquatic Breathing

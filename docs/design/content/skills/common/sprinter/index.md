@@ -1,9 +1,6 @@
 ---
 title: Sprinter
-tags: [Physical/Agility]
-tier: Tiered
-type: skill
-summary: Improved burst movement speed with reduced stamina cost
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Sprinter

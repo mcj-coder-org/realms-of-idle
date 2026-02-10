@@ -1,9 +1,6 @@
 ---
 title: Improviser
-tags: [Crafting, Knowledge]
-tier: Tiered
-type: skill
-summary: Work with suboptimal conditions and substitute materials
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Improviser

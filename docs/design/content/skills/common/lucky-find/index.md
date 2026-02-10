@@ -1,9 +1,6 @@
 ---
 title: Lucky Find
-tags: [Gathering]
-tier: Tiered
-type: skill
-summary: Improved chance of rare materials and exceptional finds
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Lucky Find

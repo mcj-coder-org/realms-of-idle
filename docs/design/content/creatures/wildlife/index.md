@@ -1,7 +1,6 @@
 ---
 title: Wildlife
-type: index
-summary: Normal animals that can be hunted or tamed
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Wildlife

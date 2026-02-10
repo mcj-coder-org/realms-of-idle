@@ -1,10 +1,6 @@
 ---
 title: Masonry
-type: mechanic-unlock
-category: Crafting Technique
-skill_type: Mechanic Unlock
-synergy_classes: Carpenter
-tags: [Crafting/Building/Stone]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Masonry

@@ -1,8 +1,6 @@
 ---
-title: 'Components'
-type: 'category'
-category: 'item'
-summary: 'Crafting parts and pieces for finished items'
+title: Components
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Components

@@ -1,9 +1,6 @@
 ---
-title: 'Pixie'
-type: 'creature'
-category: 'magical/fey'
-tier: 'uncommon'
-summary: 'Mischievous tiny fey with powerful illusion magic and chaotic temperaments'
+title: Pixie
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Pixie

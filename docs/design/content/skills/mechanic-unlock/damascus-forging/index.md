@@ -1,11 +1,6 @@
 ---
 title: Damascus Forging
-type: mechanic-unlock
-category: Smithing Technique
-skill_type: Mechanic Unlock
-synergy_classes: Blacksmith
-tags: [Crafting/Smithing/Advanced]
-prerequisites: [Heat Treatment, Pattern Welding]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Damascus Forging

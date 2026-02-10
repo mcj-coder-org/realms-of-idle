@@ -1,9 +1,6 @@
 ---
 title: Planar Binding
-type: tiered
-category: tiered
-summary: Strengthened minion binding, planar affinity, and conjured ally enhancement
-tags: [Magic/Conjuration/Summoning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Planar Binding

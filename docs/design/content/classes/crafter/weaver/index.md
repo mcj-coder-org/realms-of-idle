@@ -1,11 +1,8 @@
 ---
-title: 'Weaver'
-type: 'class'
-category: 'crafting'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: weaving
-summary: 'Master of loom and spindle, transforming raw fibers into cloth and fabric'
+title: Weaver
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/crafter/index.md
+tree_tier: 2
 ---
 
 # Weaver

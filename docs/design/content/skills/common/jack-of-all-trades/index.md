@@ -1,9 +1,6 @@
 ---
 title: Jack of All Trades
-tags: [Universal/Physical, Universal/Mental]
-tier: Tiered
-type: skill
-summary: Competence in unfamiliar tasks with reduced untrained penalties
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Jack of All Trades

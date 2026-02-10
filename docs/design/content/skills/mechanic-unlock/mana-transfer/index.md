@@ -1,9 +1,6 @@
 ---
 title: Mana Transfer
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Share mana with others
-tags: [Magic]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Mana Transfer

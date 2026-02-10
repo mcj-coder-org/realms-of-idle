@@ -1,9 +1,6 @@
 ---
 title: Reagent Cultivation
-type: passive-generator
-category: passive-generator
-summary: Grow alchemical ingredients
-tags: [Crafting/Alchemy]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Reagent Cultivation

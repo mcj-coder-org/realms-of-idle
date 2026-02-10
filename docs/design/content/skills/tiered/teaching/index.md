@@ -1,10 +1,6 @@
 ---
 title: Teaching
-tier: Tiered
-classes: Trainer, Scholar
-type: tiered
-summary: Train others effectively with accelerated learning rates
-tags: [Knowledge/Teaching, Social]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Teaching

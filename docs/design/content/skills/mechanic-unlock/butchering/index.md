@@ -1,10 +1,6 @@
 ---
 title: Butchering
-type: mechanic-unlock
-category: Animal Pool
-skill_type: Mechanic Unlock
-synergy_classes: Hunter, Cook, Alchemist
-tags: [Gathering/Animals, Crafting/Food]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Butchering

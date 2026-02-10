@@ -1,13 +1,8 @@
 ---
-title: 'Guard'
-type: 'class'
-category: 'combat'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: defensive combat and protection
-summary: 'Defensive specialist focused on protection and vigilance'
-tags:
-  - Combat/Defense
+title: Guard
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/fighter/index.md
+tree_tier: 2
 ---
 
 # Guard

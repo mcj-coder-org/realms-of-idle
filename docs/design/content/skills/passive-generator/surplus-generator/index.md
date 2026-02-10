@@ -1,9 +1,6 @@
 ---
 title: Surplus Generator
-type: passive-generator
-tier-type: Passive Generator
-summary: Farm produces extra over time
-tags: [Agriculture]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Surplus Generator

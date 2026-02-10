@@ -1,15 +1,8 @@
 ---
-title: 'Flame Keeper'
-type: 'class'
-category: 'shamanic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: fire spirit mastery through shaman progression
-prerequisite_classes:
-  - Shaman
-summary: 'Fire spirit specialist with mastery over sacred flames and tribal warmth'
-tags:
-  - Shamanic/Elemental/Fire
+title: Flame Keeper
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # Flame Keeper

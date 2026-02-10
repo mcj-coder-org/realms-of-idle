@@ -1,9 +1,6 @@
 ---
 title: Mind Shield
-type: tiered
-category: tiered
-summary: Mental protection through illusions and perception manipulation
-tags: [Magic/Illusion/Mind]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Mind Shield

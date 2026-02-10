@@ -1,10 +1,6 @@
 ---
 title: Market Access
-type: mechanic-unlock
-category: Trading Pool
-skill_type: Mechanic Unlock
-synergy_classes: Trader, Merchant, Broker
-tags: [Economy/Trading]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Market Access

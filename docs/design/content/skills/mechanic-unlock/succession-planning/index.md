@@ -1,10 +1,6 @@
 ---
 title: Succession Planning
-tier: Mechanic Unlock
-classes: Leader, Chieftain, Guildmaster
-type: mechanic-unlock
-summary: Prepare for smooth leadership transition by training successors
-tags: [Leadership/Management]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Succession Planning

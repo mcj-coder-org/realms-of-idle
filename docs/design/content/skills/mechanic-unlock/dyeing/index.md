@@ -1,10 +1,6 @@
 ---
 title: Dyeing
-type: mechanic-unlock
-category: Textile Technique
-skill_type: Mechanic Unlock
-synergy_classes: Tailor, Weaver
-tags: [Crafting/Textile/Coloring]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Dyeing

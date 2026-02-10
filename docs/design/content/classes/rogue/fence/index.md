@@ -1,16 +1,8 @@
 ---
-title: 'Fence'
-type: 'class'
-category: 'trade'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: fencing stolen goods
-summary: 'Black market dealer specializing in trading stolen and contraband goods'
-dark_path: true
-tags:
-  - Trade
-  - Criminal
-  - Black Market
+title: Fence
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/rogue/index.md
+tree_tier: 2
 ---
 
 # Fence

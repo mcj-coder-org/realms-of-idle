@@ -1,7 +1,6 @@
 ---
 title: Charge-Based Skills
-type: index
-summary: Skills with limited uses per rest period
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Charge-Based Skills

@@ -1,11 +1,6 @@
 ---
 title: Scaly Hide
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Nature
-summary: Natural scale armor providing damage reduction
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Scaly Hide

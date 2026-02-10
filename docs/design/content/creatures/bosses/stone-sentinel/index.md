@@ -1,9 +1,6 @@
 ---
-title: 'Stone Sentinel'
-type: 'creature'
-category: 'bosses'
-tier: 'rare'
-summary: 'Ancient magical construct guarding temples, vaults, and forbidden places'
+title: Stone Sentinel
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Stone Sentinel

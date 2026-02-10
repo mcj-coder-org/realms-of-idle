@@ -1,15 +1,8 @@
 ---
-title: 'Merchant'
-type: 'class'
-category: 'trade'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: trading
-summary: 'Established shop owner conducting substantial commerce from permanent locations'
-tags:
-  - Trade
-  - Commerce
-  - Business
+title: Merchant
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/trader/index.md
+tree_tier: 2
 ---
 
 # Merchant

@@ -1,21 +1,7 @@
 ---
 title: Rogue
-type: class
-tier: 1
-category: foundation
-tags:
-  - Criminal
-  - Stealth
-tracked_actions:
-  - Steal items
-  - Sneak undetected
-  - Lockpick
-  - Deceive others
-unlocks:
-  - Thief
-  - Assassin
-  - Fence
-  - Smuggler
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Rogue

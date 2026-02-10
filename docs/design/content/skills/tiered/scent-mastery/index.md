@@ -1,10 +1,6 @@
 ---
 title: Scent Mastery
-type: tiered
-category: Animal Pool
-skill_type: Tiered
-synergy_classes: Hunter, Trapper, Beastmaster
-tags: [Nature/Animals, Gathering/Hunting]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Scent Mastery

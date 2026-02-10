@@ -1,9 +1,6 @@
 ---
 title: Gatherer's Eye
-tags: [Gathering]
-tier: Tiered
-type: skill
-summary: Improved resource node detection and quality identification
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Gatherer's Eye

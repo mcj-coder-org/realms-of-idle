@@ -1,13 +1,8 @@
 ---
-title: 'Hunter'
-type: 'class'
-category: 'gathering'
-tier: 2
-prerequisite_xp: 5000
-prerequisite_actions: hunting
-summary: 'Skilled tracker and hunter, providing meat, hides, and animal materials'
-tags:
-  - Gathering/Hunting
+title: Hunter
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/gatherer/index.md
+tree_tier: 2
 ---
 
 # Hunter

@@ -1,12 +1,6 @@
 ---
 title: Stone Sense
-type: skill
-category: racial
-tags:
-  - Gathering/Mining
-  - Physical
-  - Knowledge
-summary: Innate understanding of stone structures and underground features
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Stone Sense

@@ -1,11 +1,6 @@
 ---
 title: Darkvision
-type: skill
-category: racial
-tags:
-  - Physical
-  - Universal/Physical
-summary: See perfectly in complete darkness
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Darkvision

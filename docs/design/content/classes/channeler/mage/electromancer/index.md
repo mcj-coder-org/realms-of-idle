@@ -1,15 +1,8 @@
 ---
-title: 'Electromancer'
-type: 'class'
-category: 'magic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: lightning magic mastery through mage progression
-prerequisite_classes:
-  - Mage
-summary: 'Lightning magic specialist with mastery over electrical discharge and chain effects'
-tags:
-  - Magic/Elemental/Lightning
+title: Electromancer
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/channeler/mage/index.md
+tree_tier: 3
 ---
 
 # Electromancer

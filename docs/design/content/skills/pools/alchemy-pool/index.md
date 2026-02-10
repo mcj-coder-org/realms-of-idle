@@ -1,7 +1,6 @@
 ---
 title: Alchemy Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for potion, poison, and transmutation specialists
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Alchemy Pool Skills

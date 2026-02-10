@@ -1,7 +1,6 @@
 ---
 title: Trade Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for merchants and traders
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Trade Pool Skills

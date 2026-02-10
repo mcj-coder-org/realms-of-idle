@@ -1,9 +1,6 @@
 ---
-title: 'Chicken'
-type: 'creature'
-category: 'domestic/poultry'
-tier: 'basic'
-summary: 'Ubiquitous farmyard bird providing eggs, meat, and pest control'
+title: Chicken
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Chicken

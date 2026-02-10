@@ -1,3 +1,9 @@
+---
+title: Tag-Class-Skill-Spell Matrix
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
+---
+
 # Tag-Class-Skill-Spell Matrix
 
 This document maps each skill tag to the classes, skills, and spells that reference it **exactly** (no inheritance).

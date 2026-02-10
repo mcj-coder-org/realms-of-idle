@@ -1,9 +1,6 @@
 ---
-title: 'Pickaxe'
-type: 'item'
-category: 'tool'
-tier: 1
-summary: 'Mining tool for ore extraction'
+title: Pickaxe
+gdd_ref: systems/core-progression-system-gdd.md#progression
 ---
 
 # Pickaxe

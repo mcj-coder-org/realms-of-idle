@@ -1,9 +1,6 @@
 ---
-title: 'Giant Eagle'
-type: 'creature'
-category: 'wildlife/exotic'
-tier: 'journeyman'
-summary: 'Majestic aerial predator of noble bearing and legendary wingspan'
+title: Giant Eagle
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Giant Eagle

@@ -1,9 +1,6 @@
 ---
 title: Sure-Footed
-tags: [Physical/Agility]
-tier: Tiered
-type: skill
-summary: Reduced terrain penalties and improved balance
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Sure-Footed

@@ -1,9 +1,6 @@
 ---
 title: Intimidating Presence
-tags: [Social, Combat]
-tier: Tiered
-type: skill
-summary: Use fear to influence others with morale penalties
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Intimidating Presence

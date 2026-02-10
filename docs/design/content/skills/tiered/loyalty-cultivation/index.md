@@ -1,10 +1,6 @@
 ---
 title: Loyalty Cultivation
-tier: Tiered
-classes: Leader, Chieftain
-type: tiered
-summary: Build deeper loyalty faster while reducing loyalty loss
-tags: [Leadership/Social]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Loyalty Cultivation

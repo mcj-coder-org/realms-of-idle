@@ -1,9 +1,6 @@
 ---
 title: Inspiring Presence
-tags: [Leadership/Social]
-tier: Tiered
-type: skill
-summary: Passive benefit to nearby allies improving stamina and morale
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Inspiring Presence

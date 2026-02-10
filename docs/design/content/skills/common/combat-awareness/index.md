@@ -1,9 +1,6 @@
 ---
 title: Combat Awareness
-tags: [Combat/Tactics]
-tier: Tiered
-type: skill
-summary: Improved reaction time and positioning in battle
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Combat Awareness

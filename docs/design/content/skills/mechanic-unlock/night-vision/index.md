@@ -1,10 +1,6 @@
 ---
 title: Night Vision
-tier: Mechanic Unlock
-classes: Thief, Scout, Miner, certain races
-type: mechanic-unlock
-summary: See in complete darkness with full color and detail
-tags: [Universal/Physical]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Night Vision

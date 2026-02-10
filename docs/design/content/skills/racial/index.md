@@ -1,7 +1,6 @@
 ---
 title: Racial Abilities
-type: index
-summary: Innate abilities granted by race
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Racial Abilities

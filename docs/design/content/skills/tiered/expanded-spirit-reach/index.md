@@ -1,10 +1,6 @@
 ---
 title: Expanded Spirit Reach
-tier: Tiered
-classes: Shaman
-type: tiered
-summary: Share shamanic benefits with non-tribal allies at increasing potency
-tags: [Magic/Shamanic, Tribal]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Expanded Spirit Reach

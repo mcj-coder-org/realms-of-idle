@@ -1,10 +1,6 @@
 ---
 title: Weatherproofing
-type: mechanic-unlock
-category: Crafting Technique
-skill_type: Mechanic Unlock
-synergy_classes: Leatherworker, Tailor
-tags: [Crafting/General/Treatment]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Weatherproofing

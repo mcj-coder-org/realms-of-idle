@@ -1,9 +1,6 @@
 ---
 title: Opportunist
-tags: [Combat/Tactics]
-tier: Tiered
-type: skill
-summary: Capitalize on favorable circumstances and create opportunities
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Opportunist

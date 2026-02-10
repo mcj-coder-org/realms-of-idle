@@ -1,9 +1,6 @@
 ---
 title: Backstab
-type: tiered
-tier-type: Tiered
-summary: Bonus damage from stealth or behind
-tags: [Stealth/Assassination, Combat/Assassination]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Backstab

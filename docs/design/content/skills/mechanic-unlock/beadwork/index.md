@@ -1,10 +1,6 @@
 ---
 title: Beadwork
-type: mechanic-unlock
-category: Crafting Technique
-skill_type: Mechanic Unlock
-synergy_classes: Jeweler, Tailor
-tags: [Crafting/Jewelry/Beads, Crafting/Textile/Decoration]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Beadwork

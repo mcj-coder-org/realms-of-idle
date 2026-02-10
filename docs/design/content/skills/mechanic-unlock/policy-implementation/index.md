@@ -1,10 +1,6 @@
 ---
 title: Policy Implementation
-tier: Mechanic Unlock
-classes: Settlement Leader, Guildmaster
-type: mechanic-unlock
-summary: Enact and modify settlement policies affecting governance and economy
-tags: [Leadership/Management]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Policy Implementation

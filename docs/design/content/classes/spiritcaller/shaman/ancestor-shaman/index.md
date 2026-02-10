@@ -1,15 +1,8 @@
 ---
-title: 'Ancestor Shaman'
-type: 'class'
-category: 'shamanic'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: ancestor spirit mastery through shaman progression
-prerequisite_classes:
-  - Shaman
-summary: 'Ancestral spirit specialist with mastery over lineage wisdom and deathcraft'
-tags:
-  - Shamanic/Spirit/Ancestor
+title: Ancestor Shaman
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/spiritcaller/shaman/index.md
+tree_tier: 3
 ---
 
 # Ancestor Shaman

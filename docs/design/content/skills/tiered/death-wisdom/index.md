@@ -1,9 +1,6 @@
 ---
 title: Death Wisdom
-type: tiered
-category: tiered
-summary: Knowledge of mortality and spiritual transitions
-tags: [Shamanic/Spirit/Ancestor]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Death Wisdom

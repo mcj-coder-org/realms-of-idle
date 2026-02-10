@@ -1,11 +1,8 @@
 ---
-title: 'Weaponsmith'
-type: 'class'
-category: 'crafting'
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: weapon forging and enhancement
-summary: 'Master smith specializing in weapon creation and enhancement'
+title: Weaponsmith
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/crafter/blacksmith/index.md
+tree_tier: 3
 ---
 
 # Weaponsmith

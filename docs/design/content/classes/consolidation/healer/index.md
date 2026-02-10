@@ -1,17 +1,8 @@
 ---
-title: 'Healer'
-type: 'class'
-category: 'consolidation'
-tier: 3
-prerequisite_classes:
-  - Mage
-  - Herbalist
-prerequisite_xp: 50000
-prerequisite_actions: Magical healing and herbalism mastery
-summary: 'Healing specialist combining magical restoration with herbal remedies'
-tags:
-  - Magic
-  - Gathering/Herbalism
+title: Healer
+gdd_ref: systems/class-system-gdd.md#specialization-classes
+parent: classes/consolidation/index.md
+tree_tier: 2
 ---
 
 # Healer

@@ -1,10 +1,6 @@
 ---
 title: Linguistic Mastery
-tier: Mechanic Unlock
-classes: Scholar
-type: mechanic-unlock
-summary: Learn new languages quickly through study
-tags: [Knowledge/Languages]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Linguistic Mastery

@@ -1,9 +1,6 @@
 ---
 title: Efficiency Expert
-type: tiered
-tier-type: Tiered
-summary: Reduced stamina and time for gathering
-tags: [Gathering]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Efficiency Expert

@@ -1,9 +1,6 @@
 ---
-title: 'Forest Spirit'
-type: 'creature'
-category: 'wildlife/exotic'
-tier: 'master'
-summary: 'Ethereal guardian of ancient woodlands, embodying the forest itself'
+title: Forest Spirit
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Forest Spirit

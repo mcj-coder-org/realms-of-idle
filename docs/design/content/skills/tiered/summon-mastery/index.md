@@ -1,9 +1,6 @@
 ---
 title: Summon Mastery
-type: tiered
-category: tiered
-summary: Enhanced summoning power, minion capability, and planar entity control
-tags: [Magic/Conjuration/Summoning]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Summon Mastery

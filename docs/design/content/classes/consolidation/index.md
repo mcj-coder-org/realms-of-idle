@@ -1,11 +1,7 @@
 ---
-title: 'Consolidation Classes'
-type: 'index'
-category: 'consolidation'
-summary: 'Tier 3 classes formed by combining two base classes for advanced specialization'
-tags:
-  - Class System
-  - Progression
+title: Consolidation Classes
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Consolidation Classes

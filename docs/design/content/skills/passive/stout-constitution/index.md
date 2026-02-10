@@ -1,11 +1,6 @@
 ---
 title: Stout Constitution
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Physical
-summary: Exceptional toughness with increased health and poison resistance
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Stout Constitution

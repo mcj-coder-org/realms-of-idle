@@ -1,9 +1,6 @@
 ---
 title: Haggler
-tags: [Trade/Negotiation]
-tier: Tiered
-type: skill
-summary: Better prices when trading, buy cheaper and sell higher
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Haggler

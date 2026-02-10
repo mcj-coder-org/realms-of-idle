@@ -1,9 +1,6 @@
 ---
-title: 'Cattle'
-type: 'creature'
-category: 'domestic/livestock'
-tier: 'basic'
-summary: 'Essential livestock providing meat, milk, leather, and labor for agricultural communities'
+title: Cattle
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Cattle

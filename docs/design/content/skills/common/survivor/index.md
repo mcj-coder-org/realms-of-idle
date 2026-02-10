@@ -1,9 +1,6 @@
 ---
 title: Survivor
-tags: [Nature, Physical/Endurance]
-tier: Tiered
-type: skill
-summary: General hardiness in adverse conditions with hazard resistance
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Survivor

@@ -1,9 +1,6 @@
 ---
 title: Resilient Spirit
-tags: [Universal/Mental]
-tier: Tiered
-type: skill
-summary: Recover from setbacks and negative status effects
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Resilient Spirit

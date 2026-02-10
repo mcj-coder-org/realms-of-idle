@@ -1,9 +1,6 @@
 ---
 title: Reputation Builder
-tags: [Social, Trade]
-tier: Tiered
-type: skill
-summary: Gain standing faster with factions while reducing losses
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Reputation Builder

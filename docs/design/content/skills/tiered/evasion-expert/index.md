@@ -1,9 +1,6 @@
 ---
 title: Evasion Expert
-type: tiered
-tier-type: Tiered
-summary: Superior ability to avoid attacks
-tags: [Stealth, Combat/Defense, Physical/Agility]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Evasion Expert

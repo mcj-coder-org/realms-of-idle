@@ -1,9 +1,6 @@
 ---
-title: 'Earth Elemental'
-type: 'creature'
-category: 'magical/elementals'
-tier: 'journeyman'
-summary: 'Living stone from the elemental plane, embodying endurance and ancient patience'
+title: Earth Elemental
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Earth Elemental

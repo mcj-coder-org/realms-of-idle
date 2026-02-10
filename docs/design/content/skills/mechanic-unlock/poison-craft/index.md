@@ -1,9 +1,6 @@
 ---
 title: Poison Craft
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Create and apply poisons
-tags: [Stealth/Assassination, Crafting/Alchemy/Poison, Criminal/Assassination]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Poison Craft

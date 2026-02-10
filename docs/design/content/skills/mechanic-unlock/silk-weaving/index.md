@@ -1,11 +1,6 @@
 ---
 title: Silk Weaving
-type: mechanic-unlock
-category: Textile Technique
-skill_type: Mechanic Unlock
-synergy_classes: Weaver
-tags: [Crafting/Textile/Specialty]
-prerequisites: [Basic Weaving]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Silk Weaving

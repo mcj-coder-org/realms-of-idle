@@ -1,10 +1,6 @@
 ---
 title: Articulation
-type: mechanic-unlock
-category: Smithing Pool
-skill_type: Mechanic Unlock
-synergy_classes: Armorsmith, Weaponsmith
-tags: [Crafting/Smithing]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Articulation

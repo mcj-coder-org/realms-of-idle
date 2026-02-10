@@ -1,9 +1,6 @@
 ---
 title: Climber
-tags: [Physical/Agility]
-tier: Tiered
-type: skill
-summary: Improved climbing ability with reduced fall damage
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Climber

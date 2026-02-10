@@ -1,7 +1,6 @@
 ---
 title: Common Skills
-type: skill-pool-index
-summary: Overview of common skills available to all classes
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Common Skills

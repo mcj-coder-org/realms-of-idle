@@ -1,10 +1,6 @@
 ---
 title: Evidence Elimination
-tier: Tiered
-classes: All Dark pool
-type: tiered
-summary: Remove traces of crimes and frame others for your actions
-tags: [Criminal, Dark]
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Evidence Elimination

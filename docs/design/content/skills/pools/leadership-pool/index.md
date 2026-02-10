@@ -1,7 +1,6 @@
 ---
 title: Leadership Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for leaders and commanders
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Leadership Pool Skills

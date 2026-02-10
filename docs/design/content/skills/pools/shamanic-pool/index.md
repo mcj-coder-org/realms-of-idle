@@ -1,7 +1,6 @@
 ---
 title: Shamanic Pool Skills
-type: skill-pool
-summary: Skills with strong synergies for tribal spirit practitioners
+gdd_ref: systems/skill-recipe-system-gdd.md#skill-pools
 ---
 
 # Shamanic Pool Skills

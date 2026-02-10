@@ -1,9 +1,6 @@
 ---
 title: Transmutation Basics
-type: mechanic-unlock
-category: mechanic-unlock
-summary: Convert materials
-tags: [Crafting/Alchemy]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Transmutation Basics

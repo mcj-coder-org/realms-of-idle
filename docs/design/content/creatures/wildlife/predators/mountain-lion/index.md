@@ -1,9 +1,6 @@
 ---
-title: 'Mountain Lion'
-type: 'creature'
-category: 'wildlife/predators'
-tier: 'apprentice'
-summary: 'Stealthy ambush predator favoring high ground and surprise attacks'
+title: Mountain Lion
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Mountain Lion

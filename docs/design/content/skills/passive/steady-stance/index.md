@@ -1,12 +1,6 @@
 ---
 title: Steady Stance
-type: skill
-category: racial
-tags:
-  - Physical/Endurance
-  - Combat/Defense
-  - Physical
-summary: Exceptional resistance to knockback and knockdown effects
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Steady Stance

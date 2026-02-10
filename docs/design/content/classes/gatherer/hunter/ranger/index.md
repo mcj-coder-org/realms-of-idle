@@ -1,10 +1,8 @@
 ---
 title: Ranger
-type: class
-tier: 3
-prerequisite_xp: 50000
-prerequisite_actions: wilderness hunting, tracking, scouting
-summary: Master of wilderness survival combining hunting expertise with scout mobility
+gdd_ref: systems/class-system-gdd.md#advanced-classes
+parent: classes/gatherer/hunter/index.md
+tree_tier: 3
 ---
 
 # Ranger

@@ -1,12 +1,7 @@
 ---
 title: Channeler
-type: class-category
-tier: 1
-category: foundation-alternative
-tags:
-  - Magic
-  - Channeling
-summary: Foundation magic class providing universal magic bonuses
+gdd_ref: systems/class-system-gdd.md#foundation-classes
+tree_tier: 1
 ---
 
 # Channeler

@@ -1,10 +1,6 @@
 ---
 title: Runecrafting
-type: mechanic-unlock
-category: Magic Technique
-skill_type: Mechanic Unlock
-synergy_classes: Enchanter, Mage
-tags: [Magic/Enchanting/Runes]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Runecrafting

@@ -1,9 +1,6 @@
 ---
-title: 'Sprite'
-type: 'creature'
-category: 'magical/fey'
-tier: 'uncommon'
-summary: 'Tiny, playful nature spirits that embody the joy and mischief of wild places'
+title: Sprite
+gdd_ref: systems/creature-system-gdd.md#creatures
 ---
 
 # Sprite

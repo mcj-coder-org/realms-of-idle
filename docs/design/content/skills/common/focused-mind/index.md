@@ -1,9 +1,6 @@
 ---
 title: Focused Mind
-tags: [Universal/Mental]
-tier: Tiered
-type: skill
-summary: Resist mental disruption with break-free capability
+gdd_ref: systems/skill-recipe-system-gdd.md#common-skills
 ---
 
 # Focused Mind

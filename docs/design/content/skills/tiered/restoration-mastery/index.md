@@ -1,11 +1,6 @@
 ---
 title: Restoration Mastery
-type: tiered
-category: tiered
-summary: Combined mastery of magical and herbal restoration techniques
-tags: [Magic]
-classes:
-  - Healer
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # Restoration Mastery

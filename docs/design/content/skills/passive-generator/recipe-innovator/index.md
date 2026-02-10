@@ -1,10 +1,6 @@
 ---
 title: Recipe Innovator
-type: passive-generator
-category: Crafting Pool (General)
-skill_type: Passive Generator
-synergy_classes: All Crafting specialties
-tags: [Crafting]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Recipe Innovator

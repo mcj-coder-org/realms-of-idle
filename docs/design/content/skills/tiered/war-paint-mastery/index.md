@@ -1,13 +1,6 @@
 ---
 title: War Paint Mastery
-type: tiered
-tier: Lesser/Greater/Enhanced
-classes:
-  - War Shaman
-tags:
-  - Shamanic
-  - Combat/Melee
-summary: Create magical war paint that enhances tribal warriors in battle
+gdd_ref: systems/skill-recipe-system-gdd.md#tiered-skills
 ---
 
 # War Paint Mastery

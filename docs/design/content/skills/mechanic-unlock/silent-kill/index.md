@@ -1,9 +1,6 @@
 ---
 title: Silent Kill
-type: mechanic-unlock
-tier-type: Mechanic Unlock
-summary: Eliminate without alerting others
-tags: [Stealth/Assassination, Combat/Assassination, Criminal/Assassination]
+gdd_ref: systems/skill-recipe-system-gdd.md#skills
 ---
 
 # Silent Kill
