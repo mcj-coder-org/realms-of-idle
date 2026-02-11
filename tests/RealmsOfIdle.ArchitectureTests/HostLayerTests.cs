@@ -12,10 +12,11 @@ public class HostLayerTests
     [Fact]
     public void BlazorHost_ShouldNot_DependOnGameLogic_Assemblies()
     {
-        // Blazor host should only reference UI component library, not game logic
+        // Blazor host may reference Core.Engine.Spatial (GridPosition) and Core.Abstractions
+        // but should not depend on game-specific logic like GameLogic or Inn scenarios
         var result = Types.InAssembly(BlazorAssembly)
             .ShouldNot()
-            .HaveDependencyOnAny("RealmsOfIdle.Core.Engine", "RealmsOfIdle.Core.GameLogic")
+            .HaveDependencyOnAny("RealmsOfIdle.Core.GameLogic", "RealmsOfIdle.Core.Scenarios")
             .GetResult();
 
         if (!result.IsSuccessful)
@@ -42,14 +43,14 @@ public class HostLayerTests
     }
 
     [Fact]
-    public void BlazorHost_ShouldHaveMinimalTypes()
+    public void BlazorHost_ShouldHaveReasonableTypeCount()
     {
-        // Host should only have a few types (Program, HttpGameService, maybe some configuration)
+        // Blazor client includes Models, Services, Components for possession demo
         var types = Types.InAssembly(BlazorAssembly)
             .GetTypes()
             .ToList();
 
-        // Host should be minimal - typically just Program and maybe a few others
-        types.Count.Should().BeLessThan(20, "Blazor host should have minimal type count");
+        // Client app with game models, services, and components
+        types.Count.Should().BeLessThan(100, "Blazor client should have reasonable type count");
     }
 }

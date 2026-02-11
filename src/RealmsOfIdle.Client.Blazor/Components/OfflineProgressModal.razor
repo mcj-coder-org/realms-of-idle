@@ -1,0 +1,44 @@
+@namespace RealmsOfIdle.Client.Blazor.Components
+
+<div class="offline-progress-modal" role="dialog" aria-modal="true">
+    <div class="offline-progress-content">
+        <h2>Welcome back!</h2>
+        <p>You were away for @FormatElapsedTime(ElapsedTime).</p>
+        <div class="offline-progress-summary">
+            <p>Your NPCs performed <strong>@TotalActionsPerformed</strong> actions while you were away.</p>
+            @if (TotalGoldEarned > 0)
+            {
+                <p>Gold earned: <strong>@TotalGoldEarned</strong></p>
+            }
+            @if (TotalReputationEarned > 0)
+            {
+                <p>Reputation earned: <strong>@TotalReputationEarned</strong></p>
+            }
+        </div>
+        <button class="dismiss-button" @onclick="OnDismiss">Continue</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public TimeSpan ElapsedTime { get; set; }
+
+    [Parameter]
+    public int TotalGoldEarned { get; set; }
+
+    [Parameter]
+    public int TotalReputationEarned { get; set; }
+
+    [Parameter]
+    public int TotalActionsPerformed { get; set; }
+
+    [Parameter]
+    public EventCallback OnDismiss { get; set; }
+
+    private static string FormatElapsedTime(TimeSpan elapsed)
+    {
+        if (elapsed.TotalHours >= 1)
+            return $"{(int)elapsed.TotalHours} hours {elapsed.Minutes} minutes";
+        return $"{(int)elapsed.TotalMinutes} minutes";
+    }
+}

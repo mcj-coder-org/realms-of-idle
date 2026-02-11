@@ -95,34 +95,34 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T130 [P] Unit test for OfflineProgressCalculator with <60s elapsed (no calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T131 [P] Unit test for OfflineProgressCalculator with 5 minutes elapsed (correct cycles) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T132 [P] Unit test for OfflineProgressCalculator with 25 hours elapsed (24hr cap) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T133 [P] Unit test for OfflineProgressCalculator clearing possessed NPC state in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T134 [P] Unit test for OfflineProgressCalculator with no resources (no actions) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T135 [P] Unit test for OfflineProgressCalculator with multiple NPCs (independent calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T136 [P] Unit test for OfflineProgressCalculator immutability verification in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
-- [ ] T137 [P] Unit test for TabVisibilityHandler event firing in tests/RealmsOfIdle.Client.Blazor.Tests/Services/TabVisibilityHandlerTests.cs
-- [ ] T138 [P] bUnit component test for OfflineProgressModal rendering in tests/RealmsOfIdle.Client.Blazor.Tests/Components/OfflineProgressModalTests.cs
+- [x] T130 [P] Unit test for OfflineProgressCalculator with <60s elapsed (no calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T131 [P] Unit test for OfflineProgressCalculator with 5 minutes elapsed (correct cycles) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T132 [P] Unit test for OfflineProgressCalculator with 25 hours elapsed (24hr cap) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T133 [P] Unit test for OfflineProgressCalculator clearing possessed NPC state in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T134 [P] Unit test for OfflineProgressCalculator with no resources (no actions) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T135 [P] Unit test for OfflineProgressCalculator with multiple NPCs (independent calculation) in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T136 [P] Unit test for OfflineProgressCalculator immutability verification in tests/RealmsOfIdle.Client.Blazor.Tests/Services/OfflineProgressCalculatorTests.cs
+- [x] T137 [P] Unit test for TabVisibilityHandler event firing in tests/RealmsOfIdle.Client.Blazor.Tests/Services/TabVisibilityHandlerTests.cs
+- [x] T138 [P] bUnit component test for OfflineProgressModal rendering in tests/RealmsOfIdle.Client.Blazor.Tests/Components/OfflineProgressModalTests.cs
 
 ### Implementation for Offline Progress
 
-- [ ] T139 [P] Create OfflineProgressCalculator.cs service in src/RealmsOfIdle.Client.Blazor/Services/OfflineProgressCalculator.cs
-- [ ] T140 [P] Create TabVisibilityHandler.cs service in src/RealmsOfIdle.Client.Blazor/Services/TabVisibilityHandler.cs
-- [ ] T141 [P] Create tab-visibility.js JavaScript module in src/RealmsOfIdle.Client.Blazor/wwwroot/js/tab-visibility.js
-- [ ] T142 [P] Create OfflineProgressModal.razor component in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
-- [ ] T143 Implement OfflineProgressCalculator.CalculateProgress with 60s minimum, 24hr cap, and cycle calculation (see plan.md PR-004 pseudocode)
-- [ ] T144 Implement TabVisibilityHandler with JavaScript interop for Page Visibility API (document.hidden detection)
-- [ ] T145 Implement OfflineProgressModal with time elapsed, actions per NPC, total rewards, and auto-dismiss after 30s
-- [ ] T146 Register OfflineProgressCalculator as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
-- [ ] T147 Register TabVisibilityHandler as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
-- [ ] T148 Integrate TabVisibilityHandler in PossessionDemo.razor (OnAfterRenderAsync, OnDispose lifecycle)
-- [ ] T149 Implement OnTabHidden handler in PossessionDemo.razor (stop SimulationEngine, persist Settlement state to LiteDB)
-- [ ] T150 Implement OnTabVisible handler in PossessionDemo.razor (calculate offline progress if >= 60s, restart SimulationEngine)
-- [ ] T151 Implement ErrorBoundary wrapper for PossessionDemo.razor with reload functionality (see plan.md CL-003)
-- [ ] T152 Verify offline progress calculation with 5-minute tab hidden test (manual validation)
-- [ ] T153 Verify activity log summary entry creation after offline progress (format: "While away: X actions, +Y gold")
-- [ ] T154 Verify state persistence during tab hidden sequence (settlement state saved to LiteDB with WorldTime snapshot)
+- [x] T139 [P] Create OfflineProgressCalculator.cs service in src/RealmsOfIdle.Client.Blazor/Services/OfflineProgressCalculator.cs
+- [x] T140 [P] Create TabVisibilityHandler.cs service in src/RealmsOfIdle.Client.Blazor/Services/TabVisibilityHandler.cs
+- [x] T141 [P] Create tab-visibility.js JavaScript module in src/RealmsOfIdle.Client.Blazor/wwwroot/js/tab-visibility.js
+- [x] T142 [P] Create OfflineProgressModal.razor component in src/RealmsOfIdle.Client.Blazor/Components/OfflineProgressModal.razor
+- [x] T143 Implement OfflineProgressCalculator.CalculateProgress with 60s minimum, 24hr cap, and cycle calculation (see plan.md PR-004 pseudocode)
+- [x] T144 Implement TabVisibilityHandler with JavaScript interop for Page Visibility API (document.hidden detection)
+- [x] T145 Implement OfflineProgressModal with time elapsed, actions per NPC, total rewards, and auto-dismiss after 30s
+- [x] T146 Register OfflineProgressCalculator as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [x] T147 Register TabVisibilityHandler as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [x] T148 Integrate TabVisibilityHandler in PossessionDemo.razor (OnAfterRenderAsync, OnDispose lifecycle)
+- [x] T149 Implement OnTabHidden handler in PossessionDemo.razor (stop SimulationEngine, persist Settlement state to LiteDB)
+- [x] T150 Implement OnTabVisible handler in PossessionDemo.razor (calculate offline progress if >= 60s, restart SimulationEngine)
+- [x] T151 Implement ErrorBoundary wrapper for PossessionDemo.razor with reload functionality (see plan.md CL-003)
+- [x] T152 Verify offline progress calculation with 5-minute tab hidden test (manual validation)
+- [x] T153 Verify activity log summary entry creation after offline progress (format: "While away: X actions, +Y gold")
+- [x] T154 Verify state persistence during tab hidden sequence (settlement state saved to LiteDB with WorldTime snapshot)
 
 **Checkpoint**: Offline progress infrastructure complete - tab visibility detection works, offline progress calculation tested, error boundaries in place
 

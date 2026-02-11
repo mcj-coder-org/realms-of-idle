@@ -321,6 +321,21 @@ public class LocalGameService : IGameService
         return session;
     }
 
+    public Task<ActionResult> PossessNPCAsync(string npcId)
+    {
+        throw new NotImplementedException("Possession not supported in inn game mode");
+    }
+
+    public Task ReleaseNPCAsync(string npcId)
+    {
+        throw new NotImplementedException("Possession not supported in inn game mode");
+    }
+
+    public Task<ActionResult> ExecuteActionAsync(string npcId, string actionId)
+    {
+        throw new NotImplementedException("Possession not supported in inn game mode");
+    }
+
     private static Dictionary<string, InnFacility> CreateInitialFacilities()
     {
         return new Dictionary<string, InnFacility>

@@ -117,4 +117,19 @@ public class MultiplayerGameService : IGameService
         return await response.Content.ReadFromJsonAsync<GameStats>()
             ?? new GameStats { FirstPlayed = DateTime.UtcNow, LastPlayed = DateTime.UtcNow };
     }
+
+    public Task<ActionResult> PossessNPCAsync(string npcId)
+    {
+        throw new NotImplementedException("Possession not supported in multiplayer mode");
+    }
+
+    public Task ReleaseNPCAsync(string npcId)
+    {
+        throw new NotImplementedException("Possession not supported in multiplayer mode");
+    }
+
+    public Task<ActionResult> ExecuteActionAsync(string npcId, string actionId)
+    {
+        throw new NotImplementedException("Possession not supported in multiplayer mode");
+    }
 }

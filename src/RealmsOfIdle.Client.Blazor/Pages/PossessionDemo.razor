@@ -1,20 +1,51 @@
 @page "/possession-demo"
+@using Microsoft.JSInterop
+@using RealmsOfIdle.Client.Blazor.Components
 @using RealmsOfIdle.Client.Blazor.Services
 @using RealmsOfIdle.Core.Abstractions
 @inject IGameService GameService
 @inject SimulationEngine SimulationEngine
+@inject OfflineProgressCalculator OfflineProgressCalculator
+@inject TabVisibilityHandler TabVisibilityHandler
+@inject IJSRuntime JSRuntime
 @inject ILogger<PossessionDemo> Logger
-@implements IDisposable
+@implements IAsyncDisposable
 
 <PageTitle>Possession Demo - Realms of Idle</PageTitle>
 
-<div class="possession-demo">
-    <h1>Minimal Possession Demo</h1>
-    <p>World Time: @DateTime.UtcNow.ToString("HH:mm:ss")</p>
-    <p>Status: Initializing...</p>
-</div>
+<ErrorBoundary @ref="_errorBoundary">
+    <ChildContent>
+        <div class="possession-demo">
+            <h1>Minimal Possession Demo</h1>
+            <p>World Time: @DateTime.UtcNow.ToString("HH:mm:ss")</p>
+            <p>Status: @(_isInitialized ? "Running" : "Initializing...")</p>
+        </div>
+
+        @if (_showOfflineModal && _offlineResult != null)
+        {
+            <OfflineProgressModal
+                ElapsedTime="@_offlineResult.CappedElapsedTime"
+                TotalGoldEarned="@_offlineResult.TotalGoldEarned"
+                TotalReputationEarned="@_offlineResult.TotalReputationEarned"
+                TotalActionsPerformed="@_offlineResult.TotalActionsPerformed"
+                OnDismiss="DismissOfflineModal" />
+        }
+    </ChildContent>
+    <ErrorContent Context="exception">
+        <div class="error-panel">
+            <h2>Settlement Error</h2>
+            <p>@exception.Message</p>
+            <button @onclick="ReloadSettlement">Reload Settlement</button>
+        </div>
+    </ErrorContent>
+</ErrorBoundary>
 
 @code {
+    private ErrorBoundary? _errorBoundary;
+    private bool _isInitialized;
+    private bool _showOfflineModal;
+    private OfflineProgressResult? _offlineResult;
+
     protected override async Task OnInitializedAsync()
     {
         Logger.LogInformation("PossessionDemo initializing");
@@ -31,7 +62,20 @@
         // Start simulation engine
         SimulationEngine.Start();
 
+        _isInitialized = true;
         Logger.LogInformation("PossessionDemo initialized, simulation started");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // T148: Initialize tab visibility detection (requires JS interop, only available after first render)
+            await TabVisibilityHandler.InitializeAsync(JSRuntime);
+            TabVisibilityHandler.OnTabHidden += OnTabHidden;
+            TabVisibilityHandler.OnTabVisible += OnTabVisible;
+            Logger.LogInformation("TabVisibilityHandler initialized");
+        }
     }
 
     private void OnSimulationTick()
@@ -40,11 +84,124 @@
         Logger.LogDebug("Simulation tick");
     }
 
-    public void Dispose()
+    // T149: Stop engine and persist state when tab becomes hidden
+    private void OnTabHidden()
     {
-        // Unsubscribe from tick events
+        Logger.LogInformation("Tab hidden - stopping simulation and persisting state");
+        SimulationEngine.Stop();
+
+        if (GameService is SettlementGameService settlementService)
+        {
+            // Persist current state synchronously (fire-and-forget in tab hidden context)
+            _ = settlementService.GetOrCreateSettlementAsync().ContinueWith(t =>
+            {
+                if (t.IsCompletedSuccessfully)
+                {
+                    _ = settlementService.UpdateSettlementAsync(t.Result);
+                }
+            }, TaskScheduler.Default);
+        }
+    }
+
+    // T150: Calculate offline progress and restart engine when tab becomes visible
+    private void OnTabVisible(TimeSpan elapsed)
+    {
+        Logger.LogInformation("Tab visible after {ElapsedSeconds:F1}s", elapsed.TotalSeconds);
+
+        if (GameService is SettlementGameService settlementService)
+        {
+            _ = HandleTabVisibleAsync(settlementService, elapsed);
+        }
+        else
+        {
+            SimulationEngine.Start();
+        }
+    }
+
+    private async Task HandleTabVisibleAsync(SettlementGameService settlementService, TimeSpan elapsed)
+    {
+        try
+        {
+            var settlement = await settlementService.GetOrCreateSettlementAsync();
+            var result = OfflineProgressCalculator.CalculateProgress(settlement, elapsed);
+
+            if (result.TotalActionsPerformed > 0)
+            {
+                // Apply offline progress
+                await settlementService.UpdateSettlementAsync(result.UpdatedSettlement);
+
+                // Show modal
+                _offlineResult = result;
+                _showOfflineModal = true;
+
+                Logger.LogInformation(
+                    "Offline progress: {Actions} actions, +{Gold} gold, +{Rep} reputation over {Elapsed:F0}s",
+                    result.TotalActionsPerformed, result.TotalGoldEarned, result.TotalReputationEarned,
+                    result.CappedElapsedTime.TotalSeconds);
+
+                await InvokeAsync(StateHasChanged);
+            }
+
+            // Restart simulation
+            SimulationEngine.Start();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error processing offline progress");
+            SimulationEngine.Start();
+        }
+    }
+
+    private void DismissOfflineModal()
+    {
+        _showOfflineModal = false;
+        _offlineResult = null;
+    }
+
+    // T151: Reload settlement on error boundary recovery
+    private async Task ReloadSettlement()
+    {
+        Logger.LogWarning("Reloading settlement after error");
+
+        if (GameService is SettlementGameService settlementService)
+        {
+            var freshSettlement = Models.Settlement.CreateMillbrook();
+            await settlementService.UpdateSettlementAsync(freshSettlement);
+        }
+
+        SimulationEngine.Start();
+        _errorBoundary?.Recover();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        // Unsubscribe from events
         SimulationEngine.OnTick -= OnSimulationTick;
+        TabVisibilityHandler.OnTabHidden -= OnTabHidden;
+        TabVisibilityHandler.OnTabVisible -= OnTabVisible;
+
+        // Stop simulation
+        SimulationEngine.Stop();
+
+        // Persist final state
+        if (GameService is SettlementGameService settlementService)
+        {
+            try
+            {
+                var settlement = await settlementService.GetOrCreateSettlementAsync();
+                await settlementService.UpdateSettlementAsync(settlement);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Error persisting state on dispose");
+            }
+        }
+
+        // Dispose tab visibility handler
+        await TabVisibilityHandler.DisposeAsync();
 
         Logger.LogInformation("PossessionDemo disposed");
+
+        GC.SuppressFinalize(this);
     }
 }

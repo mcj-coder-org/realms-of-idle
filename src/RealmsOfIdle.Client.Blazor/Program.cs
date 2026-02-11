@@ -30,6 +30,8 @@ builder.Services.AddSingleton<LiteDatabase>(_ =>
 builder.Services.AddSingleton<IGameService, SettlementGameService>();
 builder.Services.AddSingleton<SimulationEngine>();
 builder.Services.AddSingleton<NPCAIService>();
+builder.Services.AddSingleton<OfflineProgressCalculator>();
+builder.Services.AddSingleton<TabVisibilityHandler>();
 
 // Configure observability
 builder.Services.AddLogging(builder => builder.SetMinimumLevel(LogLevel.Debug));
