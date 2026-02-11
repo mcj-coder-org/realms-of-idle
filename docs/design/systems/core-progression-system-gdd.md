@@ -465,7 +465,7 @@ Class XP:
 
 ### 5.1 All Classes Always Active
 
-**Core Principle**: No class slots, no dormant classes - every accepted class is always active.
+**Core Principle**: No activation limits - every accepted class remains perpetually active.
 
 ```
 Character with 5 Classes:
@@ -517,7 +517,7 @@ Rationale: XP always counts, even for non-matching actions
 
 - Fighter, Crafter, Gatherer, Host, Trader, Scholar, Socialite
 
-**Rule**: If no classes match action tags, split XP equally among all Foundational classes.
+**Rule**: If no classes match action tags, distribute XP equally among all Foundational classes.
 
 ### 5.4 Class Synergy Bonuses
 
@@ -674,15 +674,15 @@ public class XPBucket
 
 ### 9.2 Complexity Ratings
 
-| Component                 | Implementation Complexity | Notes                        |
-| ------------------------- | ------------------------- | ---------------------------- |
-| XP Bucket Distribution    | Low (2/5)                 | Simple hierarchical math     |
-| Class Eligibility Check   | Low (1/5)                 | Threshold comparison         |
-| Level Up Event Logic      | Medium (3/5)              | UI state management, backlog |
-| Class XP Calculation      | Low (2/5)                 | Standard XP curve            |
-| Hierarchical XP Split     | High (4/5)                | Recursive tag tree traversal |
-| Primary Class Calculation | Low (2/5)                 | Sort by tier + level         |
-| Idle Efficiency           | Low (2/5)                 | Time-based multiplier        |
+| Component                    | Implementation Complexity | Notes                        |
+| ---------------------------- | ------------------------- | ---------------------------- |
+| XP Bucket Distribution       | Low (2/5)                 | Simple hierarchical math     |
+| Class Eligibility Check      | Low (1/5)                 | Threshold comparison         |
+| Level Up Event Logic         | Medium (3/5)              | UI state management, backlog |
+| Class XP Calculation         | Low (2/5)                 | Standard XP curve            |
+| Hierarchical XP Distribution | High (4/5)                | Recursive tag tree traversal |
+| Primary Class Calculation    | Low (2/5)                 | Sort by tier + level         |
+| Idle Efficiency              | Low (2/5)                 | Time-based multiplier        |
 
 ---
 

@@ -1,6 +1,13 @@
+---
+title: Index
+gdd_ref: systems/economy-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -48,17 +55,17 @@ These systems govern how goods flow, prices change, and economic opportunities a
 ## Dual Reputation
 
 ```
-PUBLIC REPUTATION          UNDERGROUND REPUTATION
-(Factions, guilds)         (Thieves, smugglers)
-        │                          │
-        └──────────┬───────────────┘
-                   │
-            Can maintain both
-                   │
-        Discovery risk increases
+PUBLIC REPUTATION UNDERGROUND REPUTATION
+(Factions, guilds) (Thieves, smugglers)
+ │ │
+ └──────────┬───────────────┘
+ │
+ Can maintain both
+ │
+ Discovery risk increases
 ```
 
 ## Related Content
 
-- [Trade Skills](../../content/skills/class/trade.md)
-- [Materials by Value](../../content/materials/index.md)
+- [Trade Skills](././content/skills/class/trade.md)
+- [Materials by Value](././content/materials/index.md)

@@ -1,6 +1,13 @@
+---
+title: Index
+gdd_ref: systems/combat-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -32,9 +39,9 @@ These systems govern how combat works, from individual fights to party tactics.
 
 ```
 SHIELD (temporary, absorbs first)
-    ↓
+ ↓
 ARMOUR (equipment-based DR)
-    ↓
+ ↓
 HEALTH (actual hit points)
 ```
 
@@ -54,6 +61,6 @@ HEALTH (actual hit points)
 
 ## Related Content
 
-- [Combat Skills](../../content/skills/class/combat.md)
-- [Weapons Library](../../content/items/weapons/)
-- [Armor Library](../../content/items/armor/)
+- [Combat Skills](././content/skills/class/combat.md)
+- [Weapons Library](././content/items/weapons/)
+- [Armor Library](././content/items/armor/)

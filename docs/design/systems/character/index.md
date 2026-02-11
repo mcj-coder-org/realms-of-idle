@@ -1,6 +1,13 @@
+---
+title: Index
+gdd_ref: systems/core-progression-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -49,5 +56,5 @@ These systems define how characters grow, what they can do, and who they are.
 
 ## Related Content
 
-- [Classes Library](../../content/classes/index.md)
-- [Skills Library](../../content/skills/index.md)
+- [Classes Library](././content/classes/index.md)
+- [Skills Library](././content/skills/index.md)

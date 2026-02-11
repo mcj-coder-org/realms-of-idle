@@ -1,6 +1,13 @@
+---
+title: Class Tag Associations
+gdd_ref: systems/class-system-gdd.md#tag-system
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->

@@ -1,6 +1,13 @@
+---
+title: Tag System
+gdd_ref: systems/core-progression-system-gdd.md#tag-system
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -41,34 +48,34 @@ The **unified tag system** provides a hierarchical, strongly-typed architecture 
 ```csharp
 public readonly record struct SkillTag(string Path)
 {
-    // Split path into segments
-    public string[] Segments => Path.Split('/');
+ // Split path into segments
+ public string[] Segments => Path.Split('/');
 
-    // Depth = number of segments (Crafting = 1, Crafting/Smithing = 2)
-    public int Depth => Segments.Length;
+ // Depth = number of segments (Crafting = 1, Crafting/Smithing = 2)
+ public int Depth => Segments.Length;
 
-    // Check if this tag contains another (parent-child relationship)
-    public bool Contains(SkillTag other) =>
-        other.Path.StartsWith(Path + "/", StringComparison.Ordinal) || other.Path == Path;
+ // Check if this tag contains another (parent-child relationship)
+ public bool Contains(SkillTag other) =>
+ other.Path.StartsWith(Path + "/", StringComparison.Ordinal) || other.Path == Path;
 
-    // Check if accessible at maximum depth
-    public bool IsAccessibleAtDepth(int maxDepth) => Depth <= maxDepth;
+ // Check if accessible at maximum depth
+ public bool IsAccessibleAtDepth(int maxDepth) => Depth <= maxDepth;
 
-    // Wildcard pattern matching (e.g., "Crafting/*/Apprentice")
-    public bool Matches(SkillTag candidate) { ... }
+ // Wildcard pattern matching (e.g., "Crafting/*/Apprentice")
+ public bool Matches(SkillTag candidate) {. }
 
-    // Implicit string conversion
-    public static implicit operator SkillTag(string path) => new(path);
+ // Implicit string conversion
+ public static implicit operator SkillTag(string path) => new(path);
 }
 ```
 
 ### Depth Calculation
 
 ```
-"Crafting"                           = depth 1
-"Crafting/Smithing"                  = depth 2
-"Crafting/Smithing/Weapon"           = depth 3
-"Crafting/Smithing/Weapon/Sword"     = depth 4
+"Crafting" = depth 1
+"Crafting/Smithing" = depth 2
+"Crafting/Smithing/Weapon" = depth 3
+"Crafting/Smithing/Weapon/Sword" = depth 4
 "Crafting/Smithing/Weapon/Journeyman" = depth 4 (wildcard branch)
 ```
 
@@ -79,17 +86,17 @@ public readonly record struct SkillTag(string Path)
 **Parent tags grant access to all child tags:**
 
 - Character with `Crafting/Smithing` (depth 2) can access:
-  - `Crafting` (depth 1) ✓
-  - `Crafting/Smithing` (depth 2) ✓
-  - `Crafting/Smithing/Weapon` (depth 3) ✓
-  - `Crafting/Smithing/Armor` (depth 3) ✓
+- `Crafting` (depth 1) ✓
+- `Crafting/Smithing` (depth 2) ✓
+- `Crafting/Smithing/Weapon` (depth 3) ✓
+- `Crafting/Smithing/Armor` (depth 3) ✓
 
 ### Wildcard Matching
 
 **Wildcard tags use `*` to match any segment:**
 
 ```csharp
-SkillTags.Crafting.Wildcards.Apprentice  // "Crafting/*/Apprentice"
+SkillTags.Crafting.Wildcards.Apprentice // "Crafting/*/Apprentice"
 ```
 
 This matches:
@@ -109,35 +116,35 @@ This matches:
 ```
 Crafting (depth 1)
 ├── Smithing (depth 2)
-│   ├── Value         ("Crafting/Smithing")
-│   ├── Apprentice    ("Crafting/Smithing/Apprentice")
-│   ├── Iron          ("Crafting/Smithing/Iron")
-│   ├── Weapon        ("Crafting/Smithing/Weapon")
-│   ├── Armor         ("Crafting/Smithing/Armor")
-│   ├── Shield        ("Crafting/Smithing/Shield")
-│   └── Tools         ("Crafting/Smithing/Tools")
+│ ├── Value ("Crafting/Smithing")
+│ ├── Apprentice ("Crafting/Smithing/Apprentice")
+│ ├── Iron ("Crafting/Smithing/Iron")
+│ ├── Weapon ("Crafting/Smithing/Weapon")
+│ ├── Armor ("Crafting/Smithing/Armor")
+│ ├── Shield ("Crafting/Smithing/Shield")
+│ └── Tools ("Crafting/Smithing/Tools")
 │
 ├── Leatherworking (depth 2)
-│   ├── Value         ("Crafting/Leatherworking")
-│   └── Armor         ("Crafting/Leatherworking/Armor")
+│ ├── Value ("Crafting/Leatherworking")
+│ └── Armor ("Crafting/Leatherworking/Armor")
 │
 ├── Woodworking (depth 2)
-│   ├── Value         ("Crafting/Woodworking")
-│   ├── Weapon        ("Crafting/Woodworking/Weapon")
-│   └── Shield        ("Crafting/Woodworking/Shield")
+│ ├── Value ("Crafting/Woodworking")
+│ ├── Weapon ("Crafting/Woodworking/Weapon")
+│ └── Shield ("Crafting/Woodworking/Shield")
 │
 └── Stations (depth 2)
-    ├── Forge             ("Crafting/Smithing/Forge")
-    ├── LeatherworkingStation ("Crafting/Leatherworking/Station")
-    ├── CarpenterBench     ("Crafting/Woodworking/Bench")
-    ├── TailorsTable       ("Crafting/Tailoring/Table")
-    ├── Kitchen            ("Crafting/Cooking/Kitchen")
-    ├── JewelryStation     ("Crafting/Jewelry/Station")
-    ├── EnchantersTable    ("Magic/Enchantment/Table")
-    └── Laboratory         ("Magic/Alchemy/Laboratory")
+ ├── Forge ("Crafting/Smithing/Forge")
+ ├── LeatherworkingStation ("Crafting/Leatherworking/Station")
+ ├── CarpenterBench ("Crafting/Woodworking/Bench")
+ ├── TailorsTable ("Crafting/Tailoring/Table")
+ ├── Kitchen ("Crafting/Cooking/Kitchen")
+ ├── JewelryStation ("Crafting/Jewelry/Station")
+ ├── EnchantersTable ("Magic/Enchantment/Table")
+ └── Laboratory ("Magic/Alchemy/Laboratory")
 └── Wildcards
-    ├── Apprentice    ("Crafting/*/Apprentice")
-    └── Journeyman    ("Crafting/*/Journeyman")
+ ├── Apprentice ("Crafting/*/Apprentice")
+ └── Journeyman ("Crafting/*/Journeyman")
 ```
 
 ### C# Reference - Crafting Tags
@@ -248,40 +255,40 @@ Gathering (depth 1)
 ```
 Material (depth 1)
 ├── Metal (depth 2)
-│   ├── Value         ("Material/Metal")
-│   ├── Iron          ("Material/Metal/Iron")
-│   ├── Copper        ("Material/Metal/Copper")
-│   ├── Steel         ("Material/Metal/Steel")
-│   ├── Bronze        ("Material/Metal/Bronze")
-│   ├── Silver        ("Material/Metal/Silver")
-│   └── Gold          ("Material/Metal/Gold")
+│ ├── Value ("Material/Metal")
+│ ├── Iron ("Material/Metal/Iron")
+│ ├── Copper ("Material/Metal/Copper")
+│ ├── Steel ("Material/Metal/Steel")
+│ ├── Bronze ("Material/Metal/Bronze")
+│ ├── Silver ("Material/Metal/Silver")
+│ └── Gold ("Material/Metal/Gold")
 │
 ├── Wood (depth 2)
-│   ├── Value         ("Material/Wood")
-│   ├── Oak           ("Material/Wood/Oak")
-│   ├── Pine          ("Material/Wood/Pine")
-│   ├── Maple         ("Material/Wood/Maple")
-│   └── Ebony         ("Material/Wood/Ebony")
+│ ├── Value ("Material/Wood")
+│ ├── Oak ("Material/Wood/Oak")
+│ ├── Pine ("Material/Wood/Pine")
+│ ├── Maple ("Material/Wood/Maple")
+│ └── Ebony ("Material/Wood/Ebony")
 │
 ├── Leather (depth 2)
-│   ├── Value         ("Material/Leather")
-│   ├── Hide          ("Material/Leather/Hide")
-│   └── Tanned        ("Material/Leather/Tanned")
+│ ├── Value ("Material/Leather")
+│ ├── Hide ("Material/Leather/Hide")
+│ └── Tanned ("Material/Leather/Tanned")
 │
 ├── Fabric (depth 2)
-│   ├── Value         ("Material/Fabric")
-│   ├── Cotton        ("Material/Fabric/Cotton")
-│   ├── Linen         ("Material/Fabric/Linen")
-│   └── Wool          ("Material/Fabric/Wool")
+│ ├── Value ("Material/Fabric")
+│ ├── Cotton ("Material/Fabric/Cotton")
+│ ├── Linen ("Material/Fabric/Linen")
+│ └── Wool ("Material/Fabric/Wool")
 │
 ├── Stone (depth 2)
-│   ├── Value         ("Material/Stone")
-│   ├── Granite       ("Material/Stone/Granite")
-│   └── Marble        ("Material/Stone/Marble")
+│ ├── Value ("Material/Stone")
+│ ├── Granite ("Material/Stone/Granite")
+│ └── Marble ("Material/Stone/Marble")
 │
-├── Bone  (depth 2)   ("Material/Bone")
-├── Horn  (depth 2)   ("Material/Horn")
-└── Silk  (depth 2)   ("Material/Silk")
+├── Bone (depth 2) ("Material/Bone")
+├── Horn (depth 2) ("Material/Horn")
+└── Silk (depth 2) ("Material/Silk")
 ```
 
 ### C# Reference - Material Tags
@@ -321,20 +328,20 @@ Material (depth 1)
 
 ```
 Combat (depth 1)
-├── Value         ("Combat")
-├── Ranged        ("Combat/Ranged")
+├── Value ("Combat")
+├── Ranged ("Combat/Ranged")
 │
 ├── Melee (depth 2)
-│   ├── Value     ("Combat/Melee")
-│   ├── Sword     ("Combat/Melee/Sword")
-│   ├── Axe       ("Combat/Melee/Axe")
-│   ├── Mace      ("Combat/Melee/Mace")
-│   └── Dagger    ("Combat/Melee/Dagger")
+│ ├── Value ("Combat/Melee")
+│ ├── Sword ("Combat/Melee/Sword")
+│ ├── Axe ("Combat/Melee/Axe")
+│ ├── Mace ("Combat/Melee/Mace")
+│ └── Dagger ("Combat/Melee/Dagger")
 │
 └── Defense (depth 2)
-    ├── Value     ("Combat/Defense")
-    ├── Shield    ("Combat/Defense/Shield")
-    └── Dodge     ("Combat/Defense/Dodge")
+ ├── Value ("Combat/Defense")
+ ├── Shield ("Combat/Defense/Shield")
+ └── Dodge ("Combat/Defense/Dodge")
 ```
 
 ### C# Reference - Combat Tags
@@ -362,19 +369,19 @@ Combat (depth 1)
 
 ```csharp
 public static readonly ClassDefinition Blacksmith = new(
-    Id: new ClassId(Guid.Parse("00000000-0000-0000-0000-000000000001")),
-    Name: "Blacksmith",
-    Tier: ClassTier.Specialist,
-    Tags: [
-        SkillTags.Crafting.Value,           // "Crafting"
-        SkillTags.Crafting.Smithing.Value   // "Crafting/Smithing"
-    ],
-    MaxTagDepth: 2,
-    StartingSkills: [ ... ],
-    GrantedTags: [                         // Additional tags granted
-        SkillTags.Crafting.Smithing.Value
-    ],
-    // ... other fields
+ Id: new ClassId(Guid.Parse("00000000-0000-0000-0000-000000000001")),
+ Name: "Blacksmith",
+ Tier: ClassTier.Specialist,
+ Tags: [
+ SkillTags.Crafting.Value, // "Crafting"
+ SkillTags.Crafting.Smithing.Value // "Crafting/Smithing"
+ ],
+ MaxTagDepth: 2,
+ StartingSkills: [. ],
+ GrantedTags: [ // Additional tags granted
+ SkillTags.Crafting.Smithing.Value
+ ],
+ //. other fields
 );
 ```
 
@@ -400,11 +407,11 @@ difficulty: basic
 ```csharp
 public interface IRecipeIngredient
 {
-    // Check if single tag matches
-    bool MatchesTag(SkillTag tag);
+ // Check if single tag matches
+ bool MatchesTag(SkillTag tag);
 
-    // Check if ANY of multiple tags match
-    bool MatchesAny(IReadOnlyList<SkillTag> tags);
+ // Check if ANY of multiple tags match
+ bool MatchesAny(IReadOnlyList<SkillTag> tags);
 }
 ```
 
@@ -413,20 +420,20 @@ public interface IRecipeIngredient
 ```csharp
 // Ingredient requires any metal material
 var metalIngredient = new RecipeIngredientSlot(
-    quantity: 2,
-    allowedTags: [SkillTags.Material.Metal.Value]  // Matches Iron, Copper, Steel, etc.
+ quantity: 2,
+ allowedTags: [SkillTags.Material.Metal.Value] // Matches Iron, Copper, Steel, etc.
 );
 
 // Ingredient specifically requires iron
 var ironIngredient = new RecipeIngredientSlot(
-    quantity: 1,
-    allowedTags: [SkillTags.Material.Metal.Iron]  // Only iron
+ quantity: 1,
+ allowedTags: [SkillTags.Material.Metal.Iron] // Only iron
 );
 
 // Wildcard ingredient (any apprentice tier material)
 var apprenticeIngredient = new RecipeIngredientSlot(
-    quantity: 1,
-    allowedTags: [new SkillTag("Material/*/Apprentice")]
+ quantity: 1,
+ allowedTags: [new SkillTag("Material/*/Apprentice")]
 );
 ```
 
@@ -443,10 +450,10 @@ var apprenticeIngredient = new RecipeIngredientSlot(
 var tag = new SkillTag("Crafting/Smithing");
 
 // WRONG - Typo won't be caught until runtime
-var badTag = new SkillTag("Crafting/Smithnig");  // TYPO!
+var badTag = new SkillTag("Crafting/Smithnig"); // TYPO!
 
 // WRONG - Hardcoded string in recipe definition
-tags: ["Crafting/Smithing/Weapon"]  // YAML string literal
+tags: ["Crafting/Smithing/Weapon"] // YAML string literal
 ```
 
 ### Correct Pattern (MUST DO THIS)
@@ -458,7 +465,7 @@ tags: ["Crafting/Smithing/Weapon"]  // YAML string literal
 var tag = SkillTags.Crafting.Smithing.Value;
 
 // CORRECT - Typo caught at compile time
-var tag = SkillTags.Crafting.Smithing.Value;  // IDE will warn if tag doesn't exist
+var tag = SkillTags.Crafting.Smithing.Value; // IDE will warn if tag doesn't exist
 
 // CORRECT - Use C# reference in YAML frontmatter where possible
 // For content files, document the C# reference in a "Tags" section:
@@ -478,8 +485,8 @@ var tag = SkillTags.Crafting.Smithing.Value;  // IDE will warn if tag doesn't ex
 
 ```csharp
 Tags: [
-    new SkillTag("Crafting"),
-    new SkillTag("Crafting/Smithing")
+ new SkillTag("Crafting"),
+ new SkillTag("Crafting/Smithing")
 ]
 ```
 
@@ -487,8 +494,8 @@ Tags: [
 
 ```csharp
 Tags: [
-    SkillTags.Crafting.Value,
-    SkillTags.Crafting.Smithing.Value
+ SkillTags.Crafting.Value,
+ SkillTags.Crafting.Smithing.Value
 ]
 ```
 
@@ -498,14 +505,14 @@ Tags: [
 
 ```csharp
 var requiredTag = new SkillTag("Material/Metal/Iron");
-if (ingredient.MatchesTag(requiredTag)) { ... }
+if (ingredient.MatchesTag(requiredTag)) {. }
 ```
 
 **AFTER:**
 
 ```csharp
 var requiredTag = SkillTags.Material.Metal.Iron;
-if (ingredient.MatchesTag(requiredTag)) { ... }
+if (ingredient.MatchesTag(requiredTag)) {. }
 ```
 
 #### Example 3: Recipe Access Check
@@ -537,8 +544,8 @@ var canAccess = character.HasTagOrParent(recipeTag);
 ```csharp
 public IReadOnlyList<SkillTag> GetAllClassTags()
 {
-    // TODO: Implement - currently returns empty
-    return [];
+ // TODO: Implement - currently returns empty
+ return [];
 }
 ```
 
@@ -547,20 +554,20 @@ public IReadOnlyList<SkillTag> GetAllClassTags()
 ```csharp
 public IReadOnlyList<SkillTag> GetAllClassTags()
 {
-    var tags = new List<SkillTag>();
+ var tags = new List<SkillTag>();
 
-    foreach (var classProgression in _classes.Values)
-    {
-        // Need to fetch ClassDefinition to get GrantedTags
-        // This requires refactoring ClassProgression to store reference
-        var classDef = ClassDefinitionRegistry.Get(classProgression.ClassId);
-        if (classDef?.GrantedTags != null)
-        {
-            tags.AddRange(classDef.GrantedTags);
-        }
-    }
+ foreach (var classProgression in _classes.Values)
+ {
+ // Need to fetch ClassDefinition to get GrantedTags
+ // This requires refactoring ClassProgression to store reference
+ var classDef = ClassDefinitionRegistry.Get(classProgression.ClassId);
+ if (classDef?.GrantedTags != null)
+ {
+ tags.AddRange(classDef.GrantedTags);
+ }
+ }
 
-    return tags;
+ return tags;
 }
 ```
 
@@ -582,8 +589,8 @@ Tags are currently stored in `ClassDefinition.Tags` property, but `GetAllClassTa
 // Workshop requires Crafter tag to use
 public bool CanAccess(Workshop workshop, GameCharacter character)
 {
-    var requiredTag = SkillTags.Crafting.Value;  // "Crafting"
-    return character.GetAllClassTags().Any(tag => requiredTag.Contains(tag));
+ var requiredTag = SkillTags.Crafting.Value; // "Crafting"
+ return character.GetAllClassTags().Any(tag => requiredTag.Contains(tag));
 }
 ```
 
@@ -594,14 +601,14 @@ public bool CanAccess(Workshop workshop, GameCharacter character)
 ```csharp
 public bool CanAccessRecipe(Recipe recipe, GameCharacter character)
 {
-    var classTags = character.GetAllClassTags();  // Currently returns empty
+ var classTags = character.GetAllClassTags(); // Currently returns empty
 
-    // Check if any class tag matches recipe tag
-    return recipe.RequiredTags.Any(recipeTag =>
-        classTags.Any(classTag =>
-            recipeTag.Contains(classTag)  // Parent tag grants access to child
-        )
-    );
+ // Check if any class tag matches recipe tag
+ return recipe.RequiredTags.Any(recipeTag =>
+ classTags.Any(classTag =>
+ recipeTag.Contains(classTag) // Parent tag grants access to child
+ )
+ );
 }
 ```
 
@@ -659,25 +666,25 @@ Include a **Tags** section with C# references:
 
 1. **Search for string literals:**
 
-   ```bash
-   grep -rn 'new SkillTag("' src/ --include="*.cs"
-   ```
+```bash
+grep -rn 'new SkillTag("' src/ --include="*.cs"
+```
 
-2. **Replace with strongly typed:**
+1. **Replace with strongly typed:**
 
-   ```csharp
-   // BEFORE
-   new SkillTag("Crafting/Smithing")
+```csharp
+// BEFORE
+new SkillTag("Crafting/Smithing")
 
-   // AFTER
-   SkillTags.Crafting.Smithing.Value
-   ```
+// AFTER
+SkillTags.Crafting.Smithing.Value
+```
 
-3. **Verify with build:**
+1. **Verify with build:**
 
-   ```bash
-   dotnet build --warnaserror
-   ```
+```bash
+dotnet build --warnaserror
+```
 
 ---
 
@@ -686,8 +693,8 @@ Include a **Tags** section with C# references:
 ### Missing Tag Categories
 
 - **Gathering tags** - Currently empty in SkillTags.cs
-  - Need `Gathering/Mining`, `Gathering/Herbalism`, etc.
-  - Future task (not currently scheduled)
+- Need `Gathering/Mining`, `Gathering/Herbalism`, etc.
+- Future task (not currently scheduled)
 
 ### GetAllClassTags() Implementation (Task 1.3)
 

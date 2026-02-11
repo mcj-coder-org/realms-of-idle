@@ -1,6 +1,13 @@
+---
+title: Overview
+gdd_ref: systems/core-progression-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -34,80 +41,80 @@ A single-player slice-of-life RPG for mobile/web (C#/Unity) featuring organic pr
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         TIME & WORLD                             │
-│  Day/Night (1hr=24hr) │ Regional Climate │ Annual Fairs         │
+│ TIME & WORLD │
+│ Day/Night (1hr=24hr) │ Regional Climate │ Annual Fairs │
 └─────────────────────────┬───────────────────────────────────────┘
-                          │
-         ┌────────────────┼────────────────┐
-         ▼                ▼                ▼
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐
-│  STAMINA    │   │    REST     │   │   HEALTH    │
-│ Actions     │   │ Level-ups   │   │ Shield      │
-│ Crafting    │   │ Recovery    │   │ Armour      │
-│ Zero = nap  │   │ Encounters  │   │ Health      │
-└──────┬──────┘   └──────┬──────┘   └──────┬──────┘
-       │                 │                 │
-       └────────┬────────┴────────┬────────┘
-                ▼                 ▼
+ │
+ ┌────────────────┼────────────────┐
+ ▼ ▼ ▼
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ STAMINA │ │ REST │ │ HEALTH │
+│ Actions │ │ Level-ups │ │ Shield │
+│ Crafting │ │ Recovery │ │ Armour │
+│ Zero = nap │ │ Encounters │ │ Health │
+└──────┬──────┘ └──────┬──────┘ └──────┬──────┘
+ │ │ │
+ └────────┬────────┴────────┬────────┘
+ ▼ ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                          COMBAT                                  │
-│  Hybrid (real-time + pause) │ Row positioning │ Auto/Manual     │
-│  Morale │ Surrender │ Rout/Capture │ Adrenaline                 │
+│ COMBAT │
+│ Hybrid (real-time + pause) │ Row positioning │ Auto/Manual │
+│ Morale │ Surrender │ Rout/Capture │ Adrenaline │
 └─────────────────────────┬───────────────────────────────────────┘
-                          │
-    ┌─────────────────────┼─────────────────────┐
-    ▼                     ▼                     ▼
-┌───────────┐     ┌───────────────┐     ┌───────────────┐
-│ CLASSES   │     │    MAGIC      │     │   CRAFTING    │
-│ Skills    │     │ Schools       │     │ Specialties   │
-│ Tiers     │     │ Enchanting    │     │ Recipes       │
-│ Consolid. │     │ Mana pools    │     │ Discovery     │
-│ Artificer │     │ Archmage      │     │ Masterwork    │
-└─────┬─────┘     └───────────────┘     └───────┬───────┘
-      │                                         │
-      └──────────────────┬──────────────────────┘
-                         ▼
+ │
+ ┌─────────────────────┼─────────────────────┐
+ ▼ ▼ ▼
+┌───────────┐ ┌───────────────┐ ┌───────────────┐
+│ CLASSES │ │ MAGIC │ │ CRAFTING │
+│ Skills │ │ Schools │ │ Specialties │
+│ Tiers │ │ Enchanting │ │ Recipes │
+│ Consolid. │ │ Mana pools │ │ Discovery │
+│ Artificer │ │ Archmage │ │ Masterwork │
+└─────┬─────┘ └───────────────┘ └───────┬───────┘
+ │ │
+ └──────────────────┬──────────────────────┘
+ ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      ECONOMY & TRADE                             │
-│  Currency (G/S/C) │ Dynamic pricing │ Regional supply/demand    │
-│  Trader → Merchant → Specialist │ Caravaner │ Trade routes      │
+│ ECONOMY & TRADE │
+│ Currency (G/S/C) │ Dynamic pricing │ Regional supply/demand │
+│ Trader → Merchant → Specialist │ Caravaner │ Trade routes │
 └─────────────────────────┬───────────────────────────────────────┘
-                          │
-         ┌────────────────┼────────────────┐
-         ▼                ▼                ▼
+ │
+ ┌────────────────┼────────────────┐
+ ▼ ▼ ▼
 ┌─────────────────┐ ┌───────────────┐ ┌───────────────┐
-│ MERCHANT GUILD  │ │ CRAFTING GUILD│ │ BLACK MARKET  │
-│ Banking         │ │ Workshops     │ │ Smuggling     │
-│ Trade routes    │ │ Recipes       │ │ Fencing       │
-│ Insurance       │ │ Certification │ │ Thieves Guild │
+│ MERCHANT GUILD │ │ CRAFTING GUILD│ │ BLACK MARKET │
+│ Banking │ │ Workshops │ │ Smuggling │
+│ Trade routes │ │ Recipes │ │ Fencing │
+│ Insurance │ │ Certification │ │ Thieves Guild │
 └─────────────────┘ └───────────────┘ └───────┬───────┘
-                                              │
+ │
 ┌─────────────────────────────────────────────┴───────────────────┐
-│                    DUAL REPUTATION                               │
-│  Public (legitimate factions) │ Underground (criminal network)  │
-│  Can maintain both │ Discovery risk │ Blackmail mechanics       │
+│ DUAL REPUTATION │
+│ Public (legitimate factions) │ Underground (criminal network) │
+│ Can maintain both │ Discovery risk │ Blackmail mechanics │
 └─────────────────────────┬───────────────────────────────────────┘
-                          │
-         ┌────────────────┼────────────────┐
-         ▼                ▼                ▼
+ │
+ ┌────────────────┼────────────────┐
+ ▼ ▼ ▼
 ┌─────────────────┐ ┌───────────────┐ ┌───────────────┐
-│   PERSONALITY   │ │   FACTIONS    │ │  SETTLEMENTS  │
-│ Seeded+evolving │ │ Witnessed     │ │ Leader policy │
-│ Combat AI       │ │ reported      │ │ Corruption    │
-│ Trade behavior  │ │ Decay         │ │ Taxes         │
+│ PERSONALITY │ │ FACTIONS │ │ SETTLEMENTS │
+│ Seeded+evolving │ │ Witnessed │ │ Leader policy │
+│ Combat AI │ │ reported │ │ Corruption │
+│ Trade behavior │ │ Decay │ │ Taxes │
 └─────────────────┘ └───────────────┘ └───────────────┘
-                          │
+ │
 ┌─────────────────────────┴───────────────────────────────────────┐
-│                      PARTY SYSTEM                                │
-│  Organic join/leave │ Loyalty │ Orders │ Training │ Shared XP   │
-│  Prisoners follow as untrusted │ Ransom negotiation             │
+│ PARTY SYSTEM │
+│ Organic join/leave │ Loyalty │ Orders │ Training │ Shared XP │
+│ Prisoners follow as untrusted │ Ransom negotiation │
 └─────────────────────────┬───────────────────────────────────────┘
-                          │
+ │
 ┌─────────────────────────┴───────────────────────────────────────┐
-│                    DEATH & BODIES                                │
-│  PC death → Switch character or new game (same/new world)       │
-│  Bodies persist → Decay → Reanimation risk → Undead evolution   │
-│  Necromancer/Artificer control │ Cannibalism → Monster class    │
+│ DEATH & BODIES │
+│ PC death → Switch character or new game (same/new world) │
+│ Bodies persist → Decay → Reanimation risk → Undead evolution │
+│ Necromancer/Artificer control │ Cannibalism → Monster class │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -166,7 +173,7 @@ A single-player slice-of-life RPG for mobile/web (C#/Unity) featuring organic pr
 - Set priorities that guide NPC behavior when not possessed
 - Receive notifications for achievements and life events
 - Build chronicles across generations
-- See [favourite-npc-system.md](../../favourite-npc-system.md)
+- See [favourite-npc-system.md](././favourite-npc-system.md)
 
 ---
 
@@ -245,16 +252,16 @@ See [Adrenaline Mechanic](adrenaline.md) for full details.
 ## Production Chain
 
 ```
-GATHERING          →    CRAFTING           →    ECONOMY
-Forager, Miner,         Blacksmith,             Trader,
-Hunter, Farmer          Alchemist, etc.         Merchant,
-        ↓                      ↓                Caravaner
-Raw Materials          Refined + Crafted              ↓
-                             ↓                  Shops, Markets,
-                       Certification           Trade Routes
-                       (Crafting Guild)              ↓
-                             ↓                  Consumers
-                       Merchant Guild ←──────→ Black Market
+GATHERING → CRAFTING → ECONOMY
+Forager, Miner, Blacksmith, Trader,
+Hunter, Farmer Alchemist, etc. Merchant,
+ ↓ ↓ Caravaner
+Raw Materials Refined + Crafted ↓
+ ↓ Shops, Markets,
+ Certification Trade Routes
+ (Crafting Guild) ↓
+ ↓ Consumers
+ Merchant Guild ←──────→ Black Market
 ```
 
 ---

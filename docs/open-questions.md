@@ -368,11 +368,11 @@ At 0% efficiency: 1× tag XP (normal)
 
 ## 2. Class System Mechanics
 
-### 2.1 Dormant Class Handling ✅ RESOLVED
+### 2.1 Class Activation ✅ RESOLVED
 
-**Question:** What happens to dormant classes? Can they be reactivated? Do they decay?
+**Question:** How do accepted classes work?
 
-**Resolution:** Persistent, reactivatable anytime with no penalty. See [Core Progression System GDD §5.3](design/systems/core-progression-system-gdd.md#53-inactivedormant-classes)
+**Resolution:** All accepted classes are always active. No slots, no deactivation. See [Core Progression System GDD §5.3](design/systems/core-progression-system-gdd.md#53-inactivedormant-classes)
 
 **Status:** ✅ **RESOLVED** - XP paused while dormant, levels retained, no cooldown
 
@@ -383,7 +383,7 @@ At 0% efficiency: 1× tag XP (normal)
 #### Option A: Persistent, Reactivatable (Recommended)
 
 ```
-Dormant Classes:
+Accepted Classes:
 - Remain unlocked (no re-requirements)
 - Tag affinities frozen (no decay, no growth)
 - Can be reactivated anytime via 5-minute cooldown
@@ -401,7 +401,7 @@ Rationale: Encourages experimentation without penalty
 #### Option B: Decaying Dormancy
 
 ```
-Dormant Classes:
+Accepted Classes:
 - Reactivation requires 50% of original tag requirements
 - If tags decay below threshold, class becomes "locked" again
 - 24-hour cooldown on reactivation
@@ -416,7 +416,7 @@ Dormant Classes:
 #### Option C: Limited Slots
 
 ```
-- 3 class slots: 1 active, 2 dormant
+- All accepted classes always active (no slot limits)
 - Unlocking 4th class requires releasing 1st
 - Released classes are lost (must re-earn)
 - Premium: +1 dormant slot
@@ -2459,7 +2459,7 @@ Class Attribute Progression (per level-up):
   Secondary: AWR +1 (every 2 levels), CHA +1 (every 3 levels)
 
 Multi-Classing:
-  - XP split applies to attribute gains
+  - automatic XP distribution applies to attribute gains
   - Example: 60/40 split → [Warrior] gets STR+1 END+1, [Mage] gets WIT+0
 ```
 
@@ -3257,7 +3257,7 @@ PRICING (gems):
 
 - Rest skip: 50 gems
 - Cosmetic outfit: 500 gems
-- Extra class slot: 1000 gems
+- Class unlock boost: 1000 gems
 - Character rename: 100 gems
 
 ```
@@ -3306,7 +3306,7 @@ COSMETICS (permanent):
 
 CONVENIENCE (permanent unlocks):
 
-- Extra class slot: 1000 gems ($10)
+- Class unlock boost: 1000 gems ($10)
 - Extra storage: 500 gems ($5)
 - Auto-loot: 1500 gems ($15)
 
@@ -3660,7 +3660,7 @@ COLOR PALETTE FOR DARK:
    - Tag XP per action (Option A: Linear scaling)
 
 2. **Class System**:
-   - Dormant class handling (Option A: Persistent, reactivatable)
+   - Class activation (Option A: Persistent, reactivatable)
    - Evolution presentation (Option A: Present qualified options)
 
 3. **Skill System**:

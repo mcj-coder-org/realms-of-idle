@@ -1,6 +1,13 @@
+---
+title: Recipe Tag System
+gdd_ref: systems/crafting-system-gdd.md#recipes
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -162,27 +169,27 @@ Recipes organized by **function/purpose**, not by tier:
 ```
 recipes/
 ├── blacksmithing/
-│   └── weapons/
-│       ├── index.md
-│       ├── daggers/
-│       │   ├── index.md
-│       │   ├── copper-dagger/index.md
-│       │   ├── iron-dagger/index.md
-│       │   └── ...
-│       ├── swords/
-│       │   ├── index.md
-│       │   ├── copper-shortsword/index.md
-│       │   └── ...
-│       └── ...
+│ └── weapons/
+│ ├── index.md
+│ ├── daggers/
+│ │ ├── index.md
+│ │ ├── copper-dagger/index.md
+│ │ ├── iron-dagger/index.md
+│ │ └──.
+│ ├── swords/
+│ │ ├── index.md
+│ │ ├── copper-shortsword/index.md
+│ │ └──.
+│ └──.
 ├── alchemy/
-│   └── potions/
-│       ├── index.md
-│       ├── healing/
-│       │   ├── index.md
-│       │   ├── minor-healing-draught/index.md
-│       │   └── ...
-│       └── ...
-└── ...
+│ └── potions/
+│ ├── index.md
+│ ├── healing/
+│ │ ├── index.md
+│ │ ├── minor-healing-draught/index.md
+│ │ └──.
+│ └──.
+└──.
 ```
 
 **Key Points:**
@@ -328,14 +335,14 @@ category: 'meal'
 profession: 'cooking'
 meal_type: 'stew'
 tags:
-  - Crafting/Cooking/Meals/Stews  # Basic - no tier suffix
+ - Crafting/Cooking/Meals/Stews # Basic - no tier suffix
 materials:
-  - Potatoes (3)
-  - Carrots (2)
-  - Onion (1)
-  - [Venison](../../materials/game-meat/venison/index.md) (1 lb)
-  - Vegetable Stock (1 quart)
-  - [Rosemary](../../materials/reagents/common-herbs/rosemary/index.md) (1 bundle)
+ - Potatoes (3)
+ - Carrots (2)
+ - Onion (1)
+ - [Venison](././materials/game-meat/venison/index.md) (1 lb)
+ - Vegetable Stock (1 quart)
+ - [Rosemary](././materials/reagents/common-herbs/rosemary/index.md) (1 bundle)
 difficulty: intermediate
 crafting_time: '3 hours'
 buff_effect: '+25 Stamina for 6 hours'
@@ -417,5 +424,5 @@ All recipes MUST have:
 ## Related Content
 
 - **Crafting System:** [Crafting Progression](crafting-progression.md)
-- **Skill System:** [Skill Tags & Progression](../../progression/skill-tags.md)
-- **Class System:** [Consolidation Classes](../../classes/consolidation/)
+- **Skill System:** [Skill Tags & Progression](././progression/skill-tags.md)
+- **Class System:** [Consolidation Classes](././classes/consolidation/)

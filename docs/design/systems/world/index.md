@@ -1,6 +1,13 @@
+---
+title: Index
+gdd_ref: systems/exploration-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -49,5 +56,5 @@ These systems govern the physical world - where players live, explore, and what 
 
 ## Related Content
 
-- [Creatures by Region](../../content/creatures/index.md)
-- [Materials by Region](../../content/materials/index.md)
+- [Creatures by Region](././content/creatures/index.md)
+- [Materials by Region](././content/materials/index.md)

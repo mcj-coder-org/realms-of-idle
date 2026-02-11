@@ -1,6 +1,13 @@
+---
+title: Exploration
+gdd_ref: systems/exploration-system-gdd.md#exploration
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -36,10 +43,10 @@ Exploration is a core gameplay loop that rewards curiosity and risk-taking. Play
 ```
 World
 ├── Regions (climate zones)
-│   ├── Zones (distinct areas)
-│   │   ├── Locations (specific places)
-│   │   │   ├── Points of Interest (discoverable)
-│   │   │   └── Sub-locations (interiors, dungeons)
+│ ├── Zones (distinct areas)
+│ │ ├── Locations (specific places)
+│ │ │ ├── Points of Interest (discoverable)
+│ │ │ └── Sub-locations (interiors, dungeons)
 ```
 
 ### Area Types
@@ -136,15 +143,15 @@ Detection is progressive, not a single check. Time spent in an area accumulates 
 
 ```
 Enter area with hidden resource
-    ↓
+ ↓
 Detection counter starts at 0%
-    ↓
+ ↓
 Accumulates based on:
 ├── Time in range (passive)
 ├── Movement/activity (faster)
 ├── Active search (fastest)
 └── Class/skill bonuses (multiplier)
-    ↓
+ ↓
 Reaches 100% → Node revealed
 ```
 
@@ -354,11 +361,11 @@ Purchased/found maps may be outdated, incomplete, or deliberately false.
 
 ```
 Player discovers new location
-    ↓
+ ↓
 Location flagged as "discovered"
-    ↓
+ ↓
 First discoverer recorded
-    ↓
+ ↓
 Bonus rewards granted:
 ├── XP bonus (scales with rarity)
 ├── Possible unique loot
@@ -552,15 +559,15 @@ Party members present share discovery credit but at reduced individual bonus.
 
 ```
 Approach NPC
-    ↓
+ ↓
 Ask about location/area
-    ↓
+ ↓
 NPC knowledge check:
 ├── Knows well → Accurate directions, details
 ├── Knows somewhat → General direction, some info
 ├── Doesn't know → No help or wrong info
 └── Knows but won't tell → Requires persuasion/payment
-    ↓
+ ↓
 Information added to journal/map
 ```
 

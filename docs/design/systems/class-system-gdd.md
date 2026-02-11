@@ -221,10 +221,10 @@ Path B: Training (Bypass Bucket Requirements)
 **Core Principle**: All accepted classes are **always active** and gaining XP simultaneously.
 
 ```
-No Class Slots:
-- No maximum number of active classes
-- No "dormant" or "inactive" classes
-- Every class you have is always active
+All Classes Always Active:
+- No maximum limit on number of classes
+- No activation/deactivation system
+- Every accepted class remains perpetually active
 - All classes gain XP from every action (based on tag matching)
 
 Character with 5 Classes:
@@ -293,7 +293,7 @@ Rationale: XP always counts, even for non-matching actions
 
 - Fighter, Crafter, Gatherer, Host, Trader, Scholar, Socialite
 
-**Rule**: If no classes match action tags, split XP equally among all Foundational classes.
+**Rule**: If no classes match action tags, distribute XP equally among all Foundational classes.
 
 ### 3.4 Primary Class Determination
 
@@ -605,13 +605,13 @@ On each action completion:
 
 ### 8.3 Complexity Ratings
 
-| Component                 | Implementation Complexity | Notes                        |
-| ------------------------- | ------------------------- | ---------------------------- |
-| Tier Progression          | Low (2/5)                 | Simple threshold check       |
-| Specialization Discovery  | Medium (3/5)              | Bucket monitoring, 3× logic  |
-| Hierarchical XP Split     | High (4/5)                | Recursive tag tree traversal |
-| Primary Class Calculation | Low (2/5)                 | Sort by tier + level         |
-| Training Paths            | Medium (3/5)              | NPC interaction, quests      |
+| Component                    | Implementation Complexity | Notes                        |
+| ---------------------------- | ------------------------- | ---------------------------- |
+| Tier Progression             | Low (2/5)                 | Simple threshold check       |
+| Specialization Discovery     | Medium (3/5)              | Bucket monitoring, 3× logic  |
+| Hierarchical XP Distribution | High (4/5)                | Recursive tag tree traversal |
+| Primary Class Calculation    | Low (2/5)                 | Sort by tier + level         |
+| Training Paths               | Medium (3/5)              | NPC interaction, quests      |
 
 ---
 
@@ -652,7 +652,7 @@ On each action completion:
 
 ### 9.3 All Classes Always Active
 
-**Decision:** No class slots, no dormant classes - all accepted classes are always active.
+**Decision:** No activation limits - all accepted classes remain perpetually active.
 
 **Rationale:**
 

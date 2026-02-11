@@ -1585,7 +1585,7 @@ Class Level-Up Bonuses:
 
 Multi-Classing:
 Active Classes: [Warrior] + [Ranger] + [Healer]
-XP Split: 50% / 30% / 20%
+XP Distribution: 50% / 30% / 20%
 
 Combat using bow:
 - Uses [Ranger] class level
@@ -2506,7 +2506,7 @@ Each class grants specific attribute bonuses at level-up. These are fixed per cl
 │    Prevents all characters of same class/level from being identical       │
 │                                                                            │
 │  MULTI-CLASSING:                                                           │
-│    Each active class gains XP independently based on XP split             │
+│    Each active class gains XP independently based on XP distribution      │
 │    Attributes granted by each class at its own level-up                   │
 │    Example: Warrior 5 (grants STR/END) + Mage 3 (grants WIT)              │
 │                                                                            │
@@ -2702,7 +2702,7 @@ END OF TURN 1:
 ### Authoritative GDDs (Core Systems)
 
 - [Core Progression System](core-progression-system-gdd.md) — XP buckets, dual tracking, multi-classing
-- [Class System](class-system-gdd.md) — Tiers, specializations, class slots
+- [Class System](class-system-gdd.md) — Tiers, specializations, eligibility
 - [Skill & Recipe System](skill-recipe-system-gdd.md) — 5 quick slots, rarity, achievements
 - [NPC Core Systems](npc-core-systems-gdd.md) — Goals, conflicts, personality
 

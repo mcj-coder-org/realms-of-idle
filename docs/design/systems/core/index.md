@@ -1,6 +1,13 @@
+---
+title: Index
+gdd_ref: systems/core-progression-system-gdd.md#overview
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -39,11 +46,11 @@ These are the foundational mechanics that all other systems build upon.
 
 ```
 Actions drain stamina
-    ↓
+ ↓
 Zero stamina = collapse into nap
-    ↓
+ ↓
 Rest restores stamina
-    ↓
+ ↓
 Fully Rested bonus grants XP boost
 ```
 

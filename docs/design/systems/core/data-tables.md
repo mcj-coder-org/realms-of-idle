@@ -1,6 +1,13 @@
+---
+title: Data Tables
+gdd_ref: systems/core-progression-system-gdd.md#data-structures
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -56,11 +63,11 @@ XP needed = Base XP × (1 + (total_levels × 0.15))
 
 ## Skill Offers Per Level-Up
 
-| Event                 | Min | Max |
-| --------------------- | --- | --- |
-| Normal level-up       | 0   | 3   |
-| Class acceptance      | 2   | 3   |
-| Milestone (10, 20...) | 1   | 5   |
+| Event               | Min | Max |
+| ------------------- | --- | --- |
+| Normal level-up     | 0   | 3   |
+| Class acceptance    | 2   | 3   |
+| Milestone (10, 20.) | 1   | 5   |
 
 ---
 

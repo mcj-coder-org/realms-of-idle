@@ -1,6 +1,13 @@
+---
+title: Skill Tags
+gdd_ref: systems/skill-recipe-system-gdd.md#tag-system
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -41,9 +48,9 @@ The skill system uses hierarchical tags to organize skills and determine charact
 **Example:**
 
 - Class with `Crafting/Smithing/Weapon` can learn skills tagged:
-  - `Crafting` (top-level parent)
-  - `Crafting/Smithing` (parent)
-  - `Crafting/Smithing/Weapon` (exact match)
+- `Crafting` (top-level parent)
+- `Crafting/Smithing` (parent)
+- `Crafting/Smithing/Weapon` (exact match)
 
 ### Specificity = Power
 
@@ -647,11 +654,11 @@ More specific tags = more specialized/powerful
 
 **See Also:**
 
-- [REFACTOR-AUDIT.md](../../content/skills/REFACTOR-AUDIT.md) - Complete skill-to-tag mapping
+- [REFACTOR-AUDIT.md](././content/skills/REFACTOR-AUDIT.md) - Complete skill-to-tag mapping
 - [Class Tag Associations](class-tag-associations.md) - Class-to-tag mappings
 - [Racial Synergies](racial-synergies.md) - Racial affinity system
 - [Class Progression](class-progression.md) - Level-up and skill acquisition mechanics
-- [Skills Library Index](../../content/skills/index.md) - Browse all skills
+- [Skills Library Index](././content/skills/index.md) - Browse all skills
 
 ---
 
@@ -722,9 +729,9 @@ A class can only receive full synergy bonuses from skills at or above their tier
 ### Example
 
 ```
-Crafting (depth 1)              ← All tiers access
+Crafting (depth 1) ← All tiers access
 └── Crafting/Smithing (depth 2) ← Tier 2+ access
-    └── Crafting/Smithing/Weapon (depth 3) ← Tier 3 only
+ └── Crafting/Smithing/Weapon (depth 3) ← Tier 3 only
 ```
 
 A Tier 2 Blacksmith gains synergy bonuses for `Crafting` and `Crafting/Smithing` skills, but not `Crafting/Smithing/Weapon` skills (learns at base rate only).

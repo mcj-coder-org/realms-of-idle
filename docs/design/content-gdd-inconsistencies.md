@@ -148,7 +148,7 @@ Classes "transition to" higher tier classes:
 
 - Replace "transition to" with "unlocks eligibility for" or "can discover"
 - Add "Progression Paths" subsection: "Upon reaching X XP, the following classes become available to learn as additional classes"
-- Clarify multi-class slots: "These classes occupy your 3 active class slots when accepted"
+- Clarify multi-class system: "All accepted classes are always active (no slot limits)"
 - Add examples showing player holding multiple classes simultaneously
 
 ---

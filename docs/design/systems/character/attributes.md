@@ -1,6 +1,13 @@
+---
+title: Attributes
+gdd_ref: systems/core-progression-system-gdd.md#attributes
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -633,13 +640,13 @@ Characters have separate resource pools for physical and magical actions. This c
 
 ### Stamina (Universal)
 
-| Aspect       | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
-| Who has it   | **All characters**                                            |
-| Derived from | END (Endurance)                                               |
-| Drains from  | Physical actions (combat, labor, travel)                      |
-| Zero stamina | Character collapses ("naps") until recovered                  |
-| Recovery     | Rest, food, skills, [Adrenaline](../core/adrenaline.md) burst |
+| Aspect       | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| Who has it   | **All characters**                                           |
+| Derived from | END (Endurance)                                              |
+| Drains from  | Physical actions (combat, labor, travel)                     |
+| Zero stamina | Character collapses ("naps") until recovered                 |
+| Recovery     | Rest, food, skills, [Adrenaline](./core/adrenaline.md) burst |
 
 **Stamina Actions:**
 
@@ -677,11 +684,11 @@ Specialized mages may have separate mana pools per magical school:
 | School Specialist | Separate pool per school |
 | Archmage          | Enlarged shared pool     |
 
-See [Magic System](../magic/magic-system.md) for school-specific details.
+See [Magic System](./magic/magic-system.md) for school-specific details.
 
 ### Shamanic Exception
 
-[Shamans](../magic/shamanic-magic.md) use their **tribe's spirit pool** instead of personal mana:
+[Shamans](./magic/shamanic-magic.md) use their **tribe's spirit pool** instead of personal mana:
 
 | Aspect       | Shamanic Magic                     |
 | ------------ | ---------------------------------- |
@@ -691,14 +698,14 @@ See [Magic System](../magic/magic-system.md) for school-specific details.
 
 ### Resource Comparison
 
-| Aspect             | Stamina                             | Mana                |
-| ------------------ | ----------------------------------- | ------------------- |
-| Universal?         | Yes (all characters)                | No (casters only)   |
-| Base attribute     | END                                 | WIT                 |
-| Zero state         | Collapse (nap)                      | Cannot cast (alert) |
-| Combat cost        | Physical actions                    | Spell casting       |
-| Non-combat cost    | Labor, travel                       | Enchanting, rituals |
-| Emergency recovery | [Adrenaline](../core/adrenaline.md) | Mana potions only   |
+| Aspect             | Stamina                            | Mana                |
+| ------------------ | ---------------------------------- | ------------------- |
+| Universal?         | Yes (all characters)               | No (casters only)   |
+| Base attribute     | END                                | WIT                 |
+| Zero state         | Collapse (nap)                     | Cannot cast (alert) |
+| Combat cost        | Physical actions                   | Spell casting       |
+| Non-combat cost    | Labor, travel                      | Enchanting, rituals |
+| Emergency recovery | [Adrenaline](./core/adrenaline.md) | Mana potions only   |
 
 ---
 
@@ -725,24 +732,24 @@ See [Magic System](../magic/magic-system.md) for school-specific details.
 
 ### Core Systems
 
-- [Adrenaline](../core/adrenaline.md) - Emergency stamina recovery
-- [Time and Rest](../core/time-and-rest.md) - Stamina/mana recovery during rest
-- [Stacking Rules](../core/stacking-rules.md) - How attribute bonuses combine
+- [Adrenaline](./core/adrenaline.md) - Emergency stamina recovery
+- [Time and Rest](./core/time-and-rest.md) - Stamina/mana recovery during rest
+- [Stacking Rules](./core/stacking-rules.md) - How attribute bonuses combine
 
 ### Character Systems
 
 - [Class Progression](class-progression.md) - Class attribute bonuses
-- [NPC Simulation](../social/npc-simulation.md) - NPC attribute-based behavior
+- [NPC Simulation](./social/npc-simulation.md) - NPC attribute-based behavior
 
 ### Magic
 
-- [Magic System](../magic/magic-system.md) - Mana pool usage
-- [Shamanic Magic](../magic/shamanic-magic.md) - Spirit pool alternative
+- [Magic System](./magic/magic-system.md) - Mana pool usage
+- [Shamanic Magic](./magic/shamanic-magic.md) - Spirit pool alternative
 
 ### Combat
 
-- [Combat Resolution](../combat/combat-resolution.md) - Stamina in combat
+- [Combat Resolution](./combat/combat-resolution.md) - Stamina in combat
 
 ### Reference
 
-- [Formula Glossary](../../reference/formula-glossary.md) - Attribute formulas
+- [Formula Glossary](././reference/formula-glossary.md) - Attribute formulas

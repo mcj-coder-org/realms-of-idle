@@ -1,6 +1,13 @@
+---
+title: Trade And Pricing
+gdd_ref: systems/economy-system-gdd.md#trade
+---
+
 <!-- ADAPTATION REQUIRED -->
 <!-- This file was migrated from source but needs manual review: -->
-<!-- - Update terminology (dormant classes, XP split, etc.) -->
+
+<!) -->
+
 <!-- - Align with current GDD architecture -->
 <!-- - Add missing sections as needed -->
 <!-- - Update frontmatter with correct gdd_ref -->
@@ -56,13 +63,13 @@ Each region has exports/imports based on local resources:
 
 ```
 Barter goods repeatedly
-    ↓ (10+ successful barters)
+ ↓ (10+ successful barters)
 Trader class offered
-    ↓ (accumulate trade value/profit)
+ ↓ (accumulate trade value/profit)
 Merchant class offered (1000+ silver value OR 200+ profit)
-    ↓ (at Merchant, choose specialization)
+ ↓ (at Merchant, choose specialization)
 <Specialty> Apprentice → Journeyman → Master
-    ↓ (all specialties at Master)
+ ↓ (all specialties at Master)
 Guildmaster eligible
 ```
 
@@ -96,9 +103,9 @@ Guildmaster eligible
 
 ```
 Acquire caravan (purchase, inherit, build)
-    ↓
+ ↓
 Caravaner class offered
-    ↓
+ ↓
 Levels through successful trade journeys
 ```
 
@@ -160,13 +167,13 @@ Levels through successful trade journeys
 
 ```
 Identify two settlements
-    ↓
+ ↓
 Contract with caravan company OR own caravan
-    ↓
+ ↓
 Negotiate terms
-    ↓
+ ↓
 Caravan runs route
-    ↓
+ ↓
 Profits/losses calculated per trip
 ```
 
