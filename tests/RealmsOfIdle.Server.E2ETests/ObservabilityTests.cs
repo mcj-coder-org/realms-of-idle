@@ -10,7 +10,7 @@ namespace RealmsOfIdle.Server.E2ETests;
 /// </summary>
 [Trait("Category", "E2E")]
 [Trait("Type", "Observability")]
-public sealed class ObservabilityTests : IDisposable
+public sealed class ObservabilityTests : IAsyncLifetime, IDisposable
 {
     private readonly HttpClient _aspireClient;
     private readonly HttpClient _serviceClient;
@@ -18,6 +18,7 @@ public sealed class ObservabilityTests : IDisposable
     private readonly string _aspireBaseUrl;
     private readonly string _apiBaseUrl;
     private readonly string _orleansBaseUrl;
+    private readonly string? _dashboardToken;
 
     public ObservabilityTests()
     {
@@ -43,8 +44,10 @@ public sealed class ObservabilityTests : IDisposable
             ?? "http://localhost:5214";
         _orleansBaseUrl = Environment.GetEnvironmentVariable("E2E_ORLEANS_BASE_URL")
             ?? "http://localhost:5001";
+        _dashboardToken = Environment.GetEnvironmentVariable("E2E_ASPIRE_DASHBOARD_TOKEN");
 
         // Bypass SSL for self-signed dev certs (Aspire dashboard)
+        // CookieContainer is enabled by default — auth cookie persists across requests
         _handler = new HttpClientHandler
         {
             ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator,
@@ -62,10 +65,25 @@ public sealed class ObservabilityTests : IDisposable
         };
     }
 
+    public async Task InitializeAsync()
+    {
+        if (string.IsNullOrEmpty(_dashboardToken))
+        {
+            return;
+        }
+
+        // Authenticate with dashboard — GET /login?t=<token> sets an auth cookie
+        var loginResponse = await _aspireClient.GetAsync(
+            new Uri($"/login?t={_dashboardToken}", UriKind.Relative));
+        loginResponse.EnsureSuccessStatusCode();
+    }
+
+    public Task DisposeAsync() => Task.CompletedTask;
+
     [Fact]
     public async Task AspireDashboard_IsReachable()
     {
-        // The Aspire dashboard should respond to requests
+        // The Aspire dashboard should respond to requests after auth
         var response = await _aspireClient.GetAsync(new Uri("/", UriKind.Relative));
         response.StatusCode.Should().NotBe(HttpStatusCode.ServiceUnavailable,
             "Aspire dashboard should be reachable");

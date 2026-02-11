@@ -297,6 +297,19 @@ else
     exit 1
 fi
 
+# ── Step 7.5: Extract dashboard token ──────────────────────────────────────
+
+header "Dashboard Token Extraction"
+
+DASHBOARD_TOKEN=$(grep -oP 'login\?t=\K[a-f0-9]+' "$APPHOST_LOG" | head -1)
+
+if [[ -n "$DASHBOARD_TOKEN" ]]; then
+    export E2E_ASPIRE_DASHBOARD_TOKEN="$DASHBOARD_TOKEN"
+    ok "Dashboard token extracted"
+else
+    warn "Could not extract dashboard token from AppHost log"
+fi
+
 # ── Step 8: E2E tests ──────────────────────────────────────────────────────
 
 header "E2E Tests"
