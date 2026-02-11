@@ -30,16 +30,16 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 **Purpose**: Review existing infrastructure and prepare project for possession demo
 
-- [ ] T001 Review existing IGameService interface in src/RealmsOfIdle.Core/Abstractions/IGameService.cs
-- [ ] T002 Review existing IEventStore interface in src/RealmsOfIdle.Core/Abstractions/IEventStore.cs
-- [ ] T003 [P] Review existing GridPosition in src/RealmsOfIdle.Core/Engine/Spatial/GridPosition.cs
-- [ ] T004 [P] Review LocalGameService pattern in src/RealmsOfIdle.Client.Shared/Services/LocalGameService.cs
-- [ ] T005 [P] Review InnGameLoop pattern in src/RealmsOfIdle.Core/Scenarios/Inn/InnGameLoop.cs
-- [ ] T006 Create Models directory: src/RealmsOfIdle.Client.Blazor/Models/
-- [ ] T007 Create Services directory: src/RealmsOfIdle.Client.Blazor/Services/
-- [ ] T008 Create Components directory structure: src/RealmsOfIdle.Client.Blazor/Components/
-- [ ] T009 Create Pages directory: src/RealmsOfIdle.Client.Blazor/Pages/
-- [ ] T010 Add LiteDB package reference to src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj
+- [x] T001 Review existing IGameService interface in src/RealmsOfIdle.Core/Abstractions/IGameService.cs
+- [x] T002 Review existing IEventStore interface in src/RealmsOfIdle.Core/Abstractions/IEventStore.cs
+- [x] T003 [P] Review existing GridPosition in src/RealmsOfIdle.Core/Engine/Spatial/GridPosition.cs
+- [x] T004 [P] Review LocalGameService pattern in src/RealmsOfIdle.Client.Shared/Services/LocalGameService.cs
+- [x] T005 [P] Review InnGameLoop pattern in src/RealmsOfIdle.Core/Scenarios/Inn/InnGameLoop.cs
+- [x] T006 Create Models directory: src/RealmsOfIdle.Client.Blazor/Models/
+- [x] T007 Create Services directory: src/RealmsOfIdle.Client.Blazor/Services/
+- [x] T008 Create Components directory structure: src/RealmsOfIdle.Client.Blazor/Components/
+- [x] T009 Create Pages directory: src/RealmsOfIdle.Client.Blazor/Pages/
+- [x] T010 Add LiteDB package reference to src/RealmsOfIdle.Client.Blazor/RealmsOfIdle.Client.Blazor.csproj
 
 ---
 
