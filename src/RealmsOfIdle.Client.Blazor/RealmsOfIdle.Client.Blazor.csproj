@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <NoWarn>$(NoWarn);CA1003;CA1063;CA1515;CA1861;IDE0011;IDE0060</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

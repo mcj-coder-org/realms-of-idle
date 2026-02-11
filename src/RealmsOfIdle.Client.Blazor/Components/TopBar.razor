@@ -1,0 +1,24 @@
+@* Top bar component showing mode indicator and world time *@
+
+<div class="top-bar">
+    <div class="mode-indicator">
+        <strong>Mode:</strong> @Mode
+    </div>
+    <div class="world-time">
+        <strong>World Time:</strong> @WorldTime.ToString("HH:mm:ss")
+    </div>
+</div>
+
+@code {
+    /// <summary>
+    /// Current game mode (Observer, Possessed)
+    /// </summary>
+    [Parameter]
+    public string Mode { get; set; } = "Observer";
+
+    /// <summary>
+    /// Current world time
+    /// </summary>
+    [Parameter]
+    public DateTime WorldTime { get; set; } = DateTime.UtcNow;
+}

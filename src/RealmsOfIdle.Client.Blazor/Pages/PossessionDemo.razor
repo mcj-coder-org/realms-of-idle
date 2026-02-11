@@ -1,0 +1,50 @@
+@page "/possession-demo"
+@using RealmsOfIdle.Client.Blazor.Services
+@using RealmsOfIdle.Core.Abstractions
+@inject IGameService GameService
+@inject SimulationEngine SimulationEngine
+@inject ILogger<PossessionDemo> Logger
+@implements IDisposable
+
+<PageTitle>Possession Demo - Realms of Idle</PageTitle>
+
+<div class="possession-demo">
+    <h1>Minimal Possession Demo</h1>
+    <p>World Time: @DateTime.UtcNow.ToString("HH:mm:ss")</p>
+    <p>Status: Initializing...</p>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation("PossessionDemo initializing");
+
+        // Initialize settlement
+        if (GameService is SettlementGameService settlementService)
+        {
+            await settlementService.GetOrCreateSettlementAsync();
+        }
+
+        // Subscribe to simulation ticks
+        SimulationEngine.OnTick += OnSimulationTick;
+
+        // Start simulation engine
+        SimulationEngine.Start();
+
+        Logger.LogInformation("PossessionDemo initialized, simulation started");
+    }
+
+    private void OnSimulationTick()
+    {
+        // Tick handler - will be implemented in user story phases
+        Logger.LogDebug("Simulation tick");
+    }
+
+    public void Dispose()
+    {
+        // Unsubscribe from tick events
+        SimulationEngine.OnTick -= OnSimulationTick;
+
+        Logger.LogInformation("PossessionDemo disposed");
+    }
+}

@@ -51,35 +51,35 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 
 ### Data Models (Foundational)
 
-- [ ] T011 [P] Create BuildingType enum in src/RealmsOfIdle.Client.Blazor/Models/Building.cs
-- [ ] T012 [P] Create Building record in src/RealmsOfIdle.Client.Blazor/Models/Building.cs (reuse GridPosition from Core)
-- [ ] T013 [P] Create NPCState enum in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs
-- [ ] T014 [P] Create NPC record in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs with factory methods
-- [ ] T015 [P] Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs
-- [ ] T016 [P] Create ActionCatalog class in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs (Reference: docs/design/content/actions/ for template structure, see plan.md Related Documentation section for details)
-- [ ] T017 [P] Create Settlement record in src/RealmsOfIdle.Client.Blazor/Models/Settlement.cs with CreateMillbrook factory
-- [ ] T018 [P] Create ActivityLogEntry record in src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs
+- [x] T011 [P] Create BuildingType enum in src/RealmsOfIdle.Client.Blazor/Models/Building.cs
+- [x] T012 [P] Create Building record in src/RealmsOfIdle.Client.Blazor/Models/Building.cs (reuse GridPosition from Core)
+- [x] T013 [P] Create NPCState enum in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs
+- [x] T014 [P] Create NPC record in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs with factory methods
+- [x] T015 [P] Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs
+- [x] T016 [P] Create ActionCatalog class in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs (Reference: docs/design/content/actions/ for template structure, see plan.md Related Documentation section for details)
+- [x] T017 [P] Create Settlement record in src/RealmsOfIdle.Client.Blazor/Models/Settlement.cs with CreateMillbrook factory
+- [x] T018 [P] Create ActivityLogEntry record in src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs
 
 ### Core Services (Foundational)
 
-- [ ] T019 Extend IGameService interface with possession operations in src/RealmsOfIdle.Core/Abstractions/IGameService.cs (PossessNPCAsync, ReleaseNPCAsync, ExecuteActionAsync)
-- [ ] T020 Create SettlementGameService class in src/RealmsOfIdle.Client.Blazor/Services/SettlementGameService.cs (implements IGameService, adapts LocalGameService pattern)
-- [ ] T021 Implement LiteDB persistence in SettlementGameService for Settlement state
-- [ ] T022 Implement LiteDB persistence in SettlementGameService for ActivityLog
-- [ ] T023 Create SimulationEngine class in src/RealmsOfIdle.Client.Blazor/Services/SimulationEngine.cs (adapts InnGameLoop pattern)
-- [ ] T024 Implement game loop timer (System.Timers.Timer, 10 ticks/sec) in SimulationEngine
-- [ ] T025 Create NPCAIService class in src/RealmsOfIdle.Client.Blazor/Services/NPCAIService.cs
-- [ ] T026 Implement NPCAIService.UpdateNPC with simple state machine (Idle/Working)
-- [ ] T027 Implement NPCAIService.ChooseNextAction with priority-based selection
-- [ ] T028 Register SettlementGameService as IGameService singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
-- [ ] T029 Register SimulationEngine as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [x] T019 Extend IGameService interface with possession operations in src/RealmsOfIdle.Core/Abstractions/IGameService.cs (PossessNPCAsync, ReleaseNPCAsync, ExecuteActionAsync)
+- [x] T020 Create SettlementGameService class in src/RealmsOfIdle.Client.Blazor/Services/SettlementGameService.cs (implements IGameService, adapts LocalGameService pattern)
+- [x] T021 Implement LiteDB persistence in SettlementGameService for Settlement state
+- [x] T022 Implement LiteDB persistence in SettlementGameService for ActivityLog
+- [x] T023 Create SimulationEngine class in src/RealmsOfIdle.Client.Blazor/Services/SimulationEngine.cs (adapts InnGameLoop pattern)
+- [x] T024 Implement game loop timer (System.Timers.Timer, 10 ticks/sec) in SimulationEngine
+- [x] T025 Create NPCAIService class in src/RealmsOfIdle.Client.Blazor/Services/NPCAIService.cs
+- [x] T026 Implement NPCAIService.UpdateNPC with simple state machine (Idle/Working)
+- [x] T027 Implement NPCAIService.ChooseNextAction with priority-based selection
+- [x] T028 Register SettlementGameService as IGameService singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
+- [x] T029 Register SimulationEngine as singleton in src/RealmsOfIdle.Client.Blazor/Program.cs
 
 ### UI Foundation (Foundational)
 
-- [ ] T030 Create PossessionDemo.razor page in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor with route /possession-demo
-- [ ] T031 Create TopBar.razor component in src/RealmsOfIdle.Client.Blazor/Components/TopBar.razor (mode indicator, world time)
-- [ ] T032 Inject IGameService and SimulationEngine in PossessionDemo.razor
-- [ ] T033 Implement OnInitialized to start SimulationEngine and subscribe to state changes
+- [x] T030 Create PossessionDemo.razor page in src/RealmsOfIdle.Client.Blazor/Pages/PossessionDemo.razor with route /possession-demo
+- [x] T031 Create TopBar.razor component in src/RealmsOfIdle.Client.Blazor/Components/TopBar.razor (mode indicator, world time)
+- [x] T032 Inject IGameService and SimulationEngine in PossessionDemo.razor
+- [x] T033 Implement OnInitialized to start SimulationEngine and subscribe to state changes
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

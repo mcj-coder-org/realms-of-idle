@@ -1,7 +1,10 @@
+using LiteDB;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using RealmsOfIdle.Client.Blazor;
+using RealmsOfIdle.Client.Blazor.Services;
 using RealmsOfIdle.Client.UI.Components.Observability;
+using RealmsOfIdle.Core.Abstractions;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -15,6 +18,18 @@ builder.Services.AddScoped(sp => new HttpClient
 
 // Register HTTP game service
 builder.Services.AddScoped<HttpGameService>();
+
+// Register LiteDB for browser storage (WASM uses in-memory LiteDB)
+builder.Services.AddSingleton<LiteDatabase>(_ =>
+{
+    var db = new LiteDatabase("Filename=:memory:");
+    return db;
+});
+
+// Register possession demo services
+builder.Services.AddSingleton<IGameService, SettlementGameService>();
+builder.Services.AddSingleton<SimulationEngine>();
+builder.Services.AddSingleton<NPCAIService>();
 
 // Configure observability
 builder.Services.AddLogging(builder => builder.SetMinimumLevel(LogLevel.Debug));

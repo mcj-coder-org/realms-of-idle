@@ -46,4 +46,19 @@ public interface IGameService
     /// Get game statistics
     /// </summary>
     Task<GameStats> GetGameStatsAsync(string playerId);
+
+    /// <summary>
+    /// Possess an NPC for direct control
+    /// </summary>
+    Task<ActionResult> PossessNPCAsync(string npcId);
+
+    /// <summary>
+    /// Release possession of an NPC, returning to autonomous behavior
+    /// </summary>
+    Task ReleaseNPCAsync(string npcId);
+
+    /// <summary>
+    /// Execute an action while possessing an NPC
+    /// </summary>
+    Task<ActionResult> ExecuteActionAsync(string npcId, string actionId);
 }
