@@ -14,7 +14,8 @@
     "format": "npm run format:format && npm run format:cs && npm run format:md",
     "format:format": "prettier --write .",
     "format:md": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#.worktrees\"",
-    "format:cs": "dotnet format . --no-restore"
+    "format:cs": "dotnet format . --no-restore",
+    "validate:phase": "bash scripts/validate-phase.sh"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
