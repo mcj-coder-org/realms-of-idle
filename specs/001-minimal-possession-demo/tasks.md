@@ -56,7 +56,7 @@ description: 'Task list for Minimal Possession Demo v1 implementation'
 - [ ] T013 [P] Create NPCState enum in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs
 - [ ] T014 [P] Create NPC record in src/RealmsOfIdle.Client.Blazor/Models/NPC.cs with factory methods
 - [ ] T015 [P] Create NPCAction record in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs
-- [ ] T016 [P] Create ActionCatalog class in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs
+- [ ] T016 [P] Create ActionCatalog class in src/RealmsOfIdle.Client.Blazor/Models/NPCAction.cs (Reference: docs/design/content/actions/ for template structure, see plan.md Related Documentation section for details)
 - [ ] T017 [P] Create Settlement record in src/RealmsOfIdle.Client.Blazor/Models/Settlement.cs with CreateMillbrook factory
 - [ ] T018 [P] Create ActivityLogEntry record in src/RealmsOfIdle.Client.Blazor/Models/ActivityLogEntry.cs
 
